@@ -1,0 +1,103 @@
+\documentclass{article}
+
+\begin{document}
+
+<<setup, echo=FALSE,message=FALSE,warning=FALSE>>=
+library(maps)
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+library(lubridate)
+@
+
+<<load-data, echo=FALSE,message=FALSE,warning=FALSE>>=
+# Data from NASA: https://firms.modaps.eosdis.nasa.gov/
+# Brazil is one of the largest agriculture producers in the world. I aim to investigate its fire occurrences and whether they have any significant impact on agriculture production.
+
+brazil_fire_fy13 <- readr::read_csv('https://firms.modaps.eosdis.nasa.gov/data/country/modis/2013/modis_2013_Brazil.csv')
+brazil_fire_fy14 <- readr::read_csv('https://firms.modaps.eosdis.nasa.gov/data/country/modis/2014/modis_2014_Brazil.csv')
+brazil_fire_fy15 <- readr::read_csv('https://firms.modaps.eosdis.nasa.gov/data/country/modis/2015/modis_2015_Brazil.csv')
+brazil_fire_fy16 <- readr::read_csv('https://firms.modaps.eosdis.nasa.gov/data/country/modis/2016/modis_2016_Brazil.csv')
+brazil_fire_fy17 <- readr::read_csv('https://firms.modaps.eosdis.nasa.gov/data/country/modis/2017/modis_2017_Brazil.csv')
+brazil_fire_fy18 <- readr::read_csv('https://firms.modaps.eosdis.nasa.gov/data/country/modis/2018/modis_2018_Brazil.csv')
+brazil_fire_fy19 <- readr::read_csv('https://firms.modaps.eosdis.nasa.gov/data/country/modis/2019/modis_2019_Brazil.csv')
+brazil_fire_fy20 <- readr::read_csv('https://firms.modaps.eosdis.nasa.gov/data/country/modis/2020/modis_2020_Brazil.csv')
+brazil_fire_fy21 <- readr::read_csv('https://firms.modaps.eosdis.nasa.gov/data/country/modis/2021/modis_2021_Brazil.csv')
+brazil_fire_fy22 <- readr::read_csv('https://firms.modaps.eosdis.nasa.gov/data/country/modis/2022/modis_2022_Brazil.csv')
+@
+
+<<data-cleaning, echo=FALSE,message=FALSE,warning=FALSE>>=
+data_list <- list(
+  brazil_fire_fy13,
+  brazil_fire_fy14,
+  brazil_fire_fy15,
+  brazil_fire_fy16,
+  brazil_fire_fy17,
+  brazil_fire_fy18,
+  brazil_fire_fy19,
+  brazil_fire_fy20,
+  brazil_fire_fy21,
+  brazil_fire_fy22)
+
+# Function to filter confident fire observation
+filter_fire <- function(data) {
+  filter_fire <- data %>% filter(confidence >= 95)
+  return(filter_fire)
+}
+
+# Apply the filtering function to all data frames in the list
+confident_fire_decade <- lapply(data_list, filter_fire)
+
+# Access filtered data for a specific fiscal year, fy22
+confident_fire_fy22 <- confident_fire_decade[[10]]
+@
+
+<<fire-by-location-fy22>>=
+# Obtain the Brazil map data
+brazil_map <- map_data("world", region = "Brazil")
+
+# Create the heatmap of fire occurrences
+fire_heatmap <- ggplot(confident_fire_fy22, aes(x = longitude, y = latitude)) +
+  geom_polygon(data = brazil_map, aes(x = long, y = lat, group = group), 
+               fill = "#bdbdbd") +
+  geom_bin2d(bins = 300) +
+  scale_fill_gradient(low = "#fee6ce", high = "#d94801") +
+  coord_fixed(ratio = 1) +
+  labs(title = "Frequency of Fire Occurrences by location in FY22") 
+
+print(fire_heatmap)
+
+# Colour selection from: https://colorbrewer2.org/#type=sequential&scheme=Oranges&n=9
+@
+
+<<pivot-data-by-month, echo=FALSE,message=FALSE,warning=FALSE>>=
+# Create a pivot table, no. of fire occurrences vs. Months (Jan-Dec), in FY22.
+confident_fire_months_fy22 <- confident_fire_fy22 %>%
+  mutate(acq_date = as.Date(acq_date, format = "%Y-%m-%d")) %>%
+  group_by(month = floor_date(acq_date, 'month')) %>%
+  summarize(count = n())
+
+# change "2022-01-01" to Jan etc.
+confident_fire_months_fy22$abb_month <- format(confident_fire_months_fy22$month, "%b")
+
+# Create a custom order for the months
+custom_order <- c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
+
+# Reorder the "abb_month" factor based on the custom order
+confident_fire_months_fy22$abb_month <- factor(confident_fire_months_fy22$abb_month, levels = custom_order)
+@
+
+<<fire-by-months fy22,fig.height=2>>=
+heatmap_plot <- ggplot(confident_fire_months_fy22, 
+                       aes(x = abb_month, y = 2022, fill = count)) +
+  geom_tile(width = 0.9, height = 1) +  # Create the heatmap tiles
+  scale_fill_gradient(low = "white", high = "#d94801") +  # Customize the color scale
+  labs(title = "Frequency of Fire Occurrences by months in FY22", x = "Month", y = "FY22") +
+  theme(panel.grid = element_blank() )
+
+# Display the heatmap
+print(heatmap_plot)
+@
+From the table, we can clearly see that August and September are the riskiest months in terms of fire hazard, whereas November to July hardly pose any risk at all. It's natural to ask the follow-up question: How does FY22 compare to previous years? Is it valid to claim that August and September are the fire hazard season?
+
+\end{document}
