@@ -5,6 +5,7 @@
 <<setup, echo=FALSE,message=FALSE,warning=FALSE>>=
 library(maps)
 library(ggplot2)
+
 library(dplyr)
 library(tidyverse)
 library(lubridate)
