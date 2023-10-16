@@ -5,7 +5,6 @@
 <<setup, echo=FALSE,message=FALSE,warning=FALSE>>=
 library(maps)
 library(ggplot2)
-
 library(dplyr)
 library(tidyverse)
 library(lubridate)
@@ -20,7 +19,7 @@ data(mtcars)
 \section{Chapter 3.1 Introduction to Modern Data Visualization Methods}
 xxx
 
-\section{Chapter 3.1 Scatter Plots and Bubble Charts}
+\section{Chapter 3.2 Scatter Plots and Bubble Charts}
 Scatter plots and bubble charts are fundamental data visualization techniques that provide valuable insights into the relationships and patterns within datasets. These visualizations are particularly effective for representing data points, making comparisons, and revealing trends. Below, we delve into the characteristics, use cases, and advantages of scatter plots and bubble charts.
 
 \subsection{Scatter Plots}
@@ -34,7 +33,7 @@ A scatter plot is a simple yet powerful visualization that displays individual d
     \item Offers a visual representation of the distribution of data points.
 \end{itemize}
 
-\subsection{Scatter Plots in Practice:}
+\subsection{Scatter Plots in Practice}
 In this example, we'll create a scatter plot that visualizes the relationship between two variables while adding colors, labels, and a trend line for added interest. We'll use the built-in "mtcars" R dataset, which contains information about various car models.
 
 <<scatter-plot-chunk, echo=FALSE, fig.height=5, fig.width=7>>=
@@ -53,7 +52,7 @@ ggplot(data = mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
   theme_minimal()  # Minimalistic theme
 @
 
-\subsubsection{Analysis}: TO BE REVISED
+\subsubsection{Analysis} TO BE REVISED
 The scatter plot displays the relationship between car weight (in thousands of pounds, "wt") and fuel efficiency (miles per gallon, "mpg") for different car models from the "mtcars" dataset. Here are the key characteristics of the plot:
 \begin{itemize}
     \item Color-Coded Cylinders: The points are color-coded based on the number of cylinders in the engine (4, 6, and 8 cylinders). This allows for a quick visual differentiation of car types, enhancing the understanding of the data.
@@ -61,26 +60,25 @@ The scatter plot displays the relationship between car weight (in thousands of p
     \item Linear Regression Line: A blue linear regression trend line is included. It provides a visual representation of the overall relationship between car weight and fuel efficiency, indicating a negative correlation—cars tend to have lower fuel efficiency as their weight increases.\\
 \end{itemize}
     
-\subsection{Why a Scatter Plot is Appropriate}:
-
+\subsection{Why a Scatter Plot is Appropriate}
 A scatter plot is an appropriate choice for this dataset and analysis for the following reasons:\\
 
 1. Relationship Visualization: A scatter plot is well-suited for showing the relationship between two continuous variables, such as car weight and fuel efficiency. It allows us to visually assess the pattern and direction of the relationship.
 
-1. Regression Line: The inclusion of a regression line provides a clear summary of the overall trend, highlighting the negative correlation between car weight and fuel efficiency.
+2. Regression Line: The inclusion of a regression line provides a clear summary of the overall trend, highlighting the negative correlation between car weight and fuel efficiency.
 EXPLAIN REGRESSION
 
 
 \subsection{Bubble Charts}
 A bubble chart is an extension of the scatter plot, where each data point is represented as a bubble or circle. In addition to the x and y axes, bubble charts introduce a third variable that is encoded by the size of the bubbles. This third variable allows for the simultaneous visualization of three data attributes.
 
-\subsubsection{Use Cases:}
+\subsection{Use Cases}
 Bubble charts are particularly useful when you need to visualize the relationship between three variables. For example, in finance, a bubble chart can display the market capitalization, price-to-earnings ratio, and stock returns for different companies simultaneously. In public health, it can represent the population, vaccination coverage, and disease incidence for various regions.
 
 \subsubsection{Advantages}
 \begin{itemize}
     \item Visualising three data attributes in a single chart.
-    \item Easily conveying the magnitude of the third variable through bubble size. 
+    \item Easily conveying the magnitude of the third variable through bubble size.
     \item Effective for exploring complex relationships and identifying patterns. 
 \end{itemize}
 
@@ -101,7 +99,6 @@ ggplot(mtcars, aes(x = rownames(mtcars), y = mpg, size = hp, color = cyl)) +
   theme(axis.text.x = element_text(angle = 90, hjust =1))
 @
 
-
 \subsection{Key Considerations for Scatter Plots and Bubble Charts}
     \begin{enumerate}
         \item \textbf{Scaling}: Consider the scaling of the axes and bubble sizes to prevent distortion of the data representation.
@@ -110,13 +107,14 @@ ggplot(mtcars, aes(x = rownames(mtcars), y = mpg, size = hp, color = cyl)) +
     \end{enumerate}
 
 
-\section*{3 Bar Charts and Histograms}
-\section*{3.3 Bar Charts}
-A bar chart is a very important method to present data. It organizes information into vertical bars.  Bar charts have lots of advantages in data visualization. It can present data categories in a frequency distribution. A bar chart is best for comparing classified data. Especially when the values are close, because the human eye's perception of height is better than other visual elements (such as area, Angle, etc.), the use of a bar chart is more appropriate. These bars usually have different lengths, and every length is proportional to the size of the information they present.\\
+\section*{Chapter 3.3 Bar Charts and Histograms}
+\subsection*{Bar Charts}
+A bar chart is a very important method to present data. It organizes information into vertical bars.  Bar charts have lots of advantages in data visualization. It can present data categories in a frequency distribution. A bar chart is best for comparing classified data. Especially when the values are close, because the human perception of height is better than other visual elements (such as area, angle, etc.), the use of a bar chart is more appropriate. These bars usually have different lengths, and every length is proportional to the size of the information they present.\\
 R uses the function $barplot()$ to create bar charts. R can draw both vertical and Horizontal bars in the bar chart. In the bar chart, each of the bars can be given different colors.\\
 R is a programming language for data analysis and statistical computing, and its advent has made data visualization more straightforward and accessible. Among the various tools available in R, ggplot2 stands out as one of the most renowned and powerful tools for creating data visualizations. It offers a wealth of data visualization capabilities and is celebrated for its versatility and aesthetic appeal. In this chapter, we will focus on how to use ggplot2 to create bar charts for data visualization.\\
+
 \subsection*{3.3.1 Different Types of Bar Charts}
-Here's an overview of the different types of bar charts. \\
+Here is an overview of the different types of bar charts. \\
 \paragraph{Vertical Bar Chart}
 This is the most common bar chart. We use different vertical columns to display and compare the values of different categories in the same dimension, where the X-axis represents the contrasting categories and the Y-axis represents the frequency or count of their categories.\\
 \paragraph{Horizontal Bar Chart}
@@ -131,29 +129,21 @@ However, it is very easy to get confused when there are too many categories.
 \subsection*{3.3.2 Advantages of Bar Charts}
 \begin{enumerate}
 \item \textbf{Clarity and Simplicity}: Bar charts are structurally simple, making them easy to read and understand, allowing audiences to quickly grasp key information.
-    
     \item \textbf{Effective Comparison}: They provide a visual representation that makes comparing the size or value of different categories straightforward, especially when comparing a limited number of categorical data.
-    
     \item \textbf{High Flexibility}: They can be used to represent any type of data, be it continuous or discrete.
-    
     \item \textbf{Multilevel Representation}: Stacked or grouped bar charts can be used to represent multiple data series.
 \end{enumerate}
 
 \subsection*{3.3.3 Disadvantages of Bar Charts}
-
 \begin{enumerate}
     \item \textbf{Limited Data Representation}: They might not be suitable for representing large datasets as things can get cluttered.
-    
     \item \textbf{Potential Misinterpretation}: Without a zero baseline, bar charts can be misleading as they might exaggerate differences.
-    
     \item \textbf{Overcomplexity with Many Categories}: If there are too many bars, it can be challenging to discern information effectively.
-    
     \item \textbf{Requires Categorical Data}: Bar charts are not ideal for representing trends over continuous data, where line graphs might be more appropriate.
 \end{enumerate}
 
-In this section, I will analyze the air quality dataset provided by the United States Environmental Protection Agency. In our dataset, we have data from over 200 locations. The Air Quality Index (AQI) ranges from 0 to 500. A higher AQI indicates increased levels of air pollution, leading to heightened health concerns. This implies that as the AQI rises, there's a greater risk to public health.
+In this section, I will analyze the air quality dataset provided by the United States Environmental Protection Agency. In our dataset, we have data from over 200 locations. The Air Quality Index (AQI) ranges from 0 to 500. A higher AQI indicates increased levels of air pollution, leading to heightened health concerns. This implies that as the AQI rises, there is a greater risk to public health.
 
-In order to produce the figure of these codes, we use fig=True.
 <<my_plot1, fig=TRUE, echo=TRUE, tidy=TRUE, width.cutoff=60>>=
 data <- read.csv("c4_epa_air_quality.csv")
 ggplot(data, aes(x = aqi)) +
@@ -189,6 +179,7 @@ ggplot(data, aes(x = group)) +
 @
 
 We can also add some color to make our plot more attractive, here we can add sone color as well. In the code below, we set the color of the bar chart to blue while specifying the border color as black.
+
 <<my_plot3, fig=TRUE, echo=TRUE, tidy=TRUE, width.cutoff=60>>=
 # read CSV dater set
 data <- read.csv("c4_epa_air_quality.csv") 
@@ -235,7 +226,6 @@ ggplot(data, aes(x = group)) +
 @
 
 \section{Chapter 3.4 Heatmaps and Tree Maps}
-
 
 <<load-data, echo=FALSE,message=FALSE,warning=FALSE>>=
 # Data from NASA: https://firms.modaps.eosdis.nasa.gov/
