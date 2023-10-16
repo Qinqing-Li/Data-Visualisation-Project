@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.13)  16 OCT 2023 16:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.12)  16 OCT 2023 18:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,9 +6,9 @@ entering extended mode
 (./main_file.tex
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-10-10>
-(c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
+(/Users/zhouguanqiao/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
-(c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size10.clo
+(/Users/zhouguanqiao/Library/TinyTeX/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count185
@@ -22,31 +22,31 @@ File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
+) (/Users/zhouguanqiao/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
+ (/Users/zhouguanqiao/Library/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
+) (/Users/zhouguanqiao/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
+ (/Users/zhouguanqiao/Library/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+) (/Users/zhouguanqiao/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
+ (/Users/zhouguanqiao/Library/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen141
 \Gin@req@width=\dimen142
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
+) (/Users/zhouguanqiao/Library/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
+ (/Users/zhouguanqiao/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 227.
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+ (/Users/zhouguanqiao/Library/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
 Package xcolor Info: Model `RGB' extended on input line 1369.
@@ -56,16 +56,16 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/framed/framed.sty
+) (/Users/zhouguanqiao/Library/TinyTeX/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip50
 \fb@frw=\dimen143
 \fb@frh=\dimen144
 \FrameRule=\dimen145
 \FrameSep=\dimen146
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/alltt.sty
+) (/Users/zhouguanqiao/Library/TinyTeX/texmf-dist/tex/latex/base/alltt.sty
 Package: alltt 2021/01/29 v2.0g defines alltt environment
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+) (/Users/zhouguanqiao/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-10-10 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count193
 \l__pdf_internal_box=\box51
@@ -86,10 +86,10 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
 LaTeX Font Info:    ... okay on input line 53.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
 LaTeX Font Info:    ... okay on input line 53.
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+ (/Users/zhouguanqiao/Library/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+ (/Users/zhouguanqiao/Library/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Overfull \hbox (1.30623pt too wide) in paragraph at lines 63--64
@@ -108,7 +108,7 @@ Overfull \hbox (15.0pt too wide) in paragraph at lines 84--86
 
 [1
 
-{c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+{/Users/zhouguanqiao/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Underfull \hbox (badness 10000) in paragraph at lines 92--93
 
  []
@@ -128,152 +128,258 @@ Overfull \hbox (10.3834pt too wide) in paragraph at lines 125--125
 []\OT1/cmr/bx/n/12 Key Con-sid-er-a-tions for Scat-ter Plots and Bub-ble Charts 
  []
 
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 147.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 136.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 136.
 
-Overfull \hbox (69.74638pt too wide) in paragraph at lines 150--150
+Underfull \hbox (badness 10000) in paragraph at lines 135--138
+
+ []
+
+[4 <./figure/buble-plot-chunk-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
+
+ []
+
+[5]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 180.
+<figure/my_plot1-1.pdf, id=41, 505.89pt x 505.89pt>
+File: figure/my_plot1-1.pdf Graphic file (type pdf)
+<use figure/my_plot1-1.pdf>
+Package pdftex.def Info: figure/my_plot1-1.pdf  used on input line 188.
+(pdftex.def)             Requested size: 345.0pt x 345.00414pt.
+
+Overfull \hbox (15.0pt too wide) in paragraph at lines 188--190
+[][]
+ []
+
+[6]
+Overfull \hbox (29.48286pt too wide) in paragraph at lines 202--202
+[][]\OT1/cmtt/m/it/10 # Use the cut function to divide the data into groups of five intervals[][] 
+ []
+
+
+Overfull \hbox (71.4825pt too wide) in paragraph at lines 208--208
+[][]\OT1/cmtt/m/it/10 # Y-axis representing the number of occurrences of the X-axis label in the data[][] 
+ []
+
+
+Overfull \vbox (0.9708pt too high) detected at line 216
+ []
+
+[7 <./figure/my_plot1-1.pdf>]
+<figure/my_plot2-1.pdf, id=55, 505.89pt x 505.89pt>
+File: figure/my_plot2-1.pdf Graphic file (type pdf)
+<use figure/my_plot2-1.pdf>
+Package pdftex.def Info: figure/my_plot2-1.pdf  used on input line 217.
+(pdftex.def)             Requested size: 345.0pt x 345.00414pt.
+
+Overfull \hbox (15.0pt too wide) in paragraph at lines 217--219
+[][]
+ []
+
+
+Overfull \hbox (29.48286pt too wide) in paragraph at lines 230--230
+[][]\OT1/cmtt/m/it/10 # Use the cut function to divide the data into groups of five intervals[][] 
+ []
+
+
+Overfull \hbox (27.74675pt too wide) in paragraph at lines 231--231
+[][]\OT1/cmtt/m/n/10 data[][]$[][]group[] []<-[] []cut[][](data[][]$[][]aqi,[] []breaks[] []=[] []seq[][]([][]0[][],[] []max[][](data[][]$[][]aqi)[] []+[] []5[][],[] []by[] []=[] []5[][]),[][] 
+ []
+
+
+Overfull \hbox (11.99689pt too wide) in paragraph at lines 238--238
+[]  []\OT1/cmtt/m/n/10 labs[][]([][]title[] []=[] []"Bar Chart Example 1"[][],[] []x[] []=[] []"Air Quality Index/units"[][],[][] 
+ []
+
+[8 <./figure/my_plot2-1.pdf>]
+<figure/my_plot3-1.pdf, id=64, 505.89pt x 505.89pt>
+File: figure/my_plot3-1.pdf Graphic file (type pdf)
+<use figure/my_plot3-1.pdf>
+Package pdftex.def Info: figure/my_plot3-1.pdf  used on input line 244.
+(pdftex.def)             Requested size: 345.0pt x 345.00414pt.
+
+Overfull \hbox (15.0pt too wide) in paragraph at lines 244--246
+[][]
+ []
+
+[9]
+Overfull \hbox (29.48286pt too wide) in paragraph at lines 257--257
+[][]\OT1/cmtt/m/it/10 # Use the cut function to divide the data into groups of five intervals[][] 
+ []
+
+
+Overfull \hbox (11.99689pt too wide) in paragraph at lines 265--265
+[]  []\OT1/cmtt/m/n/10 labs[][]([][]title[] []=[] []"Bar Chart Example 2"[][],[] []x[] []=[] []"Air Quality Index/units"[][],[][] 
+ []
+
+
+Overfull \hbox (59.24648pt too wide) in paragraph at lines 269--269
+[]                   []\OT1/cmtt/m/n/10 (breaks_list[[][]-[][]length[][](breaks_list)],[] []"-"[][], breaks_list[[][]-[][]1[][]]))[][] 
+ []
+
+
+Overfull \vbox (0.13747pt too high) detected at line 271
+ []
+
+[10 <./figure/my_plot3-1.pdf>]
+<figure/my_plot4-1.pdf, id=76, 505.89pt x 505.89pt>
+File: figure/my_plot4-1.pdf Graphic file (type pdf)
+<use figure/my_plot4-1.pdf>
+Package pdftex.def Info: figure/my_plot4-1.pdf  used on input line 272.
+(pdftex.def)             Requested size: 345.0pt x 345.00414pt.
+
+Overfull \hbox (15.0pt too wide) in paragraph at lines 272--274
+[][]
+ []
+
+
+Overfull \hbox (69.74638pt too wide) in paragraph at lines 289--289
 [][]\OT1/cmtt/m/n/10 fire_heatmap[] []<-[] []ggplot[][](confident_fire_fy22,[] []aes[][]([][]x[] []= longitude,[] []y[] []= latitude))[] []+[][] 
  []
 
 
-Overfull \hbox (32.9967pt too wide) in paragraph at lines 151--151
+Overfull \hbox (32.9967pt too wide) in paragraph at lines 290--290
 []  []\OT1/cmtt/m/n/10 geom_polygon[][]([][]data[] []= brazil_map,[] []aes[][]([][]x[] []= long,[] []y[] []= lat,[] []group[] []= group),[][] 
  []
 
 
-Overfull \hbox (6.74693pt too wide) in paragraph at lines 156--156
+Overfull \hbox (6.74693pt too wide) in paragraph at lines 295--295
 []  []\OT1/cmtt/m/n/10 labs[][]([][]title[] []=[] []"Frequency of Fire Occurrences by location in FY22"[][])[][] 
  []
 
-[4 <./figure/buble-plot-chunk-1.pdf>]
-<figure/fire-by-location-fy22-1.pdf, id=38, 505.89pt x 505.89pt>
+[11 <./figure/my_plot4-1.pdf>]
+<figure/fire-by-location-fy22-1.pdf, id=85, 505.89pt x 505.89pt>
 File: figure/fire-by-location-fy22-1.pdf Graphic file (type pdf)
 <use figure/fire-by-location-fy22-1.pdf>
-Package pdftex.def Info: figure/fire-by-location-fy22-1.pdf  used on input line 161.
+Package pdftex.def Info: figure/fire-by-location-fy22-1.pdf  used on input line 300.
 (pdftex.def)             Requested size: 345.0pt x 345.00414pt.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 161--162
+Overfull \hbox (15.0pt too wide) in paragraph at lines 300--301
 [][] 
  []
 
 
-Overfull \hbox (102.98222pt too wide) in paragraph at lines 163--163
+Overfull \hbox (102.98222pt too wide) in paragraph at lines 302--302
 [][]\OT1/cmtt/m/it/10 # Colour selection from: https://colorbrewer2.org/#type=sequential&scheme=Oranges&n=9[][] 
  []
 
 
-Overfull \hbox (11.99689pt too wide) in paragraph at lines 174--174
+Overfull \hbox (11.99689pt too wide) in paragraph at lines 313--313
 []                       []\OT1/cmtt/m/n/10 aes[][]([][]x[] []= abb_month,[] []y[] []=[] []2022[][],[] []fill[] []= count))[] []+[][] 
  []
 
 
-Overfull \hbox (3.2331pt too wide) in paragraph at lines 175--175
+Overfull \hbox (3.2331pt too wide) in paragraph at lines 314--314
 []  []\OT1/cmtt/m/n/10 geom_tile[][]([][]width[] []=[] []0.9[][],[] []height[] []=[] []1[][])[] []+[]  []\OT1/cmtt/m/it/10 # Create the heatmap tiles[][] 
  []
 
 
-Overfull \hbox (102.98222pt too wide) in paragraph at lines 176--176
+Overfull \hbox (102.98222pt too wide) in paragraph at lines 315--315
 []  []\OT1/cmtt/m/n/10 scale_fill_gradient[][]([][]low[] []=[] []"white"[][],[] []high[] []=[] []"#d94801"[][])[] []+[]  []\OT1/cmtt/m/it/10 # Customize the color scale[][] 
  []
 
 
-Overfull \hbox (137.99579pt too wide) in paragraph at lines 177--177
+Overfull \hbox (137.99579pt too wide) in paragraph at lines 316--316
 []  []\OT1/cmtt/m/n/10 labs[][]([][]title[] []=[] []"Frequency of Fire Occurrences by months in FY22"[][],[] []x[] []=[] []"Month"[][],[] []y[] []=[] []"FY22"[][])[] []+[][] 
  []
 
-[5 <./figure/fire-by-location-fy22-1.pdf>]
-<figure/fire-by-months_fy22-1.pdf, id=48, 505.89pt x 144.54pt>
+[12 <./figure/fire-by-location-fy22-1.pdf>]
+<figure/fire-by-months_fy22-1.pdf, id=95, 505.89pt x 144.54pt>
 File: figure/fire-by-months_fy22-1.pdf Graphic file (type pdf)
 <use figure/fire-by-months_fy22-1.pdf>
-Package pdftex.def Info: figure/fire-by-months_fy22-1.pdf  used on input line 184.
+Package pdftex.def Info: figure/fire-by-months_fy22-1.pdf  used on input line 323.
 (pdftex.def)             Requested size: 345.0pt x 98.5726pt.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 184--187
+Overfull \hbox (15.0pt too wide) in paragraph at lines 323--326
 [][]
  []
 
-[6 <./figure/fire-by-months_fy22-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 218--219
+[13 <./figure/fire-by-months_fy22-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 357--358
 
  []
 
-[7] [8]
-<figure/plot-chunk-1.pdf, id=65, 505.89pt x 361.35pt>
+[14] [15]
+<figure/plot-chunk-1.pdf, id=112, 505.89pt x 361.35pt>
 File: figure/plot-chunk-1.pdf Graphic file (type pdf)
 <use figure/plot-chunk-1.pdf>
-Package pdftex.def Info: figure/plot-chunk-1.pdf  used on input line 270.
+Package pdftex.def Info: figure/plot-chunk-1.pdf  used on input line 409.
 (pdftex.def)             Requested size: 345.0pt x 246.43153pt.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 270--272
+Overfull \hbox (15.0pt too wide) in paragraph at lines 409--411
 [][]
  []
 
-[9 <./figure/plot-chunk-1.pdf>]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 283.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 283.
-
-Overfull \hbox (81.95688pt too wide) in paragraph at lines 283--292
+[16 <./figure/plot-chunk-1.pdf>]
+Overfull \hbox (81.95688pt too wide) in paragraph at lines 422--431
  [][] 
  []
 
-<figure/unnamed-chunk-1-1.pdf, id=75, 505.89pt x 505.89pt>
+<figure/unnamed-chunk-1-1.pdf, id=122, 505.89pt x 505.89pt>
 File: figure/unnamed-chunk-1-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-1-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-1-1.pdf  used on input line 300.
+Package pdftex.def Info: figure/unnamed-chunk-1-1.pdf  used on input line 439.
 (pdftex.def)             Requested size: 345.0pt x 345.00414pt.
-[10]
-<figure/unnamed-chunk-2-1.pdf, id=79, 505.89pt x 505.89pt>
+[17]
+<figure/unnamed-chunk-2-1.pdf, id=126, 505.89pt x 505.89pt>
 File: figure/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-2-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-2-1.pdf  used on input line 310.
+Package pdftex.def Info: figure/unnamed-chunk-2-1.pdf  used on input line 449.
 (pdftex.def)             Requested size: 345.0pt x 345.00414pt.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 310--312
+Overfull \hbox (15.0pt too wide) in paragraph at lines 449--451
 [][]
  []
 
-[11 <./figure/unnamed-chunk-1-1.pdf>]
-<figure/unnamed-chunk-3-1.pdf, id=89, 505.89pt x 505.89pt>
+[18 <./figure/unnamed-chunk-1-1.pdf>]
+<figure/unnamed-chunk-3-1.pdf, id=136, 505.89pt x 505.89pt>
 File: figure/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-3-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-3-1.pdf  used on input line 320.
+Package pdftex.def Info: figure/unnamed-chunk-3-1.pdf  used on input line 459.
 (pdftex.def)             Requested size: 345.0pt x 345.00414pt.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 320--322
+Overfull \hbox (15.0pt too wide) in paragraph at lines 459--461
 [][]
  []
 
-[12 <./figure/unnamed-chunk-2-1.pdf>]
-Overfull \hbox (8.02293pt too wide) in paragraph at lines 327--327
+[19 <./figure/unnamed-chunk-2-1.pdf>]
+Overfull \hbox (8.02293pt too wide) in paragraph at lines 466--466
 []\OT1/cmr/bx/n/14.4 Chapter 3.6 Ge-o-graphic Maps and Spa-tial Data
  []
 
-[13 <./figure/unnamed-chunk-3-1.pdf>]
-Overfull \hbox (10.68625pt too wide) in paragraph at lines 333--333
+[20 <./figure/unnamed-chunk-3-1.pdf>]
+Overfull \hbox (10.68625pt too wide) in paragraph at lines 472--472
 []\OT1/cmr/bx/n/14.4 Chapter 3.8 Ad-vanced Vi-su-al-i-sa-tion Tech-niques 
  []
 
-[14] (./main_file.aux)
+[21] (./main_file.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-10-10>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 1672 strings out of 476463
- 28625 string characters out of 5799821
- 1931043 words of memory out of 5000000
- 23421 multiletter control sequences out of 15000+600000
+ 1708 strings out of 476464
+ 29562 string characters out of 5801127
+ 1931040 words of memory out of 5000000
+ 23456 multiletter control sequences out of 15000+600000
  560258 words of font info for 44 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 57i,8n,65p,597b,297s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main_file.pdf (14 pages, 358452 bytes).
+ 57i,8n,65p,621b,297s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </Users/zhouguanqiao/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></Users/zhouguanqiao/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></Users/zhouguanqiao/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/zhouguanqiao/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></Users/zhouguanqiao/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/zhouguanqiao/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/zhouguanqiao/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on main_file.pdf (21 pages, 398851 bytes).
 PDF statistics:
- 139 PDF objects out of 1000 (max. 8388607)
- 92 compressed objects within 1 object stream
+ 191 PDF objects out of 1000 (max. 8388607)
+ 126 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
