@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.13)  16 OCT 2023 20:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.13)  16 OCT 2023 21:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -92,312 +92,277 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Underfull \hbox (badness 10000) in paragraph at lines 58--59
-
+Overfull \hbox (1.30623pt too wide) in paragraph at lines 63--64
+\OT1/cmr/m/n/10 that pro-vide valu-able in-sights into the re-la-tion-ships and pat-terns within datasets.
  []
 
+<figure/scatter-plot-chunk-1.pdf, id=1, 505.89pt x 361.35pt>
+File: figure/scatter-plot-chunk-1.pdf Graphic file (type pdf)
+<use figure/scatter-plot-chunk-1.pdf>
+Package pdftex.def Info: figure/scatter-plot-chunk-1.pdf  used on input line 84.
+(pdftex.def)             Requested size: 345.0pt x 246.43153pt.
 
-Overfull \hbox (0.65573pt too wide) in paragraph at lines 73--74
-[]\OT1/cmr/bx/n/10 Consistency\OT1/cmr/m/n/10 : Vi-sual el-e-ments, such as colour cod-ing and la-belling, should
+Overfull \hbox (15.0pt too wide) in paragraph at lines 84--86
+[][]
  []
 
 [1
 
-{c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
-Overfull \hbox (1.445pt too wide) in paragraph at lines 119--120
-[]\OT1/cmr/m/n/10 Create smooth, con-tin-u-ous lines or paths to guide the viewer's gaze through
- []
-
-[4]
-Overfull \hbox (12.04459pt too wide) in paragraph at lines 146--146
-[]\OT1/cmr/bx/n/14.4 Chapter 2.5 Data Types and Vi-su-al-i-sa-tion Tech-
- []
-
-[5] [6]
-Overfull \hbox (5.61256pt too wide) in paragraph at lines 186--186
-[]\OT1/cmr/bx/n/12 2.6.3 Avoid-ing Mis-lead-ing Vi-su-al-i-sa-tions Due to Colour
- []
-
-
-Overfull \hbox (2.16731pt too wide) in paragraph at lines 187--188
-\OT1/cmr/m/n/10 Misleading vi-su-al-i-sa-tions can re-sult from in-ap-pro-pri-ate or de-cep-tive use of colour.
- []
-
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.196 I
-       n summary, colour theory is a critical component of data visualisatio...
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[7]
-Overfull \hbox (4.1237pt too wide) in paragraph at lines 203--204
-[]\OT1/cmr/bx/n/10 Expressiveness\OT1/cmr/m/n/10 : Vi-su-al-i-sa-tions should be ex-pres-sive, mean-ing they should
- []
-
-[8]
-Overfull \hbox (3.66528pt too wide) in paragraph at lines 224--224
-[]\OT1/cmr/bx/n/12 2.8.2 Strate-gies to Re-duce Cog-ni-tive Load While Main-
- []
-
-[9]
-Overfull \hbox (1.30623pt too wide) in paragraph at lines 253--254
-\OT1/cmr/m/n/10 that pro-vide valu-able in-sights into the re-la-tion-ships and pat-terns within datasets.
- []
-
-[10]
-<figure/scatter-plot-chunk-1.pdf, id=38, 505.89pt x 361.35pt>
-File: figure/scatter-plot-chunk-1.pdf Graphic file (type pdf)
-<use figure/scatter-plot-chunk-1.pdf>
-Package pdftex.def Info: figure/scatter-plot-chunk-1.pdf  used on input line 274.
-(pdftex.def)             Requested size: 345.0pt x 246.43153pt.
-
-Overfull \hbox (15.0pt too wide) in paragraph at lines 274--276
-[][]
- []
-
-[11 <./figure/scatter-plot-chunk-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 282--283
+{c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 92--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 286--287
+Underfull \hbox (badness 10000) in paragraph at lines 96--97
 
  []
 
-[12]
-<figure/buble-plot-chunk-1.pdf, id=55, 505.89pt x 361.35pt>
+[2 <./figure/scatter-plot-chunk-1.pdf>]
+<figure/buble-plot-chunk-1.pdf, id=24, 505.89pt x 361.35pt>
 File: figure/buble-plot-chunk-1.pdf Graphic file (type pdf)
 <use figure/buble-plot-chunk-1.pdf>
-Package pdftex.def Info: figure/buble-plot-chunk-1.pdf  used on input line 310.
+Package pdftex.def Info: figure/buble-plot-chunk-1.pdf  used on input line 120.
 (pdftex.def)             Requested size: 345.0pt x 246.43153pt.
+ [3]
+Overfull \hbox (10.3834pt too wide) in paragraph at lines 123--123
+[]\OT1/cmr/bx/n/12 Key Con-sid-er-a-tions for Scat-ter Plots and Bub-ble Charts 
+ []
+
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 324.
+(Font)              <7> on input line 134.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 324.
+(Font)              <5> on input line 134.
 
-Underfull \hbox (badness 10000) in paragraph at lines 323--326
-
- []
-
-[13 <./figure/buble-plot-chunk-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 328--329
+Underfull \hbox (badness 10000) in paragraph at lines 133--136
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 330--331
+[4 <./figure/buble-plot-chunk-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
 
  []
 
-[14]
+
+Underfull \hbox (badness 10000) in paragraph at lines 140--141
+
+ []
+
+[5]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 361.
- [15]
-<figure/my_plot1-1.pdf, id=74, 505.89pt x 505.89pt>
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 171.
+<figure/my_plot1-1.pdf, id=41, 505.89pt x 505.89pt>
 File: figure/my_plot1-1.pdf Graphic file (type pdf)
 <use figure/my_plot1-1.pdf>
-Package pdftex.def Info: figure/my_plot1-1.pdf  used on input line 369.
+Package pdftex.def Info: figure/my_plot1-1.pdf  used on input line 179.
 (pdftex.def)             Requested size: 345.0pt x 345.00414pt.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 369--371
+Overfull \hbox (15.0pt too wide) in paragraph at lines 179--181
 [][]
  []
 
-
-Overfull \hbox (29.48286pt too wide) in paragraph at lines 383--383
+[6]
+Overfull \hbox (29.48286pt too wide) in paragraph at lines 193--193
 [][]\OT1/cmtt/m/it/10 # Use the cut function to divide the data into groups of five intervals[][] 
  []
 
 
-Overfull \hbox (71.4825pt too wide) in paragraph at lines 389--389
+Overfull \hbox (71.4825pt too wide) in paragraph at lines 199--199
 [][]\OT1/cmtt/m/it/10 # Y-axis representing the number of occurrences of the X-axis label in the data[][] 
  []
 
-[16 <./figure/my_plot1-1.pdf>]
-<figure/my_plot2-1.pdf, id=83, 505.89pt x 505.89pt>
+
+Overfull \vbox (0.9708pt too high) detected at line 207
+ []
+
+[7 <./figure/my_plot1-1.pdf>]
+<figure/my_plot2-1.pdf, id=55, 505.89pt x 505.89pt>
 File: figure/my_plot2-1.pdf Graphic file (type pdf)
 <use figure/my_plot2-1.pdf>
-Package pdftex.def Info: figure/my_plot2-1.pdf  used on input line 398.
+Package pdftex.def Info: figure/my_plot2-1.pdf  used on input line 208.
 (pdftex.def)             Requested size: 345.0pt x 345.00414pt.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 398--400
+Overfull \hbox (15.0pt too wide) in paragraph at lines 208--210
 [][]
  []
 
-[17 <./figure/my_plot2-1.pdf>]
-Overfull \hbox (29.48286pt too wide) in paragraph at lines 412--412
+
+Overfull \hbox (29.48286pt too wide) in paragraph at lines 222--222
 [][]\OT1/cmtt/m/it/10 # Use the cut function to divide the data into groups of five intervals[][] 
  []
 
 
-Overfull \hbox (27.74675pt too wide) in paragraph at lines 413--413
+Overfull \hbox (27.74675pt too wide) in paragraph at lines 223--223
 [][]\OT1/cmtt/m/n/10 data[][]$[][]group[] []<-[] []cut[][](data[][]$[][]aqi,[] []breaks[] []=[] []seq[][]([][]0[][],[] []max[][](data[][]$[][]aqi)[] []+[] []5[][],[] []by[] []=[] []5[][]),[][] 
  []
 
 
-Overfull \hbox (11.99689pt too wide) in paragraph at lines 420--420
+Overfull \hbox (11.99689pt too wide) in paragraph at lines 230--230
 []  []\OT1/cmtt/m/n/10 labs[][]([][]title[] []=[] []"Bar Chart Example 1"[][],[] []x[] []=[] []"Air Quality Index/units"[][],[][] 
  []
 
-<figure/my_plot3-1.pdf, id=92, 505.89pt x 505.89pt>
+[8 <./figure/my_plot2-1.pdf>]
+<figure/my_plot3-1.pdf, id=64, 505.89pt x 505.89pt>
 File: figure/my_plot3-1.pdf Graphic file (type pdf)
 <use figure/my_plot3-1.pdf>
-Package pdftex.def Info: figure/my_plot3-1.pdf  used on input line 426.
+Package pdftex.def Info: figure/my_plot3-1.pdf  used on input line 236.
 (pdftex.def)             Requested size: 345.0pt x 345.00414pt.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 426--428
+Overfull \hbox (15.0pt too wide) in paragraph at lines 236--238
 [][]
  []
 
-[18]
-Overfull \hbox (29.48286pt too wide) in paragraph at lines 439--439
+[9]
+Overfull \hbox (29.48286pt too wide) in paragraph at lines 249--249
 [][]\OT1/cmtt/m/it/10 # Use the cut function to divide the data into groups of five intervals[][] 
  []
 
 
-Overfull \hbox (11.99689pt too wide) in paragraph at lines 447--447
+Overfull \hbox (11.99689pt too wide) in paragraph at lines 257--257
 []  []\OT1/cmtt/m/n/10 labs[][]([][]title[] []=[] []"Bar Chart Example 2"[][],[] []x[] []=[] []"Air Quality Index/units"[][],[][] 
  []
 
 
-Overfull \hbox (59.24648pt too wide) in paragraph at lines 451--451
+Overfull \hbox (59.24648pt too wide) in paragraph at lines 261--261
 []                   []\OT1/cmtt/m/n/10 (breaks_list[[][]-[][]length[][](breaks_list)],[] []"-"[][], breaks_list[[][]-[][]1[][]]))[][] 
  []
 
 
-Overfull \vbox (0.13747pt too high) detected at line 453
+Overfull \vbox (0.13747pt too high) detected at line 263
  []
 
-[19 <./figure/my_plot3-1.pdf>]
-<figure/my_plot4-1.pdf, id=105, 505.89pt x 505.89pt>
+[10 <./figure/my_plot3-1.pdf>]
+<figure/my_plot4-1.pdf, id=76, 505.89pt x 505.89pt>
 File: figure/my_plot4-1.pdf Graphic file (type pdf)
 <use figure/my_plot4-1.pdf>
-Package pdftex.def Info: figure/my_plot4-1.pdf  used on input line 454.
+Package pdftex.def Info: figure/my_plot4-1.pdf  used on input line 264.
 (pdftex.def)             Requested size: 345.0pt x 345.00414pt.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 454--456
+Overfull \hbox (15.0pt too wide) in paragraph at lines 264--266
 [][]
  []
 
 
-Overfull \hbox (69.74638pt too wide) in paragraph at lines 470--470
+Overfull \hbox (69.74638pt too wide) in paragraph at lines 280--280
 [][]\OT1/cmtt/m/n/10 fire_heatmap[] []<-[] []ggplot[][](confident_fire_fy22,[] []aes[][]([][]x[] []= longitude,[] []y[] []= latitude))[] []+[][] 
  []
 
 
-Overfull \hbox (32.9967pt too wide) in paragraph at lines 471--471
+Overfull \hbox (32.9967pt too wide) in paragraph at lines 281--281
 []  []\OT1/cmtt/m/n/10 geom_polygon[][]([][]data[] []= brazil_map,[] []aes[][]([][]x[] []= long,[] []y[] []= lat,[] []group[] []= group),[][] 
  []
 
 
-Overfull \hbox (6.74693pt too wide) in paragraph at lines 476--476
+Overfull \hbox (6.74693pt too wide) in paragraph at lines 286--286
 []  []\OT1/cmtt/m/n/10 labs[][]([][]title[] []=[] []"Frequency of Fire Occurrences by location in FY22"[][])[][] 
  []
 
-[20 <./figure/my_plot4-1.pdf>]
-<figure/fire-by-location-fy22-1.pdf, id=114, 505.89pt x 505.89pt>
+[11 <./figure/my_plot4-1.pdf>]
+<figure/fire-by-location-fy22-1.pdf, id=85, 505.89pt x 505.89pt>
 File: figure/fire-by-location-fy22-1.pdf Graphic file (type pdf)
 <use figure/fire-by-location-fy22-1.pdf>
-Package pdftex.def Info: figure/fire-by-location-fy22-1.pdf  used on input line 481.
+Package pdftex.def Info: figure/fire-by-location-fy22-1.pdf  used on input line 291.
 (pdftex.def)             Requested size: 345.0pt x 345.00414pt.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 481--482
+Overfull \hbox (15.0pt too wide) in paragraph at lines 291--292
 [][] 
  []
 
 
-Overfull \hbox (102.98222pt too wide) in paragraph at lines 483--483
+Overfull \hbox (102.98222pt too wide) in paragraph at lines 293--293
 [][]\OT1/cmtt/m/it/10 # Colour selection from: https://colorbrewer2.org/#type=sequential&scheme=Oranges&n=9[][] 
  []
 
 
-Overfull \hbox (11.99689pt too wide) in paragraph at lines 494--494
+Overfull \hbox (11.99689pt too wide) in paragraph at lines 304--304
 []                       []\OT1/cmtt/m/n/10 aes[][]([][]x[] []= abb_month,[] []y[] []=[] []2022[][],[] []fill[] []= count))[] []+[][] 
  []
 
 
-Overfull \hbox (3.2331pt too wide) in paragraph at lines 495--495
+Overfull \hbox (3.2331pt too wide) in paragraph at lines 305--305
 []  []\OT1/cmtt/m/n/10 geom_tile[][]([][]width[] []=[] []0.9[][],[] []height[] []=[] []1[][])[] []+[]  []\OT1/cmtt/m/it/10 # Create the heatmap tiles[][] 
  []
 
 
-Overfull \hbox (102.98222pt too wide) in paragraph at lines 496--496
+Overfull \hbox (102.98222pt too wide) in paragraph at lines 306--306
 []  []\OT1/cmtt/m/n/10 scale_fill_gradient[][]([][]low[] []=[] []"white"[][],[] []high[] []=[] []"#d94801"[][])[] []+[]  []\OT1/cmtt/m/it/10 # Customize the color scale[][] 
  []
 
 
-Overfull \hbox (137.99579pt too wide) in paragraph at lines 497--497
+Overfull \hbox (137.99579pt too wide) in paragraph at lines 307--307
 []  []\OT1/cmtt/m/n/10 labs[][]([][]title[] []=[] []"Frequency of Fire Occurrences by months in FY22"[][],[] []x[] []=[] []"Month"[][],[] []y[] []=[] []"FY22"[][])[] []+[][] 
  []
 
-[21 <./figure/fire-by-location-fy22-1.pdf>]
-<figure/fire-by-months_fy22-1.pdf, id=124, 505.89pt x 144.54pt>
+[12 <./figure/fire-by-location-fy22-1.pdf>]
+<figure/fire-by-months_fy22-1.pdf, id=95, 505.89pt x 144.54pt>
 File: figure/fire-by-months_fy22-1.pdf Graphic file (type pdf)
 <use figure/fire-by-months_fy22-1.pdf>
-Package pdftex.def Info: figure/fire-by-months_fy22-1.pdf  used on input line 504.
+Package pdftex.def Info: figure/fire-by-months_fy22-1.pdf  used on input line 314.
 (pdftex.def)             Requested size: 345.0pt x 98.5726pt.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 504--507
+Overfull \hbox (15.0pt too wide) in paragraph at lines 314--317
 [][]
  []
 
-[22 <./figure/fire-by-months_fy22-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 538--539
+[13 <./figure/fire-by-months_fy22-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 348--349
 
  []
 
-[23] [24]
-<figure/plot-chunk-1.pdf, id=140, 505.89pt x 361.35pt>
+[14] [15]
+<figure/plot-chunk-1.pdf, id=112, 505.89pt x 361.35pt>
 File: figure/plot-chunk-1.pdf Graphic file (type pdf)
 <use figure/plot-chunk-1.pdf>
-Package pdftex.def Info: figure/plot-chunk-1.pdf  used on input line 590.
+Package pdftex.def Info: figure/plot-chunk-1.pdf  used on input line 400.
 (pdftex.def)             Requested size: 345.0pt x 246.43153pt.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 590--592
+Overfull \hbox (15.0pt too wide) in paragraph at lines 400--402
 [][]
  []
 
-[25 <./figure/plot-chunk-1.pdf>]
-Overfull \hbox (81.95688pt too wide) in paragraph at lines 603--612
+[16 <./figure/plot-chunk-1.pdf>]
+Overfull \hbox (81.95688pt too wide) in paragraph at lines 413--422
  [][] 
  []
 
-<figure/unnamed-chunk-1-1.pdf, id=151, 505.89pt x 505.89pt>
+<figure/unnamed-chunk-1-1.pdf, id=122, 505.89pt x 505.89pt>
 File: figure/unnamed-chunk-1-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-1-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-1-1.pdf  used on input line 620.
+Package pdftex.def Info: figure/unnamed-chunk-1-1.pdf  used on input line 430.
 (pdftex.def)             Requested size: 345.0pt x 345.00414pt.
-[26]
-<figure/unnamed-chunk-2-1.pdf, id=155, 505.89pt x 505.89pt>
+[17]
+<figure/unnamed-chunk-2-1.pdf, id=126, 505.89pt x 505.89pt>
 File: figure/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-2-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-2-1.pdf  used on input line 630.
+Package pdftex.def Info: figure/unnamed-chunk-2-1.pdf  used on input line 440.
 (pdftex.def)             Requested size: 345.0pt x 345.00414pt.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 630--632
+Overfull \hbox (15.0pt too wide) in paragraph at lines 440--442
 [][]
  []
 
-[27 <./figure/unnamed-chunk-1-1.pdf>]
-<figure/unnamed-chunk-3-1.pdf, id=165, 505.89pt x 505.89pt>
+[18 <./figure/unnamed-chunk-1-1.pdf>]
+<figure/unnamed-chunk-3-1.pdf, id=136, 505.89pt x 505.89pt>
 File: figure/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-3-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-3-1.pdf  used on input line 640.
+Package pdftex.def Info: figure/unnamed-chunk-3-1.pdf  used on input line 450.
 (pdftex.def)             Requested size: 345.0pt x 345.00414pt.
 
-Overfull \hbox (15.0pt too wide) in paragraph at lines 640--642
+Overfull \hbox (15.0pt too wide) in paragraph at lines 450--452
 [][]
  []
 
-[28 <./figure/unnamed-chunk-2-1.pdf>] [29 <./figure/unnamed-chunk-3-1.pdf>] [30] (./main_file.aux)
+[19 <./figure/unnamed-chunk-2-1.pdf>]
+Overfull \hbox (8.02293pt too wide) in paragraph at lines 457--457
+[]\OT1/cmr/bx/n/14.4 Chapter 3.6 Ge-o-graphic Maps and Spa-tial Data
+ []
+
+[20 <./figure/unnamed-chunk-3-1.pdf>]
+Overfull \hbox (10.68625pt too wide) in paragraph at lines 463--463
+[]\OT1/cmr/bx/n/14.4 Chapter 3.8 Ad-vanced Vi-su-al-i-sa-tion Tech-niques 
+ []
+
+[21] (./main_file.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-10-10>
@@ -412,10 +377,10 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  57i,8n,65p,615b,297s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main_file.pdf (30 pages, 420229 bytes).
+Output written on main_file.pdf (21 pages, 398882 bytes).
 PDF statistics:
- 219 PDF objects out of 1000 (max. 8388607)
- 145 compressed objects within 2 object streams
+ 191 PDF objects out of 1000 (max. 8388607)
+ 126 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
