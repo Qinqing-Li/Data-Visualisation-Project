@@ -2,9 +2,6 @@
 
 \begin{document}
 
-
-\section{3.4 Heatmap}
-
 <<setup, echo=FALSE,message=FALSE,warning=FALSE>>=
 library(maps)
 library(ggplot2)
@@ -13,7 +10,110 @@ library(tidyverse)
 library(lubridate)
 library(readxl)
 library(forecast)
+# Load the mtcars dataset
+data(mtcars)
 @
+
+\section{Chapter 3. Modern Methods of Data Visualisation}
+
+\section{Chapter 3.1 Introduction to Modern Data Visualization Methods}
+xxx
+
+\section{Chapter 3.1 Scatter Plots and Bubble Charts}
+Scatter plots and bubble charts are fundamental data visualization techniques that provide valuable insights into the relationships and patterns within datasets. These visualizations are particularly effective for representing data points, making comparisons, and revealing trends. Below, we delve into the characteristics, use cases, and advantages of scatter plots and bubble charts.
+
+\subsection{Scatter Plots}
+A scatter plot is a simple yet powerful visualization that displays individual data points as dots on a two-dimensional plane. Each point represents a unique data entry, with one variable on the horizontal (x-axis) and another on the vertical (y-axis). Scatter plots are versatile and can accommodate various data types, including nominal, ordinal, interval, and ratio.
+
+\subsubsection{Advantages}
+\begin{itemize}
+    \item Easy identification of patterns and trends. 
+    \item Effective for outlier detection. 
+    \item Suitable for both bi-variate and multi-variate analysis.
+    \item Offers a visual representation of the distribution of data points.
+\end{itemize}
+
+\subsection{Scatter Plots in Practice:}
+In this example, we'll create a scatter plot that visualizes the relationship between two variables while adding colors, labels, and a trend line for added interest. We'll use the built-in "mtcars" R dataset, which contains information about various car models.
+
+<<scatter-plot-chunk, echo=FALSE, fig.height=5, fig.width=7>>=
+# Create a scatter plot with enhanced features
+library(ggplot2)
+ggplot(data = mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
+  geom_point(size = 4, alpha = 0.7) +  # Larger points with transparency
+  geom_smooth(method = "lm", se = FALSE, color = "red", linewidth = 1) +  # Linear regression trend line
+  labs(
+    title = "Scatter Plot of Car Weight vs. MPG",
+    x = "Weight (1000 lbs)",
+    y = "Miles per Gallon",
+    color = "Cylinders"
+  ) +
+  scale_color_manual(values = c("4" = "grey", "6" = "purple", "8" = "blue")) +  # Custom color palette
+  theme_minimal()  # Minimalistic theme
+@
+
+\subsubsection{Analysis}: TO BE REVISED
+The scatter plot displays the relationship between car weight (in thousands of pounds, "wt") and fuel efficiency (miles per gallon, "mpg") for different car models from the "mtcars" dataset. Here are the key characteristics of the plot:
+\begin{itemize}
+    \item Color-Coded Cylinders: The points are color-coded based on the number of cylinders in the engine (4, 6, and 8 cylinders). This allows for a quick visual differentiation of car types, enhancing the understanding of the data.
+    \item Point Size and Transparency: Points are larger in size and have some degree of transparency (alpha) for visual appeal. Larger, more prominent points are easier to see, while transparency helps in the visualization of overlapping points.
+    \item Linear Regression Line: A blue linear regression trend line is included. It provides a visual representation of the overall relationship between car weight and fuel efficiency, indicating a negative correlation—cars tend to have lower fuel efficiency as their weight increases.\\
+\end{itemize}
+    
+\subsection{Why a Scatter Plot is Appropriate}:
+
+A scatter plot is an appropriate choice for this dataset and analysis for the following reasons:\\
+
+1. Relationship Visualization: A scatter plot is well-suited for showing the relationship between two continuous variables, such as car weight and fuel efficiency. It allows us to visually assess the pattern and direction of the relationship.
+
+1. Regression Line: The inclusion of a regression line provides a clear summary of the overall trend, highlighting the negative correlation between car weight and fuel efficiency.
+EXPLAIN REGRESSION
+
+
+\subsection{Bubble Charts}
+A bubble chart is an extension of the scatter plot, where each data point is represented as a bubble or circle. In addition to the x and y axes, bubble charts introduce a third variable that is encoded by the size of the bubbles. This third variable allows for the simultaneous visualization of three data attributes.
+
+\subsubsection{Use Cases:}
+Bubble charts are particularly useful when you need to visualize the relationship between three variables. For example, in finance, a bubble chart can display the market capitalization, price-to-earnings ratio, and stock returns for different companies simultaneously. In public health, it can represent the population, vaccination coverage, and disease incidence for various regions.
+
+\subsubsection{Advantages}
+\begin{itemize}
+    \item Visualising three data attributes in a single chart.
+    \item Easily conveying the magnitude of the third variable through bubble size. 
+    \item Effective for exploring complex relationships and identifying patterns. 
+\end{itemize}
+
+\subsection{Bubble Charts in Practice}
+<<buble-plot-chunk, echo=FALSE, fig.height=5, fig.width=7>>=
+ggplot(mtcars, aes(x = rownames(mtcars), y = mpg, size = hp, color = cyl)) +
+  geom_point() +
+  labs(
+    title = "Bubble Chart of Car Models vs. MPG",
+    x = "Car Models",
+    y = "Miles per Gallon",
+    size = "Horsepower (hp)",
+    color = "Cylinders (cyl)"
+  ) +
+  scale_size_continuous(range = c(3, 10)) +
+  scale_color_gradient(low = "lightblue", high = "darkblue") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust =1))
+@
+
+
+\subsection{Key Considerations for Scatter Plots and Bubble Charts}
+    \begin{enumerate}
+        \item \textbf{Scaling}: Consider the scaling of the axes and bubble sizes to prevent distortion of the data representation.
+        \item \textbf{Labeling}: Use clear labels, titles, and colour coding to make the visualisation more interpretable and meaning by decreasing the cognitive load. 
+        \item \textbf{Interactivity}: Implement interactive features, such as tooltips or zooming, to allow users to explore individual data points in detail.
+    \end{enumerate}
+
+
+\section{Bar Charts and Histograms}
+xxx
+
+\section{Chapter 3.4 Heatmaps and Tree Maps}
+
 
 <<load-data, echo=FALSE,message=FALSE,warning=FALSE>>=
 # Data from NASA: https://firms.modaps.eosdis.nasa.gov/
@@ -104,8 +204,6 @@ heatmap_plot <- ggplot(confident_fire_months_fy22,
 print(heatmap_plot)
 @
 From the table, we can clearly see that August and September are the riskiest months in terms of fire hazard, whereas November to July hardly pose any risk at all. It's natural to ask the follow-up question: How does FY22 compare to previous years? Is it valid to claim that August and September are the fire hazard season?
-
-
 
 
 \section*{Chapter 3.5 Line Charts and Time Series Visualization}
@@ -293,7 +391,17 @@ legend("topright", legend=c("CNYtoGBP", "EURtoGBP"),
 @
 
 
+\section{Chapter 3.5 Network Graphs and Sankey Diagrams}
+xxx
 
+\section{Chapter 3.6 Geographic Maps and Spatial Data Visualisation}
+xxx
+
+\section{Chapter 3.7 3D and Interactive Visualisations}
+xxx
+
+\section{Chapter 3.8 Advanced Visualisation Techniques}
+xxx
 
 
 \end{document}
