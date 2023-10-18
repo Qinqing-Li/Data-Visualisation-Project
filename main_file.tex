@@ -57,12 +57,12 @@
 \section{Chapter 3. Modern Methods of Data Visualisation}
 
 \section{Chapter 3.1 Introduction to Modern Data Visualization Methods}
-xxx
+As data grows increasingly complex and vast, the tools and techniques for effectively conveying this information continue to expand and refine. This chapter tackles the modern data visualization methods, offering a comprehensive exploration of various visualization techniques, along with tangible examples accompanied by their underlying code.
 
 \section{Chapter 3.2 Scatter Plots and Bubble Charts}
-Scatter plots and bubble charts are fundamental data visualization techniques that provide valuable insights into the relationships and patterns within datasets. These visualizations are particularly effective for representing data points, making comparisons, and revealing trends. Below, we delve into the characteristics, use cases, and advantages of scatter plots and bubble charts.
+Scatter plots and bubble charts are fundamental data visualization techniques that provide valuable insights into the relationships and patterns within datasets. These visualizations are particularly effective for representing data points, making comparisons, and revealing trends. Below, we delve into the characteristics, peculiarities, and advantages of scatter plots and bubble charts.
 
-\subsection{Scatter Plots}
+\subsection{3.2.1 Scatter Plots}
 A scatter plot is a simple yet powerful visualization that displays individual data points as dots on a two-dimensional plane. Each point represents a unique data entry, with one variable on the horizontal (x-axis) and another on the vertical (y-axis). Scatter plots are versatile and can accommodate various data types, including nominal, ordinal, interval, and ratio.
 
 \subsubsection{Advantages}
@@ -74,7 +74,7 @@ A scatter plot is a simple yet powerful visualization that displays individual d
 \end{itemize}
 
 \subsection{Scatter Plots in Practice}
-In this example, we'll create a scatter plot that visualizes the relationship between two variables while adding colors, labels, and a trend line for added interest. We'll use the built-in "mtcars" R dataset, which contains information about various car models.
+In this example, we'll create a scatter plot that visualizes the relationship between two variables - the weight of cars and the amount of miles traveled per gallon of petrol.We'll use the "mtcars" R dataset, which contains information about various car models.
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -84,41 +84,47 @@ In this example, we'll create a scatter plot that visualizes the relationship be
 \includegraphics[width=\maxwidth]{figure/scatter-plot-chunk-1} 
 \end{knitrout}
 
-\subsubsection{Analysis} TO BE REVISED
-The scatter plot displays the relationship between car weight (in thousands of pounds, "wt") and fuel efficiency (miles per gallon, "mpg") for different car models from the "mtcars" dataset. Here are the key characteristics of the plot:
+\subsection{Analysis}
+The scatter plot displays the relationship between car weight (in thousands of pounds, "wt") and fuel efficiency (miles per gallon, "mpg") for different car models. While this graph plots two variable, through the use of colour, additional lines, and other subtle details, we can make of this basic graph, a more readable and visually interesting figure which the reader can get easily gather information from. Here are the key characteristics of the plot:
 \begin{itemize}
     \item Color-Coded Cylinders: The points are color-coded based on the number of cylinders in the engine (4, 6, and 8 cylinders). This allows for a quick visual differentiation of car types, enhancing the understanding of the data.
-    \item Point Size and Transparency: Points are larger in size and have some degree of transparency (alpha) for visual appeal. Larger, more prominent points are easier to see, while transparency helps in the visualization of overlapping points.
+    \item Point Size and Transparency: Points have been enlarged and have a subtle degree of transparency for visual appeal. Larger, more prominent points are easier to see, while transparency helps in the visualization of overlapping points.
     \item Linear Regression Line: A blue linear regression trend line is included. It provides a visual representation of the overall relationship between car weight and fuel efficiency, indicating a negative correlation—cars tend to have lower fuel efficiency as their weight increases.\\
 \end{itemize}
-    
-\subsection{Why a Scatter Plot is Appropriate}
-A scatter plot is an appropriate choice for this dataset and analysis for the following reasons:\\
 
-1. Relationship Visualization: A scatter plot is well-suited for showing the relationship between two continuous variables, such as car weight and fuel efficiency. It allows us to visually assess the pattern and direction of the relationship.
-
-2. Regression Line: The inclusion of a regression line provides a clear summary of the overall trend, highlighting the negative correlation between car weight and fuel efficiency.
-EXPLAIN REGRESSION
+\subsection{Regression and the Regression Line}
+\textbf{Regression} is a statistical technique used to model and understand the relationship between two or more variables. It is a fundamental tool in data analysis and predictive modeling. In simple linear regression, a linear equation is used to describe the relationship between a dependent variable (the one you want to predict) and one or more independent variables (the predictors). The equation takes the form of \(Y = aX + b\), where \(Y\) is the dependent variable, \(X\) is the independent variable, \(a\) is the slope, and \(b\) is the intercept. Regression analysis calculates the best-fit line that minimizes the sum of squared differences between the predicted and actual values. This line provides valuable insights into the strength and direction of the relationship between variables, allowing us to make predictions and understand how changes in one variable affect another. Adding regression lines to scatter plots can enhance their value by providing a clearer depiction of trends and enabling more accurate predictions, turning the plot into a predictive tool rather than just a visual representation of data points.
 
 
-\subsection{Bubble Charts}
-A bubble chart is an extension of the scatter plot, where each data point is represented as a bubble or circle. In addition to the x and y axes, bubble charts introduce a third variable that is encoded by the size of the bubbles. This third variable allows for the simultaneous visualization of three data attributes.
+\subsection{3.2.2 Bubble Charts}
+A bubble chart is an extension of the scatter plot, where each data point is represented as a "bubble" or circle. In addition to the x and y axes, bubble charts introduce a third variable that is encoded by the size of the bubbles. This third variable allows for the simultaneous visualization of three data attributes.
 
 \subsection{Use Cases}
-Bubble charts are particularly useful when you need to visualize the relationship between three variables. For example, in finance, a bubble chart can display the market capitalization, price-to-earnings ratio, and stock returns for different companies simultaneously. In public health, it can represent the population, vaccination coverage, and disease incidence for various regions.
+Bubble charts are particularly useful when you need to visualize the relationship between three variables. For example, in finance, a bubble chart can display the market capitalization, price-to-earnings ratio, and stock returns for different companies simultaneously. In public health, it can represent the population, vaccination coverage, and disease incidence for various regions. ~ COULD INSERT REAL WORLD EXAMPLES ~
 
 \subsubsection{Advantages}
 \begin{itemize}
     \item Visualising three data attributes in a single chart.
-    \item Easily conveying the magnitude of the third variable through bubble size.
     \item Effective for exploring complex relationships and identifying patterns. 
 \end{itemize}
 
 \subsection{Bubble Charts in Practice}
+ This bubble plot visualizes data from the same dataset as above. The purpose of this plot is to depict the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and color-coding the bubbles based on the number of cylinders (cyl).
+
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 \includegraphics[width=\maxwidth]{figure/buble-plot-chunk-1} 
 \end{knitrout}
+
+\section{Analysis}
+The plot's title, axis labels, and legends provide context and clarity to the visualization, making it accessible and informative. Additionally, the choice of a gradient color scale for the number of cylinders enhances the visual appeal and aids in interpreting the data.This bubble plot allows for quick comparisons between multiple characteristics of different car models.The resulting bubble plot effectively conveys several key insights:
+\begin{enumerate}
+\item \textbf{Car Model vs. MPG}: The x-axis displays the car models, offering a clear representation of each vehicle in the dataset. The bubble plot is particularly useful for displaying nominal data, such as car model names, as it allows easy identification and comparison.
+\item \textbf{Miles per Gallon (MPG)}: The y-axis measures miles per gallon, representing the fuel efficiency of each car model. Higher bubbles indicate better fuel efficiency. This variable, which is continuous, is positioned vertically to demonstrate how each car model's fuel efficiency relates to others.
+\item \textbf{Horsepower (HP)}: The size of each bubble represents the car's horsepower (hp). Larger bubbles correspond to higher horsepower, providing an additional dimension to the data. The size encoding helps identify more powerful cars.
+\item \textbf{Cylinders (Cyl)}: The color of each bubble is determined by the number of cylinders (cyl) in the car's engine. The color scheme adds a categorical aspect to the visualization, making it easy to differentiate between cars with different cylinder counts.
+\end{enumerate}
+
 
 \subsection{Key Considerations for Scatter Plots and Bubble Charts}
     \begin{enumerate}
@@ -265,6 +271,13 @@ Finally, we add lables to the X-axis to define the range of each categories.
 \end{knitrout}
 
 \section{Chapter 3.4 Heatmaps and Tree Maps}
+In this chapter, we explore two powerful data visualisation techniques: heatmaps and treemaps. These methods are instrumental for conveying intricate data structures and patterns, offering unique ways to represent multivariate information, making them indispensable tools for data scientists.\\
+In this chapter, we will delve into the theory behind heatmaps and treemaps, understand how to create them using popular data visualization libraries, and demonstrate their practical applications with real-world examples. By the end of this chapter, you will be well-equipped to leverage heatmaps and treemaps to gain insights from complex and hierarchical datasets.
+
+\subsection{3.4.1 Heatmaps}
+Heatmaps are a versatile visualisation method, particularly effective at displaying matrix-like data. They excel in uncovering patterns, relationships, or variations within large datasets. Heatmaps present data as a grid of colored cells, where the color intensity of each cell represents the magnitude of the data it represents. This visual representation provides an immediate grasp of complex datasets.
+
+\subsection{Heatmaps put to use}
 
 
 
@@ -314,6 +327,19 @@ Finally, we add lables to the X-axis to define the range of each categories.
 \includegraphics[width=\maxwidth]{figure/fire-by-months_fy22-1} 
 \end{knitrout}
 From the table, we can clearly see that August and September are the riskiest months in terms of fire hazard, whereas November to July hardly pose any risk at all. It's natural to ask the follow-up question: How does FY22 compare to previous years? Is it valid to claim that August and September are the fire hazard season?
+%missing detailed analysis of visualisation created 
+
+\subsection{3.4.2 Treemaps}
+Treemaps are a visualisation method specifically designed for hierarchical data structures. They represent data as nested rectangles, where each rectangle represents a part of the whole. Treemaps offer a visually appealing and efficient way to convey the hierarchical composition of data. The size and color of each rectangle can be used to encode additional information.
+
+\subsubsection{Use Cases for Treemaps}
+Treemaps are highly effective when dealing with hierarchical data. Some common use cases include:
+\begin{itemize}
+\item \textbf{Disk Space Visualization}: Treemaps can be employed to visualize disk space usage, where the outermost rectangle represents the entire disk, and inner rectangles represent folders and files. The size of each rectangle reflects the space they occupy.
+\item \textbf{Market Share Analysis}: In business, treemaps are useful for visualizing market share data. The top-level rectangle represents the total market, and inner rectangles represent individual segments, brands, or products. The size and color of each segment can represent its share and performance.
+\end{itemize}
+
+XXX %missing Treemaps
 
 
 \section*{Chapter 3.5 Line Charts and Time Series Visualization}
