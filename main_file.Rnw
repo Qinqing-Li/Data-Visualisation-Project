@@ -1,4 +1,7 @@
 \documentclass{article}
+\usepackage{hyperref}
+\usepackage{blindtext}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
 
 \begin{document}
 
@@ -232,17 +235,21 @@ ggplot(data, aes(x = group)) +
 @
 
 \section{Chapter 3.4 Heatmaps and Tree Maps}
-In this chapter, we explore two powerful data visualisation techniques: heatmaps and treemaps. These methods are instrumental for conveying intricate data structures and patterns, offering unique ways to represent multivariate information, making them indispensable tools for data scientists.\\
-In this chapter, we will delve into the theory behind heatmaps and treemaps, understand how to create them using popular data visualization libraries, and demonstrate their practical applications with real-world examples. By the end of this chapter, you will be well-equipped to leverage heatmaps and treemaps to gain insights from complex and hierarchical datasets.
+\\  
+\\In this chapter, we explore two powerful data visualisation techniques: heatmaps and treemaps. These methods are instrumental for conveying intricate data structures and patterns, offering unique ways to represent multivariate information, making them indispensable tools for data scientists.
+\\  
+\\We will delve into the theory behind heatmaps and treemaps, understand how to create them using popular data visualization libraries, and demonstrate their practical applications with real-world examples. By the end of this chapter, you will be well-equipped to leverage heatmaps and treemaps to gain insights from complex and hierarchical datasets.
 
-\subsection{3.4.1 Heatmaps}
-Heatmaps are a versatile visualisation method, particularly effective at displaying matrix-like data. They excel in uncovering patterns, relationships, or variations within large datasets. Heatmaps present data as a grid of colored cells, where the color intensity of each cell represents the magnitude of the data it represents. This visual representation provides an immediate grasp of complex datasets.
-
-\subsection{Heatmaps put to use}
+\subsection{3.4.1 Heatmaps - Fire in Brazil}
+\\  
+\\The heatmap is a data visualisation technique that uses color coding to represent different intensity.
+\\  
+\\In this illustrative example, heatmaps is used to visualize fire occurrences in Brazil. These heatmaps offer a spatially coherent representation, highlighting regions at high risk and seasonal patterns. Here, the heatmap is a power tool for identifying the risk of fire incidents. The data-driven insights empowers us to make informed decisions concerning preventive measures and strategies for firefighting.
+\\  
+\\All data obtain from \href{https://firms.modaps.eosdis.nasa.gov/}{NASA}. Each dataset from 2013 to 2022 contains more than 200,000 observations. Across the decade, there are over 3 million observations. The trend is impossible to analyze by eye. However, an exploratory analysis using heatmaps provides insights into this data.
 
 <<load-data, echo=FALSE,message=FALSE,warning=FALSE>>=
 # Data from NASA: https://firms.modaps.eosdis.nasa.gov/
-# Brazil is one of the largest agriculture producers in the world. I aim to investigate its fire occurrences and whether they have any significant impact on agriculture production.
 
 brazil_fire_fy13 <- readr::read_csv('https://firms.modaps.eosdis.nasa.gov/data/country/modis/2013/modis_2013_Brazil.csv')
 brazil_fire_fy14 <- readr::read_csv('https://firms.modaps.eosdis.nasa.gov/data/country/modis/2014/modis_2014_Brazil.csv')
@@ -297,8 +304,10 @@ fire_heatmap <- ggplot(confident_fire_fy22, aes(x = longitude, y = latitude)) +
 
 print(fire_heatmap)
 
-# Colour selection from: https://colorbrewer2.org/#type=sequential&scheme=Oranges&n=9
 @
+\\From the heatmap, we can observe that certain locations have significantly higher fires count. However, we do not know the cause of this. Is this due to geographical location, or is it because fires were mostly man-made and used to clear forest areas for agriculture use?
+\\  
+\\Colour selection from \href{https://colorbrewer2.org/#type=sequential&scheme=Oranges&n=9}{colorbrewer2}.
 
 <<pivot-data-by-month, echo=FALSE,message=FALSE,warning=FALSE>>=
 # Create a pivot table, no. of fire occurrences vs. Months (Jan-Dec), in FY22.
@@ -317,19 +326,47 @@ custom_order <- c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep",
 confident_fire_months_fy22$abb_month <- factor(confident_fire_months_fy22$abb_month, levels = custom_order)
 @
 
-<<fire-by-months fy22,fig.height=2>>=
+<<fire-by-months fy22,fig.height=1.5>>=
 heatmap_plot <- ggplot(confident_fire_months_fy22, 
-                       aes(x = abb_month, y = 2022, fill = count)) +
+                       aes(x = abb_month, y = as.character(2022), fill = count)) +
   geom_tile(width = 0.9, height = 1) +  # Create the heatmap tiles
-  scale_fill_gradient(low = "white", high = "#d94801") +  # Customize the color scale
-  labs(title = "Frequency of Fire Occurrences by months in FY22", x = "Month", y = "FY22") +
+  scale_fill_gradient(low = "white", high = "#d94801") +
+  labs(title = "Frequency of Fire Occurrences by months in FY22", 
+       x = "Month", y = "FY22") +
   theme(panel.grid = element_blank() )
 
-# Display the heatmap
 print(heatmap_plot)
 @
 From the table, we can clearly see that August and September are the riskiest months in terms of fire hazard, whereas November to July hardly pose any risk at all. It's natural to ask the follow-up question: How does FY22 compare to previous years? Is it valid to claim that August and September are the fire hazard season?
-%missing detailed analysis of visualisation created 
+
+<<pivot-table-fy13-22, echo=FALSE,message=FALSE,warning=FALSE>>=
+# Combine all the confident fire datasets into a single dataset
+combined_confident_fire <- bind_rows(confident_fire_decade)
+
+# Create a pivot table for fy13-22
+pivot_table <- combined_confident_fire %>%
+  mutate(acq_date = as.Date(acq_date, format = "%Y-%m-%d"),
+         month_year = format(acq_date, "%b %Y")) %>%
+  group_by(month_year) %>%
+  summarize(count = n())
+
+# Add column "abb_month" and "year" to the dataset "pivot_table"
+pivot_table <- pivot_table %>%
+  mutate(abb_month = gsub(".*?([A-Za-z]{3}).*", "\\1", month_year)) %>%
+  mutate(abb_month = factor(abb_month, levels = custom_order)) %>%
+  mutate(year = as.numeric(substring(month_year, nchar(month_year) - 3, nchar(month_year))))
+@
+
+<<fire-by-months fy13-22,fig.height=5>>=
+heatmap_plot <- ggplot(pivot_table, aes(x = factor(abb_month, levels = custom_order), 
+                                        y = as.character(year), fill = count)) +
+    geom_tile() +
+    scale_fill_gradient(low = "white", high = "#d94801") +
+    labs(title = "Frequency of Fire Occurrences, FY13-22",x = "Month", y = "FY13-22")
+
+print(heatmap_plot)
+@
+Indeed, the data showed a trend indicating that August to October have more fire occurrences compared to the rest of the year. There are clearly more fire hazards in those months.
 
 \subsection{3.4.2 Treemaps}
 Treemaps are a visualisation method specifically designed for hierarchical data structures. They represent data as nested rectangles, where each rectangle represents a part of the whole. Treemaps offer a visually appealing and efficient way to convey the hierarchical composition of data. The size and color of each rectangle can be used to encode additional information.

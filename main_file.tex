@@ -49,10 +49,18 @@
 \newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
 
 \usepackage{alltt}
+\usepackage{hyperref}
+\usepackage{blindtext}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in library(forecast): there is no package called 'forecast'}}\end{kframe}
+\end{knitrout}
 
 \section{Chapter 3. Modern Methods of Data Visualisation}
 
@@ -271,13 +279,18 @@ Finally, we add lables to the X-axis to define the range of each categories.
 \end{knitrout}
 
 \section{Chapter 3.4 Heatmaps and Tree Maps}
-In this chapter, we explore two powerful data visualisation techniques: heatmaps and treemaps. These methods are instrumental for conveying intricate data structures and patterns, offering unique ways to represent multivariate information, making them indispensable tools for data scientists.\\
-In this chapter, we will delve into the theory behind heatmaps and treemaps, understand how to create them using popular data visualization libraries, and demonstrate their practical applications with real-world examples. By the end of this chapter, you will be well-equipped to leverage heatmaps and treemaps to gain insights from complex and hierarchical datasets.
+\\  
+\\In this chapter, we explore two powerful data visualisation techniques: heatmaps and treemaps. These methods are instrumental for conveying intricate data structures and patterns, offering unique ways to represent multivariate information, making them indispensable tools for data scientists.
+\\  
+\\We will delve into the theory behind heatmaps and treemaps, understand how to create them using popular data visualization libraries, and demonstrate their practical applications with real-world examples. By the end of this chapter, you will be well-equipped to leverage heatmaps and treemaps to gain insights from complex and hierarchical datasets.
 
-\subsection{3.4.1 Heatmaps}
-Heatmaps are a versatile visualisation method, particularly effective at displaying matrix-like data. They excel in uncovering patterns, relationships, or variations within large datasets. Heatmaps present data as a grid of colored cells, where the color intensity of each cell represents the magnitude of the data it represents. This visual representation provides an immediate grasp of complex datasets.
-
-\subsection{Heatmaps put to use}
+\subsection{3.4.1 Heatmaps - Fire in Brazil}
+\\  
+\\The heatmap is a data visualisation technique that uses color coding to represent different intensity.
+\\  
+\\In this illustrative example, heatmaps is used to visualize fire occurrences in Brazil. These heatmaps offer a spatially coherent representation, highlighting regions at high risk and seasonal patterns. Here, the heatmap is a power tool for identifying the risk of fire incidents. The data-driven insights empowers us to make informed decisions concerning preventive measures and strategies for firefighting.
+\\  
+\\All data obtain from \href{https://firms.modaps.eosdis.nasa.gov/}{NASA}. Each dataset from 2013 to 2022 contains more than 200,000 observations. Across the decade, there are over 3 million observations. The trend is impossible to analyze by eye. However, an exploratory analysis using heatmaps provides insights into this data.
 
 
 
@@ -302,11 +315,10 @@ Heatmaps are a versatile visualisation method, particularly effective at display
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/fire-by-location-fy22-1} 
-\begin{kframe}\begin{alltt}
-\hlcom{# Colour selection from: https://colorbrewer2.org/#type=sequential&scheme=Oranges&n=9}
-\end{alltt}
-\end{kframe}
 \end{knitrout}
+\\From the heatmap, we can observe that certain locations have significantly higher fires count. However, we do not know the cause of this. Is this due to geographical location, or is it because fires were mostly man-made and used to clear forest areas for agriculture use?
+\\  
+\\Colour selection from \href{https://colorbrewer2.org/#type=sequential&scheme=Oranges&n=9}{colorbrewer2}.
 
 
 
@@ -314,20 +326,37 @@ Heatmaps are a versatile visualisation method, particularly effective at display
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlstd{heatmap_plot} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(confident_fire_months_fy22,}
-                       \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= abb_month,} \hlkwc{y} \hlstd{=} \hlnum{2022}\hlstd{,} \hlkwc{fill} \hlstd{= count))} \hlopt{+}
+                       \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= abb_month,} \hlkwc{y} \hlstd{=} \hlkwd{as.character}\hlstd{(}\hlnum{2022}\hlstd{),} \hlkwc{fill} \hlstd{= count))} \hlopt{+}
   \hlkwd{geom_tile}\hlstd{(}\hlkwc{width} \hlstd{=} \hlnum{0.9}\hlstd{,} \hlkwc{height} \hlstd{=} \hlnum{1}\hlstd{)} \hlopt{+}  \hlcom{# Create the heatmap tiles}
-  \hlkwd{scale_fill_gradient}\hlstd{(}\hlkwc{low} \hlstd{=} \hlstr{"white"}\hlstd{,} \hlkwc{high} \hlstd{=} \hlstr{"#d94801"}\hlstd{)} \hlopt{+}  \hlcom{# Customize the color scale}
-  \hlkwd{labs}\hlstd{(}\hlkwc{title} \hlstd{=} \hlstr{"Frequency of Fire Occurrences by months in FY22"}\hlstd{,} \hlkwc{x} \hlstd{=} \hlstr{"Month"}\hlstd{,} \hlkwc{y} \hlstd{=} \hlstr{"FY22"}\hlstd{)} \hlopt{+}
+  \hlkwd{scale_fill_gradient}\hlstd{(}\hlkwc{low} \hlstd{=} \hlstr{"white"}\hlstd{,} \hlkwc{high} \hlstd{=} \hlstr{"#d94801"}\hlstd{)} \hlopt{+}
+  \hlkwd{labs}\hlstd{(}\hlkwc{title} \hlstd{=} \hlstr{"Frequency of Fire Occurrences by months in FY22"}\hlstd{,}
+       \hlkwc{x} \hlstd{=} \hlstr{"Month"}\hlstd{,} \hlkwc{y} \hlstd{=} \hlstr{"FY22"}\hlstd{)} \hlopt{+}
   \hlkwd{theme}\hlstd{(}\hlkwc{panel.grid} \hlstd{=} \hlkwd{element_blank}\hlstd{() )}
 
-\hlcom{# Display the heatmap}
 \hlkwd{print}\hlstd{(heatmap_plot)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/fire-by-months_fy22-1} 
 \end{knitrout}
 From the table, we can clearly see that August and September are the riskiest months in terms of fire hazard, whereas November to July hardly pose any risk at all. It's natural to ask the follow-up question: How does FY22 compare to previous years? Is it valid to claim that August and September are the fire hazard season?
-%missing detailed analysis of visualisation created 
+
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{heatmap_plot} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(pivot_table,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{factor}\hlstd{(abb_month,} \hlkwc{levels} \hlstd{= custom_order),}
+                                        \hlkwc{y} \hlstd{=} \hlkwd{as.character}\hlstd{(year),} \hlkwc{fill} \hlstd{= count))} \hlopt{+}
+    \hlkwd{geom_tile}\hlstd{()} \hlopt{+}
+    \hlkwd{scale_fill_gradient}\hlstd{(}\hlkwc{low} \hlstd{=} \hlstr{"white"}\hlstd{,} \hlkwc{high} \hlstd{=} \hlstr{"#d94801"}\hlstd{)} \hlopt{+}
+    \hlkwd{labs}\hlstd{(}\hlkwc{title} \hlstd{=} \hlstr{"Frequency of Fire Occurrences, FY13-22"}\hlstd{,}\hlkwc{x} \hlstd{=} \hlstr{"Month"}\hlstd{,} \hlkwc{y} \hlstd{=} \hlstr{"FY13-22"}\hlstd{)}
+
+\hlkwd{print}\hlstd{(heatmap_plot)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/fire-by-months_fy13-22-1} 
+\end{knitrout}
+Indeed, the data showed a trend indicating that August to October have more fire occurrences compared to the rest of the year. There are clearly more fire hazards in those months.
 
 \subsection{3.4.2 Treemaps}
 Treemaps are a visualisation method specifically designed for hierarchical data structures. They represent data as nested rectangles, where each rectangle represents a part of the whole. Treemaps offer a visually appealing and efficient way to convey the hierarchical composition of data. The size and color of each rectangle can be used to encode additional information.
