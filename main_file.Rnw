@@ -528,11 +528,11 @@ legend("topright", legend=names(ts_data),
 
 
 <<>>=
-# Calculate 7-day moving average for each currency
+# Calculate 21-day moving average for each currency
 columns <- names(MyData)[!names(MyData) %in% "Date"]
 for (col in columns) {
   new_col_name <- paste0(col, "_MA7")
-  MyData[[new_col_name]] <- zoo::rollapply(MyData[[col]], width=7, FUN=mean, fill=NA, align='right')
+  MyData[[new_col_name]] <- zoo::rollapply(MyData[[col]], width=21, FUN=mean, fill=NA, align='right')
 }
 
 # Plotting
@@ -543,7 +543,7 @@ ggplot(plot_data, aes(x=Date, y=Rate, color=Currency)) +
   geom_line() +
   labs(title="7-Day Moving Average of Exchange Rates",
        subtitle="",
-       y="Exchange Rate to GBP (7-Day MA)",
+       y="Exchange Rate to GBP (21-Day MA)",
        x="Date",
        color="Currency") +
   theme_minimal() +
@@ -560,52 +560,6 @@ One of the primary advantages of time series visualization is the ease with whic
 
 <<echo=FALSE>>=
 plot(decompose(ts_data$CNYtoGBP), xlab="Date")
-@
-
-
-
-
-
-\subsection{Cyclical plots}
-
-For data with clear cyclical patterns (e.g., daily, weekly, monthly), plotting data in a circular fashion can highlight these cycles.
-
-<<>>=
-MyData$Month <- month(MyData$Date, label = TRUE)
-MyData$Day <- day(MyData$Date)
-
-ggplot(MyData, aes(x = Month, y = USDtoGBP)) + 
-  geom_path(aes(group = Day), color = "blue") + 
-  coord_polar(start = 0) +
-  labs(title = "Cyclical Plot of USD to GBP") +
-  theme_minimal()
-@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\subsection{Animated Time Series:}
-This type of visualization allows for the observation of changes over time in an animated fashion. plotly is a great library for this.
-<<>>=
-# Convert Date column to Date type and create a frame column
-MyData$Date <- as.Date(MyData$Date, format = "%d-%b-%y")
-MyData$frame <- as.character(MyData$Date)
-
-# Create the animated plot
-plot_ly(data = MyData, x = ~Date, y = ~USDtoGBP, text = ~Date, ids = ~Date,
-        frame = ~frame, type = 'scatter', mode = 'lines', line = list(width = 2)) %>%
-  animation_slider(currentvalue = list(prefix = "Date: "))
 @
 
 
