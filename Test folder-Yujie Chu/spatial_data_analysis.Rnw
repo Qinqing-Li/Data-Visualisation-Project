@@ -1,0 +1,55 @@
+\documentclass{article}
+
+\begin{document}
+
+<<setup>>=
+library(sf)
+library(ggplot2)
+library(dplyr)
+@
+\text{https://data.london.gov.uk/dataset/statistical-gis-boundary-files-london#:~:text=,2014.zip%20%283.84%20MB%29%20From}
+
+\text{https://data.london.gov.uk/dataset/recorded_crime_summary#:~:text=Recorded%20Crime%3A%20Geographic%20Breakdown,covering%20all%20historic%20full}
+
+\text{https://public.tableau.com/app/profile/metropolitan.police.service/viz/MonthlyCrimeDataNewCats/Coversheet}
+
+\text{https://medium.com/@davemorison/an-interactive-visualization-of-londons-crime-data-using-shiny-applications-and-r-7ca9011e064b?source=author_recirc-----8dcefef1c397----0---------------------07ef707d_5478_4230_b6e6_451582a6cc55-------}
+
+<<>>=
+# Load the shapefile
+london_boroughs <- st_read("London_Ward.shp")
+
+# Load the crime data (assuming it's in CSV format)
+crime_data <- read.csv("BoroughLevelCrime.csv")
+
+# Summing the total crimes for each borough over the entire timeframe
+borough_totals <- crime_data %>%
+  group_by(LookUp_BoroughName) %>%
+  summarise(Total_Crimes = sum(across(starts_with("X2020"))))
+
+# Merge the crime data with the shapefile
+merged_data <- merge(london_boroughs, borough_totals, by.x="DISTRICT", by.y="LookUp_BoroughName")
+
+# Aggregate geometries by district
+aggregated_data <- merged_data %>%
+  group_by(DISTRICT) %>%
+  summarise(geometry = st_union(geometry), Total_Crimes = first(Total_Crimes))
+
+# Calculate centroids for labeling
+aggregated_data$centroid <- st_centroid(aggregated_data$geometry)
+
+# Plot the aggregated data with labels
+plot <- ggplot(data=aggregated_data) + 
+  geom_sf(aes(fill=Total_Crimes)) +
+  geom_sf_text(aes(label = DISTRICT, geometry = centroid), size = 3, check_overlap = TRUE) +
+  scale_fill_gradient(low="Green", high="red") +
+  theme_minimal() +
+  labs(title="Total Crime by Borough in London (April 2010 - September 2021)", fill="Total Crimes")
+
+print(plot)
+@
+
+
+
+
+\end{document}
