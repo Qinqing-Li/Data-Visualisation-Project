@@ -17,6 +17,7 @@ library(forecast)
 library(plotly)
 library(sf)
 library(tmap)
+library(gridExtra)
 # Load the mtcars dataset
 data(mtcars)
 @
@@ -237,7 +238,7 @@ ggplot(data, aes(x = group)) +
 
 \subsection{3.4.1 Heatmaps - Fire in Brazil}
 \\  
-\\The heatmap is a data visualisation technique that uses color coding to represent different intensity.
+\\The heatmap is a data visualisation technique that uses colour coding to represent different intensity.
 \\  
 \\In this illustrative example, heatmaps is used to visualize fire occurrences in Brazil. These heatmaps offer a spatially coherent representation, highlighting regions at high risk and seasonal patterns. Here, the heatmap is a power tool for identifying the risk of fire incidents. The data-driven insights empowers us to make informed decisions concerning preventive measures and strategies for firefighting.
 
@@ -282,22 +283,6 @@ confident_fire_decade <- lapply(data_list, filter_fire)
 confident_fire_fy22 <- confident_fire_decade[[10]]
 @
 
-<<fire-by-location-fy22,fig.height=4.7,fig.cap='Frequency of Fire Occurrences by location in FY22'>>=
-# Obtain the Brazil map data
-brazil_map <- map_data("world", region = "Brazil")
-
-# Create the heatmap of fire occurrences
-fire_heatmap <- ggplot(confident_fire_fy22, aes(x = longitude, y = latitude)) +
-  geom_polygon(data = brazil_map, aes(x = long, y = lat, group = group), 
-               fill = "#bdbdbd") +
-  geom_bin2d(bins = 300) +
-  scale_fill_gradient(low = "#fee6ce", high = "#d7301f") +
-  coord_fixed(ratio = 1) +
-  theme_minimal()+
-  theme(axis.text = element_text(size = 10))
-
-print(fire_heatmap)
-@
 \\From the heatmap, we can observe that certain locations have significantly higher fires count. However, we do not know the cause of this. Is this due to geographical location, or is it because fires were mostly man-made and used to clear forest areas for agriculture use?
 \\  
 \\Colour selection from \href{https://colorbrewer2.org/#type=sequential&scheme=Oranges&n=9}{colorbrewer2}.
@@ -319,8 +304,21 @@ custom_order <- c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep",
 confident_fire_months_fy22$abb_month <- factor(confident_fire_months_fy22$abb_month, levels = custom_order)
 @
 
-<<fire-by-months fy22,fig.height=1.5,fig.cap='Frequency of Fire Occurrences by months in FY22'>>=
-heatmap_plot <- ggplot(confident_fire_months_fy22, 
+<<spacetime-fy22,fig.height=7,fig.cap='Frequency of Fire by Space and Time, FY22',fig.show='hold',message=FALSE,warning=FALSE>>=
+# Obtain the Brazil map data
+brazil_map <- map_data("world", region = "Brazil")
+
+# Create the heatmap of fire occurrences
+space_heatmap <- ggplot(confident_fire_fy22, aes(x = longitude, y = latitude)) +
+  geom_polygon(data = brazil_map, aes(x = long, y = lat, group = group), 
+               fill = "#bdbdbd") +
+  geom_bin2d(bins = 300) +
+  scale_fill_gradient(low = "#fee6ce", high = "#d7301f") +
+  coord_fixed(ratio = 1) +
+  theme_minimal()+
+  theme(axis.text = element_text(size = 10))
+
+time_heatmap <- ggplot(confident_fire_months_fy22, 
                        aes(x = abb_month, y = as.character(2022), fill = count)) +
   geom_tile(width = 0.9, height = 1) +  # Create the heatmap tiles
   scale_fill_gradient(low = "#fff7ec", high = "#d7301f") +
@@ -328,7 +326,9 @@ heatmap_plot <- ggplot(confident_fire_months_fy22,
   theme_minimal() +
   theme(axis.text = element_text(size = 10))
 
-print(heatmap_plot)
+spacetime_fy22 <- grid.arrange(space_heatmap, time_heatmap, nrow = 2, heights = c(6,1.5))
+
+print(spacetime_fy22)
 @
 \\From the table, we can clearly see that August and September are the riskiest months in terms of fire hazard, whereas November to July hardly pose any risk at all. It's natural to ask the follow-up question: How does FY22 compare to previous years? Is it valid to claim that August and September are the fire hazard season?
 
@@ -350,7 +350,7 @@ pivot_table <- pivot_table %>%
   mutate(year = as.numeric(substring(month_year, nchar(month_year) - 3, nchar(month_year))))
 @
 
-<<fire-by-months-fy13-22,fig.height=3.5,fig.width=5.6,fig.cap='Frequency of Fire Occurrences, FY13-22'>>=
+<<fire-by-months-fy13-22,fig.height=3.5,fig.width=5.6,fig.cap='Frequency of Fire Occurrences, FY13-22',fig.show='hold'>>=
 heatmap_plot <- ggplot(pivot_table, aes(x = factor(abb_month, levels = custom_order), 
                                         y = as.character(year), fill = count)) +
   geom_tile() +

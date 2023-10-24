@@ -282,11 +282,17 @@ Finally, we add lables to the X-axis to define the range of each categories.
 
 \subsection{3.4.1 Heatmaps - Fire in Brazil}
 \\  
-\\The heatmap is a data visualisation technique that uses color coding to represent different intensity.
+\\The heatmap is a data visualisation technique that uses colour coding to represent different intensity.
 \\  
 \\In this illustrative example, heatmaps is used to visualize fire occurrences in Brazil. These heatmaps offer a spatially coherent representation, highlighting regions at high risk and seasonal patterns. Here, the heatmap is a power tool for identifying the risk of fire incidents. The data-driven insights empowers us to make informed decisions concerning preventive measures and strategies for firefighting.
 
 
+
+
+
+\\From the heatmap, we can observe that certain locations have significantly higher fires count. However, we do not know the cause of this. Is this due to geographical location, or is it because fires were mostly man-made and used to clear forest areas for agriculture use?
+\\  
+\\Colour selection from \href{https://colorbrewer2.org/#type=sequential&scheme=Oranges&n=9}{colorbrewer2}.
 
 
 
@@ -297,7 +303,7 @@ Finally, we add lables to the X-axis to define the range of each categories.
 \hlstd{brazil_map} \hlkwb{<-} \hlkwd{map_data}\hlstd{(}\hlstr{"world"}\hlstd{,} \hlkwc{region} \hlstd{=} \hlstr{"Brazil"}\hlstd{)}
 
 \hlcom{# Create the heatmap of fire occurrences}
-\hlstd{fire_heatmap} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(confident_fire_fy22,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= longitude,} \hlkwc{y} \hlstd{= latitude))} \hlopt{+}
+\hlstd{space_heatmap} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(confident_fire_fy22,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= longitude,} \hlkwc{y} \hlstd{= latitude))} \hlopt{+}
   \hlkwd{geom_polygon}\hlstd{(}\hlkwc{data} \hlstd{= brazil_map,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= long,} \hlkwc{y} \hlstd{= lat,} \hlkwc{group} \hlstd{= group),}
                \hlkwc{fill} \hlstd{=} \hlstr{"#bdbdbd"}\hlstd{)} \hlopt{+}
   \hlkwd{geom_bin2d}\hlstd{(}\hlkwc{bins} \hlstd{=} \hlnum{300}\hlstd{)} \hlopt{+}
@@ -306,23 +312,7 @@ Finally, we add lables to the X-axis to define the range of each categories.
   \hlkwd{theme_minimal}\hlstd{()}\hlopt{+}
   \hlkwd{theme}\hlstd{(}\hlkwc{axis.text} \hlstd{=} \hlkwd{element_text}\hlstd{(}\hlkwc{size} \hlstd{=} \hlnum{10}\hlstd{))}
 
-\hlkwd{print}\hlstd{(fire_heatmap)}
-\end{alltt}
-\end{kframe}\begin{figure}
-\includegraphics[width=\maxwidth]{figure/fire-by-location-fy22-1} \caption[Frequency of Fire Occurrences by location in FY22]{Frequency of Fire Occurrences by location in FY22}\label{fig:fire-by-location-fy22}
-\end{figure}
-
-\end{knitrout}
-\\From the heatmap, we can observe that certain locations have significantly higher fires count. However, we do not know the cause of this. Is this due to geographical location, or is it because fires were mostly man-made and used to clear forest areas for agriculture use?
-\\  
-\\Colour selection from \href{https://colorbrewer2.org/#type=sequential&scheme=Oranges&n=9}{colorbrewer2}.
-
-
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{heatmap_plot} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(confident_fire_months_fy22,}
+\hlstd{time_heatmap} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(confident_fire_months_fy22,}
                        \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= abb_month,} \hlkwc{y} \hlstd{=} \hlkwd{as.character}\hlstd{(}\hlnum{2022}\hlstd{),} \hlkwc{fill} \hlstd{= count))} \hlopt{+}
   \hlkwd{geom_tile}\hlstd{(}\hlkwc{width} \hlstd{=} \hlnum{0.9}\hlstd{,} \hlkwc{height} \hlstd{=} \hlnum{1}\hlstd{)} \hlopt{+}  \hlcom{# Create the heatmap tiles}
   \hlkwd{scale_fill_gradient}\hlstd{(}\hlkwc{low} \hlstd{=} \hlstr{"#fff7ec"}\hlstd{,} \hlkwc{high} \hlstd{=} \hlstr{"#d7301f"}\hlstd{)} \hlopt{+}
@@ -330,10 +320,18 @@ Finally, we add lables to the X-axis to define the range of each categories.
   \hlkwd{theme_minimal}\hlstd{()} \hlopt{+}
   \hlkwd{theme}\hlstd{(}\hlkwc{axis.text} \hlstd{=} \hlkwd{element_text}\hlstd{(}\hlkwc{size} \hlstd{=} \hlnum{10}\hlstd{))}
 
-\hlkwd{print}\hlstd{(heatmap_plot)}
+\hlstd{spacetime_fy22} \hlkwb{<-} \hlkwd{grid.arrange}\hlstd{(space_heatmap, time_heatmap,} \hlkwc{nrow} \hlstd{=} \hlnum{2}\hlstd{,} \hlkwc{heights} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{6}\hlstd{,}\hlnum{1.5}\hlstd{))}
+
+\hlkwd{print}\hlstd{(spacetime_fy22)}
 \end{alltt}
+\begin{verbatim}
+## TableGrob (2 x 1) "arrange": 2 grobs
+##   z     cells    name           grob
+## 1 1 (1-1,1-1) arrange gtable[layout]
+## 2 2 (2-2,1-1) arrange gtable[layout]
+\end{verbatim}
 \end{kframe}\begin{figure}
-\includegraphics[width=\maxwidth]{figure/fire-by-months_fy22-1} \caption[Frequency of Fire Occurrences by months in FY22]{Frequency of Fire Occurrences by months in FY22}\label{fig:fire-by-months fy22}
+\includegraphics[width=\maxwidth]{figure/spacetime-fy22-1} \caption[Frequency of Fire by Space and Time, FY22]{Frequency of Fire by Space and Time, FY22}\label{fig:spacetime-fy22}
 \end{figure}
 
 \end{knitrout}
