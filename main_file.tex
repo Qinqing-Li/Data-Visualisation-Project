@@ -51,6 +51,7 @@
 \usepackage{alltt}
 \usepackage{hyperref}
 \usepackage{blindtext}
+\usepackage{graphicx}
 \usepackage[a4paper, total={6in, 8in}]{geometry}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
@@ -307,14 +308,17 @@ Finally, we add lables to the X-axis to define the range of each categories.
   \hlkwd{geom_polygon}\hlstd{(}\hlkwc{data} \hlstd{= brazil_map,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= long,} \hlkwc{y} \hlstd{= lat,} \hlkwc{group} \hlstd{= group),}
                \hlkwc{fill} \hlstd{=} \hlstr{"#bdbdbd"}\hlstd{)} \hlopt{+}
   \hlkwd{geom_bin2d}\hlstd{(}\hlkwc{bins} \hlstd{=} \hlnum{300}\hlstd{)} \hlopt{+}
-  \hlkwd{scale_fill_gradient}\hlstd{(}\hlkwc{low} \hlstd{=} \hlstr{"#fee6ce"}\hlstd{,} \hlkwc{high} \hlstd{=} \hlstr{"#d94801"}\hlstd{)} \hlopt{+}
+  \hlkwd{scale_fill_gradient}\hlstd{(}\hlkwc{low} \hlstd{=} \hlstr{"#fee6ce"}\hlstd{,} \hlkwc{high} \hlstd{=} \hlstr{"#d7301f"}\hlstd{)} \hlopt{+}
   \hlkwd{coord_fixed}\hlstd{(}\hlkwc{ratio} \hlstd{=} \hlnum{1}\hlstd{)} \hlopt{+}
-  \hlkwd{labs}\hlstd{(}\hlkwc{title} \hlstd{=} \hlstr{"Frequency of Fire Occurrences by location in FY22"}\hlstd{)}
+  \hlkwd{theme_minimal}\hlstd{()}\hlopt{+}
+  \hlkwd{theme}\hlstd{(}\hlkwc{axis.text} \hlstd{=} \hlkwd{element_text}\hlstd{(}\hlkwc{size} \hlstd{=} \hlnum{10}\hlstd{))}
 
 \hlkwd{print}\hlstd{(fire_heatmap)}
 \end{alltt}
-\end{kframe}
-\includegraphics[width=\maxwidth]{figure/fire-by-location-fy22-1} 
+\end{kframe}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/fire-by-location-fy22-1} \caption[Frequency of Fire Occurrences by location in FY22]{Frequency of Fire Occurrences by location in FY22}\label{fig:fire-by-location-fy22}
+\end{figure}
+
 \end{knitrout}
 \\From the heatmap, we can observe that certain locations have significantly higher fires count. However, we do not know the cause of this. Is this due to geographical location, or is it because fires were mostly man-made and used to clear forest areas for agriculture use?
 \\  
@@ -328,17 +332,19 @@ Finally, we add lables to the X-axis to define the range of each categories.
 \hlstd{heatmap_plot} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(confident_fire_months_fy22,}
                        \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= abb_month,} \hlkwc{y} \hlstd{=} \hlkwd{as.character}\hlstd{(}\hlnum{2022}\hlstd{),} \hlkwc{fill} \hlstd{= count))} \hlopt{+}
   \hlkwd{geom_tile}\hlstd{(}\hlkwc{width} \hlstd{=} \hlnum{0.9}\hlstd{,} \hlkwc{height} \hlstd{=} \hlnum{1}\hlstd{)} \hlopt{+}  \hlcom{# Create the heatmap tiles}
-  \hlkwd{scale_fill_gradient}\hlstd{(}\hlkwc{low} \hlstd{=} \hlstr{"white"}\hlstd{,} \hlkwc{high} \hlstd{=} \hlstr{"#d94801"}\hlstd{)} \hlopt{+}
-  \hlkwd{labs}\hlstd{(}\hlkwc{title} \hlstd{=} \hlstr{"Frequency of Fire Occurrences by months in FY22"}\hlstd{,}
-       \hlkwc{x} \hlstd{=} \hlstr{"Month"}\hlstd{,} \hlkwc{y} \hlstd{=} \hlstr{"FY22"}\hlstd{)} \hlopt{+}
-  \hlkwd{theme}\hlstd{(}\hlkwc{panel.grid} \hlstd{=} \hlkwd{element_blank}\hlstd{() )}
+  \hlkwd{scale_fill_gradient}\hlstd{(}\hlkwc{low} \hlstd{=} \hlstr{"#fff7ec"}\hlstd{,} \hlkwc{high} \hlstd{=} \hlstr{"#d7301f"}\hlstd{)} \hlopt{+}
+  \hlkwd{labs}\hlstd{(}\hlkwc{x} \hlstd{=} \hlstr{"Month"}\hlstd{,} \hlkwc{y} \hlstd{=} \hlstr{"FY22"}\hlstd{)} \hlopt{+}
+  \hlkwd{theme_minimal}\hlstd{()} \hlopt{+}
+  \hlkwd{theme}\hlstd{(}\hlkwc{axis.text} \hlstd{=} \hlkwd{element_text}\hlstd{(}\hlkwc{size} \hlstd{=} \hlnum{10}\hlstd{))}
 
 \hlkwd{print}\hlstd{(heatmap_plot)}
 \end{alltt}
-\end{kframe}
-\includegraphics[width=\maxwidth]{figure/fire-by-months_fy22-1} 
+\end{kframe}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/fire-by-months_fy22-1} \caption[Frequency of Fire Occurrences by months in FY22]{Frequency of Fire Occurrences by months in FY22}\label{fig:fire-by-months fy22}
+\end{figure}
+
 \end{knitrout}
-From the table, we can clearly see that August and September are the riskiest months in terms of fire hazard, whereas November to July hardly pose any risk at all. It's natural to ask the follow-up question: How does FY22 compare to previous years? Is it valid to claim that August and September are the fire hazard season?
+\\From the table, we can clearly see that August and September are the riskiest months in terms of fire hazard, whereas November to July hardly pose any risk at all. It's natural to ask the follow-up question: How does FY22 compare to previous years? Is it valid to claim that August and September are the fire hazard season?
 
 
 
@@ -347,16 +353,37 @@ From the table, we can clearly see that August and September are the riskiest mo
 \begin{alltt}
 \hlstd{heatmap_plot} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(pivot_table,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{factor}\hlstd{(abb_month,} \hlkwc{levels} \hlstd{= custom_order),}
                                         \hlkwc{y} \hlstd{=} \hlkwd{as.character}\hlstd{(year),} \hlkwc{fill} \hlstd{= count))} \hlopt{+}
-    \hlkwd{geom_tile}\hlstd{()} \hlopt{+}
-    \hlkwd{scale_fill_gradient}\hlstd{(}\hlkwc{low} \hlstd{=} \hlstr{"white"}\hlstd{,} \hlkwc{high} \hlstd{=} \hlstr{"#d94801"}\hlstd{)} \hlopt{+}
-    \hlkwd{labs}\hlstd{(}\hlkwc{title} \hlstd{=} \hlstr{"Frequency of Fire Occurrences, FY13-22"}\hlstd{,}\hlkwc{x} \hlstd{=} \hlstr{"Month"}\hlstd{,} \hlkwc{y} \hlstd{=} \hlstr{"FY13-22"}\hlstd{)}
+  \hlkwd{geom_tile}\hlstd{()} \hlopt{+}
+  \hlkwd{scale_fill_gradient}\hlstd{(}\hlkwc{low} \hlstd{=} \hlstr{"#fff7ec"}\hlstd{,} \hlkwc{high} \hlstd{=} \hlstr{"#d7301f"}\hlstd{)} \hlopt{+}
+  \hlkwd{labs}\hlstd{(}\hlkwc{x} \hlstd{=} \hlstr{"Month"}\hlstd{,} \hlkwc{y} \hlstd{=} \hlstr{"FY13-22"}\hlstd{)} \hlopt{+}
+  \hlkwd{theme_minimal}\hlstd{()} \hlopt{+}
+  \hlkwd{theme}\hlstd{(}\hlkwc{axis.text} \hlstd{=} \hlkwd{element_text}\hlstd{(}\hlkwc{size} \hlstd{=} \hlnum{10}\hlstd{))}
 
 \hlkwd{print}\hlstd{(heatmap_plot)}
 \end{alltt}
-\end{kframe}
-\includegraphics[width=\maxwidth]{figure/fire-by-months_fy13-22-1} 
+\end{kframe}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/fire-by-months_fy13-22-1} \caption[Frequency of Fire Occurrences, FY13-22]{Frequency of Fire Occurrences, FY13-22}\label{fig:fire-by-months fy13-22}
+\end{figure}
+
 \end{knitrout}
-Indeed, the data showed a trend indicating that August to October have more fire occurrences compared to the rest of the year. There are clearly more fire hazards in those months.
+\\Indeed, the data showed a trend indicating that August to October have more fire occurrences compared to the rest of the year. There are clearly more fire hazards in those months.
+\\  
+\\The foundation of a heatmap is a data matrix, where each entry in this matrix represents an observation or measurement. Therefore, the first step to create a heatmap is to organize the data by columns and rows. In Figure XXX, the structured data is displayed as a grid of coloured cells, where the colour intensity corresponds to the underlying frequency.
+\\  
+\\We have a one-to-one mapping of values to colours. The colour scale is mapped from the minimum to the maximum values. Colour scales can take the form of linear, logarithmic, or customed to enhance pattern visibility. The choice of the function depends on the context. In Figure Figure~\ref{fig:fire-by-months-fy13-22}, the frequency is linearly related to the colour scale. To use the logarithmic function would downplay the colour contrast. Therefore, in the case of visualizing fire occurrences, a linear scale preserves the contrast, faithfully representing the frequency.
+\\  
+\\Heatmaps are powerful tools for visualizing relationships between covariables within a model. One example of why we need to analyse a matrix of correlations between variables is in regression models. In the real world, variables are often correlated, and complete independent relations are rare. Consequently, analysing pairwise correlations is essential. Highly correlated variables significantly impact the regression model. When faced with highly correlated variables, we need to choose one variable from the correlated set. The selection is based on finding a regression model with the least Akaike Information Criterion (AIC) score among these variables. The AIC measures how much the linear model overfits the dataset. In other words, we want the regression model to explain the trend, and we do not want to overfit the model so that it explains the noise in the data set, which would lead to inaccurate predictions, as shown in Figure \ref{fig:noisy}.
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{/Users/margaretli/Data-Visualisation-Project/overfitting.png}
+    \caption{Danger of overfitting the regression model}
+    \label{fig:noisy}
+\end{figure}
+
+
+
 
 \subsection{3.4.2 Treemaps}
 Treemaps are a visualisation method specifically designed for hierarchical data structures. They represent data as nested rectangles, where each rectangle represents a part of the whole. Treemaps offer a visually appealing and efficient way to convey the hierarchical composition of data. The size and color of each rectangle can be used to encode additional information.
