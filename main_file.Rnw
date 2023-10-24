@@ -14,6 +14,9 @@ library(tidyverse)
 library(lubridate)
 library(readxl)
 library(forecast)
+library(plotly)
+library(sf)
+library(tmap)
 # Load the mtcars dataset
 data(mtcars)
 @
@@ -23,25 +26,22 @@ data(mtcars)
 \section{Chapter 3.1 Introduction to Modern Data Visualization Methods}
 As data grows increasingly complex and vast, the tools and techniques for effectively conveying this information continue to expand and refine. This chapter tackles the modern data visualization methods, offering a comprehensive exploration of various visualization techniques, along with tangible examples accompanied by their underlying code.
 
+\subsection{3.3.2 Data Sets}
+\begin{enumerate}
+\item Mtcars dataset: The mtcars dataset in R is a built-in dataset that contains information about various car models. It provides data on the characteristics of 32 different car models, which were available in the early 1970s. The dataset includes a total of 11 variables, each representing different attributes of these cars, such as miles per gallon (mpg), horsepower (hp), number of cylinders (cyl), and more. The mtcars dataset is often used for data analysis, visualization, and statistical modeling, making it a useful resource for exploring and practicing data science techniques in R.
+\end{enumerate}
+
 \section{Chapter 3.2 Scatter Plots and Bubble Charts}
-Scatter plots and bubble charts are fundamental data visualization techniques that provide valuable insights into the relationships and patterns within datasets. These visualizations are particularly effective for representing data points, making comparisons, and revealing trends. Below, we delve into the characteristics, peculiarities, and advantages of scatter plots and bubble charts.
+Scatter plots and bubble charts are fundamental data visualization techniques that provide valuable insights into the relationships and patterns within datasets. These visualizations are particularly effective for representing data points, making comparisons, and revealing trends.
 
 \subsection{3.2.1 Scatter Plots}
-A scatter plot is a simple yet powerful visualization that displays individual data points as dots on a two-dimensional plane. Each point represents a unique data entry, with one variable on the horizontal (x-axis) and another on the vertical (y-axis). Scatter plots are versatile and can accommodate various data types, including nominal, ordinal, interval, and ratio.
-
-\subsubsection{Advantages}
-\begin{itemize}
-    \item Easy identification of patterns and trends. 
-    \item Effective for outlier detection. 
-    \item Suitable for both bi-variate and multi-variate analysis.
-    \item Offers a visual representation of the distribution of data points.
-\end{itemize}
+Dot plots, also known as dot charts or dot density plots, offer a straightforward yet mathematically intriguing method for visualizing data. At their core, dot plots display individual data points as dots along a single axis, with each dot representing a single observation. The mathematical interest of dot plots lies in their ability to provide a simple visual representation of data distribution, center, and spread. While they don't rely on complex equations or statistical principles, dot plots make it easy to observe important characteristics of data, such as the mode (the most frequent value), skewness (asymmetry), and potential outliers. They're particularly useful for comparing multiple data sets, identifying patterns, and detecting data irregularities, all while offering an intuitive and accessible way to grasp the fundamental concepts of data visualization and data analysis. This simplicity is what makes dot plots a valuable tool for both introductory statistics education and exploratory data analysis.
 
 \subsection{Scatter Plots in Practice}
-In this example, we'll create a scatter plot that visualizes the relationship between two variables - the weight of cars and the amount of miles traveled per gallon of petrol.We'll use the "mtcars" R dataset, which contains information about various car models.
+In this example, we'll create a scatter plot that visualizes the relationship between two variables - the weight of cars and the amount of miles traveled per gallon of petrol. We'll use the "mtcars" R dataset.
 
-<<scatter-plot-chunk, echo=FALSE, fig.height=5, fig.width=7>>=
-# Create a scatter plot with enhanced features
+<<scatter-plot-chunk, echo=FALSE, fig.height=4, fig.width=6>>=
+# Create a scatter plot of car weight vs MPG from mtcars dataset
 library(ggplot2)
 ggplot(data = mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
   geom_point(size = 4, alpha = 0.7) +  # Larger points with transparency
@@ -50,7 +50,8 @@ ggplot(data = mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
     title = "Scatter Plot of Car Weight vs. MPG",
     x = "Weight (1000 lbs)",
     y = "Miles per Gallon",
-    color = "Cylinders"
+    color = "Cylinders",
+    caption = "Figure 1: Scatter plot illustrating the relationship between car weight and miles per gallon"
   ) +
   scale_color_manual(values = c("4" = "grey", "6" = "purple", "8" = "blue")) +  # Custom color palette
   theme_minimal()  # Minimalistic theme
@@ -61,18 +62,17 @@ The scatter plot displays the relationship between car weight (in thousands of p
 \begin{itemize}
     \item Color-Coded Cylinders: The points are color-coded based on the number of cylinders in the engine (4, 6, and 8 cylinders). This allows for a quick visual differentiation of car types, enhancing the understanding of the data.
     \item Point Size and Transparency: Points have been enlarged and have a subtle degree of transparency for visual appeal. Larger, more prominent points are easier to see, while transparency helps in the visualization of overlapping points.
-    \item Linear Regression Line: A blue linear regression trend line is included. It provides a visual representation of the overall relationship between car weight and fuel efficiency, indicating a negative correlation—cars tend to have lower fuel efficiency as their weight increases.\\
+    \item Linear Regression Line: A red linear regression trend line is included. It provides a visual representation of the overall relationship between car weight and fuel efficiency, indicating a negative correlation—cars tend to have lower fuel efficiency as their weight increases.\\
 \end{itemize}
 
 \subsection{Regression and the Regression Line}
-\textbf{Regression} is a statistical technique used to model and understand the relationship between two or more variables. It is a fundamental tool in data analysis and predictive modeling. In simple linear regression, a linear equation is used to describe the relationship between a dependent variable (the one you want to predict) and one or more independent variables (the predictors). The equation takes the form of \(Y = aX + b\), where \(Y\) is the dependent variable, \(X\) is the independent variable, \(a\) is the slope, and \(b\) is the intercept. Regression analysis calculates the best-fit line that minimizes the sum of squared differences between the predicted and actual values. This line provides valuable insights into the strength and direction of the relationship between variables, allowing us to make predictions and understand how changes in one variable affect another. Adding regression lines to scatter plots can enhance their value by providing a clearer depiction of trends and enabling more accurate predictions, turning the plot into a predictive tool rather than just a visual representation of data points.
+\textbf{Regression} is a statistical technique used to model and understand the relationship between two or more variables. It is a fundamental tool in data analysis and predictive modeling. In simple linear regression, a linear equation is used to describe the relationship between a dependent variable (the one you want to predict) and one or more independent variables (the predictors).The equation takes the form of \(Y = aX + b\), where \(Y\) is the dependent variable, \(X\) is the independent variable, \(a\) is the slope, and \(b\) is the intercept.\\
+Regression analysis calculates the best-fit line that minimizes the sum of squared differences between the predicted and actual values. This line provides valuable insights into the strength and direction of the relationship between variables, allowing us to make predictions and understand how changes in one variable affect another. Adding regression lines to scatter plots can enhance their value by providing a clearer depiction of trends and enabling more accurate predictions, turning the plot into a predictive tool rather than just a visual representation of data points.
 
 
 \subsection{3.2.2 Bubble Charts}
-A bubble chart is an extension of the scatter plot, where each data point is represented as a "bubble" or circle. In addition to the x and y axes, bubble charts introduce a third variable that is encoded by the size of the bubbles. This third variable allows for the simultaneous visualization of three data attributes.
-
-\subsection{Use Cases}
-Bubble charts are particularly useful when you need to visualize the relationship between three variables. For example, in finance, a bubble chart can display the market capitalization, price-to-earnings ratio, and stock returns for different companies simultaneously. In public health, it can represent the population, vaccination coverage, and disease incidence for various regions. ~ COULD INSERT REAL WORLD EXAMPLES ~
+Bubble charts, like scatter plots, are a valuable tool in data visualization that represent data points as bubbles or circles on a two-dimensional plane. They introduce an additional dimension by encoding data using the size of these bubbles. The mathematical intricacies behind bubble charts involve principles of geometry and data scaling.\\
+To calculate the size of each bubble, a scaling factor is applied to map the data values to a suitable range for bubble sizes. Typically, linear or nonlinear scaling methods are used to ensure that the bubble sizes accurately reflect the underlying data. The equations used in bubble charts are relatively straightforward, but the challenge lies in selecting appropriate scaling methods and ensuring that the size variations effectively convey the data's significance. 
 
 \subsubsection{Advantages}
 \begin{itemize}
@@ -83,7 +83,7 @@ Bubble charts are particularly useful when you need to visualize the relationshi
 \subsection{Bubble Charts in Practice}
  This bubble plot visualizes data from the same dataset as above. The purpose of this plot is to depict the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and color-coding the bubbles based on the number of cylinders (cyl).
 
-<<buble-plot-chunk, echo=FALSE, fig.height=5, fig.width=9>>=
+<<buble-plot-chunk, echo=FALSE, fig.height=3, fig.width=7>>=
 ggplot(mtcars, aes(x = rownames(mtcars), y = mpg, size = hp, color = cyl)) +
   geom_point() +
   labs(
@@ -91,7 +91,8 @@ ggplot(mtcars, aes(x = rownames(mtcars), y = mpg, size = hp, color = cyl)) +
     x = "Car Models",
     y = "Miles per Gallon",
     size = "Horsepower (hp)",
-    color = "Cylinders (cyl)"
+    color = "Cylinders (cyl)",
+    caption = "Figure 2: Bubble plot illustrating the relationship between car models and miles per gallon"
   ) +
   scale_size_continuous(range = c(3, 10)) +
   scale_color_gradient(low = "lightblue", high = "darkblue") +
@@ -107,14 +108,6 @@ The plot's title, axis labels, and legends provide context and clarity to the vi
 \item \textbf{Horsepower (HP)}: The size of each bubble represents the car's horsepower (hp). Larger bubbles correspond to higher horsepower, providing an additional dimension to the data. The size encoding helps identify more powerful cars.
 \item \textbf{Cylinders (Cyl)}: The color of each bubble is determined by the number of cylinders (cyl) in the car's engine. The color scheme adds a categorical aspect to the visualization, making it easy to differentiate between cars with different cylinder counts.
 \end{enumerate}
-
-
-\subsection{Key Considerations for Scatter Plots and Bubble Charts}
-    \begin{enumerate}
-        \item \textbf{Scaling}: Consider the scaling of the axes and bubble sizes to prevent distortion of the data representation.
-        \item \textbf{Labeling}: Use clear labels, titles, and colour coding to make the visualisation more interpretable and meaning by decreasing the cognitive load. 
-        \item \textbf{Interactivity}: Implement interactive features, such as tooltips or zooming, to allow users to explore individual data points in detail.
-    \end{enumerate}
 
 
 \section*{Chapter 3.3 Bar Charts and Histograms}
@@ -555,6 +548,33 @@ legend("topright", legend=names(ts_data),
        fill=c("blue", "red", "green", "purple", "brown"))
 @
 
+
+<<>>=
+# Calculate 21-day moving average for each currency
+columns <- names(MyData)[!names(MyData) %in% "Date"]
+for (col in columns) {
+  new_col_name <- paste0(col, "_MA7")
+  MyData[[new_col_name]] <- zoo::rollapply(MyData[[col]], width=21, FUN=mean, fill=NA, align='right')
+}
+
+# Plotting
+plot_data <- MyData %>% gather(key="Currency", value="Rate", -Date) %>%
+  filter(grepl("MA7", Currency))
+
+ggplot(plot_data, aes(x=Date, y=Rate, color=Currency)) +
+  geom_line() +
+  labs(title="7-Day Moving Average of Exchange Rates",
+       subtitle="",
+       y="Exchange Rate to GBP (21-Day MA)",
+       x="Date",
+       color="Currency") +
+  theme_minimal() +
+  scale_color_brewer(palette="Set1")
+@
+
+
+
+
 \subsection{Decomposition of one time series into trend, seasonal, and random.}
 
 
@@ -563,6 +583,7 @@ One of the primary advantages of time series visualization is the ease with whic
 <<echo=FALSE>>=
 plot(decompose(ts_data$CNYtoGBP), xlab="Date")
 @
+
 
 
 \subsection{Double y-axis time series plot.}
