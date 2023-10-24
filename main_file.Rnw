@@ -351,7 +351,7 @@ pivot_table <- pivot_table %>%
   mutate(year = as.numeric(substring(month_year, nchar(month_year) - 3, nchar(month_year))))
 @
 
-<<fire-by-months fy13-22,fig.height=3.5,fig.width=5.6,fig.cap='Frequency of Fire Occurrences, FY13-22'>>=
+<<fire-by-months-fy13-22,fig.height=3.5,fig.width=5.6,fig.cap='Frequency of Fire Occurrences, FY13-22'>>=
 heatmap_plot <- ggplot(pivot_table, aes(x = factor(abb_month, levels = custom_order), 
                                         y = as.character(year), fill = count)) +
   geom_tile() +
@@ -364,9 +364,7 @@ print(heatmap_plot)
 @
 \\Indeed, the data showed a trend indicating that August to October have more fire occurrences compared to the rest of the year. There are clearly more fire hazards in those months.
 \\  
-\\The foundation of a heatmap is a data matrix, where each entry in this matrix represents an observation or measurement. Therefore, the first step to create a heatmap is to organize the data by columns and rows. In Figure XXX, the structured data is displayed as a grid of coloured cells, where the colour intensity corresponds to the underlying frequency.
-\\  
-\\We have a one-to-one mapping of values to colours. The colour scale is mapped from the minimum to the maximum values. Colour scales can take the form of linear, logarithmic, or customed to enhance pattern visibility. The choice of the function depends on the context. In Figure Figure~\ref{fig:fire-by-months-fy13-22}, the frequency is linearly related to the colour scale. To use the logarithmic function would downplay the colour contrast. Therefore, in the case of visualizing fire occurrences, a linear scale preserves the contrast, faithfully representing the frequency.
+\\The foundation of a heatmap is a data matrix, where each entry in this matrix represents an observation or measurement. Therefore, the first step to create a heatmap is to organize the data by columns and rows. In Figure~\ref{fig:fire-by-months-fy13-22}, the structured data is displayed as a grid of coloured cells, where the colour intensity corresponds to the underlying frequency.
 \\  
 \\Heatmaps are powerful tools for visualizing relationships between covariables within a model. One example of why we need to analyse a matrix of correlations between variables is in regression models. In the real world, variables are often correlated, and complete independent relations are rare. Consequently, analysing pairwise correlations is essential. Highly correlated variables significantly impact the regression model. When faced with highly correlated variables, we need to choose one variable from the correlated set. The selection is based on finding a regression model with the least Akaike Information Criterion (AIC) score among these variables. The AIC measures how much the linear model overfits the dataset. In other words, we want the regression model to explain the trend, and we do not want to overfit the model so that it explains the noise in the data set, which would lead to inaccurate predictions, as shown in Figure \ref{fig:noisy}.
 
