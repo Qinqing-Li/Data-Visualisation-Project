@@ -61,10 +61,13 @@
 \contentsline {subsubsection}{\numberline {3.5.8}Multiple time series in one plot:}{30}{subsubsection.3.5.8}%
 \contentsline {subsubsection}{\numberline {3.5.9}Decomposition of one time series into trend, seasonal, and random.}{33}{subsubsection.3.5.9}%
 \contentsline {subsubsection}{\numberline {3.5.10}Double y-axis time series plot.}{34}{subsubsection.3.5.10}%
-\contentsline {subsection}{\numberline {3.6}Network Graphs and Sankey Diagrams}{35}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}Geographic Maps and Spatial Data Visualisation}{35}{subsection.3.7}%
-\contentsline {subsection}{\numberline {3.8}3D and Interactive Visualisations}{36}{subsection.3.8}%
-\contentsline {subsection}{\numberline {3.9}Advanced Visualisation Techniques}{36}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.6}Network Graphs}{34}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}The Mathematics behind Network Graphs:}{35}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}Network Graphs in Practice}{35}{subsubsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.7}Sankey Diagrams}{35}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Geographic Maps and Spatial Data Visualisation}{36}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}3D and Interactive Visualisations}{36}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.10}Advanced Visualisation Techniques}{36}{subsection.3.10}%
 \contentsline {section}{\numberline {4}Practical Implementations}{36}{section.4}%
 \contentsline {section}{\numberline {5}Case Studies}{36}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Market Analysis Dashboards}{36}{subsection.5.1}%

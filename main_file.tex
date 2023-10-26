@@ -196,7 +196,6 @@ Misleading visualisations can result from inappropriate or deceptive use of colo
     \item \textbf{Test with Users}: Conduct user testing to ensure that your colour choices effectively convey the intended message and do not confuse or mislead the audience.
 \end{itemize}
 
-
 \subsection{Theoretical Properties of Visualisations}
 Effective data visualisation is not solely about creating aesthetically pleasing graphics; it's also about adhering to key theoretical properties that optimise the expressiveness, precision, accuracy, and scalability of visual representations. In this section, we delve into these properties, including expressiveness and effectiveness, the data-ink ratio, and the principles of minimal ink, as well as precision, accuracy, and scalability.
 
@@ -252,7 +251,7 @@ As data grows increasingly complex and vast, the tools and techniques for effect
 \subsubsection{Data Sets}
 \begin{enumerate}
 \item \textbf{Mtcars dataset}: The mtcars dataset in R is a built-in dataset that contains information about various car models. It provides data on the characteristics of 32 different car models, which were available in the early 1970s. The dataset includes a total of 11 variables, each representing different attributes of these cars, such as miles per gallon (mpg), horsepower (hp), number of cylinders (cyl), and more. The mtcars dataset is often used for data analysis, visualization, and statistical modeling, making it a useful resource for exploring and practicing data science techniques in R.
-\item textbf{Annual fire in Brazil}: it is obtained from \href{https://firms.modaps.eosdis.nasa.gov/}{NASA}. Each dataset from 2013 to 2022 contains over 200,000 observations. Over the decade, there are more than 3 million observations. The trend is impossible to analyse by eye. However, an exploratory analysis using heatmaps provides insights into this data.
+\item \textbf{Annual fire in Brazil}: it is obtained from \href{https://firms.modaps.eosdis.nasa.gov/}{NASA}. Each dataset from 2013 to 2022 contains over 200,000 observations. Over the decade, there are more than 3 million observations. The trend is impossible to analyse by eye. However, an exploratory analysis using heatmaps provides insights into this data.
 \end{enumerate}
 
 \subsection{Scatter Plots and Bubble Charts}
@@ -721,8 +720,10 @@ published by the European Central Bank over the time period from 01 Jan 2013 to 
 One of the primary advantages of time series visualization is the ease with which it allows analysts to identify long-term upward or downward trends in data and patterns that repeat over specific intervals. By decomposing the time series, it would be easy to see those features.
 
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-3-1} 
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in `ensure\_igraph()`:\\\#\# ! Must provide a graph object (provided wrong object type).}}\end{kframe}
 \end{knitrout}
 
 
@@ -737,7 +738,59 @@ If we want to display two different time series that measure two different quant
 \end{knitrout}
 
 
-\subsection{Network Graphs and Sankey Diagrams}
+\subsection{Network Graphs}
+\textbf{Definition and Utility:}
+Network graphs, often referred to as graphs or networks, are a powerful data visualization method used to depict relationships between entities. These entities, known as nodes, are interconnected by edges or links, which represent relationships, connections, or interactions. Network graphs find extensive utility in various fields, such as social network analysis, transportation systems, and even biological networks like protein-protein interactions. They excel at revealing complex dependencies and structures, making them a critical tool for understanding relational data.
+
+\subsubsection{The Mathematics behind Network Graphs:}
+Constructing network graphs involves several mathematical intricacies. Here we present just a few of the many concepts that play a role in the creation of such graphs:
+\begin{enumerate}
+\item \textbf{Nodes and Edges}: Mathematically, a network graph, \(G\), is defined as \(G = (V, E)\), where \(V\) represents the set of nodes and \(E\) represents the set of edges connecting these nodes.
+\item \textbf{Node Degree}: The degree of a node is the number of edges connected to it. In a directed graph, nodes can have both in-degrees and out-degrees.
+\item \textbf{Centrality Measures}: Centrality metrics like degree centrality, betweenness centrality, and closeness centrality provide insights into the relative importance or influence of nodes within a network.
+\item \textbf{Graph Metrics}: Graph theory concepts like shortest paths, connected components, and clustering coefficients are used to analyze the network's structure.
+\end{enumerate}
+
+\textbf{Formulas used in Network Graphs:}
+
+\begin{enumerate}
+\item \textbf{Degree of a Node (Undirected Graph)}:
+\[
+\text{Degree}(v) = \sum_{w \in V} A(v, w)
+\]
+where \(A(v, w)\) is the adjacency matrix element, indicating whether there is a connection between nodes \(v\) and \(w\).
+\item \textbf{Degree of a Node (Directed Graph)}:
+\[
+\text{In-Degree}(v) = \sum_{w \in V} A(w, v)
+\]
+\[
+\text{Out-Degree}(v) = \sum_{w \in V} A(v, w)
+\]
+\item \textbf{Betweenness Centrality (for unweighted graphs)}:
+\[
+C_B(v) = \sum_{s \neq v \neq t} \frac{\sigma_{st}(v)}{\sigma_{st}}
+\]
+where \(\sigma_{st}\) is the number of shortest paths from node \(s\) to \(t\), and \(\sigma_{st}(v)\) is the number of those paths passing through node \(v\).
+\end{enumerate}
+
+\subsubsection{Network Graphs in Practice}
+
+
+
+
+\begin{figure}[h]
+\centering
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{# Plot the graph}
+\hlcom{#plot(lesmis_graph, layout = layout, vertex.label.cex = 0.7, main = "Character Interactions in Les Misérables")}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\end{figure}
+
+\subsection{Sankey Diagrams}
 xxx
 
 \subsection{Geographic Maps and Spatial Data Visualisation}
