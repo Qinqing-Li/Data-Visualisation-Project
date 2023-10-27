@@ -480,37 +480,15 @@ In the next part of our section, we will look at another plot which called Histo
 Histograms, although visually similar to bar charts, convey different meanings. A histogram involves concepts of statistics. It requires data to be categorized into groups and then counts the data points within each of those groups. On a Cartesian coordinate system, the x-axis shows the endpoints of each group, and the y-axis represents frequency. The height of each rectangle indicates the corresponding frequency, making it a frequency distribution histogram. In order to determine the quantity of each group in the histogram, a multiplication of the frequency by the group interval is necessary. Since every histogram has a fixed group interval, if we use the y-axis to directly show quantity and each rectangle's height indicates the number of data points, we can both retain the distribution and simultaneously see the number in each group at a glance. All examples in this text use the non-standard histogram depiction with the y-axis denoting quantity.
 
 \subsubsection{Uses of Histograms:}
-Histograms demonstrates the distribution of frequency or quantity across groups.
-Facilitates the visualization of differences in frequency or quantity among groups.
-
-The R language uses the $hist()$ function to create histograms. This function takes vectors as input and uses a few more parameters to plot the histogram.
-Of course, we can build a good histogram without using ggplot2.
-So the basic grammer for R to creat histogram is:
+Histograms demonstrates the distribution of frequency or quantity across groups.\\
+Facilitates the visualization of differences in frequency or quantity among groups.\\
+The R language uses the $hist()$ function to create histograms. This function takes vectors as input and uses a few more parameters to plot the histogram.\\
+Now, we want to creat a better graph with ggplot2 thanks to the $geom_histogram()$ function and iris dataset.\\
+The iris dataset is a classic dataset in the field of statistics. It was introduced by the British biologist Ronald A. Fisher in 1936 as an example of discriminant analysis. The dataset consists of 150 samples from three species of iris flowers: setosa, versicolor, and virginica. For each sample, four features were measured: the lengths and the widths of the sepals and petals, all in centimeters. The dataset is often used for classification tasks to differentiate between the three species based on the given measurements. It has become a standard test case for many classification algorithms and is widely recognized in the data science community.\\
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{hist}\hlstd{(v,main,xlab,xlim,ylim,breaks,col,border)}
-\end{alltt}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in hist(v, main, xlab, xlim, ylim, breaks, col, border): object 'v' not found}}\begin{alltt}
-\hlcom{#v is the vector that contains the values used in the histogram}
-\hlcom{#main represents the title of the chart}
-\hlcom{#col is used to set the color of the bar.}
-\hlcom{#border is used to set the border color for each bar. }
-\hlcom{#xlab is used to give a description of the X-axis. }
-\hlcom{#xlim is used to specify the range of values on the X-axis. }
-\hlcom{#ylim is used to specify the range of values on the Y-axis. }
-\hlcom{#break is used to mention the width of each bar.}
-\end{alltt}
-\end{kframe}
-\end{knitrout}
-Now, we want to creat a better graph with ggplot2 thanks to the geom_histogram() function and iris dataset.
-The iris dataset is a classic dataset in the field of statistics. It was introduced by the British biologist Ronald A. Fisher in 1936 as an example of discriminant analysis. The dataset consists of 150 samples from three species of iris flowers: setosa, versicolor, and virginica. For each sample, four features were measured: the lengths and the widths of the sepals and petals, all in centimeters. The dataset is often used for classification tasks to differentiate between the three species based on the given measurements. It has become a standard test case for many classification algorithms and is widely recognized in the data science community.
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlkwd{ggplot}\hlstd{(iris,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= Sepal.Length))} \hlopt{+}
+\hlstd{bar_diagram} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(iris,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= Sepal.Length))} \hlopt{+}
   \hlkwd{geom_histogram}\hlstd{(}
     \hlkwc{binwidth} \hlstd{=} \hlnum{0.2}\hlstd{,}  \hlcom{# Adjust the box width to 0.2 for smaller data sets}
     \hlkwc{fill} \hlstd{=} \hlstr{"grey"}\hlstd{,}
@@ -522,6 +500,7 @@ The iris dataset is a classic dataset in the field of statistics. It was introdu
     \hlkwc{y} \hlstd{=} \hlstr{"Frequency"}
   \hlstd{)} \hlopt{+}
   \hlkwd{theme_minimal}\hlstd{()}
+\hlkwd{print}\hlstd{(bar_diagram)}
 \end{alltt}
 \end{kframe}\begin{figure}
 \includegraphics[width=\maxwidth]{figure/hist3-1} \caption[Histogram of Sepal Length in Iris Dataset]{Histogram of Sepal Length in Iris Dataset}\label{fig:hist3}
@@ -544,25 +523,25 @@ In this chapter, we explore two powerful data visualisation techniques: heatmaps
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(4L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x411>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10000 ms}}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(4L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x40f>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10004 ms}}
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(5L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x413>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10002 ms}}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(5L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x411>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10004 ms}}
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(6L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x415>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10004 ms}}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(6L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x413>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10000 ms}}
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(7L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x417>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10001 ms}}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(7L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x415>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10000 ms}}
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(8L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x419>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10003 ms}}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(8L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x417>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10000 ms}}
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(9L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x41b>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10003 ms}}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(9L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x419>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10005 ms}}
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(10L, class = c("{}curl"{}, "{}connection"{}: Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10005 ms}}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(10L, class = c("{}curl"{}, "{}connection"{}: Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10004 ms}}
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(11L, class = c("{}curl"{}, "{}connection"{}: Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10005 ms}}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(11L, class = c("{}curl"{}, "{}connection"{}: Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10004 ms}}
 
 {\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(12L, class = c("{}curl"{}, "{}connection"{}: Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10004 ms}}
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(13L, class = c("{}curl"{}, "{}connection"{}: Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10002 ms}}\end{kframe}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(13L, class = c("{}curl"{}, "{}connection"{}: Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10000 ms}}\end{kframe}
 \end{knitrout}
 
 \begin{knitrout}
