@@ -386,111 +386,151 @@ However, it is very easy to get confused when there are too many categories.
     \item \textbf{Overcomplexity with Many Categories}: If there are too many bars, it can be challenging to discern information effectively.
     \item \textbf{Requires Categorical Data}: Bar charts are not ideal for representing trends over continuous data, where line graphs might be more appropriate.
 \end{enumerate}
+\subsubsection{ToothGrowth Dataset}
 
-In this section, I will analyze the air quality dataset provided by the United States Environmental Protection Agency. In our dataset, we have data from over 200 locations. The Air Quality Index (AQI) ranges from 0 to 500. A higher AQI indicates increased levels of air pollution, leading to heightened health concerns. This implies that as the AQI rises, there is a greater risk to public health.
+The \textit{ToothGrowth} dataset is a built-in dataset in R. It is used to study the impact of vitamin C on the tooth growth of Guinea pigs. The dataset consists of 60 observations and 3 variables:
 
+\begin{itemize}
+    \item \textbf{len}: Represents the length of the Guinea pigs' teeth.
+    \item \textbf{supp}: Indicates the method of vitamin C supplementation, with two levels: "VC" for vitamin C in their diet and "OJ" for vitamin C in orange juice.
+    \item \textbf{dose}: Denotes the dosage of vitamin C in milligrams per day, with three levels: 0.5, 1, and 2.
+\end{itemize}
+
+This dataset is commonly used for conducting statistical analyses such as analysis of variance (ANOVA) to determine if vitamin C supplementation significantly affects the tooth growth of Guinea pigs. It serves as a typical example for learning statistics and data visualization.
+
+This bar chart illustrates the tooth growth in relation to varying doses of a vitamin. The key observations are:
+
+\begin{enumerate}
+    \item \textbf{X-axis Description:} The X-axis represents different dosages of the vitamin (mg/day). There are three distinct dosage levels.
+    
+    \item \textbf{Y-axis Description:} The Y-axis signifies the length of tooth growth (len). This represents the average tooth growth at the given vitamin dosage.
+    \item \textbf{Data Observation:} From the heights of the bars, it is evident that as the vitamin dosage increases, the tooth growth also appears to increase. This might suggest that higher doses of the vitamin may promote tooth growth.
+\end{enumerate}
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{data} \hlkwb{<-} \hlkwd{read.csv}\hlstd{(}\hlstr{"c4_epa_air_quality.csv"}\hlstd{)}
-\hlkwd{ggplot}\hlstd{(data,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= aqi))} \hlopt{+}
-  \hlkwd{geom_bar}\hlstd{()} \hlopt{+}
-  \hlkwd{labs}\hlstd{(}\hlkwc{title} \hlstd{=} \hlstr{"Bar Chart Example 1"}\hlstd{,} \hlkwc{x} \hlstd{=}
-         \hlstr{"Air Quality Index/units"}\hlstd{,} \hlkwc{y} \hlstd{=} \hlstr{"number/sites"}\hlstd{)} \hlopt{+}
+\hlkwd{library}\hlstd{(datasets)}
+\hlcom{# load ToothGrowth dataset from R}
+\hlkwd{data}\hlstd{(ToothGrowth)}
+\hlkwd{ggplot}\hlstd{(ToothGrowth,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{factor}\hlstd{(dose),} \hlkwc{y} \hlstd{= len))} \hlopt{+}\hlcom{# Create a bar chart with different vitamin doses on the X-axis and tooth growth on the Y-axis (len).}
+  \hlkwd{geom_bar}\hlstd{(}\hlkwc{stat} \hlstd{=} \hlstr{"identity"}\hlstd{,} \hlkwc{position} \hlstd{=} \hlstr{"dodge"}\hlstd{,} \hlkwc{fill} \hlstd{=} \hlstr{"grey"}\hlstd{)} \hlopt{+}
+  \hlkwd{labs}\hlstd{(}\hlkwc{title} \hlstd{=} \hlstr{"Tooth Growth by Dose"}\hlstd{,} \hlkwc{x} \hlstd{=} \hlstr{"Dose (mg/day)"}\hlstd{,} \hlkwc{y} \hlstd{=} \hlstr{"Tooth Length"}\hlstd{)} \hlopt{+}
   \hlkwd{theme_minimal}\hlstd{()}
 \end{alltt}
-\end{kframe}
-\includegraphics[width=\maxwidth]{figure/my_plot1-1} 
+\end{kframe}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/barchart1-1} \caption[Tooth growth by dose]{Tooth growth by dose}\label{fig:barchart1}
+\end{figure}
+
 \end{knitrout}
+The provided bar chart elucidates tooth growth as influenced by varying doses of a vitamin and further differentiates based on the type of supplement. Below are the primary observations:
 
-The above code is not optimal. Upon examinationan, we can see that there is an excussive number of different categories on the x-axis. Consequently, the multitude of vertical bars in the graph can potentially overwhelm and confuse readers. 
-In order to solve the problem, we can use the “cut” function to divide the data into intervals of five units each. For instance, values from 0-5 would constitute one group, 6-10 another, 11-15 would form the next group, and so forth.
-
+\begin{enumerate}
+    \item \textbf{X-axis Description:} The X-axis categorizes different dosages of the vitamin, with three distinct dosage levels: 0.5, 1, and 2 mg/day.
+    
+    \item \textbf{Y-axis Description:} The Y-axis measures the length of tooth growth, representing the average growth at the specific vitamin dosage and supplement.
+    \item \textbf{Data Observation:} It's discernible from the heights and grouping of the bars that the tooth growth tends to increase with higher doses of the vitamin. However, the effectiveness seems to vary based on the type of supplement. A closer inspection would be required to determine which supplement is more effective at each dosage.
+\end{enumerate}
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{data} \hlkwb{<-} \hlkwd{read.csv}\hlstd{(}\hlstr{"c4_epa_air_quality.csv"}\hlstd{)} \hlcom{#}
-\hlcom{# load ggplot2 package}
-\hlkwd{library}\hlstd{(ggplot2)}
-
-\hlcom{# Use the cut function to divide the data into groups of five intervals}
-\hlstd{data}\hlopt{$}\hlstd{group} \hlkwb{<-} \hlkwd{cut}\hlstd{(data}\hlopt{$}\hlstd{aqi,} \hlkwc{breaks} \hlstd{=}
-                    \hlkwd{seq}\hlstd{(}\hlnum{0}\hlstd{,} \hlkwd{max}\hlstd{(data}\hlopt{$}\hlstd{aqi)} \hlopt{+} \hlnum{5}\hlstd{,} \hlkwc{by} \hlstd{=} \hlnum{5}\hlstd{),}
-                  \hlkwc{right} \hlstd{=} \hlnum{FALSE}\hlstd{,} \hlkwc{include.lowest} \hlstd{=} \hlnum{TRUE}\hlstd{)}
-\hlstd{data}\hlopt{$}\hlstd{group} \hlkwb{<-} \hlkwd{as.numeric}\hlstd{(data}\hlopt{$}\hlstd{group)}
-
-\hlcom{# Y-axis representing the number of occurrences of the X-axis label in the data}
-\hlkwd{ggplot}\hlstd{(data,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= group))} \hlopt{+}
-  \hlkwd{geom_bar}\hlstd{()} \hlopt{+}
-  \hlkwd{labs}\hlstd{(}\hlkwc{title} \hlstd{=} \hlstr{"Bar Chart Example 1"}\hlstd{,}
-       \hlkwc{x} \hlstd{=} \hlstr{"Air Quality Index/units"}\hlstd{,} \hlkwc{y} \hlstd{=} \hlstr{"Number/sites"}\hlstd{)} \hlopt{+}
-  \hlkwd{theme_minimal}\hlstd{()} \hlopt{+}
-  \hlkwd{scale_x_discrete}\hlstd{(}\hlkwc{labels} \hlstd{= scales}\hlopt{::}\hlkwd{label_number}\hlstd{(}\hlkwc{accuracy} \hlstd{=} \hlnum{5}\hlstd{))}
+\hlkwd{ggplot}\hlstd{(filtered_data,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{factor}\hlstd{(dose),} \hlkwc{y} \hlstd{= len,} \hlkwc{fill} \hlstd{= supp))} \hlopt{+}
+  \hlkwd{geom_bar}\hlstd{(}\hlkwc{stat} \hlstd{=} \hlstr{"identity"}\hlstd{,} \hlkwc{position} \hlstd{=} \hlkwd{position_dodge}\hlstd{(}\hlkwc{width} \hlstd{=} \hlnum{0.7}\hlstd{))} \hlopt{+}
+  \hlkwd{labs}\hlstd{(}
+    \hlkwc{title} \hlstd{=} \hlstr{"Tooth Growth by Dose and Supplement"}\hlstd{,}
+    \hlkwc{x} \hlstd{=} \hlstr{"Dose (mg/day)"}\hlstd{,}
+    \hlkwc{y} \hlstd{=} \hlstr{"Tooth Length"}\hlstd{,}
+    \hlkwc{fill} \hlstd{=} \hlstr{"Supplement"}
+  \hlstd{)} \hlopt{+}
+  \hlkwd{theme_minimal}\hlstd{()}
 \end{alltt}
-\end{kframe}
-\includegraphics[width=\maxwidth]{figure/my_plot2-1} 
+\end{kframe}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/barchart2-1} \caption[Tooth Growth by Dose and Supplement(grouping bar chart)]{Tooth Growth by Dose and Supplement(grouping bar chart)}\label{fig:barchart2}
+\end{figure}
+
 \end{knitrout}
+The displayed bar chart provides insights into tooth growth influenced by varying doses of a vitamin, further categorized by the type of supplement (`supp`). The key insights from this chart are:
 
-We can also add some color to make our plot more attractive, here we can add sone color as well. In the code below, we set the color of the bar chart to blue while specifying the border color as black.
-
+\begin{enumerate}
+    \item \textbf{X-axis Description:} The X-axis demarcates different vitamin dosages, categorized into three distinct levels: 0.5, 1, and 2 mg/day.
+    
+    \item \textbf{Y-axis Description:} The Y-axis quantifies tooth growth length, representing the combined average growth for both supplements at the respective vitamin dosages.
+    \item \textbf{Data Observation:} The total height of each bar signifies the combined tooth growth for both supplements at the given dosage. From the stacked sections, it's evident that the impact on tooth growth varies based on the supplement type. A detailed inspection might elucidate the relative effectiveness of the supplements at each dosage level.
+\end{enumerate}
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlcom{# read CSV dater set}
-\hlstd{data} \hlkwb{<-} \hlkwd{read.csv}\hlstd{(}\hlstr{"c4_epa_air_quality.csv"}\hlstd{)}
-
-\hlcom{# load ggplot2 }
-\hlkwd{library}\hlstd{(ggplot2)}
-
-\hlcom{# Use the cut function to divide the data into groups of five intervals}
-\hlstd{data}\hlopt{$}\hlstd{group} \hlkwb{<-} \hlkwd{cut}\hlstd{(data}\hlopt{$}\hlstd{aqi,} \hlkwc{breaks} \hlstd{=} \hlkwd{seq}\hlstd{(}\hlnum{0}\hlstd{,} \hlkwd{max}\hlstd{(data}\hlopt{$}\hlstd{aqi)} \hlopt{+} \hlnum{5}\hlstd{,} \hlkwc{by} \hlstd{=} \hlnum{5}\hlstd{),}
-                  \hlkwc{right} \hlstd{=} \hlnum{FALSE}\hlstd{,} \hlkwc{include.lowest} \hlstd{=} \hlnum{TRUE}\hlstd{)}
-\hlstd{data}\hlopt{$}\hlstd{group} \hlkwb{<-} \hlkwd{as.numeric}\hlstd{(data}\hlopt{$}\hlstd{group)}
-\hlcom{# Converts the group column to numeric type}
-
-\hlkwd{ggplot}\hlstd{(data,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= group))} \hlopt{+}
-  \hlkwd{geom_bar}\hlstd{(}\hlkwc{color}\hlstd{=}\hlstr{"black"}\hlstd{,}\hlkwc{fill}\hlstd{=}\hlstr{"blue"}\hlstd{)} \hlopt{+}
-  \hlkwd{labs}\hlstd{(}\hlkwc{title} \hlstd{=} \hlstr{"Bar Chart Example 1"}\hlstd{,} \hlkwc{x} \hlstd{=} \hlstr{"Air Quality Index/units"}\hlstd{,}
-       \hlkwc{y} \hlstd{=} \hlstr{"Number/sites"}\hlstd{)} \hlopt{+}
-  \hlkwd{theme_minimal}\hlstd{()} \hlopt{+}
-  \hlkwd{scale_x_discrete}\hlstd{(}\hlkwc{labels} \hlstd{= scales}\hlopt{::}\hlkwd{label_number}\hlstd{(}\hlkwc{accuracy} \hlstd{=} \hlnum{5}\hlstd{))}
+\hlkwd{ggplot}\hlstd{(filtered_data,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{factor}\hlstd{(dose),} \hlkwc{y} \hlstd{= len,} \hlkwc{fill} \hlstd{= supp))} \hlopt{+}
+  \hlkwd{geom_bar}\hlstd{(}\hlkwc{stat} \hlstd{=} \hlstr{"identity"}\hlstd{,} \hlkwc{position} \hlstd{=} \hlstr{"stack"}\hlstd{)} \hlopt{+}
+  \hlkwd{labs}\hlstd{(}
+    \hlkwc{title} \hlstd{=} \hlstr{"Tooth Growth by Dose and Supplement"}\hlstd{,}
+    \hlkwc{x} \hlstd{=} \hlstr{"Dose (mg/day)"}\hlstd{,}
+    \hlkwc{y} \hlstd{=} \hlstr{"Tooth Length"}\hlstd{,}
+    \hlkwc{fill} \hlstd{=} \hlstr{"Supplement"}
+  \hlstd{)} \hlopt{+}
+  \hlkwd{theme_minimal}\hlstd{()}
 \end{alltt}
-\end{kframe}
-\includegraphics[width=\maxwidth]{figure/my_plot3-1} 
-\end{knitrout}
+\end{kframe}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/bar_chat3-1} \caption[Tooth Growth by Dose and Supplement(stacked bar chart)]{Tooth Growth by Dose and Supplement(stacked bar chart)}\label{fig:bar chat3}
+\end{figure}
 
-Finally, we add lables to the X-axis to define the range of each categories.
+\end{knitrout}
+In the next part of our section, we will look at another plot which called Histogram.
+\subsubsection{Histograms}
+Histograms, although visually similar to bar charts, convey different meanings. A histogram involves concepts of statistics. It requires data to be categorized into groups and then counts the data points within each of those groups. On a Cartesian coordinate system, the x-axis shows the endpoints of each group, and the y-axis represents frequency. The height of each rectangle indicates the corresponding frequency, making it a frequency distribution histogram. In order to determine the quantity of each group in the histogram, a multiplication of the frequency by the group interval is necessary. Since every histogram has a fixed group interval, if we use the y-axis to directly show quantity and each rectangle's height indicates the number of data points, we can both retain the distribution and simultaneously see the number in each group at a glance. All examples in this text use the non-standard histogram depiction with the y-axis denoting quantity.
+
+\subsubsection{Uses of Histograms:}
+Histograms demonstrates the distribution of frequency or quantity across groups.
+Facilitates the visualization of differences in frequency or quantity among groups.
+
+The R language uses the $hist()$ function to create histograms. This function takes vectors as input and uses a few more parameters to plot the histogram.
+Of course, we can build a good histogram without using ggplot2.
+So the basic grammer for R to creat histogram is:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlcom{# read csv}
-\hlstd{data} \hlkwb{<-} \hlkwd{read.csv}\hlstd{(}\hlstr{"c4_epa_air_quality.csv"}\hlstd{)}
-
-\hlcom{# load ggplot2}
-\hlkwd{library}\hlstd{(ggplot2)}
-
-\hlcom{# Use the cut function to divide the data into groups of five intervals}
-\hlstd{breaks_list} \hlkwb{<-} \hlkwd{seq}\hlstd{(}\hlnum{0}\hlstd{,} \hlkwd{max}\hlstd{(data}\hlopt{$}\hlstd{aqi)} \hlopt{+} \hlnum{5}\hlstd{,} \hlkwc{by} \hlstd{=} \hlnum{5}\hlstd{)}
-\hlstd{data}\hlopt{$}\hlstd{group} \hlkwb{<-} \hlkwd{cut}\hlstd{(data}\hlopt{$}\hlstd{aqi,} \hlkwc{breaks} \hlstd{= breaks_list,}
-                  \hlkwc{right} \hlstd{=} \hlnum{FALSE}\hlstd{,} \hlkwc{include.lowest} \hlstd{=} \hlnum{TRUE}\hlstd{)}
+\hlkwd{hist}\hlstd{(v,main,xlab,xlim,ylim,breaks,col,border)}
+\end{alltt}
 
 
-\hlkwd{ggplot}\hlstd{(data,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= group))} \hlopt{+}
-  \hlkwd{geom_bar}\hlstd{(}\hlkwc{color}\hlstd{=}\hlstr{"black"}\hlstd{,} \hlkwc{fill}\hlstd{=}\hlstr{"blue"}\hlstd{)} \hlopt{+}
-  \hlkwd{labs}\hlstd{(}\hlkwc{title} \hlstd{=} \hlstr{"Bar Chart Example 2"}\hlstd{,} \hlkwc{x} \hlstd{=} \hlstr{"Air Quality Index/units"}\hlstd{,}
-       \hlkwc{y} \hlstd{=} \hlstr{"Number/sites"}\hlstd{)} \hlopt{+}
-  \hlkwd{theme_minimal}\hlstd{()} \hlopt{+}
-  \hlkwd{scale_x_discrete}\hlstd{(}\hlkwc{labels} \hlstd{=} \hlkwd{paste0}
-                   \hlstd{(breaks_list[}\hlopt{-}\hlkwd{length}\hlstd{(breaks_list)],} \hlstr{"-"}\hlstd{, breaks_list[}\hlopt{-}\hlnum{1}\hlstd{]))}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in hist(v, main, xlab, xlim, ylim, breaks, col, border): object 'v' not found}}\begin{alltt}
+\hlcom{#v is the vector that contains the values used in the histogram}
+\hlcom{#main represents the title of the chart}
+\hlcom{#col is used to set the color of the bar.}
+\hlcom{#border is used to set the border color for each bar. }
+\hlcom{#xlab is used to give a description of the X-axis. }
+\hlcom{#xlim is used to specify the range of values on the X-axis. }
+\hlcom{#ylim is used to specify the range of values on the Y-axis. }
+\hlcom{#break is used to mention the width of each bar.}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/my_plot4-1} 
+\end{knitrout}
+Now, we want to creat a better graph with ggplot2 thanks to the geom_histogram() function and iris dataset.
+The iris dataset is a classic dataset in the field of statistics. It was introduced by the British biologist Ronald A. Fisher in 1936 as an example of discriminant analysis. The dataset consists of 150 samples from three species of iris flowers: setosa, versicolor, and virginica. For each sample, four features were measured: the lengths and the widths of the sepals and petals, all in centimeters. The dataset is often used for classification tasks to differentiate between the three species based on the given measurements. It has become a standard test case for many classification algorithms and is widely recognized in the data science community.
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{ggplot}\hlstd{(iris,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= Sepal.Length))} \hlopt{+}
+  \hlkwd{geom_histogram}\hlstd{(}
+    \hlkwc{binwidth} \hlstd{=} \hlnum{0.2}\hlstd{,}  \hlcom{# Adjust the box width to 0.2 for smaller data sets}
+    \hlkwc{fill} \hlstd{=} \hlstr{"grey"}\hlstd{,}
+    \hlkwc{color} \hlstd{=} \hlstr{"black"}
+  \hlstd{)} \hlopt{+}
+  \hlkwd{labs}\hlstd{(}
+    \hlkwc{title} \hlstd{=} \hlstr{"Histogram of Sepal Length in Iris Dataset"}\hlstd{,}
+    \hlkwc{x} \hlstd{=} \hlstr{"Sepal Length/cm"}\hlstd{,}
+    \hlkwc{y} \hlstd{=} \hlstr{"Frequency"}
+  \hlstd{)} \hlopt{+}
+  \hlkwd{theme_minimal}\hlstd{()}
+\end{alltt}
+\end{kframe}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/hist3-1} \caption[Histogram of Sepal Length in Iris Dataset]{Histogram of Sepal Length in Iris Dataset}\label{fig:hist3}
+\end{figure}
+
 \end{knitrout}
 
-\subsection{Heatmaps and Tree Maps}
-\\  
-\\In this chapter, we explore two powerful data visualisation techniques: heatmaps and treemaps. These methods are instrumental for conveying intricate data structures and patterns, offering unique ways to represent multivariate information, making them indispensable tools for data scientists.
+\subsubsection{Heatmaps and Tree Maps}
+In this chapter, we explore two powerful data visualisation techniques: heatmaps and treemaps. These methods are instrumental for conveying intricate data structures and patterns, offering unique ways to represent multivariate information, making them indispensable tools for data scientists.
 \\  
 \\We will delve into the theory behind heatmaps and treemaps, understand how to create them using popular data visualization libraries, and demonstrate their practical applications with real-world examples. By the end of this chapter, you will be well-equipped to leverage heatmaps and treemaps to gain insights from complex and hierarchical datasets.
 
@@ -500,15 +540,56 @@ Finally, we add lables to the X-axis to define the range of each categories.
 \\  
 \\In this illustrative example, heatmaps is used to visualize fire occurrences in Brazil. These heatmaps offer a spatially coherent representation, highlighting regions at high risk and seasonal patterns. Here, the heatmap is a power tool for identifying the risk of fire incidents. The data-driven insights empowers us to make informed decisions concerning preventive measures and strategies for firefighting.
 
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
 
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(4L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x411>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10000 ms}}
 
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(5L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x413>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10002 ms}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(6L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x415>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10004 ms}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(7L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x417>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10001 ms}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(8L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x419>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10003 ms}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(9L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x41b>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10003 ms}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(10L, class = c("{}curl"{}, "{}connection"{}: Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10005 ms}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(11L, class = c("{}curl"{}, "{}connection"{}: Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10005 ms}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(12L, class = c("{}curl"{}, "{}connection"{}: Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10004 ms}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(13L, class = c("{}curl"{}, "{}connection"{}: Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10002 ms}}\end{kframe}
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'brazil\_fire\_fy13' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in lapply(data\_list, filter\_fire): object 'data\_list' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'confident\_fire\_decade' not found}}\end{kframe}
+\end{knitrout}
 
 \\From the heatmap, we can observe that certain locations have significantly higher fires count. However, we do not know the cause of this. Is this due to geographical location, or is it because fires were mostly man-made and used to clear forest areas for agriculture use?
 \\  
 \\Colour selection from \href{https://colorbrewer2.org/#type=sequential&scheme=Oranges&n=9}{colorbrewer2}.
 
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in mutate(., acq\_date = as.Date(acq\_date, format = "{}\%Y-\%m-\%d"{})): object 'confident\_fire\_fy22' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in format(confident\_fire\_months\_fy22\$month, "{}\%b"{}): object 'confident\_fire\_months\_fy22' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in factor(confident\_fire\_months\_fy22\$abb\_month, levels = custom\_order): object 'confident\_fire\_months\_fy22' not found}}\end{kframe}
+\end{knitrout}
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -525,7 +606,10 @@ Finally, we add lables to the X-axis to define the range of each categories.
   \hlkwd{coord_fixed}\hlstd{(}\hlkwc{ratio} \hlstd{=} \hlnum{1}\hlstd{)} \hlopt{+}
   \hlkwd{theme_minimal}\hlstd{()}\hlopt{+}
   \hlkwd{theme}\hlstd{(}\hlkwc{axis.text} \hlstd{=} \hlkwd{element_text}\hlstd{(}\hlkwc{size} \hlstd{=} \hlnum{10}\hlstd{))}
+\end{alltt}
 
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in ggplot(confident\_fire\_fy22, aes(x = longitude, y = latitude)): object 'confident\_fire\_fy22' not found}}\begin{alltt}
 \hlstd{time_heatmap} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(confident_fire_months_fy22,}
                        \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= abb_month,} \hlkwc{y} \hlstd{=} \hlkwd{as.character}\hlstd{(}\hlnum{2022}\hlstd{),} \hlkwc{fill} \hlstd{= count))} \hlopt{+}
   \hlkwd{geom_tile}\hlstd{(}\hlkwc{width} \hlstd{=} \hlnum{0.9}\hlstd{,} \hlkwc{height} \hlstd{=} \hlnum{1}\hlstd{)} \hlopt{+}  \hlcom{# Create the heatmap tiles}
@@ -533,25 +617,33 @@ Finally, we add lables to the X-axis to define the range of each categories.
   \hlkwd{labs}\hlstd{(}\hlkwc{x} \hlstd{=} \hlstr{"Month"}\hlstd{,} \hlkwc{y} \hlstd{=} \hlstr{"FY22"}\hlstd{,} \hlkwc{name} \hlstd{=} \hlstr{"count"}\hlstd{)} \hlopt{+}
   \hlkwd{theme_minimal}\hlstd{()} \hlopt{+}
   \hlkwd{theme}\hlstd{(}\hlkwc{axis.text} \hlstd{=} \hlkwd{element_text}\hlstd{(}\hlkwc{size} \hlstd{=} \hlnum{10}\hlstd{))}
+\end{alltt}
 
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in ggplot(confident\_fire\_months\_fy22, aes(x = abb\_month, y = as.character(2022), : object 'confident\_fire\_months\_fy22' not found}}\begin{alltt}
 \hlstd{spacetime_fy22} \hlkwb{<-} \hlkwd{grid.arrange}\hlstd{(space_heatmap, time_heatmap,} \hlkwc{nrow} \hlstd{=} \hlnum{2}\hlstd{,} \hlkwc{heights} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{6}\hlstd{,}\hlnum{1.5}\hlstd{))}
+\end{alltt}
 
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in arrangeGrob(...): object 'space\_heatmap' not found}}\begin{alltt}
 \hlkwd{print}\hlstd{(spacetime_fy22)}
 \end{alltt}
-\begin{verbatim}
-## TableGrob (2 x 1) "arrange": 2 grobs
-##   z     cells    name           grob
-## 1 1 (1-1,1-1) arrange gtable[layout]
-## 2 2 (2-2,1-1) arrange gtable[layout]
-\end{verbatim}
-\end{kframe}\begin{figure}
-\includegraphics[width=\maxwidth]{figure/spacetime-fy22-1} \caption[Frequency of Fire by Space and Time, FY22]{Frequency of Fire by Space and Time, FY22}\label{fig:spacetime-fy22}
-\end{figure}
 
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in print(spacetime\_fy22): object 'spacetime\_fy22' not found}}\end{kframe}
 \end{knitrout}
 \\From the table, we can clearly see that August and September are the riskiest months in terms of fire hazard, whereas November to July hardly pose any risk at all. It's natural to ask the follow-up question: How does FY22 compare to previous years? Is it valid to claim that August and September are the fire hazard season?
 
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in list2(...): object 'confident\_fire\_decade' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in mutate(., acq\_date = as.Date(acq\_date, format = "{}\%Y-\%m-\%d"{}), : object 'combined\_confident\_fire' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in mutate(., abb\_month = gsub("{}.*?([A-Za-z]\{3\}).*"{}, "{}\textbackslash{}\textbackslash{}1"{}, month\_year)): object 'pivot\_table' not found}}\end{kframe}
+\end{knitrout}
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -563,13 +655,15 @@ Finally, we add lables to the X-axis to define the range of each categories.
   \hlkwd{labs}\hlstd{(}\hlkwc{x} \hlstd{=} \hlstr{"Month"}\hlstd{,} \hlkwc{y} \hlstd{=} \hlstr{"FY13-22"}\hlstd{)} \hlopt{+}
   \hlkwd{theme_minimal}\hlstd{()} \hlopt{+}
   \hlkwd{theme}\hlstd{(}\hlkwc{axis.text} \hlstd{=} \hlkwd{element_text}\hlstd{(}\hlkwc{size} \hlstd{=} \hlnum{10}\hlstd{))}
+\end{alltt}
 
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in ggplot(pivot\_table, aes(x = factor(abb\_month, levels = custom\_order), : object 'pivot\_table' not found}}\begin{alltt}
 \hlkwd{print}\hlstd{(heatmap_plot)}
 \end{alltt}
-\end{kframe}\begin{figure}
-\includegraphics[width=\maxwidth]{figure/fire-by-months-fy13-22-1} \caption[Frequency of Fire Occurrences, FY13-22]{Frequency of Fire Occurrences, FY13-22}\label{fig:fire-by-months-fy13-22}
-\end{figure}
 
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in print(heatmap\_plot): object 'heatmap\_plot' not found}}\end{kframe}
 \end{knitrout}
 \\Indeed, the data showed a trend indicating that August to October have more fire occurrences compared to the rest of the year. There are clearly more fire hazards in those months.
 \\  
@@ -826,7 +920,45 @@ xxx
 xxx
 
 \subsection{3D and Interactive Visualisations}
-xxx
+ggplot2 is one of the most popular data visualization libraries in R, but it is primarily designed for 2D data visualization. Directly creating 3D views with ggplot2 can be challenging.
+
+rgl: This is a widely-used package for 3D visualizations. It allows you to create interactive 3D scatter plots, line plots, and more, and view them in a separate window.
+
+3D data visualization is an approach that employs three-dimensional graphics to represent complex data structures, allowing for an immersive exploration of information. Unlike traditional 2D visualizations (like bar graphs or line charts), 3D visualizations can convey an additional dimension of data, making them particularly valuable in specific contexts.
+
+Our first example will be  a scatter plot. We can use scatterplot3d package  to help us for data visualization.
+\section{Trees Dataset in R}
+
+The \texttt{trees} dataset is one of R's built-in datasets. It contains measurements from 31 felled black cherry trees and provides insights into the relationship between a tree's girth, its height, and the volume of timber it can produce. The dataset comprises the following variables:
+
+\begin{itemize}
+    \item \textbf{Girth:} The diameter of the tree, measured in inches at 4 ft 6 in above the ground.
+    \item \textbf{Height:} The height of the tree, measured in feet.
+    \item \textbf{Volume:} The volume of timber, measured in cubic feet, that the tree can produce.
+\end{itemize}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{data}\hlstd{(trees)}
+\hlcom{# Generate colors based on the Volume variable}
+\hlstd{colors} \hlkwb{<-} \hlkwd{colorRampPalette}\hlstd{(}\hlkwd{c}\hlstd{(}\hlstr{"blue"}\hlstd{,} \hlstr{"red"}\hlstd{))(}\hlkwd{length}\hlstd{(}\hlkwd{unique}\hlstd{(trees}\hlopt{$}\hlstd{Volume)))}
+\hlstd{color_assign} \hlkwb{<-} \hlstd{colors[}\hlkwd{as.numeric}\hlstd{(}\hlkwd{as.factor}\hlstd{(trees}\hlopt{$}\hlstd{Volume))]}
+\hlcom{# Create 3d scatter plot with colors}
+\hlkwd{scatterplot3d}\hlstd{(trees}\hlopt{$}\hlstd{Girth, trees}\hlopt{$}\hlstd{Height, trees}\hlopt{$}\hlstd{Volume,}
+              \hlkwc{color}\hlstd{=color_assign,}
+              \hlkwc{main}\hlstd{=}\hlstr{"3D Scatterplot of trees data"}\hlstd{,}
+              \hlkwc{xlab}\hlstd{=}\hlstr{"Girth (inches)"}\hlstd{,}
+              \hlkwc{ylab}\hlstd{=}\hlstr{"Height (ft)"}\hlstd{,}
+              \hlkwc{zlab}\hlstd{=}\hlstr{"Volume (cubic ft)"}\hlstd{)}
+\end{alltt}
+\end{kframe}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/3d1-1} \caption[3d scatter plot]{3d scatter plot}\label{fig:3d1}
+\end{figure}
+
+\end{knitrout}
+
+
+
 
 \subsection{Advanced Visualisation Techniques}
 xxx

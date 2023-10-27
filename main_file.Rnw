@@ -19,6 +19,7 @@ library(sf)
 library(tmap)
 library(gridExtra)
 library(igraph)
+library(scatterplot3d)
 data(mtcars)
 @
 
@@ -350,93 +351,124 @@ However, it is very easy to get confused when there are too many categories.
     \item \textbf{Overcomplexity with Many Categories}: If there are too many bars, it can be challenging to discern information effectively.
     \item \textbf{Requires Categorical Data}: Bar charts are not ideal for representing trends over continuous data, where line graphs might be more appropriate.
 \end{enumerate}
+\subsubsection{ToothGrowth Dataset}
 
-In this section, I will analyze the air quality dataset provided by the United States Environmental Protection Agency. In our dataset, we have data from over 200 locations. The Air Quality Index (AQI) ranges from 0 to 500. A higher AQI indicates increased levels of air pollution, leading to heightened health concerns. This implies that as the AQI rises, there is a greater risk to public health.
+The \textit{ToothGrowth} dataset is a built-in dataset in R. It is used to study the impact of vitamin C on the tooth growth of Guinea pigs. The dataset consists of 60 observations and 3 variables:
 
-<<my_plot1, fig=TRUE, echo=TRUE, tidy=TRUE, width.cutoff=60>>=
-data <- read.csv("c4_epa_air_quality.csv")
-ggplot(data, aes(x = aqi)) +
-  geom_bar() +
-  labs(title = "Bar Chart Example 1", x =
-         "Air Quality Index/units", y = "number/sites") +
+\begin{itemize}
+    \item \textbf{len}: Represents the length of the Guinea pigs' teeth.
+    \item \textbf{supp}: Indicates the method of vitamin C supplementation, with two levels: "VC" for vitamin C in their diet and "OJ" for vitamin C in orange juice.
+    \item \textbf{dose}: Denotes the dosage of vitamin C in milligrams per day, with three levels: 0.5, 1, and 2.
+\end{itemize}
+
+This dataset is commonly used for conducting statistical analyses such as analysis of variance (ANOVA) to determine if vitamin C supplementation significantly affects the tooth growth of Guinea pigs. It serves as a typical example for learning statistics and data visualization.
+
+This bar chart illustrates the tooth growth in relation to varying doses of a vitamin. The key observations are:
+
+\begin{enumerate}
+    \item \textbf{X-axis Description:} The X-axis represents different dosages of the vitamin (mg/day). There are three distinct dosage levels.
+    
+    \item \textbf{Y-axis Description:} The Y-axis signifies the length of tooth growth (len). This represents the average tooth growth at the given vitamin dosage.
+    \item \textbf{Data Observation:} From the heights of the bars, it is evident that as the vitamin dosage increases, the tooth growth also appears to increase. This might suggest that higher doses of the vitamin may promote tooth growth.
+\end{enumerate}
+<<barchart1,echo=TRUE,fig.height=4,fig.width=6, fig.cap='Tooth growth by dose'>>=
+library(datasets)
+# load ToothGrowth dataset from R
+data(ToothGrowth)
+ggplot(ToothGrowth, aes(x = factor(dose), y = len)) +# Create a bar chart with different vitamin doses on the X-axis and tooth growth on the Y-axis (len).
+  geom_bar(stat = "identity", position = "dodge", fill = "grey") +
+  labs(title = "Tooth Growth by Dose", x = "Dose (mg/day)", y = "Tooth Length") +
   theme_minimal()
 @
+The provided bar chart elucidates tooth growth as influenced by varying doses of a vitamin and further differentiates based on the type of supplement. Below are the primary observations:
 
-The above code is not optimal. Upon examinationan, we can see that there is an excussive number of different categories on the x-axis. Consequently, the multitude of vertical bars in the graph can potentially overwhelm and confuse readers. 
-In order to solve the problem, we can use the “cut” function to divide the data into intervals of five units each. For instance, values from 0-5 would constitute one group, 6-10 another, 11-15 would form the next group, and so forth.
+\begin{enumerate}
+    \item \textbf{X-axis Description:} The X-axis categorizes different dosages of the vitamin, with three distinct dosage levels: 0.5, 1, and 2 mg/day.
+    
+    \item \textbf{Y-axis Description:} The Y-axis measures the length of tooth growth, representing the average growth at the specific vitamin dosage and supplement.
+    \item \textbf{Data Observation:} It's discernible from the heights and grouping of the bars that the tooth growth tends to increase with higher doses of the vitamin. However, the effectiveness seems to vary based on the type of supplement. A closer inspection would be required to determine which supplement is more effective at each dosage.
+\end{enumerate}
 
-
-<<my_plot2, fig=TRUE, echo=TRUE, tidy=TRUE, width.cutoff=60>>=
-data <- read.csv("c4_epa_air_quality.csv") #
-# load ggplot2 package
-library(ggplot2)
-
-# Use the cut function to divide the data into groups of five intervals
-data$group <- cut(data$aqi, breaks = 
-                    seq(0, max(data$aqi) + 5, by = 5), 
-                  right = FALSE, include.lowest = TRUE)
-data$group <- as.numeric(data$group) 
-
-# Y-axis representing the number of occurrences of the X-axis label in the data
-ggplot(data, aes(x = group)) +
-  geom_bar() +
-  labs(title = "Bar Chart Example 1", 
-       x = "Air Quality Index/units", y = "Number/sites") +
-  theme_minimal() +
-  scale_x_discrete(labels = scales::label_number(accuracy = 5))
+<<barchart2, echo=5:13,fig.height=4, fig.width=6, fig.cap='Tooth Growth by Dose and Supplement(grouping bar chart)'>>=
+# Screening data included only data with dose 0.5, 1, and 2
+data(ToothGrowth)
+filtered_data <- ToothGrowth %>% filter(dose %in% c(0.5, 1, 2))
+# Create a grouping bar chart and adjust the position of the columns
+ggplot(filtered_data, aes(x = factor(dose), y = len, fill = supp)) +
+  geom_bar(stat = "identity", position = position_dodge(width = 0.7)) +
+  labs(
+    title = "Tooth Growth by Dose and Supplement",
+    x = "Dose (mg/day)",
+    y = "Tooth Length",
+    fill = "Supplement"
+  ) +
+  theme_minimal()
 
 @
+The displayed bar chart provides insights into tooth growth influenced by varying doses of a vitamin, further categorized by the type of supplement (`supp`). The key insights from this chart are:
 
-We can also add some color to make our plot more attractive, here we can add sone color as well. In the code below, we set the color of the bar chart to blue while specifying the border color as black.
+\begin{enumerate}
+    \item \textbf{X-axis Description:} The X-axis demarcates different vitamin dosages, categorized into three distinct levels: 0.5, 1, and 2 mg/day.
+    
+    \item \textbf{Y-axis Description:} The Y-axis quantifies tooth growth length, representing the combined average growth for both supplements at the respective vitamin dosages.
+    \item \textbf{Data Observation:} The total height of each bar signifies the combined tooth growth for both supplements at the given dosage. From the stacked sections, it's evident that the impact on tooth growth varies based on the supplement type. A detailed inspection might elucidate the relative effectiveness of the supplements at each dosage level.
+\end{enumerate}
+<<bar chat3, echo=3:11, fig.height=4, fig.width=6, fig.cap='Tooth Growth by Dose and Supplement(stacked bar chart)'>>=
+filtered_data <- ToothGrowth %>% filter(dose %in% c(0.5, 1, 2))
+# Create a stacked bar chart
+ggplot(filtered_data, aes(x = factor(dose), y = len, fill = supp)) +
+  geom_bar(stat = "identity", position = "stack") +
+  labs(
+    title = "Tooth Growth by Dose and Supplement",
+    x = "Dose (mg/day)",
+    y = "Tooth Length",
+    fill = "Supplement"
+  ) +
+  theme_minimal()
 
-<<my_plot3, fig=TRUE, echo=TRUE, tidy=TRUE, width.cutoff=60>>=
-# read CSV dater set
-data <- read.csv("c4_epa_air_quality.csv") 
+@
+In the next part of our section, we will look at another plot which called Histogram.
+\subsubsection{Histograms}
+Histograms, although visually similar to bar charts, convey different meanings. A histogram involves concepts of statistics. It requires data to be categorized into groups and then counts the data points within each of those groups. On a Cartesian coordinate system, the x-axis shows the endpoints of each group, and the y-axis represents frequency. The height of each rectangle indicates the corresponding frequency, making it a frequency distribution histogram. In order to determine the quantity of each group in the histogram, a multiplication of the frequency by the group interval is necessary. Since every histogram has a fixed group interval, if we use the y-axis to directly show quantity and each rectangle's height indicates the number of data points, we can both retain the distribution and simultaneously see the number in each group at a glance. All examples in this text use the non-standard histogram depiction with the y-axis denoting quantity.
 
-# load ggplot2 
-library(ggplot2)
+\subsubsection{Uses of Histograms:}
+Histograms demonstrates the distribution of frequency or quantity across groups.
+Facilitates the visualization of differences in frequency or quantity among groups.
 
-# Use the cut function to divide the data into groups of five intervals
-data$group <- cut(data$aqi, breaks = seq(0, max(data$aqi) + 5, by = 5), 
-                  right = FALSE, include.lowest = TRUE)
-data$group <- as.numeric(data$group) 
-# Converts the group column to numeric type
-
-ggplot(data, aes(x = group)) +
-  geom_bar(color="black",fill="blue") +
-  labs(title = "Bar Chart Example 1", x = "Air Quality Index/units", 
-       y = "Number/sites") +
-  theme_minimal() +
-  scale_x_discrete(labels = scales::label_number(accuracy = 5))
+The R language uses the $hist()$ function to create histograms. This function takes vectors as input and uses a few more parameters to plot the histogram.
+Of course, we can build a good histogram without using ggplot2.
+So the basic grammer for R to creat histogram is:
+<<hist1, echo=TRUE>>=
+hist(v,main,xlab,xlim,ylim,breaks,col,border)
+#v is the vector that contains the values used in the histogram
+#main represents the title of the chart
+#col is used to set the color of the bar.
+#border is used to set the border color for each bar. 
+#xlab is used to give a description of the X-axis. 
+#xlim is used to specify the range of values on the X-axis. 
+#ylim is used to specify the range of values on the Y-axis. 
+#break is used to mention the width of each bar.
+@
+Now, we want to creat a better graph with ggplot2 thanks to the geom_histogram() function and iris dataset.
+The iris dataset is a classic dataset in the field of statistics. It was introduced by the British biologist Ronald A. Fisher in 1936 as an example of discriminant analysis. The dataset consists of 150 samples from three species of iris flowers: setosa, versicolor, and virginica. For each sample, four features were measured: the lengths and the widths of the sepals and petals, all in centimeters. The dataset is often used for classification tasks to differentiate between the three species based on the given measurements. It has become a standard test case for many classification algorithms and is widely recognized in the data science community.
+<<hist3, echo=TRUE,fig.height=4, fig.width=6, fig.cap='Histogram of Sepal Length in Iris Dataset'>>=
+ggplot(iris, aes(x = Sepal.Length)) +
+  geom_histogram(
+    binwidth = 0.2,  # Adjust the box width to 0.2 for smaller data sets
+    fill = "grey", 
+    color = "black"
+  ) +
+  labs(
+    title = "Histogram of Sepal Length in Iris Dataset",
+    x = "Sepal Length/cm",
+    y = "Frequency"
+  ) +
+  theme_minimal()
+  
 @
 
-Finally, we add lables to the X-axis to define the range of each categories.
-<<my_plot4, fig=TRUE, echo=TRUE, tidy=TRUE, width.cutoff=60>>=
-# read csv
-data <- read.csv("c4_epa_air_quality.csv")
-
-# load ggplot2
-library(ggplot2)
-
-# Use the cut function to divide the data into groups of five intervals
-breaks_list <- seq(0, max(data$aqi) + 5, by = 5)
-data$group <- cut(data$aqi, breaks = breaks_list,
-                  right = FALSE, include.lowest = TRUE)
-
-
-ggplot(data, aes(x = group)) +
-  geom_bar(color="black", fill="blue") +
-  labs(title = "Bar Chart Example 2", x = "Air Quality Index/units",
-       y = "Number/sites") +
-  theme_minimal() +
-  scale_x_discrete(labels = paste0
-                   (breaks_list[-length(breaks_list)], "-", breaks_list[-1]))
-            
-@
-
-\subsection{Heatmaps and Tree Maps}
-\\  
-\\In this chapter, we explore two powerful data visualisation techniques: heatmaps and treemaps. These methods are instrumental for conveying intricate data structures and patterns, offering unique ways to represent multivariate information, making them indispensable tools for data scientists.
+\subsubsection{Heatmaps and Tree Maps}
+In this chapter, we explore two powerful data visualisation techniques: heatmaps and treemaps. These methods are instrumental for conveying intricate data structures and patterns, offering unique ways to represent multivariate information, making them indispensable tools for data scientists.
 \\  
 \\We will delve into the theory behind heatmaps and treemaps, understand how to create them using popular data visualization libraries, and demonstrate their practical applications with real-world examples. By the end of this chapter, you will be well-equipped to leverage heatmaps and treemaps to gain insights from complex and hierarchical datasets.
 
@@ -872,7 +904,39 @@ xxx
 xxx
 
 \subsection{3D and Interactive Visualisations}
-xxx
+ggplot2 is one of the most popular data visualization libraries in R, but it is primarily designed for 2D data visualization. Directly creating 3D views with ggplot2 can be challenging.
+
+rgl: This is a widely-used package for 3D visualizations. It allows you to create interactive 3D scatter plots, line plots, and more, and view them in a separate window.
+
+3D data visualization is an approach that employs three-dimensional graphics to represent complex data structures, allowing for an immersive exploration of information. Unlike traditional 2D visualizations (like bar graphs or line charts), 3D visualizations can convey an additional dimension of data, making them particularly valuable in specific contexts.
+
+Our first example will be  a scatter plot. We can use scatterplot3d package  to help us for data visualization.
+\section{Trees Dataset in R}
+
+The \texttt{trees} dataset is one of R's built-in datasets. It contains measurements from 31 felled black cherry trees and provides insights into the relationship between a tree's girth, its height, and the volume of timber it can produce. The dataset comprises the following variables:
+
+\begin{itemize}
+    \item \textbf{Girth:} The diameter of the tree, measured in inches at 4 ft 6 in above the ground.
+    \item \textbf{Height:} The height of the tree, measured in feet.
+    \item \textbf{Volume:} The volume of timber, measured in cubic feet, that the tree can produce.
+\end{itemize}
+<<3d1, echo=TRUE, fig.cap='3d scatter plot'>>=
+data(trees)
+# Generate colors based on the Volume variable
+colors <- colorRampPalette(c("blue", "red"))(length(unique(trees$Volume)))
+color_assign <- colors[as.numeric(as.factor(trees$Volume))]
+# Create 3d scatter plot with colors
+scatterplot3d(trees$Girth, trees$Height, trees$Volume, 
+              color=color_assign,
+              main="3D Scatterplot of trees data",
+              xlab="Girth (inches)", 
+              ylab="Height (ft)", 
+              zlab="Volume (cubic ft)")
+
+@
+
+
+
 
 \subsection{Advanced Visualisation Techniques}
 xxx
