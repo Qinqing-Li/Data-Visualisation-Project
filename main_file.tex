@@ -56,7 +56,20 @@
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in library(forecast): there is no package called 'forecast'}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in library(sf): there is no package called 'sf'}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in library(tmap): there is no package called 'tmap'}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in library(igraph): there is no package called 'igraph'}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in library(scatterplot3d): there is no package called 'scatterplot3d'}}\end{kframe}
+\end{knitrout}
 
 \tableofcontents
 \newpage 
@@ -250,8 +263,8 @@ As data grows increasingly complex and vast, the tools and techniques for effect
 
 \subsubsection{Data Sets}
 \begin{enumerate}
-\item \textbf{Mtcars dataset}: The mtcars dataset in R is a built-in dataset that contains information about various car models. It provides data on the characteristics of 32 different car models, which were available in the early 1970s. The dataset includes a total of 11 variables, each representing different attributes of these cars, such as miles per gallon (mpg), horsepower (hp), number of cylinders (cyl), and more. The mtcars dataset is often used for data analysis, visualization, and statistical modeling, making it a useful resource for exploring and practicing data science techniques in R.
-\item \textbf{Annual fire in Brazil}: it is obtained from \href{https://firms.modaps.eosdis.nasa.gov/}{NASA}. Each dataset from 2013 to 2022 contains over 200,000 observations. Over the decade, there are more than 3 million observations. The trend is impossible to analyse by eye. However, an exploratory analysis using heatmaps provides insights into this data.
+\item \textbf{Mtcars dataset}: The mtcars dataset in R is a built-in dataset that contains information about various car models. It provides data on the characteristics of 32 different car models, which were available in the early 1970s. The dataset includes a total of 11 variables, each representing different attributes of these cars, such as miles per gallon (mpg), horsepower (hp), number of cylinders (cyl), and more. The mtcars dataset is often used for data analysis, visualization, and statistical modeling, making it a useful resource for exploring and practicing data science techniques in R.\\
+\item \textbf{Annual fire in Brazil}: it is obtained from \href{https://firms.modaps.eosdis.nasa.gov/}{NASA}. Each dataset from 2013 to 2022 contains over 200,000 observations. Over the decade, there are more than 3 million observations.\\
 \end{enumerate}
 
 \subsection{Scatter Plots and Bubble Charts}
@@ -540,56 +553,15 @@ In this chapter, we explore two powerful data visualisation techniques: heatmaps
 \\  
 \\In this illustrative example, heatmaps is used to visualize fire occurrences in Brazil. These heatmaps offer a spatially coherent representation, highlighting regions at high risk and seasonal patterns. Here, the heatmap is a power tool for identifying the risk of fire incidents. The data-driven insights empowers us to make informed decisions concerning preventive measures and strategies for firefighting.
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(4L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x411>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10000 ms}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(5L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x413>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10002 ms}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(6L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x415>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10004 ms}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(7L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x417>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10001 ms}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(8L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x419>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10003 ms}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(9L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x41b>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10003 ms}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(10L, class = c("{}curl"{}, "{}connection"{}: Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10005 ms}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(11L, class = c("{}curl"{}, "{}connection"{}: Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10005 ms}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(12L, class = c("{}curl"{}, "{}connection"{}: Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10004 ms}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(13L, class = c("{}curl"{}, "{}connection"{}: Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10002 ms}}\end{kframe}
-\end{knitrout}
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'brazil\_fire\_fy13' not found}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in lapply(data\_list, filter\_fire): object 'data\_list' not found}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'confident\_fire\_decade' not found}}\end{kframe}
-\end{knitrout}
-
-\\From the heatmap, we can observe that certain locations have significantly higher fires count. However, we do not know the cause of this. Is this due to geographical location, or is it because fires were mostly man-made and used to clear forest areas for agriculture use?
+\\From Figure~\ref{fig:spacetime-fy22}, we can observe that certain locations have significantly higher fires count. 
 \\  
 \\Colour selection from \href{https://colorbrewer2.org/#type=sequential&scheme=Oranges&n=9}{colorbrewer2}.
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in mutate(., acq\_date = as.Date(acq\_date, format = "{}\%Y-\%m-\%d"{})): object 'confident\_fire\_fy22' not found}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in format(confident\_fire\_months\_fy22\$month, "{}\%b"{}): object 'confident\_fire\_months\_fy22' not found}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in factor(confident\_fire\_months\_fy22\$abb\_month, levels = custom\_order): object 'confident\_fire\_months\_fy22' not found}}\end{kframe}
-\end{knitrout}
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -606,44 +578,38 @@ In this chapter, we explore two powerful data visualisation techniques: heatmaps
   \hlkwd{coord_fixed}\hlstd{(}\hlkwc{ratio} \hlstd{=} \hlnum{1}\hlstd{)} \hlopt{+}
   \hlkwd{theme_minimal}\hlstd{()}\hlopt{+}
   \hlkwd{theme}\hlstd{(}\hlkwc{axis.text} \hlstd{=} \hlkwd{element_text}\hlstd{(}\hlkwc{size} \hlstd{=} \hlnum{10}\hlstd{))}
-\end{alltt}
 
+\hlstd{interactive_plot} \hlkwb{<-} \hlkwd{ggplotly}\hlstd{(space_heatmap)}
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in ggplot(confident\_fire\_fy22, aes(x = longitude, y = latitude)): object 'confident\_fire\_fy22' not found}}\begin{alltt}
 \hlstd{time_heatmap} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(confident_fire_months_fy22,}
                        \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= abb_month,} \hlkwc{y} \hlstd{=} \hlkwd{as.character}\hlstd{(}\hlnum{2022}\hlstd{),} \hlkwc{fill} \hlstd{= count))} \hlopt{+}
   \hlkwd{geom_tile}\hlstd{(}\hlkwc{width} \hlstd{=} \hlnum{0.9}\hlstd{,} \hlkwc{height} \hlstd{=} \hlnum{1}\hlstd{)} \hlopt{+}  \hlcom{# Create the heatmap tiles}
   \hlkwd{scale_fill_gradient}\hlstd{(}\hlkwc{low} \hlstd{=} \hlstr{"#fff7ec"}\hlstd{,} \hlkwc{high} \hlstd{=} \hlstr{"#d7301f"}\hlstd{)} \hlopt{+}
-  \hlkwd{labs}\hlstd{(}\hlkwc{x} \hlstd{=} \hlstr{"Month"}\hlstd{,} \hlkwc{y} \hlstd{=} \hlstr{"FY22"}\hlstd{,} \hlkwc{name} \hlstd{=} \hlstr{"count"}\hlstd{)} \hlopt{+}
+  \hlkwd{labs}\hlstd{(}\hlkwc{x} \hlstd{=} \hlstr{" "}\hlstd{,} \hlkwc{y} \hlstd{=} \hlstr{" "}\hlstd{,} \hlkwc{name} \hlstd{=} \hlstr{"count"}\hlstd{)} \hlopt{+}
   \hlkwd{theme_minimal}\hlstd{()} \hlopt{+}
   \hlkwd{theme}\hlstd{(}\hlkwc{axis.text} \hlstd{=} \hlkwd{element_text}\hlstd{(}\hlkwc{size} \hlstd{=} \hlnum{10}\hlstd{))}
-\end{alltt}
 
+\hlstd{spacetime_fy22} \hlkwb{<-} \hlkwd{grid.arrange}\hlstd{(space_heatmap, time_heatmap,} \hlkwc{nrow} \hlstd{=} \hlnum{2}\hlstd{,} \hlkwc{heights} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{5}\hlstd{,}\hlnum{1}\hlstd{))}
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in ggplot(confident\_fire\_months\_fy22, aes(x = abb\_month, y = as.character(2022), : object 'confident\_fire\_months\_fy22' not found}}\begin{alltt}
-\hlstd{spacetime_fy22} \hlkwb{<-} \hlkwd{grid.arrange}\hlstd{(space_heatmap, time_heatmap,} \hlkwc{nrow} \hlstd{=} \hlnum{2}\hlstd{,} \hlkwc{heights} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{6}\hlstd{,}\hlnum{1.5}\hlstd{))}
-\end{alltt}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in arrangeGrob(...): object 'space\_heatmap' not found}}\begin{alltt}
 \hlkwd{print}\hlstd{(spacetime_fy22)}
 \end{alltt}
+\begin{verbatim}
+## TableGrob (2 x 1) "arrange": 2 grobs
+##   z     cells    name           grob
+## 1 1 (1-1,1-1) arrange gtable[layout]
+## 2 2 (2-2,1-1) arrange gtable[layout]
+\end{verbatim}
+\end{kframe}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/spacetime-fy22-1} \caption[Frequency of Fire by Space and Time, FY22]{Frequency of Fire by Space and Time, FY22}\label{fig:spacetime-fy22}
+\end{figure}
 
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in print(spacetime\_fy22): object 'spacetime\_fy22' not found}}\end{kframe}
 \end{knitrout}
 \\From the table, we can clearly see that August and September are the riskiest months in terms of fire hazard, whereas November to July hardly pose any risk at all. It's natural to ask the follow-up question: How does FY22 compare to previous years? Is it valid to claim that August and September are the fire hazard season?
+\\    
+\\Shown in Figure~\ref{fig:fire-by-months-fy13-22}, the data showed a trend indicating that August to October have more fire occurrences compared to the rest of the year. There are clearly more fire hazards in those months.
+\\  
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in list2(...): object 'confident\_fire\_decade' not found}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in mutate(., acq\_date = as.Date(acq\_date, format = "{}\%Y-\%m-\%d"{}), : object 'combined\_confident\_fire' not found}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in mutate(., abb\_month = gsub("{}.*?([A-Za-z]\{3\}).*"{}, "{}\textbackslash{}\textbackslash{}1"{}, month\_year)): object 'pivot\_table' not found}}\end{kframe}
-\end{knitrout}
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -652,21 +618,17 @@ In this chapter, we explore two powerful data visualisation techniques: heatmaps
                                         \hlkwc{y} \hlstd{=} \hlkwd{as.character}\hlstd{(year),} \hlkwc{fill} \hlstd{= count))} \hlopt{+}
   \hlkwd{geom_tile}\hlstd{()} \hlopt{+}
   \hlkwd{scale_fill_gradient}\hlstd{(}\hlkwc{low} \hlstd{=} \hlstr{"#fff7ec"}\hlstd{,} \hlkwc{high} \hlstd{=} \hlstr{"#d7301f"}\hlstd{)} \hlopt{+}
-  \hlkwd{labs}\hlstd{(}\hlkwc{x} \hlstd{=} \hlstr{"Month"}\hlstd{,} \hlkwc{y} \hlstd{=} \hlstr{"FY13-22"}\hlstd{)} \hlopt{+}
+  \hlkwd{labs}\hlstd{(}\hlkwc{x} \hlstd{=} \hlstr{" "}\hlstd{,} \hlkwc{y} \hlstd{=} \hlstr{" "}\hlstd{)} \hlopt{+}
   \hlkwd{theme_minimal}\hlstd{()} \hlopt{+}
   \hlkwd{theme}\hlstd{(}\hlkwc{axis.text} \hlstd{=} \hlkwd{element_text}\hlstd{(}\hlkwc{size} \hlstd{=} \hlnum{10}\hlstd{))}
-\end{alltt}
 
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in ggplot(pivot\_table, aes(x = factor(abb\_month, levels = custom\_order), : object 'pivot\_table' not found}}\begin{alltt}
 \hlkwd{print}\hlstd{(heatmap_plot)}
 \end{alltt}
+\end{kframe}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/fire-by-months-fy13-22-1} \caption[Frequency of Fire Occurrences, FY13-22]{Frequency of Fire Occurrences, FY13-22}\label{fig:fire-by-months-fy13-22}
+\end{figure}
 
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in print(heatmap\_plot): object 'heatmap\_plot' not found}}\end{kframe}
 \end{knitrout}
-\\Indeed, the data showed a trend indicating that August to October have more fire occurrences compared to the rest of the year. There are clearly more fire hazards in those months.
-\\  
 \\The foundation of a heatmap is a data matrix, where each entry in this matrix represents an observation or measurement. Therefore, the first step to create a heatmap is to organize the data by columns and rows. In Figure~\ref{fig:fire-by-months-fy13-22}, the structured data is displayed as a grid of coloured cells, where the colour intensity corresponds to the underlying frequency.
 \\  
 \\Heatmaps are powerful tools for visualizing relationships between covariables within a model. One example of why we need to analyse a matrix of correlations between variables is in regression models. In the real world, variables are often correlated, and complete independent relations are rare. Consequently, analysing pairwise correlations is essential. Highly correlated variables significantly impact the regression model. When faced with highly correlated variables, we need to choose one variable from the correlated set. The selection is based on finding a regression model with the least Akaike Information Criterion (AIC) score among these variables. The AIC measures how much the linear model overfits the dataset. In other words, we want the regression model to explain the trend, and we do not want to overfit the model so that it explains the noise in the data set, which would lead to inaccurate predictions, as shown in Figure \ref{fig:noisy}.
@@ -674,7 +636,7 @@ In this chapter, we explore two powerful data visualisation techniques: heatmaps
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.7\textwidth]{/Users/margaretli/Data-Visualisation-Project/overfitting.png}
+    \includegraphics[width=0.7\textwidth]{https://github.com/Qinqing-Li/Data-Visualisation-Project/blob/main/overfitting.png?raw=true}
     \caption{Danger of overfitting the regression model}
     \label{fig:noisy}
 \end{figure}
@@ -843,10 +805,8 @@ published by the European Central Bank over the time period from 01 Jan 2013 to 
 One of the primary advantages of time series visualization is the ease with which it allows analysts to identify long-term upward or downward trends in data and patterns that repeat over specific intervals. By decomposing the time series, it would be easy to see those features.
 
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in `ensure\_igraph()`:\\\#\# ! Must provide a graph object (provided wrong object type).}}\end{kframe}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-3-1} 
 \end{knitrout}
 
 
@@ -951,10 +911,9 @@ The \texttt{trees} dataset is one of R's built-in datasets. It contains measurem
               \hlkwc{ylab}\hlstd{=}\hlstr{"Height (ft)"}\hlstd{,}
               \hlkwc{zlab}\hlstd{=}\hlstr{"Volume (cubic ft)"}\hlstd{)}
 \end{alltt}
-\end{kframe}\begin{figure}
-\includegraphics[width=\maxwidth]{figure/3d1-1} \caption[3d scatter plot]{3d scatter plot}\label{fig:3d1}
-\end{figure}
 
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in scatterplot3d(trees\$Girth, trees\$Height, trees\$Volume, color = color\_assign, : could not find function "{}scatterplot3d"{}}}\end{kframe}
 \end{knitrout}
 
 
@@ -983,7 +942,6 @@ XXX
 
 \section{State-of-the-Art Approaches}
 XXX
-
 
 
 \section{Conclusion}
