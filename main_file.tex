@@ -56,20 +56,7 @@
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in library(forecast): there is no package called 'forecast'}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in library(sf): there is no package called 'sf'}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in library(tmap): there is no package called 'tmap'}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in library(igraph): there is no package called 'igraph'}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in library(scatterplot3d): there is no package called 'scatterplot3d'}}\end{kframe}
-\end{knitrout}
 
 \tableofcontents
 \newpage 
@@ -529,7 +516,17 @@ In this chapter, we explore two powerful data visualisation techniques: heatmaps
 \\  
 \\The heatmap is a data visualisation technique that uses colour coding to represent different intensity.
 \\  
+<<<<<<< HEAD
 \\In this illustrative example, heatmaps are used to visualise fire occurrences in Brazil. These heatmaps provide a spatially coherent representation, highlighting regions at high risk and seasonal patterns. Here, the heatmap is a powerful tool for identifying the occurrence of fire incidents. The data-driven insights could empower policymakers to make informed decisions regarding preventive measures and firefighting strategies.
+=======
+\\In this illustrative example, heatmaps is used to visualize fire occurrences in Brazil. These heatmaps offer a spatially coherent representation, highlighting regions at high risk and seasonal patterns. Here, the heatmap is a power tool for identifying the risk of fire incidents. The data-driven insights empowers us to make informed decisions concerning preventive measures and strategies for firefighting.
+
+
+
+
+
+\\From Figure~\ref{fig:spacetime-fy22}, we can observe that certain locations have significantly higher fires count. 
+>>>>>>> daff6d291b446528a6d1466dc3e93744c22fdbf7
 \\  
 \\In Figure~\ref{fig:spacetime-fy22}, it can be observed that significantly higher fire counts are found in certain locations. The presence of two strips with high frequencies of fires are highly unusual.  The vertical trend corresponds to the location of BR-230 (Trans-Amazonian Highway) passing through the city of Apuí, State of Amazonas, where a high frequency of fire occurrence is observed.  The horizontal trend corresponds to BR-163 (Brazil highway) passing through Três Pinheiros in Novo Progresso, State of Pará. The western coastal area with a high frequency of fire occurrence corresponds to regions in close proximity to the cities of Vista Alegre do Abunã and Rio Branco. Research has indicated that 95 \% of active fires and the most intense ones (FRP > 500 megawatts) occurred at the edges in forests.
 \\  
@@ -654,94 +651,21 @@ XXX %missing Treemaps
 
 \subsection{Line Charts and Time Series Visualization}
 
-A \textbf{Line chart}, often referred to as a line graph or line plot, is a statistical chart composed of a Cartesian coordinate system, some points, and lines. It is commonly used to represent changes in numerical values over continuous time intervals or ordered categories. In a line graph, the x-axis is typically used for continuous time intervals or ordered categories (such as Stage 1, Stage 2, Stage 3). The y-axis is used for quantified data, and if it is negative, it is plotted below the y-axis. Lines are used to connect adjacent data points.
+In this chapter, we are going to investigate the intricacies of the line chart and its most common application: time series. A line chart is a statistical representation that employs a Cartesian coordinate system to depict changes in numerical values over continuous time intervals or ordered categories. The x-axis typically represents these intervals or categories, while the y-axis conveys quantified data. Any negative data values are plotted below the y-axis, and lines are used to connect adjacent data points.
+Line graphs are used to analyze trends in things that change over time or ordered categories. If there are multiple sets of data, they are used to analyze the interaction and impact of these data sets over time or ordered categories. The direction of the line represents positive/negative changes, and the slope of the line indicates the degree of change. In terms of data, a line graph requires a continuous time field or a categorical field and at least one continuous data field.\\\\
+\textbf{Suitability for Displaying Trends Over Time:}\\
+Line charts effectively visualize data trends over time. By plotting data at intervals like days or years, they highlight trends and patterns. Multiple lines on one chart enable easy data comparison, such as contrasting sales of two products. They aid in recognizing seasonal changes, cyclic events, and unexpected shifts, making them invaluable for forecasting. Due to their simplicity, they're accessible to those with minimal data analysis background. Line charts are a prime choice for time series visualization.
 
-Line graphs are used to analyze trends in things that change over time or ordered categories. If there are multiple sets of data, they are used to analyze the interaction and impact of these data sets over time or ordered categories. The direction of the line represents positive/negative changes, and the slope of the line indicates the degree of change.
-
-In terms of data, a line graph requires a continuous time field or a categorical field and at least one continuous data field.
-
-
-\subsubsection{Basic Components}
-\begin{itemize}
-  \item \textbf{X-Axis (Horizontal Axis):} Typically represents the independent variable, such as time or date.
-  \item \textbf{Y-Axis (Vertical Axis):} Typically represents the dependent variable, like sales numbers, stock prices, or temperatures.
-  \item \textbf{Line:} Connects the individual data points. In some line charts, multiple lines can represent different categories or sets of data.
-\end{itemize}
-
-
-\subsubsection{Suitability for Displaying Trends Over Time:}
-\begin{itemize}
-    \item \textbf{Visual Clarity:} Line charts provide a clear and concise way to view changes over time. When data points are plotted over regular intervals (e.g., days, months, years), it becomes easy to see upward or downward trends.
-    \item \textbf{Comparisons:} When you have multiple lines on a single chart, you can easily compare different sets of data. For instance, comparing sales data of two different products over time.
-    \item \textbf{Identification of Patterns:} Line charts help in identifying patterns and anomalies. Seasonal patterns, cyclical events, and unexpected spikes or dips become evident.
-    \item \textbf{Forecasting:} By viewing historical data trends on a line chart, analysts can make predictions or forecasts for future data points.
-    \item \textbf{Simplicity:} They are easy to understand and interpret. Even if someone isn't data-savvy, they can grasp the general trend and major fluctuations from a line chart.
-    \item \textbf{Flexibility:} They can be used for both short-term and long-term data. Whether you're looking at stock prices minute-by-minute over a single day or global temperature averages over a century, line charts can effectively represent the data.
-\end{itemize}
-
-
-\subsubsection{Limitations:}
-While line charts are excellent for displaying trends over time, they have limitations. They may not be suitable for showing individual data distributions or for data where there's no logical order. eg. too many points, too many lines, too many zeros.\\
-
-
-\subsubsection{Discuss the importance of time series visualisation in data analysis.}
-
-Time series visualization refers to the graphical representation of time-ordered data points. In the world of data analysis, this form of visualization is invaluable for examining patterns, anomalies, and trends in datasets that evolve over time.\\
-\textbf{Uncovering Trends:}\\
-One of the primary advantages of time series visualization is the ease with which it allows analysts to identify long-term upward or downward trends in data. Recognizing these trends can help organizations make informed decisions about future strategies or interventions.\\
-\textbf{Detection of Seasonality:}\\
-Many datasets exhibit patterns that repeat over specific intervals, such as days, months, or years. Time series visualization makes it straightforward to spot such cyclical behaviors, which can be vital for businesses in sectors like retail or agriculture.\\
-\textbf{Identifying Anomalies:}\\
-Graphical representations can quickly highlight data points or periods that deviate significantly from the norm. These anomalies can indicate errors in data collection, or they may reveal significant events that need to be further investigated.\\
-\textbf{Forecasting and Predictions:}\\
-After identifying patterns in historical data, time series visualizations can aid in modeling future data points. Predictive modeling, underpinned by clear visualizations, allows businesses to make proactive decisions.\\
-\textbf{Facilitating Comparative Analysis:}\\
-Time series charts often allow for overlaying multiple data series on a single graph. This capability is useful for comparing different datasets or the same dataset under different conditions, leading to more comprehensive insights.\\
-\textbf{Conclusion:}\\
-Time series visualization is an indispensable tool in the arsenal of data analysts. It condenses large volumes of chronological data into easily interpretable graphics, enabling quick insights, better decision-making, and a deeper understanding of temporal dynamics in datasets. By providing a clear view of data trends, seasonality, and anomalies, time series visualization facilitates more informed and strategic actions in various domains.
-
-
-\subsubsection{Provide best practices for creating clear and informative line charts.}
-
-\begin{itemize}
-  \item Title and Labels: Every chart should have a descriptive title and axis labels to clearly convey the purpose of the visualization and the data being shown.
-  \item Use of Colors: Colors should be chosen to clearly differentiate between different lines or data points but also be consistent with the overall theme or style.
-  \item Gridlines and Background: Soft gridlines can help the viewer estimate values. A clean background aids in clarity.
-  \item Line Types and Point Shapes: When multiple lines are on the same chart, use different line types and point shapes to differentiate between them.
-  \item Consistent Scaling: The scale on the y-axis should be consistent so that the viewer isn't misled.
-  \item Annotations: Important points or changes can be annotated directly on the graph.
-  \item Legends: If there are multiple lines or data points with different colors/shapes, a legend should be provided.
-\end{itemize}
-
-Let's apply these practices:
-
-
-First, we generate 2 series of random data.
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlstd{x} \hlkwb{<-} \hlkwd{seq}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{20}\hlstd{)}
-\hlstd{y} \hlkwb{<-} \hlkwd{runif}\hlstd{(}\hlnum{20}\hlstd{)}
-\hlstd{data} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwc{x} \hlstd{= x,} \hlkwc{y} \hlstd{= y)}
-\end{alltt}
-\end{kframe}
-\end{knitrout}
-
-Below is a line chart of the random sample:
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/plot-chunk-1} 
-\end{knitrout}
-
+Time series visualization is essential in data analysis, showcasing time-ordered data. It reveals long-term trends, helping analysts discern patterns for future planning. It's crucial for spotting seasonality in datasets, especially in sectors like retail. This method also identifies anomalies, suggesting areas needing investigation. Predictive modeling, based on historical patterns, becomes feasible, fostering proactive choices. Overlaying multiple data series offers richer comparative analysis. Overall, time series visualization provides quick insights into chronological data, driving informed decisions by highlighting trends, seasonal changes, and outliers.\\\\
+\textbf{Limitations:}\\
+While line charts are excellent for displaying trends over time, they have limitations. They may not be suitable for showing individual data distributions or for data where there's no logical order. eg. too many points, too many lines, too many zeros.
 
 \subsubsection{Showcase real-world examples of time series visualisations}
 
 Time series of the daily CNY, CAN, EUR, HKD, USD versus GBP exchange reference rate data
-published by the European Central Bank over the time period from 01 Jan 2013 to 12 Oct 2023 (without weekends). The exchange rate tells you how many pounds you need to buy/sell 1 CNY, CAN, EUR, HKD, USD.
+published by the European Central Bank over the time period from 01 Jan 2013 to 12 Oct 2023 (without weekends). The exchange rate tells you how many pounds you need to buy/sell 1 CNY, CAN, EUR, HKD, USD.\\
 
-\subsubsection{The data set has the format as below:}
+\textbf{The data set has the format as below:}\\
 
 \begin{table}[h]
 \centering
@@ -751,19 +675,36 @@ published by the European Central Bank over the time period from 01 Jan 2013 to 
 \hline
 \%d-\%m-\%y & Value & Value & Value & Value & Value \\
 \hline
-& & & & & \\
-\hline
 \end{tabular}
 \caption{Field Information: CNY, CAN, EUR, HKD, USD to GBP}
 \end{table}
 
+First, we are going to plot all exchange rates in one figure.
 
-\subsubsection{Multiple time series in one plot:}
+
+
 
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-1-1} 
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{# Plot exchange rates of CNY, CAN, EUR, HKD, USD to GBP}
+\hlstd{plot_dt} \hlkwb{<-} \hlstd{MyData} \hlopt{%>%} \hlkwd{gather}\hlstd{(}\hlkwc{key}\hlstd{=}\hlstr{"Currency"}\hlstd{,} \hlkwc{value}\hlstd{=}\hlstr{"Rate"}\hlstd{,} \hlopt{-}\hlstd{Date)}
+
+\hlkwd{ggplot}\hlstd{(plot_dt,} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=Date,} \hlkwc{y}\hlstd{=Rate,} \hlkwc{color}\hlstd{=Currency))} \hlopt{+}
+  \hlkwd{geom_line}\hlstd{()} \hlopt{+}
+  \hlkwd{labs}\hlstd{(}\hlkwc{title}\hlstd{=}\hlstr{"Exchange rates of CNY, CAN, EUR, HKD, USD to GBP"}\hlstd{,}
+       \hlkwc{y}\hlstd{=}\hlstr{"Exchange Rate to GBP"}\hlstd{,}
+       \hlkwc{x}\hlstd{=}\hlstr{"Date"}\hlstd{,}
+       \hlkwc{color}\hlstd{=}\hlstr{"Currency"}\hlstd{)}
+\end{alltt}
+\end{kframe}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-2-1} \caption[Exchange rates of CNY, CAN, EUR, HKD, USD to GBP]{Exchange rates of CNY, CAN, EUR, HKD, USD to GBP}\label{fig:unnamed-chunk-2}
+\end{figure}
+
 \end{knitrout}
+
+
+From above plot, we can see the the daily CNY, CAN, EUR, HKD, USD versus GBP exchange in the same plot, which provide us an overview of the trend and comparison. Then we can make the plot smooth by taking averages, which enables easier recognition of trend.
 
 
 \begin{knitrout}
@@ -772,50 +713,139 @@ published by the European Central Bank over the time period from 01 Jan 2013 to 
 \hlcom{# Calculate 21-day moving average for each currency}
 \hlstd{columns} \hlkwb{<-} \hlkwd{names}\hlstd{(MyData)[}\hlopt{!}\hlkwd{names}\hlstd{(MyData)} \hlopt{%in%} \hlstr{"Date"}\hlstd{]}
 \hlkwa{for} \hlstd{(col} \hlkwa{in} \hlstd{columns) \{}
-  \hlstd{new_col_name} \hlkwb{<-} \hlkwd{paste0}\hlstd{(col,} \hlstr{"_MA7"}\hlstd{)}
-  \hlstd{MyData[[new_col_name]]} \hlkwb{<-} \hlstd{zoo}\hlopt{::}\hlkwd{rollapply}\hlstd{(MyData[[col]],} \hlkwc{width}\hlstd{=}\hlnum{21}\hlstd{,} \hlkwc{FUN}\hlstd{=mean,} \hlkwc{fill}\hlstd{=}\hlnum{NA}\hlstd{,} \hlkwc{align}\hlstd{=}\hlstr{'right'}\hlstd{)}
+  \hlstd{new_col_name} \hlkwb{<-} \hlkwd{paste0}\hlstd{(col,} \hlstr{"_MA21"}\hlstd{)}
+  \hlstd{MyData[[new_col_name]]} \hlkwb{<-} \hlstd{zoo}\hlopt{::}\hlkwd{rollapply}\hlstd{(MyData[[col]],}
+                                           \hlkwc{width}\hlstd{=}\hlnum{21}\hlstd{,} \hlkwc{FUN}\hlstd{=mean,}
+                                           \hlkwc{fill}\hlstd{=}\hlnum{NA}\hlstd{,} \hlkwc{align}\hlstd{=}\hlstr{'right'}\hlstd{)}
 \hlstd{\}}
 
-\hlcom{# Plotting}
+\hlcom{# Plot 21-day moving average for each currency}
 \hlstd{plot_data} \hlkwb{<-} \hlstd{MyData} \hlopt{%>%} \hlkwd{gather}\hlstd{(}\hlkwc{key}\hlstd{=}\hlstr{"Currency"}\hlstd{,} \hlkwc{value}\hlstd{=}\hlstr{"Rate"}\hlstd{,} \hlopt{-}\hlstd{Date)} \hlopt{%>%}
-  \hlkwd{filter}\hlstd{(}\hlkwd{grepl}\hlstd{(}\hlstr{"MA7"}\hlstd{, Currency))}
+  \hlkwd{filter}\hlstd{(}\hlkwd{grepl}\hlstd{(}\hlstr{"MA21"}\hlstd{, Currency))}
 
 \hlkwd{ggplot}\hlstd{(plot_data,} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=Date,} \hlkwc{y}\hlstd{=Rate,} \hlkwc{color}\hlstd{=Currency))} \hlopt{+}
   \hlkwd{geom_line}\hlstd{()} \hlopt{+}
-  \hlkwd{labs}\hlstd{(}\hlkwc{title}\hlstd{=}\hlstr{"7-Day Moving Average of Exchange Rates"}\hlstd{,}
-       \hlkwc{subtitle}\hlstd{=}\hlstr{""}\hlstd{,}
-       \hlkwc{y}\hlstd{=}\hlstr{"Exchange Rate to GBP (21-Day MA)"}\hlstd{,}
+  \hlkwd{labs}\hlstd{(}\hlkwc{title}\hlstd{=}\hlstr{"21-Day moving average of exchange rates"}\hlstd{,}
+       \hlkwc{y}\hlstd{=}\hlstr{"Exchange Rate to GBP"}\hlstd{,}
        \hlkwc{x}\hlstd{=}\hlstr{"Date"}\hlstd{,}
-       \hlkwc{color}\hlstd{=}\hlstr{"Currency"}\hlstd{)} \hlopt{+}
-  \hlkwd{theme_minimal}\hlstd{()} \hlopt{+}
-  \hlkwd{scale_color_brewer}\hlstd{(}\hlkwc{palette}\hlstd{=}\hlstr{"Set1"}\hlstd{)}
+       \hlkwc{color}\hlstd{=}\hlstr{"Currency"}\hlstd{)}
 \end{alltt}
+\end{kframe}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-3-1} \caption[21-day moving average of exchange rates of CNY, CAN, EUR, HKD, USD to GBP]{21-day moving average of exchange rates of CNY, CAN, EUR, HKD, USD to GBP}\label{fig:unnamed-chunk-3}
+\end{figure}
 
-
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 100 rows containing missing values (`geom\_line()`).}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-2-1} 
 \end{knitrout}
 
+From above plot, a 21-day moving average for each currency allows us to view the trend easily.
 
 \subsubsection{Decomposition of one time series into trend, seasonal, and random.}
 
-
 One of the primary advantages of time series visualization is the ease with which it allows analysts to identify long-term upward or downward trends in data and patterns that repeat over specific intervals. By decomposing the time series, it would be easy to see those features.
 
+Time series data, $Y_t$, can often be described as a combination of several distinct components:
+\begin{itemize}
+    \item \textbf{Trend ($T_t$):} The underlying progression in the series.
+    \item \textbf{Seasonal ($S_t$):} Periodic fluctuations due to seasonal factor.
+    \item \textbf{Residual ($R_t$):} The irregular or error component.
+\end{itemize}
+
+The decomposition of a time series can be described in two main models:
+
+Additive Model:
+In the additive model, the components are added together:
+\[
+Y_t = T_t + S_t + R_t
+\]
+
+Multiplicative Model:
+In the multiplicative model, the components are multiplied together:
+\[
+Y_t = T_t \times S_t \times R_t
+\]
+
+In practice, the choice between the additive and multiplicative models often depends on the nature of the time series. If the magnitude of the seasonal fluctuations or the variation around the trend does not vary with the level of the time series, then an additive model is appropriate. If the magnitude of the seasonal fluctuations or the variation around the trend increases or decreases as the time series level changes, then a multiplicative model may be more suitable.
+
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-3-1} 
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{# Plot decomposition of addictive time series model}
+\hlstd{decomposed_ts} \hlkwb{<-} \hlstd{stats}\hlopt{::}\hlkwd{decompose}\hlstd{(ts_data}\hlopt{$}\hlstd{CNYtoGBP)}
+\hlkwd{plot}\hlstd{(decomposed_ts,} \hlkwc{xlab}\hlstd{=}\hlstr{"Date"}\hlstd{)}
+\end{alltt}
+\end{kframe}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-4-1} \caption[Decomposition of addictive time series model]{Decomposition of addictive time series model}\label{fig:unnamed-chunk-4}
+\end{figure}
+
 \end{knitrout}
 
-
+Hence, in this way, we will be able to view the seasonal trend and overall trend of CNY to GBP obviously.
 
 \subsubsection{Double y-axis time series plot.}
 
 If we want to display two different time series that measure two different quantities at the same time points, we can draw the second series again on the second Y-axis on the right side.
 
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-4-1} 
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{# Plot of double y-axis time series}
+
+\hlcom{# Plot the first time series with its y-axis}
+\hlkwd{plot}\hlstd{(MyData}\hlopt{$}\hlstd{CNYtoGBP,} \hlkwc{type}\hlstd{=}\hlstr{"l"}\hlstd{,} \hlkwc{col}\hlstd{=}\hlstr{"blue"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"Exchange Rate"}\hlstd{,} \hlkwc{xlab}\hlstd{=}\hlstr{"Date"}\hlstd{,}
+     \hlkwc{main}\hlstd{=}\hlstr{"Exchange Rates Over Time"}\hlstd{)}
+
+\hlcom{# Add the second time series with a secondary y-axis}
+\hlkwd{par}\hlstd{(}\hlkwc{new}\hlstd{=}\hlnum{TRUE}\hlstd{)}
+\hlkwd{plot}\hlstd{(ts_data}\hlopt{$}\hlstd{EURtoGBP,} \hlkwc{type}\hlstd{=}\hlstr{"l"}\hlstd{,} \hlkwc{col}\hlstd{=}\hlstr{"red"}\hlstd{,} \hlkwc{axes}\hlstd{=}\hlnum{FALSE}\hlstd{,} \hlkwc{xlab}\hlstd{=}\hlnum{NA}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlnum{NA}\hlstd{)}
+\hlkwd{axis}\hlstd{(}\hlkwc{side}\hlstd{=}\hlnum{4}\hlstd{)}  \hlcom{# Add the secondary y-axis on the right}
+\hlkwd{mtext}\hlstd{(}\hlstr{"Temp"}\hlstd{,} \hlkwc{side}\hlstd{=}\hlnum{4}\hlstd{,} \hlkwc{line}\hlstd{=}\hlnum{3}\hlstd{)}  \hlcom{# Label the secondary y-axis}
+
+\hlcom{# Add a legend to distinguish the two time series}
+\hlkwd{legend}\hlstd{(}\hlstr{"topright"}\hlstd{,} \hlkwc{legend}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"CNYtoGBP"}\hlstd{,} \hlstr{"EURtoGBP"}\hlstd{),}
+       \hlkwc{col}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"blue"}\hlstd{,} \hlstr{"red"}\hlstd{),} \hlkwc{lty}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{cex}\hlstd{=}\hlnum{0.8}\hlstd{)}
+\end{alltt}
+\end{kframe}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-5-1} \caption[Double y-axis time series]{Double y-axis time series}\label{fig:unnamed-chunk-5}
+\end{figure}
+
+\end{knitrout}
+
+\subsubsection{Identification of anomalies}
+
+A common approach to anomaly detection in time series data is to use the Z-score. The Z-score measures how many standard deviations a data point is from the mean. Data points with a Z-score above a certain threshold (e.g., 2 or 3) can be considered anomalies.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{#Plot of time series with anomalies}
+
+\hlcom{# Calculate the Z-scores for the EURtoGBP exchange rate}
+\hlstd{eur_to_gbp_series} \hlkwb{<-} \hlstd{MyData}\hlopt{$}\hlstd{EURtoGBP}
+\hlstd{mean_val} \hlkwb{<-} \hlkwd{mean}\hlstd{(eur_to_gbp_series,} \hlkwc{na.rm} \hlstd{=} \hlnum{TRUE}\hlstd{)}
+\hlstd{std_val} \hlkwb{<-} \hlkwd{sd}\hlstd{(eur_to_gbp_series,} \hlkwc{na.rm} \hlstd{=} \hlnum{TRUE}\hlstd{)}
+\hlstd{z_scores} \hlkwb{<-} \hlkwd{abs}\hlstd{((eur_to_gbp_series} \hlopt{-} \hlstd{mean_val)} \hlopt{/} \hlstd{std_val)}
+
+\hlcom{# Define a threshold for anomalies (e.g., Z-score > 2)}
+\hlstd{threshold} \hlkwb{<-} \hlnum{3}
+\hlstd{anomalies} \hlkwb{<-} \hlkwd{which}\hlstd{(z_scores} \hlopt{>} \hlstd{threshold)}
+
+\hlstd{plot_data} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwc{Date} \hlstd{=  MyData}\hlopt{$}\hlstd{Date,}
+                        \hlkwc{Rate} \hlstd{= eur_to_gbp_series,}
+                        \hlkwc{Anomaly} \hlstd{=} \hlkwd{ifelse}\hlstd{(z_scores} \hlopt{>} \hlstd{threshold,}
+                                         \hlstd{eur_to_gbp_series,} \hlnum{NA}\hlstd{))}
+
+\hlkwd{ggplot}\hlstd{(plot_data,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= Date,} \hlkwc{y} \hlstd{= Rate))} \hlopt{+}
+  \hlkwd{geom_line}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{color} \hlstd{=} \hlstr{"EURtoGBP"}\hlstd{))} \hlopt{+}
+  \hlkwd{geom_point}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{y} \hlstd{= Anomaly,} \hlkwc{color} \hlstd{=} \hlstr{"Anomalies"}\hlstd{),} \hlkwc{na.rm} \hlstd{=} \hlnum{TRUE}\hlstd{)} \hlopt{+}
+  \hlkwd{labs}\hlstd{(}\hlkwc{title} \hlstd{=} \hlstr{"EURtoGBP Exchange Rate with Anomalies Highlighted"}\hlstd{,}
+       \hlkwc{y} \hlstd{=} \hlstr{"Exchange Rate to GBP"}\hlstd{,}
+       \hlkwc{color} \hlstd{=} \hlstr{"Legend"}\hlstd{)} \hlopt{+}
+  \hlkwd{scale_color_manual}\hlstd{(}\hlkwc{values} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"EURtoGBP"} \hlstd{=} \hlstr{"blue"}\hlstd{,}
+                                \hlstr{"Anomalies"} \hlstd{=} \hlstr{"red"}\hlstd{))}
+\end{alltt}
+\end{kframe}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-6-1} \caption[Time series with anomalies]{Time series with anomalies}\label{fig:unnamed-chunk-6}
+\end{figure}
+
 \end{knitrout}
 
 
@@ -875,7 +905,71 @@ where \(\sigma_{st}\) is the number of shortest paths from node \(s\) to \(t\), 
 xxx
 
 \subsection{Geographic Maps and Spatial Data Visualisation}
-xxx
+
+\text{https://data.london.gov.uk/dataset/statistical-gis-boundary-files-london#:~:text=,2014.zip%20%283.84%20MB%29%20From}\\
+\text{https://data.london.gov.uk/dataset/recorded_crime_summary#:~:text=Recorded%20Crime%3A%20Geographic%20Breakdown,covering%20all%20historic%20full}\\
+\text{https://public.tableau.com/app/profile/metropolitan.police.service/viz/MonthlyCrimeDataNewCats/Coversheet}\\
+\text{https://medium.com/@davemorison/an-interactive-visualization-of-londons-crime-data-using-shiny-applications-and-r-7ca9011e064b?source=author_recirc-----8dcefef1c397----0---------------------07ef707d_5478_4230_b6e6_451582a6cc55-------}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{# Load the shapefile}
+\hlstd{london_boroughs} \hlkwb{<-} \hlkwd{st_read}\hlstd{(}\hlstr{"London_Ward.shp"}\hlstd{)}
+\end{alltt}
+\begin{verbatim}
+## Reading layer `London_Ward' from data source 
+##   `C:\Users\chuyu\Downloads\Data-Visualisation-Project\London_Ward.shp' 
+##   using driver `ESRI Shapefile'
+## Simple feature collection with 657 features and 6 fields
+## Geometry type: POLYGON
+## Dimension:     XY
+## Bounding box:  xmin: 503568.2 ymin: 155850.8 xmax: 561957.5 ymax: 200933.9
+## Projected CRS: OSGB36 / British National Grid
+\end{verbatim}
+\begin{alltt}
+\hlcom{# Load the crime data (assuming it's in CSV format)}
+\hlstd{crime_data} \hlkwb{<-} \hlkwd{read.csv}\hlstd{(}\hlstr{"BoroughLevelCrime.csv"}\hlstd{)}
+
+\hlcom{# Summing the total crimes for each borough over the entire timeframe}
+\hlstd{borough_totals} \hlkwb{<-} \hlstd{crime_data} \hlopt{%>%}
+  \hlkwd{group_by}\hlstd{(LookUp_BoroughName)} \hlopt{%>%}
+  \hlkwd{summarise}\hlstd{(}\hlkwc{Total_Crimes} \hlstd{=} \hlkwd{sum}\hlstd{(}\hlkwd{across}\hlstd{(}\hlkwd{starts_with}\hlstd{(}\hlstr{"X2020"}\hlstd{))))}
+
+\hlcom{# Merge the crime data with the shapefile}
+\hlstd{merged_data} \hlkwb{<-} \hlkwd{merge}\hlstd{(london_boroughs, borough_totals,}
+                     \hlkwc{by.x}\hlstd{=}\hlstr{"DISTRICT"}\hlstd{,} \hlkwc{by.y}\hlstd{=}\hlstr{"LookUp_BoroughName"}\hlstd{)}
+
+\hlcom{# Aggregate geometries by district}
+\hlstd{aggregated_data} \hlkwb{<-} \hlstd{merged_data} \hlopt{%>%}
+  \hlkwd{group_by}\hlstd{(DISTRICT)} \hlopt{%>%}
+  \hlkwd{summarise}\hlstd{(}\hlkwc{geometry} \hlstd{=} \hlkwd{st_union}\hlstd{(geometry),} \hlkwc{Total_Crimes} \hlstd{=} \hlkwd{first}\hlstd{(Total_Crimes))}
+
+\hlcom{# Calculate centroids for labeling}
+\hlstd{aggregated_data}\hlopt{$}\hlstd{centroid} \hlkwb{<-} \hlkwd{st_centroid}\hlstd{(aggregated_data}\hlopt{$}\hlstd{geometry)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{# Plot the Crime numbers in London by boroughs}
+\hlstd{plot} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(}\hlkwc{data}\hlstd{=aggregated_data)} \hlopt{+}
+  \hlkwd{geom_sf}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill}\hlstd{=Total_Crimes))} \hlopt{+}
+  \hlkwd{geom_sf_text}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{label} \hlstd{= DISTRICT,} \hlkwc{geometry} \hlstd{= centroid),}
+               \hlkwc{size} \hlstd{=} \hlnum{3}\hlstd{,} \hlkwc{check_overlap} \hlstd{=} \hlnum{TRUE}\hlstd{)} \hlopt{+}
+  \hlkwd{scale_fill_gradient}\hlstd{(}\hlkwc{low}\hlstd{=}\hlstr{"Green"}\hlstd{,} \hlkwc{high}\hlstd{=}\hlstr{"red"}\hlstd{)} \hlopt{+}
+  \hlkwd{theme_minimal}\hlstd{()} \hlopt{+}
+  \hlkwd{labs}\hlstd{(}\hlkwc{title}\hlstd{=}\hlstr{"Total Crime by Borough in London (April 2010 - September 2021)"}\hlstd{,}
+       \hlkwc{fill}\hlstd{=}\hlstr{"Total Crimes"}\hlstd{)}
+
+\hlkwd{print}\hlstd{(plot)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-8-1} 
+\end{knitrout}
 
 \subsection{3D and Interactive Visualisations}
 ggplot2 is one of the most popular data visualization libraries in R, but it is primarily designed for 2D data visualization. Directly creating 3D views with ggplot2 can be challenging.
@@ -909,9 +1003,10 @@ The \texttt{trees} dataset is one of R's built-in datasets. It contains measurem
               \hlkwc{ylab}\hlstd{=}\hlstr{"Height (ft)"}\hlstd{,}
               \hlkwc{zlab}\hlstd{=}\hlstr{"Volume (cubic ft)"}\hlstd{)}
 \end{alltt}
+\end{kframe}\begin{figure}
+\includegraphics[width=\maxwidth]{figure/3d1-1} \caption[3d scatter plot]{3d scatter plot}\label{fig:3d1}
+\end{figure}
 
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in scatterplot3d(trees\$Girth, trees\$Height, trees\$Volume, color = color\_assign, : could not find function "{}scatterplot3d"{}}}\end{kframe}
 \end{knitrout}
 
 

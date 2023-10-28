@@ -20,6 +20,7 @@ library(tmap)
 library(gridExtra)
 library(igraph)
 library(scatterplot3d)
+library(stats)
 data(mtcars)
 @
 
@@ -634,104 +635,21 @@ XXX %missing Treemaps
 
 \subsection{Line Charts and Time Series Visualization}
 
-A \textbf{Line chart}, often referred to as a line graph or line plot, is a statistical chart composed of a Cartesian coordinate system, some points, and lines. It is commonly used to represent changes in numerical values over continuous time intervals or ordered categories. In a line graph, the x-axis is typically used for continuous time intervals or ordered categories (such as Stage 1, Stage 2, Stage 3). The y-axis is used for quantified data, and if it is negative, it is plotted below the y-axis. Lines are used to connect adjacent data points.
+In this chapter, we are going to investigate the intricacies of the line chart and its most common application: time series. A line chart is a statistical representation that employs a Cartesian coordinate system to depict changes in numerical values over continuous time intervals or ordered categories. The x-axis typically represents these intervals or categories, while the y-axis conveys quantified data. Any negative data values are plotted below the y-axis, and lines are used to connect adjacent data points.
+Line graphs are used to analyze trends in things that change over time or ordered categories. If there are multiple sets of data, they are used to analyze the interaction and impact of these data sets over time or ordered categories. The direction of the line represents positive/negative changes, and the slope of the line indicates the degree of change. In terms of data, a line graph requires a continuous time field or a categorical field and at least one continuous data field.\\\\
+\textbf{Suitability for Displaying Trends Over Time:}\\
+Line charts effectively visualize data trends over time. By plotting data at intervals like days or years, they highlight trends and patterns. Multiple lines on one chart enable easy data comparison, such as contrasting sales of two products. They aid in recognizing seasonal changes, cyclic events, and unexpected shifts, making them invaluable for forecasting. Due to their simplicity, they're accessible to those with minimal data analysis background. Line charts are a prime choice for time series visualization.
 
-Line graphs are used to analyze trends in things that change over time or ordered categories. If there are multiple sets of data, they are used to analyze the interaction and impact of these data sets over time or ordered categories. The direction of the line represents positive/negative changes, and the slope of the line indicates the degree of change.
-
-In terms of data, a line graph requires a continuous time field or a categorical field and at least one continuous data field.
-
-
-\subsubsection{Basic Components}
-\begin{itemize}
-  \item \textbf{X-Axis (Horizontal Axis):} Typically represents the independent variable, such as time or date.
-  \item \textbf{Y-Axis (Vertical Axis):} Typically represents the dependent variable, like sales numbers, stock prices, or temperatures.
-  \item \textbf{Line:} Connects the individual data points. In some line charts, multiple lines can represent different categories or sets of data.
-\end{itemize}
-
-
-\subsubsection{Suitability for Displaying Trends Over Time:}
-\begin{itemize}
-    \item \textbf{Visual Clarity:} Line charts provide a clear and concise way to view changes over time. When data points are plotted over regular intervals (e.g., days, months, years), it becomes easy to see upward or downward trends.
-    \item \textbf{Comparisons:} When you have multiple lines on a single chart, you can easily compare different sets of data. For instance, comparing sales data of two different products over time.
-    \item \textbf{Identification of Patterns:} Line charts help in identifying patterns and anomalies. Seasonal patterns, cyclical events, and unexpected spikes or dips become evident.
-    \item \textbf{Forecasting:} By viewing historical data trends on a line chart, analysts can make predictions or forecasts for future data points.
-    \item \textbf{Simplicity:} They are easy to understand and interpret. Even if someone isn't data-savvy, they can grasp the general trend and major fluctuations from a line chart.
-    \item \textbf{Flexibility:} They can be used for both short-term and long-term data. Whether you're looking at stock prices minute-by-minute over a single day or global temperature averages over a century, line charts can effectively represent the data.
-\end{itemize}
-
-
-\subsubsection{Limitations:}
-While line charts are excellent for displaying trends over time, they have limitations. They may not be suitable for showing individual data distributions or for data where there's no logical order. eg. too many points, too many lines, too many zeros.\\
-
-
-\subsubsection{Discuss the importance of time series visualisation in data analysis.}
-
-Time series visualization refers to the graphical representation of time-ordered data points. In the world of data analysis, this form of visualization is invaluable for examining patterns, anomalies, and trends in datasets that evolve over time.\\
-\textbf{Uncovering Trends:}\\
-One of the primary advantages of time series visualization is the ease with which it allows analysts to identify long-term upward or downward trends in data. Recognizing these trends can help organizations make informed decisions about future strategies or interventions.\\
-\textbf{Detection of Seasonality:}\\
-Many datasets exhibit patterns that repeat over specific intervals, such as days, months, or years. Time series visualization makes it straightforward to spot such cyclical behaviors, which can be vital for businesses in sectors like retail or agriculture.\\
-\textbf{Identifying Anomalies:}\\
-Graphical representations can quickly highlight data points or periods that deviate significantly from the norm. These anomalies can indicate errors in data collection, or they may reveal significant events that need to be further investigated.\\
-\textbf{Forecasting and Predictions:}\\
-After identifying patterns in historical data, time series visualizations can aid in modeling future data points. Predictive modeling, underpinned by clear visualizations, allows businesses to make proactive decisions.\\
-\textbf{Facilitating Comparative Analysis:}\\
-Time series charts often allow for overlaying multiple data series on a single graph. This capability is useful for comparing different datasets or the same dataset under different conditions, leading to more comprehensive insights.\\
-\textbf{Conclusion:}\\
-Time series visualization is an indispensable tool in the arsenal of data analysts. It condenses large volumes of chronological data into easily interpretable graphics, enabling quick insights, better decision-making, and a deeper understanding of temporal dynamics in datasets. By providing a clear view of data trends, seasonality, and anomalies, time series visualization facilitates more informed and strategic actions in various domains.
-
-
-\subsubsection{Provide best practices for creating clear and informative line charts.}
-
-\begin{itemize}
-  \item Title and Labels: Every chart should have a descriptive title and axis labels to clearly convey the purpose of the visualization and the data being shown.
-  \item Use of Colors: Colors should be chosen to clearly differentiate between different lines or data points but also be consistent with the overall theme or style.
-  \item Gridlines and Background: Soft gridlines can help the viewer estimate values. A clean background aids in clarity.
-  \item Line Types and Point Shapes: When multiple lines are on the same chart, use different line types and point shapes to differentiate between them.
-  \item Consistent Scaling: The scale on the y-axis should be consistent so that the viewer isn't misled.
-  \item Annotations: Important points or changes can be annotated directly on the graph.
-  \item Legends: If there are multiple lines or data points with different colors/shapes, a legend should be provided.
-\end{itemize}
-
-Let's apply these practices:
-
-
-First, we generate 2 series of random data.
-
-<<first-chunk>>=
-x <- seq(1, 20)
-y <- runif(20)
-data <- data.frame(x = x, y = y)
-@
-
-Below is a line chart of the random sample:
-
-<<plot-chunk, echo=FALSE, fig.height=5, fig.width=7>>=
-ggplot(data, aes(x = x, y = y)) +
-  geom_line(color = "blue") +
-  labs(
-    title = "Random Sample Line Chart",
-    subtitle = "A demonstration of practice for line chart",
-    x = "X-axis Label",
-    y = "Y-axis Label",
-    caption = "Source: Randomly generated data"
-  ) +
-  theme_minimal() +
-  theme(
-    plot.title = element_text(face = "bold", hjust = 0.5),
-    axis.title.x = element_text(margin = margin(t = 10)),
-    axis.title.y = element_text(margin = margin(r = 10))
-  ) +
-  scale_x_continuous(breaks = seq(1, 20, by = 1))
-@
-
+Time series visualization is essential in data analysis, showcasing time-ordered data. It reveals long-term trends, helping analysts discern patterns for future planning. It's crucial for spotting seasonality in datasets, especially in sectors like retail. This method also identifies anomalies, suggesting areas needing investigation. Predictive modeling, based on historical patterns, becomes feasible, fostering proactive choices. Overlaying multiple data series offers richer comparative analysis. Overall, time series visualization provides quick insights into chronological data, driving informed decisions by highlighting trends, seasonal changes, and outliers.\\\\
+\textbf{Limitations:}\\
+While line charts are excellent for displaying trends over time, they have limitations. They may not be suitable for showing individual data distributions or for data where there's no logical order. eg. too many points, too many lines, too many zeros.
 
 \subsubsection{Showcase real-world examples of time series visualisations}
 
 Time series of the daily CNY, CAN, EUR, HKD, USD versus GBP exchange reference rate data
-published by the European Central Bank over the time period from 01 Jan 2013 to 12 Oct 2023 (without weekends). The exchange rate tells you how many pounds you need to buy/sell 1 CNY, CAN, EUR, HKD, USD.
+published by the European Central Bank over the time period from 01 Jan 2013 to 12 Oct 2023 (without weekends). The exchange rate tells you how many pounds you need to buy/sell 1 CNY, CAN, EUR, HKD, USD.\\
 
-\subsubsection{The data set has the format as below:}
+\textbf{The data set has the format as below:}\\
 
 \begin{table}[h]
 \centering
@@ -741,16 +659,14 @@ published by the European Central Bank over the time period from 01 Jan 2013 to 
 \hline
 \%d-\%m-\%y & Value & Value & Value & Value & Value \\
 \hline
-& & & & & \\
-\hline
 \end{tabular}
 \caption{Field Information: CNY, CAN, EUR, HKD, USD to GBP}
 \end{table}
 
+First, we are going to plot all exchange rates in one figure.
 
-\subsubsection{Multiple time series in one plot:}
 
-<<echo=FALSE>>=
+<<echo=FALSE,message=FALSE,warning=FALSE>>=
 #Read in the data:
 MyData <- read.csv("exchangeRate.csv",
                    header = TRUE, sep = ",",
@@ -770,64 +686,93 @@ ts_data <- lapply(MyData[-1], ts,
                   start=c(as.numeric(format(min(MyData$Date), "%Y")),
                           as.numeric(format(min(MyData$Date), "%j"))),
                   frequency=365)
+@
 
-# Plot time series
-plot(MyData$Date, ts_data$CNYtoGBP, type="l",
-     col="blue", ylim=range(MyData[-1]),
-     ylab="Exchange Rate", xlab="Date",
-     main="Exchange Rates Over Time")
+<<message=FALSE,warning=FALSE,fig.dim = c(6, 4), fig.cap='Exchange rates of CNY, CAN, EUR, HKD, USD to GBP'>>=
+# Plot exchange rates of CNY, CAN, EUR, HKD, USD to GBP
+plot_dt <- MyData %>% gather(key="Currency", value="Rate", -Date)
 
-lines(MyData$Date, ts_data$CANtoGBP, col="red")
-lines(MyData$Date, ts_data$EURtoGBP, col="green")
-lines(MyData$Date, ts_data$HKDtoGBP, col="purple")
-lines(MyData$Date, ts_data$USDtoGBP, col="brown")
-legend("topright", legend=names(ts_data),
-       fill=c("blue", "red", "green", "purple", "brown"))
+ggplot(plot_dt, aes(x=Date, y=Rate, color=Currency)) +
+  geom_line() +
+  labs(title="Exchange rates of CNY, CAN, EUR, HKD, USD to GBP",
+       y="Exchange Rate to GBP",
+       x="Date",
+       color="Currency")
 @
 
 
-<<>>=
+From above plot, we can see the the daily CNY, CAN, EUR, HKD, USD versus GBP exchange in the same plot, which provide us an overview of the trend and comparison. Then we can make the plot smooth by taking averages, which enables easier recognition of trend.
+
+
+<<message=FALSE,warning=FALSE,fig.dim = c(6, 4),fig.cap='21-day moving average of exchange rates of CNY, CAN, EUR, HKD, USD to GBP'>>=
+
 # Calculate 21-day moving average for each currency
 columns <- names(MyData)[!names(MyData) %in% "Date"]
 for (col in columns) {
-  new_col_name <- paste0(col, "_MA7")
-  MyData[[new_col_name]] <- zoo::rollapply(MyData[[col]], width=21, FUN=mean, fill=NA, align='right')
+  new_col_name <- paste0(col, "_MA21")
+  MyData[[new_col_name]] <- zoo::rollapply(MyData[[col]],
+                                           width=21, FUN=mean,
+                                           fill=NA, align='right')
 }
 
-# Plotting
+# Plot 21-day moving average for each currency
 plot_data <- MyData %>% gather(key="Currency", value="Rate", -Date) %>%
-  filter(grepl("MA7", Currency))
+  filter(grepl("MA21", Currency))
 
 ggplot(plot_data, aes(x=Date, y=Rate, color=Currency)) +
   geom_line() +
-  labs(title="7-Day Moving Average of Exchange Rates",
-       subtitle="",
-       y="Exchange Rate to GBP (21-Day MA)",
+  labs(title="21-Day moving average of exchange rates",
+       y="Exchange Rate to GBP",
        x="Date",
-       color="Currency") +
-  theme_minimal() +
-  scale_color_brewer(palette="Set1")
+       color="Currency")
 @
 
+From above plot, a 21-day moving average for each currency allows us to view the trend easily.
 
 \subsubsection{Decomposition of one time series into trend, seasonal, and random.}
 
-
 One of the primary advantages of time series visualization is the ease with which it allows analysts to identify long-term upward or downward trends in data and patterns that repeat over specific intervals. By decomposing the time series, it would be easy to see those features.
 
-<<echo=FALSE>>=
-plot(decompose(ts_data$CNYtoGBP), xlab="Date")
+Time series data, $Y_t$, can often be described as a combination of several distinct components:
+\begin{itemize}
+    \item \textbf{Trend ($T_t$):} The underlying progression in the series.
+    \item \textbf{Seasonal ($S_t$):} Periodic fluctuations due to seasonal factor.
+    \item \textbf{Residual ($R_t$):} The irregular or error component.
+\end{itemize}
+
+The decomposition of a time series can be described in two main models:
+
+Additive Model:
+In the additive model, the components are added together:
+\[
+Y_t = T_t + S_t + R_t
+\]
+
+Multiplicative Model:
+In the multiplicative model, the components are multiplied together:
+\[
+Y_t = T_t \times S_t \times R_t
+\]
+
+In practice, the choice between the additive and multiplicative models often depends on the nature of the time series. If the magnitude of the seasonal fluctuations or the variation around the trend does not vary with the level of the time series, then an additive model is appropriate. If the magnitude of the seasonal fluctuations or the variation around the trend increases or decreases as the time series level changes, then a multiplicative model may be more suitable.
+
+<<message=FALSE,warning=FALSE,fig.dim = c(6, 4),fig.cap='Decomposition of addictive time series model'>>=
+# Plot decomposition of addictive time series model
+decomposed_ts <- stats::decompose(ts_data$CNYtoGBP)
+plot(decomposed_ts, xlab="Date")
 @
 
-
+Hence, in this way, we will be able to view the seasonal trend and overall trend of CNY to GBP obviously.
 
 \subsubsection{Double y-axis time series plot.}
 
 If we want to display two different time series that measure two different quantities at the same time points, we can draw the second series again on the second Y-axis on the right side.
 
-<<echo=FALSE>>=
+<<message=FALSE,warning=FALSE,fig.dim = c(6, 4),fig.cap='Double y-axis time series'>>=
+# Plot of double y-axis time series
+
 # Plot the first time series with its y-axis
-plot(ts_data$CNYtoGBP, type="l", col="blue", ylab="Exchange Rate", xlab="Date",
+plot(MyData$CNYtoGBP, type="l", col="blue", ylab="Exchange Rate", xlab="Date",
      main="Exchange Rates Over Time")
 
 # Add the second time series with a secondary y-axis
@@ -839,6 +784,38 @@ mtext("Temp", side=4, line=3)  # Label the secondary y-axis
 # Add a legend to distinguish the two time series
 legend("topright", legend=c("CNYtoGBP", "EURtoGBP"),
        col=c("blue", "red"), lty=1, cex=0.8)
+@
+
+\subsubsection{Identification of anomalies}
+
+A common approach to anomaly detection in time series data is to use the Z-score. The Z-score measures how many standard deviations a data point is from the mean. Data points with a Z-score above a certain threshold (e.g., 2 or 3) can be considered anomalies.
+
+<<message=FALSE,warning=FALSE,fig.dim = c(6, 4),fig.cap='Time series with anomalies'>>=
+#Plot of time series with anomalies
+
+# Calculate the Z-scores for the EURtoGBP exchange rate
+eur_to_gbp_series <- MyData$EURtoGBP
+mean_val <- mean(eur_to_gbp_series, na.rm = TRUE)
+std_val <- sd(eur_to_gbp_series, na.rm = TRUE)
+z_scores <- abs((eur_to_gbp_series - mean_val) / std_val)
+
+# Define a threshold for anomalies (e.g., Z-score > 2)
+threshold <- 3
+anomalies <- which(z_scores > threshold)
+
+plot_data <- data.frame(Date =  MyData$Date,
+                        Rate = eur_to_gbp_series,
+                        Anomaly = ifelse(z_scores > threshold,
+                                         eur_to_gbp_series, NA))
+
+ggplot(plot_data, aes(x = Date, y = Rate)) +
+  geom_line(aes(color = "EURtoGBP")) +
+  geom_point(aes(y = Anomaly, color = "Anomalies"), na.rm = TRUE) +
+  labs(title = "EURtoGBP Exchange Rate with Anomalies Highlighted",
+       y = "Exchange Rate to GBP",
+       color = "Legend") +
+  scale_color_manual(values = c("EURtoGBP" = "blue",
+                                "Anomalies" = "red"))
 @
 
 
@@ -909,7 +886,51 @@ where \(\sigma_{st}\) is the number of shortest paths from node \(s\) to \(t\), 
 xxx
 
 \subsection{Geographic Maps and Spatial Data Visualisation}
-xxx
+
+\text{https://data.london.gov.uk/dataset/statistical-gis-boundary-files-london#:~:text=,2014.zip%20%283.84%20MB%29%20From}\\
+\text{https://data.london.gov.uk/dataset/recorded_crime_summary#:~:text=Recorded%20Crime%3A%20Geographic%20Breakdown,covering%20all%20historic%20full}\\
+\text{https://public.tableau.com/app/profile/metropolitan.police.service/viz/MonthlyCrimeDataNewCats/Coversheet}\\
+\text{https://medium.com/@davemorison/an-interactive-visualization-of-londons-crime-data-using-shiny-applications-and-r-7ca9011e064b?source=author_recirc-----8dcefef1c397----0---------------------07ef707d_5478_4230_b6e6_451582a6cc55-------}
+
+<<warning=FALSE,message=FALSE>>=
+# Load the shapefile
+london_boroughs <- st_read("London_Ward.shp")
+
+# Load the crime data (assuming it's in CSV format)
+crime_data <- read.csv("BoroughLevelCrime.csv")
+
+# Summing the total crimes for each borough over the entire timeframe
+borough_totals <- crime_data %>%
+  group_by(LookUp_BoroughName) %>%
+  summarise(Total_Crimes = sum(across(starts_with("X2020"))))
+
+# Merge the crime data with the shapefile
+merged_data <- merge(london_boroughs, borough_totals,
+                     by.x="DISTRICT", by.y="LookUp_BoroughName")
+
+# Aggregate geometries by district
+aggregated_data <- merged_data %>%
+  group_by(DISTRICT) %>%
+  summarise(geometry = st_union(geometry), Total_Crimes = first(Total_Crimes))
+
+# Calculate centroids for labeling
+aggregated_data$centroid <- st_centroid(aggregated_data$geometry)
+@
+
+
+<<warning=FALSE,message=FALSE,fig.dim=c(7,7), fig.caption='Crime numbers in London by boroughs'>>=
+# Plot the Crime numbers in London by boroughs
+plot <- ggplot(data=aggregated_data) + 
+  geom_sf(aes(fill=Total_Crimes)) +
+  geom_sf_text(aes(label = DISTRICT, geometry = centroid),
+               size = 3, check_overlap = TRUE) +
+  scale_fill_gradient(low="Green", high="red") +
+  theme_minimal() +
+  labs(title="Total Crime by Borough in London (April 2010 - September 2021)",
+       fill="Total Crimes")
+
+print(plot)
+@
 
 \subsection{3D and Interactive Visualisations}
 ggplot2 is one of the most popular data visualization libraries in R, but it is primarily designed for 2D data visualization. Directly creating 3D views with ggplot2 can be challenging.
