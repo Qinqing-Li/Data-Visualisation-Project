@@ -521,50 +521,25 @@ The iris dataset is a classic dataset in the field of statistics. It was introdu
 
 \end{knitrout}
 
-\subsubsection{Heatmaps and Tree Maps}
+\subsection{Heatmaps and Tree Maps}
 In this chapter, we explore two powerful data visualisation techniques: heatmaps and treemaps. These methods are instrumental for conveying intricate data structures and patterns, offering unique ways to represent multivariate information, making them indispensable tools for data scientists.
 \\  
 \\We will delve into the theory behind heatmaps and treemaps, understand how to create them using popular data visualization libraries, and demonstrate their practical applications with real-world examples. By the end of this chapter, you will be well-equipped to leverage heatmaps and treemaps to gain insights from complex and hierarchical datasets.
-
 \subsubsection{Heatmaps - Fire in Brazil}
 \\  
 \\The heatmap is a data visualisation technique that uses colour coding to represent different intensity.
 \\  
-\\In this illustrative example, heatmaps is used to visualize fire occurrences in Brazil. These heatmaps offer a spatially coherent representation, highlighting regions at high risk and seasonal patterns. Here, the heatmap is a power tool for identifying the risk of fire incidents. The data-driven insights empowers us to make informed decisions concerning preventive measures and strategies for firefighting.
-
-
-
-<<<<<<< HEAD
-=======
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(4L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x40f>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10004 ms}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(5L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x411>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10004 ms}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(6L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x413>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10000 ms}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(7L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x415>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10000 ms}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(8L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x417>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10000 ms}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(9L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x419>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10005 ms}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(10L, class = c("{}curl"{}, "{}connection"{}: Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10004 ms}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(11L, class = c("{}curl"{}, "{}connection"{}: Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10004 ms}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(12L, class = c("{}curl"{}, "{}connection"{}: Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10004 ms}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(13L, class = c("{}curl"{}, "{}connection"{}: Timeout was reached: [firms.modaps.eosdis.nasa.gov] Connection timeout after 10000 ms}}\end{kframe}
-\end{knitrout}
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
->>>>>>> 4e1e9ab24e67eac147b9fec6b87afdf04235466e
-
-
-\\From Figure~\ref{fig:spacetime-fy22}, we can observe that certain locations have significantly higher fires count. 
+\\In this illustrative example, heatmaps are used to visualise fire occurrences in Brazil. These heatmaps provide a spatially coherent representation, highlighting regions at high risk and seasonal patterns. Here, the heatmap is a powerful tool for identifying the occurrence of fire incidents. The data-driven insights could empower policymakers to make informed decisions regarding preventive measures and firefighting strategies.
 \\  
-\\Colour selection from \href{https://colorbrewer2.org/#type=sequential&scheme=Oranges&n=9}{colorbrewer2}.
+\\In Figure~\ref{fig:spacetime-fy22}, it can be observed that significantly higher fire counts are found in certain locations. The presence of two strips with high frequencies of fires are highly unusual.  The vertical trend corresponds to the location of BR-230 (Trans-Amazonian Highway) passing through the city of Apuí, State of Amazonas, where a high frequency of fire occurrence is observed.  The horizontal trend corresponds to BR-163 (Brazil highway) passing through Três Pinheiros in Novo Progresso, State of Pará. The western coastal area with a high frequency of fire occurrence corresponds to regions in close proximity to the cities of Vista Alegre do Abunã and Rio Branco. Research has indicated that 95 \% of active fires and the most intense ones (FRP > 500 megawatts) occurred at the edges in forests.
+\\  
+\\From the same figure, it can be observed that August and September are the riskiest months in terms of fire hazard, whereas little risk is posed from November to July. The follow-up question naturally arises: How does FY22 compare to previous years? Is it valid to claim that August and September constitute the fire hazard season?
+\\    
+\\In Figure~\ref{fig:fire-by-months-fy13-22}, the data shows a higher number of fire occurrences in the months of August to October compared to the rest of the year, indicating a greater number of fire hazards during these months.
+\\  
+
+
+
 
 
 
@@ -582,19 +557,20 @@ In this chapter, we explore two powerful data visualisation techniques: heatmaps
   \hlkwd{scale_fill_gradient}\hlstd{(}\hlkwc{low} \hlstd{=} \hlstr{"#fee6ce"}\hlstd{,} \hlkwc{high} \hlstd{=} \hlstr{"#d7301f"}\hlstd{)} \hlopt{+}
   \hlkwd{coord_fixed}\hlstd{(}\hlkwc{ratio} \hlstd{=} \hlnum{1}\hlstd{)} \hlopt{+}
   \hlkwd{theme_minimal}\hlstd{()}\hlopt{+}
-  \hlkwd{theme}\hlstd{(}\hlkwc{axis.text} \hlstd{=} \hlkwd{element_text}\hlstd{(}\hlkwc{size} \hlstd{=} \hlnum{10}\hlstd{))}
+  \hlkwd{theme}\hlstd{(}\hlkwc{axis.text} \hlstd{=} \hlkwd{element_text}\hlstd{(}\hlkwc{size} \hlstd{=} \hlnum{9}\hlstd{))}
 
 \hlstd{interactive_plot} \hlkwb{<-} \hlkwd{ggplotly}\hlstd{(space_heatmap)}
 
 \hlstd{time_heatmap} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(confident_fire_months_fy22,}
                        \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= abb_month,} \hlkwc{y} \hlstd{=} \hlkwd{as.character}\hlstd{(}\hlnum{2022}\hlstd{),} \hlkwc{fill} \hlstd{= count))} \hlopt{+}
-  \hlkwd{geom_tile}\hlstd{(}\hlkwc{width} \hlstd{=} \hlnum{0.9}\hlstd{,} \hlkwc{height} \hlstd{=} \hlnum{1}\hlstd{)} \hlopt{+}  \hlcom{# Create the heatmap tiles}
+  \hlkwd{geom_tile}\hlstd{(}\hlkwc{width} \hlstd{=} \hlnum{0.9}\hlstd{,} \hlkwc{height} \hlstd{=} \hlnum{0.5}\hlstd{)} \hlopt{+}  \hlcom{# Create the heatmap tiles}
   \hlkwd{scale_fill_gradient}\hlstd{(}\hlkwc{low} \hlstd{=} \hlstr{"#fff7ec"}\hlstd{,} \hlkwc{high} \hlstd{=} \hlstr{"#d7301f"}\hlstd{)} \hlopt{+}
   \hlkwd{labs}\hlstd{(}\hlkwc{x} \hlstd{=} \hlstr{" "}\hlstd{,} \hlkwc{y} \hlstd{=} \hlstr{" "}\hlstd{,} \hlkwc{name} \hlstd{=} \hlstr{"count"}\hlstd{)} \hlopt{+}
   \hlkwd{theme_minimal}\hlstd{()} \hlopt{+}
-  \hlkwd{theme}\hlstd{(}\hlkwc{axis.text} \hlstd{=} \hlkwd{element_text}\hlstd{(}\hlkwc{size} \hlstd{=} \hlnum{10}\hlstd{))}
+  \hlkwd{theme}\hlstd{(}\hlkwc{axis.text} \hlstd{=} \hlkwd{element_text}\hlstd{(}\hlkwc{size} \hlstd{=} \hlnum{9}\hlstd{))}
 
-\hlstd{spacetime_fy22} \hlkwb{<-} \hlkwd{grid.arrange}\hlstd{(space_heatmap, time_heatmap,} \hlkwc{nrow} \hlstd{=} \hlnum{2}\hlstd{,} \hlkwc{heights} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{5}\hlstd{,}\hlnum{1}\hlstd{))}
+\hlstd{spacetime_fy22} \hlkwb{<-} \hlkwd{grid.arrange}\hlstd{(space_heatmap, time_heatmap,} \hlkwc{nrow} \hlstd{=} \hlnum{2}\hlstd{,}
+                               \hlkwc{heights} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{2}\hlstd{,}\hlnum{0.5}\hlstd{))}
 
 \hlkwd{print}\hlstd{(spacetime_fy22)}
 \end{alltt}
@@ -609,23 +585,21 @@ In this chapter, we explore two powerful data visualisation techniques: heatmaps
 \end{figure}
 
 \end{knitrout}
-\\From the table, we can clearly see that August and September are the riskiest months in terms of fire hazard, whereas November to July hardly pose any risk at all. It's natural to ask the follow-up question: How does FY22 compare to previous years? Is it valid to claim that August and September are the fire hazard season?
-\\    
-\\Shown in Figure~\ref{fig:fire-by-months-fy13-22}, the data showed a trend indicating that August to October have more fire occurrences compared to the rest of the year. There are clearly more fire hazards in those months.
-\\  
+
 
 
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{heatmap_plot} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(pivot_table,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{factor}\hlstd{(abb_month,} \hlkwc{levels} \hlstd{= custom_order),}
-                                        \hlkwc{y} \hlstd{=} \hlkwd{as.character}\hlstd{(year),} \hlkwc{fill} \hlstd{= count))} \hlopt{+}
+\hlstd{heatmap_plot} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(pivot_table,}
+                       \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{factor}\hlstd{(abb_month,} \hlkwc{levels} \hlstd{= custom_order),}
+                           \hlkwc{y} \hlstd{=} \hlkwd{as.character}\hlstd{(year),} \hlkwc{fill} \hlstd{= count))} \hlopt{+}
   \hlkwd{geom_tile}\hlstd{()} \hlopt{+}
   \hlkwd{scale_fill_gradient}\hlstd{(}\hlkwc{low} \hlstd{=} \hlstr{"#fff7ec"}\hlstd{,} \hlkwc{high} \hlstd{=} \hlstr{"#d7301f"}\hlstd{)} \hlopt{+}
   \hlkwd{labs}\hlstd{(}\hlkwc{x} \hlstd{=} \hlstr{" "}\hlstd{,} \hlkwc{y} \hlstd{=} \hlstr{" "}\hlstd{)} \hlopt{+}
   \hlkwd{theme_minimal}\hlstd{()} \hlopt{+}
-  \hlkwd{theme}\hlstd{(}\hlkwc{axis.text} \hlstd{=} \hlkwd{element_text}\hlstd{(}\hlkwc{size} \hlstd{=} \hlnum{10}\hlstd{))}
+  \hlkwd{theme}\hlstd{(}\hlkwc{axis.text} \hlstd{=} \hlkwd{element_text}\hlstd{(}\hlkwc{size} \hlstd{=} \hlnum{9}\hlstd{))}
 
 \hlkwd{print}\hlstd{(heatmap_plot)}
 \end{alltt}
@@ -634,10 +608,29 @@ In this chapter, we explore two powerful data visualisation techniques: heatmaps
 \end{figure}
 
 \end{knitrout}
-\\The foundation of a heatmap is a data matrix, where each entry in this matrix represents an observation or measurement. Therefore, the first step to create a heatmap is to organize the data by columns and rows. In Figure~\ref{fig:fire-by-months-fy13-22}, the structured data is displayed as a grid of coloured cells, where the colour intensity corresponds to the underlying frequency.
-\\  
-\\Heatmaps are powerful tools for visualizing relationships between covariables within a model. One example of why we need to analyse a matrix of correlations between variables is in regression models. In the real world, variables are often correlated, and complete independent relations are rare. Consequently, analysing pairwise correlations is essential. Highly correlated variables significantly impact the regression model. When faced with highly correlated variables, we need to choose one variable from the correlated set. The selection is based on finding a regression model with the least Akaike Information Criterion (AIC) score among these variables. The AIC measures how much the linear model overfits the dataset. In other words, we want the regression model to explain the trend, and we do not want to overfit the model so that it explains the noise in the data set, which would lead to inaccurate predictions, as shown in Figure \ref{fig:noisy}.
 
+
+\subsubsection{Heatmaps, correlation matrix and AIC score}
+\\  
+\\The foundation of a heatmap is a data matrix $M$, where each entry in this matrix represents an observation.
+$$M =
+\left[
+\begin{array}{cccc}
+    M_{11} & M_{12} & \ldots & M_{1j} \\  
+    M_{21} & M_{22} & \ldots & M_{2j} \\  
+    \vdots & \vdots & \ddots & \vdots \\  
+    M_{i1} & M_{i2} & \ldots & M_{ij}
+\end{array}
+\right]
+$$
+\\Therefore, the first step to create a heatmap is to organize the data into columns and rows. In Figure~\ref{fig:fire-by-months-fy13-22}, the structured data is displayed as a grid of coloured cells, where the colour intensity corresponds to the underlying frequency.
+\\  
+\\Heatmaps serve as powerful tools for visualizing relationships between covariables within a model. An example of the necessity to analyze a matrix of correlations between variables is found in regression models. In the real world, variables are often correlated, and completely independent relationships are seldom encountered. Therefore, the analysis of pairwise correlations becomes essential. Significantly impacted by highly correlated variables, the regression model requires the selection of one variable from the correlated set. The selection is based on the identification of a regression model with the lowest Akaike Information Criterion (AIC) score among these variables. 
+
+$$AIC = -2 \l(\hat{\mathbf{\theta}})+2 \dim (\mathbf{\theta})$$
+\\where $\l(\hat{\mathbf{\theta}})$ is the log-likelihood function, which is used to find the Maximum Likelihood Estimator (MLE) of a distribution.
+\\  
+\\The AIC measures the extent to which the linear model fits the dataset. To obtain the best model, minimise the AIC score. In other words, the objective is to have the trend explained by the regression model, while avoiding overfitting that captures the noise in the dataset, ultimately leading to inaccurate predictions, as demonstrated in Figure \ref{fig:noisy}.
 
 \begin{figure}[h]
     \centering
@@ -950,7 +943,7 @@ XXX
 
 
 \section{Conclusion}
-XXX
 
+XXX
 
 \end{document}

@@ -453,17 +453,22 @@ bar_diagram <- ggplot(iris, aes(x = Sepal.Length)) +
 print(bar_diagram)
 @
 
-\subsubsection{Heatmaps and Tree Maps}
+\subsection{Heatmaps and Tree Maps}
 In this chapter, we explore two powerful data visualisation techniques: heatmaps and treemaps. These methods are instrumental for conveying intricate data structures and patterns, offering unique ways to represent multivariate information, making them indispensable tools for data scientists.
 \\  
 \\We will delve into the theory behind heatmaps and treemaps, understand how to create them using popular data visualization libraries, and demonstrate their practical applications with real-world examples. By the end of this chapter, you will be well-equipped to leverage heatmaps and treemaps to gain insights from complex and hierarchical datasets.
-
 \subsubsection{Heatmaps - Fire in Brazil}
 \\  
 \\The heatmap is a data visualisation technique that uses colour coding to represent different intensity.
 \\  
-\\In this illustrative example, heatmaps is used to visualize fire occurrences in Brazil. These heatmaps offer a spatially coherent representation, highlighting regions at high risk and seasonal patterns. Here, the heatmap is a power tool for identifying the risk of fire incidents. The data-driven insights empowers us to make informed decisions concerning preventive measures and strategies for firefighting.
-
+\\In this illustrative example, heatmaps are used to visualise fire occurrences in Brazil. These heatmaps provide a spatially coherent representation, highlighting regions at high risk and seasonal patterns. Here, the heatmap is a powerful tool for identifying the occurrence of fire incidents. The data-driven insights could empower policymakers to make informed decisions regarding preventive measures and firefighting strategies.
+\\  
+\\In Figure~\ref{fig:spacetime-fy22}, it can be observed that significantly higher fire counts are found in certain locations. The presence of two strips with high frequencies of fires are highly unusual.  The vertical trend corresponds to the location of BR-230 (Trans-Amazonian Highway) passing through the city of Apuí, State of Amazonas, where a high frequency of fire occurrence is observed.  The horizontal trend corresponds to BR-163 (Brazil highway) passing through Três Pinheiros in Novo Progresso, State of Pará. The western coastal area with a high frequency of fire occurrence corresponds to regions in close proximity to the cities of Vista Alegre do Abunã and Rio Branco. Research has indicated that 95 \% of active fires and the most intense ones (FRP > 500 megawatts) occurred at the edges in forests.
+\\  
+\\From the same figure, it can be observed that August and September are the riskiest months in terms of fire hazard, whereas little risk is posed from November to July. The follow-up question naturally arises: How does FY22 compare to previous years? Is it valid to claim that August and September constitute the fire hazard season?
+\\    
+\\In Figure~\ref{fig:fire-by-months-fy13-22}, the data shows a higher number of fire occurrences in the months of August to October compared to the rest of the year, indicating a greater number of fire hazards during these months.
+\\  
 <<load-data, echo=FALSE,message=FALSE,warning=FALSE>>=
 # Data from NASA: https://firms.modaps.eosdis.nasa.gov/
 
@@ -505,10 +510,6 @@ confident_fire_decade <- lapply(data_list, filter_fire)
 confident_fire_fy22 <- confident_fire_decade[[10]]
 @
 
-\\From Figure~\ref{fig:spacetime-fy22}, we can observe that certain locations have significantly higher fires count. 
-\\  
-\\Colour selection from \href{https://colorbrewer2.org/#type=sequential&scheme=Oranges&n=9}{colorbrewer2}.
-
 <<pivot-data-by-month, echo=FALSE,message=FALSE,warning=FALSE>>=
 # Create a pivot table, no. of fire occurrences vs. Months (Jan-Dec), in FY22.
 confident_fire_months_fy22 <- confident_fire_fy22 %>%
@@ -526,7 +527,7 @@ custom_order <- c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep",
 confident_fire_months_fy22$abb_month <- factor(confident_fire_months_fy22$abb_month, levels = custom_order)
 @
 
-<<spacetime-fy22,fig.height=5.2,fig.cap='Frequency of Fire by Space and Time, FY22',fig.show='hold', message=FALSE, warning=FALSE>>=
+<<spacetime-fy22,fig.height=4,fig.cap='Frequency of Fire by Space and Time, FY22',fig.show='hold', message=FALSE, warning=FALSE>>=
 # Obtain the Brazil map data
 brazil_map <- map_data("world", region = "Brazil")
 
@@ -538,26 +539,24 @@ space_heatmap <- ggplot(confident_fire_fy22, aes(x = longitude, y = latitude)) +
   scale_fill_gradient(low = "#fee6ce", high = "#d7301f") +
   coord_fixed(ratio = 1) +
   theme_minimal()+
-  theme(axis.text = element_text(size = 10))
+  theme(axis.text = element_text(size = 9))
 
 interactive_plot <- ggplotly(space_heatmap)
 
 time_heatmap <- ggplot(confident_fire_months_fy22, 
                        aes(x = abb_month, y = as.character(2022), fill = count)) +
-  geom_tile(width = 0.9, height = 1) +  # Create the heatmap tiles
+  geom_tile(width = 0.9, height = 0.5) +  # Create the heatmap tiles
   scale_fill_gradient(low = "#fff7ec", high = "#d7301f") +
   labs(x = " ", y = " ", name = "count") +
   theme_minimal() +
-  theme(axis.text = element_text(size = 10))
+  theme(axis.text = element_text(size = 9))
 
-spacetime_fy22 <- grid.arrange(space_heatmap, time_heatmap, nrow = 2, heights = c(5,1))
+spacetime_fy22 <- grid.arrange(space_heatmap, time_heatmap, nrow = 2, 
+                               heights = c(2,0.5))
 
 print(spacetime_fy22)
 @
-\\From the table, we can clearly see that August and September are the riskiest months in terms of fire hazard, whereas November to July hardly pose any risk at all. It's natural to ask the follow-up question: How does FY22 compare to previous years? Is it valid to claim that August and September are the fire hazard season?
-\\    
-\\Shown in Figure~\ref{fig:fire-by-months-fy13-22}, the data showed a trend indicating that August to October have more fire occurrences compared to the rest of the year. There are clearly more fire hazards in those months.
-\\  
+
 
 <<pivot-table-fy13-22, echo=FALSE,message=FALSE,warning=FALSE>>=
 # Combine all the confident fire datasets into a single dataset
@@ -577,21 +576,41 @@ pivot_table <- pivot_table %>%
   mutate(year = as.numeric(substring(month_year, nchar(month_year) - 3, nchar(month_year))))
 @
 
-<<fire-by-months-fy13-22,fig.height=3.5,fig.width=5.6,fig.cap='Frequency of Fire Occurrences, FY13-22',fig.show='hold', message=FALSE,warning=FALSE>>=
-heatmap_plot <- ggplot(pivot_table, aes(x = factor(abb_month, levels = custom_order), 
-                                        y = as.character(year), fill = count)) +
+<<fire-by-months-fy13-22,fig.height=2.6,fig.width=5,fig.cap='Frequency of Fire Occurrences, FY13-22',fig.show='hold', message=FALSE,warning=FALSE>>=
+heatmap_plot <- ggplot(pivot_table, 
+                       aes(x = factor(abb_month, levels = custom_order), 
+                           y = as.character(year), fill = count)) +
   geom_tile() +
   scale_fill_gradient(low = "#fff7ec", high = "#d7301f") +
   labs(x = " ", y = " ") +
   theme_minimal() +
-  theme(axis.text = element_text(size = 10))
+  theme(axis.text = element_text(size = 9))
 
 print(heatmap_plot)
 @
-\\The foundation of a heatmap is a data matrix, where each entry in this matrix represents an observation or measurement. Therefore, the first step to create a heatmap is to organize the data by columns and rows. In Figure~\ref{fig:fire-by-months-fy13-22}, the structured data is displayed as a grid of coloured cells, where the colour intensity corresponds to the underlying frequency.
-\\  
-\\Heatmaps are powerful tools for visualizing relationships between covariables within a model. One example of why we need to analyse a matrix of correlations between variables is in regression models. In the real world, variables are often correlated, and complete independent relations are rare. Consequently, analysing pairwise correlations is essential. Highly correlated variables significantly impact the regression model. When faced with highly correlated variables, we need to choose one variable from the correlated set. The selection is based on finding a regression model with the least Akaike Information Criterion (AIC) score among these variables. The AIC measures how much the linear model overfits the dataset. In other words, we want the regression model to explain the trend, and we do not want to overfit the model so that it explains the noise in the data set, which would lead to inaccurate predictions, as shown in Figure \ref{fig:noisy}.
 
+
+\subsubsection{Heatmaps, correlation matrix and AIC score}
+\\  
+\\The foundation of a heatmap is a data matrix $M$, where each entry in this matrix represents an observation.
+$$M =
+\left[
+\begin{array}{cccc}
+    M_{11} & M_{12} & \ldots & M_{1j} \\  
+    M_{21} & M_{22} & \ldots & M_{2j} \\  
+    \vdots & \vdots & \ddots & \vdots \\  
+    M_{i1} & M_{i2} & \ldots & M_{ij}
+\end{array}
+\right]
+$$
+\\Therefore, the first step to create a heatmap is to organize the data into columns and rows. In Figure~\ref{fig:fire-by-months-fy13-22}, the structured data is displayed as a grid of coloured cells, where the colour intensity corresponds to the underlying frequency.
+\\  
+\\Heatmaps serve as powerful tools for visualizing relationships between covariables within a model. An example of the necessity to analyze a matrix of correlations between variables is found in regression models. In the real world, variables are often correlated, and completely independent relationships are seldom encountered. Therefore, the analysis of pairwise correlations becomes essential. Significantly impacted by highly correlated variables, the regression model requires the selection of one variable from the correlated set. The selection is based on the identification of a regression model with the lowest Akaike Information Criterion (AIC) score among these variables. 
+
+$$AIC = -2 \l(\hat{\mathbf{\theta}})+2 \dim (\mathbf{\theta})$$
+\\where $\l(\hat{\mathbf{\theta}})$ is the log-likelihood function, which is used to find the Maximum Likelihood Estimator (MLE) of a distribution.
+\\  
+\\The AIC measures the extent to which the linear model fits the dataset. To obtain the best model, minimise the AIC score. In other words, the objective is to have the trend explained by the regression model, while avoiding overfitting that captures the noise in the dataset, ultimately leading to inaccurate predictions, as demonstrated in Figure \ref{fig:noisy}.
 
 \begin{figure}[h]
     \centering
@@ -953,7 +972,7 @@ XXX
 
 
 \section{Conclusion}
-XXX
 
+XXX
 
 \end{document}
