@@ -1,87 +1,6 @@
-<<<<<<< HEAD
-\contentsline {section}{\numberline {1}Introduction}{3}{section.1}
-\contentsline {section}{\numberline {2}Theoretical Foundations of Data Visualisation}{4}{section.2}
-\contentsline {subsection}{\numberline {2.1}Introduction to Data Visualisation Theory}{4}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}Guiding Principles for Data Representation}{4}{subsubsection.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.2}Theoretical Framework and Visual Perception}{4}{subsubsection.2.1.2}
-\contentsline {subsection}{\numberline {2.2}Visual Perception and Cognition}{4}{subsection.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}Human Visual Perception: Decoding Visual Information}{5}{subsubsection.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2}Gestalt Principles}{5}{subsubsection.2.2.2}
-\contentsline {subsubsection}{\numberline {2.2.3}Application of Gestalt Principles in Designing Visualisations}{6}{subsubsection.2.2.3}
-\contentsline {subsection}{\numberline {2.3}Data abstraction and Representation}{6}{subsection.2.3}
-\contentsline {subsubsection}{\numberline {2.3.1}Data Abstraction: Transforming Raw Data}{6}{subsubsection.2.3.1}
-\contentsline {subsubsection}{\numberline {2.3.2}Hierarchies and Levels of Abstraction}{6}{subsubsection.2.3.2}
-\contentsline {subsubsection}{\numberline {2.3.3}Trade-offs Between Abstraction and Information Loss}{6}{subsubsection.2.3.3}
-\contentsline {subsection}{\numberline {2.4}Data Types and Visualisation Techniques}{7}{subsection.2.4}
-\contentsline {subsubsection}{\numberline {2.4.1}Categorisation of Data Types}{7}{subsubsection.2.4.1}
-\contentsline {subsubsection}{\numberline {2.4.2}Matching Data Types with Appropriate Visualisation Techniques}{7}{subsubsection.2.4.2}
-\contentsline {subsection}{\numberline {2.5}Colour Theory in Data Visualisation}{8}{subsection.2.5}
-\contentsline {subsubsection}{\numberline {2.5.1}The Importance of Colour in Conveying Information}{8}{subsubsection.2.5.1}
-\contentsline {subsubsection}{\numberline {2.5.2}Colour Perception and Colour Encoding in Visualisations}{8}{subsubsection.2.5.2}
-\contentsline {subsubsection}{\numberline {2.5.3}Avoiding Misleading Visualisations Due to Colour Choices}{8}{subsubsection.2.5.3}
-\contentsline {subsection}{\numberline {2.6}Theoretical Properties of Visualisations}{9}{subsection.2.6}
-\contentsline {subsubsection}{\numberline {2.6.1}Expressiveness and Effectiveness}{9}{subsubsection.2.6.1}
-\contentsline {subsubsection}{\numberline {2.6.2}Data-Ink Ratio and the Principle of Minimal Ink}{9}{subsubsection.2.6.2}
-\contentsline {subsubsection}{\numberline {2.6.3}Precision, Accuracy, and Scalability}{9}{subsubsection.2.6.3}
-\contentsline {subsection}{\numberline {2.7}Cognitive Load and Visual Complexity}{9}{subsection.2.7}
-\contentsline {subsubsection}{\numberline {2.7.1}Exploring the Concept of Cognitive Load in Visualisations}{10}{subsubsection.2.7.1}
-\contentsline {subsubsection}{\numberline {2.7.2}Strategies to Reduce Cognitive Load While Maintaining Complexity}{10}{subsubsection.2.7.2}
-\contentsline {subsubsection}{\numberline {2.7.3}Information Overload and Simplification Techniques}{10}{subsubsection.2.7.3}
-\contentsline {section}{\numberline {3}Modern Methods of Data Visualisation}{11}{section.3}
-\contentsline {subsection}{\numberline {3.1}Introduction to Modern Data Visualization Methods}{11}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Data Sets}{11}{subsubsection.3.1.1}
-\contentsline {subsection}{\numberline {3.2}Scatter Plots and Bubble Charts}{11}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}Scatter Plots}{11}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}Scatter Plots in Practice}{12}{subsubsection.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.3}Analysis}{12}{subsubsection.3.2.3}
-\contentsline {subsubsection}{\numberline {3.2.4}Regression and the Regression Line}{13}{subsubsection.3.2.4}
-\contentsline {subsubsection}{\numberline {3.2.5}Bubble Charts}{13}{subsubsection.3.2.5}
-\contentsline {subsubsection}{\numberline {3.2.6}Bubble Charts in Practice}{14}{subsubsection.3.2.6}
-\contentsline {subsubsection}{\numberline {3.2.7}Analysis}{15}{subsubsection.3.2.7}
-\contentsline {subsection}{\numberline {3.3}Bar Charts and Histograms}{15}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Bar Charts}{15}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.2}Different Types of Bar Charts}{15}{subsubsection.3.3.2}
-\contentsline {paragraph}{Vertical Bar Chart}{16}{section*.2}
-\contentsline {paragraph}{Horizontal Bar Chart}{16}{section*.3}
-\contentsline {paragraph}{Multi-set Bar Chart}{16}{section*.4}
-\contentsline {paragraph}{Stacked bar chart}{16}{section*.5}
-\contentsline {subsubsection}{\numberline {3.3.3}Advantages of Bar Charts}{16}{subsubsection.3.3.3}
-\contentsline {subsubsection}{\numberline {3.3.4}Disadvantages of Bar Charts}{16}{subsubsection.3.3.4}
-\contentsline {subsubsection}{\numberline {3.3.5}ToothGrowth Dataset}{17}{subsubsection.3.3.5}
-\contentsline {subsubsection}{\numberline {3.3.6}Histograms}{20}{subsubsection.3.3.6}
-\contentsline {subsubsection}{\numberline {3.3.7}Uses of Histograms:}{21}{subsubsection.3.3.7}
-\contentsline {subsection}{\numberline {3.4}Heatmaps and Tree Maps}{21}{subsection.3.4}
-\contentsline {subsubsection}{\numberline {3.4.1}Heatmaps - Fire in Brazil}{22}{subsubsection.3.4.1}
-\contentsline {subsubsection}{\numberline {3.4.2}Heatmaps, correlation matrix and AIC score}{24}{subsubsection.3.4.2}
-\contentsline {subsubsection}{\numberline {3.4.3}Treemaps}{25}{subsubsection.3.4.3}
-\contentsline {subsubsection}{\numberline {3.4.4}Use Cases for Treemaps}{25}{subsubsection.3.4.4}
-\contentsline {subsection}{\numberline {3.5}Line Charts and Time Series Visualization}{26}{subsection.3.5}
-\contentsline {subsubsection}{\numberline {3.5.1}Basic Components}{26}{subsubsection.3.5.1}
-\contentsline {subsubsection}{\numberline {3.5.2}Suitability for Displaying Trends Over Time:}{26}{subsubsection.3.5.2}
-\contentsline {subsubsection}{\numberline {3.5.3}Limitations:}{27}{subsubsection.3.5.3}
-\contentsline {subsubsection}{\numberline {3.5.4}Discuss the importance of time series visualisation in data analysis.}{27}{subsubsection.3.5.4}
-\contentsline {subsubsection}{\numberline {3.5.5}Provide best practices for creating clear and informative line charts.}{27}{subsubsection.3.5.5}
-\contentsline {subsubsection}{\numberline {3.5.6}Showcase real-world examples of time series visualisations}{29}{subsubsection.3.5.6}
-\contentsline {subsubsection}{\numberline {3.5.7}The data set has the format as below:}{29}{subsubsection.3.5.7}
-\contentsline {subsubsection}{\numberline {3.5.8}Multiple time series in one plot:}{29}{subsubsection.3.5.8}
-\contentsline {subsubsection}{\numberline {3.5.9}Decomposition of one time series into trend, seasonal, and random.}{32}{subsubsection.3.5.9}
-\contentsline {subsubsection}{\numberline {3.5.10}Double y-axis time series plot.}{33}{subsubsection.3.5.10}
-\contentsline {subsection}{\numberline {3.6}Network Graphs}{34}{subsection.3.6}
-\contentsline {subsubsection}{\numberline {3.6.1}The Mathematics behind Network Graphs:}{35}{subsubsection.3.6.1}
-\contentsline {subsubsection}{\numberline {3.6.2}Network Graphs in Practice}{35}{subsubsection.3.6.2}
-\contentsline {subsection}{\numberline {3.7}Sankey Diagrams}{36}{subsection.3.7}
-\contentsline {subsection}{\numberline {3.8}Geographic Maps and Spatial Data Visualisation}{36}{subsection.3.8}
-\contentsline {subsection}{\numberline {3.9}3D and Interactive Visualisations}{36}{subsection.3.9}
-\contentsline {section}{\numberline {4}Trees Dataset in R}{36}{section.4}
-\contentsline {subsection}{\numberline {4.1}Advanced Visualisation Techniques}{37}{subsection.4.1}
-\contentsline {section}{\numberline {5}Practical Implementations}{37}{section.5}
-\contentsline {section}{\numberline {6}Case Studies}{37}{section.6}
-\contentsline {subsection}{\numberline {6.1}Market Analysis Dashboards}{37}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}Healthcare Data Visualisation}{37}{subsection.6.2}
-\contentsline {section}{\numberline {7}State-of-the-Art Approaches}{37}{section.7}
-\contentsline {section}{\numberline {8}Conclusion}{37}{section.8}
-=======
 \contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Dataset}{3}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Data Sets}{3}{subsubsection.1.1.1}%
 \contentsline {section}{\numberline {2}Theoretical Foundations of Data Visualisation}{4}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Introduction to Data Visualisation Theory}{4}{subsection.2.1}%
 \contentsline {subsubsection}{\numberline {2.1.1}Guiding Principles for Data Representation}{4}{subsubsection.2.1.1}%
@@ -111,48 +30,46 @@
 \contentsline {subsubsection}{\numberline {2.7.3}Information Overload and Simplification Techniques}{10}{subsubsection.2.7.3}%
 \contentsline {section}{\numberline {3}Modern Methods of Data Visualisation}{11}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Introduction to Modern Data Visualization Methods}{11}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Data Sets}{11}{subsubsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.2}Scatter Plots and Bubble Charts}{11}{subsection.3.2}%
 \contentsline {subsubsection}{\numberline {3.2.1}Scatter Plots}{11}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Scatter Plots in Practice}{12}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}Analysis}{12}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.2}Scatter Plots in Practice}{11}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Analysis}{11}{subsubsection.3.2.3}%
 \contentsline {subsubsection}{\numberline {3.2.4}Regression and the Regression Line}{13}{subsubsection.3.2.4}%
 \contentsline {subsubsection}{\numberline {3.2.5}Bubble Charts}{13}{subsubsection.3.2.5}%
 \contentsline {subsubsection}{\numberline {3.2.6}Bubble Charts in Practice}{14}{subsubsection.3.2.6}%
 \contentsline {subsubsection}{\numberline {3.2.7}Analysis}{15}{subsubsection.3.2.7}%
 \contentsline {subsection}{\numberline {3.3}Bar Charts and Histograms}{15}{subsection.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.1}Bar Charts}{15}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Different Types of Bar Charts}{15}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.2}Different Types of Bar Charts}{16}{subsubsection.3.3.2}%
 \contentsline {paragraph}{Vertical Bar Chart}{16}{section*.2}%
 \contentsline {paragraph}{Horizontal Bar Chart}{16}{section*.3}%
 \contentsline {paragraph}{Multi-set Bar Chart}{16}{section*.4}%
 \contentsline {paragraph}{Stacked bar chart}{16}{section*.5}%
 \contentsline {subsubsection}{\numberline {3.3.3}Advantages of Bar Charts}{16}{subsubsection.3.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.4}Disadvantages of Bar Charts}{16}{subsubsection.3.3.4}%
+\contentsline {subsubsection}{\numberline {3.3.4}Disadvantages of Bar Charts}{17}{subsubsection.3.3.4}%
 \contentsline {subsubsection}{\numberline {3.3.5}ToothGrowth Dataset}{17}{subsubsection.3.3.5}%
-\contentsline {subsubsection}{\numberline {3.3.6}Histograms}{20}{subsubsection.3.3.6}%
-\contentsline {subsubsection}{\numberline {3.3.7}Uses of Histograms:}{21}{subsubsection.3.3.7}%
-\contentsline {subsubsection}{\numberline {3.3.8}Heatmaps and Tree Maps}{21}{subsubsection.3.3.8}%
-\contentsline {subsubsection}{\numberline {3.3.9}Heatmaps - Fire in Brazil}{22}{subsubsection.3.3.9}%
-\contentsline {subsubsection}{\numberline {3.3.10}Treemaps}{25}{subsubsection.3.3.10}%
-\contentsline {subsubsection}{\numberline {3.3.11}Use Cases for Treemaps}{25}{subsubsection.3.3.11}%
-\contentsline {subsection}{\numberline {3.4}Line Charts and Time Series Visualization}{26}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}Showcase real-world examples of time series visualisations}{26}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Decomposition of one time series into trend, seasonal, and random.}{30}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Double y-axis time series plot.}{30}{subsubsection.3.4.3}%
-\contentsline {subsubsection}{\numberline {3.4.4}Identification of anomalies}{32}{subsubsection.3.4.4}%
-\contentsline {subsection}{\numberline {3.5}Network Graphs}{34}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}The Mathematics behind Network Graphs:}{34}{subsubsection.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.5.2}Network Graphs in Practice}{35}{subsubsection.3.5.2}%
-\contentsline {subsection}{\numberline {3.6}Sankey Diagrams}{35}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}Geographic Maps and Spatial Data Visualisation}{35}{subsection.3.7}%
-\contentsline {subsection}{\numberline {3.8}3D and Interactive Visualisations}{37}{subsection.3.8}%
-\contentsline {section}{\numberline {4}Trees Dataset in R}{38}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Advanced Visualisation Techniques}{38}{subsection.4.1}%
-\contentsline {section}{\numberline {5}Practical Implementations}{38}{section.5}%
-\contentsline {section}{\numberline {6}Case Studies}{38}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Market Analysis Dashboards}{38}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Healthcare Data Visualisation}{38}{subsection.6.2}%
-\contentsline {section}{\numberline {7}State-of-the-Art Approaches}{40}{section.7}%
-\contentsline {section}{\numberline {8}Conclusion}{40}{section.8}%
->>>>>>> daff6d291b446528a6d1466dc3e93744c22fdbf7
+\contentsline {subsubsection}{\numberline {3.3.6}Histograms}{22}{subsubsection.3.3.6}%
+\contentsline {subsubsection}{\numberline {3.3.7}Uses of Histograms:}{22}{subsubsection.3.3.7}%
+\contentsline {subsection}{\numberline {3.4}Heatmaps and Tree Maps}{22}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Heatmaps - Fire in Brazil}{23}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Heatmaps, correlation matrix and AIC score}{25}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Treemaps}{26}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.4}Use Cases for Treemaps}{26}{subsubsection.3.4.4}%
+\contentsline {subsection}{\numberline {3.5}Line Charts and Time Series Visualization}{27}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Showcase real-world examples of time series visualisations}{27}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Identification of anomalies}{28}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}Decomposition of one time series into trend, seasonal, and random.}{31}{subsubsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.6}Network Graphs}{33}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}The Mathematics behind Network Graphs:}{33}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}Network Graphs in Practice}{34}{subsubsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.7}Sankey Diagrams}{34}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Geographic Maps and Spatial Data Visualisation}{34}{subsection.3.8}%
+\contentsline {subsection}{\numberline {3.9}3D and Interactive Visualisations}{36}{subsection.3.9}%
+\contentsline {section}{\numberline {4}Trees Dataset in R}{37}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Advanced Visualisation Techniques}{37}{subsection.4.1}%
+\contentsline {section}{\numberline {5}Practical Implementations}{37}{section.5}%
+\contentsline {section}{\numberline {6}Case Studies}{37}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Market Analysis Dashboards}{37}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Healthcare Data Visualisation}{37}{subsection.6.2}%
+\contentsline {section}{\numberline {7}State-of-the-Art Approaches}{39}{section.7}%
+\contentsline {section}{\numberline {8}Conclusion}{39}{section.8}%
