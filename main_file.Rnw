@@ -703,10 +703,7 @@ ts_data <- lapply(MyData[-1], ts,
                   start=c(as.numeric(format(min(MyData$Date), "%Y")),
                           as.numeric(format(min(MyData$Date), "%j"))),
                   frequency=365)
-@
 
-
-<<echo=FALSE, message=FALSE,warning=FALSE>>=
 plot_dt <- MyData %>% gather(key="Currency", value="Rate", -Date)
 
 # 21-day moving average calculations and plot
@@ -726,13 +723,15 @@ plot_data$Currency <- gsub("_MA21", "", plot_data$Currency)
 @
 
 
-<<message=FALSE,warning=FALSE>>=
-# Plot exchange rates of CNY, CAN, EUR, HKD, USD to GBP
+\begin{figure}
+<<message=FALSE,warning=FALSE,fig.dim = c(6, 4)>>=
+# Plot daily and 21-day moving average exchange rates of CNY, CAN,
+# EUR, HKD, USD to GBP
 
 # First plot
 p1 <- ggplot(plot_dt, aes(x=Date, y=Rate, color=Currency)) +
   geom_line() +
-  labs(title="Exchange rates of CNY, CAN,\n  EUR, HKD, USD to GBP",
+  labs(title="Daily exchange rates",
        y="Exchange Rate to GBP",
        x="Date",
        color="Currency")+
@@ -742,30 +741,22 @@ p1 <- ggplot(plot_dt, aes(x=Date, y=Rate, color=Currency)) +
 # Second plot
 p2 <- ggplot(plot_data, aes(x=Date, y=Rate, color=Currency)) +
   geom_line() +
-  labs(title="21-Day moving average \n of exchange rates",
+  labs(title="21-Day moving average exchange rates",
        y="Exchange Rate to GBP",
        x="Date",
        color="Currency")+
   theme_minimal()+
   theme(legend.position="none")
-@
 
-\begin{figure}
-<<message=FALSE,warning=FALSE,fig.dim = c(6, 4)>>=
 # Extract the legend
 p2_legend <- cowplot::get_legend(p2 + theme(legend.position="bottom"))
-
 # Combine the plots with adjusted widths using cowplot
 combined_plot <- cowplot::plot_grid(p1, p2, labels = c("1", "2"),
                                     rel_widths = c(1, 1), nrow=1)
-
 # Combine the plots and the legend
-final_plot <- cowplot::plot_grid(combined_plot, p2_legend, ncol=1,
-                                 rel_heights = c(1, .1))
-
-print(final_plot)
+cowplot::plot_grid(combined_plot, p2_legend, ncol=1, rel_heights = c(1, .1))
 @
-\caption{'Daily and 21-day moving average exchange rates of CNY, CAN, EUR, HKD, USD to GBP'}
+\caption{Daily and 21-day moving average exchange rates of CNY, CAN, EUR, HKD, USD to GBP}
 \label{fig:all exchange rates}
 \end{figure}
 
@@ -774,7 +765,7 @@ From Figure~\ref{fig:all exchange rates}, we can see the the daily CNY, CAN, EUR
 From above plot, a 21-day moving average for each currency allows us to view the trend easily. However, from Figure~\ref{fig:all exchange rates}, for example there are huge gaps between "CNYtoGBP" and "EURtoGBP". This may not suitable for viewing their trends simutaneosly. If we want to display two different time series that measure two different quantities at the same time points, we can draw the second series again on the second Y-axis on the right side.
 
 \begin{figure}
-<<message=FALSE,warning=FALSE,fig.dim = c(6, 4)>>=
+<<message=FALSE,warning=FALSE,fig.dim = c(5, 3.3)>>=
 # Plot Double y-axis time series of CNY and EUR to GBP
 # Define scale factor
 scale_factor <- max(MyData$CNYtoGBP) / max(MyData$EURtoGBP)
@@ -782,64 +773,21 @@ scale_factor <- max(MyData$CNYtoGBP) / max(MyData$EURtoGBP)
 df <- MyData %>% select(Date,CNYtoGBP, EURtoGBP)
 
 # Create plot with dual y-axes
-p <- ggplot(df, aes(Date)) +
-  geom_line(aes(y = EURtoGBP, color = "EURtoGBP")) +
-  geom_line(aes(y = CNYtoGBP / scale_factor, color = "CNYtoGBP")) + 
-  scale_y_continuous(
-    name = "EURtoGBP Exchange Rate axis",
-    sec.axis = sec_axis(~ . * scale_factor, name = "CNYtoGBP Exchange Rate axis")
-  ) +
-  labs(title = 'Double y-axis time series of CNY and EUR to GBP',
-       color = "Currency") +
+ggplot(df, aes(Date))+
+  geom_line(aes(y = EURtoGBP, color = "EURtoGBP"))+
+  geom_line(aes(y = CNYtoGBP / scale_factor, color = "CNYtoGBP"))+ 
+  scale_y_continuous(name = "EURtoGBP Exchange Rate axis",
+                     sec.axis = sec_axis(~ . * scale_factor,
+                                         name = "CNYtoGBP Exchange Rate axis"))+
+  labs(color = "Currency") +
   theme_minimal()
-  
-
-print(p)
 @
-\caption{'Double y-axis time series of CNY and EUR to GBP'}
+\caption{Double y-axis time series of CNY and EUR to GBP}
 \label{fig:Double y-axis}
 \end{figure}
 
 From Figure~\ref{fig:Double y-axis}, the 
 
-\subsubsection{Identification of anomalies}
-
-A common approach to anomaly detection in time series data is to use the Z-score. The Z-score measures how many standard deviations a data point is from the mean. Data points with a Z-score above a certain threshold (e.g., 2 or 3) can be considered anomalies.
-
-<<message=FALSE,warning=FALSE>>=
-#Plot of time series with anomalies
-
-# Calculate the Z-scores for the EURtoGBP exchange rate
-eur_to_gbp_series <- MyData$EURtoGBP
-mean_val <- mean(eur_to_gbp_series, na.rm = TRUE)
-std_val <- sd(eur_to_gbp_series, na.rm = TRUE)
-z_scores <- abs((eur_to_gbp_series - mean_val) / std_val)
-
-# Define a threshold for anomalies (e.g., Z-score > 2)
-threshold <- 3
-anomalies <- which(z_scores > threshold)
-
-plot_data_z <- data.frame(Date =  MyData$Date,
-                        Rate = eur_to_gbp_series,
-                        Anomaly = ifelse(z_scores > threshold,
-                                         eur_to_gbp_series, NA))
-@
-
-\begin{figure}
-<<message=FALSE,warning=FALSE,fig.dim = c(6, 4),fig.cap='Time series with anomalies'>>=
-ggplot(plot_data_z, aes(x = Date, y = Rate)) +
-  geom_line(aes(color = "EURtoGBP")) +
-  geom_point(aes(y = Anomaly, color = "Anomalies"), na.rm = TRUE) +
-  labs(title = "EURtoGBP Exchange Rate with Anomalies Highlighted",
-       y = "Exchange Rate to GBP",
-       color = "Legend") +
-  scale_color_manual(values = c("EURtoGBP" = "blue",
-                                "Anomalies" = "red"))+
-  theme_minimal()
-@
-\caption{'Time series with anomalies'}
-\label{fig:Time series with anomalies}
-\end{figure}
 
 \subsubsection{Decomposition of one time series into trend, seasonal, and random.}
 
@@ -866,12 +814,12 @@ Y_t = T_t \times S_t \times R_t
 In practice, the choice between the additive and multiplicative models often depends on the nature of the time series. If the magnitude of the seasonal fluctuations or the variation around the trend does not vary with the level of the time series, then an additive model is appropriate. If the magnitude of the seasonal fluctuations or the variation around the trend increases or decreases as the time series level changes, then a multiplicative model may be more suitable.
 
 \begin{figure}
-<<message=FALSE,warning=FALSE,fig.dim = c(6, 4)>>=
+<<message=FALSE,warning=FALSE,fig.dim = c(5, 3.3)>>=
 # Plot decomposition of addictive time series model
 decomposed_ts <- stats::decompose(ts_data$CNYtoGBP)
 plot(decomposed_ts, xlab="Date")
 @
-\caption{'Decomposition of addictive time series model of CNY to GBP exchange rates'}
+\caption{Decomposition of addictive time series model of CNY to GBP exchange rates}
 \label{fig:decomposition of time series}
 \end{figure}
 
@@ -949,47 +897,69 @@ xxx
 \text{https://data.london.gov.uk/dataset/statistical-gis-boundary-files-london#:~:text=,2014.zip%20%283.84%20MB%29%20From}\\
 \text{https://data.london.gov.uk/dataset/recorded_crime_summary#:~:text=Recorded%20Crime%3A%20Geographic%20Breakdown,covering%20all%20historic%20full}\\
 \text{https://public.tableau.com/app/profile/metropolitan.police.service/viz/MonthlyCrimeDataNewCats/Coversheet}\\
-\text{https://medium.com/@davemorison/an-interactive-visualization-of-londons-crime-data-using-shiny-applications-and-r-7ca9011e064b?source=author_recirc-----8dcefef1c397----0---------------------07ef707d_5478_4230_b6e6_451582a6cc55-------}
+\text{https://medium.com/@davemorison/an-interactive-visualization-of-londons-crime-data-using-shiny-applications-and-r-7ca9011e064b?source=author_recirc-----8dcefef1c397----0---------------------07ef707d_5478_4230_b6e6_451582a6cc55-------}\\
+\text{https://data.london.gov.uk/dataset/land-area-and-population-density-ward-and-borough}
 
-<<warning=FALSE,message=FALSE>>=
+<<echo=FALSE, warning=FALSE, message=FALSE>>=
 # Load the shapefile
 london_boroughs <- st_read("London_Ward.shp")
 
 # Load the crime data (assuming it's in CSV format)
 crime_data <- read.csv("BoroughLevelCrime.csv")
 
+# Load population data
+london_population <- read.csv('housing-density-borough.csv')
+
+london_population_borough <- london_population %>% 
+  filter(Year == '2020') %>%
+  select(Name, Population)
+  
+london_population_borough$Name[33] <- 'City of Westminster'
+
 # Summing the total crimes for each borough over the entire timeframe
 borough_totals <- crime_data %>%
   group_by(LookUp_BoroughName) %>%
   summarise(Total_Crimes = sum(across(starts_with("X2020"))))
 
+borough_totals$LookUp_BoroughName[33] <- 'City of Westminster'
+
+borough_totals <- merge(borough_totals, london_population_borough,
+                     by.x="LookUp_BoroughName", by.y="Name")
+
+borough_totals$Crime_rate <- borough_totals$Total_Crimes / borough_totals$Population
+
+borough_totals <- borough_totals %>%
+  select(LookUp_BoroughName, Crime_rate)
+
 # Merge the crime data with the shapefile
 merged_data <- merge(london_boroughs, borough_totals,
                      by.x="DISTRICT", by.y="LookUp_BoroughName")
 
+
 # Aggregate geometries by district
 aggregated_data <- merged_data %>%
   group_by(DISTRICT) %>%
-  summarise(geometry = st_union(geometry), Total_Crimes = first(Total_Crimes))
+  summarise(geometry = st_union(geometry), Crime_rate = first(Crime_rate))
 
 # Calculate centroids for labeling
 aggregated_data$centroid <- st_centroid(aggregated_data$geometry)
 @
 
-
-<<warning=FALSE,message=FALSE,fig.dim=c(7,7), fig.caption='Crime numbers in London by boroughs'>>=
-# Plot the Crime numbers in London by boroughs
-plot <- ggplot(data=aggregated_data) + 
-  geom_sf(aes(fill=Total_Crimes)) +
+\begin{figure}
+<<warning=FALSE,message=FALSE,fig.dim=c(6,6)>>=
+# Plot the Crime rate in London by boroughs
+ggplot(data=aggregated_data) + 
+  geom_sf(aes(fill=Crime_rate)) +
   geom_sf_text(aes(label = DISTRICT, geometry = centroid),
-               size = 3, check_overlap = TRUE) +
+               size = 2.5, check_overlap = TRUE) +
   scale_fill_gradient(low="Green", high="red") +
   theme_minimal() +
-  labs(title="Total Crime by Borough in London (April 2010 - September 2021)",
-       fill="Total Crimes")
-
-print(plot)
+  labs(fill="Crime rate")
 @
+\caption{Crime rate by boroughs in London in 2020}
+\label{fig:crime rate london}
+\end{figure}
+
 
 \subsection{3D and Interactive Visualisations}
 ggplot2 is one of the most popular data visualization libraries in R, but it is primarily designed for 2D data visualization. Directly creating 3D views with ggplot2 can be challenging.

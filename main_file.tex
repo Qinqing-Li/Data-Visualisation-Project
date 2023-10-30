@@ -688,18 +688,17 @@ Here, we are going to investigate exchange rate data set and plot all daily and 
 
 
 
-
-
-
+\begin{figure}
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlcom{# Plot exchange rates of CNY, CAN, EUR, HKD, USD to GBP}
+\hlcom{# Plot daily and 21-day moving average exchange rates of CNY, CAN,}
+\hlcom{# EUR, HKD, USD to GBP}
 
 \hlcom{# First plot}
 \hlstd{p1} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(plot_dt,} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=Date,} \hlkwc{y}\hlstd{=Rate,} \hlkwc{color}\hlstd{=Currency))} \hlopt{+}
   \hlkwd{geom_line}\hlstd{()} \hlopt{+}
-  \hlkwd{labs}\hlstd{(}\hlkwc{title}\hlstd{=}\hlstr{"Exchange rates of CNY, CAN,\textbackslash{}n  EUR, HKD, USD to GBP"}\hlstd{,}
+  \hlkwd{labs}\hlstd{(}\hlkwc{title}\hlstd{=}\hlstr{"Daily exchange rates"}\hlstd{,}
        \hlkwc{y}\hlstd{=}\hlstr{"Exchange Rate to GBP"}\hlstd{,}
        \hlkwc{x}\hlstd{=}\hlstr{"Date"}\hlstd{,}
        \hlkwc{color}\hlstd{=}\hlstr{"Currency"}\hlstd{)}\hlopt{+}
@@ -709,37 +708,25 @@ Here, we are going to investigate exchange rate data set and plot all daily and 
 \hlcom{# Second plot}
 \hlstd{p2} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(plot_data,} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=Date,} \hlkwc{y}\hlstd{=Rate,} \hlkwc{color}\hlstd{=Currency))} \hlopt{+}
   \hlkwd{geom_line}\hlstd{()} \hlopt{+}
-  \hlkwd{labs}\hlstd{(}\hlkwc{title}\hlstd{=}\hlstr{"21-Day moving average \textbackslash{}n of exchange rates"}\hlstd{,}
+  \hlkwd{labs}\hlstd{(}\hlkwc{title}\hlstd{=}\hlstr{"21-Day moving average exchange rates"}\hlstd{,}
        \hlkwc{y}\hlstd{=}\hlstr{"Exchange Rate to GBP"}\hlstd{,}
        \hlkwc{x}\hlstd{=}\hlstr{"Date"}\hlstd{,}
        \hlkwc{color}\hlstd{=}\hlstr{"Currency"}\hlstd{)}\hlopt{+}
   \hlkwd{theme_minimal}\hlstd{()}\hlopt{+}
   \hlkwd{theme}\hlstd{(}\hlkwc{legend.position}\hlstd{=}\hlstr{"none"}\hlstd{)}
-\end{alltt}
-\end{kframe}
-\end{knitrout}
 
-\begin{figure}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
 \hlcom{# Extract the legend}
 \hlstd{p2_legend} \hlkwb{<-} \hlstd{cowplot}\hlopt{::}\hlkwd{get_legend}\hlstd{(p2} \hlopt{+} \hlkwd{theme}\hlstd{(}\hlkwc{legend.position}\hlstd{=}\hlstr{"bottom"}\hlstd{))}
-
 \hlcom{# Combine the plots with adjusted widths using cowplot}
 \hlstd{combined_plot} \hlkwb{<-} \hlstd{cowplot}\hlopt{::}\hlkwd{plot_grid}\hlstd{(p1, p2,} \hlkwc{labels} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"1"}\hlstd{,} \hlstr{"2"}\hlstd{),}
                                     \hlkwc{rel_widths} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{1}\hlstd{),} \hlkwc{nrow}\hlstd{=}\hlnum{1}\hlstd{)}
-
 \hlcom{# Combine the plots and the legend}
-\hlstd{final_plot} \hlkwb{<-} \hlstd{cowplot}\hlopt{::}\hlkwd{plot_grid}\hlstd{(combined_plot, p2_legend,} \hlkwc{ncol}\hlstd{=}\hlnum{1}\hlstd{,}
-                                 \hlkwc{rel_heights} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{.1}\hlstd{))}
-
-\hlkwd{print}\hlstd{(final_plot)}
+\hlstd{cowplot}\hlopt{::}\hlkwd{plot_grid}\hlstd{(combined_plot, p2_legend,} \hlkwc{ncol}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{rel_heights} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{.1}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-4-1} 
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-2-1} 
 \end{knitrout}
-\caption{'Daily and 21-day moving average exchange rates of CNY, CAN, EUR, HKD, USD to GBP'}
+\caption{Daily and 21-day moving average exchange rates of CNY, CAN, EUR, HKD, USD to GBP}
 \label{fig:all exchange rates}
 \end{figure}
 
@@ -758,78 +745,24 @@ From above plot, a 21-day moving average for each currency allows us to view the
 \hlstd{df} \hlkwb{<-} \hlstd{MyData} \hlopt{%>%} \hlkwd{select}\hlstd{(Date,CNYtoGBP, EURtoGBP)}
 
 \hlcom{# Create plot with dual y-axes}
-\hlstd{p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(df,} \hlkwd{aes}\hlstd{(Date))} \hlopt{+}
-  \hlkwd{geom_line}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{y} \hlstd{= EURtoGBP,} \hlkwc{color} \hlstd{=} \hlstr{"EURtoGBP"}\hlstd{))} \hlopt{+}
-  \hlkwd{geom_line}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{y} \hlstd{= CNYtoGBP} \hlopt{/} \hlstd{scale_factor,} \hlkwc{color} \hlstd{=} \hlstr{"CNYtoGBP"}\hlstd{))} \hlopt{+}
-  \hlkwd{scale_y_continuous}\hlstd{(}
-    \hlkwc{name} \hlstd{=} \hlstr{"EURtoGBP Exchange Rate axis"}\hlstd{,}
-    \hlkwc{sec.axis} \hlstd{=} \hlkwd{sec_axis}\hlstd{(}\hlopt{~} \hlstd{.} \hlopt{*} \hlstd{scale_factor,} \hlkwc{name} \hlstd{=} \hlstr{"CNYtoGBP Exchange Rate axis"}\hlstd{)}
-  \hlstd{)} \hlopt{+}
-  \hlkwd{labs}\hlstd{(}\hlkwc{title} \hlstd{=} \hlstr{'Double y-axis time series of CNY and EUR to GBP'}\hlstd{,}
-       \hlkwc{color} \hlstd{=} \hlstr{"Currency"}\hlstd{)} \hlopt{+}
+\hlkwd{ggplot}\hlstd{(df,} \hlkwd{aes}\hlstd{(Date))}\hlopt{+}
+  \hlkwd{geom_line}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{y} \hlstd{= EURtoGBP,} \hlkwc{color} \hlstd{=} \hlstr{"EURtoGBP"}\hlstd{))}\hlopt{+}
+  \hlkwd{geom_line}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{y} \hlstd{= CNYtoGBP} \hlopt{/} \hlstd{scale_factor,} \hlkwc{color} \hlstd{=} \hlstr{"CNYtoGBP"}\hlstd{))}\hlopt{+}
+  \hlkwd{scale_y_continuous}\hlstd{(}\hlkwc{name} \hlstd{=} \hlstr{"EURtoGBP Exchange Rate axis"}\hlstd{,}
+                     \hlkwc{sec.axis} \hlstd{=} \hlkwd{sec_axis}\hlstd{(}\hlopt{~} \hlstd{.} \hlopt{*} \hlstd{scale_factor,}
+                                         \hlkwc{name} \hlstd{=} \hlstr{"CNYtoGBP Exchange Rate axis"}\hlstd{))}\hlopt{+}
+  \hlkwd{labs}\hlstd{(}\hlkwc{color} \hlstd{=} \hlstr{"Currency"}\hlstd{)} \hlopt{+}
   \hlkwd{theme_minimal}\hlstd{()}
-
-
-\hlkwd{print}\hlstd{(p)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-5-1} 
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-3-1} 
 \end{knitrout}
-\caption{'Double y-axis time series of CNY and EUR to GBP'}
+\caption{Double y-axis time series of CNY and EUR to GBP}
 \label{fig:Double y-axis}
 \end{figure}
 
 From Figure~\ref{fig:Double y-axis}, the 
 
-\subsubsection{Identification of anomalies}
-
-A common approach to anomaly detection in time series data is to use the Z-score. The Z-score measures how many standard deviations a data point is from the mean. Data points with a Z-score above a certain threshold (e.g., 2 or 3) can be considered anomalies.
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlcom{#Plot of time series with anomalies}
-
-\hlcom{# Calculate the Z-scores for the EURtoGBP exchange rate}
-\hlstd{eur_to_gbp_series} \hlkwb{<-} \hlstd{MyData}\hlopt{$}\hlstd{EURtoGBP}
-\hlstd{mean_val} \hlkwb{<-} \hlkwd{mean}\hlstd{(eur_to_gbp_series,} \hlkwc{na.rm} \hlstd{=} \hlnum{TRUE}\hlstd{)}
-\hlstd{std_val} \hlkwb{<-} \hlkwd{sd}\hlstd{(eur_to_gbp_series,} \hlkwc{na.rm} \hlstd{=} \hlnum{TRUE}\hlstd{)}
-\hlstd{z_scores} \hlkwb{<-} \hlkwd{abs}\hlstd{((eur_to_gbp_series} \hlopt{-} \hlstd{mean_val)} \hlopt{/} \hlstd{std_val)}
-
-\hlcom{# Define a threshold for anomalies (e.g., Z-score > 2)}
-\hlstd{threshold} \hlkwb{<-} \hlnum{3}
-\hlstd{anomalies} \hlkwb{<-} \hlkwd{which}\hlstd{(z_scores} \hlopt{>} \hlstd{threshold)}
-
-\hlstd{plot_data_z} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwc{Date} \hlstd{=  MyData}\hlopt{$}\hlstd{Date,}
-                        \hlkwc{Rate} \hlstd{= eur_to_gbp_series,}
-                        \hlkwc{Anomaly} \hlstd{=} \hlkwd{ifelse}\hlstd{(z_scores} \hlopt{>} \hlstd{threshold,}
-                                         \hlstd{eur_to_gbp_series,} \hlnum{NA}\hlstd{))}
-\end{alltt}
-\end{kframe}
-\end{knitrout}
-
-\begin{figure}
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlkwd{ggplot}\hlstd{(plot_data_z,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= Date,} \hlkwc{y} \hlstd{= Rate))} \hlopt{+}
-  \hlkwd{geom_line}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{color} \hlstd{=} \hlstr{"EURtoGBP"}\hlstd{))} \hlopt{+}
-  \hlkwd{geom_point}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{y} \hlstd{= Anomaly,} \hlkwc{color} \hlstd{=} \hlstr{"Anomalies"}\hlstd{),} \hlkwc{na.rm} \hlstd{=} \hlnum{TRUE}\hlstd{)} \hlopt{+}
-  \hlkwd{labs}\hlstd{(}\hlkwc{title} \hlstd{=} \hlstr{"EURtoGBP Exchange Rate with Anomalies Highlighted"}\hlstd{,}
-       \hlkwc{y} \hlstd{=} \hlstr{"Exchange Rate to GBP"}\hlstd{,}
-       \hlkwc{color} \hlstd{=} \hlstr{"Legend"}\hlstd{)} \hlopt{+}
-  \hlkwd{scale_color_manual}\hlstd{(}\hlkwc{values} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"EURtoGBP"} \hlstd{=} \hlstr{"blue"}\hlstd{,}
-                                \hlstr{"Anomalies"} \hlstd{=} \hlstr{"red"}\hlstd{))}\hlopt{+}
-  \hlkwd{theme_minimal}\hlstd{()}
-\end{alltt}
-\end{kframe}\begin{figure}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-7-1} \caption[Time series with anomalies]{Time series with anomalies}\label{fig:unnamed-chunk-7}
-\end{figure}
-
-\end{knitrout}
-\caption{'Time series with anomalies'}
-\label{fig:Time series with anomalies}
-\end{figure}
 
 \subsubsection{Decomposition of one time series into trend, seasonal, and random.}
 
@@ -864,9 +797,9 @@ In practice, the choice between the additive and multiplicative models often dep
 \hlkwd{plot}\hlstd{(decomposed_ts,} \hlkwc{xlab}\hlstd{=}\hlstr{"Date"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-8-1} 
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-4-1} 
 \end{knitrout}
-\caption{'Decomposition of addictive time series model of CNY to GBP exchange rates'}
+\caption{Decomposition of addictive time series model of CNY to GBP exchange rates}
 \label{fig:decomposition of time series}
 \end{figure}
 
@@ -933,14 +866,11 @@ xxx
 \text{https://data.london.gov.uk/dataset/statistical-gis-boundary-files-london#:~:text=,2014.zip%20%283.84%20MB%29%20From}\\
 \text{https://data.london.gov.uk/dataset/recorded_crime_summary#:~:text=Recorded%20Crime%3A%20Geographic%20Breakdown,covering%20all%20historic%20full}\\
 \text{https://public.tableau.com/app/profile/metropolitan.police.service/viz/MonthlyCrimeDataNewCats/Coversheet}\\
-\text{https://medium.com/@davemorison/an-interactive-visualization-of-londons-crime-data-using-shiny-applications-and-r-7ca9011e064b?source=author_recirc-----8dcefef1c397----0---------------------07ef707d_5478_4230_b6e6_451582a6cc55-------}
+\text{https://medium.com/@davemorison/an-interactive-visualization-of-londons-crime-data-using-shiny-applications-and-r-7ca9011e064b?source=author_recirc-----8dcefef1c397----0---------------------07ef707d_5478_4230_b6e6_451582a6cc55-------}\\
+\text{https://data.london.gov.uk/dataset/land-area-and-population-density-ward-and-borough}
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlcom{# Load the shapefile}
-\hlstd{london_boroughs} \hlkwb{<-} \hlkwd{st_read}\hlstd{(}\hlstr{"London_Ward.shp"}\hlstd{)}
-\end{alltt}
 \begin{verbatim}
 ## Reading layer `London_Ward' from data source 
 ##   `C:\Users\chuyu\Downloads\Data-Visualisation-Project\London_Ward.shp' 
@@ -951,49 +881,29 @@ xxx
 ## Bounding box:  xmin: 503568.2 ymin: 155850.8 xmax: 561957.5 ymax: 200933.9
 ## Projected CRS: OSGB36 / British National Grid
 \end{verbatim}
-\begin{alltt}
-\hlcom{# Load the crime data (assuming it's in CSV format)}
-\hlstd{crime_data} \hlkwb{<-} \hlkwd{read.csv}\hlstd{(}\hlstr{"BoroughLevelCrime.csv"}\hlstd{)}
-
-\hlcom{# Summing the total crimes for each borough over the entire timeframe}
-\hlstd{borough_totals} \hlkwb{<-} \hlstd{crime_data} \hlopt{%>%}
-  \hlkwd{group_by}\hlstd{(LookUp_BoroughName)} \hlopt{%>%}
-  \hlkwd{summarise}\hlstd{(}\hlkwc{Total_Crimes} \hlstd{=} \hlkwd{sum}\hlstd{(}\hlkwd{across}\hlstd{(}\hlkwd{starts_with}\hlstd{(}\hlstr{"X2020"}\hlstd{))))}
-
-\hlcom{# Merge the crime data with the shapefile}
-\hlstd{merged_data} \hlkwb{<-} \hlkwd{merge}\hlstd{(london_boroughs, borough_totals,}
-                     \hlkwc{by.x}\hlstd{=}\hlstr{"DISTRICT"}\hlstd{,} \hlkwc{by.y}\hlstd{=}\hlstr{"LookUp_BoroughName"}\hlstd{)}
-
-\hlcom{# Aggregate geometries by district}
-\hlstd{aggregated_data} \hlkwb{<-} \hlstd{merged_data} \hlopt{%>%}
-  \hlkwd{group_by}\hlstd{(DISTRICT)} \hlopt{%>%}
-  \hlkwd{summarise}\hlstd{(}\hlkwc{geometry} \hlstd{=} \hlkwd{st_union}\hlstd{(geometry),} \hlkwc{Total_Crimes} \hlstd{=} \hlkwd{first}\hlstd{(Total_Crimes))}
-
-\hlcom{# Calculate centroids for labeling}
-\hlstd{aggregated_data}\hlopt{$}\hlstd{centroid} \hlkwb{<-} \hlkwd{st_centroid}\hlstd{(aggregated_data}\hlopt{$}\hlstd{geometry)}
-\end{alltt}
 \end{kframe}
 \end{knitrout}
 
-
+\begin{figure}
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlcom{# Plot the Crime numbers in London by boroughs}
-\hlstd{plot} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(}\hlkwc{data}\hlstd{=aggregated_data)} \hlopt{+}
-  \hlkwd{geom_sf}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill}\hlstd{=Total_Crimes))} \hlopt{+}
+\hlcom{# Plot the Crime rate in London by boroughs}
+\hlkwd{ggplot}\hlstd{(}\hlkwc{data}\hlstd{=aggregated_data)} \hlopt{+}
+  \hlkwd{geom_sf}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill}\hlstd{=Crime_rate))} \hlopt{+}
   \hlkwd{geom_sf_text}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{label} \hlstd{= DISTRICT,} \hlkwc{geometry} \hlstd{= centroid),}
-               \hlkwc{size} \hlstd{=} \hlnum{3}\hlstd{,} \hlkwc{check_overlap} \hlstd{=} \hlnum{TRUE}\hlstd{)} \hlopt{+}
+               \hlkwc{size} \hlstd{=} \hlnum{2.5}\hlstd{,} \hlkwc{check_overlap} \hlstd{=} \hlnum{TRUE}\hlstd{)} \hlopt{+}
   \hlkwd{scale_fill_gradient}\hlstd{(}\hlkwc{low}\hlstd{=}\hlstr{"Green"}\hlstd{,} \hlkwc{high}\hlstd{=}\hlstr{"red"}\hlstd{)} \hlopt{+}
   \hlkwd{theme_minimal}\hlstd{()} \hlopt{+}
-  \hlkwd{labs}\hlstd{(}\hlkwc{title}\hlstd{=}\hlstr{"Total Crime by Borough in London (April 2010 - September 2021)"}\hlstd{,}
-       \hlkwc{fill}\hlstd{=}\hlstr{"Total Crimes"}\hlstd{)}
-
-\hlkwd{print}\hlstd{(plot)}
+  \hlkwd{labs}\hlstd{(}\hlkwc{fill}\hlstd{=}\hlstr{"Crime rate"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-10-1} 
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-6-1} 
 \end{knitrout}
+\caption{Crime rate by boroughs in London in 2020}
+\label{fig:crime rate london}
+\end{figure}
+
 
 \subsection{3D and Interactive Visualisations}
 ggplot2 is one of the most popular data visualization libraries in R, but it is primarily designed for 2D data visualization. Directly creating 3D views with ggplot2 can be challenging.
