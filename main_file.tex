@@ -299,9 +299,6 @@ Information overload occurs when a visualisation overwhelms viewers with excessi
 \section{Modern Methods of Data Visualisation}
 In this chapter, we explore a variety of powerful visualisation methods, from classic scatter plots and bar charts to advanced techniques like heatmaps and network graphs. Through vivid examples, we'll show when and why each method is used, and delve into the theoretical and mathematical foundations that empower these visualisations to unveil insights hidden within the data.
 
-\subsection{Introduction to Modern Data Visualisation Methods}
-As data grows increasingly complex and vast, the tools and techniques for effectively conveying this information continue to expand and refine. In this section we introduce the data sets that will be used to illustrate each of the different visualisatio techniques. 
-
 \subsection{Scatter Plots and Bubble Charts}
 Scatter plots and bubble charts are fundamental data visualisation techniques that provide valuable insights into the relationships and patterns within datasets. These visualisations are particularly effective for representing discrete data through data points, since this bring out easily identifiable comparisons, and reveals trends.
 
@@ -310,11 +307,36 @@ Scatter plots, also known as dot charts or dot density plots, offer a straightfo
 \\The mathematical interest of dot plots lies in their ability to provide a simple visual representation of data distribution, center, and spread. While they don't rely on complex equations or statistical principles, dot plots make it easy to observe important characteristics of data, such as the mode (the most frequent value), skewness (asymmetry), and potential outliers. \\ 
 \\They're particularly useful for comparing multiple data sets, identifying patterns, and detecting data irregularities. Their simplicity is what makes dot plots a valuable tool for both introductory statistics education and exploratory data analysis.
 
-\subsubsection{Scatter Plots in Practice}
+\subsubsection{Regression and the Regression Line}
+\textbf{Linear regression} is a fundamental statistical method used to model the relationship between a dependent variable (often denoted as \(Y\)) and one or more independent variables (commonly denoted as \(X\)). The objective of linear regression is to find a linear equation that best represents this relationship. In simple linear regression, with one independent variable, the linear regression line is expressed as:
+
+\[
+Y = \beta_0 + \beta_1X + \epsilon
+\]
+
+Here, \(\beta_0\) is the intercept, \(\beta_1\) is the slope, \(X\) is the independent variable, and \(\epsilon\) represents the error term. The objective of the linear regression line is to minimise the sum of squared differences between the observed and predicted values of \(Y\), which helps us understand how changes in \(X\) affect \(Y\).\\
+Linear regression lines are often featured in scatter plots to give readers more insight into the dataset being plotted, by representing the overall relationship between variables and, by allowing them to make quick comparisons between individual observations and the regression line.\\
+
+
+\textbf{Scatter Plots in Practice}\\
 In this example, we'll create a scatter plot that visualizes the relationship between two variables - the weight of cars and the amount of miles traveled per gallon of petrol. We'll use the "mtcars" R dataset.
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{# Create a scatter plot of car weight vs MPG from mtcars dataset}
+\hlkwd{library}\hlstd{(ggplot2)}
+\hlkwd{ggplot}\hlstd{(}\hlkwc{data} \hlstd{= mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= wt,} \hlkwc{y} \hlstd{= mpg,} \hlkwc{color} \hlstd{=} \hlkwd{factor}\hlstd{(cyl)))} \hlopt{+}
+  \hlkwd{geom_point}\hlstd{(}\hlkwc{size} \hlstd{=} \hlnum{5}\hlstd{,} \hlkwc{alpha} \hlstd{=} \hlnum{0.7}\hlstd{)} \hlopt{+}  \hlcom{# Larger points with transparency}
+  \hlkwd{geom_smooth}\hlstd{(}\hlkwc{method} \hlstd{=} \hlstr{"lm"}\hlstd{,} \hlkwc{se} \hlstd{=} \hlnum{FALSE}\hlstd{,} \hlkwc{color} \hlstd{=} \hlstr{"red"}\hlstd{,} \hlkwc{linewidth} \hlstd{=} \hlnum{1}\hlstd{)} \hlopt{+}  \hlcom{# Linear regression trend line}
+  \hlkwd{labs}\hlstd{(}
+    \hlkwc{x} \hlstd{=} \hlstr{"Weight (1000 lbs)"}\hlstd{,}
+    \hlkwc{y} \hlstd{=} \hlstr{"Miles per Gallon"}\hlstd{,}
+    \hlkwc{color} \hlstd{=} \hlstr{"Cylinders"}
+  \hlstd{)} \hlopt{+}
+  \hlkwd{scale_color_manual}\hlstd{(}\hlkwc{values} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"4"} \hlstd{=} \hlstr{"grey"}\hlstd{,} \hlstr{"6"} \hlstd{=} \hlstr{"purple"}\hlstd{,} \hlstr{"8"} \hlstd{=} \hlstr{"blue"}\hlstd{))} \hlopt{+}  \hlcom{# Custom color palette}
+  \hlkwd{theme_minimal}\hlstd{()}  \hlcom{# Minimalistic theme}
+\end{alltt}
 
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# `geom\_smooth()` using formula = 'y \textasciitilde{} x'}}\end{kframe}\begin{figure}
@@ -323,26 +345,15 @@ In this example, we'll create a scatter plot that visualizes the relationship be
 
 \end{knitrout}
 
-\subsubsection{Analysis}
-In Figure~\ref{fig:scatter-plot}, provides insights into the relationship between cars' weight and their MPG, with the added dimension of color-coded cylinders.\\
-
-\textbf{Clusterings}\\
-The scatter plot reveals distinct clustering of data points, highlighting specific patterns within the dataset. Cars with four cylinders (color "grey") are predominantly clustered in the lower weight and higher MPG region, representing smaller and more fuel-efficient vehicles. In contrast, cars with eight cylinders (color "blue") tend to be clustered in the higher weight and lower MPG area, indicating larger and less fuel-efficient cars. The identification of this clustering aids in visualising how the number of cylinders influences the trade-off between weight and fuel efficiency.\\
-
-\textbf{Linear Regression Line}\\
-The regression line provides a visual representation of the overall relationship between car weight and fuel efficiency.If the line has a positive slope, it indicates that as car weight increases, MPG decreases. Conversely, a negative slope suggests that heavier cars tend to have higher MPG. The steepness of the line represents the strength of this relationship. In this case, the reed regression line indicates a negative correlation—cars tend to have lower fuel efficiency as their weight increases.
-
-\subsubsection{Regression and the Regression Line}
-\textbf{Linear regression} is a fundamental statistical method used to model the relationship between a dependent variable (often denoted as \(Y\)) and one or more independent variables (commonly denoted as \(X\)). The objective of linear regression is to find a linear equation that best represents this relationship. In simple linear regression, with one independent variable, the linear regression line is expressed as:
-
-\[
-Y = \beta_0 + \beta_1X + \epsilon
-\]
-
-Here, \(\beta_0\) is the intercept, \(\beta_1\) is the slope, \(X\) is the independent variable, and \(\epsilon\) represents the error term. The objective of the linear regression line is to minimise the sum of squared differences between the observed and predicted values of \(Y\), which helps us understand how changes in \(X\) affect \(Y\). 
+\textbf{Analysis of the scatter plot}\\
+Figure~\ref{fig:scatter-plot}, provides insights into the relationship between cars' weight and their MPG, with the added dimension of color-coded cylinders.Particularly it visually highlights and make accessible to the viewer features of the data set, that would otherwise go unnoticed. These are some of the following elements: 
+\begin{itemize}
+    \item \textbf{Clustering}: The scatter plot reveals distinct clustering of data points, highlighting specific patterns within the dataset. Cars with four cylinders (color "grey") are predominantly clustered in the lower weight and higher MPG region, representing smaller and more fuel-efficient vehicles. In contrast, cars with eight cylinders (color "blue") tend to be clustered in the higher weight and lower MPG area, indicating larger and less fuel-efficient cars. The identification of this clustering aids in visualising how the number of cylinders influences the trade-off between weight and fuel efficiency.\\
+    \item \textbf{Linear Regression Line}: The regression line provides a visual representation of the overall relationship between car weight and fuel efficiency.If the line has a positive slope, it indicates that as car weight increases, MPG decreases. Conversely, a negative slope suggests that heavier cars tend to have higher MPG. The steepness of the line represents the strength of this relationship. In this case, the reed regression line indicates a negative correlation—cars tend to have lower fuel efficiency as their weight increases.
+\end{itemize}
 
 \subsubsection{Bubble Charts}
-Bubble charts are a captivating data visualisation tool that extends beyond the typical two-dimensional scatter plot by introducing an extra dimension. They represent data points as bubbles or circles on a two-dimensional plane, where the size of each bubble encodes a third variable. This technique enhances data visualisation by facilitating the exploration of multivariate data and uncovering patterns that may be hidden in traditional scatter plots.
+Bubble charts are a captivating data visualisation tool that extends beyond the typical two-dimensional scatter plot by introducing an extra dimension. They represent data points as bubbles or circles on a two-dimensional plane, where the size of each bubble encodes a third variable. This technique enhances data visualisation by facilitating the exploration of multivariate data and uncovering patterns that may be hidden in traditional scatter plots.\\
 
 \textbf{Bubble Chart's Utility in Visualising Data}\\
 Bubble charts excel in scenarios where three key variables need to be conveyed simultaneously. The x-axis and y-axis represent two variables, as in a standard scatter plot, while the size of the bubble encodes a third variable, often a quantitative one. This allows for the visualisation of relationships between three variables in a single, intuitive graphic.\\
@@ -364,9 +375,9 @@ Where:
 \item \(k\) is a scaling factor to control the bubble size.
 \end{itemize}
 
-Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the proportionality between the bubble size and the variable being represented.
+Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the proportionality between the bubble size and the variable being represented.\\
 
-\subsubsection{Bubble Charts in Practice}
+\textbf{Bubble Charts in Practice}
  This bubble plot visualizes data from the same dataset as above. The purpose of this plot is to depict the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and color-coding the bubbles based on the number of cylinders (cyl).
 
 \begin{knitrout}
@@ -390,7 +401,7 @@ Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the 
 \includegraphics[width=\maxwidth]{figure/buble-plot-chunk-1} 
 \end{knitrout}
 
-\subsubsection{Analysis}
+\textbf{Analysis of the bubble chart}\\
 The plot's title, axis labels, and legends provide context and clarity to the visualisation, making it accessible and informative. Additionally, the choice of a gradient color scale for the number of cylinders enhances the visual appeal and aids in interpreting the data.This bubble plot allows for quick comparisons between multiple characteristics of different car models.The resulting bubble plot effectively conveys several key insights:
 \begin{enumerate}
 \item \textbf{Car Model vs. MPG}: The x-axis displays the car models, offering a clear representation of each vehicle in the dataset. The bubble plot is particularly useful for displaying nominal data, such as car model names, as it allows easy identification and comparison.
@@ -576,25 +587,25 @@ In this chapter, we explore two powerful data visualisation techniques: heatmaps
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(4L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x00000000000003bc>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Failed to connect to firms.modaps.eosdis.nasa.gov port 443 after 10014 ms: Timeout was reached}}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(4L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x00000000000003bc>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Failed to connect to firms.modaps.eosdis.nasa.gov port 443 after 10006 ms: Timeout was reached}}
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(5L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x00000000000003be>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Failed to connect to firms.modaps.eosdis.nasa.gov port 443 after 10006 ms: Timeout was reached}}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(5L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x00000000000003be>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Failed to connect to firms.modaps.eosdis.nasa.gov port 443 after 10004 ms: Timeout was reached}}
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(6L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x00000000000003c0>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Failed to connect to firms.modaps.eosdis.nasa.gov port 443 after 10011 ms: Timeout was reached}}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(6L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x00000000000003c0>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Failed to connect to firms.modaps.eosdis.nasa.gov port 443 after 10008 ms: Timeout was reached}}
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(7L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x00000000000003c2>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Failed to connect to firms.modaps.eosdis.nasa.gov port 443 after 10001 ms: Timeout was reached}}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(7L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x00000000000003c2>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Failed to connect to firms.modaps.eosdis.nasa.gov port 443 after 10018 ms: Timeout was reached}}
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(8L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x00000000000003c4>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Failed to connect to firms.modaps.eosdis.nasa.gov port 443 after 10004 ms: Timeout was reached}}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(8L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x00000000000003c4>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Failed to connect to firms.modaps.eosdis.nasa.gov port 443 after 10005 ms: Timeout was reached}}
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(9L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x00000000000003c6>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Failed to connect to firms.modaps.eosdis.nasa.gov port 443 after 10005 ms: Timeout was reached}}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(9L, class = c("{}curl"{}, "{}connection"{}), conn\_id = <pointer: 0x00000000000003c6>), : Timeout was reached: [firms.modaps.eosdis.nasa.gov] Failed to connect to firms.modaps.eosdis.nasa.gov port 443 after 10013 ms: Timeout was reached}}
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(10L, class = c("{}curl"{}, "{}connection"{}: Timeout was reached: [firms.modaps.eosdis.nasa.gov] Failed to connect to firms.modaps.eosdis.nasa.gov port 443 after 10011 ms: Timeout was reached}}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(10L, class = c("{}curl"{}, "{}connection"{}: Timeout was reached: [firms.modaps.eosdis.nasa.gov] Failed to connect to firms.modaps.eosdis.nasa.gov port 443 after 10013 ms: Timeout was reached}}
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(11L, class = c("{}curl"{}, "{}connection"{}: Timeout was reached: [firms.modaps.eosdis.nasa.gov] Failed to connect to firms.modaps.eosdis.nasa.gov port 443 after 10008 ms: Timeout was reached}}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(11L, class = c("{}curl"{}, "{}connection"{}: Timeout was reached: [firms.modaps.eosdis.nasa.gov] Failed to connect to firms.modaps.eosdis.nasa.gov port 443 after 10009 ms: Timeout was reached}}
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(12L, class = c("{}curl"{}, "{}connection"{}: Timeout was reached: [firms.modaps.eosdis.nasa.gov] Failed to connect to firms.modaps.eosdis.nasa.gov port 443 after 10006 ms: Timeout was reached}}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(12L, class = c("{}curl"{}, "{}connection"{}: Timeout was reached: [firms.modaps.eosdis.nasa.gov] Failed to connect to firms.modaps.eosdis.nasa.gov port 443 after 10004 ms: Timeout was reached}}
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(13L, class = c("{}curl"{}, "{}connection"{}: Timeout was reached: [firms.modaps.eosdis.nasa.gov] Failed to connect to firms.modaps.eosdis.nasa.gov port 443 after 10004 ms: Timeout was reached}}\end{kframe}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in open.connection(structure(13L, class = c("{}curl"{}, "{}connection"{}: Timeout was reached: [firms.modaps.eosdis.nasa.gov] Failed to connect to firms.modaps.eosdis.nasa.gov port 443 after 10012 ms: Timeout was reached}}\end{kframe}
 \end{knitrout}
 
 \begin{knitrout}
