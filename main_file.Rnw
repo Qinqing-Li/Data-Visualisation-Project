@@ -4,6 +4,8 @@
 \usepackage{graphicx}
 \usepackage[a4paper, total={6in, 8in}]{geometry}
 
+\title{Data Visualisation: Theory and Practice}
+\author{Yujie Chu, Pia Fullaondo, Qinqing Li, Jacko Zhou}
 
 \begin{document}
 
@@ -27,21 +29,27 @@ library(cowplot)
 data(mtcars)
 @
 
+\maketitle 
 \tableofcontents
 \newpage 
 
 \section{Introduction}
 
+\subsection{Motivation and Background}
+XXX
+
+\subsection{Computing and Data Visualisation}
+XXX
+
 \subsection{Dataset}
+In this section, we  unveil the datasets used in throughout our study. This section delves into the comprehensive depiction of the diverse datasets employed. Each dataset is meticulously introduced, elucidating its source, structure, and relevance to our investigation.
 
-\subsubsection{Data Sets}
 \begin{enumerate}
-\item \textbf{Mtcars dataset}: The mtcars dataset in R is a built-in dataset that contains information about various car models. It provides data on the characteristics of 32 different car models, which were available in the early 1970s. The dataset includes a total of 11 variables, each representing different attributes of these cars, such as miles per gallon (mpg), horsepower (hp), number of cylinders (cyl), and more. The mtcars dataset is often used for data analysis, visualization, and statistical modeling, making it a useful resource for exploring and practicing data science techniques in R.\\
+\item \textbf{The Mtcars dataset}: it is an dataset a built-in in R that contains information about various car models. It provides data on the characteristics of 32 different car models, which were available in the early 1970s. The dataset includes a total of 11 variables, each representing different attributes of these cars, such as miles per gallon (mpg), horsepower (hp), number of cylinders (cyl), and more. The mtcars dataset is often used for data analysis, visualisation, and statistical modeling, making it a useful resource for exploring and practicing data science techniques in R.\\
 
-\item \textbf{Annual fire in Brazil}: it is obtained from \href{https://firms.modaps.eosdis.nasa.gov/}{NASA}. Each dataset from 2013 to 2022 contains over 200,000 observations. Over the decade, there are more than 3 million observations.\\
-\end{enumerate}
+\item \textbf{The Annual fire in Brazil dataset}: it is obtained from \href{https://firms.modaps.eosdis.nasa.gov/}{NASA}. Each dataset from 2013 to 2022 contains over 200,000 observations. Over the decade, there are more than 3 million observations.\\
 
-The \textit{ToothGrowth} dataset is a built-in dataset in R. It is used to study the impact of vitamin C on the tooth growth of Guinea pigs. The dataset consists of 60 observations and 3 variables:
+\item \textbf{The ToothGrowth dataset}: it is a built-in dataset in R. It is used to study the impact of vitamin C on the tooth growth of Guinea pigs. The dataset consists of 60 observations and 3 variables:
 
 \begin{itemize}
     \item \textbf{len}: Represents the length of the Guinea pigs' teeth.
@@ -49,7 +57,7 @@ The \textit{ToothGrowth} dataset is a built-in dataset in R. It is used to study
     \item \textbf{dose}: Denotes the dosage of vitamin C in milligrams per day, with three levels: 0.5, 1, and 2.
 \end{itemize}
 
-The iris dataset is a classic dataset in the field of statistics. It was introduced by the British biologist Ronald A. Fisher in 1936 as an example of discriminant analysis. The dataset consists of 150 samples from three species of iris flowers: setosa, versicolor, and virginica. For each sample, four features were measured: the lengths and the widths of the sepals and petals, all in centimeters. The dataset is often used for classification tasks to differentiate between the three species based on the given measurements. It has become a standard test case for many classification algorithms and is widely recognized in the data science community.
+\item \textbf{The Iris dataset}: it is a classic dataset in the field of statistics. It was introduced by the British biologist Ronald A. Fisher in 1936 as an example of discriminant analysis. The dataset consists of 150 samples from three species of iris flowers: setosa, versicolor, and virginica. For each sample, four features were measured: the lengths and the widths of the sepals and petals, all in centimeters. The dataset is often used for classification tasks to differentiate between the three species based on the given measurements. It has become a standard test case for many classification algorithms and is widely recognized in the data science community.
 
 
 Time series of the daily CNY, CAN, EUR, HKD, USD versus GBP exchange reference rate data
@@ -69,37 +77,47 @@ published by the European Central Bank over the time period from 01 Jan 2013 to 
 \caption{Field Information: CNY, CAN, EUR, HKD, USD to GBP}
 \end{table}
 
+\end{enumerate}
+
+
+\subsection{Structure and Organisation of the Thesis}
+This thesis follows a structured and comprehensive outline aimed at exploring the multifaceted domain of data visualisation. The document begins with an introductory section that lays the foundation for the subsequent discussions. Following this, Chapter 2: "Theoretical Foundations of Data Visualisation" delves into the theoretical underpinnings of data visualisation, elucidating fundamental concepts and principles.
+
+The crux of this document, Chapter 3: "Modern Methods of Data Visualisation", conducts an extensive and detailed exploration of various modern methods of data visualisation. This chapter meticulously examines different types of data visualisation techniques, offering an in-depth analysis and critical evaluation of their applications, strengths, and limitations. Here, we explore a myriad of visualisation strategies, aiming to provide a comprehensive understanding of the diverse landscape of data representation.
+
+Chapter 4: "Practical Implementation" ventures into the practical application of Python Dash and R Shiny for constructing interactive data visualisation dashboards. It provides a description of these tools and their utilisation in real-world scenarios.Subsequently, Chapter 5: "Case Studies" presents case studies, which serve as practical demonstrations of the efficacy and relevance of the discussed visualisation methods in resolving real-world problems. Finally, Chapter 6 "State-of-the-Art Approaches" critically examines state-of-the-art approaches in data visualisation, highlighting emerging trends, methodologies, and technologies in the field.
+
 \newpage 
 
 
 \section{Theoretical Foundations of Data Visualisation}
-This chapter, "Theoretical Foundations of Data Visualisation," delves deep into the core principles and concepts that serve as the bedrock of this dynamic field. We seek to understand not only the "how" but also the "why" behind the creation of visualisations that captivate and inform.
+This chapter, "Theoretical Foundations of Data Visualisation," delves into the core principles and concepts that serve as the bedrock of this field. We seek to understand not only the "how" but also the "why" behind the creation of visualisations that captivate and inform.
 
 \subsection{Introduction to Data Visualisation Theory}
 In the pursuit of creating effective data visualisations, it is crucial to understand that behind every chart, graph or plot lies a solid theoretical framework. Theoretical underpinnings provide the foundation upon which data visualisation is built, shaping not only how we represent data but also how we perceive, understand, and interpret it. 
 
-\subsubsection{Guiding Principles for Data Representation}
+\textbf{Guiding Principles for Data Representation}
 Within this theoretical framework, we encounter a set of guiding principles that dictate how data should be represented visually. These principles encompass fundamental concepts such as:
 \begin{itemize}
     \item \textbf{Accuracy}: Data visualisations should accurately reflect the underlying data, minimising distortion or misinterpretation.
-    \item \textbf{Simplicity}: The "less is more" principle applies to data visualisation. Simplified visuals often convey information more effectively than cluttered ones.
+    \item \textbf{Simplicity}: The "less is more" principle applies to and plays in important role in data visualisation. Simplified visuals often convey information more effectively than cluttered ones.
     \item \textbf{Clarity}: Visualisations should be clear and understandable to the intended audience, avoiding unnecessary complexity.
     \item \textbf{Relevance}: Information presented should be relevant to the message or question being addressed.
     \item \textbf{Consistency}: Visual elements, such as colour coding and labelling, should be used consistently throughout a visualisation.
 \end{itemize}
 
-\subsubsection{Theoretical Framework and Visual Perception}
-One of the fundamental aspects of data visualisation theory is an understanding of how the human brain perceives visual information. This knowledge is instrumental in designing visualisations that resonate with viewers. It includes considerations like:
+\textbf{Theoretical Framework and Visual Perception}
+One of the fundamental aspects of data visualisation theory is an understanding of how the human brain perceives visual information. This knowledge is instrumental in designing visualisations that resonate with viewers. The key considerations this includes are:
 \begin{itemize}
-    \item \textbf{Gestalt Principles}: The Gestalt principles of visual perception, including proximity, similarity, and continuity, influence how we group and interpret visual elements in a visualisation.
+    \item \textbf{The Gestalt Principles}: The Gestalt principles of visual perception, including proximity, similarity, and continuity, influence how we group and interpret visual elements in a visualisation.
     \item \textbf{Colour Theory}: The effective use of colour, including colour contrasts and harmonies, can enhance the clarity and impact of a visualisation.
     \item \textbf{Cognitive Load}: Minimising the mental effort required to process information is vital.
 \end{itemize}
 
 \subsection{Visual Perception and Cognition}
-Understanding the intricacies of how humans interpret visual information is pivotal to the art and science of data visualisation. Thus, we explore human visual perception, along with the application of cognitive psychology principles in data visualisation and highlight the crucial role of pre-attentive attributes in shaping our perception of data. 
+Here, we explore human visual perception, along with the application of cognitive psychology principles in data visualisation and highlight the crucial role of pre-attentive attributes in shaping our perception of data. 
 
-\subsubsection{Human Visual Perception: Decoding Visual Information}
+\textbf{Human Visual Perception: Decoding Visual Information}
 Human visual perception is a remarkable cognitive process that allows us to decode and make sense of the world around us. When applied to data visualisation, it illuminates how viewers interact with and derive meaning from visual representations of data. Key aspects of human visual perception in the context of data visualisation include:
 \begin{itemize}
     \item \textbf{Pattern Recognition}: The human brain excels at recognizing patterns, making it adept at identifying trends, outliers, and relationships in data visualisations.
@@ -109,7 +127,7 @@ Human visual perception is a remarkable cognitive process that allows us to deco
 
 By harnessing the principles of human visual perception, applying insights from cognitive psychology, and leveraging pre-attentive attributes, data visualisation designers can create visualisations that are not only aesthetically pleasing but also cognitively efficient.	
 
-\subsubsection{Gestalt Principles}
+\subsubsection{The Gestalt Principles}
 Gestalt psychology principles have long been recognised as fundamental to the field of visual perception and design. Gestalt psychology is a school of thought that emphasises how humans perceive and organise visual information. It posits that the mind seeks to create meaningful patterns and wholes from individual visual elements. The Gestalt principles thus, provide a framework for understanding how viewers naturally group and interpret visual stimuli.\\
 
 Several key Gestalt principles play a pivotal role in shaping our perception of visual information. These principles include: 
@@ -121,14 +139,9 @@ Several key Gestalt principles play a pivotal role in shaping our perception of 
     \item \textbf{Symmetry}: Symmetrical elements are often perceived as more balanced and harmonious. Symmetry can be used for aesthetically pleasing and easily understandable visualisations.
 \end{itemize}
 
-\subsubsection{Application of Gestalt Principles in Designing Visualisations}
-The application of Gestalt principles in designing data visualisations can lead to more intuitive and effective communication of information. Designers can strategically leverage these principles to:
-\begin{itemize}
-    \item Group-related data points to enhance clarity and reduce visual clutter.
-    \item Use colour or shape to signify meaningful categories or groupings.
-    \item Create smooth, continuous lines or paths to guide the viewer's gaze through the visualisation.
-    \item Suggest connections or patterns even in complex datasets.
-\end{itemize}
+\textbf{Application of Gestalt Principles in Designing Visualisations}
+The application of Gestalt principles in designing data visualisations can lead to more intuitive and effective communication of information. Designers can strategically leverage these principles to do things such as group related data points to enhance clarity and reduce visual clutter, use colour or shape to signify meaningful categories or groupings, create smooth, continuous lines or paths to guide the viewer's gaze through the visualisation, and suggest connections or patterns even in complex datasets.
+
 
 \subsection{Data abstraction and Representation}
 The transformation of raw data into meaningful representations is a pivotal step in data visualisation. This process, known as data abstraction, involves distilling complex datasets into visual forms that convey insights. In this section, we explore data abstraction, the hierarchies and levels of abstraction in data visualisation, and the critical trade-offs between abstraction and the potential loss of information.
@@ -144,7 +157,7 @@ In data visualisation, abstraction operates on multiple levels of granularity. H
     \item \textbf{High-Level Abstraction}: At the highest level, data is represented in a condensed and abstracted form, often as summary statistics or key insights. This level provides a big-picture view.
 \end{enumerate}
 
-\subsubsection{Trade-offs Between Abstraction and Information Loss}
+\textbf{Trade-offs Between Abstraction and Information Loss}
 While abstraction is essential for simplifying complex data, it comes with trade-offs. Increasing levels of abstraction can lead to information loss, where fine-grained details or outliers are overlooked. It is crucial for data visualisation designers to strike a balance:
 \begin{itemize}
     \item \textbf{Clarity vs. Detail}: Increasing abstraction can enhance the clarity of a visualisation but may sacrifice detailed information that is important for certain analytical tasks.
@@ -152,6 +165,7 @@ While abstraction is essential for simplifying complex data, it comes with trade
     \item \textbf{Context vs. Precision}: High-level abstraction can provide valuable context, but it may lack the precision needed for precise decision-making.
 \end{itemize}
 In data visualisation, the art of data abstraction lies in finding the right level of detail that effectively conveys the intended message while minimising the risk of information loss. This balancing act is a critical consideration in the design of informative and meaningful data visualisations.
+
 
 \subsection{Data Types and Visualisation Techniques}
 In the world of data visualisation, understanding the nature of your data is key. Data comes in various types, and selecting the appropriate visualisation technique is contingent upon recognising these distinctions. In this section, we categorise data types, and demonstrate how to match each data type with suitable visualisation techniques.
@@ -174,10 +188,11 @@ Selecting the right visualisation technique for your data type is pivotal to eff
     \item \textbf{Ratio data}: Ratio data can be effectively presented using scatter plots, histograms, and line charts, allowing for precise comparisons and measurements due to the presence of a meaningful zero point. 
 \end{itemize}
 
+
 \subsection{Colour Theory in Data Visualisation}
 Here, we explore the significance of colour in data visualisation, the principles of colour perception and encoding, and the importance of avoiding misleading visualisations through thoughtful colour choices.
 
-\subsubsection{The Importance of Colour in Conveying Information}
+\textbf{The Importance of Colour in Conveying Information}
 Colour is a potent tool for enhancing the understanding and impact of data visualisations. It enables the differentiation of data points, highlights trends, and provides context. Colour can be used to:
 \begin{itemize}
     \item \textbf{Encode Categorical Data}: Distinguish between different groups or classes using distinct colours.
@@ -185,7 +200,7 @@ Colour is a potent tool for enhancing the understanding and impact of data visua
     \item \textbf{Add Context}: Apply colour to background elements, labels, or annotations to provide context and meaning to the visualisation.
 \end{itemize}
 
-\subsubsection{Colour Perception and Colour Encoding in Visualisations}
+\textbf{Colour Perception and Colour Encoding in Visualisations}
 Understanding how colour is perceived by viewers is essential in data visualisation. Key principles include:
 \begin{itemize}
     \item \textbf{Colour Discrimination}: Consider that not all viewers may perceive colour in the same way. Ensure your colour choices are accessible to individuals with colour vision deficiencies (colour blindness).
@@ -193,7 +208,7 @@ Understanding how colour is perceived by viewers is essential in data visualisat
     \item \textbf{Colour Combinations}: Pay attention to how colours interact when placed adjacent to each other. Some combinations may create visual vibrations or make text difficult to read.
 \end{itemize}
 
-\subsubsection{Avoiding Misleading Visualisations Due to Colour Choices}
+\textbf{Avoiding Misleading Visualisations Due to Colour Choices}
 Misleading visualisations can result from inappropriate or deceptive use of colour. To avoid this:
 \begin{itemize}
     \item \textbf{Consistency}: Maintain consistency in colour usage throughout your visualisation. Use the same colour scheme for similar data categories or elements.
@@ -205,17 +220,18 @@ Misleading visualisations can result from inappropriate or deceptive use of colo
 \subsection{Theoretical Properties of Visualisations}
 Effective data visualisation is not solely about creating aesthetically pleasing graphics; it's also about adhering to key theoretical properties that optimise the expressiveness, precision, accuracy, and scalability of visual representations. In this section, we delve into these properties, including expressiveness and effectiveness, the data-ink ratio, and the principles of minimal ink, as well as precision, accuracy, and scalability.
 
-\subsubsection{Expressiveness and Effectiveness}
+To begin with, we'll define the key concepts that frame this section:
 \begin{itemize}
     \item \textbf{Expressiveness}: Visualisations should be expressive, meaning they should effectively communicate the intended message or insights within the data. Expressive visualisations capture the richness and complexity of the underlying data, revealing patterns, trends, and relationships.
     \item \textbf{Effectiveness}: An effective visualisation is one that successfully conveys information to its audience. It allows viewers to understand the data, draw meaningful conclusions, and make informed decisions based on the presented information.
 \end{itemize}
 
-\subsubsection{Data-Ink Ratio and the Principle of Minimal Ink} REVISE REFERENCES!!
+\subsubsection{Data-Ink Ratio and the Principle of Minimal Ink} 
 This \textbf{Data-Ink Ratio principle}, introduced by Edward Tufte, emphasises maximising the ink (or pixels in digital formats) used to represent the actual data while minimising non-essential ink. A higher data-ink ratio results in a cleaner, more efficient visualisation that reduces clutter and enhances comprehension.\\
 The \textbf{Principle of Minimal Ink} builds on the data-ink ratio. This principle advocates for the removal of any visual elements that do not contribute to the viewer's understanding of the data. Eliminating unnecessary ink (e.g., excessive gridlines or decorations) simplifies the visualisation without sacrificing its effectiveness.
 
-\subsubsection{Precision, Accuracy, and Scalability}
+\textbf{Precision, Accuracy, and Scalability}
+The concepts that can be mobilised in order to comply by these principles are:
 \begin{itemize}
     \item \textbf{Precision}: Precision in data visualisation refers to the level of detail and granularity in the representation of data. Visualisations should strike a balance between showing enough detail to support accurate interpretation while avoiding overwhelming viewers with excessive complexity.
     \item \textbf{Accuracy}: Accuracy pertains to how faithfully the visualisation represents the true values in the data. Misleading or distorted visualisations can lead to incorrect conclusions. Therefore, maintaining accuracy is essential.
@@ -225,7 +241,7 @@ The \textbf{Principle of Minimal Ink} builds on the data-ink ratio. This princip
 \subsection{Cognitive Load and Visual Complexity}
 In data visualisation, achieving a balance between complexity and cognitive load is crucial. This section explores the concept of cognitive load in visualisations, strategies to reduce cognitive load while maintaining complexity, and techniques to combat information overload through simplification.
 
-\subsubsection{Exploring the Concept of Cognitive Load in Visualisations}
+\textbf{Exploring the Concept of Cognitive Load in Visualisations}
 In data visualisations, cognitive load plays a significant role in how viewers engage with and understand the presented data. It is essential to strike a balance that ensures the visualisation conveys information effectively without overwhelming or overtaxing the viewer's cognitive capacity.
 
 \subsubsection{Strategies to Reduce Cognitive Load While Maintaining Complexity}
@@ -251,7 +267,7 @@ Information overload occurs when a visualisation overwhelms viewers with excessi
 \section{Modern Methods of Data Visualisation}
 In this chapter, we explore a variety of powerful visualisation methods, from classic scatter plots and bar charts to advanced techniques like heatmaps and network graphs. Through vivid examples, we'll show when and why each method is used, and delve into the theoretical and mathematical foundations that empower these visualisations to unveil insights hidden within the data.
 
-\subsection{Introduction to Modern Data Visualization Methods}
+\subsection{Introduction to Modern Data Visualisation Methods}
 As data grows increasingly complex and vast, the tools and techniques for effectively conveying this information continue to expand and refine. In this section we introduce the data sets that will be used to illustrate each of the different visualisatio techniques. 
 
 \subsection{Scatter Plots and Bubble Charts}
@@ -299,10 +315,10 @@ Y = \beta_0 + \beta_1X + \epsilon
 Here, \(\beta_0\) is the intercept, \(\beta_1\) is the slope, \(X\) is the independent variable, and \(\epsilon\) represents the error term. The objective of the linear regression line is to minimise the sum of squared differences between the observed and predicted values of \(Y\), which helps us understand how changes in \(X\) affect \(Y\). 
 
 \subsubsection{Bubble Charts}
-Bubble charts are a captivating data visualization tool that extends beyond the typical two-dimensional scatter plot by introducing an extra dimension. They represent data points as bubbles or circles on a two-dimensional plane, where the size of each bubble encodes a third variable. This technique enhances data visualization by facilitating the exploration of multivariate data and uncovering patterns that may be hidden in traditional scatter plots.
+Bubble charts are a captivating data visualisation tool that extends beyond the typical two-dimensional scatter plot by introducing an extra dimension. They represent data points as bubbles or circles on a two-dimensional plane, where the size of each bubble encodes a third variable. This technique enhances data visualisation by facilitating the exploration of multivariate data and uncovering patterns that may be hidden in traditional scatter plots.
 
 \textbf{Bubble Chart's Utility in Visualising Data}\\
-Bubble charts excel in scenarios where three key variables need to be conveyed simultaneously. The x-axis and y-axis represent two variables, as in a standard scatter plot, while the size of the bubble encodes a third variable, often a quantitative one. This allows for the visualization of relationships between three variables in a single, intuitive graphic.\\
+Bubble charts excel in scenarios where three key variables need to be conveyed simultaneously. The x-axis and y-axis represent two variables, as in a standard scatter plot, while the size of the bubble encodes a third variable, often a quantitative one. This allows for the visualisation of relationships between three variables in a single, intuitive graphic.\\
 For instance, in economics, bubble charts can illustrate economic indicators, with the x-axis showing time, the y-axis displaying GDP growth, and the bubble size representing a related factor like population or inflation. \\
 
 \textbf{Mathematical Intricacies}\\
@@ -343,20 +359,20 @@ ggplot(mtcars, aes(x = rownames(mtcars), y = mpg, size = hp, color = cyl)) +
 @
 
 \subsubsection{Analysis}
-The plot's title, axis labels, and legends provide context and clarity to the visualization, making it accessible and informative. Additionally, the choice of a gradient color scale for the number of cylinders enhances the visual appeal and aids in interpreting the data.This bubble plot allows for quick comparisons between multiple characteristics of different car models.The resulting bubble plot effectively conveys several key insights:
+The plot's title, axis labels, and legends provide context and clarity to the visualisation, making it accessible and informative. Additionally, the choice of a gradient color scale for the number of cylinders enhances the visual appeal and aids in interpreting the data.This bubble plot allows for quick comparisons between multiple characteristics of different car models.The resulting bubble plot effectively conveys several key insights:
 \begin{enumerate}
 \item \textbf{Car Model vs. MPG}: The x-axis displays the car models, offering a clear representation of each vehicle in the dataset. The bubble plot is particularly useful for displaying nominal data, such as car model names, as it allows easy identification and comparison.
 \item \textbf{Miles per Gallon (MPG)}: The y-axis measures miles per gallon, representing the fuel efficiency of each car model. Higher bubbles indicate better fuel efficiency. This variable, which is continuous, is positioned vertically to demonstrate how each car model's fuel efficiency relates to others.
 \item \textbf{Horsepower (HP)}: The size of each bubble represents the car's horsepower (hp). Larger bubbles correspond to higher horsepower, providing an additional dimension to the data. The size encoding helps identify more powerful cars.
-\item \textbf{Cylinders (Cyl)}: The color of each bubble is determined by the number of cylinders (cyl) in the car's engine. The color scheme adds a categorical aspect to the visualization, making it easy to differentiate between cars with different cylinder counts.
+\item \textbf{Cylinders (Cyl)}: The color of each bubble is determined by the number of cylinders (cyl) in the car's engine. The color scheme adds a categorical aspect to the visualisation, making it easy to differentiate between cars with different cylinder counts.
 \end{enumerate}
 
 
 \subsection{Bar Charts and Histograms}
 \subsubsection{Bar Charts}
-A bar chart is a very important method to present data. It organizes information into vertical bars.  Bar charts have lots of advantages in data visualization. It can present data categories in a frequency distribution. A bar chart is best for comparing classified data. Especially when the values are close, because the human perception of height is better than other visual elements (such as area, angle, etc.), the use of a bar chart is more appropriate. These bars usually have different lengths, and every length is proportional to the size of the information they present.\\
+A bar chart is a very important method to present data. It organizes information into vertical bars.  Bar charts have lots of advantages in data visualisation. It can present data categories in a frequency distribution. A bar chart is best for comparing classified data. Especially when the values are close, because the human perception of height is better than other visual elements (such as area, angle, etc.), the use of a bar chart is more appropriate. These bars usually have different lengths, and every length is proportional to the size of the information they present.\\
 R uses the function $barplot()$ to create bar charts. R can draw both vertical and Horizontal bars in the bar chart. In the bar chart, each of the bars can be given different colors.\\
-R is a programming language for data analysis and statistical computing, and its advent has made data visualization more straightforward and accessible. Among the various tools available in R, ggplot2 stands out as one of the most renowned and powerful tools for creating data visualizations. It offers a wealth of data visualization capabilities and is celebrated for its versatility and aesthetic appeal. In this chapter, we will focus on how to use ggplot2 to create bar charts for data visualization.\\
+R is a programming language for data analysis and statistical computing, and its advent has made data visualisation more straightforward and accessible. Among the various tools available in R, ggplot2 stands out as one of the most renowned and powerful tools for creating data visualisations. It offers a wealth of data visualisation capabilities and is celebrated for its versatility and aesthetic appeal. In this chapter, we will focus on how to use ggplot2 to create bar charts for data visualisation.\\
 
 \subsubsection{Different Types of Bar Charts}
 Here is an overview of the different types of bar charts. \\
@@ -396,7 +412,7 @@ The \textit{ToothGrowth} dataset is a built-in dataset in R. It is used to study
     \item \textbf{dose}: Denotes the dosage of vitamin C in milligrams per day, with three levels: 0.5, 1, and 2.
 \end{itemize}
 
-This dataset is commonly used for conducting statistical analyses such as analysis of variance (ANOVA) to determine if vitamin C supplementation significantly affects the tooth growth of Guinea pigs. It serves as a typical example for learning statistics and data visualization.
+This dataset is commonly used for conducting statistical analyses such as analysis of variance (ANOVA) to determine if vitamin C supplementation significantly affects the tooth growth of Guinea pigs. It serves as a typical example for learning statistics and data visualisation.
 
 This bar chart illustrates the tooth growth in relation to varying doses of a vitamin. The key observations are:
 
@@ -468,7 +484,7 @@ Histograms, although visually similar to bar charts, convey different meanings. 
 
 \subsubsection{Uses of Histograms:}
 Histograms demonstrates the distribution of frequency or quantity across groups.\\
-Facilitates the visualization of differences in frequency or quantity among groups.\\
+Facilitates the visualisation of differences in frequency or quantity among groups.\\
 The R language uses the $hist()$ function to create histograms. This function takes vectors as input and uses a few more parameters to plot the histogram.\\
 Now, we want to creat a better graph with ggplot2 thanks to the $geom_histogram()$ function and iris dataset.\\
 The iris dataset is a classic dataset in the field of statistics. It was introduced by the British biologist Ronald A. Fisher in 1936 as an example of discriminant analysis. The dataset consists of 150 samples from three species of iris flowers: setosa, versicolor, and virginica. For each sample, four features were measured: the lengths and the widths of the sepals and petals, all in centimeters. The dataset is often used for classification tasks to differentiate between the three species based on the given measurements. It has become a standard test case for many classification algorithms and is widely recognized in the data science community.\\
@@ -491,7 +507,7 @@ print(bar_diagram)
 \subsection{Heatmaps and Tree Maps}
 In this chapter, we explore two powerful data visualisation techniques: heatmaps and treemaps. These methods are instrumental for conveying intricate data structures and patterns, offering unique ways to represent multivariate information, making them indispensable tools for data scientists.
 \\  
-\\We will delve into the theory behind heatmaps and treemaps, understand how to create them using popular data visualization libraries, and demonstrate their practical applications with real-world examples. By the end of this chapter, you will be well-equipped to leverage heatmaps and treemaps to gain insights from complex and hierarchical datasets.
+\\We will delve into the theory behind heatmaps and treemaps, understand how to create them using popular data visualisation libraries, and demonstrate their practical applications with real-world examples. By the end of this chapter, you will be well-equipped to leverage heatmaps and treemaps to gain insights from complex and hierarchical datasets.
 \subsubsection{Heatmaps - Fire in Brazil}
 \\  
 \\The heatmap is a data visualisation technique that uses colour coding to represent different intensity.
@@ -660,21 +676,21 @@ Treemaps are a visualisation method specifically designed for hierarchical data 
 \subsubsection{Use Cases for Treemaps}
 Treemaps are highly effective when dealing with hierarchical data. Some common use cases include:
 \begin{itemize}
-\item \textbf{Disk Space Visualization}: Treemaps can be employed to visualize disk space usage, where the outermost rectangle represents the entire disk, and inner rectangles represent folders and files. The size of each rectangle reflects the space they occupy.
+\item \textbf{Disk Space Visualisation}: Treemaps can be employed to visualize disk space usage, where the outermost rectangle represents the entire disk, and inner rectangles represent folders and files. The size of each rectangle reflects the space they occupy.
 \item \textbf{Market Share Analysis}: In business, treemaps are useful for visualizing market share data. The top-level rectangle represents the total market, and inner rectangles represent individual segments, brands, or products. The size and color of each segment can represent its share and performance.
 \end{itemize}
 
 XXX %missing Treemaps
 
 
-\subsection{Line Charts and Time Series Visualization}
+\subsection{Line Charts and Time Series Visualisation}
 
 In this chapter, we are going to investigate the intricacies of the line chart and its most common application: time series. 
 First, a line chart is a statistical representation that uses a Cartesian coordinate system, where each point on the chart corresponds to a pair of coordinates $(x,y)$, to depict changes in numerical values over continuous time intervals or ordered categories. The x-axis typically represents these intervals or categories, while the y-axis conveys quantified data. Hence, data points, represented by a coordinates $\{(x_i,y_i)\}_{1 \leq i \leq n}$, $n$ being the total number of data points. In a line chart, consecutive data points are typically connected by straight lines. The line segment between two points $(x_i,y_i)$ and $(x_{i+1},y_{i+1})$ can be described by the equation of a line in the slope-intercept form: $y=mx+b$, where $m$ is the slope and $b$ is the y-intercept.\\\\
 \textbf{Suitability for Displaying Trends Over Time:}\\
-Line charts effectively visualize data trends over time. By plotting data at intervals like days or years, they highlight trends and patterns. Multiple lines on one chart enable easy data comparison, such as contrasting sales of two products. They aid in recognizing seasonal changes, cyclic events, and unexpected shifts, making them invaluable for forecasting. Due to their simplicity, they're accessible to those with minimal data analysis background. Line charts are a prime choice for time series visualization.
+Line charts effectively visualize data trends over time. By plotting data at intervals like days or years, they highlight trends and patterns. Multiple lines on one chart enable easy data comparison, such as contrasting sales of two products. They aid in recognizing seasonal changes, cyclic events, and unexpected shifts, making them invaluable for forecasting. Due to their simplicity, they're accessible to those with minimal data analysis background. Line charts are a prime choice for time series visualisation.
 
-Time series visualization is essential in data analysis, showcasing time-ordered data. It reveals long-term trends, helping analysts discern patterns for future planning. It's crucial for spotting seasonality in datasets. This method also identifies anomalies, suggesting areas needing investigation. Predictive modeling, based on historical patterns, becomes feasible, fostering proactive choices. Overlaying multiple data series offers richer comparative analysis. Overall, time series visualization provides quick insights into chronological data, driving informed decisions by highlighting trends, seasonal changes, and outliers.\\\\
+Time series visualisation is essential in data analysis, showcasing time-ordered data. It reveals long-term trends, helping analysts discern patterns for future planning. It's crucial for spotting seasonality in datasets. This method also identifies anomalies, suggesting areas needing investigation. Predictive modeling, based on historical patterns, becomes feasible, fostering proactive choices. Overlaying multiple data series offers richer comparative analysis. Overall, time series visualisation provides quick insights into chronological data, driving informed decisions by highlighting trends, seasonal changes, and outliers.\\\\
 \textbf{Limitations:}\\
 While line charts are excellent for displaying trends over time, they have limitations. They may not be suitable for showing individual data distributions or for data where there's no logical order. eg. too many points, too many lines, too many zeros.
 
@@ -791,7 +807,7 @@ From Figure~\ref{fig:Double y-axis}, the
 
 \subsubsection{Decomposition of one time series into trend, seasonal, and random.}
 
-One of the primary advantages of time series visualization is the ease with which it allows analysts to identify long-term upward or downward trends in data and patterns that repeat over specific intervals. By decomposing the time series, it would be easy to see those features.
+One of the primary advantages of time series visualisation is the ease with which it allows analysts to identify long-term upward or downward trends in data and patterns that repeat over specific intervals. By decomposing the time series, it would be easy to see those features.
 
 Time series data, $Y_t$, can often be described as a combination of several distinct components:
 \begin{itemize}
@@ -828,7 +844,7 @@ Hence, in this way, we will be able to view the seasonal trend and overall trend
 
 \subsection{Network Graphs}
 \textbf{Definition and Utility:}
-Network graphs, often referred to as graphs or networks, are a powerful data visualization method used to depict relationships between entities. These entities, known as nodes, are interconnected by edges or links, which represent relationships, connections, or interactions. Network graphs find extensive utility in various fields, such as social network analysis, transportation systems, and even biological networks like protein-protein interactions. They excel at revealing complex dependencies and structures, making them a critical tool for understanding relational data.
+Network graphs, often referred to as graphs or networks, are a powerful data visualisation method used to depict relationships between entities. These entities, known as nodes, are interconnected by edges or links, which represent relationships, connections, or interactions. Network graphs find extensive utility in various fields, such as social network analysis, transportation systems, and even biological networks like protein-protein interactions. They excel at revealing complex dependencies and structures, making them a critical tool for understanding relational data.
 
 \subsubsection{The Mathematics behind Network Graphs:}
 Constructing network graphs involves several mathematical intricacies. Here we present just a few of the many concepts that play a role in the creation of such graphs:
@@ -962,13 +978,13 @@ ggplot(data=aggregated_data) +
 
 
 \subsection{3D and Interactive Visualisations}
-ggplot2 is one of the most popular data visualization libraries in R, but it is primarily designed for 2D data visualization. Directly creating 3D views with ggplot2 can be challenging.
+ggplot2 is one of the most popular data visualisation libraries in R, but it is primarily designed for 2D data visualisation. Directly creating 3D views with ggplot2 can be challenging.
 
-rgl: This is a widely-used package for 3D visualizations. It allows you to create interactive 3D scatter plots, line plots, and more, and view them in a separate window.
+rgl: This is a widely-used package for 3D visualisations. It allows you to create interactive 3D scatter plots, line plots, and more, and view them in a separate window.
 
-3D data visualization is an approach that employs three-dimensional graphics to represent complex data structures, allowing for an immersive exploration of information. Unlike traditional 2D visualizations (like bar graphs or line charts), 3D visualizations can convey an additional dimension of data, making them particularly valuable in specific contexts.
+3D data visualisation is an approach that employs three-dimensional graphics to represent complex data structures, allowing for an immersive exploration of information. Unlike traditional 2D visualisations (like bar graphs or line charts), 3D visualisations can convey an additional dimension of data, making them particularly valuable in specific contexts.
 
-Our first example will be  a scatter plot. We can use scatterplot3d package  to help us for data visualization.
+Our first example will be  a scatter plot. We can use scatterplot3d package  to help us for data visualisation.
 \section{Trees Dataset in R}
 
 The \texttt{trees} dataset is one of R's built-in datasets. It contains measurements from 31 felled black cherry trees and provides insights into the relationship between a tree's girth, its height, and the volume of timber it can produce. The dataset comprises the following variables:
