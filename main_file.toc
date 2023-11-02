@@ -13,11 +13,11 @@
 \contentsline {subsection}{\numberline {2.4}Data Types and Visualisation Techniques}{8}{subsection.2.4}%
 \contentsline {subsubsection}{\numberline {2.4.1}Categorisation of Data Types}{8}{subsubsection.2.4.1}%
 \contentsline {subsubsection}{\numberline {2.4.2}Matching Data Types with Appropriate Visualisation Techniques}{8}{subsubsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.5}Colour Theory in Data Visualisation}{8}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Theoretical Properties of Visualisations}{9}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.5}Colour Theory in Data Visualisation}{9}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Theoretical Properties of Visualisations}{10}{subsection.2.6}%
 \contentsline {subsubsection}{\numberline {2.6.1}Data-Ink Ratio and the Principle of Minimal Ink}{10}{subsubsection.2.6.1}%
 \contentsline {subsection}{\numberline {2.7}Cognitive Load and Visual Complexity}{10}{subsection.2.7}%
-\contentsline {subsubsection}{\numberline {2.7.1}Strategies to Reduce Cognitive Load While Maintaining Complexity}{10}{subsubsection.2.7.1}%
+\contentsline {subsubsection}{\numberline {2.7.1}Strategies to Reduce Cognitive Load While Maintaining Complexity}{11}{subsubsection.2.7.1}%
 \contentsline {subsubsection}{\numberline {2.7.2}Information Overload and Simplification Techniques}{11}{subsubsection.2.7.2}%
 \contentsline {section}{\numberline {3}Modern Methods of Data Visualisation}{12}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Introduction to Modern Data Visualisation Methods}{12}{subsection.3.1}%
