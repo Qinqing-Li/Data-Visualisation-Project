@@ -26,7 +26,10 @@ library(scatterplot3d)
 library(stats)
 library(gridExtra)
 library(cowplot)
+library(datasets)
+data(ToothGrowth)
 data(mtcars)
+data(trees)
 @
 
 \maketitle 
@@ -42,43 +45,73 @@ XXX
 XXX
 
 \subsection{Dataset}
-In this section, we  unveil the datasets used in throughout our study. This section delves into the comprehensive depiction of the diverse datasets employed. Each dataset is meticulously introduced, elucidating its source, structure, and relevance to our investigation.
-
-\begin{enumerate}
-\item \textbf{The Mtcars dataset}: it is an dataset a built-in in R that contains information about various car models. It provides data on the characteristics of 32 different car models, which were available in the early 1970s. The dataset includes a total of 11 variables, each representing different attributes of these cars, such as miles per gallon (mpg), horsepower (hp), number of cylinders (cyl), and more. The mtcars dataset is often used for data analysis, visualisation, and statistical modeling, making it a useful resource for exploring and practicing data science techniques in R.\\
-
-\item \textbf{The Annual fire in Brazil dataset}: it is obtained from \href{https://firms.modaps.eosdis.nasa.gov/}{NASA}. Each dataset from 2013 to 2022 contains over 200,000 observations. Over the decade, there are more than 3 million observations.\\
-
-\item \textbf{The ToothGrowth dataset}: it is a built-in dataset in R. It is used to study the impact of vitamin C on the tooth growth of Guinea pigs. The dataset consists of 60 observations and 3 variables:
-
+In this section, we unveil the datasets used in throughout our study. This section delves into the comprehensive depiction of the diverse datasets employed. Each dataset is meticulously introduced, elucidating its source, structure, and relevance to our investigation.\\\\
+\textbf{The Mtcars dataset}: The \textit{Mtcars} dataset, available as a built-in dataset in R, offers a glimpse into the automotive world of the early 1970s. This dataset encompasses 11 attributes for 32 distinct car models. This dataset consists of 11 variables:
 \begin{itemize}
-    \item \textbf{len}: Represents the length of the Guinea pigs' teeth.
-    \item \textbf{supp}: Indicates the method of vitamin C supplementation, with two levels: "VC" for vitamin C in their diet and "OJ" for vitamin C in orange juice.
-    \item \textbf{dose}: Denotes the dosage of vitamin C in milligrams per day, with three levels: 0.5, 1, and 2.
+    \item \textbf{mpg}: Miles per Gallon
+    \item \textbf{cyl}: Number of cylinders
+    \item \textbf{disp}: Displacement in cubic inches
+    \item \textbf{hp}: Horsepower
+    \item \textbf{drat}: Driveshaft ratio
+    \item \textbf{wt}: Weight of the car in tons
+    \item \textbf{qsec}: Quarter mile time, an indication of acceleration
+    \item \textbf{vs}: Engine shape, either 'V' shape or straight
+    \item \textbf{am}: Transmission type, either automatic or manual
+    \item \textbf{gear}: Number of gears
+    \item \textbf{carb}: Number of carburetors
 \end{itemize}
-
-\item \textbf{The Iris dataset}: it is a classic dataset in the field of statistics. It was introduced by the British biologist Ronald A. Fisher in 1936 as an example of discriminant analysis. The dataset consists of 150 samples from three species of iris flowers: setosa, versicolor, and virginica. For each sample, four features were measured: the lengths and the widths of the sepals and petals, all in centimeters. The dataset is often used for classification tasks to differentiate between the three species based on the given measurements. It has become a standard test case for many classification algorithms and is widely recognized in the data science community.
-
-
-Time series of the daily CNY, CAN, EUR, HKD, USD versus GBP exchange reference rate data
-published by the European Central Bank over the time period from 01 Jan 2013 to 12 Oct 2023 (without weekends). The exchange rate tells you how many pounds you need to buy/sell 1 CNY, CAN, EUR, HKD, USD.\\
-
-\textbf{The data set has the format as below:}\\
-
-\begin{table}[h]
-\centering
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-\textbf{Date} & \textbf{CNYtoGBP} & \textbf{CANtoGBP} & \textbf{EURtoGBP} & \textbf{HKDtoGBP} & \textbf{USDtoGBP} \\
-\hline
-\%d-\%m-\%y & Value & Value & Value & Value & Value \\
-\hline
-\end{tabular}
-\caption{Field Information: CNY, CAN, EUR, HKD, USD to GBP}
-\end{table}
-
-\end{enumerate}
-
+\noindent
+\textbf{The annual fire in Brazil dataset}: The Fire Information for Resource Management System (FIRMS) provides Near Real-Time (NRT) active fire data from the Moderate Resolution Imaging Spectroradiometer (MODIS), available at \href{https://firms.modaps.eosdis.nasa.gov}{NASA}. A subset containing historical active fire data of Brazil from 2013 to 2022 contains over 200,000 observations each year was used in this report. This dataset contains 15 variables:
+\begin{itemize}
+    \item \textbf{latitude}: Latitude of active fire data
+    \item \textbf{longitude}: Longitude of active fire data
+    \item \textbf{brightness}: Brightness of active fire data
+    \item \textbf{scan}: Double precision
+    \item \textbf{track}: Double precision
+    \item \textbf{acq\_date}: Date format
+    \item \textbf{acq\_time}: Character string
+    \item \textbf{satellite}: Character string
+    \item \textbf{instrument}: Character string
+    \item \textbf{confidence}: Double precision
+    \item \textbf{version}: Double precision
+    \item \textbf{bright\_t31}: Double precision
+    \item \textbf{frp}: Double precision
+    \item \textbf{daynight}: Character string
+    \item \textbf{type}: Double precision
+\end{itemize}
+\noindent
+\textbf{The tooth growth dataset}: \textit{The ToothGrowth dataset}, available as a built-in dataset in R, offers the impact of vitamin C on the tooth growth of Guinea pigs. The dataset consists of 60 observations and 3 variables:
+\begin{itemize}
+    \item \textbf{len}: Length of the Guinea pigs' teeth.
+    \item \textbf{supp}: Method of vitamin C supplementation with two kinds: "VC" for vitamin C in their diet and "OJ" for vitamin C in orange juice.
+    \item \textbf{dose}: Dose of vitamin C in milligrams per day.
+\end{itemize}
+\noindent
+\textbf{The Edgar Anderson's Iris dataset}: The Anderson's iris data, available as a built-in dataset in R, offers the measurements of the variables sepal length and width and petal length and width and species, respectively, for 50 flowers. The dataset consists of 50 observations and 5 variables:
+\begin{itemize}
+    \item \textbf{Sepal.Length}: Sepal length in centimeters.
+    \item \textbf{Sepal.Width}: Sepal width in centimeters.
+    \item \textbf{Petal.Length}: Petal length in centimeters.
+    \item \textbf{Petal.Width}: Petal width in centimeters.
+    \item \textbf{Species}: Species name including Iris setosa, versicolor, and virginica.
+\end{itemize}
+\noindent
+\textbf{Exchange rate data}: The exchange rate data, avalable at \href{https://www.bankofengland.co.uk/boeapps/database/index.asp?first=yes&SectionRequired=I&HideNums=-1&ExtraInfo=true&Travel=NIx}{Bank of England}, provides daily spot exchange rates against GBP exchange over the time period from 2005 to now (without weekends). A subset of daily spot exchange rate of Chinese Yuan (CNY), Canadian Dollar (CAN), Euro (EUR), Hongkong Dollar (HKD), and US Dollar (USD) against Pounds Sterling (GBP) from January 2013 to October 2023 was used in this reoprt. The data set contains 5 variables:
+\begin{itemize}
+    \item \textbf{Date}: Date of spot exchange rate in Day/Month/Year.
+    \item \textbf{CNYtoGBP}: Spot exchange rate of CNY against GBP.
+    \item \textbf{CANtoGBP}: Spot exchange rate of CAN against GBP.
+    \item \textbf{EURtoGBP}: Spot exchange rate of EUR against GBP.
+    \item \textbf{HKDtoGBP}: Spot exchange rate of HKD against GBP.
+    \item \textbf{USDtoGBP}: Spot exchange rate of USD against GBP.
+\end{itemize}
+\noindent
+\textbf{Trees dataset}: The trees dataset, avalable as a built-in datasets in R, offers measurements from 31 felled black cherry trees and provides insights into the relationship between a tree's girth, its height, and the volume of timber it can produce. The dataset contains the 3 variables:
+\begin{itemize}
+    \item \textbf{Girth:} The diameter of the tree, measured in inches at 4 ft 6 in above the ground.
+    \item \textbf{Height:} The height of the tree, measured in feet.
+    \item \textbf{Volume:} The volume of timber, measured in cubic feet, that the tree can produce.
+\end{itemize}
 
 \subsection{Structure and Organisation of the Thesis}
 This thesis follows a structured and comprehensive outline aimed at exploring the multifaceted domain of data visualisation. The document begins with an introductory section that lays the foundation for the subsequent discussions. Following this, Chapter 2: "Theoretical Foundations of Data Visualisation" delves into the theoretical underpinnings of data visualisation, elucidating fundamental concepts and principles.
@@ -420,9 +453,7 @@ This bar chart illustrates the tooth growth in relation to varying doses of a vi
     \item \textbf{Data Observation:} From the heights of the bars, it is evident that as the vitamin dosage increases, the tooth growth also appears to increase. This might suggest that higher doses of the vitamin may promote tooth growth.
 \end{enumerate}
 <<barchart1,echo=TRUE,fig.height=4,fig.width=6, fig.cap='Tooth growth by dose'>>=
-library(datasets)
-# load ToothGrowth dataset from R
-data(ToothGrowth)
+
 ggplot(ToothGrowth, aes(x = factor(dose), y = len)) +# Create a bar chart with different vitamin doses on the X-axis and tooth growth on the Y-axis (len).
   geom_bar(stat = "identity", position = "dodge", fill = "grey") +
   labs(title = "Tooth Growth by Dose", x = "Dose (mg/day)", y = "Tooth Length") +
@@ -484,7 +515,6 @@ Histograms demonstrates the distribution of frequency or quantity across groups.
 Facilitates the visualisation of differences in frequency or quantity among groups.\\
 The R language uses the $hist()$ function to create histograms. This function takes vectors as input and uses a few more parameters to plot the histogram.\\
 Now, we want to creat a better graph with ggplot2 thanks to the $geom_histogram()$ function and iris dataset.\\
-The iris dataset is a classic dataset in the field of statistics. It was introduced by the British biologist Ronald A. Fisher in 1936 as an example of discriminant analysis. The dataset consists of 150 samples from three species of iris flowers: setosa, versicolor, and virginica. For each sample, four features were measured: the lengths and the widths of the sepals and petals, all in centimeters. The dataset is often used for classification tasks to differentiate between the three species based on the given measurements. It has become a standard test case for many classification algorithms and is widely recognized in the data science community.\\
 <<hist3, echo=TRUE,fig.height=3, fig.width=5, fig.cap='Histogram of Sepal Length in Iris Dataset'>>=
 bar_diagram <- ggplot(iris, aes(x = Sepal.Length)) +
   geom_histogram(
@@ -984,15 +1014,9 @@ rgl: This is a widely-used package for 3D visualisations. It allows you to creat
 Our first example will be  a scatter plot. We can use scatterplot3d package  to help us for data visualisation.
 \section{Trees Dataset in R}
 
-The \texttt{trees} dataset is one of R's built-in datasets. It contains measurements from 31 felled black cherry trees and provides insights into the relationship between a tree's girth, its height, and the volume of timber it can produce. The dataset comprises the following variables:
 
-\begin{itemize}
-    \item \textbf{Girth:} The diameter of the tree, measured in inches at 4 ft 6 in above the ground.
-    \item \textbf{Height:} The height of the tree, measured in feet.
-    \item \textbf{Volume:} The volume of timber, measured in cubic feet, that the tree can produce.
-\end{itemize}
 <<3d1, echo=TRUE, fig.cap='3d scatter plot'>>=
-data(trees)
+
 # Generate colors based on the Volume variable
 colors <- colorRampPalette(c("blue", "red"))(length(unique(trees$Volume)))
 color_assign <- colors[as.numeric(as.factor(trees$Volume))]
