@@ -39,7 +39,19 @@ data(trees)
 \section{Introduction}
 
 \subsection{Motivation and Background}
-XXX
+Motivations for having Data Visualisations - Case Example
+\\  
+\\Florence Nightingale was not only a social reformer and the founder of modern nursing but also a pioneering statistician. It was her application of data visualization during the Crimean War that transformed the field of healthcare and pushed for social reform.
+\\  
+\\During the Crimean War, Nightingale recognised that unsanitary hospital conditions were claiming more lives than the battlefield itself. With the help of William Farr, Nightingale created the coxcomb aimed to illustrate the toll of preventable mortality on soldiers.
+\\  
+\\``Diagram of the causes of mortality in the army in the East" by Florence Nightingale 
+Image Source: Wikimedia Commons
+\\  
+\\The coxcomb, resembling an unconventional pie chart, partitioned mortality by causes. Blue indicates preventable deaths, red indicates deaths by wounds, and black indicates other causes.
+The blue areas outweighed the red and black sections combined, highlighting the disproportionate impact of unsanitary hospital conditions on the mortality rate.
+\\  
+\\Nightingale leveraged the compelling visualizations in her advocacy efforts, presenting them to MPs and government officials who otherwise are unlikely to read or understand statistical reports. Nightingale successfully persuaded Queen Victoria, head of the British Army at the time, to allocate funding for the improvement of better conditions in military hospitals.
 
 \subsection{Computing and Data Visualisation}
 XXX

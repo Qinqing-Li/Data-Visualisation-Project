@@ -59,7 +59,20 @@
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in library(forecast): there is no package called 'forecast'}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in library(sf): there is no package called 'sf'}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in library(tmap): there is no package called 'tmap'}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in library(igraph): there is no package called 'igraph'}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in library(scatterplot3d): there is no package called 'scatterplot3d'}}\end{kframe}
+\end{knitrout}
 
 \maketitle 
 \tableofcontents
@@ -68,7 +81,20 @@
 \section{Introduction}
 
 \subsection{Motivation and Background}
-XXX
+Motivations for having Data Visualisations - Case Example
+
+Florence Nightingale was not only a social reformer and the founder of modern nursing but also a pioneering statistician. It was her application of data visualization during the Crimean War that transformed the field of healthcare and pushed for social reform.
+
+During the Crimean War, Nightingale recognised that unsanitary hospital conditions were claiming more lives than the battlefield itself. With the help of William Farr, Nightingale created the coxcomb aimed to illustrate the toll of preventable mortality on soldiers.
+
+ 
+"Diagram of the causes of mortality in the army in the East" by Florence Nightingale 
+Image Source: Wikimedia Commons
+
+The coxcomb, resembling an unconventional pie chart, partitioned mortality by causes. Blue indicates preventable deaths, red indicates deaths by wounds, and black indicates other causes.
+The blue areas outweighed the red and black sections combined, highlighting the disproportionate impact of unsanitary hospital conditions on the mortality rate.
+
+Nightingale leveraged the compelling visualizations in her advocacy efforts, presenting them to MPs and government officials who otherwise are unlikely to read or understand statistical reports. Nightingale successfully persuaded Queen Victoria, head of the British Army at the time, to allocate funding for the improvement of better conditions in military hospitals.
 
 \subsection{Computing and Data Visualisation}
 XXX
@@ -925,17 +951,15 @@ xxx
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{verbatim}
-## Reading layer `London_Ward' from data source 
-##   `C:\Users\chuyu\Downloads\Data-Visualisation-Project\London_Ward.shp' 
-##   using driver `ESRI Shapefile'
-## Simple feature collection with 657 features and 6 fields
-## Geometry type: POLYGON
-## Dimension:     XY
-## Bounding box:  xmin: 503568.2 ymin: 155850.8 xmax: 561957.5 ymax: 200933.9
-## Projected CRS: OSGB36 / British National Grid
-\end{verbatim}
-\end{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in st\_read("{}London\_Ward.shp"{}): could not find function "{}st\_read"{}}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in merge(london\_boroughs, borough\_totals, by.x = "{}DISTRICT"{}, by.y = "{}LookUp\_BoroughName"{}): object 'london\_boroughs' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in group\_by(., DISTRICT): object 'merged\_data' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in st\_centroid(aggregated\_data\$geometry): could not find function "{}st\_centroid"{}}}\end{kframe}
 \end{knitrout}
 
 \begin{figure}
@@ -951,8 +975,9 @@ xxx
   \hlkwd{theme_minimal}\hlstd{()} \hlopt{+}
   \hlkwd{labs}\hlstd{(}\hlkwc{fill}\hlstd{=}\hlstr{"Crime rate"}\hlstd{)}
 \end{alltt}
-\end{kframe}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-6-1} 
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in ggplot(data = aggregated\_data): object 'aggregated\_data' not found}}\end{kframe}
 \end{knitrout}
 \caption{Crime rate by boroughs in London in 2020}
 \label{fig:crime rate london}
@@ -984,10 +1009,9 @@ Our first example will be  a scatter plot. We can use scatterplot3d package  to 
               \hlkwc{ylab}\hlstd{=}\hlstr{"Height (ft)"}\hlstd{,}
               \hlkwc{zlab}\hlstd{=}\hlstr{"Volume (cubic ft)"}\hlstd{)}
 \end{alltt}
-\end{kframe}\begin{figure}
-\includegraphics[width=\maxwidth]{figure/3d1-1} \caption[3d scatter plot]{3d scatter plot}\label{fig:3d1}
-\end{figure}
 
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in scatterplot3d(trees\$Girth, trees\$Height, trees\$Volume, color = color\_assign, : could not find function "{}scatterplot3d"{}}}\end{kframe}
 \end{knitrout}
 
 
