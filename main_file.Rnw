@@ -64,73 +64,25 @@ The blue areas outweighed the red and black sections combined, highlighting the 
 XXX
 
 \subsection{Dataset}
-In this section, we unveil the datasets used in throughout our study. This section delves into the comprehensive depiction of the diverse datasets employed. Each dataset is meticulously introduced, elucidating its source, structure, and relevance to our investigation.\\\\
-\textbf{The Mtcars dataset}: The \textit{Mtcars} dataset, available as a built-in dataset in R, offers a glimpse into the automotive world of the early 1970s. This dataset encompasses 11 attributes for 32 distinct car models. This dataset consists of 11 variables:
-\begin{itemize}
-    \item \textbf{mpg}: Miles per Gallon
-    \item \textbf{cyl}: Number of cylinders
-    \item \textbf{disp}: Displacement in cubic inches
-    \item \textbf{hp}: Horsepower
-    \item \textbf{drat}: Driveshaft ratio
-    \item \textbf{wt}: Weight of the car in tons
-    \item \textbf{qsec}: Quarter mile time, an indication of acceleration
-    \item \textbf{vs}: Engine shape, either 'V' shape or straight
-    \item \textbf{am}: Transmission type, either automatic or manual
-    \item \textbf{gear}: Number of gears
-    \item \textbf{carb}: Number of carburetors
-\end{itemize}
+In this section, we unveil the datasets used throughout our study. This section delves into the comprehensive depiction of the diverse datasets employed. Each dataset is meticulously introduced, elucidating its source, structure, and relevance to our investigation.\\
+
 \noindent
-\textbf{The annual fire in Brazil dataset}: The Fire Information for Resource Management System (FIRMS) provides Near Real-Time (NRT) active fire data from the Moderate Resolution Imaging Spectroradiometer (MODIS), available at \href{https://firms.modaps.eosdis.nasa.gov}{NASA}. A subset containing historical active fire data of Brazil from 2013 to 2022 contains over 200,000 observations each year was used in this report. This dataset contains 15 variables:
-\begin{itemize}
-    \item \textbf{latitude}: Latitude of active fire data
-    \item \textbf{longitude}: Longitude of active fire data
-    \item \textbf{brightness}: Brightness of active fire data
-    \item \textbf{scan}: Double precision
-    \item \textbf{track}: Double precision
-    \item \textbf{acq\_date}: Date format
-    \item \textbf{acq\_time}: Character string
-    \item \textbf{satellite}: Character string
-    \item \textbf{instrument}: Character string
-    \item \textbf{confidence}: Double precision
-    \item \textbf{version}: Double precision
-    \item \textbf{bright\_t31}: Double precision
-    \item \textbf{frp}: Double precision
-    \item \textbf{daynight}: Character string
-    \item \textbf{type}: Double precision
-\end{itemize}
+\textbf{The Mtcars dataset}: The \textit{Mtcars} dataset, available as a built-in dataset in R, offers a glimpse into the automotive world of the early 1970s. This dataset encompasses 11 attributes for 32 distinct car models. The variables included are: mpg: Miles per Gallon, cyl: Number of cylinders, disp: Displacement in cubic inches, hp: Horsepower, drat: Driveshaft ratio, wt: Weight of the car in tons, qsec: Quarter mile time, vs: Engine shape, am: Transmission type, gear: Number of gears, carb: Number of carburetors.\\
+
 \noindent
-\textbf{The tooth growth dataset}: \textit{The ToothGrowth dataset}, available as a built-in dataset in R, offers the impact of vitamin C on the tooth growth of Guinea pigs. The dataset consists of 60 observations and 3 variables:
-\begin{itemize}
-    \item \textbf{len}: Length of the Guinea pigs' teeth.
-    \item \textbf{supp}: Method of vitamin C supplementation with two kinds: "VC" for vitamin C in their diet and "OJ" for vitamin C in orange juice.
-    \item \textbf{dose}: Dose of vitamin C in milligrams per day.
-\end{itemize}
+\textbf{The annual fire in Brazil dataset}: The Fire Information for Resource Management System (FIRMS) provides Near Real-Time (NRT) active fire data from the Moderate Resolution Imaging Spectroradiometer (MODIS), available at NASA. A subset containing historical active fire data of Brazil from 2013 to 2022 contains over 200,000 observations each year was used in this report. This dataset contains 15 variables: latitude: Latitude of active fire data, longitude: Longitude of active fire data, brightness: Brightness of active fire data, scan: Scan resolution, track: Track resolution, acq\_date: Acquisition date, acq\_time: Acquisition time, satellite: Satellite name, instrument: Instrument type, confidence: Confidence level, version: Data version, bright\_t31: Brightness temperature band 31, frp: Fire Radiative Power, daynight: Day or night indicator, type: Fire type.\\
+
 \noindent
-\textbf{The Edgar Anderson's Iris dataset}: The Anderson's iris data, available as a built-in dataset in R, offers the measurements of the variables sepal length and width and petal length and width and species, respectively, for 50 flowers. The dataset consists of 50 observations and 5 variables:
-\begin{itemize}
-    \item \textbf{Sepal.Length}: Sepal length in centimeters.
-    \item \textbf{Sepal.Width}: Sepal width in centimeters.
-    \item \textbf{Petal.Length}: Petal length in centimeters.
-    \item \textbf{Petal.Width}: Petal width in centimeters.
-    \item \textbf{Species}: Species name including Iris setosa, versicolor, and virginica.
-\end{itemize}
+\textbf{The Tooth Growth dataset}: \textit{The ToothGrowth dataset}, available as a built-in dataset in R, offers the impact of vitamin C on the tooth growth of Guinea pigs. The dataset consists of 60 observations and 3 variables: len: Length of the Guinea pigs' teeth, supp: Method of vitamin C supplementation, dose: Dose of vitamin C in milligrams per day.\\
+
 \noindent
-\textbf{Exchange rate data}: The exchange rate data, avalable at \href{https://www.bankofengland.co.uk/boeapps/database/index.asp?first=yes&SectionRequired=I&HideNums=-1&ExtraInfo=true&Travel=NIx}{Bank of England}, provides daily spot exchange rates against GBP exchange over the time period from 2005 to now (without weekends). A subset of daily spot exchange rate of Chinese Yuan (CNY), Canadian Dollar (CAN), Euro (EUR), Hongkong Dollar (HKD), and US Dollar (USD) against Pounds Sterling (GBP) from January 2013 to October 2023 was used in this reoprt. The data set contains 5 variables:
-\begin{itemize}
-    \item \textbf{Date}: Date of spot exchange rate in Day/Month/Year.
-    \item \textbf{CNYtoGBP}: Spot exchange rate of CNY against GBP.
-    \item \textbf{CANtoGBP}: Spot exchange rate of CAN against GBP.
-    \item \textbf{EURtoGBP}: Spot exchange rate of EUR against GBP.
-    \item \textbf{HKDtoGBP}: Spot exchange rate of HKD against GBP.
-    \item \textbf{USDtoGBP}: Spot exchange rate of USD against GBP.
-\end{itemize}
+\textbf{The Edgar Anderson's Iris dataset}: The Anderson's iris data, available as a built-in dataset in R, offers the measurements in centimeters of sepal length and width, petal length and width, along with the species name for 50 flowers from each of three species of iris. The dataset consists of 5 variables: Sepal.Length: Sepal length, Sepal.Width: Sepal width, Petal.Length: Petal length, Petal.Width: Petal width, Species: Species name.\\
+
 \noindent
-\textbf{Trees dataset}: The trees dataset, avalable as a built-in datasets in R, offers measurements from 31 felled black cherry trees and provides insights into the relationship between a tree's girth, its height, and the volume of timber it can produce. The dataset contains the 3 variables:
-\begin{itemize}
-    \item \textbf{Girth:} The diameter of the tree, measured in inches at 4 ft 6 in above the ground.
-    \item \textbf{Height:} The height of the tree, measured in feet.
-    \item \textbf{Volume:} The volume of timber, measured in cubic feet, that the tree can produce.
-\end{itemize}
+\textbf{Exchange rate data}: The exchange rate data, available at the Bank of England, provides daily spot exchange rates against GBP over the time period from 2005 to now (without weekends). A subset of daily spot exchange rate of CNY, CAD, EUR, HKD, and USD against GBP from January 2013 to October 2023 was used in this report. The dataset contains 5 variables: Date: Date of spot exchange rate, CNYtoGBP: Spot exchange rate of CNY against GBP, CANtoGBP: Spot exchange rate of CAD against GBP, EURtoGBP: Spot exchange rate of EUR against GBP, HKDtoGBP: Spot exchange rate of HKD against GBP, USDtoGBP: Spot exchange rate of USD against GBP.\\
+
+\noindent
+\textbf{Trees dataset}: The trees dataset, available as a built-in dataset in R, offers measurements from 31 felled black cherry trees and provides insights into the relationship between a tree's girth, its height, and the volume of timber it can produce. The dataset contains 3 variables: Girth: The diameter of the tree, Height: The height of the tree, Volume: The volume of timber that the tree can produce.\\
 
 \subsection{Structure and Organisation of the Thesis}
 This thesis follows a structured and comprehensive outline aimed at exploring the multifaceted domain of data visualisation. The document begins with an introductory section that lays the foundation for the subsequent discussions. Following this, Chapter 2: "Theoretical Foundations of Data Visualisation" delves into the theoretical underpinnings of data visualisation, elucidating fundamental concepts and principles.
@@ -711,7 +663,7 @@ $$AIC = -2 \l(\hat{\mathbf{\theta}})+2 \dim (\mathbf{\theta})$$
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.7\textwidth]{https://github.com/Qinqing-Li/Data-Visualisation-Project/blob/main/overfitting.png?raw=true}
+    \includegraphics[width=0.7\textwidth]{overfitting.png}
     \caption{Danger of overfitting the regression model}
     \label{fig:noisy}
 \end{figure}
@@ -788,30 +740,22 @@ plot_data$Currency <- gsub("_MA21", "", plot_data$Currency)
 @
 
 
-\begin{figure}[H]
+\begin{figure}
 <<message=FALSE,warning=FALSE,fig.dim = c(6, 4)>>=
 # Plot daily and 21-day moving average exchange rates of CNY, CAN,
 # EUR, HKD, USD to GBP
 
 # First plot
-p1 <- ggplot(plot_dt, aes(x=Date, y=Rate, color=Currency)) +
-  geom_line() +
-  labs(title="Daily exchange rates",
-       y="Exchange Rate to GBP",
-       x="Date",
-       color="Currency")+
-  theme_minimal()+
-  theme(legend.position="none")
+p1 <- ggplot(plot_dt, aes(x=Date, y=Rate, color=Currency)) + geom_line() +
+  labs(title="Daily exchange rates", y="Exchange Rate to GBP",
+       x="Date", color="Currency")+
+  theme_minimal() + theme(legend.position="none")
 
 # Second plot
-p2 <- ggplot(plot_data, aes(x=Date, y=Rate, color=Currency)) +
-  geom_line() +
-  labs(title="21-Day moving average exchange rates",
-       y="Exchange Rate to GBP",
-       x="Date",
-       color="Currency")+
-  theme_minimal()+
-  theme(legend.position="none")
+p2 <- ggplot(plot_data, aes(x=Date, y=Rate, color=Currency)) + geom_line() +
+  labs(title="21-Day moving average \n exchange rates",
+       y="Exchange Rate to GBP", x="Date", color="Currency")+
+  theme_minimal() + theme(legend.position="none")
 
 # Extract the legend
 p2_legend <- cowplot::get_legend(p2 + theme(legend.position="bottom"))
@@ -837,18 +781,15 @@ However, from Figure~\ref{fig:all exchange rates}, for example there are huge ga
 # Plot Double y-axis time series of CNY and EUR to GBP
 # Define scale factor
 scale_factor <- max(MyData$CNYtoGBP) / max(MyData$EURtoGBP)
-
 df <- MyData %>% select(Date,CNYtoGBP, EURtoGBP)
 
 # Create plot with dual y-axes
-ggplot(df, aes(Date))+
-  geom_line(aes(y = EURtoGBP, color = "EURtoGBP"))+
+ggplot(df, aes(Date)) + geom_line(aes(y = EURtoGBP, color = "EURtoGBP"))+
   geom_line(aes(y = CNYtoGBP / scale_factor, color = "CNYtoGBP"))+ 
   scale_y_continuous(name = "EURtoGBP Exchange Rate axis",
                      sec.axis = sec_axis(~ . * scale_factor,
                                          name = "CNYtoGBP Exchange Rate axis"))+
-  labs(color = "Currency") +
-  theme_minimal()
+  labs(color = "Currency") + theme_minimal() + theme(legend.position="bottom")
 @
 \centering
 \caption{Double y-axis time series of CNY and EUR to GBP}
@@ -1031,32 +972,36 @@ aggregated_data$centroid <- st_centroid(aggregated_data$geometry)
 \noindent
 Here, we are going to construct a geographical map of the Greater London and show each ward. 
 
+
+
+\begingroup
+\setlength{\intextsep}{5pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{5pt plus 2pt minus 2pt}
+\setlength{\abovecaptionskip}{2pt plus 1pt minus 1pt}
+\setlength{\belowcaptionskip}{2pt plus 1pt minus 1pt}
+
 \begin{figure}[H]
-<<warning=FALSE,message=FALSE,fig.dim=c(6,6)>>=
+<<warning=FALSE,message=FALSE,fig.dim=c(5,5)>>=
 # Plot London map by ward
-ggplot(data = london_boroughs) + 
-  geom_sf(fill = "lightblue", color = "black") + 
-  theme_minimal() +
-  labs(y="Latitude",
-       x="Longitude")
+ggplot(data = london_boroughs) + geom_sf(fill = "lightblue", color = "black") + 
+  theme_minimal() + labs(y="Latitude", x="Longitude")
 @
 \centering
 \caption{London Wards Map}
 \label{fig:London Wards Map}
 \end{figure}
+\endgroup
 
 From Figure~\ref{fig:London Wards Map}, we can all wards of the Greater London and we can specify their locations by latitude and longitude. However, a map does not convey much information except the position. Hence, we are going to calculate the crime rate by dividing crime count in the borough by population in the borough at 2020 and present by a choropleth map.
 
 
 \begin{figure}[H]
-<<warning=FALSE,message=FALSE,fig.dim=c(6,6)>>=
+<<warning=FALSE,message=FALSE,fig.dim=c(5,5)>>=
 # Plot the Crime rate in London by boroughs
-ggplot(data=aggregated_data) + 
-  geom_sf(aes(fill=Crime_rate)) +
+ggplot(data=aggregated_data) + geom_sf(aes(fill=Crime_rate)) +
   geom_sf_text(aes(label = DISTRICT, geometry = centroid),
                size = 2.5, check_overlap = TRUE) +
-  scale_fill_gradient(low="Green", high="red") +
-  theme_minimal() +
+  scale_fill_gradient(low="Green", high="red") + theme_minimal() +
   labs(fill="Crime rate")
 @
 \centering
