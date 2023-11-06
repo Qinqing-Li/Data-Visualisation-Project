@@ -2,6 +2,7 @@
 \usepackage{hyperref}
 \usepackage{blindtext}
 \usepackage{graphicx}
+\usepackage{float}
 \usepackage[a4paper, total={6in, 8in}]{geometry}
 
 \title{Data Visualisation: Theory and Practice}
@@ -9,7 +10,7 @@
 
 \begin{document}
 
-<<setup, echo=FALSE, message=FALSE, warning=FALSE>>=
+<<setup, echo=FALSE, message=FALSE, warning=FALSE, include = FALSE>>=
 library(maps)
 library(ggplot2)
 library(dplyr)
@@ -30,6 +31,12 @@ library(datasets)
 data(ToothGrowth)
 data(mtcars)
 data(trees)
+
+opts_chunk$set(fig.path = 'figure/beamer-',
+               fig.align = 'center',
+               fig.show = 'hold', size = "scriptsize",
+               fig.pos = 'H')
+
 @
 
 \maketitle 

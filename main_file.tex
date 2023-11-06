@@ -52,6 +52,7 @@
 \usepackage{hyperref}
 \usepackage{blindtext}
 \usepackage{graphicx}
+\usepackage{float}
 \usepackage[a4paper, total={6in, 8in}]{geometry}
 
 \title{Data Visualisation: Theory and Practice}
@@ -363,7 +364,7 @@ Linear regression lines are often featured in scatter plots to give readers more
 \textbf{Scatter Plots in Practice}\\
 In this example, we'll create a scatter plot that visualizes the relationship between two variables - the weight of cars and the amount of miles traveled per gallon of petrol. We'll use the "mtcars" R dataset.
 
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# Create a scatter plot of car weight vs MPG from mtcars dataset}
@@ -381,8 +382,13 @@ In this example, we'll create a scatter plot that visualizes the relationship be
 \end{alltt}
 
 
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# `geom\_smooth()` using formula = 'y \textasciitilde{} x'}}\end{kframe}\begin{figure}
-\includegraphics[width=\maxwidth]{figure/scatter-plot-1} \caption[Scatter plot of car weights vs MPG]{Scatter plot of car weights vs MPG}\label{fig:scatter-plot}
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# `geom\_smooth()` using formula = 'y \textasciitilde{} x'}}\end{kframe}\begin{figure}[H]
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-scatter-plot-1} 
+
+}
+
+\caption[Scatter plot of car weights vs MPG]{Scatter plot of car weights vs MPG}\label{fig:scatter-plot}
 \end{figure}
 
 \end{knitrout}
@@ -422,7 +428,7 @@ Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the 
 \textbf{Bubble Charts in Practice}
  This bubble plot visualizes data from the same dataset as above. The purpose of this plot is to depict the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and color-coding the bubbles based on the number of cylinders (cyl).
 
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{#Create bubble plot }
@@ -440,7 +446,12 @@ Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the 
   \hlkwd{theme}\hlstd{(}\hlkwc{axis.text.x} \hlstd{=} \hlkwd{element_text}\hlstd{(}\hlkwc{angle} \hlstd{=} \hlnum{90}\hlstd{,} \hlkwc{hjust} \hlstd{=}\hlnum{1}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/buble-plot-chunk-1} 
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-buble-plot-chunk-1} 
+
+}
+
+
 \end{knitrout}
 
 \textbf{Analysis of the bubble chart}\\
@@ -507,7 +518,7 @@ This bar chart illustrates the tooth growth in relation to varying doses of a vi
     \item \textbf{Y-axis Description:} The Y-axis signifies the length of tooth growth (len). This represents the average tooth growth at the given vitamin dosage.
     \item \textbf{Data Observation:} From the heights of the bars, it is evident that as the vitamin dosage increases, the tooth growth also appears to increase. This might suggest that higher doses of the vitamin may promote tooth growth.
 \end{enumerate}
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlkwd{ggplot}\hlstd{(ToothGrowth,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{factor}\hlstd{(dose),} \hlkwc{y} \hlstd{= len))} \hlopt{+}\hlcom{# Create a bar chart with different vitamin doses on the X-axis and tooth growth on the Y-axis (len).}
@@ -515,8 +526,13 @@ This bar chart illustrates the tooth growth in relation to varying doses of a vi
   \hlkwd{labs}\hlstd{(}\hlkwc{title} \hlstd{=} \hlstr{"Tooth Growth by Dose"}\hlstd{,} \hlkwc{x} \hlstd{=} \hlstr{"Dose (mg/day)"}\hlstd{,} \hlkwc{y} \hlstd{=} \hlstr{"Tooth Length"}\hlstd{)} \hlopt{+}
   \hlkwd{theme_minimal}\hlstd{()}
 \end{alltt}
-\end{kframe}\begin{figure}
-\includegraphics[width=\maxwidth]{figure/barchart1-1} \caption[Tooth growth by dose]{Tooth growth by dose}\label{fig:barchart1}
+\end{kframe}\begin{figure}[H]
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-barchart1-1} 
+
+}
+
+\caption[Tooth growth by dose]{Tooth growth by dose}\label{fig:barchart1}
 \end{figure}
 
 \end{knitrout}
@@ -529,7 +545,7 @@ The provided bar chart elucidates tooth growth as influenced by varying doses of
     \item \textbf{Data Observation:} It's discernible from the heights and grouping of the bars that the tooth growth tends to increase with higher doses of the vitamin. However, the effectiveness seems to vary based on the type of supplement. A closer inspection would be required to determine which supplement is more effective at each dosage.
 \end{enumerate}
 
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlkwd{ggplot}\hlstd{(filtered_data,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{factor}\hlstd{(dose),} \hlkwc{y} \hlstd{= len,} \hlkwc{fill} \hlstd{= supp))} \hlopt{+}
@@ -542,8 +558,13 @@ The provided bar chart elucidates tooth growth as influenced by varying doses of
   \hlstd{)} \hlopt{+}
   \hlkwd{theme_minimal}\hlstd{()}
 \end{alltt}
-\end{kframe}\begin{figure}
-\includegraphics[width=\maxwidth]{figure/barchart2-1} \caption[Tooth Growth by Dose and Supplement(grouping bar chart)]{Tooth Growth by Dose and Supplement(grouping bar chart)}\label{fig:barchart2}
+\end{kframe}\begin{figure}[H]
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-barchart2-1} 
+
+}
+
+\caption[Tooth Growth by Dose and Supplement(grouping bar chart)]{Tooth Growth by Dose and Supplement(grouping bar chart)}\label{fig:barchart2}
 \end{figure}
 
 \end{knitrout}
@@ -555,7 +576,7 @@ The displayed bar chart provides insights into tooth growth influenced by varyin
     \item \textbf{Y-axis Description:} The Y-axis quantifies tooth growth length, representing the combined average growth for both supplements at the respective vitamin dosages.
     \item \textbf{Data Observation:} The total height of each bar signifies the combined tooth growth for both supplements at the given dosage. From the stacked sections, it's evident that the impact on tooth growth varies based on the supplement type. A detailed inspection might elucidate the relative effectiveness of the supplements at each dosage level.
 \end{enumerate}
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlkwd{ggplot}\hlstd{(filtered_data,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{factor}\hlstd{(dose),} \hlkwc{y} \hlstd{= len,} \hlkwc{fill} \hlstd{= supp))} \hlopt{+}
@@ -568,8 +589,13 @@ The displayed bar chart provides insights into tooth growth influenced by varyin
   \hlstd{)} \hlopt{+}
   \hlkwd{theme_minimal}\hlstd{()}
 \end{alltt}
-\end{kframe}\begin{figure}
-\includegraphics[width=\maxwidth]{figure/bar_chat3-1} \caption[Tooth Growth by Dose and Supplement(stacked bar chart)]{Tooth Growth by Dose and Supplement(stacked bar chart)}\label{fig:bar chat3}
+\end{kframe}\begin{figure}[H]
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-bar_chat3-1} 
+
+}
+
+\caption[Tooth Growth by Dose and Supplement(stacked bar chart)]{Tooth Growth by Dose and Supplement(stacked bar chart)}\label{fig:bar chat3}
 \end{figure}
 
 \end{knitrout}
@@ -582,7 +608,7 @@ Histograms demonstrates the distribution of frequency or quantity across groups.
 Facilitates the visualisation of differences in frequency or quantity among groups.\\
 The R language uses the $hist()$ function to create histograms. This function takes vectors as input and uses a few more parameters to plot the histogram.\\
 Now, we want to creat a better graph with ggplot2 thanks to the $geom_histogram()$ function and iris dataset.\\
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlstd{bar_diagram} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(iris,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= Sepal.Length))} \hlopt{+}
@@ -599,8 +625,13 @@ Now, we want to creat a better graph with ggplot2 thanks to the $geom_histogram(
   \hlkwd{theme_minimal}\hlstd{()}
 \hlkwd{print}\hlstd{(bar_diagram)}
 \end{alltt}
-\end{kframe}\begin{figure}
-\includegraphics[width=\maxwidth]{figure/hist3-1} \caption[Histogram of Sepal Length in Iris Dataset]{Histogram of Sepal Length in Iris Dataset}\label{fig:hist3}
+\end{kframe}\begin{figure}[H]
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-hist3-1} 
+
+}
+
+\caption[Histogram of Sepal Length in Iris Dataset]{Histogram of Sepal Length in Iris Dataset}\label{fig:hist3}
 \end{figure}
 
 \end{knitrout}
@@ -627,7 +658,7 @@ In this chapter, we explore two powerful data visualisation techniques: heatmaps
 
 
 
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# Obtain the Brazil map data}
@@ -664,8 +695,13 @@ In this chapter, we explore two powerful data visualisation techniques: heatmaps
 ## 1 1 (1-1,1-1) arrange gtable[layout]
 ## 2 2 (2-2,1-1) arrange gtable[layout]
 \end{verbatim}
-\end{kframe}\begin{figure}
-\includegraphics[width=\maxwidth]{figure/spacetime-fy22-1} \caption[Frequency of Fire by Space and Time, FY22]{Frequency of Fire by Space and Time, FY22}\label{fig:spacetime-fy22}
+\end{kframe}\begin{figure}[H]
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-spacetime-fy22-1} 
+
+}
+
+\caption[Frequency of Fire by Space and Time, FY22]{Frequency of Fire by Space and Time, FY22}\label{fig:spacetime-fy22}
 \end{figure}
 
 \end{knitrout}
@@ -673,7 +709,7 @@ In this chapter, we explore two powerful data visualisation techniques: heatmaps
 
 
 
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlstd{heatmap_plot} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(pivot_table,}
@@ -687,8 +723,13 @@ In this chapter, we explore two powerful data visualisation techniques: heatmaps
 
 \hlkwd{print}\hlstd{(heatmap_plot)}
 \end{alltt}
-\end{kframe}\begin{figure}
-\includegraphics[width=\maxwidth]{figure/fire-by-months-fy13-22-1} \caption[Frequency of Fire Occurrences, FY13-22]{Frequency of Fire Occurrences, FY13-22}\label{fig:fire-by-months-fy13-22}
+\end{kframe}\begin{figure}[H]
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-fire-by-months-fy13-22-1} 
+
+}
+
+\caption[Frequency of Fire Occurrences, FY13-22]{Frequency of Fire Occurrences, FY13-22}\label{fig:fire-by-months-fy13-22}
 \end{figure}
 
 \end{knitrout}
@@ -758,7 +799,7 @@ Here, we are going to investigate 'exchange rate dataset' and plot all daily and
 
 
 \begin{figure}[H]
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# Plot daily and 21-day moving average exchange rates of CNY, CAN,}
@@ -793,7 +834,12 @@ Here, we are going to investigate 'exchange rate dataset' and plot all daily and
 \hlstd{cowplot}\hlopt{::}\hlkwd{plot_grid}\hlstd{(combined_plot, p2_legend,} \hlkwc{ncol}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{rel_heights} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{.1}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-2-1} 
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-unnamed-chunk-2-1} 
+
+}
+
+
 \end{knitrout}
 \centering
 \caption{Daily and 21-day moving average exchange rates of CNY, CAN, EUR, HKD, USD to GBP}
@@ -807,7 +853,7 @@ However, from Figure~\ref{fig:all exchange rates}, for example there are huge ga
 
 
 \begin{figure}[H]
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# Plot Double y-axis time series of CNY and EUR to GBP}
@@ -827,7 +873,12 @@ However, from Figure~\ref{fig:all exchange rates}, for example there are huge ga
   \hlkwd{theme_minimal}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-3-1} 
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-unnamed-chunk-3-1} 
+
+}
+
+
 \end{knitrout}
 \centering
 \caption{Double y-axis time series of CNY and EUR to GBP}
@@ -864,7 +915,7 @@ In practice, the choice between the additive and multiplicative models often dep
 
 
 \begin{figure}[H]
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# Plot decomposition of addictive time series model}
@@ -872,7 +923,12 @@ In practice, the choice between the additive and multiplicative models often dep
 \hlkwd{plot}\hlstd{(decomposed_ts,} \hlkwc{xlab}\hlstd{=}\hlstr{"Date"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-4-1} 
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-unnamed-chunk-4-1} 
+
+}
+
+
 \end{knitrout}
 \centering
 \caption{Decomposition of addictive time series model of CNY to GBP exchange rates}
@@ -925,7 +981,7 @@ where \(\sigma_{st}\) is the number of shortest paths from node \(s\) to \(t\), 
 
 \begin{figure}[h]
 \centering
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# Plot the graph}
@@ -962,7 +1018,7 @@ Spatial data visualization are powerful tools that transform raw, often complex 
 Here, we are going to construct a geographical map of the Greater London and show each ward. 
 
 \begin{figure}[H]
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# Plot London map by ward}
@@ -973,7 +1029,12 @@ Here, we are going to construct a geographical map of the Greater London and sho
        \hlkwc{x}\hlstd{=}\hlstr{"Longitude"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-6-1} 
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-unnamed-chunk-6-1} 
+
+}
+
+
 \end{knitrout}
 \centering
 \caption{London Wards Map}
@@ -984,7 +1045,7 @@ From Figure~\ref{fig:London Wards Map}, we can all wards of the Greater London a
 
 
 \begin{figure}[H]
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# Plot the Crime rate in London by boroughs}
@@ -997,7 +1058,12 @@ From Figure~\ref{fig:London Wards Map}, we can all wards of the Greater London a
   \hlkwd{labs}\hlstd{(}\hlkwc{fill}\hlstd{=}\hlstr{"Crime rate"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-7-1} 
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-unnamed-chunk-7-1} 
+
+}
+
+
 \end{knitrout}
 \centering
 \caption{Crime rate by boroughs in London in 2020}
@@ -1017,7 +1083,7 @@ Our first example will be  a scatter plot. We can use scatterplot3d package to h
 \section{Trees Dataset in R}
 
 
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# Generate colors based on the Volume variable}
@@ -1031,8 +1097,13 @@ Our first example will be  a scatter plot. We can use scatterplot3d package to h
               \hlkwc{ylab}\hlstd{=}\hlstr{"Height (ft)"}\hlstd{,}
               \hlkwc{zlab}\hlstd{=}\hlstr{"Volume (cubic ft)"}\hlstd{)}
 \end{alltt}
-\end{kframe}\begin{figure}
-\includegraphics[width=\maxwidth]{figure/3d1-1} \caption[3d scatter plot]{3d scatter plot}\label{fig:3d1}
+\end{kframe}\begin{figure}[H]
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-3d1-1} 
+
+}
+
+\caption[3d scatter plot]{3d scatter plot}\label{fig:3d1}
 \end{figure}
 
 \end{knitrout}
