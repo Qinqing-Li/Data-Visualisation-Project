@@ -1,243 +1,257 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.13)  6 NOV 2023 22:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.9.29)  8 NOV 2023 20:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **main_file.tex
 (./main_file.tex
-LaTeX2e <2023-06-01> patch level 1
-L3 programming layer <2023-10-10>
-(c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
-(c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+LaTeX2e <2018-04-01> patch level 2
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
-\c@part=\count185
-\c@section=\count186
-\c@subsection=\count187
-\c@subsubsection=\count188
-\c@paragraph=\count189
-\c@subparagraph=\count190
-\c@figure=\count191
-\c@table=\count192
-\abovecaptionskip=\skip48
-\belowcaptionskip=\skip49
-\bibindent=\dimen140
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks17
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 107.
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen141
-\Gin@req@width=\dimen142
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: pdftex.def on input line 227.
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
-Package xcolor Info: Model `RGB' extended on input line 1369.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/framed/framed.sty
-Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip50
-\fb@frw=\dimen143
-\fb@frh=\dimen144
-\FrameRule=\dimen145
-\FrameSep=\dimen146
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/alltt.sty
-Package: alltt 2021/01/29 v2.0g defines alltt environment
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2023-07-08 v7.01b Hypertext links for LaTeX
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2022/02/03 v1.0f TeX engine tests
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty
-Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
+(/usr/local/texlive/2018/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip43
+\fb@frw=\dimen105
+\fb@frh=\dimen106
+\FrameRule=\dimen107
+\FrameSep=\dimen108
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/alltt.sty
+Package: alltt 1997/06/16 v2.0g defines alltt environment
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
-Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
-Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty
-Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
-Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
-Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/auxhook/auxhook.sty
-Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2023-08-07 v2.53 Cross-referencing by name of section
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
-Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
-Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
-Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
-))
-\c@section@level=\count193
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count194
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
 )
-\@linkdim=\dimen147
-\Hy@linkcounter=\count195
-\Hy@pagecounter=\count196
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2023-07-08 v7.01b Hyperref: PDFDocEncoding definition (HO)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen109
+\Hy@linkcounter=\count88
+\Hy@pagecounter=\count89
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
-Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count197
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2023-07-08 v7.01b Hyperref: PDF Unicode definition (HO)
-Now handling font encoding PU ...
-... no UTF-8 mapping file for font encoding PU
+\Hy@SavedSpaceFactor=\count90
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Hyper figures OFF on input line 4167.
-Package hyperref Info: Link nesting OFF on input line 4172.
-Package hyperref Info: Hyper index ON on input line 4175.
-Package hyperref Info: Plain pages OFF on input line 4182.
-Package hyperref Info: Backreferencing OFF on input line 4187.
+Package hyperref Info: Hyper figures OFF on input line 4509.
+Package hyperref Info: Link nesting OFF on input line 4514.
+Package hyperref Info: Hyper index ON on input line 4517.
+Package hyperref Info: Plain pages OFF on input line 4524.
+Package hyperref Info: Backreferencing OFF on input line 4529.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4434.
-\c@Hy@tempcnt=\count198
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip16
+Package hyperref Info: Bookmarks ON on input line 4762.
+\c@Hy@tempcnt=\count91
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4772.
-\XeTeXLinkMargin=\dimen148
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
-Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
-Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
-))
-\Fld@menulength=\count199
-\Field@Width=\dimen149
-\Fld@charsize=\dimen150
-Package hyperref Info: Hyper figures OFF on input line 6051.
-Package hyperref Info: Link nesting OFF on input line 6056.
-Package hyperref Info: Hyper index ON on input line 6059.
-Package hyperref Info: backreferencing OFF on input line 6066.
-Package hyperref Info: Link coloring OFF on input line 6071.
-Package hyperref Info: Link coloring with OCG OFF on input line 6076.
-Package hyperref Info: PDF/A mode OFF on input line 6081.
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty
-Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
-package with kernel methods
-)
-\Hy@abspage=\count266
-\c@Item=\count267
-\c@Hfootnote=\count268
+LaTeX Info: Redefining \url on input line 5115.
+\XeTeXLinkMargin=\dimen110
+\Fld@menulength=\count92
+\Field@Width=\dimen111
+\Fld@charsize=\dimen112
+Package hyperref Info: Hyper figures OFF on input line 6369.
+Package hyperref Info: Link nesting OFF on input line 6374.
+Package hyperref Info: Hyper index ON on input line 6377.
+Package hyperref Info: backreferencing OFF on input line 6384.
+Package hyperref Info: Link coloring OFF on input line 6389.
+Package hyperref Info: Link coloring with OCG OFF on input line 6394.
+Package hyperref Info: PDF/A mode OFF on input line 6399.
+LaTeX Info: Redefining \ref on input line 6439.
+LaTeX Info: Redefining \pageref on input line 6443.
+\Hy@abspage=\count93
+\c@Item=\count94
+\c@Hfootnote=\count95
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2023-07-08 v7.01b Hyperref driver for pdfTeX
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty
-Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
-with kernel methods
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2018/02/06 v6.86b Hyperref driver for pdfTeX
+\Fld@listcount=\count96
+\c@bookmark@seq@number=\count97
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
 )
-\Fld@listcount=\count269
-\c@bookmark@seq@number=\count270
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
-Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
-Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+\Hy@SectionHShift=\skip44
 )
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
-)
-\Hy@SectionHShift=\skip51
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/blindtext/blindtext.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/blindtext/blindtext.sty
 Package: blindtext 2012/01/06 V2.0 blindtext-Package
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/xspace.sty
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-\c@blindtext=\count271
-\c@Blindtext=\count272
-\c@blind@countparstart=\count273
-\blind@countxx=\count274
-\blindtext@numBlindtext=\count275
-\blind@countyy=\count276
-\c@blindlist=\count277
-\c@blindlistlevel=\count278
-\c@blindlist@level=\count279
-\blind@listitem=\count280
-\c@blind@listcount=\count281
-\c@blind@levelcount=\count282
-\blind@mathformula=\count283
-\blind@Mathformula=\count284
-\c@blind@randomcount=\count285
-\c@blind@randommax=\count286
-\c@blind@pangramcount=\count287
-\c@blind@pangrammax=\count288
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/float/float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count289
-\float@exts=\toks18
-\float@box=\box51
-\@float@everytoks=\toks19
-\@floatcapt=\box52
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty
-Package: geometry 2020/01/02 v5.9 Page Geometry
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
-Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+\c@blindtext=\count98
+\c@Blindtext=\count99
+\c@blind@countparstart=\count100
+\blind@countxx=\count101
+\blindtext@numBlindtext=\count102
+\blind@countyy=\count103
+\c@blindlist=\count104
+\c@blindlistlevel=\count105
+\c@blindlist@level=\count106
+\blind@listitem=\count107
+\c@blind@listcount=\count108
+\c@blind@levelcount=\count109
+\blind@mathformula=\count110
+\blind@Mathformula=\count111
+\c@blind@randomcount=\count112
+\c@blind@randommax=\count113
+\c@blind@pangramcount=\count114
+\c@blind@pangrammax=\count115
 )
-\Gm@cnth=\count290
-\Gm@cntv=\count291
-\c@Gm@tempcnt=\count292
-\Gm@bindingoffset=\dimen151
-\Gm@wd@mp=\dimen152
-\Gm@odd@mp=\dimen153
-\Gm@even@mp=\dimen154
-\Gm@layoutwidth=\dimen155
-\Gm@layoutheight=\dimen156
-\Gm@layouthoffset=\dimen157
-\Gm@layoutvoffset=\dimen158
-\Gm@dimlist=\toks20
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2023-10-10 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count293
-\l__pdf_internal_box=\box53
-) (./main_file.aux)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count116
+\float@exts=\toks15
+\float@box=\box26
+\@float@everytoks=\toks16
+\@floatcapt=\box27
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2018/03/24 v5.7 Page Geometry
+\Gm@cnth=\count117
+\Gm@cntv=\count118
+\c@Gm@tempcnt=\count119
+\Gm@bindingoffset=\dimen113
+\Gm@wd@mp=\dimen114
+\Gm@odd@mp=\dimen115
+\Gm@even@mp=\dimen116
+\Gm@layoutwidth=\dimen117
+\Gm@layoutheight=\dimen118
+\Gm@layouthoffset=\dimen119
+\Gm@layoutvoffset=\dimen120
+\Gm@dimlist=\toks17
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+)
+(./main_file.aux)
 \openout1 = `main_file.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
 LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
 LaTeX Font Info:    ... okay on input line 61.
 LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
 LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 61.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
 LaTeX Font Info:    ... okay on input line 61.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
 LaTeX Font Info:    ... okay on input line 61.
@@ -245,16 +259,53 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
 LaTeX Font Info:    ... okay on input line 61.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 61.
 LaTeX Font Info:    ... okay on input line 61.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 61.
-LaTeX Font Info:    ... okay on input line 61.
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+
+(/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count120
+\scratchdimen=\dimen121
+\scratchbox=\box28
+\nofMPsegments=\count121
+\nofMParguments=\count122
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count123
+\MPscratchDim=\dimen122
+\MPnumerator=\count124
+\makeMPintoPDFobject=\count125
+\everyMPtoPDFconversion=\toks19
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
 ))
+\AtBeginShipoutBox=\box29
 Package hyperref Info: Link coloring OFF on input line 61.
- (./main_file.out) (./main_file.out)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count126
+)
+LaTeX Info: Redefining \ref on input line 61.
+LaTeX Info: Redefining \pageref on input line 61.
+LaTeX Info: Redefining \nameref on input line 61.
+
+(./main_file.out) (./main_file.out)
 \@outlinefile=\write3
 \openout3 = `main_file.out'.
 
@@ -306,96 +357,185 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 2.
  [1
 
-{c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
+{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
 \tf@toc=\write4
 \openout4 = `main_file.toc'.
 
  [2]
-Underfull \hbox (badness 10000) in paragraph at lines 72--85
+<Nightingale-mortality.jpg, id=291, 7022.235pt x 3840.3475pt>
+File: Nightingale-mortality.jpg Graphic file (type jpg)
+<use Nightingale-mortality.jpg>
+Package pdftex.def Info: Nightingale-mortality.jpg  used on input line 80.
+(pdftex.def)             Requested size: 303.53267pt x 165.9521pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--83
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--85
+Underfull \hbox (badness 10000) in paragraph at lines 72--83
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--85
+Underfull \hbox (badness 10000) in paragraph at lines 72--83
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--85
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.85 \\
+       The coxcomb, resembling an unconventional pie chart, partitioned mort...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.85 \\T
+        he coxcomb, resembling an unconventional pie chart, partitioned mort...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+<global.png, id=293, 910.48155pt x 455.301pt>
+File: global.png Graphic file (type png)
+<use global.png>
+Package pdftex.def Info: global.png  used on input line 97.
+(pdftex.def)             Requested size: 303.53267pt x 151.78514pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--100
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--85
+Underfull \hbox (badness 10000) in paragraph at lines 85--100
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 90--91
+Underfull \hbox (badness 10000) in paragraph at lines 85--100
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--94
+Underfull \hbox (badness 10000) in paragraph at lines 85--100
+
+ []
+
+[3pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.100 \end{figure}
+                   <./Nightingale-mortality.jpg>]
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.101 \\K
+         nown as the ``warming stripes," this chart cleverly employs blues t...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+<misuse1.png, id=300, 681.54625pt x 511.9125pt>
+File: misuse1.png Graphic file (type png)
+<use misuse1.png>
+Package pdftex.def Info: misuse1.png  used on input line 109.
+(pdftex.def)             Requested size: 303.53267pt x 227.9839pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--112
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 95--97
-
- []
-
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 98--100
+Underfull \hbox (badness 10000) in paragraph at lines 101--112
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--103
+Underfull \hbox (badness 10000) in paragraph at lines 101--112
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--106
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.114 \\
+        Misuses of Data Visualisation - Case Example 2
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.114 \\M
+         isuses of Data Visualisation - Case Example 2
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[4pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.114 \\M
+         isuses of Data Visualisation - Case Example 2 <./global.png (PNG copy)
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 114--121
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 107--109
+Underfull \hbox (badness 10000) in paragraph at lines 114--121
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--112
+Underfull \hbox (badness 10000) in paragraph at lines 114--121
 
  []
 
+<familytree.jpg, id=309, 955.57pt x 497.86pt>
+File: familytree.jpg Graphic file (type jpg)
+<use familytree.jpg>
+Package pdftex.def Info: familytree.jpg  used on input line 124.
+(pdftex.def)             Requested size: 303.53267pt x 158.14096pt.
+[5pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) 
+has been already used, duplicate ignored
 
-Underfull \hbox (badness 10000) in paragraph at lines 113--114
-
- []
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 124--125
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 126--128
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 129--131
-
- []
-
-
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.128 
+       <./misuse1.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 133--134
 
  []
@@ -405,132 +545,192 @@ Underfull \hbox (badness 10000) in paragraph at lines 135--137
 
  []
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 141--142
+
+Underfull \hbox (badness 10000) in paragraph at lines 138--140
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 161--163
+Underfull \hbox (badness 10000) in paragraph at lines 141--143
 
  []
 
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 184--185
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--146
+
+ []
+
+[6pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.146 
+       <./familytree.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 147--149
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 150--152
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--155
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--157
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 186--188
+Underfull \hbox (badness 10000) in paragraph at lines 167--168
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 189--191
+Underfull \hbox (badness 10000) in paragraph at lines 169--171
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 192--195
+Underfull \hbox (badness 10000) in paragraph at lines 172--174
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 197--198
+Underfull \hbox (badness 10000) in paragraph at lines 176--177
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--180
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 206--208
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 213--214
+Underfull \hbox (badness 10000) in paragraph at lines 204--206
+
+ []
+
+[9]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 216.
+
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 216.
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 229--231
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
-
- []
-
-[9] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 236--239
+Underfull \hbox (badness 10000) in paragraph at lines 232--234
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--239
+Underfull \hbox (badness 10000) in paragraph at lines 235--238
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 247--249
+Underfull \hbox (badness 10000) in paragraph at lines 240--241
 
  []
 
 [11]
+Underfull \hbox (badness 10000) in paragraph at lines 249--251
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 256--257
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 262--263
+
+ []
+
+[12] [13]
+Underfull \hbox (badness 10000) in paragraph at lines 279--282
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--282
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--292
+
+ []
+
+[14]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 258.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 301.
 
-Overfull \hbox (114.11136pt too wide) in paragraph at lines 261--261
-[]  []\OT1/cmtt/m/n/10 geom_smooth[][]([][]method[] []=[] []"lm"[][],[] []se[] []=[] []FALSE[][],[] []color[] []=[] []"red"[][],[] []linewidth[] []=[] []1[][])[] []+[]  []\OT1/cmtt/m/it/10 # Linear regression trend line[][] 
+Overfull \hbox (114.11136pt too wide) in paragraph at lines 304--304
+[]  []\OT1/cmtt/m/n/10 geom_smooth[][]([][]method[] []=[] []"lm"[][],[] []se[] 
+[]=[] []FALSE[][],[] []color[] []=[] []"red"[][],[] []linewidth[] []=[] []1[][]
+)[] []+[]  []\OT1/cmtt/m/it/10 # Linear regression trend line[][] 
  []
 
 
-Overfull \hbox (103.61145pt too wide) in paragraph at lines 267--267
-[]  []\OT1/cmtt/m/n/10 scale_color_manual[][]([][]values[] []=[] []c[][]([][]"4"[] []=[] []"grey"[][],[] []"6"[] []=[] []"purple"[][],[] []"8"[] []=[] []"blue"[][]))[] []+[]  []\OT1/cmtt/m/it/10 # Custom color palette[][] 
+Overfull \hbox (103.61145pt too wide) in paragraph at lines 310--310
+[]  []\OT1/cmtt/m/n/10 scale_color_manual[][]([][]values[] []=[] []c[][]([][]"4
+"[] []=[] []"grey"[][],[] []"6"[] []=[] []"purple"[][],[] []"8"[] []=[] []"blue
+"[][]))[] []+[]  []\OT1/cmtt/m/it/10 # Custom color palette[][] 
  []
 
-<figure/scatter-plot-1.pdf, id=335, 289.08pt x 216.81pt>
+<figure/scatter-plot-1.pdf, id=362, 289.08pt x 216.81pt>
 File: figure/scatter-plot-1.pdf Graphic file (type pdf)
 <use figure/scatter-plot-1.pdf>
-Package pdftex.def Info: figure/scatter-plot-1.pdf  used on input line 273.
+Package pdftex.def Info: figure/scatter-plot-1.pdf  used on input line 316.
 (pdftex.def)             Requested size: 289.07928pt x 216.81938pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 281--282
+Underfull \hbox (badness 10000) in paragraph at lines 324--325
 
  []
 
-[12
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.282     \item \textbf
-                       {Linear Regression Line}: The regression line provide... <./figure/scatter-plot-1.pdf>]
-Overfull \hbox (7.1309pt too wide) in paragraph at lines 286--287
-\OT1/cmr/m/n/10 Bubble charts are a cap-ti-vat-ing data vi-su-al-i-sa-tion tool that ex-tends be-yond the typ-i-cal two-dimensional
+[15pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.325     \item \textbf
+                       {Linear Regression Line}: The regression line provide...
+ <./figure/scatter-plot-1.pdf>]
+Overfull \hbox (7.1309pt too wide) in paragraph at lines 329--330
+\OT1/cmr/m/n/10 Bubble charts are a cap-ti-vat-ing data vi-su-al-i-sa-tion tool
+ that ex-tends be-yond the typ-i-cal two-dimensional
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 286--287
+Underfull \hbox (badness 10000) in paragraph at lines 329--330
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 288--291
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 308--309
-
- []
-
-[13]
-<figure/buble-plot-chunk-1.pdf, id=359, 722.7pt x 361.35pt>
-File: figure/buble-plot-chunk-1.pdf Graphic file (type pdf)
-<use figure/buble-plot-chunk-1.pdf>
-Package pdftex.def Info: figure/buble-plot-chunk-1.pdf  used on input line 331.
-(pdftex.def)             Requested size: 433.62pt x 216.81168pt.
-
-Overfull \hbox (15.0pt too wide) in paragraph at lines 331--333
-[][]
- []
-
-[14 <./figure/buble-plot-chunk-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 346--349
+Underfull \hbox (badness 10000) in paragraph at lines 331--334
 
  []
 
@@ -539,59 +739,87 @@ Underfull \hbox (badness 10000) in paragraph at lines 351--352
 
  []
 
+[16]
+<figure/buble-plot-chunk-1.pdf, id=384, 722.7pt x 361.35pt>
+File: figure/buble-plot-chunk-1.pdf Graphic file (type pdf)
+<use figure/buble-plot-chunk-1.pdf>
+Package pdftex.def Info: figure/buble-plot-chunk-1.pdf  used on input line 374.
 
-Underfull \hbox (badness 10000) in paragraph at lines 353--354
+(pdftex.def)             Requested size: 433.62pt x 216.81168pt.
+
+Overfull \hbox (15.0pt too wide) in paragraph at lines 374--376
+[][]
+ []
+
+[17 <./figure/buble-plot-chunk-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 389--392
 
  []
 
-[15]
-<figure/barchart2-1.pdf, id=381, 433.62pt x 289.08pt>
-File: figure/barchart2-1.pdf Graphic file (type pdf)
-<use figure/barchart2-1.pdf>
-Package pdftex.def Info: figure/barchart2-1.pdf  used on input line 394.
-(pdftex.def)             Requested size: 195.12767pt x 130.0848pt.
-<figure/barchart3-1.pdf, id=382, 433.62pt x 289.08pt>
-File: figure/barchart3-1.pdf Graphic file (type pdf)
-<use figure/barchart3-1.pdf>
-Package pdftex.def Info: figure/barchart3-1.pdf  used on input line 403.
-(pdftex.def)             Requested size: 195.12767pt x 130.0848pt.
- [16] [17
-pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.430 ....969, 0.969}\color{fgcolor}\begin{kframe}
-                                                  
-pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.430 ....969, 0.969}\color{fgcolor}\begin{kframe}
-                                                   <./figure/barchart2-1.pdf> <./figure/barchart3-1.pdf>]
-<figure/hist3-1.pdf, id=420, 361.35pt x 216.81pt>
-File: figure/hist3-1.pdf Graphic file (type pdf)
-<use figure/hist3-1.pdf>
-Package pdftex.def Info: figure/hist3-1.pdf  used on input line 447.
-(pdftex.def)             Requested size: 361.34912pt x 216.80946pt.
 
-Overfull \hbox (40.612pt too wide) in paragraph at lines 460--460
-[][]\OT1/cmtt/m/it/10 # Create a Kernel Density Estimate plot using ggplot2 for Sepal Length in the Iris dataset[][] 
+Underfull \hbox (badness 10000) in paragraph at lines 394--395
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--397
+
  []
 
 [18]
-<figure/kde3-1.pdf, id=428, 361.35pt x 216.81pt>
-File: figure/kde3-1.pdf Graphic file (type pdf)
-<use figure/kde3-1.pdf>
-Package pdftex.def Info: figure/kde3-1.pdf  used on input line 475.
+<figure/barchart2-1.pdf, id=406, 433.62pt x 289.08pt>
+File: figure/barchart2-1.pdf Graphic file (type pdf)
+<use figure/barchart2-1.pdf>
+Package pdftex.def Info: figure/barchart2-1.pdf  used on input line 437.
+(pdftex.def)             Requested size: 195.12767pt x 130.0848pt.
+<figure/barchart3-1.pdf, id=407, 433.62pt x 289.08pt>
+File: figure/barchart3-1.pdf Graphic file (type pdf)
+<use figure/barchart3-1.pdf>
+Package pdftex.def Info: figure/barchart3-1.pdf  used on input line 446.
+(pdftex.def)             Requested size: 195.12767pt x 130.0848pt.
+ [19] [20pdfTeX warning (ext4): destination with the same identifier (name{figu
+re.6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.473 ....969, 0.969}\color{fgcolor}\begin{kframe}
+                                                  pdfTeX warning (ext4): destin
+ation with the same identifier (name{figure.7}) has been already used, duplicat
+e ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.473 ....969, 0.969}\color{fgcolor}\begin{kframe}
+                                                   <./figure/barchart2-1.pdf> <
+./figure/barchart3-1.pdf>]
+<figure/hist3-1.pdf, id=447, 361.35pt x 216.81pt>
+File: figure/hist3-1.pdf Graphic file (type pdf)
+<use figure/hist3-1.pdf>
+Package pdftex.def Info: figure/hist3-1.pdf  used on input line 490.
 (pdftex.def)             Requested size: 361.34912pt x 216.80946pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 483--486
+Overfull \hbox (40.612pt too wide) in paragraph at lines 503--503
+[][]\OT1/cmtt/m/it/10 # Create a Kernel Density Estimate plot using ggplot2 for
+ Sepal Length in the Iris dataset[][] 
+ []
+
+[21]
+<figure/kde3-1.pdf, id=454, 361.35pt x 216.81pt>
+File: figure/kde3-1.pdf Graphic file (type pdf)
+<use figure/kde3-1.pdf>
+Package pdftex.def Info: figure/kde3-1.pdf  used on input line 518.
+(pdftex.def)             Requested size: 361.34912pt x 216.80946pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 526--529
 
  []
 
-[19
-pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.486 \subsubsection
+[22pdfTeX warning (ext4): destination with the same identifier (name{figure.8})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.529 \subsubsection
                     {Heatmaps - Fire in Brazil} <./figure/hist3-1.pdf>]
 
 ! LaTeX Error: There's no line here to end.
@@ -600,8 +828,9 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.488 \\
+l.531 \\
         The heatmap is a data visualisation technique that uses colour codin...
+
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -613,52 +842,55 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.488 \\T
+l.531 \\T
          he heatmap is a data visualisation technique that uses colour codin...
+
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 488--498
+Underfull \hbox (badness 10000) in paragraph at lines 531--541
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 488--498
+Underfull \hbox (badness 10000) in paragraph at lines 531--541
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 488--498
+Underfull \hbox (badness 10000) in paragraph at lines 531--541
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 488--498
+Underfull \hbox (badness 10000) in paragraph at lines 531--541
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 488--498
+Underfull \hbox (badness 10000) in paragraph at lines 531--541
 
  []
 
-[20
-pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.498 
+[23pdfTeX warning (ext4): destination with the same identifier (name{figure.9})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.541 
        <./figure/kde3-1.pdf>]
-<figure/spacetime-fy22-1.pdf, id=457, 505.89pt x 289.08pt>
+<figure/spacetime-fy22-1.pdf, id=482, 505.89pt x 289.08pt>
 File: figure/spacetime-fy22-1.pdf Graphic file (type pdf)
 <use figure/spacetime-fy22-1.pdf>
-Package pdftex.def Info: figure/spacetime-fy22-1.pdf  used on input line 542.
+Package pdftex.def Info: figure/spacetime-fy22-1.pdf  used on input line 585.
 (pdftex.def)             Requested size: 433.62pt x 247.7879pt.
-<figure/fire-by-months-fy13-22-1.pdf, id=458, 361.35pt x 187.70125pt>
+<figure/fire-by-months-fy13-22-1.pdf, id=483, 361.35pt x 187.70125pt>
 File: figure/fire-by-months-fy13-22-1.pdf Graphic file (type pdf)
 <use figure/fire-by-months-fy13-22-1.pdf>
-Package pdftex.def Info: figure/fire-by-months-fy13-22-1.pdf  used on input line 565.
+Package pdftex.def Info: figure/fire-by-months-fy13-22-1.pdf  used on input lin
+e 608.
 (pdftex.def)             Requested size: 361.34912pt x 187.70079pt.
 
 
@@ -668,8 +900,9 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.573 \\
+l.616 \\
         The foundation of a heatmap is a data matrix $M$, where each entry i...
+
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -681,93 +914,94 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.573 \\T
+l.616 \\T
          he foundation of a heatmap is a data matrix $M$, where each entry i...
+
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[21] [22
-pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.583 $$
-        
-pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.583 $$
-         <./figure/spacetime-fy22-1.pdf> <./figure/fire-by-months-fy13-22-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 583--587
+[24] [25pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.10}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.626 $$
+        pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.11}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.626 $$
+         <./figure/spacetime-fy22-1.pdf> <./figure/fire-by-months-fy13-22-1.pdf
+>]
+Underfull \hbox (badness 10000) in paragraph at lines 626--630
 
  []
 
 
-LaTeX Warning: Command \l invalid in math mode on input line 588.
+LaTeX Warning: Command \l invalid in math mode on input line 631.
 
 
-LaTeX Warning: Command \l invalid in math mode on input line 589.
+LaTeX Warning: Command \l invalid in math mode on input line 632.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 588--592
+Underfull \hbox (badness 10000) in paragraph at lines 631--635
 
  []
 
-<overfitting.png, id=483, 204.765pt x 111.2958pt>
-File: overfitting.png Graphic file (type png)
-<use overfitting.png>
-Package pdftex.def Info: overfitting.png  used on input line 595.
-(pdftex.def)             Requested size: 303.53267pt x 164.9903pt.
-[23
-pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.602 
-       <./overfitting.png>] [24]
-LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 649.
- (c:/Program Files/R/R-4.3.1/share/texmf/tex/latex/omscmtt.fd
+[26]
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 685
+.
+
+(/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/omscmtt.fd
 File: omscmtt.fd 
 )
 LaTeX Font Info:    Font shape `OMS/cmtt/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 649.
-<figure/unnamed-chunk-2-1.pdf, id=495, 433.62pt x 289.08pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 685.
+<figure/unnamed-chunk-2-1.pdf, id=512, 433.62pt x 289.08pt>
 File: figure/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-2-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-2-1.pdf  used on input line 662.
+Package pdftex.def Info: figure/unnamed-chunk-2-1.pdf  used on input line 698.
 (pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
 
 
-LaTeX Warning: Float too large for page by 22.21031pt on input line 667.
+LaTeX Warning: Float too large for page by 32.26587pt on input line 703.
 
-<figure/unnamed-chunk-3-1.pdf, id=498, 361.35pt x 237.88875pt>
+[27] [28pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.12}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.709 
+       <./figure/unnamed-chunk-2-1.pdf>]
+<figure/unnamed-chunk-3-1.pdf, id=531, 361.35pt x 237.88875pt>
 File: figure/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-3-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-3-1.pdf  used on input line 693.
+Package pdftex.def Info: figure/unnamed-chunk-3-1.pdf  used on input line 729.
 (pdftex.def)             Requested size: 361.34912pt x 237.88815pt.
-[25] [26
-pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.699 
-       <./figure/unnamed-chunk-2-1.pdf>] [27
-pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.707 
+ [29pdfTeX warning (ext4): destination with the same identifier (name{figure.13
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.741 
        <./figure/unnamed-chunk-3-1.pdf>]
-<figure/unnamed-chunk-4-1.pdf, id=526, 361.35pt x 289.08pt>
+<figure/unnamed-chunk-4-1.pdf, id=543, 361.35pt x 289.08pt>
 File: figure/unnamed-chunk-4-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-4-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-4-1.pdf  used on input line 738.
+Package pdftex.def Info: figure/unnamed-chunk-4-1.pdf  used on input line 774.
 (pdftex.def)             Requested size: 361.34912pt x 289.07928pt.
- [28] [29
-pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.756 \item \textbf
-                   {Nodes and Edges}: Mathematically, a network graph, \(G\)... <./figure/unnamed-chunk-4-1.pdf>]
+ [30] [31pdfTeX warning (ext4): destination with the same identifier (name{figu
+re.14}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.792 \item \textbf
+                   {Nodes and Edges}: Mathematically, a network graph, \(G\)...
+ <./figure/unnamed-chunk-4-1.pdf>]
 ! Undefined control sequence.
-l.767 \text
+l.803 \text
            {Degree}(v) = \sum_{w \in V} A(v, w)
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -776,7 +1010,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.772 \text
+l.808 \text
            {In-Degree}(v) = \sum_{w \in V} A(w, v)
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -785,7 +1019,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.775 \text
+l.811 \text
            {Out-Degree}(v) = \sum_{w \in V} A(v, w)
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -794,68 +1028,201 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Overfull \hbox (150.86104pt too wide) in paragraph at lines 795--795
-[][]\OT1/cmtt/m/it/10 #plot(lesmis_graph, layout = layout, vertex.label.cex = 0.7, main = "Character Interactions in Les Mis^^Serables")[][] 
+Overfull \hbox (150.86104pt too wide) in paragraph at lines 831--831
+[][]\OT1/cmtt/m/it/10 #plot(lesmis_graph, layout = layout, vertex.label.cex = 0
+.7, main = "Character Interactions in Les Mis^^Serables")[][] 
  []
 
-[30]
-Underfull \hbox (badness 10000) in paragraph at lines 816--821
+[32]
+
+! Package inputenc Error: Unicode character ° (U+B0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.847 ...uth. And latitude values range from -90°
+                                                   (South Pole) to +90° (No...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! Package inputenc Error: Unicode character ° (U+B0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.847 ...es range from -90° (South Pole) to +90°
+                                                   (North Pole). The equator...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! Package inputenc Error: Unicode character ° (U+B0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.847 ...thern and Southern Hemispheres, is at 0°
+                                                   latitude.
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! Package inputenc Error: Unicode character ° (U+B0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.849 And longitude values range from -180°
+                                             to +180°. The prime meridian, ...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! Package inputenc Error: Unicode character ° (U+B0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.849 ...gitude values range from -180° to +180°
+                                                  . The prime meridian, whic...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! Package inputenc Error: Unicode character ° (U+B0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.849 ...80°. The prime meridian, which is at 0°
+                                                   longitude, runs from the ...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! Package inputenc Error: Unicode character ° (U+B0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.852 ...urface. For example, the coordinates (0°
+                                                   N, 0° E) would indicate ...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+! Package inputenc Error: Unicode character ° (U+B0)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.852 ... For example, the coordinates (0° N, 0°
+                                                   E) would indicate the int...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 852--857
 
  []
 
-<figure/unnamed-chunk-6-1.pdf, id=555, 361.35pt x 361.35pt>
+<figure/unnamed-chunk-6-1.pdf, id=573, 361.35pt x 361.35pt>
 File: figure/unnamed-chunk-6-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-6-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-6-1.pdf  used on input line 844.
+Package pdftex.def Info: figure/unnamed-chunk-6-1.pdf  used on input line 880.
 (pdftex.def)             Requested size: 361.34912pt x 361.34912pt.
-[31]
-<figure/unnamed-chunk-7-1.pdf, id=562, 361.35pt x 361.35pt>
+[33]
+<figure/unnamed-chunk-7-1.pdf, id=579, 361.35pt x 361.35pt>
 File: figure/unnamed-chunk-7-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-7-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-7-1.pdf  used on input line 867.
+Package pdftex.def Info: figure/unnamed-chunk-7-1.pdf  used on input line 903.
 (pdftex.def)             Requested size: 361.34912pt x 361.34912pt.
- [32
-pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.873 
-       <./figure/unnamed-chunk-6-1.pdf>] [33
-pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.881 3
-       D data visualisation is an approach that employs three-dimensional gr... <./figure/unnamed-chunk-7-1.pdf>]
-<figure/3d1-1.pdf, id=587, 505.89pt x 505.89pt>
+ [34pdfTeX warning (ext4): destination with the same identifier (name{figure.15
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.909 
+       <./figure/unnamed-chunk-6-1.pdf>] [35pdfTeX warning (ext4): destination 
+with the same identifier (name{figure.16}) has been already used, duplicate ign
+ored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.917 3
+       D data visualisation is an approach that employs three-dimensional gr...
+ <./figure/unnamed-chunk-7-1.pdf>]
+<figure/3d1-1.pdf, id=604, 505.89pt x 505.89pt>
 File: figure/3d1-1.pdf Graphic file (type pdf)
 <use figure/3d1-1.pdf>
-Package pdftex.def Info: figure/3d1-1.pdf  used on input line 902.
+Package pdftex.def Info: figure/3d1-1.pdf  used on input line 938.
 (pdftex.def)             Requested size: 433.62pt x 433.62885pt.
- [34] [35
-pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.939 \end{document}
-                     <./figure/3d1-1.pdf>] [36] (./main_file.aux)
- ***********
-LaTeX2e <2023-06-01> patch level 1
-L3 programming layer <2023-10-10>
- ***********
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 975.
+ [36] [37pdfTeX warning (ext4): destination with the same identifier (name{figu
+re.17}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.975 \end{document}
+                     <./figure/3d1-1.pdf>] [38]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 975.
+ (./main_file.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 975.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 975.
 Package rerunfilecheck Info: File `main_file.out' has not changed.
-(rerunfilecheck)             Checksum: 7D6933A246C01FB8BCA76E32091B9E25;11854.
+(rerunfilecheck)             Checksum: 8D5CA85BC8955C8D2B1C4825ABAB1E17;4443.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 975.
  ) 
 Here is how much of TeX's memory you used:
- 9782 strings out of 476463
- 155933 string characters out of 5799821
- 1942043 words of memory out of 5000000
- 31251 multiletter control sequences out of 15000+600000
- 563960 words of font info for 56 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 75i,9n,79p,996b,522s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on main_file.pdf (36 pages, 1563032 bytes).
+ 6555 strings out of 492649
+ 97256 string characters out of 6129622
+ 201676 words of memory out of 5000000
+ 10219 multiletter control sequences out of 15000+600000
+ 9196 words of font info for 33 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 28i,9n,35p,977b,404s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><
+/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb><
+/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
+usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></us
+r/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/lo
+cal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loca
+l/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/t
+exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/te
+xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texl
+ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texli
+ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on main_file.pdf (38 pages, 7763786 bytes).
 PDF statistics:
- 702 PDF objects out of 1000 (max. 8388607)
- 593 compressed objects within 6 object streams
- 138 named destinations out of 1000 (max. 500000)
- 508 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 705 PDF objects out of 1000 (max. 8388607)
+ 606 compressed objects within 7 object streams
+ 143 named destinations out of 1000 (max. 500000)
+ 523 words of extra memory for PDF output out of 10000 (max. 10000000)
 

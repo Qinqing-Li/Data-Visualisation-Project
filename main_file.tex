@@ -69,19 +69,62 @@
 \section{Introduction}
 
 \subsection{Motivation and Background}
-Motivations for having Data Visualisations - Case Example
+Motivations for having Data Visualisations - Case Example 1
 \\  
 \\Florence Nightingale was not only a social reformer and the founder of modern nursing but also a pioneering statistician. It was her application of data visualisation during the Crimean War that transformed the field of healthcare and pushed for social reform.
 \\  
-\\During the Crimean War, Nightingale recognised that unsanitary hospital conditions were claiming more lives than the battlefield itself. With the help of William Farr, Nightingale created the coxcomb aimed to illustrate the toll of preventable mortality on soldiers.
+\\During the Crimean War, Nightingale recognised that unsanitary hospital conditions were claiming more lives than the battlefield itself. With the help of William Farr, Nightingale created the coxcomb aimed to illustrate the toll of preventable mortality on soldiers, as shown in Figure \ref{fig:coxcomb}.
 \\  
-\\``Diagram of the causes of mortality in the army in the East" by Florence Nightingale 
-Image Source: Wikimedia Commons
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{Nightingale-mortality.jpg}
+    \caption{``Diagram of the causes of mortality in the army in the East", in 1858 by Florence Nightingale}
+    \label{fig:coxcomb}
+\end{figure}
 \\  
 \\The coxcomb, resembling an unconventional pie chart, partitioned mortality by causes. Blue indicates preventable deaths, red indicates deaths by wounds, and black indicates other causes.
 The blue areas outweighed the red and black sections combined, highlighting the disproportionate impact of unsanitary hospital conditions on the mortality rate.
-\\  
+\\   
 \\Nightingale leveraged the compelling visualisations in her advocacy efforts, presenting them to MPs and government officials who otherwise are unlikely to read or understand statistical reports. Nightingale successfully persuaded Queen Victoria, head of the British Army at the time, to allocate funding for the improvement of better conditions in military hospitals.
+\\  
+\\Motivations for having Data Visualisations - Case Example 2
+\\  
+\\Sometimes, one glance is enough to convey the most powerful idea. Edward Hawkins, a British climate scientist and Professor of climate science at the University of Reading, is renowned for his exceptional data visualizations of climate change.
+\\ 
+\\In 2018, Edward Hawkins was invited to deliver a lecture on climate change in Wales to an audience with diverse backgrounds. It was important to effectively convey the growing urgency surrounding global warming. To achieve this, he created a chart that used just colours, without any words, titles, or legends, as shown in Figure \ref{fig:global}. This seemingly simple yet remarkably powerful chart visually illustrated the Earth's warming trend since 1850.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{global.png}
+    \caption{``Latest global stripes (1850-2020)", by Edward Hawkins}
+    \label{fig:global}
+\end{figure}
+\\Known as the ``warming stripes," this chart cleverly employs blues to indicate cooler-than-average years and reds to signify hotter-than-average years. Its influence reached far and wide, gracing the front pages of major media outlets and featured in news broadcasts worldwide. It became a symbol in climate change demonstrations. Arguably, it stands as one of the most iconic graphics in modern times.
+\\  
+\\  
+\\Misuses of Data Visualisation - Case Example 1
+\\  
+\\Inappropriate data visualization conceals trends rather than revealing them. Figure \ref{fig:misuse1} illustrates an instance of this issue. On the left-hand side, an inappropriate scale was used --- the y-scale ranging from 0 to 30 million dollars, obscuring the fluctuations in payroll spending. Conversely, on the right-hand side, observe that there's a significant increase of over 500,000 dollars in just two months. This revelation is substantial; considering inflation, 500,000 dollars in 1937 is worth well over 10 million dollars today.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{misuse1.png}
+    \caption{Inappropriate use of data visualisation}
+    \label{fig:misuse1}
+\end{figure}
+\\
+\\Misuses of Data Visualisation - Case Example 2
+\\  
+\\Data visualization can be misused, leading to disastrous consequences. One striking example of such misuse is found in the Kallikak Family tree, which was one of the most prominent eugenic narratives of the 20th century.
+\\  
+\\The visualization (as shown in Figure \ref{fig:familytree}) was created by the psychologist Henry Goddard and presented in his 1912 book, ``The Kallikak Family: A Study in the Heredity of Feeble-Mindedness." Goddard's narrative centered around Martin Kallikak, a soldier who, in addition to his marriage to a respected citizen, had a one-night stand with a ``feeble-minded" maid. Goddard believed that intellectual disabilities were inherited traits. In Goddard's account, the legitimate family was successful, while the children of the ``feeble-minded" maid were labeled as "the lowest types of human beings." However, research has since revealed that the entire story was fictitious, as there was no record of the maid's existence.
+\\  
+\\Regrettably, the Kallikak family tree became a central element in the eugenics movement for decades afterward. It was featured in the 1935 Nazi propaganda film ``Das Erbe" (The Inheritance), which was used to promote public acceptance of Nazi eugenics laws. This propaganda laid the groundwork for the forced sterilization of approximately 400,000 people under Nazi eugenics policies.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{familytree.jpg}
+    \caption{The Kallikak Family tree, in 1912 by Henry Goddard }
+    \label{fig:familytree}
+\end{figure}
 
 \subsection{Computing and Data Visualisation}
 XXX
@@ -570,7 +613,7 @@ In this chapter, we explore two powerful data visualisation techniques: heatmaps
 
 \subsubsection{Heatmaps, correlation matrix and AIC score}
 \\  
-\\The foundation of a heatmap is a data matrix $M$, where each entry in this matrix represents an observation.
+\\The foundation of a heatmap is a data matrix $M$, where each entry in this matrix represents an observation:
 $$M =
 \left[
 \begin{array}{cccc}
@@ -579,23 +622,16 @@ $$M =
     \vdots & \vdots & \ddots & \vdots \\  
     M_{i1} & M_{i2} & \ldots & M_{ij}
 \end{array}
-\right]
+\right].
 $$
 \\Therefore, the first step to create a heatmap is to organize the data into columns and rows. In Figure~\ref{fig:fire-by-months-fy13-22}, the structured data is displayed as a grid of coloured cells, where the colour intensity corresponds to the underlying frequency.
 \\  
-\\Heatmaps serve as powerful tools for visualizing relationships between covariables within a model. An example of the necessity to analyze a matrix of correlations between variables is found in regression models. In the real world, variables are often correlated, and completely independent relationships are seldom encountered. Therefore, the analysis of pairwise correlations becomes essential. Significantly impacted by highly correlated variables, the regression model requires the selection of one variable from the correlated set. The selection is based on the identification of a regression model with the lowest Akaike Information Criterion (AIC) score among these variables. 
+\\Heatmaps serve as powerful tools for visualizing relationships between covariables within a model. An example of the necessity to analyze a matrix of correlations between variables is found in regression models. In the real world, variables are often correlated, and completely independent relationships are seldom encountered. Therefore, the analysis of pairwise correlations becomes essential. Significantly impacted by highly correlated variables, the regression model requires the selection of one variable from the correlated set. The selection is based on the identification of a regression model with the lowest Akaike Information Criterion (AIC) score among these variables: 
 
-$$AIC = -2 \l(\hat{\mathbf{\theta}})+2 \dim (\mathbf{\theta})$$
+$$AIC = -2 \l(\hat{\mathbf{\theta}})+2 \dim (\mathbf{\theta}),$$
 \\where $\l(\hat{\mathbf{\theta}})$ is the log-likelihood function, which is used to find the Maximum Likelihood Estimator (MLE) of a distribution.
 \\  
-\\The AIC measures the extent to which the linear model fits the dataset. To obtain the best model, minimise the AIC score. In other words, the objective is to have the trend explained by the regression model, while avoiding overfitting that captures the noise in the dataset, ultimately leading to inaccurate predictions, as demonstrated in Figure \ref{fig:noisy}.
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.7\textwidth]{overfitting.png}
-    \caption{Danger of overfitting the regression model}
-    \label{fig:noisy}
-\end{figure}
+\\The AIC measures the extent to which the linear model fits the dataset. To obtain the best model, minimise the AIC score. In other words, the objective is to have the trend explained by the regression model, while avoiding overfitting that captures the noise in the dataset, ultimately leading to inaccurate predictions.
 
 \subsubsection{Treemaps}
 Treemaps are a visualisation method specifically designed for hierarchical data structures. They represent data as nested rectangles, where each rectangle represents a part of the whole. Treemaps offer a visually appealing and efficient way to convey the hierarchical composition of data. The size and color of each rectangle can be used to encode additional information.
