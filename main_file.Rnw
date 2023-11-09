@@ -1056,15 +1056,18 @@ From Figure~\ref{fig:crime rate london}, we can discern the safety levels of eac
 \subsection{3D and Interactive Visualisations}
 ggplot2 is one of the most popular data visualisation libraries in R, but it is primarily designed for 2D data visualisation. Directly creating 3D views with ggplot2 can be challenging.
 
-rgl: This is a widely-used package for 3D visualisations. It allows you to create interactive 3D scatter plots, line plots, and more, and view them in a separate window.
+
+R provides several packages for 3D visualization, such as rgl, plot3D, rayshader, and others, which are specifically designed for three-dimensional data. These packages offer the capability to create 3D scatter plots, surface plots, heat maps, contour maps, and more.
+
+
+\textbt{rgl}: This is one of the most popular R packages for creating interactive 3D charts. It supports various types of 3D graphics including points, lines, and surfaces, and allows users to interactively rotate, zoom, and pan the view.\\
+\textbt{scatterplot}：This package provides a function to create 3D scatter plots. It does not support interactive manipulation, but the generated graphics are well-suited for display in static reports.
 
 3D data visualisation is an approach that employs three-dimensional graphics to represent complex data structures, allowing for an immersive exploration of information. Unlike traditional 2D visualisations (like bar graphs or line charts), 3D visualisations can convey an additional dimension of data, making them particularly valuable in specific contexts.
 
 Our first example will be  a scatter plot. We can use scatterplot3d package to help us for data visualisation.
-\section{Trees Dataset in R}
 
-
-<<3d1, echo=TRUE, fig.cap='3d scatter plot'>>=
+<<3d1, echo=TRUE, fig.height=4, fig.width=4, fig.cap='3d scatter plot'>>=
 
 # Generate colors based on the Volume variable
 colors <- colorRampPalette(c("blue", "red"))(length(unique(trees$Volume)))
@@ -1079,6 +1082,9 @@ scatterplot3d(trees$Girth, trees$Height, trees$Volume,
 
 @
 
+
+
+\section{Trees Dataset in R}
 
 
 

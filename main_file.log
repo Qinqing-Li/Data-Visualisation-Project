@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.27)  9 NOV 2023 21:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.27)  9 NOV 2023 22:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1095,34 +1095,69 @@ as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.994 
-       <./figure/beamer-unnamed-chunk-6-1.pdf>] [35
+       <./figure/beamer-unnamed-chunk-6-1.pdf>]
+! Undefined control sequence.
+l.1004 \textbt
+              {rgl}: This is one of the most popular R packages for creating...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<recently read> \textbt 
+                        
+l.1005 \textbt
+              {scatterplot}：This package provides a function to create 3D ...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Unicode character ： (U+FF1A)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1005 \textbt{scatterplot}：
+                              This package provides a function to create 3D ...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+[35
 pdfTeX warning (ext4): destination with the same identifier (name{figure.17}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1003 
+l.1006 
         <./figure/beamer-unnamed-chunk-7-1.pdf>]
-<figure/beamer-3d1-1.pdf, id=615, 505.89pt x 505.89pt>
+<figure/beamer-3d1-1.pdf, id=615, 289.08pt x 289.08pt>
 File: figure/beamer-3d1-1.pdf Graphic file (type pdf)
 <use figure/beamer-3d1-1.pdf>
-Package pdftex.def Info: figure/beamer-3d1-1.pdf  used on input line 1024.
-(pdftex.def)             Requested size: 433.62pt x 433.62885pt.
- [36] [37
+Package pdftex.def Info: figure/beamer-3d1-1.pdf  used on input line 1027.
+(pdftex.def)             Requested size: 289.07928pt x 289.09251pt.
+ [36
 pdfTeX warning (ext4): destination with the same identifier (name{figure.18}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1051 \subsection
-                  {Healthcare Data Visualisation} <./figure/beamer-3d1-1.pdf>]
-[38] (./main_file.aux)
+l.1048 \section
+               {Practical Implementations} <./figure/beamer-3d1-1.pdf>]
+[37] (./main_file.aux)
 Package rerunfilecheck Info: File `main_file.out' has not changed.
 (rerunfilecheck)             Checksum: 85C00D05D876F360C9806EACC2161FC6;11662.
  ) 
 Here is how much of TeX's memory you used:
- 9926 strings out of 476025
- 160371 string characters out of 5790016
+ 9927 strings out of 476025
+ 160376 string characters out of 5790016
  1871388 words of memory out of 5000000
- 30098 multiletter control sequences out of 15000+600000
+ 30100 multiletter control sequences out of 15000+600000
  518705 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,9n,76p,998b,520s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1143,10 +1178,10 @@ live/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texl
 ive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texli
 ve/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive
 /2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main_file.pdf (38 pages, 7826134 bytes).
+Output written on main_file.pdf (37 pages, 7826173 bytes).
 PDF statistics:
- 742 PDF objects out of 1000 (max. 8388607)
- 619 compressed objects within 7 object streams
- 135 named destinations out of 1000 (max. 500000)
+ 738 PDF objects out of 1000 (max. 8388607)
+ 616 compressed objects within 7 object streams
+ 134 named destinations out of 1000 (max. 500000)
  525 words of extra memory for PDF output out of 10000 (max. 10000000)
 
