@@ -151,11 +151,11 @@ In this section, we unveil the datasets used throughout our study. This section 
 \textbf{Trees dataset}: The trees dataset, available as a built-in dataset in R, offers measurements from 31 felled black cherry trees and provides insights into the relationship between a tree's girth, its height, and the volume of timber it can produce. The dataset contains 3 variables: Girth: The diameter of the tree, Height: The height of the tree, Volume: The volume of timber that the tree can produce.\\
 
 \subsection{Structure and Organisation of the Thesis}
-The thesis begins with Chapter 1: "Theoretical Foundations of Data Visualisation", an introductory section that lays the theoretical foundation for the subsequent discussions.\\
+\noindent The thesis begins with Chapter 1: "Theoretical Foundations of Data Visualisation", an introductory section that lays the theoretical foundation for the subsequent discussions.\\
 
-The crux of this document, Chapter 2: "Modern Methods of Data Visualisation", conducts a detailed exploration of various modern methods of data visualisation. This chapter offering an in-depth analysis and critical evaluation of their applications, strengths, and limitations.\\
+\noindent The crux of this document, Chapter 2: "Modern Methods of Data Visualisation", conducts a detailed exploration of various modern methods of data visualisation. This chapter offering an in-depth analysis and critical evaluation of their applications, strengths, and limitations.\\
 
-Chapter 3: "Practical Implementation" ventures into the practical application of Python Dash and R Shiny for constructing interactive data visualisation dashboards. Subsequently, Chapter 5: "Case Studies" presents case studies, which serve as practical demonstrations of the efficacy and relevance of the discussed visualisation methods in resolving real-world problems. Finally, Chapter 6 "State-of-the-Art Approaches" critically examines state-of-the-art approaches in data visualisation, highlighting emerging trends, methodologies, and technologies in the field.
+\noindent Chapter 3: "Practical Implementation" ventures into the practical application of Python Dash and R Shiny for constructing interactive data visualisation dashboards. Subsequently, Chapter 5: "Case Studies" presents case studies, which serve as practical demonstrations of the efficacy and relevance of the discussed visualisation methods in resolving real-world problems. Finally, Chapter 6 "State-of-the-Art Approaches" critically examines state-of-the-art approaches in data visualisation, highlighting emerging trends, methodologies, and technologies in the field.
 
 \newpage 
 
@@ -168,6 +168,37 @@ Creating effective data visualisations requires a robust theoretical framework u
 
 \textbf{Guiding Principles for Data Representation}\\
 The theoretical framework of data visualisation involves guiding principles dictating visual representation of data. These principles include accuracy, emphasizing faithful reflection of underlying data to reduce distortion or misinterpretation; simplicity, advocating for streamlined visuals to convey information effectively; clarity, ensuring visuals are easily understood without unnecessary complexity; relevance, presenting information pertinent to the message or question addressed; and consistency, maintaining uniform use of visual elements like color coding and labeling throughout a visualisation.\\
+
+\begin{figure}[htbp]
+  \centering
+  \begin{minipage}[b]{0.45\linewidth}
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=\linewidth]{figure/beamer-messygraph-1} 
+
+}
+
+
+\end{knitrout}
+    \label{fig:messygraph}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.45\linewidth}
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=\linewidth]{figure/beamer-cleargraph1-1} 
+
+}
+
+
+\end{knitrout}
+    \label{fig:cleargraph1}
+  \end{minipage}
+\caption{Comparison of visualisations of the distribution of sepal and petal legth across three flower species}
+\end{figure}
+
 
 \textbf{Theoretical Framework and Visual Perception}\\
 Understanding how the human brain processes visual information is a fundamental aspect of data visualisation theory. This knowledge plays a crucial role in designing visualisations that effectively connect with viewers. It encompasses several key considerations: Gestalt Principles, which encompass proximity, similarity, and continuity, affecting how visual elements are grouped and interpreted; Color Theory, involving the strategic use of color contrasts and harmonies to improve clarity and impact; and the management of Cognitive Load, which emphasizes the importance of reducing mental effort needed to process information.\\
@@ -294,26 +325,17 @@ Linear regression lines are often featured in scatter plots to give readers more
 \textbf{Scatter Plots in Practice}\\
 In this example, we'll create a scatter plot that visualises the relationship between two variables - the weight of cars and the amount of miles traveled per gallon of petrol. We'll use the "mtcars" R dataset.
 
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlcom{# Create a scatter plot of car weight vs MPG from mtcars dataset}
-\hlkwd{library}\hlstd{(ggplot2)}
-\hlkwd{ggplot}\hlstd{(}\hlkwc{data} \hlstd{= mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= wt,} \hlkwc{y} \hlstd{= mpg,} \hlkwc{color} \hlstd{=} \hlkwd{factor}\hlstd{(cyl)))} \hlopt{+}
-  \hlkwd{geom_point}\hlstd{(}\hlkwc{size} \hlstd{=} \hlnum{3}\hlstd{,} \hlkwc{alpha} \hlstd{=} \hlnum{0.7}\hlstd{)} \hlopt{+}  \hlcom{# Larger points with transparency}
-  \hlkwd{geom_smooth}\hlstd{(}\hlkwc{method} \hlstd{=} \hlstr{"lm"}\hlstd{,} \hlkwc{se} \hlstd{=} \hlnum{FALSE}\hlstd{,} \hlkwc{color} \hlstd{=} \hlstr{"red"}\hlstd{,} \hlkwc{linewidth} \hlstd{=} \hlnum{1}\hlstd{)} \hlopt{+}  \hlcom{# Linear regression trend line}
-  \hlkwd{labs}\hlstd{(}
-    \hlkwc{x} \hlstd{=} \hlstr{"Weight (1000 lbs)"}\hlstd{,}
-    \hlkwc{y} \hlstd{=} \hlstr{"Miles per Gallon"}\hlstd{,}
-    \hlkwc{color} \hlstd{=} \hlstr{"Cylinders"}
-  \hlstd{)} \hlopt{+}
-  \hlkwd{scale_color_manual}\hlstd{(}\hlkwc{values} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"4"} \hlstd{=} \hlstr{"grey"}\hlstd{,} \hlstr{"6"} \hlstd{=} \hlstr{"purple"}\hlstd{,} \hlstr{"8"} \hlstd{=} \hlstr{"blue"}\hlstd{))} \hlopt{+}  \hlcom{# Custom color palette}
-  \hlkwd{theme_minimal}\hlstd{()}  \hlcom{# Minimalistic theme}
-\end{alltt}
 
 
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# `geom\_smooth()` using formula = 'y \textasciitilde{} x'}}\end{kframe}\begin{figure}
-\includegraphics[width=\maxwidth]{figure/scatter-plot-1} \caption[Scatter plot of car weights vs MPG]{Scatter plot of car weights vs MPG}\label{fig:scatter-plot}
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# `geom\_smooth()` using formula = 'y \textasciitilde{} x'}}\end{kframe}\begin{figure}[H]
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-scatter-plot-1} 
+
+}
+
+\caption[Scatter plot of car weights vs MPG]{Scatter plot of car weights vs MPG}\label{fig:scatter-plot}
 \end{figure}
 
 \end{knitrout}
@@ -353,7 +375,7 @@ Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the 
 \textbf{Bubble Charts in Practice}
  This bubble plot visualises data from the same dataset as above. The purpose of this plot is to depict the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and color-coding the bubbles based on the number of cylinders (cyl).
 
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{#Create bubble plot }
@@ -371,7 +393,12 @@ Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the 
   \hlkwd{theme}\hlstd{(}\hlkwc{axis.text.x} \hlstd{=} \hlkwd{element_text}\hlstd{(}\hlkwc{angle} \hlstd{=} \hlnum{90}\hlstd{,} \hlkwc{hjust} \hlstd{=}\hlnum{1}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/buble-plot-chunk-1} 
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-buble-plot-chunk-1} 
+
+}
+
+
 \end{knitrout}
 
 \textbf{Analysis of the bubble chart}\\
@@ -432,18 +459,28 @@ This bar chart below illustrates the tooth growth in relation to varying doses o
 \begin{figure}[htbp]
   \centering
   \begin{minipage}[b]{0.45\linewidth}
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=\linewidth]{figure/barchart2-1} 
+
+{\centering \includegraphics[width=\linewidth]{figure/beamer-barchart2-1} 
+
+}
+
+
 \end{knitrout}
     \caption{Tooth Growth by Dose and Supplement (grouping bar chart)}
     \label{fig:barchart2}
   \end{minipage}
   \hfill
   \begin{minipage}[b]{0.45\linewidth}
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-\includegraphics[width=\linewidth]{figure/barchart3-1} 
+
+{\centering \includegraphics[width=\linewidth]{figure/beamer-barchart3-1} 
+
+}
+
+
 \end{knitrout}
     \caption{Tooth Growth by Dose and Supplement (stacked bar chart)}
     \label{fig:barchart3}
@@ -469,7 +506,7 @@ Facilitates the visualisation of differences in frequency or quantity among grou
 The R language uses the $hist()$ function to create histograms. This function takes vectors as input and uses a few more parameters to plot the histogram.\\
 Now, we want to creat a better graph with ggplot2 thanks to the $geom_histogram()$ function and iris dataset.\\
 The iris dataset is a classic dataset in the field of statistics. It was introduced by the British biologist Ronald A. Fisher in 1936 as an example of discriminant analysis. The dataset consists of 150 samples from three species of iris flowers: setosa, versicolor, and virginica. For each sample, four features were measured: the lengths and the widths of the sepals and petals, all in centimeters. The dataset is often used for classification tasks to differentiate between the three species based on the given measurements. It has become a standard test case for many classification algorithms and is widely recognized in the data science community.\\
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{#Create a histogram using ggplot2 for Sepal Length in the Iris dataset}
@@ -486,8 +523,13 @@ The iris dataset is a classic dataset in the field of statistics. It was introdu
   \hlkwd{theme_minimal}\hlstd{()}
 \hlkwd{print}\hlstd{(bar_diagram)}
 \end{alltt}
-\end{kframe}\begin{figure}
-\includegraphics[width=\maxwidth]{figure/hist3-1} \caption[Histogram of Sepal Length in Iris Dataset]{Histogram of Sepal Length in Iris Dataset}\label{fig:hist3}
+\end{kframe}\begin{figure}[H]
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-hist3-1} 
+
+}
+
+\caption[Histogram of Sepal Length in Iris Dataset]{Histogram of Sepal Length in Iris Dataset}\label{fig:hist3}
 \end{figure}
 
 \end{knitrout}
@@ -497,7 +539,7 @@ Here is the expression of KDE euation:
 $$\hat{f}(x) = \frac{1}{nh} \sum_{i=1}^{n} K\left(\frac{x - x_i}{h}\right)$$\\
 The kernel function \( K(u) \) is a normalized non-negative function that satisfies:
 \[ \int K(u) \, du = 1 \]
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# Create a Kernel Density Estimate plot using ggplot2 for Sepal Length in the Iris dataset}
@@ -514,8 +556,13 @@ The kernel function \( K(u) \) is a normalized non-negative function that satisf
   \hlkwd{theme_minimal}\hlstd{()}
 \hlkwd{print}\hlstd{(kde_diagram)}
 \end{alltt}
-\end{kframe}\begin{figure}
-\includegraphics[width=\maxwidth]{figure/kde3-1} \caption[Kernel Density Estimation of Sepal Length in Iris Dataset]{Kernel Density Estimation of Sepal Length in Iris Dataset}\label{fig:kde3}
+\end{kframe}\begin{figure}[H]
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-kde3-1} 
+
+}
+
+\caption[Kernel Density Estimation of Sepal Length in Iris Dataset]{Kernel Density Estimation of Sepal Length in Iris Dataset}\label{fig:kde3}
 \end{figure}
 
 \end{knitrout}
@@ -544,7 +591,7 @@ In this chapter, we explore two powerful data visualisation techniques: heatmaps
 
 
 
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# Obtain the Brazil map data}
@@ -581,8 +628,13 @@ In this chapter, we explore two powerful data visualisation techniques: heatmaps
 ## 1 1 (1-1,1-1) arrange gtable[layout]
 ## 2 2 (2-2,1-1) arrange gtable[layout]
 \end{verbatim}
-\end{kframe}\begin{figure}
-\includegraphics[width=\maxwidth]{figure/spacetime-fy22-1} \caption[Frequency of Fire by Space and Time, FY22]{Frequency of Fire by Space and Time, FY22}\label{fig:spacetime-fy22}
+\end{kframe}\begin{figure}[H]
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-spacetime-fy22-1} 
+
+}
+
+\caption[Frequency of Fire by Space and Time, FY22]{Frequency of Fire by Space and Time, FY22}\label{fig:spacetime-fy22}
 \end{figure}
 
 \end{knitrout}
@@ -590,7 +642,7 @@ In this chapter, we explore two powerful data visualisation techniques: heatmaps
 
 
 
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlstd{heatmap_plot} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(pivot_table,}
@@ -604,8 +656,13 @@ In this chapter, we explore two powerful data visualisation techniques: heatmaps
 
 \hlkwd{print}\hlstd{(heatmap_plot)}
 \end{alltt}
-\end{kframe}\begin{figure}
-\includegraphics[width=\maxwidth]{figure/fire-by-months-fy13-22-1} \caption[Frequency of Fire Occurrences, FY13-22]{Frequency of Fire Occurrences, FY13-22}\label{fig:fire-by-months-fy13-22}
+\end{kframe}\begin{figure}[H]
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-fire-by-months-fy13-22-1} 
+
+}
+
+\caption[Frequency of Fire Occurrences, FY13-22]{Frequency of Fire Occurrences, FY13-22}\label{fig:fire-by-months-fy13-22}
 \end{figure}
 
 \end{knitrout}
@@ -668,7 +725,7 @@ Here, we are going to investigate 'exchange rate dataset' and plot all daily and
 
 
 \begin{figure}
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# Plot daily and 21-day moving average exchange rates of CNY, CAN,}
@@ -695,7 +752,12 @@ Here, we are going to investigate 'exchange rate dataset' and plot all daily and
 \hlstd{cowplot}\hlopt{::}\hlkwd{plot_grid}\hlstd{(combined_plot, p2_legend,} \hlkwc{ncol}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{rel_heights} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{.1}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-2-1} 
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-unnamed-chunk-2-1} 
+
+}
+
+
 \end{knitrout}
 \centering
 \caption{Daily and 21-day moving average exchange rates of CNY, CAN, EUR, HKD, USD to GBP}
@@ -709,7 +771,7 @@ However, from Figure~\ref{fig:all exchange rates}, for example there are huge ga
 
 
 \begin{figure}[H]
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# Plot Double y-axis time series of CNY and EUR to GBP}
@@ -726,7 +788,12 @@ However, from Figure~\ref{fig:all exchange rates}, for example there are huge ga
   \hlkwd{labs}\hlstd{(}\hlkwc{color} \hlstd{=} \hlstr{"Currency"}\hlstd{)} \hlopt{+} \hlkwd{theme_minimal}\hlstd{()} \hlopt{+} \hlkwd{theme}\hlstd{(}\hlkwc{legend.position}\hlstd{=}\hlstr{"bottom"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-3-1} 
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-unnamed-chunk-3-1} 
+
+}
+
+
 \end{knitrout}
 \centering
 \caption{Double y-axis time series of CNY and EUR to GBP}
@@ -763,7 +830,7 @@ In practice, the choice between the additive and multiplicative models often dep
 
 
 \begin{figure}[H]
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# Plot decomposition of addictive time series model}
@@ -771,7 +838,12 @@ In practice, the choice between the additive and multiplicative models often dep
 \hlkwd{plot}\hlstd{(decomposed_ts,} \hlkwc{xlab}\hlstd{=}\hlstr{"Date"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-4-1} 
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-unnamed-chunk-4-1} 
+
+}
+
+
 \end{knitrout}
 \centering
 \caption{Decomposition of addictive time series model of CNY to GBP exchange rates}
@@ -824,7 +896,7 @@ where \(\sigma_{st}\) is the number of shortest paths from node \(s\) to \(t\), 
 
 \begin{figure}[h]
 \centering
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# Plot the graph}
@@ -869,7 +941,7 @@ Here, we are going to construct a geographical map of the Greater London and sho
 \setlength{\belowcaptionskip}{2pt plus 1pt minus 1pt}
 
 \begin{figure}[H]
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# Plot London map by ward}
@@ -877,7 +949,12 @@ Here, we are going to construct a geographical map of the Greater London and sho
   \hlkwd{theme_minimal}\hlstd{()} \hlopt{+} \hlkwd{labs}\hlstd{(}\hlkwc{y}\hlstd{=}\hlstr{"Latitude"}\hlstd{,} \hlkwc{x}\hlstd{=}\hlstr{"Longitude"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-6-1} 
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-unnamed-chunk-6-1} 
+
+}
+
+
 \end{knitrout}
 \centering
 \caption{London Wards Map}
@@ -889,7 +966,7 @@ From Figure~\ref{fig:London Wards Map}, we can all wards of the Greater London a
 
 
 \begin{figure}[H]
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# Plot the Crime rate in London by boroughs}
@@ -900,7 +977,12 @@ From Figure~\ref{fig:London Wards Map}, we can all wards of the Greater London a
   \hlkwd{labs}\hlstd{(}\hlkwc{fill}\hlstd{=}\hlstr{"Crime rate"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/unnamed-chunk-7-1} 
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-unnamed-chunk-7-1} 
+
+}
+
+
 \end{knitrout}
 \centering
 \caption{Crime rate by boroughs in London in 2020}
@@ -920,7 +1002,7 @@ Our first example will be  a scatter plot. We can use scatterplot3d package to h
 \section{Trees Dataset in R}
 
 
-\begin{knitrout}
+\begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# Generate colors based on the Volume variable}
@@ -934,8 +1016,13 @@ Our first example will be  a scatter plot. We can use scatterplot3d package to h
               \hlkwc{ylab}\hlstd{=}\hlstr{"Height (ft)"}\hlstd{,}
               \hlkwc{zlab}\hlstd{=}\hlstr{"Volume (cubic ft)"}\hlstd{)}
 \end{alltt}
-\end{kframe}\begin{figure}
-\includegraphics[width=\maxwidth]{figure/3d1-1} \caption[3d scatter plot]{3d scatter plot}\label{fig:3d1}
+\end{kframe}\begin{figure}[H]
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-3d1-1} 
+
+}
+
+\caption[3d scatter plot]{3d scatter plot}\label{fig:3d1}
 \end{figure}
 
 \end{knitrout}
