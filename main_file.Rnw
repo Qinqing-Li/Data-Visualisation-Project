@@ -146,11 +146,11 @@ In this section, we unveil the datasets used throughout our study. This section 
 \textbf{Trees dataset}: The trees dataset, available as a built-in dataset in R, offers measurements from 31 felled black cherry trees and provides insights into the relationship between a tree's girth, its height, and the volume of timber it can produce. The dataset contains 3 variables: Girth: The diameter of the tree, Height: The height of the tree, Volume: The volume of timber that the tree can produce.\\
 
 \subsection{Structure and Organisation of the Thesis}
-\noindent The thesis begins with Chapter 1: "Theoretical Foundations of Data Visualisation", an introductory section that lays the theoretical foundation for the subsequent discussions.\\
+\noindent The thesis begins with Chapter 2: "Theoretical Foundations of Data Visualisation", an introductory section that lays the theoretical foundation for the subsequent discussions.\\
 
-\noindent The crux of this document, Chapter 2: "Modern Methods of Data Visualisation", conducts a detailed exploration of various modern methods of data visualisation. This chapter offering an in-depth analysis and critical evaluation of their applications, strengths, and limitations.\\
+\noindent The crux of this document, Chapter 3: "Modern Methods of Data Visualisation", conducts a detailed exploration of various modern methods of data visualisation. This chapter offers an in-depth analysis and critical evaluation of their applications, strengths, and limitations.\\
 
-\noindent Chapter 3: "Practical Implementation" ventures into the practical application of Python Dash and R Shiny for constructing interactive data visualisation dashboards. Subsequently, Chapter 5: "Case Studies" presents case studies, which serve as practical demonstrations of the efficacy and relevance of the discussed visualisation methods in resolving real-world problems. Finally, Chapter 6 "State-of-the-Art Approaches" critically examines state-of-the-art approaches in data visualisation, highlighting emerging trends, methodologies, and technologies in the field.
+\noindent Chapter 4: "Practical Implementation" ventures into the practical application of Python Dash and R Shiny for constructing interactive data visualisation dashboards. Subsequently, Chapter 5: "Case Studies" presents case studies, which serve as practical demonstrations of the efficacy and relevance of the discussed visualisation methods in resolving real-world problems. Finally, Chapter 6 "State-of-the-Art Approaches" critically examines state-of-the-art approaches in data visualisation, highlighting emerging trends, methodologies, and technologies in the field.
 
 \newpage 
 
@@ -174,6 +174,8 @@ The theoretical framework of data visualisation involves guiding principles dict
     # Create a messy, busy plot with random sizes and meaningless colors, blue background, and white grid lines
     ggplot(iris, aes(x = Sepal.Length, y = Petal.Length, color = Sepal.Width, size = Sepal.Width)) +
       geom_point(alpha = 0.6, shape = 19) +
+  geom_text(aes(label = paste("(", round(Sepal.Length, 1), ",", round(Petal.Length, 1), ")")),
+            size = 2, hjust = 1, vjust = -1, color = "darkgrey") +
       scale_color_gradient(low = "orange", high = "purple") +
       theme_minimal() +
       theme(panel.background = element_rect(fill = "lightblue"),
@@ -255,7 +257,50 @@ In data visualisation, abstraction operates on multiple levels of granularity. H
     \item \textbf{High-Level Abstraction}: At the highest level, data is represented in a condensed and abstracted form, often as summary statistics or key insights. This level provides a big-picture view.
 \end{enumerate}
 
-INSERT GRAPH!!!
+This is represented in figure~\ref{fig:abs-plots}. The first visualisations of the mtcars dataset is a scatter plot that provides detailed information about the relationship between car weight and miles per gallon, with points colored by the number of cylinders. The second is an abstract visualization using a box-and-whisker plot to provide a high-level summary of the distribution of miles per gallon for different numbers of cylinders. Finally, the third visualisation is a bar plot presenting aggregated information about the average miles per gallon for different numbers of cylinders.
+
+<<abs-plots, echo=FALSE, fig.height=4, fig.width=12, fig.cap='Mtcars dataset visualised on 3 different levels of abstraction'>>=
+# Data
+data(mtcars)
+
+# Level 1: Detailed Scatter Plot
+plot1 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
+  geom_point(size = 3, alpha = 0.8) +
+  labs(
+    #title = "Detailed Scatter Plot",
+    x = "Weight (1000 lbs)",
+    y = "Miles per Gallon",
+    color = "Cylinders"
+  ) +
+  theme_minimal()
+
+# Level 2: Abstract Box-and-Whisker Plot
+plot2 <- ggplot(mtcars, aes(x = factor(cyl), y = mpg, fill = factor(cyl))) +
+  geom_boxplot() +
+  labs(
+    #title = "Abstract Box-and-Whisker Plot",
+    x = "Cylinders",
+    y = "Miles per Gallon",
+    fill = "Cylinders"
+  ) +
+  theme_minimal()
+
+# Level 3: Aggregated Bar Plot
+summary_data <- aggregate(mpg ~ cyl, data = mtcars, FUN = mean)
+
+plot3 <- ggplot(summary_data, aes(x = factor(cyl), y = mpg, fill = factor(cyl))) +
+  geom_bar(stat = "identity", width = 0.7) +
+  labs(
+    #title = "Aggregated Bar Plot",
+    x = "Cylinders",
+    y = "Average Miles per Gallon",
+    fill = "Cylinders"
+  ) +
+  theme_minimal()
+
+# Arrange plots in a grid
+grid.arrange(plot1, plot2, plot3, ncol = 3)
+@
 
 \textbf{Trade-offs Between Abstraction and Information Loss}\\
 While abstraction simplifies complex data, it presents trade-offs. Designers of data visualisation must strike a balance between clarity and detail, generalization and specificity, and context versus precision. Abstraction increases clarity but may sacrifice crucial detailed information necessary for some analytical tasks. It offers a more generalized view accessible to a wider audience but might overlook specific nuances essential for experts. While providing valuable context, high-level abstraction may lack the precision required for precise decision-making.\\ 
@@ -278,8 +323,6 @@ Data types can be broadly categorised into four main types:
 \subsubsection{Matching Data Types with Appropriate Visualisation Techniques}
 Selecting appropriate visualisation techniques is essential for effective data communication. Various data types demand specific visualisation methods for optimal representation. For nominal data, bar charts and stacked bar charts are effective in displaying categorical information and relative proportions. Ordinal data benefits from ordered bar charts, dot plots, or stacked bar charts, maintaining the ranking and order of categories. Interval data is best visualised using line charts, histograms, and box plots, showcasing trends and distributions without assuming a true zero point. Ratio data finds effective representation through scatter plots, histograms, and line charts, enabling precise comparisons and measurements due to the presence of a meaningful zero point.
 
-MAKE GRAPH!!!
-
 \subsection{Colour Theory in Data Visualisation}
 Here, we explore the significance of colour in data visualisation, the principles of colour perception and encoding, and the importance of avoiding misleading visualisations through thoughtful colour choices.\\
 
@@ -287,9 +330,44 @@ Here, we explore the significance of colour in data visualisation, the principle
 Color significantly enhances the impact and comprehension of data visualisations. It serves multiple purposes: distinguishing data points, emphasizing trends, and offering contextual information. It is utilized to encode categorical data, differentiating between various groups with distinct colors, and to represent quantitative data by utilizing color intensity or gradients to portray values or magnitudes. Additionally, color is instrumental in adding context to visualisations through background elements, labels, or annotations, imparting meaning to the data.\\
 
 \textbf{Colour Perception and Colour Encoding in Visualisations}\\
-Understanding color perception in data visualisation is crucial. Key principles involve considering color discrimination, ensuring accessibility for individuals with color vision deficiencies. Careful selection of color schemes aligned with the intended message is essential—for instance, using warm colors like red and orange to indicate caution or warmth, and cool colors like blue and green to convey calmness or coldness. Additionally, attention should be paid to how colors interact when combined; certain combinations might create visual vibrations or impact text legibility.\\
+Understanding color perception in data visualisation is crucial. Key principles involve considering color discrimination, ensuring accessibility for individuals with color vision deficiencies, as is illustrated by figure~\ref{fig:colour-plot}. Careful selection of color schemes aligned with the intended message is essential—for instance, using warm colors like red and orange to indicate caution or warmth, and cool colors like blue and green to convey calmness or coldness. Additionally, attention should be paid to how colors interact when combined; certain combinations might create visual vibrations or impact text legibility.\\
 
-MAKE GRAPH!!!
+<<colour-plot, echo=FALSE, fig.height=3, fig.width=10, fig.cap='Colour perception of a heatmap for by a colour blind person'>>=
+
+# Load dataset
+data(mtcars)
+
+# Heatmap with color encoding for correlations
+correlation_matrix <- cor(mtcars[, c("mpg", "wt", "hp", "qsec")])
+correlation_data <- as.data.frame(as.table(correlation_matrix))
+names(correlation_data) <- c("Variable1", "Variable2", "Correlation")
+
+heatmap_plot1 <- ggplot(correlation_data, aes(x = Variable1, y = Variable2, fill = Correlation)) +
+  geom_tile(color = "white") +
+  scale_fill_gradient2(low = "#1E88E5", high = "#D81B60", mid = "white", midpoint = 0, limit = c(-1, 1), name = "Correlation") +
+  labs(
+    title = "Real Colours",
+    x = NULL,
+    y = NULL
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+heatmap_plot2 <- ggplot(correlation_data, aes(x = Variable1, y = Variable2, fill = Correlation)) +
+  geom_tile(color = "white") +
+  scale_fill_gradient2(low = "#1E88E5", high = "#5D8DB7", mid = "white", midpoint = 0, limit = c(-1, 1), name = "Correlation") +
+  labs(
+    title = "Perception of protan-type colour blind",
+    x = NULL,
+    y = NULL
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+
+# Arrange plots in a grid
+grid.arrange(heatmap_plot1, heatmap_plot2, ncol = 2)
+@
 
 \textbf{Avoiding Misleading Visualisations Due to Colour Choices}\\
 Misleading visualisations often stem from inappropriate or deceptive use of color, requiring precautions to prevent such occurrences. First, maintaining consistency in color usage throughout the visualisation is essential. Employing a uniform color scheme for similar data categories or elements helps establish coherence and understanding. Furthermore, it's crucial to avoid color choices that could distort or exaggerate the data. Overly intense or contrasting colors might mislead interpretations, emphasizing the necessity for judicious color selection.\\
@@ -308,8 +386,6 @@ To begin with, we'll define the key concepts that frame this section:
 This \textbf{Data-Ink Ratio principle}, introduced by Edward Tufte, emphasises maximising the ink (or pixels in digital formats) used to represent the actual data while minimising non-essential ink. A higher data-ink ratio results in a cleaner, more efficient visualisation that reduces clutter and enhances comprehension.\\
 The \textbf{Principle of Minimal Ink} builds on the data-ink ratio. This principle advocates for the removal of any visual elements that do not contribute to the viewer's understanding of the data. Eliminating unnecessary ink (e.g., excessive gridlines or decorations) simplifies the visualisation without sacrificing its effectiveness.\\
 
-MAKE GRAPH!!!
-
 \textbf{Precision, Accuracy, and Scalability}\\
 The concepts that can be mobilised in order to comply by these principles are precision, accuracy, and scalability. Specifically in the context of data visualisation, precision involves striking a balance between presenting sufficient detail for accurate interpretation while avoiding overwhelming complexity. Accuracy is also vital as its role is ensuring faithful representation of true data values to prevent misleading conclusions. Scalability addresses a visualisation's adaptability to varying data sizes and resolutions, demanding the capability to represent both small and large datasets without compromising clarity or performance.
 
@@ -326,8 +402,6 @@ These strategies aim to maintain complexity while lessening the cognitive burden
 
 \subsubsection{Information Overload and Simplification Techniques}
 Addressing information overload in visualisations necessitates the strategic application of simplification techniques. Filtering enables focused data selection, while data reduction aggregates information to highlight overarching trends. Storyboarding structures data presentation, aiding in contextual comprehension, and prioritization ensures critical information is prominently displayed, elevating the visualisation's clarity and impact. These strategies collectively combat overwhelming data or excessive visual elements, enhancing comprehension and the effective communication of insights to viewers.
-
-MAKE GRAPH!!!
 
 
 \newpage
