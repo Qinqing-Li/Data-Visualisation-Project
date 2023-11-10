@@ -115,7 +115,7 @@ When using ggplot2, the following objects are used repeatedly, Such as geom, sca
 \textbf{Faceting} is a powerful feature that allows you to split one plot into multiple plots based on a factor (or factors) included in the dataset. This is particularly useful for exploring and presenting data that has multiple groups or categories.\\
 The \textbf{theme} function plays a crucial role in customizing the non-data components of your plots. The theme system in ggplot2 allows you to fine-tune the aesthetic details of your plot, such as fonts, labels, legends, and background colors. It is an essential tool for making your plots more readable and for creating visually appealing graphics that can be tailored to specific audiences or publication requirements.
 
-\subsection{Dataset}
+\subsection{Datasets}
 In this section, we unveil the datasets used throughout our study. This section delves into the comprehensive depiction of the diverse datasets employed. Each dataset is meticulously introduced, elucidating its source, structure, and relevance to our investigation.\\
 
 \noindent
@@ -146,7 +146,7 @@ In this section, we unveil the datasets used throughout our study. This section 
 \textbf{Trees dataset}: The trees dataset, available as a built-in dataset in R, offers measurements from 31 felled black cherry trees and provides insights into the relationship between a tree's girth, its height, and the volume of timber it can produce. The dataset contains 3 variables: Girth: The diameter of the tree, Height: The height of the tree, Volume: The volume of timber that the tree can produce.\\
 
 \subsection{Structure and Organisation of the Thesis}
-\noindent The thesis begins with Chapter 2: "Theoretical Foundations of Data Visualisation", an introductory section that lays the theoretical foundation for the subsequent discussions.\\
+\noindent The remainder of this thesis is composed by, firstly, Chapter 2: "Theoretical Foundations of Data Visualisation", an introductory section that lays the theoretical foundation for the subsequent discussions.\\
 
 \noindent The crux of this document, Chapter 3: "Modern Methods of Data Visualisation", conducts a detailed exploration of various modern methods of data visualisation. This chapter offers an in-depth analysis and critical evaluation of their applications, strengths, and limitations.\\
 
@@ -161,7 +161,7 @@ This chapter, "Theoretical Foundations of Data Visualisation," delves into the c
 \subsection{Introduction to Data Visualisation Theory}
 Creating effective data visualisations requires a robust theoretical framework underlying every chart, graph, or plot. These theoretical underpinnings not only form the basis of data visualisation but also influence how we represent, perceive, understand, and interpret data.\\ 
 
-\textbf{Guiding Principles for Data Representation}\\
+\noindent \textbf{Guiding Principles for Data Representation}\\
 The theoretical framework of data visualisation involves guiding principles dictating visual representation of data. These principles include accuracy, emphasizing faithful reflection of underlying data to reduce distortion or misinterpretation; simplicity, advocating for streamlined visuals to convey information effectively; clarity, ensuring visuals are easily understood without unnecessary complexity; relevance, presenting information pertinent to the message or question addressed; and consistency, maintaining uniform use of visual elements like color coding and labeling throughout a visualisation.\\
 
 \begin{figure}[htbp]
@@ -225,13 +225,13 @@ The theoretical framework of data visualisation involves guiding principles dict
 \end{figure}
 
 
-\textbf{Theoretical Framework and Visual Perception}\\
+\noindent \textbf{Theoretical Framework and Visual Perception}\\
 Understanding how the human brain processes visual information is a fundamental aspect of data visualisation theory. This knowledge plays a crucial role in designing visualisations that effectively connect with viewers. It encompasses several key considerations: Gestalt Principles, which encompass proximity, similarity, and continuity, affecting how visual elements are grouped and interpreted; Color Theory, involving the strategic use of color contrasts and harmonies to improve clarity and impact; and the management of Cognitive Load, which emphasizes the importance of reducing mental effort needed to process information.\\
 
 \subsection{Visual Perception and Cognition}
 Here, we explore human visual perception, along with the application of cognitive psychology principles in data visualisation and highlight the crucial role of pre-attentive attributes in shaping our perception of data.\\ 
 
-\textbf{Human Visual Perception: Decoding Visual Information}\\
+\noindent \textbf{Human Visual Perception: Decoding Visual Information}\\
 Human visual perception, a remarkable cognitive process, profoundly influences our understanding of the surrounding world. When applied to data visualisation, it elucidates how individuals engage with and derive meaning from visual data representations. Significant aspects of human visual perception within data visualisation encompass pattern recognition, adept at identifying trends, outliers, and relationships in data representations. Additionally, perceptual grouping, where visually similar elements are grouped together, influences the interpretation of data clusters and shapes. Moreover, the hierarchy of perception dictates that certain visual attributes are processed more swiftly and effectively than others, such as color being processed faster than text, influencing the viewer's attention hierarchy.\\
 
 By harnessing the principles of human visual perception, applying insights from cognitive psychology, and leveraging pre-attentive attributes, data visualisation designers can create visualisations that are not only aesthetically pleasing but also cognitively efficient.	
@@ -239,11 +239,11 @@ By harnessing the principles of human visual perception, applying insights from 
 \subsubsection{The Gestalt Principles}
 The Gestalt principles play an important role in the realm of visual perception and design. We'll particularly focus on their relevance to data visualisation and strategies for creating more effective visualisations. Key Gestalt principles crucial in shaping visual information perception include proximity, which groups related elements, similarity that links similar attributes, continuity aiding trend representation, closure for implying connections, and symmetry for balance and aesthetics in visualisations.\\
 
-\textbf{Application of Gestalt Principles in Designing Visualisations}\\
+\noindent \textbf{Application of Gestalt Principles in Designing Visualisations}\\
 Leveraging Gestalt principles in data visualisation design enhances intuitive and effective information communication. Designers strategically employ these principles to group related data for clarity, minimize visual clutter, use color or shape to denote meaningful categories, establish smooth visual paths guiding the viewer's gaze, and imply connections or patterns within complex datasets.
 
 
-\subsection{Data abstraction and Representation}
+\subsection{Data Abstraction and Representation}
 The transformation of raw data into meaningful representations is a pivotal step in data visualisation. This process, known as data abstraction, involves distilling complex datasets into visual forms that convey insights. In this section, we explore data abstraction, the hierarchies and levels of abstraction in data visualisation, and the critical trade-offs between abstraction and the potential loss of information.
 
 \subsubsection{Data Abstraction: Transforming Raw Data}
@@ -302,7 +302,7 @@ plot3 <- ggplot(summary_data, aes(x = factor(cyl), y = mpg, fill = factor(cyl)))
 grid.arrange(plot1, plot2, plot3, ncol = 3)
 @
 
-\textbf{Trade-offs Between Abstraction and Information Loss}\\
+\noindent \textbf{Trade-offs Between Abstraction and Information Loss}\\
 While abstraction simplifies complex data, it presents trade-offs. Designers of data visualisation must strike a balance between clarity and detail, generalization and specificity, and context versus precision. Abstraction increases clarity but may sacrifice crucial detailed information necessary for some analytical tasks. It offers a more generalized view accessible to a wider audience but might overlook specific nuances essential for experts. While providing valuable context, high-level abstraction may lack the precision required for precise decision-making.\\ 
 
 In data visualisation, the art of data abstraction lies in finding the right level of detail that effectively conveys the intended message while minimising the risk of information loss. This balancing act is a critical consideration in the design of informative and meaningful data visualisations.
@@ -326,10 +326,10 @@ Selecting appropriate visualisation techniques is essential for effective data c
 \subsection{Colour Theory in Data Visualisation}
 Here, we explore the significance of colour in data visualisation, the principles of colour perception and encoding, and the importance of avoiding misleading visualisations through thoughtful colour choices.\\
 
-\textbf{The Importance of Colour in Conveying Information}\\
+\noindent \textbf{The Importance of Colour in Conveying Information}\\
 Color significantly enhances the impact and comprehension of data visualisations. It serves multiple purposes: distinguishing data points, emphasizing trends, and offering contextual information. It is utilized to encode categorical data, differentiating between various groups with distinct colors, and to represent quantitative data by utilizing color intensity or gradients to portray values or magnitudes. Additionally, color is instrumental in adding context to visualisations through background elements, labels, or annotations, imparting meaning to the data.\\
 
-\textbf{Colour Perception and Colour Encoding in Visualisations}\\
+\noindent \textbf{Colour Perception and Colour Encoding in Visualisations}\\
 Understanding color perception in data visualisation is crucial. Key principles involve considering color discrimination, ensuring accessibility for individuals with color vision deficiencies, as is illustrated by figure~\ref{fig:colour-plot}. Careful selection of color schemes aligned with the intended message is essential—for instance, using warm colors like red and orange to indicate caution or warmth, and cool colors like blue and green to convey calmness or coldness. Additionally, attention should be paid to how colors interact when combined; certain combinations might create visual vibrations or impact text legibility.\\
 
 <<colour-plot, echo=FALSE, fig.height=3, fig.width=10, fig.cap='Colour perception of a heatmap for by a colour blind person'>>=
@@ -369,7 +369,7 @@ heatmap_plot2 <- ggplot(correlation_data, aes(x = Variable1, y = Variable2, fill
 grid.arrange(heatmap_plot1, heatmap_plot2, ncol = 2)
 @
 
-\textbf{Avoiding Misleading Visualisations Due to Colour Choices}\\
+\noindent \textbf{Avoiding Misleading Visualisations Due to Colour Choices}\\
 Misleading visualisations often stem from inappropriate or deceptive use of color, requiring precautions to prevent such occurrences. First, maintaining consistency in color usage throughout the visualisation is essential. Employing a uniform color scheme for similar data categories or elements helps establish coherence and understanding. Furthermore, it's crucial to avoid color choices that could distort or exaggerate the data. Overly intense or contrasting colors might mislead interpretations, emphasizing the necessity for judicious color selection.\\
 Additionally, providing a clear and concise legend becomes imperative to explain the meaning of colors, especially when dealing with complex or unfamiliar color schemes. A comprehensive legend helps viewers decipher the represented data accurately. User testing stands as another crucial step in the process. Conducting thorough user testing ensures that the chosen color palette effectively conveys the intended message without confusion or misleading the audience. This step validates the visual interpretation and aids in making necessary adjustments to enhance clarity and accuracy in data representation.\\
 
@@ -386,13 +386,13 @@ To begin with, we'll define the key concepts that frame this section:
 This \textbf{Data-Ink Ratio principle}, introduced by Edward Tufte, emphasises maximising the ink (or pixels in digital formats) used to represent the actual data while minimising non-essential ink. A higher data-ink ratio results in a cleaner, more efficient visualisation that reduces clutter and enhances comprehension.\\
 The \textbf{Principle of Minimal Ink} builds on the data-ink ratio. This principle advocates for the removal of any visual elements that do not contribute to the viewer's understanding of the data. Eliminating unnecessary ink (e.g., excessive gridlines or decorations) simplifies the visualisation without sacrificing its effectiveness.\\
 
-\textbf{Precision, Accuracy, and Scalability}\\
+\noindent \textbf{Precision, Accuracy, and Scalability}\\
 The concepts that can be mobilised in order to comply by these principles are precision, accuracy, and scalability. Specifically in the context of data visualisation, precision involves striking a balance between presenting sufficient detail for accurate interpretation while avoiding overwhelming complexity. Accuracy is also vital as its role is ensuring faithful representation of true data values to prevent misleading conclusions. Scalability addresses a visualisation's adaptability to varying data sizes and resolutions, demanding the capability to represent both small and large datasets without compromising clarity or performance.
 
 \subsection{Cognitive Load and Visual Complexity}
 In data visualisation, achieving a balance between complexity and cognitive load is crucial. This section explores the concept of cognitive load in visualisations, strategies to reduce cognitive load while maintaining complexity, and techniques to combat information overload through simplification.\\
 
-\textbf{Exploring the Concept of Cognitive Load in Visualisations}\\
+\noindent \textbf{Exploring the Concept of Cognitive Load in Visualisations}\\
 In data visualisations, cognitive load significantly influences how viewers engage with and comprehend presented data. Striking a balance is crucial to effectively convey information without overwhelming the viewer's cognitive capacity.
 
 \subsubsection{Strategies to Reduce Cognitive Load While Maintaining Complexity}
@@ -410,15 +410,33 @@ Addressing information overload in visualisations necessitates the strategic app
 In this chapter, we explore a variety of powerful visualisation methods, from classic scatter plots and bar charts to advanced techniques like heatmaps and network graphs. Through vivid examples, we'll show when and why each method is used, and delve into the theoretical and mathematical foundations that empower these visualisations to unveil insights hidden within the data.
 
 \subsection{Scatter Plots and Bubble Charts}
-Scatter plots and bubble charts are fundamental data visualisation techniques that provide valuable insights into the relationships and patterns within datasets. These visualisations are particularly effective for representing discrete data through data points, since this bring out easily identifiable comparisons, and reveals trends.
+Scatter plots and bubble charts are fundamental data visualisation techniques that provide valuable insights into the relationships and patterns within datasets. These visualisations are particularly effective for representing discrete data through data points, since this brings out easily identifiable comparisons, and reveals trends.
 
 \subsubsection{Scatter Plots}
-Scatter plots, also known as dot charts or dot density plots, offer a straightforward yet mathematically intriguing method for visualizing data. At their core, they display individual data points as dots along a single axis, where each dot representing a single observation.\\ 
+A scatter plot is a graphical representation of a set of data points in a two-dimensional coordinate system. Each data point is represented by a dot, and the position of the dot is determined by the values of two variables. The \(x\)-axis typically represents one variable, and the \(y\)-axis represents the other.
+\\
+Let's denote the variables as \(X\) and \(Y\), and let \((x_i, y_i)\) represent the coordinates of the \(i\)-th data point on the scatter plot. The scatter plot can be mathematically described as a set of points:
+
+\[ \{(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)\} \]
+
+Here, \(n\) is the number of data points in the set.
+\\
 \\The mathematical interest of dot plots lies in their ability to provide a simple visual representation of data distribution, center, and spread. While they don't rely on complex equations or statistical principles, dot plots make it easy to observe important characteristics of data, such as the mode (the most frequent value), skewness (asymmetry), and potential outliers. \\ 
-\\They're particularly useful for comparing multiple data sets, identifying patterns, and detecting data irregularities. Their simplicity is what makes dot plots a valuable tool for both introductory statistics education and exploratory data analysis.
+\\In addition to displaying individual data points, a scatter plot can be used to identify patterns, trends, and relationships between the two variables. The arrangement of the points on the plot can provide insights into the nature of the relationship between \(X\) and \(Y\). For example, if the points generally form a straight line, it suggests a linear relationship between the variables. If the points are scattered with no clear pattern, it indicates a lack of correlation.
+
 
 \subsubsection{Regression and the Regression Line}
-\textbf{Linear regression} is a fundamental statistical method used to model the relationship between a dependent variable (often denoted as \(Y\)) and one or more independent variables (commonly denoted as \(X\)). The objective of linear regression is to find a linear equation that best represents this relationship. In simple linear regression, with one independent variable, the linear regression line is expressed as:
+\\Regression analysis is a powerful statistical tool used to examine the relationship between two or more variables. It seeks to model the dependency between a dependent variable (often denoted as \\(Y\\)) and one or more independent variables (often denoted as \\(X\\)). In the context of simple linear regression, where only one independent variable is considered, the regression line becomes a central focus.
+
+\\\textbf{The Regression Line}\\
+\\The regression line is the linchpin of regression analysis, encapsulating the essence of the relationship between variables. In simple linear regression, the equation for the regression line can be expressed as:
+
+\\[
+Y = \\beta_0 + \\beta_1 X + \\epsilon
+\\]
+
+Here, \\(\\beta_0\\) represents the intercept, \\(\\beta_1\\) is the slope, \\(X\\) is the independent variable, \\(Y\\) is the dependent variable, and \\(\\epsilon\\) accounts for the error term. The regression line essentially serves as a mathematical model that minimizes the sum of squared differences between the observed and predicted values.
+
 
 \[
 Y = \beta_0 + \beta_1X + \epsilon
@@ -427,8 +445,27 @@ Y = \beta_0 + \beta_1X + \epsilon
 Here, \(\beta_0\) is the intercept, \(\beta_1\) is the slope, \(X\) is the independent variable, and \(\epsilon\) represents the error term. The objective of the linear regression line is to minimise the sum of squared differences between the observed and predicted values of \(Y\), which helps us understand how changes in \(X\) affect \(Y\).\\
 Linear regression lines are often featured in scatter plots to give readers more insight into the dataset being plotted, by representing the overall relationship between variables and, by allowing them to make quick comparisons between individual observations and the regression line.\\
 
+\\\textbf{Calculation of the Regression Line:}\\
+\\The coefficients \\(\\beta_0\\) and \\(\\beta_1\\) are calculated using the method of least squares, a mathematical optimization technique that minimizes the sum of squared residuals. The residual (\\(\\epsilon\\)) is the vertical distance between an observed data point and the corresponding point on the regression line. The formulas for \\(\\beta_0\\) and \\(\\beta_1\\) are:
 
-\textbf{Scatter Plots in Practice}\\
+\\[
+\\beta_1 = \\frac{\\sum (X_i - \\bar{X})(Y_i - \\bar{Y})}{\\sum (X_i - \\bar{X})^2}
+\\]
+
+\\[
+\\beta_0 = \\bar{Y} - \\beta_1 \\bar{X}
+\\]
+
+where \\(\\bar{X}\\) and \\(\\bar{Y}\\) denote the mean values of \\(X\\) and \\(Y\\) respectively.
+
+\\\textbf{The Band of Confidence:}\\
+\\When discussing regression lines, it is essential to consider the band of confidence. This is represented by confidence intervals around the regression line, reflecting the uncertainty associated with predictions. The wider the interval, the greater the uncertainty. Commonly, a 95\% confidence interval is used, indicating that there is a 95\% probability that the true regression line lies within the specified interval.
+
+\\\textbf{Relation to Scatter Plots:}\\
+\\Regression lines find their visual counterpart in scatter plots. A scatter plot displays the observed data points on a graph, with the regression line weaving through them. The closeness of the data points to the regression line indicates the strength of the relationship between the variables. Additionally, the spread of the data points around the line provides insights into the variability and potential outliers.
+
+
+\noident \textbf{Scatter Plots in Practice}\\
 In this example, we'll create a scatter plot that visualises the relationship between two variables - the weight of cars and the amount of miles traveled per gallon of petrol. We'll use the "mtcars" R dataset.
 
 <<scatter-plot, echo=FALSE, fig.height=3, fig.width=4, fig.cap='Scatter plot of car weights vs MPG'>>=
