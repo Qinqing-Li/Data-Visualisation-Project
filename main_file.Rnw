@@ -419,24 +419,17 @@ Let's denote the variables as \(X\) and \(Y\), and let \((x_i, y_i)\) represent 
 
 \[ \{(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)\} \]
 
-Here, \(n\) is the number of data points in the set.
+\\Here, \(n\) is the number of data points in the set.
 \\
 \\The mathematical interest of dot plots lies in their ability to provide a simple visual representation of data distribution, center, and spread. While they don't rely on complex equations or statistical principles, dot plots make it easy to observe important characteristics of data, such as the mode (the most frequent value), skewness (asymmetry), and potential outliers. \\ 
 \\In addition to displaying individual data points, a scatter plot can be used to identify patterns, trends, and relationships between the two variables. The arrangement of the points on the plot can provide insights into the nature of the relationship between \(X\) and \(Y\). For example, if the points generally form a straight line, it suggests a linear relationship between the variables. If the points are scattered with no clear pattern, it indicates a lack of correlation.
 
 
 \subsubsection{Regression and the Regression Line}
-\\Regression analysis is a powerful statistical tool used to examine the relationship between two or more variables. It seeks to model the dependency between a dependent variable (often denoted as \\(Y\\)) and one or more independent variables (often denoted as \\(X\\)). In the context of simple linear regression, where only one independent variable is considered, the regression line becomes a central focus.
+\\Regression analysis is a powerful statistical tool used to examine the relationship between two or more variables. It seeks to model the dependency between a dependent variable (often denoted as \(Y\)) and one or more independent variables (often denoted as \(X\)). In the context of simple linear regression, where only one independent variable is considered, the regression line becomes a central focus.\\
 
 \\\textbf{The Regression Line}\\
 \\The regression line is the linchpin of regression analysis, encapsulating the essence of the relationship between variables. In simple linear regression, the equation for the regression line can be expressed as:
-
-\\[
-Y = \\beta_0 + \\beta_1 X + \\epsilon
-\\]
-
-Here, \\(\\beta_0\\) represents the intercept, \\(\\beta_1\\) is the slope, \\(X\\) is the independent variable, \\(Y\\) is the dependent variable, and \\(\\epsilon\\) accounts for the error term. The regression line essentially serves as a mathematical model that minimizes the sum of squared differences between the observed and predicted values.
-
 
 \[
 Y = \beta_0 + \beta_1X + \epsilon
@@ -446,29 +439,29 @@ Here, \(\beta_0\) is the intercept, \(\beta_1\) is the slope, \(X\) is the indep
 Linear regression lines are often featured in scatter plots to give readers more insight into the dataset being plotted, by representing the overall relationship between variables and, by allowing them to make quick comparisons between individual observations and the regression line.\\
 
 \\\textbf{Calculation of the Regression Line:}\\
-\\The coefficients \\(\\beta_0\\) and \\(\\beta_1\\) are calculated using the method of least squares, a mathematical optimization technique that minimizes the sum of squared residuals. The residual (\\(\\epsilon\\)) is the vertical distance between an observed data point and the corresponding point on the regression line. The formulas for \\(\\beta_0\\) and \\(\\beta_1\\) are:
+\\The coefficients \(\beta_0\) and \(\beta_1\) are calculated using the method of least squares, a mathematical optimization technique that minimizes the sum of squared residuals. The residual (\(\epsilon\)) is the vertical distance between an observed data point and the corresponding point on the regression line. The formulas for \(\beta_0\) and \(\beta_1\) are:
+
+\[
+\beta_1 = \frac{\sum (X_i - \bar{X})(Y_i - \bar{Y})}{\sum (X_i - \bar{X})^2}
+\]
 
 \\[
-\\beta_1 = \\frac{\\sum (X_i - \\bar{X})(Y_i - \\bar{Y})}{\\sum (X_i - \\bar{X})^2}
+\beta_0 = \bar{Y} - \beta_1 \bar{X}
 \\]
 
-\\[
-\\beta_0 = \\bar{Y} - \\beta_1 \\bar{X}
-\\]
-
-where \\(\\bar{X}\\) and \\(\\bar{Y}\\) denote the mean values of \\(X\\) and \\(Y\\) respectively.
+where \(\bar{X}\) and \(\bar{Y}\) denote the mean values of \(X\) and \(Y\) respectively.\\
 
 \\\textbf{The Band of Confidence:}\\
-\\When discussing regression lines, it is essential to consider the band of confidence. This is represented by confidence intervals around the regression line, reflecting the uncertainty associated with predictions. The wider the interval, the greater the uncertainty. Commonly, a 95\% confidence interval is used, indicating that there is a 95\% probability that the true regression line lies within the specified interval.
+\\When discussing regression lines, it is essential to consider the band of confidence. This is represented by confidence intervals around the regression line, reflecting the uncertainty associated with predictions. The wider the interval, the greater the uncertainty. Commonly, a 95\% confidence interval is used, indicating that there is a 95\% probability that the true regression line lies within the specified interval.\\
 
-\\\textbf{Relation to Scatter Plots:}\\
-\\Regression lines find their visual counterpart in scatter plots. A scatter plot displays the observed data points on a graph, with the regression line weaving through them. The closeness of the data points to the regression line indicates the strength of the relationship between the variables. Additionally, the spread of the data points around the line provides insights into the variability and potential outliers.
+\\\textbf{Relation to Scatter Plots}\\
+\\Regression lines find their visual counterpart in scatter plots. A scatter plot displays the observed data points on a graph, with the regression line weaving through them. The closeness of the data points to the regression line indicates the strength of the relationship between the variables. Additionally, the spread of the data points around the line provides insights into the variability and potential outliers.\\
 
 
 \noident \textbf{Scatter Plots in Practice}\\
-In this example, we'll create a scatter plot that visualises the relationship between two variables - the weight of cars and the amount of miles traveled per gallon of petrol. We'll use the "mtcars" R dataset.
+\\In this example, we'll create a scatter plot that visualises the relationship between two variables - the weight of cars and the amount of miles traveled per gallon of petrol. We'll use the "mtcars" R dataset.
 
-<<scatter-plot, echo=FALSE, fig.height=3, fig.width=4, fig.cap='Scatter plot of car weights vs MPG'>>=
+<<scatter-plot, echo=FALSE, fig.height=3, fig.width=4, fig.cap='Scatter plot of car weights vs MPG', message=FALSE>>=
 # Create a scatter plot of car weight vs MPG from mtcars dataset
 library(ggplot2)
 ggplot(data = mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
