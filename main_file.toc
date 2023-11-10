@@ -1,13 +1,13 @@
 \contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Motivation and Background}{3}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Computing and Data Visualisation}{6}{subsection.1.2}%
-\contentsline {subsection}{\numberline {1.3}Dataset}{7}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.3}Datasets}{7}{subsection.1.3}%
 \contentsline {subsection}{\numberline {1.4}Structure and Organisation of the Thesis}{8}{subsection.1.4}%
 \contentsline {section}{\numberline {2}Theoretical Foundations of Data Visualisation}{9}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Introduction to Data Visualisation Theory}{9}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Visual Perception and Cognition}{10}{subsection.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.1}The Gestalt Principles}{10}{subsubsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.3}Data abstraction and Representation}{10}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.3}Data Abstraction and Representation}{10}{subsection.2.3}%
 \contentsline {subsubsection}{\numberline {2.3.1}Data Abstraction: Transforming Raw Data}{10}{subsubsection.2.3.1}%
 \contentsline {subsubsection}{\numberline {2.3.2}Hierarchies and Levels of Abstraction}{11}{subsubsection.2.3.2}%
 \contentsline {subsection}{\numberline {2.4}Data Types and Visualisation Techniques}{12}{subsection.2.4}%
@@ -24,34 +24,34 @@
 \contentsline {subsubsection}{\numberline {3.1.1}Scatter Plots}{16}{subsubsection.3.1.1}%
 \contentsline {subsubsection}{\numberline {3.1.2}Regression and the Regression Line}{16}{subsubsection.3.1.2}%
 \contentsline {subsubsection}{\numberline {3.1.3}Bubble Charts}{18}{subsubsection.3.1.3}%
-\contentsline {subsubsection}{\numberline {3.1.4}Bar Charts}{19}{subsubsection.3.1.4}%
-\contentsline {subsubsection}{\numberline {3.1.5}Different Types of Bar Charts}{20}{subsubsection.3.1.5}%
-\contentsline {paragraph}{Vertical Bar Chart}{20}{section*.2}%
-\contentsline {paragraph}{Horizontal Bar Chart}{20}{section*.3}%
-\contentsline {paragraph}{Multi-set Bar Chart}{20}{section*.4}%
-\contentsline {paragraph}{Stacked bar chart}{20}{section*.5}%
-\contentsline {subsubsection}{\numberline {3.1.6}ToothGrowth Dataset}{20}{subsubsection.3.1.6}%
-\contentsline {subsubsection}{\numberline {3.1.7}Histograms}{22}{subsubsection.3.1.7}%
-\contentsline {subsubsection}{\numberline {3.1.8}Kernel Density Estimation}{23}{subsubsection.3.1.8}%
-\contentsline {subsection}{\numberline {3.2}Heatmaps and Tree Maps}{24}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Heatmaps - Fire in Brazil}{25}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Heatmaps, correlation matrix and AIC score}{27}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}Treemaps}{28}{subsubsection.3.2.3}%
-\contentsline {subsubsection}{\numberline {3.2.4}Use Cases for Treemaps}{28}{subsubsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.3}Line Charts and Time Series Visualisation}{28}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Suitability for Displaying Trends Over Time}{29}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}Showcase real-world examples of time series visualisations}{29}{subsubsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.4}Network Graphs}{34}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}The Mathematics behind Network Graphs:}{34}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Network Graphs in Practice}{35}{subsubsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.5}Sankey Diagrams}{35}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Geographic Maps and Spatial Data Visualisation}{35}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}3D and Interactive Visualisations}{38}{subsection.3.7}%
-\contentsline {section}{\numberline {4}Trees Dataset in R}{39}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Advanced Visualisation Techniques}{39}{subsection.4.1}%
-\contentsline {section}{\numberline {5}Practical Implementations}{39}{section.5}%
-\contentsline {section}{\numberline {6}Case Studies}{39}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Market Analysis Dashboards}{39}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Healthcare Data Visualisation}{39}{subsection.6.2}%
-\contentsline {section}{\numberline {7}State-of-the-Art Approaches}{40}{section.7}%
-\contentsline {section}{\numberline {8}Conclusion}{40}{section.8}%
+\contentsline {subsubsection}{\numberline {3.1.4}Bar Charts}{20}{subsubsection.3.1.4}%
+\contentsline {subsubsection}{\numberline {3.1.5}Different Types of Bar Charts}{21}{subsubsection.3.1.5}%
+\contentsline {paragraph}{Vertical Bar Chart}{21}{section*.2}%
+\contentsline {paragraph}{Horizontal Bar Chart}{21}{section*.3}%
+\contentsline {paragraph}{Multi-set Bar Chart}{21}{section*.4}%
+\contentsline {paragraph}{Stacked bar chart}{21}{section*.5}%
+\contentsline {subsubsection}{\numberline {3.1.6}ToothGrowth Dataset}{21}{subsubsection.3.1.6}%
+\contentsline {subsubsection}{\numberline {3.1.7}Histograms}{23}{subsubsection.3.1.7}%
+\contentsline {subsubsection}{\numberline {3.1.8}Kernel Density Estimation}{24}{subsubsection.3.1.8}%
+\contentsline {subsection}{\numberline {3.2}Heatmaps and Tree Maps}{25}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Heatmaps - Fire in Brazil}{26}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Heatmaps, correlation matrix and AIC score}{28}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Treemaps}{29}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}Use Cases for Treemaps}{29}{subsubsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.3}Line Charts and Time Series Visualisation}{29}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Suitability for Displaying Trends Over Time}{30}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}Showcase real-world examples of time series visualisations}{30}{subsubsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.4}Network Graphs}{35}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}The Mathematics behind Network Graphs:}{35}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Network Graphs in Practice}{36}{subsubsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.5}Sankey Diagrams}{36}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Geographic Maps and Spatial Data Visualisation}{36}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}3D and Interactive Visualisations}{39}{subsection.3.7}%
+\contentsline {section}{\numberline {4}Trees Dataset in R}{40}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Advanced Visualisation Techniques}{40}{subsection.4.1}%
+\contentsline {section}{\numberline {5}Practical Implementations}{40}{section.5}%
+\contentsline {section}{\numberline {6}Case Studies}{40}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Market Analysis Dashboards}{40}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Healthcare Data Visualisation}{40}{subsection.6.2}%
+\contentsline {section}{\numberline {7}State-of-the-Art Approaches}{41}{section.7}%
+\contentsline {section}{\numberline {8}Conclusion}{41}{section.8}%
