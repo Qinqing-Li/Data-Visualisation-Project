@@ -39,19 +39,19 @@
 \contentsline {subsubsection}{\numberline {3.2.3}Treemaps}{27}{subsubsection.3.2.3}%
 \contentsline {subsubsection}{\numberline {3.2.4}Use Cases for Treemaps}{27}{subsubsection.3.2.4}%
 \contentsline {subsection}{\numberline {3.3}Line Charts and Time Series Visualisation}{27}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Suitability for Displaying Trends Over Time}{27}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.1}Suitability for Displaying Trends Over Time}{28}{subsubsection.3.3.1}%
 \contentsline {subsubsection}{\numberline {3.3.2}Showcase real-world examples of time series visualisations}{28}{subsubsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.4}Network Graphs}{32}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}The Mathematics behind Network Graphs:}{32}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Network Graphs in Practice}{33}{subsubsection.3.4.2}%
-\contentsline {subsection}{\numberline {3.5}Sankey Diagrams}{33}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Geographic Maps and Spatial Data Visualisation}{33}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}3D and Interactive Visualisations}{35}{subsection.3.7}%
-\contentsline {section}{\numberline {4}Trees Dataset in R}{37}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Advanced Visualisation Techniques}{37}{subsection.4.1}%
-\contentsline {section}{\numberline {5}Practical Implementations}{37}{section.5}%
-\contentsline {section}{\numberline {6}Case Studies}{37}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Market Analysis Dashboards}{37}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Healthcare Data Visualisation}{37}{subsection.6.2}%
-\contentsline {section}{\numberline {7}State-of-the-Art Approaches}{37}{section.7}%
-\contentsline {section}{\numberline {8}Conclusion}{37}{section.8}%
+\contentsline {subsection}{\numberline {3.4}Network Graphs}{33}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}The Mathematics behind Network Graphs:}{33}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Network Graphs in Practice}{34}{subsubsection.3.4.2}%
+\contentsline {subsection}{\numberline {3.5}Sankey Diagrams}{34}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Geographic Maps and Spatial Data Visualisation}{34}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}3D and Interactive Visualisations}{37}{subsection.3.7}%
+\contentsline {section}{\numberline {4}Trees Dataset in R}{38}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Advanced Visualisation Techniques}{38}{subsection.4.1}%
+\contentsline {section}{\numberline {5}Practical Implementations}{38}{section.5}%
+\contentsline {section}{\numberline {6}Case Studies}{38}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Market Analysis Dashboards}{38}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Healthcare Data Visualisation}{38}{subsection.6.2}%
+\contentsline {section}{\numberline {7}State-of-the-Art Approaches}{39}{section.7}%
+\contentsline {section}{\numberline {8}Conclusion}{39}{section.8}%

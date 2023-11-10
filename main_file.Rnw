@@ -28,6 +28,7 @@ library(stats)
 library(gridExtra)
 library(cowplot)
 library(datasets)
+library(zoo)
 data(ToothGrowth)
 data(mtcars)
 data(trees)
@@ -113,23 +114,33 @@ When using ggplot2, the following objects are used repeatedly, Such as geom, sca
 \textbf{Chord} talks about how data coordinates are mapped to the plane of the graphic. It provdes axis and gridlines to make it possible to read the graph. We can use Cartesian coordinate system, polar coordinates and map projections and so on.\\
 \textbf{Faceting} is a powerful feature that allows you to split one plot into multiple plots based on a factor (or factors) included in the dataset. This is particularly useful for exploring and presenting data that has multiple groups or categories.\\
 The \textbf{theme} function plays a crucial role in customizing the non-data components of your plots. The theme system in ggplot2 allows you to fine-tune the aesthetic details of your plot, such as fonts, labels, legends, and background colors. It is an essential tool for making your plots more readable and for creating visually appealing graphics that can be tailored to specific audiences or publication requirements.
+
 \subsection{Dataset}
 In this section, we unveil the datasets used throughout our study. This section delves into the comprehensive depiction of the diverse datasets employed. Each dataset is meticulously introduced, elucidating its source, structure, and relevance to our investigation.\\
 
 \noindent
-\textbf{The Mtcars dataset}: The \textit{Mtcars} dataset, available as a built-in dataset in R, offers a glimpse into the automotive world of the early 1970s. This dataset encompasses 11 attributes for 32 distinct car models. Some of the variables included are: Miles per Gallon (mpg), Number of cylinders (cly), Horsepower (hp), and Weight of the car in tons (wt).\\
+\textbf{The Mtcars dataset}: The \textit{Mtcars} dataset, available as a built-in dataset in R, offers a glimpse into the automotive world of the early 1970s. This dataset encompasses 11 attributes for 32 distinct car models. Some of the variables included are: mpg: Miles per Gallon, cly: Number of cylinders , hp: Horsepower , and wt: Weight of the car in tons .\\
 
 \noindent
-\textbf{The annual fire in Brazil dataset}: The Fire Information for Resource Management System (FIRMS) provides Near Real-Time (NRT) active fire data from the Moderate Resolution Imaging Spectroradiometer (MODIS), available at NASA. A subset containing historical active fire data of Brazil from 2013 to 2022 contains over 200,000 observations each year was used in this report. This dataset contains 15 variables: latitude: Latitude of active fire data, longitude: Longitude of active fire data, brightness: Brightness of active fire data, scan: Scan resolution, track: Track resolution, acq\_date: Acquisition date, acq\_time: Acquisition time, satellite: Satellite name, instrument: Instrument type, confidence: Confidence level, version: Data version, bright\_t31: Brightness temperature band 31, frp: Fire Radiative Power, daynight: Day or night indicator, type: Fire type.\\
+\textbf{The Tooth Growth dataset}: \textit{The ToothGrowth dataset}, available as a built-in dataset in R, offers the impact of vitamin C on the tooth growth of Guinea pigs. The dataset consists of 60 observations and 3 variables: len: Length of the Guinea pigs' teeth, supp: Method of vitamin C supplementation, and dose: Dose of vitamin C in milligrams per day.\\
 
 \noindent
-\textbf{The Tooth Growth dataset}: \textit{The ToothGrowth dataset}, available as a built-in dataset in R, offers the impact of vitamin C on the tooth growth of Guinea pigs. The dataset consists of 60 observations and 3 variables: len: Length of the Guinea pigs' teeth, supp: Method of vitamin C supplementation, dose: Dose of vitamin C in milligrams per day.\\
+\textbf{The Edgar Anderson's Iris dataset}: The Anderson's iris data, available as a built-in dataset in R, offers the measurements in centimeters of sepal length and width, petal length and width, along with the species name for 50 flowers from each of three species of iris. The dataset consists of 5 variables: Sepal.Length, Sepal.Width, Petal.Length, Petal.Width, and Species: Species name.\\
 
 \noindent
-\textbf{The Edgar Anderson's Iris dataset}: The Anderson's iris data, available as a built-in dataset in R, offers the measurements in centimeters of sepal length and width, petal length and width, along with the species name for 50 flowers from each of three species of iris. The dataset consists of 5 variables: Sepal.Length: Sepal length, Sepal.Width: Sepal width, Petal.Length: Petal length, Petal.Width: Petal width, Species: Species name.\\
+\textbf{The annual fire in Brazil dataset}: The Fire Information for Resource Management System (FIRMS) provides Near Real-Time (NRT) active fire data from the Moderate Resolution Imaging Spectroradiometer (MODIS), available at \href{https://firms.modaps.eosdis.nasa.gov/}{NASA}. A subset containing historical active fire data of Brazil from 2013 to 2022 contains over 200,000 observations each year was used in this report. This dataset contains 15 variables, including latitude: Latitude of active fire data, longitude: Longitude of active fire data, and confidence: Confidence level.\\
 
 \noindent
-\textbf{Exchange rate data}: The exchange rate data, available at the Bank of England, provides daily spot exchange rates against GBP over the time period from 2005 to now (without weekends). A subset of daily spot exchange rate of CNY, CAD, EUR, HKD, and USD against GBP from January 2013 to October 2023 was used in this report. The dataset contains 5 variables: Date: Date of spot exchange rate, CNYtoGBP: Spot exchange rate of CNY against GBP, CANtoGBP: Spot exchange rate of CAD against GBP, EURtoGBP: Spot exchange rate of EUR against GBP, HKDtoGBP: Spot exchange rate of HKD against GBP, USDtoGBP: Spot exchange rate of USD against GBP.\\
+\textbf{The exchange rate data}: The exchange rate data, available at the \href{https://www.bankofengland.co.uk/boeapps/database/index.asp?first=yes&SectionRequired=I&HideNums=-1&ExtraInfo=true&Travel=NIx}{Bank of England}, provides daily spot exchange rates against GBP over the time period from 2005 to now (without weekends). A subset of daily spot exchange rate of CNY (Chinese Yuan), CAD (Canadian Dollar), EUR (Euro), HKD (Hongkong Dollar), and USD (US Dollar) against GBP (Pounds Sterling) from January 2013 to October 2023 was used in this report. The dataset contains 6 variables: `Date`: Date of spot exchange rate and spot exchange rate of CNY, CAN, EUR, HKD, and USD against GBP.\\
+
+\noindent
+\textbf{Statistical GIS Boundary Files for London}: This file, offered by Greater London Autority (GLA) and available at \href{https://data.london.gov.uk/dataset/statistical-gis-boundary-files-london}{London Datastore}, provided a range of key GIS boundary files for ESRI and Map Info covering Greater London, including shape files of London Wards and London Boroughs. This data set includes Name: Name of ward, District: Name of borough, Geometry: Pair of longitude and latitude.\\
+
+\noindent
+\textbf{The crime levels by borough}: This data set, offered by Metropolitan Police Service and available at \href{https://data.london.gov.uk/dataset/recorded_crime_summary}{London Datastore}, counted the number of crimes at three different geographic levels of London (borough, ward, LSOA) per month, according to crime type from 2010 to 2021. This data set contain variables like LookUp\_BoroughName: Name of Borough and X201004: count of crimes during April 2010.\\
+
+\noindent
+\textbf{The Population by Ward and Borough}: This file, offered by Greater London Autority (GLA) and available at \href{https://data.london.gov.uk/dataset/land-area-and-population-density-ward-and-borough}{London Datastore}, provided population for 2001 to 2050 for London wards and boroughs. This data set includes variables like Name: Borough name, Year: population of the year, Population: population of the borough at that year.\\
 
 \noindent
 \textbf{Trees dataset}: The trees dataset, available as a built-in dataset in R, offers measurements from 31 felled black cherry trees and provides insights into the relationship between a tree's girth, its height, and the volume of timber it can produce. The dataset contains 3 variables: Girth: The diameter of the tree, Height: The height of the tree, Volume: The volume of timber that the tree can produce.\\
@@ -725,22 +736,27 @@ XXX %missing Treemaps
 
 \subsection{Line Charts and Time Series Visualisation}
 
-In this chapter, we are going to investigate the intricacies of the line chart and its most common application: time series.\\
-First, a line chart is a statistical representation that uses a Cartesian coordinate system, where each point on the chart corresponds to a pair of coordinates $(x,y)$, to depict changes in numerical values over continuous time intervals or ordered categories. The x-axis typically represents these intervals or categories, while the y-axis conveys quantified data. Hence, data points, represented by a coordinates $\{(x_i,y_i)\}_{1 \leq i \leq n}$, $n$ being the total number of data points. In a line chart, consecutive data points are typically connected by straight lines. The line segment between two points $(x_i,y_i)$ and $(x_{i+1},y_{i+1})$ can be described by the equation of a line in the slope-intercept form: $y=mx+b$, where $m$ is the slope and $b$ is the y-intercept.
+In this chapter, we are going to investigate the intricacies of the line chart and its most common application: time series.
+First, a line chart is a statistical representation that uses a Cartesian coordinate system, where each point on the chart corresponds to a pair of coordinates \((x,y)\), to depict changes in numerical values over continuous time intervals or ordered categories. The x-axis typically represents these intervals or categories, while the y-axis conveys quantified data. Hence, data points are represented by coordinates \(\{(x_i,y_i)\}_{1 \leq i \leq n}\), with \(n\) being the total number of data points. In a line chart, consecutive data points are typically connected by straight lines. The line segment between two points \((x_i,y_i)\) and \((x_{i+1},y_{i+1})\) can be described by the equation of a line in the slope-intercept form: \(y=mx+b\), where \(m\) is the slope and \(b\) is the y-intercept.
+
+A line chart is a series of linear interpolations between pairs of data points. These interpolations assume that the change between two points is uniform or linear, which is a significant simplification of real-world data. This linear approach is mathematically represented as:
+
+\[
+y = y_i + \frac{(y_{i+1} - y_i)}{(x_{i+1} - x_i)} \cdot (x - x_i) \quad \text{for} \quad x_i \leq x \leq x_{i+1}
+\]
+
+This equation highlights that for any point \(x\) between \(x_i\) and \(x_{i+1}\), the corresponding value of \(y\) on the line chart is determined by a linear relation. This method effectively 'fills the gaps' between actual observed data points and provides a continuous view of the data.
 
 \subsubsection{Suitability for Displaying Trends Over Time}
 Line charts effectively visualise data trends over time. By plotting data at intervals like days or years, they highlight trends and patterns. Multiple lines on one chart enable easy data comparison, such as contrasting sales of two products. They aid in recognizing seasonal changes, cyclic events, and unexpected shifts, making them invaluable for forecasting. Due to their simplicity, they're accessible to those with minimal data analysis background. Line charts are a prime choice for time series visualisation.
 
-Time series visualisation is essential in data analysis, showcasing time-ordered data. It reveals long-term trends, helping analysts discern patterns for future planning. It's crucial for spotting seasonality in datasets. This method also identifies anomalies, suggesting areas needing investigation. Predictive modeling, based on historical patterns, becomes feasible, fostering proactive choices. Overlaying multiple data series offers richer comparative analysis. Overall, time series visualisation provides quick insights into chronological data, driving informed decisions by highlighting trends, seasonal changes, and outliers.\\
-\noindent
-\textbf{Limitations:}\\
+Time series visualisation is essential in data analysis, showcasing time-ordered data. It reveals long-term trends, helping analysts discern patterns for future planning. It's crucial for spotting seasonality in datasets. This method also identifies anomalies, suggesting areas needing investigation. Predictive modeling, based on historical patterns, becomes feasible, fostering proactive choices. Overlaying multiple data series offers richer comparative analysis. Overall, time series visualisation provides quick insights into chronological data, driving informed decisions by highlighting trends, seasonal changes, and outliers.
+
 While line charts are excellent for displaying trends over time, they have limitations. They may not be suitable for showing individual data distributions or for data where there's no logical order. eg. too many points, too many lines, too many zeros.
 
 \subsubsection{Showcase real-world examples of time series visualisations}
 
 Here, we are going to investigate 'exchange rate dataset' and plot all daily and 21-day moving average exchange rates in one figure.
-
-
 <<echo=FALSE,message=FALSE,warning=FALSE>>=
 #Read in the data:
 MyData <- read.csv("exchangeRate.csv",
@@ -780,9 +796,7 @@ plot_data <- MyData %>% gather(key="Currency", value="Rate", -Date) %>%
 # Remove "_MA21" from the Currency column for the legend
 plot_data$Currency <- gsub("_MA21", "", plot_data$Currency)
 @
-
-
-\begin{figure}
+\begin{figure}[H]
 <<message=FALSE,warning=FALSE,fig.dim = c(6, 4)>>=
 # Plot daily and 21-day moving average exchange rates of CNY, CAN,
 # EUR, HKD, USD to GBP
@@ -812,37 +826,12 @@ cowplot::plot_grid(combined_plot, p2_legend, ncol=1, rel_heights = c(1, .1))
 \label{fig:all exchange rates}
 \end{figure}
 
+From the first plot of Figure~\ref{fig:all exchange rates}, we can see the the daily CNY, CAN, EUR, HKD, USD versus GBP exchange in the same plot, which provide us an overview of the trend and comparison. Then we employed a 21-day moving average (MA21) to elucidate long-term trends while mitigating short-term fluctuations. This is mathematically represented as 
+\[\text{MA}_{21}(t) = \frac{1}{21} \sum_{k=t-20}^{t} y_k\], 
+where \( y_k \) denotes the exchange rate on day \( k \). This method effectively filters out daily noise, allowing a clearer view of overarching trends in currency movements against the GBP. The overlay of these moving averages on the daily exchange rates in our visualizations provides both a clear comparative and a quantitative perspective.
 
-From the first plot of Figure~\ref{fig:all exchange rates}, we can see the the daily CNY, CAN, EUR, HKD, USD versus GBP exchange in the same plot, which provide us an overview of the trend and comparison. Then we can make the plot smooth by taking averages, which enables easier recognition of trend. From second plot, utilizing a 21-day moving average to represent several exchange rates offers multiple benefits. Firstly, it smoothens out short-term fluctuations, providing a clearer view of the underlying trend in the exchange rates. This helps in identifying consistent patterns and removes noise caused by daily volatility. Secondly, when applied to multiple exchange rates, it allows for a standardized comparison between them.
-
-However, from Figure~\ref{fig:all exchange rates}, for example there are huge gaps between "CNYtoGBP" and "EURtoGBP". This may not suitable for viewing their trends simutaneosly. If we want to display two different time series that measure two different quantities at the same time points, we can draw the second series again on the second Y-axis on the right side.
-
-
-\begin{figure}[H]
-<<message=FALSE,warning=FALSE,fig.dim = c(5, 3.3)>>=
-# Plot Double y-axis time series of CNY and EUR to GBP
-# Define scale factor
-scale_factor <- max(MyData$CNYtoGBP) / max(MyData$EURtoGBP)
-df <- MyData %>% select(Date,CNYtoGBP, EURtoGBP)
-
-# Create plot with dual y-axes
-ggplot(df, aes(Date)) + geom_line(aes(y = EURtoGBP, color = "EURtoGBP"))+
-  geom_line(aes(y = CNYtoGBP / scale_factor, color = "CNYtoGBP"))+ 
-  scale_y_continuous(name = "EURtoGBP Exchange Rate axis",
-                     sec.axis = sec_axis(~ . * scale_factor,
-                                         name = "CNYtoGBP Exchange Rate axis"))+
-  labs(color = "Currency") + theme_minimal() + theme(legend.position="bottom")
-@
-\centering
-\caption{Double y-axis time series of CNY and EUR to GBP}
-\label{fig:Double y-axis}
-\end{figure}
-
-
-From Figure~\ref{fig:Double y-axis}, the left y-axis represents spot exchange rate of EUR against GBP and the right one represents spot exchange rate of CNY against GBP. Using a double Y-axis to represent the spot exchange rates of EUR to GBP and CNY to GBP offers several advantages. It facilitates the direct comparison of trends between the two exchange rates, providing insights into their correlations or discrepancies. This method is also space-efficient, combining two data series into one graph, allowing for a more concise data presentation. By juxtaposing the two rates, analysts can discern potential global factors affecting both or highlight specific currency volatilities. Additionally, presenting both datasets together offers contextual understanding and simplifies interpretation for a general audience. However, care must be taken with scale selection to avoid potential misrepresentation or misinterpretation.
-\\
 \noindent
-\textbf{Decomposition of one time series into trend, seasonal, and random:}
+\textbf{Decomposition of time series into trend, seasonal, and random:}
 
 One of the primary advantages of time series visualisation is the ease with which it allows analysts to identify long-term upward or downward trends in data and patterns that repeat over specific intervals. By decomposing the time series, it would be easy to see those features.
 
@@ -878,8 +867,39 @@ plot(decomposed_ts, xlab="Date")
 \label{fig:decomposition of time series}
 \end{figure}
 
+In the decomposition of the CNY to GBP exchange rate series using an additive model, we disentangle the data into its fundamental components: trend, seasonality, and residual noise. This additive model, represented mathematically as $Y_t = T_t + S_t + R_t$, allows us to scrutinize each element in isolation. As illustrated in Figure~\ref{fig:decomposition of time series}, the trend component $T_t$ reveals a gradual decrease in the CNY to GBP exchange rate over time, signifying a long-term depreciation of CNY against GBP. This trend is pivotal for understanding the broader economic relationship between these currencies. 
 
-Hence, in this way, we will be able to view the seasonal trend and overall trend of CNY to GBP obviously. From Figure~\ref{fig:decomposition of time series}, we can see that the spot exchange rate of CNY to GBP is gradually decreasing as time goes and it has a cyclical trend during years.
+Moreover, the seasonal component $S_t$ of the decomposition highlights cyclical fluctuations, indicative of recurrent patterns within the year. These could be attributed to seasonal economic activities, policy changes, or other cyclical factors influencing the currency market. The clear demarcation of these cyclical trends in the seasonal component helps in isolating such effects from the overarching trend.
+
+Lastly, the residual component $R_t$ encompasses the random, unexplained variations after accounting for the trend and seasonal factors. Analyzing these residuals is crucial for understanding the unpredictability in the exchange rate and can be pivotal in risk management and forecasting.\\
+
+\noindent
+\textbf{Autocorrelation Analysis of CNY to GBP Exchange Rate}
+
+Autocorrelation, also referred to as serial correlation, is a crucial concept in time series analysis. It describes the correlation of a time series with its own past and future values. The autocorrelation function (ACF) measures the linear predictability of the series at time \( t \) with its values at a previous time \( t-k \).
+
+The autocorrelation function at lag \( k \) is defined as:
+
+\[
+R(k) = \frac{\sum_{t=1}^{n-k} (y_t - \bar{y})(y_{t+k} - \bar{y})}{\sum_{t=1}^{n} (y_t - \bar{y})^2}
+\]
+
+where \( y_t \) is the value of the series at time \( t \), \( \bar{y} \) is the mean of the series, and \( n \) is the total number of observations.
+
+The value of \( R(k) \) lies between -1 and +1. A value close to +1 indicates a strong positive correlation, while a value close to -1 indicates a strong negative correlation. A value near 0 suggests little to no linear correlation. A slow decay in the ACF plot indicates a strong relationship between past and present values, while spikes at specific lags may suggest seasonality. Autocorrelations outside the 95\% confidence interval are considered statistically significant.
+
+Next, we'll visualize the ACF for the CNY to GBP exchange rate to understand its time-dependent structure better.
+
+\begin{figure}[H]
+<<echo=TRUE, message=FALSE, warning=FALSE, fig.cap="Autocorrelation Function (ACF) of CNY to GBP Exchange Rate", fig.align='center', fig.dim = c(4, 3.5)>>=
+# Plot the Autocorrelation Function (ACF)
+acf(MyData$CNYtoGBP, main="ACF of CNY to GBP Exchange Rate")
+@
+\end{figure}
+
+The Autocorrelation Function (ACF) plot for the CNY to GBP exchange rate series reveals a compelling feature: the ACF starts near 1 and decreases gradually. This pattern suggests a strong persistence in the time series, indicating that past values have a significant influence on future values. In time series analysis, such a slow decay in the ACF is indicative of a non-stationary series, where the mean, variance, and autocorrelation structure do not remain constant over time.
+
+This persistent autocorrelation suggests that short-term movements in the CNY to GBP exchange rate are heavily influenced by its recent history. Such a characteristic is crucial for forecasting models, as it implies that recent historical data can be a powerful predictor of near-future trends. Models like ARIMA (Autoregressive Integrated Moving Average), which are well-suited for data with high autocorrelation, may be particularly effective in this context.
 
 
 \subsection{Network Graphs}
@@ -1014,8 +1034,6 @@ aggregated_data$centroid <- st_centroid(aggregated_data$geometry)
 \noindent
 Here, we are going to construct a geographical map of the Greater London and show each ward. 
 
-
-
 \begingroup
 \setlength{\intextsep}{5pt plus 2pt minus 2pt}
 \setlength{\textfloatsep}{5pt plus 2pt minus 2pt}
@@ -1034,8 +1052,9 @@ ggplot(data = london_boroughs) + geom_sf(fill = "lightblue", color = "black") +
 \end{figure}
 \endgroup
 
-From Figure~\ref{fig:London Wards Map}, we can all wards of the Greater London and we can specify their locations by latitude and longitude. However, a map does not convey much information except the position. Hence, we are going to calculate the crime rate by dividing crime count in the borough by population in the borough at 2020 and present by a choropleth map.
+From Figure~\ref{fig:London Wards Map}, we are introduced to a detailed layout of all wards within Greater London, pinpointed by their geographical coordinates. While this map provides a clear depiction of location and boundaries, it offers limited insight into the dynamics of crime distribution.
 
+Hence, we will use a more informative visualization: a choropleth map showcasing crime rates by borough. Here, crime rates are calculated by dividing the total crime count in each borough by its respective population as of 2020. This per capita approach normalizes the data, ensuring comparability across boroughs with different population sizes.
 
 \begin{figure}[H]
 <<warning=FALSE,message=FALSE,fig.dim=c(5,5)>>=
@@ -1051,7 +1070,11 @@ ggplot(data=aggregated_data) + geom_sf(aes(fill=Crime_rate)) +
 \label{fig:crime rate london}
 \end{figure}
 
-From Figure~\ref{fig:crime rate london}, we can discern the safety levels of each borough. Green denotes safe areas, while red indicates unsafe ones. It is evident that boroughs closer to the city center tend to be less safe.
+From Figure~\ref{fig:crime rate london}, Westminster stands out, labeled in red, indicating a higher crime rate. This visual marker highlights Westminster as an area of particular concern regarding criminal activity. This could be attributed to factors like its status as a central, densely populated area with significant tourist traffic and commercial activity, which often correlate with higher crime rates.
+
+In contrast, the map reveals a trend where rural or less densely populated areas tend to be safer, as evidenced by their lighter coloration. These areas typically experience lower crime rates, possibly due to factors such as smaller populations, less anonymity for potential offenders, and different socio-economic dynamics compared to urban centers.
+
+The choropleth map of London’s crime rates elucidates key spatial patterns in crime distribution. It highlights the variance in crime rates from urban centers to rural areas, accentuating the higher crime rates in central, densely populated areas like Westminster, depicted in red, compared to the lighter shades marking safer, rural boroughs. This visual tool facilitates an understanding of how urbanization, socio-economic status, and population density impact crime rates across the boroughs.
 
 \subsection{3D and Interactive Visualisations}
 ggplot2 is one of the most popular data visualisation libraries in R, but it is primarily designed for 2D data visualisation. Directly creating 3D views with ggplot2 can be challenging.
