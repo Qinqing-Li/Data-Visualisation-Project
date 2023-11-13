@@ -48,7 +48,7 @@ opts_chunk$set(fig.path = 'figure/beamer-',
 \section{Introduction}
 
 \subsection{Motivation and Background}
-Motivations for having Data Visualisations - Case Example 1
+\\\textbf{Motivations for having Data Visualisations - Case Example 1}\\
 \\  
 \\Florence Nightingale was not only a social reformer and the founder of modern nursing but also a pioneering statistician. It was her application of data visualisation during the Crimean War that transformed the field of healthcare and pushed for social reform.
 \\  
@@ -57,16 +57,15 @@ Motivations for having Data Visualisations - Case Example 1
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{Nightingale-mortality.jpg}
-    \caption{``Diagram of the causes of mortality in the army in the East", in 1858 by Florence Nightingale}
+    \caption{``Diagram of the causes of mortality in the army in the East", in 1858 by Florence Nightingale\cite{wikiFN}}
     \label{fig:coxcomb}
 \end{figure}
-\\   
-\\The coxcomb, resembling an unconventional pie chart, partitioned mortality by causes. Blue indicates preventable deaths, red indicates deaths by wounds, and black indicates other causes.
+\noindent The coxcomb, resembling an unconventional pie chart, partitioned mortality by causes. Blue indicates preventable deaths, red indicates deaths by wounds, and black indicates other causes.
 The blue areas outweighed the red and black sections combined, highlighting the disproportionate impact of unsanitary hospital conditions on the mortality rate.
 \\   
 \\Nightingale leveraged the compelling visualisations in her advocacy efforts, presenting them to MPs and government officials who otherwise are unlikely to read or understand statistical reports. Nightingale successfully persuaded Queen Victoria, head of the British Army at the time, to allocate funding for the improvement of better conditions in military hospitals.
 \\  
-\\Motivations for having Data Visualisations - Case Example 2
+\\\textbf{Motivations for having Data Visualisations - Case Example 2}\\
 \\  
 \\Sometimes, one glance is enough to convey the most powerful idea. Edward Hawkins, a British climate scientist and Professor of climate science at the University of Reading, is renowned for his exceptional datavisualisations of climate change.
 \\ 
@@ -74,38 +73,38 @@ The blue areas outweighed the red and black sections combined, highlighting the 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{global.png}
-    \caption{``Latest global stripes (1850-2020)", by Edward Hawkins}
+    \caption{``Latest global stripes (1850-2020)", by Edward Hawkins\cite{blog}}
     \label{fig:global}
 \end{figure}
+\noindent Known as the ``warming stripes," this chart cleverly employs blues to indicate cooler-than-average years and reds to signify hotter-than-average years. Its influence reached far and wide, gracing the front pages of major media outlets and featured in news broadcasts worldwide. It became a symbol in climate change demonstrations. Arguably, it stands as one of the most iconic graphics in modern times.
 \\  
-\\Known as the ``warming stripes," this chart cleverly employs blues to indicate cooler-than-average years and reds to signify hotter-than-average years. Its influence reached far and wide, gracing the front pages of major media outlets and featured in news broadcasts worldwide. It became a symbol in climate change demonstrations. Arguably, it stands as one of the most iconic graphics in modern times.
 \\  
+\\\textbf{Misuses of Data Visualisation - Case Example 1}\\
 \\  
-\\Misuses of Data Visualisation - Case Example 1
-\\  
-\\Inappropriate datavisualisation conceals trends rather than revealing them. Figure \ref{fig:misuse1} illustrates an instance of this issue. On the left-hand side, an inappropriate scale was used --- the y-scale ranging from 0 to 30 million dollars, obscuring the fluctuations in payroll spending. Conversely, on the right-hand side, observe that there's a significant increase of over 500,000 dollars in just two months. This revelation is substantial; considering inflation, 500,000 dollars in 1937 is worth well over 10 million dollars today.
+\\Inappropriate datavisualisation conceals trends rather than revealing them. Figure \ref{fig:misuse1} illustrates an instance of this issue. On the left-hand side, an inappropriate scale was used --- the y-scale ranging from 0 to 30 million dollars, obscuring the fluctuations in payroll spending. Conversely, on the right-hand side, observe that there's a significant increase of over 500,000 dollars in just two months. This revelation is substantial; considering inflation, 500,000 dollars in 1937 is worth well over 10 million dollars today\cite{worth}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{misuse1.png}
-    \caption{Inappropriate use of data visualisation}
+    \caption{Inappropriate use of data visualisation\cite{lie}}
     \label{fig:misuse1}
 \end{figure}
 \\  
-\\Misuses of Data Visualisation - Case Example 2
+\noindent \\\textbf{Misuses of Data Visualisation - Case Example 2}\\
 \\  
-\\Datavisualisation can be misused, leading to disastrous consequences. One striking example of such misuse is found in the Kallikak Family tree, which was one of the most prominent eugenic narratives of the 20th century.
+\\Data visualisation can be misused, leading to disastrous consequences. One striking example of such misuse is found in the Kallikak Family tree, which was one of the most prominent eugenic narratives of the 20th century.
 \\  
-\\Thevisualisation (as shown in Figure \ref{fig:familytree}) was created by the psychologist Henry Goddard and presented in his 1912 book, ``The Kallikak Family: A Study in the Heredity of Feeble-Mindedness." Goddard's narrative centered around Martin Kallikak, a soldier who, in addition to his marriage to a respected citizen, had a one-night stand with a ``feeble-minded" maid. Goddard believed that intellectual disabilities were inherited traits. In Goddard's account, the legitimate family was successful, while the children of the ``feeble-minded" maid were labeled as "the lowest types of human beings." However, research has since revealed that the entire story was fictitious, as there was no record of the maid's existence.
+\\The visualisation (as shown in Figure \ref{fig:familytree}) was created by the psychologist Henry Goddard and presented in his 1912 book, ``The Kallikak Family: A Study in the Heredity of Feeble-Mindedness." Goddard's narrative centered around Martin Kallikak, a soldier who, in addition to his marriage to a respected citizen, had a one-night stand with a ``feeble-minded" maid. Goddard believed that intellectual disabilities were inherited traits. In Goddard's account, the legitimate family was successful, while the children of the ``feeble-minded" maid were labeled as ``the lowest types of human beings." However, research has since revealed that the entire story was fictitious, as there was no record of the maid's existence\cite{fakedata}.
 \\  
-\\Regrettably, the Kallikak family tree became a central element in the eugenics movement for decades afterward. It was featured in the 1935 Nazi propaganda film ``Das Erbe" (The Inheritance), which was used to promote public acceptance of Nazi eugenics laws. This propaganda laid the groundwork for the forced sterilization of approximately 400,000 people under Nazi eugenics policies.
+\\Regrettably, the Kallikak family tree became a central element in the eugenics movement for decades afterward. Figure \ref{fig:familytree} was featured in the 1935 Nazi propaganda film ``Das Erbe" (The Inheritance), which was used to promote public acceptance of Nazi eugenics laws. This propaganda laid the groundwork for the forced sterilization of approximately 400,000 people under Nazi eugenics policies \cite{eugenics}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{familytree.jpg}
-    \caption{The Kallikak Family tree, in 1912 by Henry Goddard }
+    \caption{The Kallikak Family tree, in 1912 by Henry Goddard\cite{ktree}}
     \label{fig:familytree}
 \end{figure}
-
+\\  
+\\Case examples obtained from BBC Ideas\cite{bbcdatavis}.
 \subsection{Computing and Data Visualisation}
 In data visualisation, we mostly use ggplot as our useful tool to create so many greaet plots to represent our dataset. ggplot2 is based on the Grammar of Graphics, which simply means that you can draw each part of the graph first, and then add the parts together to form a complete graph.\\
 As we will explore in subsequent sections, we can achieve numerousvisualisations effortlessly by utilizing data in R together with ggplot.
@@ -743,11 +742,28 @@ print(kde_diagram)
 @
 In figure~\ref{fig:kde3} we present the kernel density estimation of our dataset. The kernel density curve will display the distribution of sepal lengths. The peaks of the curve correspond to the main concentration trends of sepal length in the data. If the curve is unimodal, it means that the sepal lengths of most irises are concentrated in that region; if it is bimodal or multimodal, this indicates the presence of multiple such concentration areas.
 
-
-\subsection{Heatmaps and Tree Maps}
-In this chapter, we explore two powerful data visualisation techniques: heatmaps and treemaps. These methods are instrumental for conveying intricate data structures and patterns, offering unique ways to represent multivariate information, making them indispensable tools for data scientists.
+\subsection{Heatmaps, correlation matrix and AIC score}
 \\  
-\\We will delve into the theory behind heatmaps and treemaps, understand how to create them using popular data visualisation libraries, and demonstrate their practical applications with real-world examples. By the end of this chapter, you will be well-equipped to leverage heatmaps and treemaps to gain insights from complex and hierarchical datasets.
+\\The foundation of a heatmap is a data matrix $M$, where each entry in this matrix represents an observation:
+$$M =
+\left[
+\begin{array}{cccc}
+    M_{11} & M_{12} & \ldots & M_{1j} \\  
+    M_{21} & M_{22} & \ldots & M_{2j} \\  
+    \vdots & \vdots & \ddots & \vdots \\  
+    M_{i1} & M_{i2} & \ldots & M_{ij}
+\end{array}
+\right].
+$$
+\\Therefore, the first step to create a heatmap is to organise the data into columns and rows. In Figure~\ref{fig:fire-by-months-fy13-22}, the structured data is displayed as a grid of coloured cells, where the colour intensity corresponds to the underlying frequency.
+\\  
+\\Heatmaps serve as powerful tools for visualising relationships between covariates within a model. An example of the necessity to analyse a matrix of correlations between variables is found in regression models. In the real world, variables are often correlated, and completely independent relationships are seldom encountered. Therefore, the analysis of pairwise correlations becomes essential. Significantly impacted by highly correlated covariates, the regression model requires the removal of one covariate from the set of covariates. The selection is based on the identification of a regression model with the lowest Akaike Information Criterion (AIC) score among these variables: 
+
+$$AIC = -2 \l(\hat{\mathbf{\theta}})+2 \dim (\mathbf{\theta}),$$
+\\where $\l(\hat{\mathbf{\theta}})$ is the log-likelihood function, which is used to find the Maximum Likelihood Estimator (MLE) of a distribution.
+\\  
+\\The AIC measures the extent to which the linear model fits the dataset. To obtain the best model, minimise the AIC score. In other words, the objective is to have the trend explained by the regression model, while avoiding overfitting that captures the noise in the dataset, ultimately leading to inaccurate predictions.
+
 \subsubsection{Heatmaps - Fire in Brazil}
 \\  
 \\The heatmap is a data visualisation technique that uses colour coding to represent different intensity.
@@ -880,40 +896,6 @@ heatmap_plot <- ggplot(pivot_table,
 print(heatmap_plot)
 @
 
-
-\subsubsection{Heatmaps, correlation matrix and AIC score}
-\\  
-\\The foundation of a heatmap is a data matrix $M$, where each entry in this matrix represents an observation:
-$$M =
-\left[
-\begin{array}{cccc}
-    M_{11} & M_{12} & \ldots & M_{1j} \\  
-    M_{21} & M_{22} & \ldots & M_{2j} \\  
-    \vdots & \vdots & \ddots & \vdots \\  
-    M_{i1} & M_{i2} & \ldots & M_{ij}
-\end{array}
-\right].
-$$
-\\Therefore, the first step to create a heatmap is to organize the data into columns and rows. In Figure~\ref{fig:fire-by-months-fy13-22}, the structured data is displayed as a grid of coloured cells, where the colour intensity corresponds to the underlying frequency.
-\\  
-\\Heatmaps serve as powerful tools for visualizing relationships between covariables within a model. An example of the necessity to analyse a matrix of correlations between variables is found in regression models. In the real world, variables are often correlated, and completely independent relationships are seldom encountered. Therefore, the analysis of pairwise correlations becomes essential. Significantly impacted by highly correlated variables, the regression model requires the selection of one variable from the correlated set. The selection is based on the identification of a regression model with the lowest Akaike Information Criterion (AIC) score among these variables: 
-
-$$AIC = -2 \l(\hat{\mathbf{\theta}})+2 \dim (\mathbf{\theta}),$$
-\\where $\l(\hat{\mathbf{\theta}})$ is the log-likelihood function, which is used to find the Maximum Likelihood Estimator (MLE) of a distribution.
-\\  
-\\The AIC measures the extent to which the linear model fits the dataset. To obtain the best model, minimise the AIC score. In other words, the objective is to have the trend explained by the regression model, while avoiding overfitting that captures the noise in the dataset, ultimately leading to inaccurate predictions.
-
-\subsubsection{Treemaps}
-Treemaps are a visualisation method specifically designed for hierarchical data structures. They represent data as nested rectangles, where each rectangle represents a part of the whole. Treemaps offer a visually appealing and efficient way to convey the hierarchical composition of data. The size and color of each rectangle can be used to encode additional information.
-
-\subsubsection{Use Cases for Treemaps}
-Treemaps are highly effective when dealing with hierarchical data. Some common use cases include:
-\begin{itemize}
-\item \textbf{Disk Space Visualisation}: Treemaps can be employed to visualise disk space usage, where the outermost rectangle represents the entire disk, and inner rectangles represent folders and files. The size of each rectangle reflects the space they occupy.
-\item \textbf{Market Share Analysis}: In business, treemaps are useful for visualizing market share data. The top-level rectangle represents the total market, and inner rectangles represent individual segments, brands, or products. The size and color of each segment can represent its share and performance.
-\end{itemize}
-
-XXX %missing Treemaps
 
 
 \subsection{Line Charts and Time Series Visualisation}
@@ -1322,16 +1304,39 @@ XXX
 
 XXX
 
-\begin{thebibliography}{9} % This is the reference section for citing resources.
+\begin{thebibliography}{100} % This is the reference section for citing resources.
 \bibitem{nasa_confidence}
-Earth Science Data Systems. (2023) \textit{FIRMS Frequently Asked Questions | Earthdata}. Available at: https://www.earthdata.nasa.gov/faq/firms-faq#ed-confidence [Accessed 12 Nov. 2023].
+Earth Science Data Systems. 2023. \textit{FIRMS Frequently Asked Questions | Earthdata}. Available at: https://www.earthdata.nasa.gov/faq/firms-faq#ed-confidence [Accessed 12 Nov. 2023].
 
 \bibitem{GRM_chp3}
-Worton, B. (2023) \textit{Generalised Regression Models, Semester 1, 2023–2024}. University of Edinburgh. Chp. 3.1.
+Worton, B. 2023. \textit{Generalised Regression Models, Semester 1, 2023–2024}. University of Edinburgh. Chp. 3.
 
 \bibitem{multicoli}
-Wikipedia Contributors. (2019) \textit{Multicollinearity}. Available at: https://en.wikipedia.org/wiki/Multicollinearity [Accessed 12 Nov. 2023].
+Wikipedia Contributors. 2019. \textit{Multicollinearity}. Available at: https://en.wikipedia.org/wiki/Multicollinearity [Accessed 12 Nov. 2023].
 
+\bibitem{fakedata}
+Smith, J.D., Wehmeyer, M.L. 2012. \textit{Who Was Deborah Kallikak?} Intellectual and Developmental Disabilities, 50(2), pp.169–178. doi:https://doi.org/10.1352/1934-9556-50.2.169.
+
+\bibitem{eugenics}
+Rutherford, A. 2022. \textit{Where science meets fiction: the dark history of eugenics}. The Guardian. Available at: https://www.theguardian.com/science/2022/jun/19/where-science-meets-fiction-the-dark-history-of-eugenics.
+
+\bibitem{worth}
+www.calculateme.com. n.d. \textit{$500,000 in 1937 is How Much Today?} [online] Available at: https://www.calculateme.com/inflation/500000-dollars/from-1937/to-now [Accessed 9 Nov. 2023].
+
+\bibitem{bbcdatavis}
+Proctor, A. 2023. \textit{Five charts that changed the world - BBC Ideas}. [online] Available at: https://www.bbc.co.uk/ideas/videos/five-charts-that-changed-the-world/p0fb69c1 [Accessed 20 Oct. 2023].
+
+\bibitem{blog}
+Hawkins, E. n.d. \textit{Warming stripes | Climate Lab Book}. [online] Available at: https://www.climate-lab-book.ac.uk/warming-stripes/ [Accessed 9 Nov. 2023].
+
+\bibitem{wikiFN}
+Wikipedia Contributors. 2019. \textit{Florence Nightingale}. [online] Wikipedia. Available at: https://en.wikipedia.org/wiki/Florence_Nightingale [Accessed 20 Oct. 2023].
+
+\bibitem{ktree}
+Dakwa, K. 2001. \textit{The Kallikak Family – Historical Influences, Current Controversies, Teaching Resources}. [online] Available at: https://intelltheory.com/intelli/the-kallikak-family/ [Accessed 9 Nov. 2023].
+
+\bibitem{lie}
+de Carvahol, M. 2023. \textit{Incomplete Data Analysis}. University of Edinburgh. Lecture 2, 9-10.
 \end{thebibliography}
 
 \printbibliography % This command prints the cited references.
