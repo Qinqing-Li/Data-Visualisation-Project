@@ -53,6 +53,7 @@
 \usepackage{blindtext}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{appendix}
 \usepackage[a4paper, total={6in, 8in}]{geometry}
 
 \title{Data Visualisation: Theory and Practice}
@@ -81,7 +82,7 @@ Motivations for having Data Visualisations - Case Example 1
     \caption{``Diagram of the causes of mortality in the army in the East", in 1858 by Florence Nightingale}
     \label{fig:coxcomb}
 \end{figure}
-\\  
+\\   
 \\The coxcomb, resembling an unconventional pie chart, partitioned mortality by causes. Blue indicates preventable deaths, red indicates deaths by wounds, and black indicates other causes.
 The blue areas outweighed the red and black sections combined, highlighting the disproportionate impact of unsanitary hospital conditions on the mortality rate.
 \\   
@@ -98,6 +99,7 @@ The blue areas outweighed the red and black sections combined, highlighting the 
     \caption{``Latest global stripes (1850-2020)", by Edward Hawkins}
     \label{fig:global}
 \end{figure}
+\\  
 \\Known as the ``warming stripes," this chart cleverly employs blues to indicate cooler-than-average years and reds to signify hotter-than-average years. Its influence reached far and wide, gracing the front pages of major media outlets and featured in news broadcasts worldwide. It became a symbol in climate change demonstrations. Arguably, it stands as one of the most iconic graphics in modern times.
 \\  
 \\  
@@ -110,7 +112,7 @@ The blue areas outweighed the red and black sections combined, highlighting the 
     \caption{Inappropriate use of data visualisation}
     \label{fig:misuse1}
 \end{figure}
-\\
+\\  
 \\Misuses of Data Visualisation - Case Example 2
 \\  
 \\Data visualization can be misused, leading to disastrous consequences. One striking example of such misuse is found in the Kallikak Family tree, which was one of the most prominent eugenic narratives of the 20th century.
@@ -150,7 +152,9 @@ In this section, we unveil the datasets used throughout our study. This section 
 \textbf{The Edgar Anderson's Iris dataset}: The Anderson's iris data, available as a built-in dataset in R, offers the measurements in centimeters of sepal length and width, petal length and width, along with the species name for 50 flowers from each of three species of iris. The dataset consists of 5 variables: Sepal.Length, Sepal.Width, Petal.Length, Petal.Width, and Species: Species name.\\
 
 \noindent
-\textbf{The annual fire in Brazil dataset}: The Fire Information for Resource Management System (FIRMS) provides Near Real-Time (NRT) active fire data from the Moderate Resolution Imaging Spectroradiometer (MODIS), available at \href{https://firms.modaps.eosdis.nasa.gov/}{NASA}. A subset containing historical active fire data of Brazil from 2013 to 2022 contains over 200,000 observations each year was used in this report. This dataset contains 15 variables, including latitude: Latitude of active fire data, longitude: Longitude of active fire data, and confidence: Confidence level.\\
+\textbf{The annual fire in Brazil dataset}: Open-source fire observation data is provided on a global scale by \href{https://firms.modaps.eosdis.nasa.gov/}{NASA}. For the purpose of our project, 
+the analysis was focused on Brazil. The dataset covers the year 2013 to 2022, with over 200,000 observations annually. Each observation includes crucial information such as latitude, longitude and date of observation. Notably, the dataset contains the variable confidence, ranging from 0\% to 100\%. This variable quantifies the level of confidence associated with each observation being a fire occurrence. For the reliability of the result, we filtered all observations with a confidence level $\ge$ 95\% \cite{nasa_confidence}.\\
+
 
 \noindent
 \textbf{The exchange rate data}: The exchange rate data, available at the \href{https://www.bankofengland.co.uk/boeapps/database/index.asp?first=yes&SectionRequired=I&HideNums=-1&ExtraInfo=true&Travel=NIx}{Bank of England}, provides daily spot exchange rates against GBP over the time period from 2005 to now (without weekends). A subset of daily spot exchange rate of CNY (Chinese Yuan), CAD (Canadian Dollar), EUR (Euro), HKD (Hongkong Dollar), and USD (US Dollar) against GBP (Pounds Sterling) from January 2013 to October 2023 was used in this report. The dataset contains 6 variables: `Date`: Date of spot exchange rate and spot exchange rate of CNY, CAN, EUR, HKD, and USD against GBP.\\
@@ -175,7 +179,6 @@ In this section, we unveil the datasets used throughout our study. This section 
 \noindent Chapter 4: "Practical Implementation" ventures into the practical application of Python Dash and R Shiny for constructing interactive data visualisation dashboards. Subsequently, Chapter 5: "Case Studies" presents case studies, which serve as practical demonstrations of the efficacy and relevance of the discussed visualisation methods in resolving real-world problems. Finally, Chapter 6 "State-of-the-Art Approaches" critically examines state-of-the-art approaches in data visualisation, highlighting emerging trends, methodologies, and technologies in the field.
 
 \newpage 
-
 
 \section{Theoretical Foundations of Data Visualisation}
 This chapter, "Theoretical Foundations of Data Visualisation," delves into the core principles and concepts that serve as the base of this field. We seek to understand not only the "how" but also the "why" behind the creation of visualisations that captivate and inform.
@@ -349,43 +352,76 @@ In this chapter, we explore a variety of powerful visualisation methods, from cl
 Scatter plots and bubble charts are fundamental data visualisation techniques that provide valuable insights into the relationships and patterns within datasets. These visualisations are particularly effective for representing discrete data through data points, since this brings out easily identifiable comparisons, and reveals trends.
 
 \subsubsection{Scatter Plots}
-A scatter plot is a graphical representation of a set of data points in a two-dimensional coordinate system. Each data point is represented by a dot, and the position of the dot is determined by the values of two variables. The \(x\)-axis typically represents one variable, and the \(y\)-axis represents the other.
+A scatter plot is a graphical representation of a set of data points in a two-dimensional coordinate system. Each data point is represented by a dot, and the position of the dot is determined by the values of two variables. 
+\\  
+In general, \(Y\) denotes the response variable and \(X\) denotes the explanatory variable. Let \((x_i, y_i)\) represent the coordinates of the \(i\)-th data point on the scatter plot. The scatter plot can be mathematically described as a set of points:
+
+\[ \{(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)\} .\]
+\\  
+\\Here, \(n\) is the number of observations in the set.
 \\
-Let's denote the variables as \(X\) and \(Y\), and let \((x_i, y_i)\) represent the coordinates of the \(i\)-th data point on the scatter plot. The scatter plot can be mathematically described as a set of points:
-
-\[ \{(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)\} \]
-
-\\Here, \(n\) is the number of data points in the set.
-\\
-\\The mathematical interest of dot plots lies in their ability to provide a simple visual representation of data distribution, center, and spread. While they don't rely on complex equations or statistical principles, dot plots make it easy to observe important characteristics of data, such as the mode (the most frequent value), skewness (asymmetry), and potential outliers. \\ 
-\\In addition to displaying individual data points, a scatter plot can be used to identify patterns, trends, and relationships between the two variables. The arrangement of the points on the plot can provide insights into the nature of the relationship between \(X\) and \(Y\). For example, if the points generally form a straight line, it suggests a linear relationship between the variables. If the points are scattered with no clear pattern, it indicates a lack of correlation.
-
+\\The mathematical interest of dot plots lies in their ability to provide a simple visual representation of data distribution, center, and spread. While they don't rely on complex equations or statistical principles, dot plots make it easy to observe important characteristics of data, such as the mode, median, variance, skewness and outliers. \\ 
+\\In addition, the arrangement of the points on the plot can provide insights into the nature of the relationship between \(X\) and \(Y\).When points show a linear trend, it implies a strong correlation between the variables. When the points are scattered with no clear pattern, it signifies a low correlation between the variables. \\
 
 \subsubsection{Regression and the Regression Line}
-\\Regression analysis is a powerful statistical tool used to examine the relationship between two or more variables. It seeks to model the dependency between a dependent variable (often denoted as \(Y\)) and one or more independent variables (often denoted as \(X\)). In the context of simple linear regression, where only one independent variable is considered, the regression line becomes a central focus.\\
+\\Regression models are statistical tools that provide functions to estimate the relationship between the response variable and one or more independent variables. Regression analysis is widely adopted by data scientists, who use large datasets to build predictive models for trend forecasting. In the following paragraph, we will introduce linear regression models and demonstrate their usage using the mtcars dataset.\\
 
-\\\textbf{The Regression Line}\\
-\\The regression line is the linchpin of regression analysis, encapsulating the essence of the relationship between variables. In simple linear regression, the equation for the regression line can be expressed as:
+\\\textbf{Simple Linear Models}\\
+\\In the simple linear model, we assume that the responses $\mathbf{Y} = (Y_1, Y_2, ..., Y_n)$ are uncorrelated, with a common variance $\sigma^2$. The explanatory variable is represented as a vector $\mathbf{x} = (x_1, x_2, ..., x_n)$, where $x_i$ is the i-th observation.  We can express the $n$ expectations in vector form:
 
-\[
-Y = \beta_0 + \beta_1X + \epsilon
-\]
+$$\mathrm{E}(\mathbf{Y} | \mathbf{x}) =
+\left( \begin{array}{ccc}
+\beta_0+\beta_1 x_1\\
+\beta_0+\beta_1 x_2\\
+\vdots\\
+\beta_0+\beta_1 x_n
+\end{array} \right) = 
+\left( \begin{array}{ccc}
+1\\
+1\\
+\vdots\\
+1
+\end{array} \right) \beta_0 + 
+\left( \begin{array}{ccc}
+x_1\\
+x_2\\
+\vdots\\
+x_n
+\end{array} \right) \beta_1 =
+\mathbf{1}_n \beta_0 + \mathbf{x} \beta_1 \cite{GRM_chp3}.
+$$ 
+\\  
+\\The expectation can be rewritten as: 
+$$\mathrm{E}(\mathbf{Y} | \mathbf{x}) = 
+\left( \begin{array}{cc}
+1 & x_1\\
+1  & x_2\\
+\vdots& \vdots\\
+1  & x_n
+\end{array} \right) 
+\left( \begin{array}{cc}
+\beta_0 \\
+\beta_1
+\end{array} \right) = \mathbf{X} \beta.
+$$
 
-Here, \(\beta_0\) is the intercept, \(\beta_1\) is the slope, \(X\) is the independent variable, and \(\epsilon\) represents the error term. The objective of the linear regression line is to minimise the sum of squared differences between the observed and predicted values of \(Y\), which helps us understand how changes in \(X\) affect \(Y\).\\
-Linear regression lines are often featured in scatter plots to give readers more insight into the dataset being plotted, by representing the overall relationship between variables and, by allowing them to make quick comparisons between individual observations and the regression line.\\
+\\\textbf{Least Squares Estimation}\\
+\\The coefficients $\beta_0$ and $\beta_1$ are calculated using the method of least squares estimation. The residuals are the differences between the response variables $y_i$ and responses generated by the linear regression model $\mathrm{E}(\mathbf{Y}_i | \mathbf{x})$. The goal is to minimise the residual sum of squares (RSS), denoted by $\mathrm{Q}$: 
 
-\\\textbf{Calculation of the Regression Line:}\\
-\\The coefficients \(\beta_0\) and \(\beta_1\) are calculated using the method of least squares, a mathematical optimization technique that minimizes the sum of squared residuals. The residual (\(\epsilon\)) is the vertical distance between an observed data point and the corresponding point on the regression line. The formulas for \(\beta_0\) and \(\beta_1\) are:
+$$\mathrm{Q} = \sum_{i=1}^{n} \{y_i - \mathrm{E} (Y_i | \mathbf{X})\}^2 .$$
+\\The RSS is a measure of the goodness of fit in a regression model, representing the sum of squared residuals. The least squares estimator is the method used to find the parameter values that minimize the RSS, providing the best-fitting linear regression model.
+\\ 
+\\After expanding $\mathrm{Q}$ in terms of vectors and matrices,  the partial derivative of $Q$ with respect to vector $\beta$ is:
 
-\[
-\beta_1 = \frac{\sum (X_i - \bar{X})(Y_i - \bar{Y})}{\sum (X_i - \bar{X})^2}
-\]
+$$\frac{\partial Q}{\partial \beta} = 2(\mathbf{X}^T\mathbf{X}\beta - \mathbf{X}^T\mathbf{y})\cite{GRM_chp3},$$
+\\where $\mathbf{y}$ is the vector of response variables.
+\\  
+\\Equating $\frac{\partial Q}{\partial \beta} = \mathbf{0}$, the vector $\hat{\beta}$,  the least squares estimate of $\beta$, can be written as:
 
-\\[
-\beta_0 = \bar{Y} - \beta_1 \bar{X}
-\\]
-
-where \(\bar{X}\) and \(\bar{Y}\) denote the mean values of \(X\) and \(Y\) respectively.\\
+$$\mathbf{X}^T(\mathbf{y}-\mathbf{X}\hat{\beta})=\mathbf{0}.$$
+\\  
+\\Since, in the case of simple linear models, $\mathbf{X}$ is of full rank $n$, $(\mathbf{X}^T\mathbf{X})^{-1}$ exists, and there is a unique least square estimate of $\beta$ given by:
+$$\hat{\beta} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}.$$
 
 \\\textbf{The Band of Confidence:}\\
 \\When discussing regression lines, it is essential to consider the band of confidence. This is represented by confidence intervals around the regression line, reflecting the uncertainty associated with predictions. The wider the interval, the greater the uncertainty. Commonly, a 95\% confidence interval is used, indicating that there is a 95\% probability that the true regression line lies within the specified interval.\\
@@ -395,7 +431,55 @@ where \(\bar{X}\) and \(\bar{Y}\) denote the mean values of \(X\) and \(Y\) resp
 
 
 \noident \textbf{Scatter Plots in Practice}\\
-\\In this example, we'll create a scatter plot that visualises the relationship between two variables - the weight of cars and the amount of miles traveled per gallon of petrol. We'll use the "mtcars" R dataset.
+\\In the following example, the mtcars dataset will be used to demonstrate a linear regression model. The focus lies on assessing the efficiency of automobiles, with the aim of constructing a linear regression model that utilizes various attributes to predict the performance of the automobile, measured in Miles Per Gallon (mpg).
+\\  
+\\For exploratory investigation, the correlation matrix is to be calculated, rounded to 3 significant figures, see Figure~\ref{fig:cor-matrix-mtcars2}. 
+\\  
+\\Excluding highly correlated covariates is a critical consideration in constructing a regression model. When explanatory variables in a regression model are highly correlated, this will lead to multicollinearity. Multicollinearity implies that the individual effects of correlated variables on the response variable become intertwined. This intertwinement can result in erratic changes in the coefficient estimates of the regression model in response to small changes in the data. Such instability makes it challenging to interpret and trust the specific contributions of each variable to the model's predictions\cite{multicoli}.
+
+
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-cor-matrix-mtcars2-1} 
+
+}
+
+\caption[Correlation matrix of variables in mtcars dataset]{Correlation matrix of variables in mtcars dataset}\label{fig:cor-matrix-mtcars2}
+\end{figure}
+
+\end{knitrout}
+\\  
+\\   
+\\Examining the correlation matrix reveals a high correlation between the response variable, Miles Per Gallon (mpg), and the explanatory variable, weight (wt). This is advantageous, suggesting that wt may have strong predictive power for mpg. In the summary of the linear regression model \texttt{Modelwt}, note that the t-test yields a p-value less than 0.001. This indicates that the variable wt is of high statistical significance in this model.
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{Modelwt} \hlkwb{<-} \hlkwd{lm}\hlstd{(}\hlkwc{formula} \hlstd{= mpg} \hlopt{~} \hlstd{wt,} \hlkwc{data} \hlstd{= mtcars)}
+\hlkwd{summary}\hlstd{(Modelwt)}
+\end{alltt}
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = mpg ~ wt, data = mtcars)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -4.5432 -2.3647 -0.1252  1.4096  6.8727 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(>|t|)    
+## (Intercept)  37.2851     1.8776  19.858  < 2e-16 ***
+## wt           -5.3445     0.5591  -9.559 1.29e-10 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 3.046 on 30 degrees of freedom
+## Multiple R-squared:  0.7528,	Adjusted R-squared:  0.7446 
+## F-statistic: 91.38 on 1 and 30 DF,  p-value: 1.294e-10
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
@@ -408,11 +492,25 @@ where \(\bar{X}\) and \(\bar{Y}\) denote the mean values of \(X\) and \(Y\) resp
 \end{figure}
 
 \end{knitrout}
+\\   
+\\Model selection methods, such as the Akaike Information Criterion (AIC), play a crucial role in statistical modeling. An algorithm which minimises AIC score helps in selecting the most appropriate regression model from a set of explanatory variables. Further details on AIC can be found in section  \ref{subsubsection:Heatmaps, correlation matrix and AIC score}.
+\\  
+\\The R algorithm \texttt{step()} minimises the AIC score at each step for optimal regression model selection. Starting with the regression model which contains all explanatory variables \texttt{ModelAll}, the algorithm iteratively exclude one covariate per step. 
+\\  
+\\This algorithm aims to find the best-fitting model by balancing goodness of fit and simplicity. Note that \texttt{step()} provides a competitive ranking among models, not an absolute measure of model quality.
+\\  
+\\For detailed procedure of this AIC algorithm, using \texttt{summary(ModelBest)}, please see the output in \ref{sec:codechunk1}.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{codeshoot.png}
+    \label{fig:codeshoot}
+\end{figure}
+\\ 
 \textbf{Analysis of the scatter plot}\\
 Figure~\ref{fig:scatter-plot}, provides insights into the relationship between cars' weight and their MPG, with the added dimension of color-coded cylinders.Particularly it visually highlights and make accessible to the viewer features of the data set, that would otherwise go unnoticed. These are some of the following elements: 
 \begin{itemize}
-    \item \textbf{Clustering}: The scatter plot reveals distinct clustering of data points, highlighting specific patterns within the dataset. Cars with four cylinders (color "grey") are predominantly clustered in the lower weight and higher MPG region, representing smaller and more fuel-efficient vehicles. In contrast, cars with eight cylinders (color "blue") tend to be clustered in the higher weight and lower MPG area, indicating larger and less fuel-efficient cars. The identification of this clustering aids in visualising how the number of cylinders influences the trade-off between weight and fuel efficiency.\\
+    \item \textbf{Clustering}: The scatter plot reveals distinct clustering of data points, highlighting specific patterns within the dataset. Cars with four cylinders (color "grey") are predominantly clustered in the lower weight and higher MPG region, representing smaller and more fuel-efficient vehicles. In contrast, cars with eight cylinders (color "blue") tend to be clustered in the higher weight and lower MPG area, indicating larger and less fuel-efficient cars. The identification of this clustering aids iAIC algorithmn visualising how the number of cylinders influences the trade-off between weight and fuel efficiency.\\
     \item \textbf{Linear Regression Line}: The regression line provides a visual representation of the overall relationship between car weight and fuel efficiency.If the line has a positive slope, it indicates that as car weight increases, MPG decreases. Conversely, a negative slope suggests that heavier cars tend to have higher MPG. The steepness of the line represents the strength of this relationship. In this case, the reed regression line indicates a negative correlation—cars tend to have lower fuel efficiency as their weight increases.
 \end{itemize}
 
@@ -1134,5 +1232,146 @@ XXX
 \section{Conclusion}
 
 XXX
+
+\begin{thebibliography}{9} % This is the reference section for citing resources.
+\bibitem{nasa_confidence}
+Earth Science Data Systems. (2023) \textit{FIRMS Frequently Asked Questions | Earthdata}. Available at: https://www.earthdata.nasa.gov/faq/firms-faq#ed-confidence [Accessed 12 Nov. 2023].
+
+\bibitem{GRM_chp3}
+Worton, B. (2023) \textit{Generalised Regression Models, Semester 1, 2023–2024}. University of Edinburgh. Chp. 3.1.
+
+\bibitem{multicoli}
+Wikipedia Contributors. (2019) \textit{Multicollinearity}. Available at: https://en.wikipedia.org/wiki/Multicollinearity [Accessed 12 Nov. 2023].
+
+\end{thebibliography}
+
+\printbibliography % This command prints the cited references.
+
+\appendix % This is the appendix section for long code.
+\chapter{Chapter 1-3}
+\section{Using \texttt{step()} function to select Linear Regression Models}\label{sec:codechunk1}
+\begin{lstlisting}
+\begin{verbatim}
+Start:  AIC=70.9
+mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb
+
+       Df Sum of Sq    RSS    AIC
+- cyl   1    0.0799 147.57 68.915
+- vs    1    0.1601 147.66 68.932
+- carb  1    0.4067 147.90 68.986
+- gear  1    1.3531 148.85 69.190
+- drat  1    1.6270 149.12 69.249
+- disp  1    3.9167 151.41 69.736
+- hp    1    6.8399 154.33 70.348
+- qsec  1    8.8641 156.36 70.765
+<none>              147.49 70.898
+- am    1   10.5467 158.04 71.108
+- wt    1   27.0144 174.51 74.280
+
+Step:  AIC=68.92
+mpg ~ disp + hp + drat + wt + qsec + vs + am + gear + carb
+
+       Df Sum of Sq    RSS    AIC
+- vs    1    0.2685 147.84 66.973
+- carb  1    0.5201 148.09 67.028
+- gear  1    1.8211 149.40 67.308
+- drat  1    1.9826 149.56 67.342
+- disp  1    3.9009 151.47 67.750
+- hp    1    7.3632 154.94 68.473
+<none>              147.57 68.915
+- qsec  1   10.0933 157.67 69.032
+- am    1   11.8359 159.41 69.384
+- wt    1   27.0280 174.60 72.297
+
+Step:  AIC=66.97
+mpg ~ disp + hp + drat + wt + qsec + am + gear + carb
+
+       Df Sum of Sq    RSS    AIC
+- carb  1    0.6855 148.53 65.121
+- gear  1    2.1437 149.99 65.434
+- drat  1    2.2139 150.06 65.449
+- disp  1    3.6467 151.49 65.753
+- hp    1    7.1060 154.95 66.475
+<none>              147.84 66.973
+- am    1   11.5694 159.41 67.384
+- qsec  1   15.6830 163.53 68.200
+- wt    1   27.3799 175.22 70.410
+
+Step:  AIC=65.12
+mpg ~ disp + hp + drat + wt + qsec + am + gear
+
+       Df Sum of Sq    RSS    AIC
+- gear  1     1.565 150.09 63.457
+- drat  1     1.932 150.46 63.535
+<none>              148.53 65.121
+- disp  1    10.110 158.64 65.229
+- am    1    12.323 160.85 65.672
+- hp    1    14.826 163.35 66.166
+- qsec  1    26.408 174.94 68.358
+- wt    1    69.127 217.66 75.350
+
+Step:  AIC=63.46
+mpg ~ disp + hp + drat + wt + qsec + am
+
+       Df Sum of Sq    RSS    AIC
+- drat  1     3.345 153.44 62.162
+- disp  1     8.545 158.64 63.229
+<none>              150.09 63.457
+- hp    1    13.285 163.38 64.171
+- am    1    20.036 170.13 65.466
+- qsec  1    25.574 175.67 66.491
+- wt    1    67.572 217.66 73.351
+
+Step:  AIC=62.16
+mpg ~ disp + hp + wt + qsec + am
+
+       Df Sum of Sq    RSS    AIC
+- disp  1     6.629 160.07 61.515
+<none>              153.44 62.162
+- hp    1    12.572 166.01 62.682
+- qsec  1    26.470 179.91 65.255
+- am    1    32.198 185.63 66.258
+- wt    1    69.043 222.48 72.051
+
+Step:  AIC=61.52
+mpg ~ hp + wt + qsec + am
+
+       Df Sum of Sq    RSS    AIC
+- hp    1     9.219 169.29 61.307
+<none>              160.07 61.515
+- qsec  1    20.225 180.29 63.323
+- am    1    25.993 186.06 64.331
+- wt    1    78.494 238.56 72.284
+
+Step:  AIC=61.31
+mpg ~ wt + qsec + am
+
+       Df Sum of Sq    RSS    AIC
+<none>              169.29 61.307
+- am    1    26.178 195.46 63.908
+- qsec  1   109.034 278.32 75.217
+- wt    1   183.347 352.63 82.790
+
+Call:
+lm(formula = mpg ~ wt + qsec + am, data = mtcars)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-3.4811 -1.5555 -0.7257  1.4110  4.6610 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   9.6178     6.9596   1.382 0.177915    
+wt           -3.9165     0.7112  -5.507 6.95e-06 ***
+qsec          1.2259     0.2887   4.247 0.000216 ***
+am            2.9358     1.4109   2.081 0.046716 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 2.459 on 28 degrees of freedom
+Multiple R-squared:  0.8497,	Adjusted R-squared:  0.8336 
+F-statistic: 52.75 on 3 and 28 DF,  p-value: 1.21e-11
+\end{verbatim}
+\end{lstlisting}
 
 \end{document}
