@@ -1,47 +1,48 @@
 This is BibTeX, Version 0.99d (TeX Live 2023)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main_file.aux
-I found no \bibdata command---while reading file main_file.aux
-I found no \bibstyle command---while reading file main_file.aux
+The style file: plain.bst
+Database file #1: reference.bib
+Warning--to sort, need author or key in worth
 You've used 11 entries,
-            0 wiz_defined-function locations,
-            96 strings with 587 characters,
-and the built_in function-call counts, 0 in all, are:
-= -- 0
-> -- 0
+            2118 wiz_defined-function locations,
+            552 strings with 5453 characters,
+and the built_in function-call counts, 2476 in all, are:
+= -- 244
+> -- 77
 < -- 0
-+ -- 0
-- -- 0
-* -- 0
-:= -- 0
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
++ -- 34
+- -- 22
+* -- 91
+:= -- 419
+add.period$ -- 40
+call.type$ -- 11
+change.case$ -- 43
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 0
-format.name$ -- 0
-if$ -- 0
+cite$ -- 12
+duplicate$ -- 86
+empty$ -- 251
+format.name$ -- 22
+if$ -- 542
 int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 0
-num.names$ -- 0
-pop$ -- 0
-preamble$ -- 0
-purify$ -- 0
+int.to.str$ -- 11
+missing$ -- 3
+newline$ -- 65
+num.names$ -- 20
+pop$ -- 83
+preamble$ -- 1
+purify$ -- 33
 quote$ -- 0
-skip$ -- 0
+skip$ -- 68
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
+substring$ -- 83
+swap$ -- 11
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 0
-(There were 2 error messages)
+type$ -- 42
+warning$ -- 1
+while$ -- 21
+width$ -- 13
+write$ -- 127
+(There was 1 warning)
