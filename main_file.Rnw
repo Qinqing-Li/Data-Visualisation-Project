@@ -3,8 +3,14 @@
 \usepackage{blindtext}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{listings}
 \usepackage{appendix}
 \usepackage{amsmath}
+<<<<<<< HEAD
+=======
+\usepackage{comment}
+\usepackage{natbib}
+>>>>>>> 134aff26ad3c40a56c2fe54bd6be39ffb09edd65
 \usepackage[a4paper, total={6in, 8in}]{geometry}
 
 \title{Data Visualisation: Theory and Practice}
@@ -49,54 +55,72 @@ opts_chunk$set(fig.path = 'figure/beamer-',
 \section{Introduction}
 
 \subsection{Motivation and Background}
-\\\textbf{Motivations for having Data Visualisations - Case Example 1}\\
-\\  
-\\Florence Nightingale was not only a social reformer and the founder of modern nursing but also a pioneering statistician. It was her application of data visualisation during the Crimean War that transformed the field of healthcare and pushed for social reform.
-\\  
-\\During the Crimean War, Nightingale recognised that unsanitary hospital conditions were claiming more lives than the battlefield itself. With the help of William Farr, Nightingale created the coxcomb aimed to illustrate the toll of preventable mortality on soldiers, as shown in Figure \ref{fig:coxcomb}.
-\\  
+
+\textbf{Motivations for having Data Visualisations - Case Example 1}\\
+
+\noindent
+Florence Nightingale was not only a social reformer and the founder of modern nursing but also a pioneering statistician. It was her application of data visualisation during the Crimean War that transformed the field of healthcare and pushed for social reform.\\  
+
+\noindent
+During the Crimean War, Nightingale recognised that unsanitary hospital conditions were claiming more lives than the battlefield itself. With the help of William Farr, Nightingale created the coxcomb aimed to illustrate the toll of preventable mortality on soldiers, as shown in Figure~\ref{fig:coxcomb}.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{Nightingale-mortality.jpg}
     \caption{``Diagram of the causes of mortality in the army in the East", in 1858 by Florence Nightingale\cite{wikiFN}}
     \label{fig:coxcomb}
 \end{figure}
-\noindent The coxcomb, resembling an unconventional pie chart, partitioned mortality by causes. Blue indicates preventable deaths, red indicates deaths by wounds, and black indicates other causes.
-The blue areas outweighed the red and black sections combined, highlighting the disproportionate impact of unsanitary hospital conditions on the mortality rate.
-\\   
-\\Nightingale leveraged the compelling visualisations in her advocacy efforts, presenting them to MPs and government officials who otherwise are unlikely to read or understand statistical reports. Nightingale successfully persuaded Queen Victoria, head of the British Army at the time, to allocate funding for the improvement of better conditions in military hospitals.
-\\  
-\\\textbf{Motivations for having Data Visualisations - Case Example 2}\\
-\\  
-\\Sometimes, one glance is enough to convey the most powerful idea. Edward Hawkins, a British climate scientist and Professor of climate science at the University of Reading, is renowned for his exceptional datavisualisations of climate change.
-\\ 
-\\In 2018, Edward Hawkins was invited to deliver a lecture on climate change in Wales to an audience with diverse backgrounds. It was important to effectively convey the growing urgency surrounding global warming. To achieve this, he created a chart that used just colours, without any words, titles, or legends, as shown in Figure \ref{fig:global}. This seemingly simple yet remarkably powerful chart visually illustrated the Earth's warming trend since 1850.
+
+\noindent 
+The coxcomb, resembling an unconventional pie chart, partitioned mortality by causes. Blue indicates preventable deaths, red indicates deaths by wounds, and black indicates other causes.
+The blue areas outweighed the red and black sections combined, highlighting the disproportionate impact of unsanitary hospital conditions on the mortality rate.\\
+
+\noindent
+Nightingale leveraged the compelling visualisations in her advocacy efforts, presenting them to MPs and government officials who otherwise are unlikely to read or understand statistical reports. Nightingale successfully persuaded Queen Victoria, head of the British Army at the time, to allocate funding for the improvement of better conditions in military hospitals.\\
+
+\noindent
+\textbf{Motivations for having Data Visualisations - Case Example 2}\\
+
+\noindent
+Sometimes, one glance is enough to convey the most powerful idea. Edward Hawkins, a British climate scientist and Professor of climate science at the University of Reading, is renowned for his exceptional datavisualisations of climate change.\\
+
+\noindent
+In 2018, Edward Hawkins was invited to deliver a lecture on climate change in Wales to an audience with diverse backgrounds. It was important to effectively convey the growing urgency surrounding global warming. To achieve this, he created a chart that used just colours, without any words, titles, or legends, as shown in Figure~\ref{fig:global}. This seemingly simple yet remarkably powerful chart visually illustrated the Earth's warming trend since 1850.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{global.png}
     \caption{``Latest global stripes (1850-2020)", by Edward Hawkins\cite{blog}}
     \label{fig:global}
 \end{figure}
-\noindent Known as the ``warming stripes," this chart cleverly employs blues to indicate cooler-than-average years and reds to signify hotter-than-average years. Its influence reached far and wide, gracing the front pages of major media outlets and featured in news broadcasts worldwide. It became a symbol in climate change demonstrations. Arguably, it stands as one of the most iconic graphics in modern times.
-\\  
-\\  
-\\\textbf{Misuses of Data Visualisation - Case Example 1}\\
-\\  
-\\Inappropriate datavisualisation conceals trends rather than revealing them. Figure \ref{fig:misuse1} illustrates an instance of this issue. On the left-hand side, an inappropriate scale was used --- the y-scale ranging from 0 to 30 million dollars, obscuring the fluctuations in payroll spending. Conversely, on the right-hand side, observe that there's a significant increase of over 500,000 dollars in just two months. This revelation is substantial; considering inflation, 500,000 dollars in 1937 is worth well over 10 million dollars today\cite{worth}.
+
+\noindent 
+Known as the ``warming stripes," this chart cleverly employs blues to indicate cooler-than-average years and reds to signify hotter-than-average years. Its influence reached far and wide, gracing the front pages of major media outlets and featured in news broadcasts worldwide. It became a symbol in climate change demonstrations. Arguably, it stands as one of the most iconic graphics in modern times.\\
+
+\noindent
+\textbf{Misuses of Data Visualisation - Case Example 1}\\
+
+\noindent
+Inappropriate datavisualisation conceals trends rather than revealing them. Figure~\ref{fig:misuse1} illustrates an instance of this issue. On the left-hand side, an inappropriate scale was used --- the y-scale ranging from 0 to 30 million dollars, obscuring the fluctuations in payroll spending. Conversely, on the right-hand side, observe that there's a significant increase of over 500,000 dollars in just two months. This revelation is substantial; considering inflation, 500,000 dollars in 1937 is worth well over 10 million dollars today\cite{worth}.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{misuse1.png}
     \caption{Inappropriate use of data visualisation\cite{lie}}
     \label{fig:misuse1}
 \end{figure}
-\\  
-\noindent \\\textbf{Misuses of Data Visualisation - Case Example 2}\\
-\\  
-\\Data visualisation can be misused, leading to disastrous consequences. One striking example of such misuse is found in the Kallikak Family tree, which was one of the most prominent eugenic narratives of the 20th century.
-\\  
-\\The visualisation (as shown in Figure \ref{fig:familytree}) was created by the psychologist Henry Goddard and presented in his 1912 book, ``The Kallikak Family: A Study in the Heredity of Feeble-Mindedness." Goddard's narrative centered around Martin Kallikak, a soldier who, in addition to his marriage to a respected citizen, had a one-night stand with a ``feeble-minded" maid. Goddard believed that intellectual disabilities were inherited traits. In Goddard's account, the legitimate family was successful, while the children of the ``feeble-minded" maid were labeled as ``the lowest types of human beings." However, research has since revealed that the entire story was fictitious, as there was no record of the maid's existence\cite{fakedata}.
-\\  
-\\Regrettably, the Kallikak family tree became a central element in the eugenics movement for decades afterward. Figure \ref{fig:familytree} was featured in the 1935 Nazi propaganda film ``Das Erbe" (The Inheritance), which was used to promote public acceptance of Nazi eugenics laws. This propaganda laid the groundwork for the forced sterilization of approximately 400,000 people under Nazi eugenics policies \cite{eugenics}.
+
+\noindent 
+\textbf{Misuses of Data Visualisation - Case Example 2}\\
+
+\noindent
+Data visualisation can be misused, leading to disastrous consequences. One striking example of such misuse is found in the Kallikak Family tree, which was one of the most prominent eugenic narratives of the 20th century.\\
+
+\noindent
+The visualisation (as shown in Figure~\ref{fig:familytree}) was created by the psychologist Henry Goddard and presented in his 1912 book, ``The Kallikak Family: A Study in the Heredity of Feeble-Mindedness." Goddard's narrative centered around Martin Kallikak, a soldier who, in addition to his marriage to a respected citizen, had a one-night stand with a ``feeble-minded" maid. Goddard believed that intellectual disabilities were inherited traits. In Goddard's account, the legitimate family was successful, while the children of the ``feeble-minded" maid were labeled as ``the lowest types of human beings." However, research has since revealed that the entire story was fictitious, as there was no record of the maid's existence\cite{fakedata}.\\
+
+\noindent
+Regrettably, the Kallikak family tree became a central element in the eugenics movement for decades afterward. Figure \ref{fig:familytree} was featured in the 1935 Nazi propaganda film ``Das Erbe" (The Inheritance), which was used to promote public acceptance of Nazi eugenics laws. This propaganda laid the groundwork for the forced sterilization of approximately 400,000 people under Nazi eugenics policies \cite{eugenics}.
 
 \begin{figure}[H]
     \centering
@@ -104,68 +128,91 @@ The blue areas outweighed the red and black sections combined, highlighting the 
     \caption{The Kallikak Family tree, in 1912 by Henry Goddard\cite{ktree}}
     \label{fig:familytree}
 \end{figure}
-\\  
-\\Case examples obtained from BBC Ideas\cite{bbcdatavis}.
+
+\noindent
+Case examples obtained from BBC Ideas\cite{bbcdatavis}.
+
 \subsection{Computing and Data Visualisation}
+
 In data visualisation, we mostly use ggplot as our useful tool to create so many greaet plots to represent our dataset. ggplot2 is based on the Grammar of Graphics, which simply means that you can draw each part of the graph first, and then add the parts together to form a complete graph.\\
-As we will explore in subsequent sections, we can achieve numerousvisualisations effortlessly by utilizing data in R together with ggplot.
-When using ggplot2, the following objects are used repeatedly, Such as geom, scale, coord, aes, stat, theme labs and so on.\\\\\\
+
+\noindent
+As we will explore in subsequent sections, we can achieve numerous visualisations effortlessly by utilizing data in R together with ggplot.
+When using ggplot2, the following objects are used repeatedly, Such as geom, scale, coord, aes, stat, theme labs and so on.\\
+
+\noindent
 \textbf{\textit{``ggplot2: Elegant Graphics for Data Analysis''}} is a book written by Hadley Wickham, focused on teaching the use of the ggplot2 package in R for datavisualisation. The book thoroughly covers the principles, usage, and advanced techniques of ggplot2, making it an essential resource for learning and mastering this tool.\\
+
+\noindent
 \textbf{geom} refers to Geometric Objects. Geometric objects are key components of ggplot2 and are used to define how data is visually represented in a plot. Each geom function corresponds to a specific type of graphical representation in a chart.\\
+
+\noindent
 \textbf{Scales} map data to the aesthetic attributes of a graphic, such as color, size, and shape. In ggplot2, scale functions allow you to adjust the details of these mappings, such as the choice of colors, the format of labels, the layout of legends, and more.\\
+
+\noindent
 \textbf{Chord} talks about how data coordinates are mapped to the plane of the graphic. It provdes axis and gridlines to make it possible to read the graph. We can use Cartesian coordinate system, polar coordinates and map projections and so on.\\
+
+\noindent
 \textbf{Faceting} is a powerful feature that allows you to split one plot into multiple plots based on a factor (or factors) included in the dataset. This is particularly useful for exploring and presenting data that has multiple groups or categories.\\
+
+\noindent
 The \textbf{theme} function plays a crucial role in customizing the non-data components of your plots. The theme system in ggplot2 allows you to fine-tune the aesthetic details of your plot, such as fonts, labels, legends, and background colors. It is an essential tool for making your plots more readable and for creating visually appealing graphics that can be tailored to specific audiences or publication requirements.
 
 \subsection{Datasets}
 In this section, we unveil the datasets used throughout our study. This section delves into the comprehensive depiction of the diverse datasets employed. Each dataset is meticulously introduced, elucidating its source, structure, and relevance to our investigation.\\
 
 \noindent
-\textbf{The Mtcars dataset}: The \textit{Mtcars} dataset, available as a built-in dataset in R, offers a glimpse into the automotive world of the early 1970s. This dataset encompasses 11 attributes for 32 distinct car models. Some of the variables included are: mpg: Miles per Gallon, cly: Number of cylinders , hp: Horsepower , and wt: Weight of the car in tons .\\
+\textbf{Mtcars}: The \textit{Mtcars} dataset, available as a built-in dataset in R, offers a glimpse into the automotive world of the early 1970s. This dataset encompasses 11 attributes for 32 distinct car models. Some of the variables included are: mpg: Miles per Gallon, cly: Number of cylinders , hp: Horsepower , and wt: Weight of the car in tons .\\
 
 \noindent
-\textbf{The Tooth Growth dataset}: \textit{The ToothGrowth dataset}, available as a built-in dataset in R, offers the impact of vitamin C on the tooth growth of Guinea pigs. The dataset consists of 60 observations and 3 variables: len: Length of the Guinea pigs' teeth, supp: Method of vitamin C supplementation, and dose: Dose of vitamin C in milligrams per day.\\
+\textbf{Tooth Growth}: \textit{The ToothGrowth dataset}, available as a built-in dataset in R, offers the impact of vitamin C on the tooth growth of Guinea pigs. The dataset consists of 60 observations and 3 variables: len: Length of the Guinea pigs' teeth, supp: Method of vitamin C supplementation, and dose: Dose of vitamin C in milligrams per day.\\
 
 \noindent
-\textbf{The Edgar Anderson's Iris dataset}: The Anderson's iris data, available as a built-in dataset in R, offers the measurements in centimeters of sepal length and width, petal length and width, along with the species name for 50 flowers from each of three species of iris. The dataset consists of 5 variables: Sepal.Length, Sepal.Width, Petal.Length, Petal.Width, and Species: Species name.\\
+\textbf{Iris}: The Anderson's iris data, available as a built-in dataset in R, offers the measurements in centimeters of sepal length and width, petal length and width, along with the species name for 50 flowers from each of three species of iris. The dataset consists of 5 variables: Sepal.Length, Sepal.Width, Petal.Length, Petal.Width, and Species: Species name.\\
 
 \noindent
-\textbf{The annual fire in Brazil dataset}: Open-source fire observation data is provided on a global scale by \href{https://firms.modaps.eosdis.nasa.gov/}{NASA}. For the purpose of our project, 
-the analysis was focused on Brazil. The dataset covers the year 2013 to 2022, with over 200,000 observations annually. Each observation includes crucial information such as latitude, longitude and date of observation. Notably, the dataset contains the variable confidence, ranging from 0\% to 100\%. This variable quantifies the level of confidence associated with each observation being a fire occurrence. For the reliability of the result, we filtered all observations with a confidence level $\ge$ 95\% \cite{nasa_confidence}.\\
-
+\textbf{Annual Fire in Brazil}: Open-source fire observation data is provided on a global scale by \href{https://firms.modaps.eosdis.nasa.gov/}{NASA}. For the purpose of our project, the analysis was focused on Brazil. The dataset covers the year 2013 to 2022, with over 200,000 observations annually. Each observation includes crucial information such as latitude, longitude and date of observation. Notably, the dataset contains the variable confidence, ranging from 0\% to 100\%. This variable quantifies the level of confidence associated with each observation being a fire occurrence. For the reliability of the result, we filtered all observations with a confidence level $\ge$ 95\% \cite{nasa_confidence}.\\
 
 \noindent
-\textbf{The exchange rate data}: The exchange rate data, available at the \href{https://www.bankofengland.co.uk/boeapps/database/index.asp?first=yes&SectionRequired=I&HideNums=-1&ExtraInfo=true&Travel=NIx}{Bank of England}, provides daily spot exchange rates against GBP over the time period from 2005 to now (without weekends). A subset of daily spot exchange rate of CNY (Chinese Yuan), CAD (Canadian Dollar), EUR (Euro), HKD (Hongkong Dollar), and USD (US Dollar) against GBP (Pounds Sterling) from January 2013 to October 2023 was used in this report. The dataset contains 6 variables: `Date`: Date of spot exchange rate and spot exchange rate of CNY, CAN, EUR, HKD, and USD against GBP.\\
+\textbf{Exchange Rate}: The exchange rate data, available at the \href{https://www.bankofengland.co.uk/boeapps/database/index.asp?first=yes&SectionRequired=I&HideNums=-1&ExtraInfo=true&Travel=NIx}{Bank of England}, provides daily spot exchange rates against GBP over the time period from 2005 to now (without weekends). A subset of daily spot exchange rate of CNY (Chinese Yuan), CAD (Canadian Dollar), EUR (Euro), HKD (Hongkong Dollar), and USD (US Dollar) against GBP (Pounds Sterling) from January 2013 to October 2023 was used in this report. The dataset contains 6 variables: `Date`: Date of spot exchange rate and spot exchange rate of CNY, CAN, EUR, HKD, and USD against GBP.\\
 
 \noindent
 \textbf{Statistical GIS Boundary Files for London}: This file, offered by Greater London Autority (GLA) and available at \href{https://data.london.gov.uk/dataset/statistical-gis-boundary-files-london}{London Datastore}, provided a range of key GIS boundary files for ESRI and Map Info covering Greater London, including shape files of London Wards and London Boroughs. This data set includes Name: Name of ward, District: Name of borough, Geometry: Pair of longitude and latitude.\\
 
 \noindent
-\textbf{The crime levels by borough}: This data set, offered by Metropolitan Police Service and available at \href{https://data.london.gov.uk/dataset/recorded_crime_summary}{London Datastore}, counted the number of crimes at three different geographic levels of London (borough, ward, LSOA) per month, according to crime type from 2010 to 2021. This data set contain variables like LookUp\_BoroughName: Name of Borough and X201004: count of crimes during April 2010.\\
+\textbf{Crime levels by borough}: This data set, offered by Metropolitan Police Service and available at \href{https://data.london.gov.uk/dataset/recorded_crime_summary}{London Datastore}, counted the number of crimes at three different geographic levels of London (borough, ward, LSOA) per month, according to crime type from 2010 to 2021. This data set contain variables like LookUp\_BoroughName: Name of Borough and X201004: count of crimes during April 2010.\\
 
 \noindent
-\textbf{The Population by Ward and Borough}: This file, offered by Greater London Autority (GLA) and available at \href{https://data.london.gov.uk/dataset/land-area-and-population-density-ward-and-borough}{London Datastore}, provided population for 2001 to 2050 for London wards and boroughs. This data set includes variables like Name: Borough name, Year: population of the year, Population: population of the borough at that year.\\
+\textbf{Population by Ward and Borough}: This file, offered by Greater London Autority (GLA) and available at \href{https://data.london.gov.uk/dataset/land-area-and-population-density-ward-and-borough}{London Datastore}, provided population for 2001 to 2050 for London wards and boroughs. This data set includes variables like Name: Borough name, Year: population of the year, Population: population of the borough at that year.\\
 
 \noindent
-\textbf{Trees dataset}: The trees dataset, available as a built-in dataset in R, offers measurements from 31 felled black cherry trees and provides insights into the relationship between a tree's girth, its height, and the volume of timber it can produce. The dataset contains 3 variables: Girth: The diameter of the tree, Height: The height of the tree, Volume: The volume of timber that the tree can produce.\\
+\textbf{Trees}: The trees dataset, available as a built-in dataset in R, offers measurements from 31 felled black cherry trees and provides insights into the relationship between a tree's girth, its height, and the volume of timber it can produce. The dataset contains 3 variables: Girth: The diameter of the tree, Height: The height of the tree, Volume: The volume of timber that the tree can produce.\\
 
 \subsection{Structure and Organisation of the Thesis}
-\noindent The remainder of this thesis is composed by, firstly, Chapter 2: ``Theoretical Foundations of Data Visualisation", an introductory section that lays the theoretical foundation for the subsequent discussions.\\
 
-\noindent The crux of this document, Chapter 3: ``Modern Methods of Data Visualisation", conducts a detailed exploration of various modern methods of data visualisation. This chapter offers an in-depth analysis and critical evaluation of their applications, strengths, and limitations.\\
+The remainder of this thesis is composed by, firstly, Chapter 2: ``Theoretical Foundations of Data Visualisation", an introductory section that lays the theoretical foundation for the subsequent discussions.\\
 
-\noindent Chapter 4: ``Practical Implementation" ventures into the practical application of Python Dash and R Shiny for constructing interactive data visualisation dashboards. Subsequently, Chapter 5: ``Case Studies" presents case studies, which serve as practical demonstrations of the efficacy and relevance of the discussed visualisation methods in resolving real-world problems. Finally, Chapter 6 ``State-of-the-Art Approaches" critically examines state-of-the-art approaches in data visualisation, highlighting emerging trends, methodologies, and technologies in the field.
+\noindent 
+The crux of this document, Chapter 3: ``Modern Methods of Data Visualisation", conducts a detailed exploration of various modern methods of data visualisation. This chapter offers an in-depth analysis and critical evaluation of their applications, strengths, and limitations.\\
+
+\noindent 
+Chapter 4: ``Practical Implementation" ventures into the practical application of Python Dash and R Shiny for constructing interactive data visualisation dashboards. Subsequently, Chapter 5: ``Case Studies" presents case studies, which serve as practical demonstrations of the efficacy and relevance of the discussed visualisation methods in resolving real-world problems. Finally, Chapter 6 ``State-of-the-Art Approaches" critically examines state-of-the-art approaches in data visualisation, highlighting emerging trends, methodologies, and technologies in the field.
 
 \newpage 
 
 \section{Theoretical Foundations of Data Visualisation}
+
 This chapter, ``Theoretical Foundations of Data Visualisation," delves into the core principles and concepts that serve as the base of this field. We seek to understand not only the ``how" but also the ``why" behind the creation of visualisations that captivate and inform.
 
 \subsection{Introduction to Data Visualisation Theory}
+
 Creating effective data visualisations requires a robust theoretical framework underlying every chart, graph, or plot. These theoretical underpinnings not only form the basis of data visualisation but also influence how we represent, perceive, understand, and interpret data.\\ 
 
-\noindent \textbf{Guiding Principles for Data Representation}\\
-The theoretical framework of data visualisation involves guiding principles dictating visual representation of data. These principles include \textbf{accuracy}, emphasizing faithful reflection of underlying data to reduce distortion or misinterpretation; \textbf{simplicity}, advocating for streamlined visuals to convey information effectively; \textbf{clarity}, ensuring visuals are easily understood without unnecessary complexity; \textbf{relevance}, presenting information pertinent to the message or question addressed; and \textbf{consistency}, maintaining uniform use of visual elements like color coding and labeling throughout a visualisation.\\
+\noindent 
+\textbf{Guiding Principles for Data Representation}\\
+
+\noindent
+The theoretical framework of data visualisation involves guiding principles dictating visual representation of data. These principles include \textbf{accuracy}, emphasizing faithful reflection of underlying data to reduce distortion or misinterpretation; \textbf{simplicity}, advocating for streamlined visuals to convey information effectively; \textbf{clarity}, ensuring visuals are easily understood without unnecessary complexity; \textbf{relevance}, presenting information pertinent to the message or question addressed; and \textbf{consistency}, maintaining uniform use of visual elements like color coding and labeling throughout a visualisation.
 
 \begin{figure}[htbp]
   \centering
@@ -227,36 +274,49 @@ The theoretical framework of data visualisation involves guiding principles dict
 \caption{Comparison of visualisations of the distribution of sepal and petal legth across three flower species ignoring (right), and adhering (left) to the Guiding Principles}
 \end{figure}
 
+\noindent 
+\textbf{Theoretical Framework and Visual Perception}\\
 
-\noindent \textbf{Theoretical Framework and Visual Perception}\\
+\noindent
 Understanding how the human brain processes visual information is a fundamental aspect of data visualisation theory. This knowledge plays a crucial role in designing visualisations that effectively connect with viewers. It encompasses several key considerations which will be studied in order: the Gestalt Principles, which encompass proximity, similarity, and continuity, affecting how visual elements are grouped and interpreted; Color Theory, involving the strategic use of color contrasts and harmonies to improve clarity and impact; and the management of Cognitive Load, which emphasizes the importance of reducing mental effort needed to process information.\\
 
 \subsection{Visual Perception and Cognition}
+
 In this first section, human visual perception is explored, along with the application of cognitive psychology principles in data visualisation and highlight the crucial role of pre-attentive attributes in shaping our perception of data.\\ 
 
-\noindent \textbf{Human Visual Perception: Decoding Visual Information}\\
+\noindent 
+\textbf{Human Visual Perception: Decoding Visual Information}\\
+
+\noindent
 Human visual perception, a remarkable cognitive process, profoundly influences our understanding of the surrounding world. When applied to data visualisation, it elucidates how individuals engage with and derive meaning from visual data representations. Significant aspects of human visual perception within data visualisation encompass \textbf{pattern recognition}, adept at identifying trends, outliers, and relationships in data representations. Additionally, \textbf{perceptual grouping}, where visually similar elements are grouped together, influences the interpretation of data clusters and shapes. Moreover, the \textbf{hierarchy of perception} dictates that certain visual attributes are processed more swiftly and effectively than others, such as color being processed faster than text, influencing the viewer's attention hierarchy.\\
 
+\noindent
 By harnessing the principles of human visual perception, applying insights from cognitive psychology, and leveraging pre-attentive attributes, data visualisation designers can create visualisations that are not only aesthetically pleasing but also cognitively efficient.	
 
 \subsubsection{The Gestalt Principles}
-The Gestalt principles play an important role in the realm of visual perception and design. In this discussion, the focus is placed on their relevance to data visualisation and strategies for creating more effective visualisations. Key Gestalt principles crucial in shaping visual information perception include proximity, which groups related elements, \textbf{similarity} that links similar attributes, \textbf{continuity} aiding trend representation, \textbf{closure} for implying connections, and \textbf{symmetry} for balance and aesthetics in visualisations.\\
+
+The Gestalt principles play an important role in the realm of visual perception and design. In this discussion, the focus is placed on their relevance to data visualisation and strategies for creating more effective visualisations. Key Gestalt principles crucial in shaping visual information perception include proximity, which groups related elements, \textbf{similarity} that links similar attributes, \textbf{continuity} aiding trend representation, \textbf{closure} for implying connections, and \textbf{symmetry} for balance and aesthetics in visualisations.
 
 
 \subsection{Data Abstraction and Representation}
+
 The transformation of raw data into meaningful representations is a pivotal step in data visualisation. This process, known as data abstraction, involves distilling complex datasets into visual forms that convey insights. In this section, we explore data abstraction, the hierarchies and levels of abstraction in data visualisation, and the critical trade-offs between abstraction and the potential loss of information.
 
 \subsubsection{Data Abstraction: Transforming Raw Data}
+
 Data abstraction involves simplifying and structuring raw data into comprehensible and insightful formats. This process serves as the bridge, transforming numbers, text, and variables into visual elements that convey patterns, trends, and relationships, forming the core of informative data visualisations.
 
 \subsubsection{Hierarchies and Levels of Abstraction}
-In data visualisation, abstraction operates on multiple levels of granularity. Hierarchies of abstraction allow us to represent data at varying levels of detail: 
+
+In data visualisation, abstraction operates on multiple levels of granularity. Hierarchies of abstraction allow us to represent data at varying levels of detail:
+
 \begin{enumerate}
     \item \textbf{Low-Level Abstraction}: At the lowest level, raw data is preserved in its most detailed form. This might include individual data points, measurements, or unprocessed text.
     \item \textbf{Mid-Level Abstraction}: As we move up the hierarchy, data is grouped or aggregated to provide a broader overview. For example, hourly data points may be aggregated into daily or weekly averages.
     \item \textbf{High-Level Abstraction}: At the highest level, data is represented in a condensed and abstracted form, often as summary statistics or key insights. This level provides a big-picture view.
 \end{enumerate}
 
+\noindent
 This is represented in Figure~\ref{fig:abs-plots}. The first visualisations of the mtcars dataset is a scatter plot that provides detailed information about the relationship between car weight and miles per gallon, with points colored by the number of cylinders. The second is an abstractvisualisation using a box-and-whisker plot to provide a high-level summary of the distribution of miles per gallon for different numbers of cylinders. Finally, the third visualisation is a bar plot presenting aggregated information about the average miles per gallon for different numbers of cylinders.
 
 <<abs-plots, echo=FALSE, fig.height=4, fig.width=12, fig.cap='Mtcars dataset visualised on 3 different levels of abstraction'>>=
@@ -302,17 +362,24 @@ plot3 <- ggplot(summary_data, aes(x = factor(cyl), y = mpg, fill = factor(cyl)))
 grid.arrange(plot1, plot2, plot3, ncol = 3)
 @
 
-\noindent \textbf{Trade-offs Between Abstraction and Information Loss}\\
-While abstraction simplifies complex data, it presents trade-offs. Designers of data visualisation must strike a balance between clarity and detail, generalization and specificity, and context versus precision. Abstraction increases clarity but may sacrifice crucial detailed information necessary for some analytical tasks. It offers a more generalized view accessible to a wider audience but might overlook specific nuances essential for experts. While providing valuable context, high-level abstraction may lack the precision required for precise decision-making.\\ 
+\noindent 
+\textbf{Trade-offs Between Abstraction and Information Loss}\\
 
+\noindent
+While abstraction simplifies complex data, it presents trade-offs. Designers of data visualisation must strike a balance between clarity and detail, generalization and specificity, and context versus precision. Abstraction increases clarity but may sacrifice crucial detailed information necessary for some analytical tasks. It offers a more generalized view accessible to a wider audience but might overlook specific nuances essential for experts. While providing valuable context, high-level abstraction may lack the precision required for precise decision-making.\\
+
+\noindent
 In data visualisation, the art of data abstraction lies in finding the right level of detail that effectively conveys the intended message while minimising the risk of information loss. This balancing act is a critical consideration in the design of informative and meaningful data visualisations.
 
 
 \subsection{Data Types and Visualisation Techniques}
+
 In the world of data visualisation, understanding the nature of your data is key. Data comes in various types, and selecting the appropriate visualisation technique is contingent upon recognising these distinctions. In this section, we categorise data types, and demonstrate how to match each data type with suitable visualisation techniques.
 
 \subsubsection{Categorisation of Data Types}
+
 Data types can be broadly categorised into four main types: 
+
 \begin{itemize}
     \item \textbf{Nominal data}: nominal data represents categories or labels without any inherent order. Examples include colours, gender categories, and city names. 
     \item \textbf{Ordinal data}: ordinal data implies a meaningful order or ranking among categories but lacks equal intervals between them. Examples include survey responses (eg. “very satisfied”, “satisfied”, “neutral”, “dissatisfied”, “very dissatisfied”)
@@ -321,15 +388,23 @@ Data types can be broadly categorised into four main types:
 \end{itemize}
 
 \subsubsection{Matching Data Types with Appropriate Visualisation Techniques}
+
 Selecting appropriate visualisation techniques is essential for effective data communication. Various data types demand specific visualisation methods for optimal representation. For nominal data, bar charts and stacked bar charts are effective in displaying categorical information and relative proportions. Ordinal data benefits from ordered bar charts, dot plots, or stacked bar charts, maintaining the ranking and order of categories. Interval data is best visualised using line charts, histograms, and box plots, showcasing trends and distributions without assuming a true zero point. Ratio data finds effective representation through scatter plots, histograms, and line charts, enabling precise comparisons and measurements due to the presence of a meaningful zero point.
 
 \subsection{Colour Theory in Data Visualisation}
+
 Here, we explore the significance of colour in data visualisation, the principles of colour perception and encoding, and the importance of avoiding misleading visualisations through thoughtful colour choices.\\
 
-\noindent \textbf{The Importance of Colour in Conveying Information}\\
+\noindent 
+\textbf{The Importance of Colour in Conveying Information}\\
+
+\noindent
 Color significantly enhances the impact and comprehension of data visualisations. It serves multiple purposes: distinguishing data points, emphasizing trends, and offering contextual information. It is utilized to encode categorical data, differentiating between various groups with distinct colors, and to represent quantitative data by utilizing color intensity or gradients to portray values or magnitudes. Additionally, color is instrumental in adding context to visualisations through background elements, labels, or annotations, imparting meaning to the data.\\
 
-\noindent \textbf{Colour Perception and Colour Encoding in Visualisations}\\
+\noindent 
+\textbf{Colour Perception and Colour Encoding in Visualisations}\\
+
+\noindent
 Understanding color perception in data visualisation is crucial. Key principles involve considering color discrimination, ensuring accessibility for individuals with color vision deficiencies, as is illustrated by figure~\ref{fig:colour-plot}. Careful selection of color schemes aligned with the intended message is essential—for instance, using warm colors like red and orange to indicate caution or warmth, and cool colors like blue and green to convey calmness or coldness. Additionally, attention should be paid to how colors interact when combined; certain combinations might create visual vibrations or impact text legibility.\\
 
 <<colour-plot, echo=FALSE, fig.height=3, fig.width=10, fig.cap='Colour perception of a heatmap for by a colour blind person'>>=
@@ -369,61 +444,86 @@ heatmap_plot2 <- ggplot(correlation_data, aes(x = Variable1, y = Variable2, fill
 grid.arrange(heatmap_plot1, heatmap_plot2, ncol = 2)
 @
 
-\noindent \textbf{Avoiding Misleading Visualisations Due to Colour Choices}\\
+\noindent 
+\textbf{Avoiding Misleading Visualisations Due to Colour Choices}\\
 Misleading visualisations often stem from inappropriate or deceptive use of color, requiring precautions to prevent such occurrences. First, maintaining consistency in color usage throughout the visualisation is essential. Employing a uniform color scheme for similar data categories or elements helps establish coherence and understanding. Furthermore, it's crucial to avoid color choices that could distort or exaggerate the data. Overly intense or contrasting colors might mislead interpretations, emphasizing the necessity for judicious color selection.\\
-Additionally, providing a clear and concise legend becomes imperative to explain the meaning of colors, especially when dealing with complex or unfamiliar color schemes. A comprehensive legend helps viewers decipher the represented data accurately. User testing stands as another crucial step in the process. Conducting thorough user testing ensures that the chosen color palette effectively conveys the intended message without confusion or misleading the audience. This step validates the visual interpretation and aids in making necessary adjustments to enhance clarity and accuracy in data representation.\\
+Additionally, providing a clear and concise legend becomes imperative to explain the meaning of colors, especially when dealing with complex or unfamiliar color schemes. A comprehensive legend helps viewers decipher the represented data accurately. User testing stands as another crucial step in the process. Conducting thorough user testing ensures that the chosen color palette effectively conveys the intended message without confusion or misleading the audience. This step validates the visual interpretation and aids in making necessary adjustments to enhance clarity and accuracy in data representation.
 
 \subsection{Theoretical Properties of Visualisations}
 Effective data visualisation extends beyond aesthetically pleasing graphics; it involves adhering to crucial theoretical properties that enhance expressiveness, precision, accuracy, and scalability in visual representations. This section examines key properties such as expressiveness, effectiveness, the data-ink ratio, principles of minimal ink, as well as precision, accuracy, and scalability.\\
 
+\noindent
 To begin with, we'll define the key concepts that frame this section:
+
 \begin{itemize}
     \item \textbf{Expressiveness}: Visualisations should be expressive, meaning they should effectively communicate the intended message or insights within the data. Expressive visualisations capture the richness and complexity of the underlying data, revealing patterns, trends, and relationships.
     \item \textbf{Effectiveness}: An effective visualisation is one that successfully conveys information to its audience. It allows viewers to understand the data, draw meaningful conclusions, and make informed decisions based on the presented information.
 \end{itemize}
 
 \subsubsection{Data-Ink Ratio and the Principle of Minimal Ink} 
+
 This \textbf{Data-Ink Ratio principle}, introduced by Edward Tufte, emphasises maximising the ink (or pixels in digital formats) used to represent the actual data while minimising non-essential ink. A higher data-ink ratio results in a cleaner, more efficient visualisation that reduces clutter and enhances comprehension.\\
+
+\noindent
 The \textbf{Principle of Minimal Ink} builds on the data-ink ratio. This principle advocates for the removal of any visual elements that do not contribute to the viewer's understanding of the data. Eliminating unnecessary ink (e.g., excessive gridlines or decorations) simplifies the visualisation without sacrificing its effectiveness.\\
 
-\noindent \textbf{Precision, Accuracy, and Scalability}\\
+\noindent 
+\textbf{Precision, Accuracy, and Scalability}\\
+
+\noindent
 The concepts that can be mobilised in order to comply by these principles are precision, accuracy, and scalability. Specifically in the context of data visualisation, precision involves striking a balance between presenting sufficient detail for accurate interpretation while avoiding overwhelming complexity. Accuracy is also vital as its role is ensuring faithful representation of true data values to prevent misleading conclusions. Scalability addresses a visualisation's adaptability to varying data sizes and resolutions, demanding the capability to represent both small and large datasets without compromising clarity or performance.
 
 \subsection{Cognitive Load and Visual Complexity}
 In data visualisation, achieving a balance between complexity and cognitive load is crucial. This section explores the concept of cognitive load in visualisations, strategies to reduce cognitive load while maintaining complexity, and techniques to combat information overload through simplification.\\
 
-\noindent \textbf{Exploring the Concept of Cognitive Load in Visualisations}\\
+\noindent 
+\textbf{Exploring the Concept of Cognitive Load in Visualisations}\\
+
+\noindent
 In data visualisations, cognitive load significantly influences how viewers engage with and comprehend presented data. Striking a balance is crucial to effectively convey information without overwhelming the viewer's cognitive capacity.
 
 \subsubsection{Strategies to Reduce Cognitive Load While Maintaining Complexity}
+
 To reduce cognitive load while maintaining complexity in data visualisation, several strategies can be employed. Firstly, establishing a clear visual hierarchy using size, color, and contrast helps direct attention to crucial elements. Additionally, simplifying labels and text by avoiding unnecessary complexity and jargon ensures information is clear and easily digestible. Employing interactive features like tooltips and drill-down functionality assists in providing additional information when required, reducing the density of static visualisations. Another approach involves the use of progressive disclosure, presenting complex information gradually, beginning with an overview and allowing users to explore details as needed. Lastly, considering data aggregation where appropriate can help summarize information and alleviate the cognitive load associated with interpreting intricate details.\\
+
+\noindent
 
 These strategies aim to maintain complexity while lessening the cognitive burden on viewers by directing attention effectively, simplifying content, offering interactive elements, gradually revealing information, and summarizing data where feasible.
 
 \subsubsection{Information Overload and Simplification Techniques}
+
 Addressing information overload in visualisations necessitates the strategic application of simplification techniques. Filtering enables focused data selection, while data reduction aggregates information to highlight overarching trends. Storyboarding structures data presentation, aiding in contextual comprehension, and prioritization ensures critical information is prominently displayed, elevating the visualisation's clarity and impact. These strategies collectively combat overwhelming data or excessive visual elements, enhancing comprehension and the effective communication of insights to viewers.
 
 
 \newpage
 
 \section{Modern Methods of Data Visualisation}
+
 In this chapter, we explore a variety of powerful visualisation methods, from classic scatter plots and bar charts to advanced techniques like heatmaps and network graphs. Through vivid examples, we'll show when and why each method is used, and delve into the theoretical and mathematical foundations that empower these visualisations to unveil insights hidden within the data.
 
 \subsection{Scatter Plots and Bubble Charts}
+
 Scatter plots and bubble charts are fundamental data visualisation techniques that provide valuable insights into the relationships and patterns within datasets. These visualisations are particularly effective for representing discrete data through data points, since this brings out easily identifiable comparisons, and reveals trends.
 
 \subsubsection{Scatter Plots}
-A scatter plot is a graphical representation of a set of data points in a two-dimensional coordinate system. Each data point is represented by a dot, and the position of the dot is determined by the values of two variables. 
-\\  
+
+A scatter plot is a graphical representation of a set of data points in a two-dimensional coordinate system. Each data point is represented by a dot, and the position of the dot is determined by the values of two variables.\\
+
+\noindent
 In general, \(Y\) denotes the response variable and \(X\) denotes the explanatory variable. Let \((x_i, y_i)\) represent the coordinates of the \(i\)-th data point on the scatter plot. The scatter plot can be mathematically described as a set of points:
 
 \[ \{(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)\} .\]
-\\  
-\\Here, \(n\) is the number of observations in the set.
-\\
-\\The mathematical interest of dot plots lies in their ability to provide a simple visual representation of data distribution, center, and spread. While they don't rely on complex equations or statistical principles, dot plots make it easy to observe important characteristics of data, such as the mode, median, variance, skewness and outliers. \\ 
-\\In addition, the arrangement of the points on the plot can provide insights into the nature of the relationship between \(X\) and \(Y\).When points show a linear trend, it implies a strong correlation between the variables. When the points are scattered with no clear pattern, it signifies a low correlation between the variables. \\
+  
+\noindent
+Here, \(n\) is the number of observations in the set.\\
 
+\noindent
+The mathematical interest of dot plots lies in their ability to provide a simple visual representation of data distribution, center, and spread. While they don't rely on complex equations or statistical principles, dot plots make it easy to observe important characteristics of data, such as the mode, median, variance, skewness and outliers. \\
+
+\noindent
+In addition, the arrangement of the points on the plot can provide insights into the nature of the relationship between \(X\) and \(Y\).When points show a linear trend, it implies a strong correlation between the variables. When the points are scattered with no clear pattern, it signifies a low correlation between the variables.
+
+<<<<<<< HEAD
 \subsubsection{Regression Analysis - Study of 1970s automobiles}
 \\Regression models are statistical tools that provide functions to estimate the relationship between the response variable and one or more explanatory variables. Regression analysis is widely adopted by data scientists, who use large datasets to build predictive models for trend forecasting. The fol- lowing paragraphs will introduce simple linear regression models and demonstrate their usage using the mtcars dataset.
 \\  
@@ -433,6 +533,17 @@ In general, \(Y\) denotes the response variable and \(X\) denotes the explanator
 \\Let $\mathbf{x} = (x_1, x_2, ..., x_n)^T$ denote $n$ explanatory variables and let $\mathbf{Y} = (Y_1,Y_2,...,Y_n)^T$ denote $n$ corresponding response variables.
 \\  
 \\In a simple linear model, it is assumed that the response variables $Y_1,Y_2,...,Y_n$ are uncorrelated with a common variance $\sigma^2$, and their expectations are given by $E(Y_i| x_i) = \beta_0 + \beta_1 x_i$. The expectations generated by $\beta_0$ and $\beta_1$ given $x_i$ can be expressed as:
+=======
+\subsubsection{Regression and the Regression Line}
+
+Regression models are statistical tools that provide functions to estimate the relationship between the response variable and one or more independent variables. Regression analysis is widely adopted by data scientists, who use large datasets to build predictive models for trend forecasting. In the following paragraph, we will introduce linear regression models and demonstrate their usage using the mtcars dataset.\\
+
+\noindent
+\textbf{Simple Linear Models}\\
+
+\noindent
+In the simple linear model, we assume that the responses $\mathbf{Y} = (Y_1, Y_2, ..., Y_n)$ are uncorrelated, with a common variance $\sigma^2$. The explanatory variable is represented as a vector $\mathbf{x} = (x_1, x_2, ..., x_n)$, where $x_i$ is the i-th observation.  We can express the $n$ expectations in vector form:
+>>>>>>> 134aff26ad3c40a56c2fe54bd6be39ffb09edd65
 
 $$\mathrm{E}(\mathbf{Y} | \mathbf{x}) =
 \left( \begin{array}{ccc}
@@ -506,19 +617,34 @@ $$\mathbf{X}^T(\mathbf{y}-\mathbf{X}\hat{\beta})=\mathbf{0}.$$
 The least squares estimate of $\beta$ is given by:
 $$\hat{\beta} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}.$$
 
+<<<<<<< HEAD
 \textbf{The Band of Confidence:}\\
 \\When discussing regression lines, it is essential to consider the band of confidence. This is represented by confidence intervals around the regression line, reflecting the uncertainty associated with predictions. The wider the interval, the greater the uncertainty. Commonly, a 95\% confidence interval is used, indicating that there is a 95\% probability that the true regression line lies within the specified interval.\\
+=======
+\noindent
+\textbf{The Band of Confidence:}\\
+>>>>>>> 134aff26ad3c40a56c2fe54bd6be39ffb09edd65
 
-\\\textbf{Relation to Scatter Plots}\\
-\\Regression lines find their visual counterpart in scatter plots. A scatter plot displays the observed data points on a graph, with the regression line weaving through them. The closeness of the data points to the regression line indicates the strength of the relationship between the variables. Additionally, the spread of the data points around the line provides insights into the variability and potential outliers.\\
+\noindent
+When discussing regression lines, it is essential to consider the band of confidence. This is represented by confidence intervals around the regression line, reflecting the uncertainty associated with predictions. The wider the interval, the greater the uncertainty. Commonly, a 95\% confidence interval is used, indicating that there is a 95\% probability that the true regression line lies within the specified interval.\\
 
+\noindent
+\textbf{Relation to Scatter Plots}\\
 
-\noident \textbf{Scatter Plots in Practice}\\
-\\In the following example, the mtcars dataset will be used to demonstrate a linear regression model. The focus lies on assessing the efficiency of automobiles, with the aim of constructing a linear regression model that utilizes various attributes to predict the performance of the automobile, measured in Miles Per Gallon (mpg).
-\\  
-\\For exploratory investigation, the correlation matrix is to be calculated, rounded to 3 significant figures, see Figure~\ref{fig:cor-matrix-mtcars2}. 
-\\  
-\\Excluding highly correlated covariates is a critical consideration in constructing a regression model. When explanatory variables in a regression model are highly correlated, this will lead to multicollinearity. Multicollinearity implies that the individual effects of correlated variables on the response variable become intertwined. This intertwinement can result in erratic changes in the coefficient estimates of the regression model in response to small changes in the data. Such instability makes it challenging to interpret and trust the specific contributions of each variable to the model's predictions\cite{multicoli}.
+\noindent
+Regression lines find their visual counterpart in scatter plots. A scatter plot displays the observed data points on a graph, with the regression line weaving through them. The closeness of the data points to the regression line indicates the strength of the relationship between the variables. Additionally, the spread of the data points around the line provides insights into the variability and potential outliers.\\
+
+\noident 
+\textbf{Scatter Plots in Practice}\\
+
+\noindent
+In the following example, the mtcars dataset will be used to demonstrate a linear regression model. The focus lies on assessing the efficiency of automobiles, with the aim of constructing a linear regression model that utilizes various attributes to predict the performance of the automobile, measured in Miles Per Gallon (mpg).\\
+
+\noindent
+For exploratory investigation, the correlation matrix is to be calculated, rounded to 3 significant figures, see Figure~\ref{fig:cor-matrix-mtcars2}.\\
+
+\noindent
+Excluding highly correlated covariates is a critical consideration in constructing a regression model. When explanatory variables in a regression model are highly correlated, this will lead to multicollinearity. Multicollinearity implies that the individual effects of correlated variables on the response variable become intertwined. This intertwinement can result in erratic changes in the coefficient estimates of the regression model in response to small changes in the data. Such instability makes it challenging to interpret and trust the specific contributions of each variable to the model's predictions\cite{multicoli}.\\
 <<cor-matrix-mtcars,echo=FALSE,message=FALSE,warning=FALSE>>=
 correlation_matrix <- cor(mtcars)
 rounded_correlation_matrix <- round(correlation_matrix, 3)
@@ -539,9 +665,9 @@ correlation_matrix <- ggplot(correlation_matrix, aes(Var1, Var2, fill = Freq)) +
   labs(x = " ",y = " ")
 print(correlation_matrix)
 @
-\\  
-\\   
-\\Examining the correlation matrix reveals a high correlation between the response variable, Miles Per Gallon (mpg), and the explanatory variable, weight (wt). This is advantageous, suggesting that wt may have strong predictive power for mpg. In the summary of the linear regression model \texttt{Modelwt}, note that the t-test yields a p-value less than 0.001. This indicates that the variable wt is of high statistical significance in this model.
+
+\noindent
+Examining the correlation matrix reveals a high correlation between the response variable, Miles Per Gallon (mpg), and the explanatory variable, weight (wt). This is advantageous, suggesting that wt may have strong predictive power for mpg. In the summary of the linear regression model \texttt{Modelwt}, note that the t-test yields a p-value less than 0.001. This indicates that the variable wt is of high statistical significance in this model.\\
 <<modelwt, echo=TRUE,message=FALSE,warning=FALSE>>=
 Modelwt <- lm(formula = mpg ~ wt, data = mtcars)
 summary(Modelwt)
@@ -561,38 +687,55 @@ ggplot(data = mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
   scale_color_manual(values = c("4" = "grey", "6" = "purple", "8" = "blue")) +  # Custom color palette
   theme_minimal()  # Minimalistic theme
 @
-\\   
-\\Model selection methods, such as the Akaike Information Criterion (AIC), play a crucial role in statistical modeling. An algorithm which minimises AIC score helps in selecting the most appropriate regression model from a set of explanatory variables. Further details on AIC can be found in section  \ref{subsubsection:Heatmaps, correlation matrix and AIC score}.
-\\  
-\\The R algorithm \texttt{step()} minimises the AIC score at each step for optimal regression model selection. Starting with the regression model which contains all explanatory variables \texttt{ModelAll}, the algorithm iteratively exclude one covariate per step. 
-\\  
-\\This algorithm aims to find the best-fitting model by balancing goodness of fit and simplicity. Note that \texttt{step()} provides a competitive ranking among models, not an absolute measure of model quality.
-\\  
-\\For detailed procedure of this AIC algorithm, using \texttt{summary(ModelBest)}, please see the output in \ref{sec:codechunk1}.
+
+\noindent
+Model selection methods, such as the Akaike Information Criterion (AIC), play a crucial role in statistical modeling. An algorithm which minimises AIC score helps in selecting the most appropriate regression model from a set of explanatory variables. Further details on AIC can be found in section  \ref{subsubsection:Heatmaps, correlation matrix and AIC score}.\\
+
+\noindent
+The R algorithm \texttt{step()} minimises the AIC score at each step for optimal regression model selection. Starting with the regression model which contains all explanatory variables \texttt{ModelAll}, the algorithm iteratively exclude one covariate per step.\\
+
+\noindent
+This algorithm aims to find the best-fitting model by balancing goodness of fit and simplicity. Note that \texttt{step()} provides a competitive ranking among models, not an absolute measure of model quality.\\
+
+\noindent
+For detailed procedure of this AIC algorithm, using \texttt{summary(ModelBest)}, please see the output in \ref{sec:codechunk1}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{codeshoot.png}
     \label{fig:codeshoot}
 \end{figure}
-\\ 
+
+\noindent
 \textbf{Analysis of the scatter plot}\\
+
+\noindent
 Figure~\ref{fig:scatter-plot}, provides insights into the relationship between cars' weight and their MPG, with the added dimension of color-coded cylinders.Particularly it visually highlights and make accessible to the viewer features of the data set, that would otherwise go unnoticed. These are some of the following elements: 
+
 \begin{itemize}
-    \item \textbf{Clustering}: The scatter plot reveals distinct clustering of data points, highlighting specific patterns within the dataset. Cars with four cylinders (color "grey") are predominantly clustered in the lower weight and higher MPG region, representing smaller and more fuel-efficient vehicles. In contrast, cars with eight cylinders (color "blue") tend to be clustered in the higher weight and lower MPG area, indicating larger and less fuel-efficient cars. The identification of this clustering aids iAIC algorithmn visualising how the number of cylinders influences the trade-off between weight and fuel efficiency.\\
+    \item \textbf{Clustering}: The scatter plot reveals distinct clustering of data points, highlighting specific patterns within the dataset. Cars with four cylinders (color "grey") are predominantly clustered in the lower weight and higher MPG region, representing smaller and more fuel-efficient vehicles. In contrast, cars with eight cylinders (color "blue") tend to be clustered in the higher weight and lower MPG area, indicating larger and less fuel-efficient cars. The identification of this clustering aids iAIC algorithmn visualising how the number of cylinders influences the trade-off between weight and fuel efficiency.
     \item \textbf{Linear Regression Line}: The regression line provides a visual representation of the overall relationship between car weight and fuel efficiency.If the line has a positive slope, it indicates that as car weight increases, MPG decreases. Conversely, a negative slope suggests that heavier cars tend to have higher MPG. The steepness of the line represents the strength of this relationship. In this case, the reed regression line indicates a negative correlation—cars tend to have lower fuel efficiency as their weight increases.
 \end{itemize}
 
 \subsubsection{Bubble Charts}
 Bubble charts are a captivating data visualisation tool that extends beyond the typical two-dimensional scatter plot by introducing an extra dimension. They represent data points as bubbles or circles on a two-dimensional plane, where the size of each bubble encodes a third variable. This technique enhances data visualisation by facilitating the exploration of multivariate data and uncovering patterns that may be hidden in traditional scatter plots.\\
 
+\noindent
 \textbf{Bubble Chart's Utility in Visualising Data}\\
+
+\noindent
 Bubble charts excel in scenarios where three key variables need to be conveyed simultaneously. The x-axis and y-axis represent two variables, as in a standard scatter plot, while the size of the bubble encodes a third variable, often a quantitative one. This allows for the visualisation of relationships between three variables in a single, intuitive graphic.\\
-For instance, in economics, bubble charts can illustrate economic indicators, with the x-axis showing time, the y-axis displaying GDP growth, and the bubble size representing a related factor like population or inflation. \\
 
+\noindent
+For instance, in economics, bubble charts can illustrate economic indicators, with the x-axis showing time, the y-axis displaying GDP growth, and the bubble size representing a related factor like population or inflation.\\
+
+\noindent
 \textbf{Mathematical Intricacies}\\
-The mathematical intricacies of constructing bubble charts involve scaling the data values to determine the size of each bubble accurately. The size of the bubble is typically proportional to the square root of the variable it represents. The choice of scaling method depends on the data distribution and the message the chart aims to convey.
 
+\noindent
+The mathematical intricacies of constructing bubble charts involve scaling the data values to determine the size of each bubble accurately. The size of the bubble is typically proportional to the square root of the variable it represents. The choice of scaling method depends on the data distribution and the message the chart aims to convey.\\
+
+\noindent
 The formula for calculating the bubble size (\(S\)) often involves applying a linear or nonlinear scaling function:
 
 \[
@@ -608,6 +751,7 @@ Where:
 
 Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the proportionality between the bubble size and the variable being represented.\\
 
+\noindent
 \textbf{Bubble Charts in Practice}
  This bubble plot visualises data from the same dataset as above. The purpose of this plot is to depict the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and color-coding the bubbles based on the number of cylinders (cyl).
 
@@ -628,7 +772,10 @@ ggplot(mtcars, aes(x = rownames(mtcars), y = mpg, size = hp, color = cyl)) +
 @
 
 \textbf{Analysis of the bubble chart}\\
+
+\noindent
 The plot's title, axis labels, and legends provide context and clarity to the visualisation, making it accessible and informative. Additionally, the choice of a gradient color scale for the number of cylinders enhances the visual appeal and aids in interpreting the data.This bubble plot allows for quick comparisons between multiple characteristics of different car models.The resulting bubble plot effectively conveys several key insights:
+
 \begin{enumerate}
 \item \textbf{Car Model vs. MPG}: The x-axis displays the car models, offering a clear representation of each vehicle in the dataset. The bubble plot is particularly useful for displaying nominal data, such as car model names, as it allows easy identification and comparison.
 \item \textbf{Miles per Gallon (MPG)}: The y-axis measures miles per gallon, representing the fuel efficiency of each car model. Higher bubbles indicate better fuel efficiency. This variable, which is continuous, is positioned vertically to demonstrate how each car model's fuel efficiency relates to others.
@@ -637,11 +784,15 @@ The plot's title, axis labels, and legends provide context and clarity to the vi
 \end{enumerate}
 
 
-subsection{Bar Charts and Histograms}
+\subsection{Bar Charts and Histograms}
 \subsubsection{Bar Charts}
 A bar chart is a very important method to present data. It organizes information into vertical bars.  Bar charts have lots of advantages in data visualisation. It can present data categories in a frequency distribution. A bar chart is best for comparing classified data. Especially when the values are close, because the human perception of height is better than other visual elements (such as area, angle, etc.), the use of a bar chart is more appropriate. These bars usually have different lengths, and every length is proportional to the size of the information they present.\\
+
+\noindent
 R uses the function $barplot()$ to create bar charts. R can draw both vertical and Horizontal bars in the bar chart. In the bar chart, each of the bars can be given different colors.\\
-R is a programming language for data analysis and statistical computing, and its advent has made data visualisation more straightforward and accessible. Among the various tools available in R, ggplot2 stands out as one of the most renowned and powerful tools for creating data visualisations. It offers a wealth of data visualisation capabilities and is celebrated for its versatility and aesthetic appeal. In this chapter, we will focus on how to use ggplot2 to create bar charts for data visualisation.\\
+
+\noindent
+R is a programming language for data analysis and statistical computing, and its advent has made data visualisation more straightforward and accessible. Among the various tools available in R, ggplot2 stands out as one of the most renowned and powerful tools for creating data visualisations. It offers a wealth of data visualisation capabilities and is celebrated for its versatility and aesthetic appeal. In this chapter, we will focus on how to use ggplot2 to create bar charts for data visualisation.
 
 \subsubsection{Different Types of Bar Charts}
 Here is an overview of the different types of bar charts. \\
@@ -658,8 +809,8 @@ However, it is very easy to get confused when there are too many categories.
 Bar charts excel due to their structural simplicity, ease of comprehension, straightforward comparison of different data categories, and versatility for representing various data types and multilevel information
 
 The disadvantages of bar charts include limited suitability for large datasets, potential misinterpretation when lacking a zero baseline, difficulty in handling numerous categories, and their preference for categorical data over continuous data trends, where line graphs are more suitable.
-\subsubsection{ToothGrowth Dataset}
 
+\subsubsection{ToothGrowth Dataset}
 
 This bar chart below illustrates the tooth growth in relation to varying doses of a vitamin. The key observations are:
 
@@ -669,6 +820,7 @@ This bar chart below illustrates the tooth growth in relation to varying doses o
     \item \textbf{Y-axis Description:} The Y-axis signifies the length of tooth growth (len). This represents the average tooth growth at the given vitamin dosage.
     \item \textbf{Data Observation:} From the heights of the bars, it is evident that as the vitamin dosage increases, the tooth growth also appears to increase. This might suggest that higher doses of the vitamin may promote tooth growth.
 \end{enumerate}
+
 \begin{figure}[htbp]
   \centering
   \begin{minipage}[b]{0.45\linewidth}
@@ -707,23 +859,32 @@ This bar chart below illustrates the tooth growth in relation to varying doses o
     \label{fig:barchart3}
   \end{minipage}
 \end{figure}
+
+\noindent
 The displayed bar chart~\ref{fig:barchart2} provides insights into tooth growth influenced by varying doses of a vitamin, further categorized by the type of supplement (`supp`). The key insights from this chart are:
 
 \begin{enumerate}
     \item \textbf{X-axis Description:} The X-axis demarcates different vitamin dosages, categorized into three distinct levels: 0.5, 1, and 2 mg/day.
-    
     \item \textbf{Y-axis Description:} The Y-axis quantifies tooth growth length, representing the combined average growth for both supplements at the respective vitamin dosages.
     \item \textbf{Data Observation:} The total height of each bar signifies the combined tooth growth for both supplements at the given dosage. From the stacked sections, it's evident that the impact on tooth growth varies based on the supplement type. A detailed inspection might elucidate the relative effectiveness of the supplements at each dosage level.
 \end{enumerate}
-The structure of the second figure~\ref{fig:barchart2} is quite similar to that of the first one, with the main difference lying in the method of data representation. Forming a bar chart, it facilitates the understanding of the combined effects of the two supplements at each dosage level. However, compared to the grouped bar chart, it becomes more challenging to differentiate the individual contributions of each supplement.
 
+\noindent
+The structure of the second figure~\ref{fig:barchart2} is quite similar to that of the first one, with the main difference lying in the method of data representation. Forming a bar chart, it facilitates the understanding of the combined effects of the two supplements at each dosage level. However, compared to the grouped bar chart, it becomes more challenging to differentiate the individual contributions of each supplement.\\
+
+\noindent
 In the next part of our section, we will look at another plot which called Histogram.
+
 \subsubsection{Histograms}
+
 Histograms, although visually similar to bar charts, convey different meanings. A histogram involves concepts of statistics. It requires data to be categorized into groups and then counts the data points within each of those groups. On a Cartesian coordinate system, the x-axis shows the endpoints of each group, and the y-axis represents frequency. The height of each rectangle indicates the corresponding frequency, making it a frequency distribution histogram. In order to determine the quantity of each group in the histogram, a multiplication of the frequency by the group interval is necessary. Since every histogram has a fixed group interval, if we use the y-axis to directly show quantity and each rectangle's height indicates the number of data points, we can both retain the distribution and simultaneously see the number in each group at a glance. All examples in this text use the non-standard histogram depiction with the y-axis denoting quantity.\\
+
+\noindent
 \textbf{Uses of Histograms:}
 Histograms demonstrates the distribution of frequency or quantity across groups. Facilitates the visualisation of differences in frequency or quantity among groups. The R language uses the \texttt{hist()} function to create histograms. This function takes vectors as input and uses a few more parameters to plot the histogram.\\
-Now, we want to create a better graph with ggplot2 thanks to the \texttt{geom\_histogram()} function and iris dataset.\\
-The iris dataset is a classic dataset in the field of statistics. It was introduced by the British biologist Ronald A. Fisher in 1936 as an example of discriminant analysis. The dataset consists of 150 samples from three species of iris flowers: setosa, versicolor, and virginica. For each sample, four features were measured: the lengths and the widths of the sepals and petals, all in centimeters. The dataset is often used for classification tasks to differentiate between the three species based on the given measurements. It has become a standard test case for many classification algorithms and is widely recognized in the data science community.\\
+
+\noindent
+Now, we want to create a better graph with ggplot2 thanks to the \texttt{geom\_histogram()} function and iris dataset.
 <<hist3, echo=TRUE,fig.height=3, fig.width=5, fig.cap='Histogram of Sepal Length in Iris Dataset'>>=
 #Create a histogram using ggplot2 for Sepal Length in the Iris dataset
 bar_diagram <- ggplot(iris, aes(x = Sepal.Length)) +
@@ -739,10 +900,15 @@ bar_diagram <- ggplot(iris, aes(x = Sepal.Length)) +
   theme_minimal()
 print(bar_diagram)
 @
-\subsubsection{Kernel Density Estimation}
-Kernel Density Estimation(KDE) is an very useful tool in statistics. In stead of discrete histograms, it helps us to create a smooth curve given by a dataset. KDE is used to infer the distribution of a population based on a limited sample. Thus, the result of the kernel density estimation is an estimate of the sample's probability density function. Based on this estimated probability density function, we can ascertain certain characteristics of the data distribution, such as the regions where data is concentrated.
-The KDE algorithm takes a parameter, bandwidth, that affects how “smooth” the resulting curve is. Changing the bandwidth changes the shape of the kernel: a lower bandwidth means only points very close to the current position are given any weight, which leads to the estimate looking squiggly; a higher bandwidth means a shallow kernel where distant points can contribute.
 
+\subsubsection{Kernel Density Estimation}
+
+Kernel Density Estimation(KDE) is an very useful tool in statistics. In stead of discrete histograms, it helps us to create a smooth curve given by a dataset. KDE is used to infer the distribution of a population based on a limited sample. Thus, the result of the kernel density estimation is an estimate of the sample's probability density function. Based on this estimated probability density function, we can ascertain certain characteristics of the data distribution, such as the regions where data is concentrated.\\
+
+\noindent
+The KDE algorithm takes a parameter, bandwidth, that affects how “smooth” the resulting curve is. Changing the bandwidth changes the shape of the kernel: a lower bandwidth means only points very close to the current position are given any weight, which leads to the estimate looking squiggly; a higher bandwidth means a shallow kernel where distant points can contribute.\\
+
+\noindent
 We can express KDE as follows,where the K represent the kernel function.
 $$\hat{f}(x) = \sum_{\text{observations}} K\left(\frac{x - \text{observation}}{\text{bandwidth}}\right)$$
 $$\hat{f}(x) = \frac{1}{nh} \sum_{i=1}^{n} K\left(\frac{x - x_i}{h}\right)$$\\
@@ -766,8 +932,9 @@ print(kde_diagram)
 In figure~\ref{fig:kde3} we present the kernel density estimation of our dataset. The kernel density curve will display the distribution of sepal lengths. The peaks of the curve correspond to the main concentration trends of sepal length in the data. If the curve is unimodal, it means that the sepal lengths of most irises are concentrated in that region; if it is bimodal or multimodal, this indicates the presence of multiple such concentration areas.
 
 \subsection{Heatmaps, correlation matrix and AIC score}
-\\  
-\\The foundation of a heatmap is a data matrix $M$, where each entry in this matrix represents an observation:
+
+The foundation of a heatmap is a data matrix $M$, where each entry in this matrix represents an observation:
+
 $$M =
 \left[
 \begin{array}{cccc}
@@ -778,27 +945,35 @@ $$M =
 \end{array}
 \right].
 $$
-\\Therefore, the first step to create a heatmap is to organise the data into columns and rows. In Figure~\ref{fig:fire-by-months-fy13-22}, the structured data is displayed as a grid of coloured cells, where the colour intensity corresponds to the underlying frequency.
-\\  
-\\Heatmaps serve as powerful tools for visualising relationships between covariates within a model. An example of the necessity to analyse a matrix of correlations between variables is found in regression models. In the real world, variables are often correlated, and completely independent relationships are seldom encountered. Therefore, the analysis of pairwise correlations becomes essential. Significantly impacted by highly correlated covariates, the regression model requires the removal of one covariate from the set of covariates. The selection is based on the identification of a regression model with the lowest Akaike Information Criterion (AIC) score among these variables: 
+
+\noindent
+Therefore, the first step to create a heatmap is to organise the data into columns and rows. In Figure~\ref{fig:fire-by-months-fy13-22}, the structured data is displayed as a grid of coloured cells, where the colour intensity corresponds to the underlying frequency.\\
+
+\noindent
+Heatmaps serve as powerful tools for visualising relationships between covariates within a model. An example of the necessity to analyse a matrix of correlations between variables is found in regression models. In the real world, variables are often correlated, and completely independent relationships are seldom encountered. Therefore, the analysis of pairwise correlations becomes essential. Significantly impacted by highly correlated covariates, the regression model requires the removal of one covariate from the set of covariates. The selection is based on the identification of a regression model with the lowest Akaike Information Criterion (AIC) score among these variables: 
 
 $$AIC = -2 \l(\hat{\mathbf{\theta}})+2 \dim (\mathbf{\theta}),$$
-\\where $\l(\hat{\mathbf{\theta}})$ is the log-likelihood function, which is used to find the Maximum Likelihood Estimator (MLE) of a distribution.
-\\  
-\\The AIC measures the extent to which the linear model fits the dataset. To obtain the best model, minimise the AIC score. In other words, the objective is to have the trend explained by the regression model, while avoiding overfitting that captures the noise in the dataset, ultimately leading to inaccurate predictions.
+\\where $\l(\hat{\mathbf{\theta}})$ is the log-likelihood function, which is used to find the Maximum Likelihood Estimator (MLE) of a distribution.\\
+
+\noindent
+The AIC measures the extent to which the linear model fits the dataset. To obtain the best model, minimise the AIC score. In other words, the objective is to have the trend explained by the regression model, while avoiding overfitting that captures the noise in the dataset, ultimately leading to inaccurate predictions.
 
 \subsubsection{Heatmaps - Fire in Brazil}
-\\  
-\\The heatmap is a data visualisation technique that uses colour coding to represent different intensity.
-\\  
-\\In this illustrative example, heatmaps are used to visualise fire occurrences in Brazil. These heatmaps provide a spatially coherent representation, highlighting regions at high risk and seasonal patterns. Here, the heatmap is a powerful tool for identifying the occurrence of fire incidents. The data-driven insights could empower policymakers to make informed decisions regarding preventive measures and firefighting strategies.
-\\  
-\\In Figure~\ref{fig:spacetime-fy22}, it can be observed that significantly higher fire counts are found in certain locations. The presence of two strips with high frequencies of fires are highly unusual.  The vertical trend corresponds to the location of BR-230 (Trans-Amazonian Highway) passing through the city of Apuí, State of Amazonas, where a high frequency of fire occurrence is observed.  The horizontal trend corresponds to BR-163 (Brazil highway) passing through Três Pinheiros in Novo Progresso, State of Pará. The western coastal area with a high frequency of fire occurrence corresponds to regions in close proximity to the cities of Vista Alegre do Abunã and Rio Branco. Research has indicated that 95 \% of active fires and the most intense ones (FRP > 500 megawatts) occurred at the edges in forests.
-\\  
-\\From the same figure, it can be observed that August and September are the riskiest months in terms of fire hazard, whereas little risk is posed from November to July. The follow-up question naturally arises: How does FY22 compare to previous years? Is it valid to claim that August and September constitute the fire hazard season?
-\\    
-\\In Figure~\ref{fig:fire-by-months-fy13-22}, the data shows a higher number of fire occurrences in the months of August to October compared to the rest of the year, indicating a greater number of fire hazards during these months.
-\\  
+
+The heatmap is a data visualisation technique that uses colour coding to represent different intensity.\\
+
+\noindent
+In this illustrative example, heatmaps are used to visualise fire occurrences in Brazil. These heatmaps provide a spatially coherent representation, highlighting regions at high risk and seasonal patterns. Here, the heatmap is a powerful tool for identifying the occurrence of fire incidents. The data-driven insights could empower policymakers to make informed decisions regarding preventive measures and firefighting strategies.\\
+
+\noindent
+In Figure~\ref{fig:spacetime-fy22}, it can be observed that significantly higher fire counts are found in certain locations. The presence of two strips with high frequencies of fires are highly unusual.  The vertical trend corresponds to the location of BR-230 (Trans-Amazonian Highway) passing through the city of Apuí, State of Amazonas, where a high frequency of fire occurrence is observed.  The horizontal trend corresponds to BR-163 (Brazil highway) passing through Três Pinheiros in Novo Progresso, State of Pará. The western coastal area with a high frequency of fire occurrence corresponds to regions in close proximity to the cities of Vista Alegre do Abunã and Rio Branco. Research has indicated that 95 \% of active fires and the most intense ones (FRP > 500 megawatts) occurred at the edges in forests.\\
+
+\noindent
+From the same figure, it can be observed that August and September are the riskiest months in terms of fire hazard, whereas little risk is posed from November to July. The follow-up question naturally arises: How does FY22 compare to previous years? Is it valid to claim that August and September constitute the fire hazard season?\\
+
+\noindent
+In Figure~\ref{fig:fire-by-months-fy13-22}, the data shows a higher number of fire occurrences in the months of August to October compared to the rest of the year, indicating a greater number of fire hazards during these months.
+
 <<load-data, echo=FALSE,message=FALSE,warning=FALSE>>=
 # Data from NASA: https://firms.modaps.eosdis.nasa.gov/
 brazil_fire_fy13 <- read.csv("fire_data/modis_2013_Brazil.csv")
@@ -923,27 +1098,34 @@ print(heatmap_plot)
 
 \subsection{Line Charts and Time Series Visualisation}
 
-In this chapter, we are going to investigate the intricacies of the line chart and its most common application: time series.
-First, a line chart is a statistical representation that uses a Cartesian coordinate system, where each point on the chart corresponds to a pair of coordinates \((x,y)\), to depict changes in numerical values over continuous time intervals or ordered categories. The x-axis typically represents these intervals or categories, while the y-axis conveys quantified data. Hence, data points are represented by coordinates \(\{(x_i,y_i)\}_{1 \leq i \leq n}\), with \(n\) being the total number of data points. In a line chart, consecutive data points are typically connected by straight lines. The line segment between two points \((x_i,y_i)\) and \((x_{i+1},y_{i+1})\) can be described by the equation of a line in the slope-intercept form: \(y=mx+b\), where \(m\) is the slope and \(b\) is the y-intercept.
+Line charts are fundamental tools in data visualisation, particularly useful for displaying time series data. A line chart represents $n$ data points 
+$\{(x_i,y_i)\}_{1 \leq i \leq n}$ on a Cartesian coordinate system, with the x-axis often denoting time intervals or ordered categories and the y-axis representing the measured values.\\ 
 
-A line chart is a series of linear interpolations between pairs of data points. These interpolations assume that the change between two points is uniform or linear, which is a significant simplification of real-world data. This linear approach is mathematically represented as:
+\noindent 
+\textbf{Basics of Line Chart}\\
 
+\noindent
+In a line chart, consecutive data points are typically connected by straight lines. The line segment between two points \((x_i,y_i)\) and \((x_{i+1},y_{i+1})\) can be described by the equation of a line in the slope-intercept form: \(y=mx+b\), where \(m\) is the slope and \(b\) is the y-intercept. Also, a series of linear interpolations between pairs of data points could be used. These interpolations assume that the change between two points is uniform or linear. This linear approach is mathematically represented as:
 \[
-y = y_i + \frac{(y_{i+1} - y_i)}{(x_{i+1} - x_i)} \cdot (x - x_i) \quad \text{for} \quad x_i \leq x \leq x_{i+1}
+y = y_i + \frac{(y_{i+1} - y_i)}{(x_{i+1} - x_i)} \cdot (x - x_i) \quad \text{for} \quad x_i \leq x \leq x_{i+1}.
 \]
+\noindent
+This equation highlights that for any point \(x\) between \(x_i\) and \(x_{i+1}\), the corresponding value of \(y\) on the line chart is determined by a linear relation. This method effectively ''fills the gaps'' between actual observed data points and provides a continuous view of the data.\\
 
-This equation highlights that for any point \(x\) between \(x_i\) and \(x_{i+1}\), the corresponding value of \(y\) on the line chart is determined by a linear relation. This method effectively 'fills the gaps' between actual observed data points and provides a continuous view of the data.
+\noindent 
+\textbf{Time Series}\\
 
-\subsubsection{Suitability for Displaying Trends Over Time}
-Line charts effectively visualise data trends over time. By plotting data at intervals like days or years, they highlight trends and patterns. Multiple lines on one chart enable easy data comparison, such as contrasting sales of two products. They aid in recognizing seasonal changes, cyclic events, and unexpected shifts, making them invaluable for forecasting. Due to their simplicity, they're accessible to those with minimal data analysis background. Line charts are a prime choice for time series visualisation.
+\noindent
+Time series visualisation is particularly suited to line charts. A time series is a collection of observations $x_t$, where $t$ denotes the time point at which the observation is recorded. An index set $T_0$ which collects all the time points when observations are available. For instance, we often have $T_0 = \{0,1,2,...,n\}$ for $n \in \mathbb{N}$. By plotting these data points over time, line charts help in identifying long-term trends, seasonal patterns, and anomalies.\\
 
-Time series visualisation is essential in data analysis, showcasing time-ordered data. It reveals long-term trends, helping analysts discern patterns for future planning. It's crucial for spotting seasonality in datasets. This method also identifies anomalies, suggesting areas needing investigation. Predictive modeling, based on historical patterns, becomes feasible, fostering proactive choices. Overlaying multiple data series offers richer comparative analysis. Overall, time series visualisation provides quick insights into chronological data, driving informed decisions by highlighting trends, seasonal changes, and outliers.
+\noindent
+A time series can be viewed as a realisation of a stochastic process. And a stochastic process $X = (X_t)_{t \in T_0}$ is a collection of random variables $X_t$, where $t$ denotes the time index and $T_0$ the index set. For a fixed event $\omega \in \Omega$ we obtain the realisation of the stochastic process (sometimes also called a sample path) which is given by $x_t = X_t(\omega)$, $t \in T_0$. In practice, line charts of time series data provide insights into the behavior of such stochastic processes over time.\\
 
-While line charts are excellent for displaying trends over time, they have limitations. They may not be suitable for showing individual data distributions or for data where there's no logical order. eg. too many points, too many lines, too many zeros.
+\noindent
+\textbf{Time Series Visualisation of Exchange rates}\\
 
-\subsubsection{Showcase real-world examples of time series visualisations}
-
-Here, we are going to investigate 'exchange rate dataset' and plot all daily and 21-day moving average exchange rates in one figure.
+\noindent
+Here, plot all daily and 21-day moving average exchange rates of Exchange rate data in one figure.
 <<echo=FALSE,message=FALSE,warning=FALSE>>=
 #Read in the data:
 MyData <- read.csv("exchangeRate.csv",
@@ -968,133 +1150,157 @@ ts_data <- lapply(MyData[-1], ts,
 
 plot_dt <- MyData %>% gather(key="Currency", value="Rate", -Date)
 
-# 21-day moving average calculations and plot
+# 49-day moving average calculations and plot
 columns <- names(MyData)[!names(MyData) %in% "Date"]
 for (col in columns) {
-  new_col_name <- paste0(col, "_MA21")
+  new_col_name <- paste0(col, "_MA49")
   MyData[[new_col_name]] <- zoo::rollapply(MyData[[col]],
-                                           width=21, FUN=mean,
+                                           width=49, FUN=mean,
                                            fill=NA, align='right')
 }
 
 plot_data <- MyData %>% gather(key="Currency", value="Rate", -Date) %>%
-  filter(grepl("MA21", Currency))
+  filter(grepl("MA49", Currency))
 
-# Remove "_MA21" from the Currency column for the legend
-plot_data$Currency <- gsub("_MA21", "", plot_data$Currency)
+# Remove "_MA49" from the Currency column for the legend
+plot_data$Currency <- gsub("_MA49", "", plot_data$Currency)
 @
 \begin{figure}[H]
-<<message=FALSE,warning=FALSE,fig.dim = c(6, 4)>>=
-# Plot daily and 21-day moving average exchange rates of CNY, CAN,
-# EUR, HKD, USD to GBP
+<<message=FALSE,warning=FALSE,fig.dim = c(6, 3.5)>>=
+# Plot daily and 49-day moving average exchange rates of CNY, CAN, EUR, HKD, USD to GBP
 
 # First plot
 p1 <- ggplot(plot_dt, aes(x=Date, y=Rate, color=Currency)) + geom_line() +
-  labs(title="Daily exchange rates", y="Exchange Rate to GBP",
-       x="Date", color="Currency")+
-  theme_minimal() + theme(legend.position="none")
-
+  labs(title="Daily exchange rates",y="Exchange Rate to GBP", x="Date", color="Currency")+
+  theme_minimal() + theme(legend.position="none",plot.title = element_text(size=8))
 # Second plot
 p2 <- ggplot(plot_data, aes(x=Date, y=Rate, color=Currency)) + geom_line() +
-  labs(title="21-Day moving average \n exchange rates",
-       y="Exchange Rate to GBP", x="Date", color="Currency")+
-  theme_minimal() + theme(legend.position="none")
-
+  labs(title="49-Day moving average exchange rates",y="Exchange Rate to GBP", x="Date", color="Currency")+
+  theme_minimal() + theme(legend.position="none",plot.title = element_text(size=8))
 # Extract the legend
-p2_legend <- cowplot::get_legend(p2 + theme(legend.position="bottom"))
-# Combine the plots with adjusted widths using cowplot
-combined_plot <- cowplot::plot_grid(p1, p2, labels = c("1", "2"),
-                                    rel_widths = c(1, 1), nrow=1)
-# Combine the plots and the legend
-cowplot::plot_grid(combined_plot, p2_legend, ncol=1, rel_heights = c(1, .1))
+p2_legend <- cowplot::get_legend(p2 + theme(legend.position="right"))
+# Combine the plots 
+combined_plot <- cowplot::plot_grid(p1, p2, rel_widths = c(1, 1), nrow=2)
+cowplot::plot_grid(combined_plot, p2_legend, nrow=1, rel_widths = c(2, 0.5))
 @
 \centering
-\caption{Daily and 21-day moving average exchange rates of CNY, CAN, EUR, HKD, USD to GBP}
+\caption{Daily and 49-day moving average exchange rates of CNY, CAN, EUR, HKD, USD to GBP}
 \label{fig:all exchange rates}
 \end{figure}
 
-From the first plot of Figure~\ref{fig:all exchange rates}, we can see the the daily CNY, CAN, EUR, HKD, USD versus GBP exchange in the same plot, which provide us an overview of the trend and comparison. Then we employed a 21-day moving average (MA21) to elucidate long-term trends while mitigating short-term fluctuations. This is mathematically represented as 
-\[\text{MA}_{21}(t) = \frac{1}{21} \sum_{k=t-20}^{t} y_k\], 
-where \( y_k \) denotes the exchange rate on day \( k \). This method effectively filters out daily noise, allowing a clearer view of overarching trends in currency movements against the GBP. The overlay of these moving averages on the daily exchange rates in ourvisualisations provides both a clear comparative and a quantitative perspective.
+\noindent
+The first plot in Figure~\ref{fig:all exchange rates} presents a comparative visualization of daily exchange rates for CNY, CAD, EUR, HKD, and USD against GBP, offering an overview of their trends and relative performance. This plot enables the identification of overall trends and periods of volatility for each currency pair, allowing for an assessment of their stability and strength relative to GBP. Usually, the long term trend attracts financial analyst most. Therefore, filtering fluctuations and anomalies is important. Then, a 49-day moving average (MA49) was employed, shown in the second plot of Figure~\ref{fig:all exchange rates}, to elucidate long-term trends while mitigating short-term fluctuations. This is mathematically represented as 
+\[\text{MA}_{49}(t) = \frac{1}{49} \sum_{k=t-48}^{t} x_k,\] 
+where \( x_k \) denotes the exchange rate on day $k$.\\
 
 \noindent
-\textbf{Decomposition of time series into trend, seasonal, and random:}
+This method effectively filters out daily noise, allowing a clearer view of overarching trends in currency movements against the GBP. The overlay of these moving averages on the daily exchange rates in visualizations provides both a clear comparative and a quantitative perspective.\\
 
-One of the primary advantages of time series visualisation is the ease with which it allows analysts to identify long-term upward or downward trends in data and patterns that repeat over specific intervals. By decomposing the time series, it would be easy to see those features.
+\noindent
+\textbf{Decomposition of Time Series}\\
 
-Time series data, $Y_t$, can often be described as a combination of several distinct components:
-\begin{itemize}
-    \item \textbf{Trend ($T_t$):} The underlying progression in the series.
-    \item \textbf{Seasonal ($S_t$):} Periodic fluctuations due to seasonal factor.
-    \item \textbf{Residual ($R_t$):} The irregular or error component.
-\end{itemize}
+\noindent
+One of the primary advantages of time series visualisation is the ease with which it allows analysts to identify long-term upward or downward trends in data and patterns that repeat over specific intervals. By decomposing the time series, it would be easy to see those features.\\
 
+\noindent
+Time series data, $X_t$, can often be described as a combination of several distinct components: Trend component $t_t$: The underlying progression in the series, Seasonal component $s_t$: Periodic fluctuations due to seasonal factor, Residual $r_t$: The irregular or error component.\\
+
+\noindent
 The decomposition of a time series can be described in two main models:\\
-Additive Model:
-In the additive model, the components are added together:
+\textbf{Additive Model}: In the additive model, the components are added together:
 \[
-Y_t = T_t + S_t + R_t
+X_t = t_t + s_t + r_t.
 \]
-Multiplicative Model:
-In the multiplicative model, the components are multiplied together:
+\textbf{Multiplicative Model}: In the multiplicative model, the components are multiplied together:
 \[
-Y_t = T_t \times S_t \times R_t
+X_t = t_t \times s_t \times r_t \quad \text{or} \quad \log(X_t) = \log(t_t) + \log(s_t) + \log(r_t).
 \]
-In practice, the choice between the additive and multiplicative models often depends on the nature of the time series. If the magnitude of the seasonal fluctuations or the variation around the trend does not vary with the level of the time series, then an additive model is appropriate. If the magnitude of the seasonal fluctuations or the variation around the trend increases or decreases as the time series level changes, then a multiplicative model may be more suitable.
+In practice, the choice between the additive and multiplicative models often depends on the nature of the time series. If the magnitude of the seasonal fluctuations or the variation around the trend does not vary with the level of the time series, then an additive model is appropriate. If the magnitude of the seasonal fluctuations or the variation around the trend increases or decreases as the time series level changes, then a multiplicative model may be more suitable.\\
 
+\noindent
+In R, a built in function named "decompose()" is able to decompose the time series by addictive model or multiplicative model. And below is the demonstration of decomposition.
+
+
+<<message=FALSE,warning=FALSE,echo=FALSE>>=
+# Plot decomposition of addictive time series model
+decomposed_ts <- stats::decompose(ts_data$CNYtoGBP)
+
+# Convert the decomposed object to a data frame
+decomposed_df <- data.frame(
+  time = rep(time(ts_data$CNYtoGBP), 4),
+  value = c(decomposed_ts$x, decomposed_ts$trend, decomposed_ts$seasonal, decomposed_ts$random),
+  component = factor(rep(c("Observed data", "Trend component", "Seasonal component", "Residual"), 
+                         each = length(time(ts_data$CNYtoGBP))), 
+                     levels = c("Observed data", "Trend component", "Seasonal component", "Residual")))
+@
 
 \begin{figure}[H]
 <<message=FALSE,warning=FALSE,fig.dim = c(5, 4)>>=
 # Plot decomposition of addictive time series model
-decomposed_ts <- stats::decompose(ts_data$CNYtoGBP)
-plot(decomposed_ts, xlab="Date")
+ggplot(decomposed_df, aes(x = time, y = value)) + geom_line() +
+  facet_wrap(~component, scales = "free_y", ncol = 1) + labs(x = "Date",y = "Exchange Rate to GBP") + theme_minimal()
 @
 \centering
 \caption{Decomposition of addictive time series model of CNY to GBP exchange rates}
 \label{fig:decomposition of time series}
 \end{figure}
 
-In the decomposition of the CNY to GBP exchange rate series using an additive model, we disentangle the data into its fundamental components: trend, seasonality, and residual noise. This additive model, represented mathematically as $Y_t = T_t + S_t + R_t$, allows us to scrutinize each element in isolation. As illustrated in Figure~\ref{fig:decomposition of time series}, the trend component $T_t$ reveals a gradual decrease in the CNY to GBP exchange rate over time, signifying a long-term depreciation of CNY against GBP. This trend is pivotal for understanding the broader economic relationship between these currencies. 
-
-Moreover, the seasonal component $S_t$ of the decomposition highlights cyclical fluctuations, indicative of recurrent patterns within the year. These could be attributed to seasonal economic activities, policy changes, or other cyclical factors influencing the currency market. The clear demarcation of these cyclical trends in the seasonal component helps in isolating such effects from the overarching trend.
-
-Lastly, the residual component $R_t$ encompasses the random, unexplained variations after accounting for the trend and seasonal factors. Analyzing these residuals is crucial for understanding the unpredictability in the exchange rate and can be pivotal in risk management and forecasting.\\
+\noindent
+From Figure~\ref{fig:decomposition of time series}, the CNY to GBP exchange rate time series was decomposed into its fundamental components: trend, seasonality, and residual noise by additive model. This additive model, represented mathematically as $X_t = t_t + s_t + r_t$.\\
 
 \noindent
-\textbf{Autocorrelation Analysis of CNY to GBP Exchange Rate}
+As illustrated in Figure~\ref{fig:decomposition of time series}, the trend component $t_t$ reveals a gradual decrease in the CNY to GBP exchange rate over time, signifying a long-term depreciation of CNY against GBP. This trend is pivotal for understanding the broader economic relationship between these currencies.\\
 
-Autocorrelation, also referred to as serial correlation, is a crucial concept in time series analysis. It describes the correlation of a time series with its own past and future values. The autocorrelation function (ACF) measures the linear predictability of the series at time \( t \) with its values at a previous time \( t-k \).
+\noindent
+Moreover, the seasonal component $s_t$ of the decomposition highlights cyclical fluctuations, indicative of recurrent patterns within the year. These could be attributed to seasonal economic activities, policy changes, or other cyclical factors influencing the currency market. The clear demarcation of these cyclical trends in the seasonal component helps in isolating such effects from the overarching trend.\\
 
-The autocorrelation function at lag \( k \) is defined as:
+\noindent
+Lastly, the residual component $r_t$ encompasses the random, unexplained variations after accounting for the trend and seasonal factors. Analyzing these residuals is crucial for understanding the unpredictability in the exchange rate and can be pivotal in risk management and forecasting.\\
 
-\[
-R(k) = \frac{\sum_{t=1}^{n-k} (y_t - \bar{y})(y_{t+k} - \bar{y})}{\sum_{t=1}^{n} (y_t - \bar{y})^2}
-\]
+\noindent
+\textbf{Autocorrelation Analysis of CNY to GBP Exchange Rate}\\\\
+Autocorrelation, also referred to as serial correlation, is a crucial concept in time series analysis. It describes the correlation of a time series with its own past and future values. The autocorrelation function (ACF) measures the linear predictability of the series at lag h, which is the time $t$ with its values at a previous time $t-h$. The mathematical fomulation of ACF of time series will be given in the following paragraph.\\
 
-where \( y_t \) is the value of the series at time \( t \), \( \bar{y} \) is the mean of the series, and \( n \) is the total number of observations.
+\noindent
+Suppose we have a time series with observations denoted by \( x_1, \ldots, x_n \). Then the sample mean is given by $\bar{x} = \frac{1}{n} \sum_{t=1}^{n} x_t.$
+And the sample autocovariance function at lag $h$ in days of our time series is
+\[\hat{\gamma}(h) := \frac{1}{n} \sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x}), \quad \text{for} \; -n < h < n.\]
+Hence, the sample autocorrelation function at lag $h$ in days is given by
+\[\hat{\rho}(h) := \frac{\hat{\gamma}(h)}{\hat{\gamma}(0)} = \frac{\sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x})}{\sum_{t=1}^{n} (x_t - \bar{x})^{2}}, \quad \text{for} \; -n < h < n.\]
+\noindent
+The value of $\hat{\rho}(h)$ lies between -1 and +1. A value close to +1 indicates a strong positive correlation, while a value close to -1 indicates a strong negative correlation. A value near 0 suggests little to no linear correlation. A slow decay in the ACF plot indicates a strong relationship between past and present values, while spikes at specific lags may suggest seasonality. Autocorrelations outside the 95\% confidence interval are considered statistically significant.\\
 
-The value of \( R(k) \) lies between -1 and +1. A value close to +1 indicates a strong positive correlation, while a value close to -1 indicates a strong negative correlation. A value near 0 suggests little to no linear correlation. A slow decay in the ACF plot indicates a strong relationship between past and present values, while spikes at specific lags may suggest seasonality. Autocorrelations outside the 95\% confidence interval are considered statistically significant.
-
-Next, we'llvisualise the ACF for the CNY to GBP exchange rate to understand its time-dependent structure better.
+\noindent
+Next, visualise the ACF for the CNY to GBP exchange rate to understand its time-dependent structure better.
 
 \begin{figure}[H]
-<<echo=TRUE, message=FALSE, warning=FALSE, fig.cap="Autocorrelation Function (ACF) of CNY to GBP Exchange Rate", fig.align='center', fig.dim = c(4, 3.5)>>=
+<<echo=TRUE, message=FALSE, warning=FALSE, fig.dim = c(4, 3)>>=
 # Plot the Autocorrelation Function (ACF)
-acf(MyData$CNYtoGBP, main="ACF of CNY to GBP Exchange Rate")
+acf_data <- acf(MyData$CNYtoGBP, plot = FALSE)
+# Plot using base R plotting
+plot(acf_data, main="", xlab="Lag h", ylab="ACF")
 @
+\centering
+\caption{Autocorrelation Function at lag h in days of CNY to GBP Exchange Rate}
+\label{fig:ACF}
 \end{figure}
 
-The Autocorrelation Function (ACF) plot for the CNY to GBP exchange rate series reveals a compelling feature: the ACF starts near 1 and decreases gradually. This pattern suggests a strong persistence in the time series, indicating that past values have a significant influence on future values. In time series analysis, such a slow decay in the ACF is indicative of a non-stationary series, where the mean, variance, and autocorrelation structure do not remain constant over time.
+\noindent
+From Figure~\ref{fig:ACF}, the ACF plot for the CNY to GBP exchange rate series reveals a compelling feature: the ACF starts near 1 and decreases gradually. This pattern suggests a strong persistence in the time series, indicating that past values have a significant influence on future values. In time series analysis, such a slow decay in the ACF is indicative of a non-stationary series, where the mean, variance, and autocorrelation structure do not remain constant over time.\\
 
+\noindent
 This persistent autocorrelation suggests that short-term movements in the CNY to GBP exchange rate are heavily influenced by its recent history. Such a characteristic is crucial for forecasting models, as it implies that recent historical data can be a powerful predictor of near-future trends. Models like ARIMA (Autoregressive Integrated Moving Average), which are well-suited for data with high autocorrelation, may be particularly effective in this context.
 
 
+
 \subsection{Network Graphs}
+
 \textbf{Definition and Utility:}
 Network graphs, often referred to as graphs or networks, are a powerful data visualisation method used to depict relationships between entities. These entities, known as nodes, are interconnected by edges or links, which represent relationships, connections, or interactions. Network graphs find extensive utility in various fields, such as social network analysis, transportation systems, and even biological networks like protein-protein interactions. They excel at revealing complex dependencies and structures, making them a critical tool for understanding relational data.
 
 \subsubsection{The Mathematics behind Network Graphs:}
 Constructing network graphs involves several mathematical intricacies. Here we present just a few of the many concepts that play a role in the creation of such graphs:
+
 \begin{enumerate}
 \item \textbf{Nodes and Edges}: Mathematically, a network graph, \(G\), is defined as \(G = (V, E)\), where \(V\) represents the set of nodes and \(E\) represents the set of edges connecting these nodes.
 \item \textbf{Node Degree}: The degree of a node is the number of edges connected to it. In a directed graph, nodes can have both in-degrees and out-degrees.
@@ -1102,6 +1308,7 @@ Constructing network graphs involves several mathematical intricacies. Here we p
 \item \textbf{Graph Metrics}: Graph theory concepts like shortest paths, connected components, and clustering coefficients are used toanalyse the network's structure.
 \end{enumerate}
 
+\noindent
 \textbf{Formulas used in Network Graphs:}
 
 \begin{enumerate}
@@ -1157,20 +1364,24 @@ xxx
 
 \subsection{Geographic Maps and Spatial Data Visualisation}
 
-A \textbf{geographical maps} is a visual representation of an area—a symbolic depiction highlighting relationships between elements of that space, such as objects, regions, or themes. Maps have been used for centuries to navigate and explore the world, and they play a crucial role in understanding our environment, both locally and globally. These maps serve as canvases on which spatial data is painted, allowing for a visual comprehension of information that might otherwise remain abstract.
+A \textbf{geographical maps} is a visual representation of an area—a symbolic depiction highlighting relationships between elements of that space, such as objects, regions, or themes. Maps have been used for centuries to navigate and explore the world, and they play a crucial role in understanding our environment, both locally and globally. These maps serve as canvases on which spatial data is painted, allowing for a visual comprehension of information that might otherwise remain abstract.\\
 
+\noindent
 Before moving on to the spatial data visualisation. It is essential to understand how we map the the earth on a plane. The Earth, a three-dimensional spheroid, can be transformed on a plane through map projections. Each projection offers a different way to "flatten" the Earth, and as a result, each has its strengths and distortions. For instance, the Mercator projection preserves angles but distorts areas as you move towards the poles. Beyond projections, coordinate systems, like the commonly used latitude and longitude, provide a standardized way to pinpoint any location on Earth.
 
 \begin{itemize}
-\item \textbf{Latitude} measures the angle between a point on the Earth's surface and the equator, moving north or south. And latitude values range from -90° (South Pole) to +90° (North Pole). The equator, which divides the Earth into the Northern and Southern Hemispheres, is at 0° latitude.
+\item \textbf{Latitude} measures the angle between a point on the Earth's surface and the equator, moving north or south. And latitude values range from -90 degrees (South Pole) to +90 degrees (North Pole). The equator, which divides the Earth into the Northern and Southern Hemispheres, is at 0 degree latitude.
 \item \textbf{Longitude} measures the angle between a point on the Earth's surface and the prime meridian, moving east or west.
-And longitude values range from -180° to +180°. The prime meridian, which is at 0° longitude, runs from the North Pole through Greenwich, England, to the South Pole. It divides the Earth into the Eastern and Western Hemispheres.
+And longitude values range from -180 degrees to +180 degrees. The prime meridian, which is at 0 degree longitude, runs from the North Pole through Greenwich, England, to the South Pole. It divides the Earth into the Eastern and Western Hemispheres.
 \end{itemize}
 
-Together, lines of longitude and latitude create a grid system over the Earth's surface. By providing both a latitude and longitude value, one can specify an exact location on the Earth's surface. For example, the coordinates (0° N, 0° E) would indicate the intersection of the equator and the prime meridian, located in the Gulf of Guinea off the west coast of Africa.
-\\\\
+\noindent
+Together, lines of longitude and latitude create a grid system over the Earth's surface. By providing both a latitude and longitude value, one can specify an exact location on the Earth's surface. For example, the coordinates (0° N, 0° E) would indicate the intersection of the equator and the prime meridian, located in the Gulf of Guinea off the west coast of Africa.\\
+
 \noindent
 \textbf{Spatial data visualisation}\\
+
+\noindent
 Spatial data visualisation are powerful tools that transform raw, often complex datasets into visual representations, revealing patterns, relationships, and insights rooted in location. At their core, maps provide a spatial context, allowing us to see the world's intricate web of interconnectedness. Today, with the surge in big data and advanced visualisation tools, spatial data visualisation is not just about presenting information but also about telling compelling stories, guiding decision-making, and predicting future trends based on geographical patterns.
 
 <<echo=FALSE, warning=FALSE, message=FALSE,include=FALSE>>=
@@ -1239,8 +1450,10 @@ ggplot(data = london_boroughs) + geom_sf(fill = "lightblue", color = "black") +
 \end{figure}
 \endgroup
 
-From Figure~\ref{fig:London Wards Map}, we are introduced to a detailed layout of all wards within Greater London, pinpointed by their geographical coordinates. While this map provides a clear depiction of location and boundaries, it offers limited insight into the dynamics of crime distribution.
+\noindent
+From Figure~\ref{fig:London Wards Map}, we are introduced to a detailed layout of all wards within Greater London, pinpointed by their geographical coordinates. While this map provides a clear depiction of location and boundaries, it offers limited insight into the dynamics of crime distribution.\\
 
+\noindent
 Hence, we will use a more informativevisualisation: a choropleth map showcasing crime rates by borough. Here, crime rates are calculated by dividing the total crime count in each borough by its respective population as of 2020. This per capita approach normalizes the data, ensuring comparability across boroughs with different population sizes.
 
 \begin{figure}[H]
@@ -1257,24 +1470,30 @@ ggplot(data=aggregated_data) + geom_sf(aes(fill=Crime_rate)) +
 \label{fig:crime rate london}
 \end{figure}
 
-From Figure~\ref{fig:crime rate london}, Westminster stands out, labeled in red, indicating a higher crime rate. This visual marker highlights Westminster as an area of particular concern regarding criminal activity. This could be attributed to factors like its status as a central, densely populated area with significant tourist traffic and commercial activity, which often correlate with higher crime rates.
+\noindent
+From Figure~\ref{fig:crime rate london}, Westminster stands out, labeled in red, indicating a higher crime rate. This visual marker highlights Westminster as an area of particular concern regarding criminal activity. This could be attributed to factors like its status as a central, densely populated area with significant tourist traffic and commercial activity, which often correlate with higher crime rates.\\
 
-In contrast, the map reveals a trend where rural or less densely populated areas tend to be safer, as evidenced by their lighter coloration. These areas typically experience lower crime rates, possibly due to factors such as smaller populations, less anonymity for potential offenders, and different socio-economic dynamics compared to urban centers.
+\noindent
+In contrast, the map reveals a trend where rural or less densely populated areas tend to be safer, as evidenced by their lighter coloration. These areas typically experience lower crime rates, possibly due to factors such as smaller populations, less anonymity for potential offenders, and different socio-economic dynamics compared to urban centers.\\
 
+\noindent
 The choropleth map of London’s crime rates elucidates key spatial patterns in crime distribution. It highlights the variance in crime rates from urban centers to rural areas, accentuating the higher crime rates in central, densely populated areas like Westminster, depicted in red, compared to the lighter shades marking safer, rural boroughs. This visual tool facilitates an understanding of how urbanization, socio-economic status, and population density impact crime rates across the boroughs.
 
 \subsection{3D and Interactive Visualisations}
-ggplot2 is one of the most popular data visualisation libraries in R, but it is primarily designed for 2D data visualisation. Directly creating 3D views with ggplot2 can be challenging.
 
+ggplot2 is one of the most popular data visualisation libraries in R, but it is primarily designed for 2D data visualisation. Directly creating 3D views with ggplot2 can be challenging.\\
 
-R provides several packages for 3Dvisualisation, such as rgl, plot3D, rayshader, and others, which are specifically designed for three-dimensional data. These packages offer the capability to create 3D scatter plots, surface plots, heat maps, contour maps, and more.
+\noindent
+R provides several packages for 3Dvisualisation, such as rgl, plot3D, rayshader, and others, which are specifically designed for three-dimensional data. These packages offer the capability to create 3D scatter plots, surface plots, heat maps, contour maps, and more.\\
 
-
+\noindent
 \textbt{rgl}: This is one of the most popular R packages for creating interactive 3D charts. It supports various types of 3D graphics including points, lines, and surfaces, and allows users to interactively rotate, zoom, and pan the view.\\
-\textbt{scatterplot}：This package provides a function to create 3D scatter plots. It does not support interactive manipulation, but the generated graphics are well-suited for display in static reports.
+\textbt{scatterplot}：This package provides a function to create 3D scatter plots. It does not support interactive manipulation, but the generated graphics are well-suited for display in static reports.\\
 
-3D data visualisation is an approach that employs three-dimensional graphics to represent complex data structures, allowing for an immersive exploration of information. Unlike traditional 2D visualisations (like bar graphs or line charts), 3D visualisations can convey an additional dimension of data, making them particularly valuable in specific contexts.
+\noindent
+3D data visualisation is an approach that employs three-dimensional graphics to represent complex data structures, allowing for an immersive exploration of information. Unlike traditional 2D visualisations (like bar graphs or line charts), 3D visualisations can convey an additional dimension of data, making them particularly valuable in specific contexts.\\
 
+\noindent
 Our first example will be  a scatter plot. We can use scatterplot3d package to help us for data visualisation.
 
 <<3d1, echo=TRUE, fig.height=4, fig.width=4, fig.cap='3d scatter plot'>>=
@@ -1293,77 +1512,27 @@ scatterplot3d(trees$Girth, trees$Height, trees$Volume,
 @
 
 
-
 \section{Trees Dataset in R}
-
-
-
+XXX
 \subsection{Advanced Visualisation Techniques}
-xxx
-
-
-
-
+XXX
 \section{Practical Implementations}
 XXX
-
-
-
-
 \section{Case Studies}
 \subsection{Market Analysis Dashboards}
 XXX
 \subsection{Healthcare Data Visualisation}
 XXX
-
-
-
-
 \section{State-of-the-Art Approaches}
 XXX
-
-
 \section{Conclusion}
-
 XXX
 
-\begin{thebibliography}{100} % This is the reference section for citing resources.
-\bibitem{nasa_confidence}
-Earth Science Data Systems. 2023. \textit{FIRMS Frequently Asked Questions | Earthdata}. Available at: https://www.earthdata.nasa.gov/faq/firms-faq#ed-confidence [Accessed 12 Nov. 2023].
 
-\bibitem{GRM_chp3}
-Worton, B. 2023. \textit{Generalised Regression Models, Semester 1, 2023–2024}. University of Edinburgh. Chp. 3.
+\bibliographystyle{plain} % Choose a style that suits your needs
+\bibliography{reference} % The filename of your .bib file
 
-\bibitem{multicoli}
-Wikipedia Contributors. 2019. \textit{Multicollinearity}. Available at: https://en.wikipedia.org/wiki/Multicollinearity [Accessed 12 Nov. 2023].
-
-\bibitem{fakedata}
-Smith, J.D., Wehmeyer, M.L. 2012. \textit{Who Was Deborah Kallikak?} Intellectual and Developmental Disabilities, 50(2), pp.169–178. doi:https://doi.org/10.1352/1934-9556-50.2.169.
-
-\bibitem{eugenics}
-Rutherford, A. 2022. \textit{Where science meets fiction: the dark history of eugenics}. The Guardian. Available at: https://www.theguardian.com/science/2022/jun/19/where-science-meets-fiction-the-dark-history-of-eugenics.
-
-\bibitem{worth}
-www.calculateme.com. n.d. \textit{$500,000 in 1937 is How Much Today?} [online] Available at: https://www.calculateme.com/inflation/500000-dollars/from-1937/to-now [Accessed 9 Nov. 2023].
-
-\bibitem{bbcdatavis}
-Proctor, A. 2023. \textit{Five charts that changed the world - BBC Ideas}. [online] Available at: https://www.bbc.co.uk/ideas/videos/five-charts-that-changed-the-world/p0fb69c1 [Accessed 20 Oct. 2023].
-
-\bibitem{blog}
-Hawkins, E. n.d. \textit{Warming stripes | Climate Lab Book}. [online] Available at: https://www.climate-lab-book.ac.uk/warming-stripes/ [Accessed 9 Nov. 2023].
-
-\bibitem{wikiFN}
-Wikipedia Contributors. 2019. \textit{Florence Nightingale}. [online] Wikipedia. Available at: https://en.wikipedia.org/wiki/Florence_Nightingale [Accessed 20 Oct. 2023].
-
-\bibitem{ktree}
-Dakwa, K. 2001. \textit{The Kallikak Family – Historical Influences, Current Controversies, Teaching Resources}. [online] Available at: https://intelltheory.com/intelli/the-kallikak-family/ [Accessed 9 Nov. 2023].
-
-\bibitem{lie}
-de Carvahol, M. 2023. \textit{Incomplete Data Analysis}. University of Edinburgh. Lecture 2, 9-10.
-\end{thebibliography}
-
-\printbibliography % This command prints the cited references.
-
+\begin{comment}
 \appendix % This is the appendix section for long code.
 \chapter{Chapter 1-3}
 \section{Using \texttt{step()} function to select Linear Regression Models}\label{sec:codechunk1}
@@ -1490,5 +1659,5 @@ Multiple R-squared:  0.8497,	Adjusted R-squared:  0.8336
 F-statistic: 52.75 on 3 and 28 DF,  p-value: 1.21e-11
 \end{verbatim}
 \end{lstlisting}
-
+\end{comment}
 \end{document}
