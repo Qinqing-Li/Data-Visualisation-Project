@@ -22,7 +22,7 @@
 \contentsline {section}{\numberline {3}Modern Methods of Data Visualisation}{15}{section.3}
 \contentsline {subsection}{\numberline {3.1}Scatter Plots and Bubble Charts}{15}{subsection.3.1}
 \contentsline {subsubsection}{\numberline {3.1.1}Scatter Plots}{15}{subsubsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.2}Regression and the Regression Line}{15}{subsubsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.2}Regression Analysis - Study of 1970s automobiles}{15}{subsubsection.3.1.2}
 \contentsline {subsubsection}{\numberline {3.1.3}Bubble Charts}{20}{subsubsection.3.1.3}
 \contentsline {subsubsection}{\numberline {3.1.4}Bar Charts}{22}{subsubsection.3.1.4}
 \contentsline {subsubsection}{\numberline {3.1.5}Different Types of Bar Charts}{22}{subsubsection.3.1.5}

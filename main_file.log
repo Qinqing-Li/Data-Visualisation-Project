@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.9.29)  13 NOV 2023 20:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.9.29)  14 NOV 2023 22:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -229,20 +229,78 @@ Package: appendix 2009/09/02 v1.2b extra appendix facilities
 \c@@ppsavesec=\count118
 \c@@ppsaveapp=\count119
 )
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip45
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks17
+\ex@=\dimen113
+))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen114
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count120
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count121
+\leftroot@=\count122
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count123
+\DOTSCASE@=\count124
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen115
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count125
+\c@MaxMatrixCols=\count126
+\dotsspace@=\muskip11
+\c@parentequation=\count127
+\dspbrk@lvl=\count128
+\tag@help=\toks18
+\row@=\count129
+\column@=\count130
+\maxfields@=\count131
+\andhelp@=\toks19
+\eqnshift@=\dimen116
+\alignsep@=\dimen117
+\tagshift@=\dimen118
+\tagwidth@=\dimen119
+\totwidth@=\dimen120
+\lineht@=\dimen121
+\@envbody=\toks20
+\multlinegap=\skip46
+\multlinetaggap=\skip47
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
 (/usr/local/texlive/2018/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2018/03/24 v5.7 Page Geometry
-\Gm@cnth=\count120
-\Gm@cntv=\count121
-\c@Gm@tempcnt=\count122
-\Gm@bindingoffset=\dimen113
-\Gm@wd@mp=\dimen114
-\Gm@odd@mp=\dimen115
-\Gm@even@mp=\dimen116
-\Gm@layoutwidth=\dimen117
-\Gm@layoutheight=\dimen118
-\Gm@layouthoffset=\dimen119
-\Gm@layoutvoffset=\dimen120
-\Gm@dimlist=\toks17
+\Gm@cnth=\count132
+\Gm@cntv=\count133
+\c@Gm@tempcnt=\count134
+\Gm@bindingoffset=\dimen122
+\Gm@wd@mp=\dimen123
+\Gm@odd@mp=\dimen124
+\Gm@even@mp=\dimen125
+\Gm@layoutwidth=\dimen126
+\Gm@layoutheight=\dimen127
+\Gm@layouthoffset=\dimen128
+\Gm@layoutvoffset=\dimen129
+\Gm@dimlist=\toks22
 )
 (/usr/local/texlive/2018/texmf-dist/tex/latex/upquote/upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
@@ -251,33 +309,33 @@ tim
 No file main_file.aux.
 \openout1 = `main_file.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
 (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count123
-\scratchdimen=\dimen121
-\scratchbox=\box28
-\nofMPsegments=\count124
-\nofMParguments=\count125
-\everyMPshowfont=\toks18
-\MPscratchCnt=\count126
-\MPscratchDim=\dimen122
-\MPnumerator=\count127
-\makeMPintoPDFobject=\count128
-\everyMPtoPDFconversion=\toks19
+\scratchcounter=\count135
+\scratchdimen=\dimen130
+\scratchbox=\box30
+\nofMPsegments=\count136
+\nofMParguments=\count137
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count138
+\MPscratchDim=\dimen131
+\MPnumerator=\count139
+\makeMPintoPDFobject=\count140
+\everyMPtoPDFconversion=\toks24
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -295,8 +353,8 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box29
-Package hyperref Info: Link coloring OFF on input line 62.
+\AtBeginShipoutBox=\box31
+Package hyperref Info: Link coloring OFF on input line 63.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -304,11 +362,11 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count129
+\c@section@level=\count141
 )
-LaTeX Info: Redefining \ref on input line 62.
-LaTeX Info: Redefining \pageref on input line 62.
-LaTeX Info: Redefining \nameref on input line 62.
+LaTeX Info: Redefining \ref on input line 63.
+LaTeX Info: Redefining \pageref on input line 63.
+LaTeX Info: Redefining \nameref on input line 63.
 \@outlinefile=\write3
 \openout3 = `main_file.out'.
 
@@ -347,12 +405,6 @@ LaTeX Info: Redefining \nameref on input line 62.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 67.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 67.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 67.
 
 Package hyperref Warning: old toc file detected, not used; run LaTeX again.
 
@@ -369,79 +421,79 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.73 \\\textbf
+l.74 \\\textbf
               {Motivations for having Data Visualisations - Case Example 1}\\
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-LaTeX Warning: Reference `fig:coxcomb' on page 2 undefined on input line 77.
+LaTeX Warning: Reference `fig:coxcomb' on page 2 undefined on input line 78.
 
 <Nightingale-mortality.jpg, id=14, 7022.235pt x 3840.3475pt>
 File: Nightingale-mortality.jpg Graphic file (type jpg)
 <use Nightingale-mortality.jpg>
-Package pdftex.def Info: Nightingale-mortality.jpg  used on input line 81.
+Package pdftex.def Info: Nightingale-mortality.jpg  used on input line 82.
 (pdftex.def)             Requested size: 303.53267pt x 165.9521pt.
 
-LaTeX Warning: Citation `wikiFN' on page 2 undefined on input line 82.
+LaTeX Warning: Citation `wikiFN' on page 2 undefined on input line 83.
 
 
-LaTeX Warning: Citation `wikiFN' on page 2 undefined on input line 82.
+LaTeX Warning: Citation `wikiFN' on page 2 undefined on input line 83.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--84
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 73--84
+Underfull \hbox (badness 10000) in paragraph at lines 74--85
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--84
+Underfull \hbox (badness 10000) in paragraph at lines 74--85
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--84
+Underfull \hbox (badness 10000) in paragraph at lines 74--85
 
  []
 
 
-LaTeX Warning: Reference `fig:global' on page 2 undefined on input line 94.
+Underfull \hbox (badness 10000) in paragraph at lines 74--85
+
+ []
+
+
+LaTeX Warning: Reference `fig:global' on page 2 undefined on input line 95.
 
 <global.png, id=15, 910.48155pt x 455.301pt>
 File: global.png Graphic file (type png)
 <use global.png>
-Package pdftex.def Info: global.png  used on input line 97.
+Package pdftex.def Info: global.png  used on input line 98.
 (pdftex.def)             Requested size: 303.53267pt x 151.78514pt.
 
-LaTeX Warning: Citation `blog' on page 2 undefined on input line 98.
+LaTeX Warning: Citation `blog' on page 2 undefined on input line 99.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 85--100
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 85--100
+Underfull \hbox (badness 10000) in paragraph at lines 86--101
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 85--100
+Underfull \hbox (badness 10000) in paragraph at lines 86--101
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 85--100
+Underfull \hbox (badness 10000) in paragraph at lines 86--101
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 85--100
+Underfull \hbox (badness 10000) in paragraph at lines 86--101
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--101
 
  []
 
@@ -450,39 +502,39 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.100 \end{figure}
+l.101 \end{figure}
                    <./Nightingale-mortality.jpg>]
 
-LaTeX Warning: Reference `fig:misuse1' on page 3 undefined on input line 106.
+LaTeX Warning: Reference `fig:misuse1' on page 3 undefined on input line 107.
 
 
-LaTeX Warning: Citation `worth' on page 3 undefined on input line 106.
+LaTeX Warning: Citation `worth' on page 3 undefined on input line 107.
 
 <misuse1.png, id=24, 681.54625pt x 511.9125pt>
 File: misuse1.png Graphic file (type png)
 <use misuse1.png>
-Package pdftex.def Info: misuse1.png  used on input line 109.
+Package pdftex.def Info: misuse1.png  used on input line 110.
 (pdftex.def)             Requested size: 303.53267pt x 227.9839pt.
 
-LaTeX Warning: Citation `lie' on page 3 undefined on input line 110.
+LaTeX Warning: Citation `lie' on page 3 undefined on input line 111.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--112
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 101--112
+Underfull \hbox (badness 10000) in paragraph at lines 102--113
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--112
+Underfull \hbox (badness 10000) in paragraph at lines 102--113
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--112
+Underfull \hbox (badness 10000) in paragraph at lines 102--113
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--113
 
  []
 
@@ -493,7 +545,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.114 \noindent
+l.115 \noindent
                 \\\textbf{Misuses of Data Visualisation - Case Example 2}\\
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -504,50 +556,50 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.114 \noindent
+l.115 \noindent
                 \\\textbf{Misuses of Data Visualisation - Case Example 2}\\ <./
 global.png (PNG copy)>]
 
-LaTeX Warning: Reference `fig:familytree' on page 4 undefined on input line 118
+LaTeX Warning: Reference `fig:familytree' on page 4 undefined on input line 119
 .
 
 
-LaTeX Warning: Citation `fakedata' on page 4 undefined on input line 118.
+LaTeX Warning: Citation `fakedata' on page 4 undefined on input line 119.
 
 
-LaTeX Warning: Reference `fig:familytree' on page 4 undefined on input line 120
+LaTeX Warning: Reference `fig:familytree' on page 4 undefined on input line 121
 .
 
 
-LaTeX Warning: Citation `eugenics' on page 4 undefined on input line 120.
+LaTeX Warning: Citation `eugenics' on page 4 undefined on input line 121.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 114--121
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 114--121
+Underfull \hbox (badness 10000) in paragraph at lines 115--122
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 114--121
+Underfull \hbox (badness 10000) in paragraph at lines 115--122
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 114--121
+Underfull \hbox (badness 10000) in paragraph at lines 115--122
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--122
 
  []
 
 <familytree.jpg, id=31, 955.57pt x 497.86pt>
 File: familytree.jpg Graphic file (type jpg)
 <use familytree.jpg>
-Package pdftex.def Info: familytree.jpg  used on input line 124.
+Package pdftex.def Info: familytree.jpg  used on input line 125.
 (pdftex.def)             Requested size: 303.53267pt x 158.14096pt.
 
-LaTeX Warning: Citation `ktree' on page 4 undefined on input line 125.
+LaTeX Warning: Citation `ktree' on page 4 undefined on input line 126.
 
 
 ! LaTeX Error: There's no line here to end.
@@ -556,7 +608,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.129 \\
+l.130 \\
         Case examples obtained from BBC Ideas\cite{bbcdatavis}.
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -569,7 +621,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.129 \\C
+l.130 \\C
          ase examples obtained from BBC Ideas\cite{bbcdatavis}.
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -580,19 +632,19 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.129 \\C
+l.130 \\C
          ase examples obtained from BBC Ideas\cite{bbcdatavis}. <./misuse1.png>
 ]
 
-LaTeX Warning: Citation `bbcdatavis' on page 5 undefined on input line 129.
+LaTeX Warning: Citation `bbcdatavis' on page 5 undefined on input line 130.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 131--140
+Underfull \hbox (badness 10000) in paragraph at lines 132--141
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 131--140
+Underfull \hbox (badness 10000) in paragraph at lines 132--141
 
  []
 
@@ -601,104 +653,100 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.141 \subsection
+l.142 \subsection
                  {Datasets} <./familytree.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 142--143
+Underfull \hbox (badness 10000) in paragraph at lines 143--144
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--146
+Underfull \hbox (badness 10000) in paragraph at lines 145--147
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 147--149
+Underfull \hbox (badness 10000) in paragraph at lines 148--150
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--152
+Underfull \hbox (badness 10000) in paragraph at lines 151--153
 
  []
 
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 155.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 155.
 
-LaTeX Warning: Citation `nasa_confidence' on page 6 undefined on input line 155
+LaTeX Warning: Citation `nasa_confidence' on page 6 undefined on input line 156
 .
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 153--156
+Underfull \hbox (badness 10000) in paragraph at lines 154--157
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 158--160
+Underfull \hbox (badness 10000) in paragraph at lines 159--161
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 161--163
+Underfull \hbox (badness 10000) in paragraph at lines 162--164
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 164--166
+Underfull \hbox (badness 10000) in paragraph at lines 165--167
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 167--169
+Underfull \hbox (badness 10000) in paragraph at lines 168--170
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--172
+Underfull \hbox (badness 10000) in paragraph at lines 171--173
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--175
+Underfull \hbox (badness 10000) in paragraph at lines 175--176
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--177
+Underfull \hbox (badness 10000) in paragraph at lines 177--178
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 186--187
+Underfull \hbox (badness 10000) in paragraph at lines 187--188
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 188--190
+Underfull \hbox (badness 10000) in paragraph at lines 189--191
 
  []
 
 <figure/beamer-messygraph-1.pdf, id=63, 433.62pt x 289.08pt>
 File: figure/beamer-messygraph-1.pdf Graphic file (type pdf)
 <use figure/beamer-messygraph-1.pdf>
-Package pdftex.def Info: figure/beamer-messygraph-1.pdf  used on input line 197
+Package pdftex.def Info: figure/beamer-messygraph-1.pdf  used on input line 198
 .
 (pdftex.def)             Requested size: 195.12767pt x 130.0848pt.
 <figure/beamer-cleargraph1-1.pdf, id=64, 433.62pt x 289.08pt>
 File: figure/beamer-cleargraph1-1.pdf Graphic file (type pdf)
 <use figure/beamer-cleargraph1-1.pdf>
 Package pdftex.def Info: figure/beamer-cleargraph1-1.pdf  used on input line 21
-0.
+1.
 (pdftex.def)             Requested size: 195.12767pt x 130.0848pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 222--224
+Underfull \hbox (badness 10000) in paragraph at lines 223--225
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 226--227
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
 
  []
 
@@ -707,30 +755,30 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.227 
+l.228 
        <./figure/beamer-messygraph-1.pdf> <./figure/beamer-cleargraph1-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 228--230
+Underfull \hbox (badness 10000) in paragraph at lines 229--231
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--235
+Underfull \hbox (badness 10000) in paragraph at lines 235--236
 
  []
 
 [9]
 
-LaTeX Warning: Reference `fig:abs-plots' on page 10 undefined on input line 251
+LaTeX Warning: Reference `fig:abs-plots' on page 10 undefined on input line 252
 .
 
 <figure/beamer-abs-plots-1.pdf, id=99, 867.24pt x 289.08pt>
 File: figure/beamer-abs-plots-1.pdf Graphic file (type pdf)
 <use figure/beamer-abs-plots-1.pdf>
-Package pdftex.def Info: figure/beamer-abs-plots-1.pdf  used on input line 256.
+Package pdftex.def Info: figure/beamer-abs-plots-1.pdf  used on input line 257.
 
 (pdftex.def)             Requested size: 433.62pt x 144.53964pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 265--267
+Underfull \hbox (badness 10000) in paragraph at lines 266--268
 
  []
 
@@ -739,32 +787,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 265--267
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.274 \subsubsection
+l.275 \subsubsection
                     {Categorisation of Data Types} <./figure/beamer-abs-plots-1
 .pdf>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 277.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 278.
 
  (/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 277.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 278.
 
-Underfull \hbox (badness 10000) in paragraph at lines 287--288
+Underfull \hbox (badness 10000) in paragraph at lines 288--289
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--291
+Underfull \hbox (badness 10000) in paragraph at lines 290--292
 
  []
 
 
 LaTeX Warning: Reference `fig:colour-plot' on page 11 undefined on input line 2
-93.
+94.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 292--294
+Underfull \hbox (badness 10000) in paragraph at lines 293--295
 
  []
 
@@ -773,15 +821,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 292--294
 File: figure/beamer-colour-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-colour-plot-1.pdf>
 Package pdftex.def Info: figure/beamer-colour-plot-1.pdf  used on input line 29
-8.
+9.
 (pdftex.def)             Requested size: 433.62pt x 130.08699pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 307--310
+Underfull \hbox (badness 10000) in paragraph at lines 308--311
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 312--313
+Underfull \hbox (badness 10000) in paragraph at lines 313--314
 
  []
 
@@ -790,39 +838,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 312--313
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.318 \end{itemize}
+l.319 \end{itemize}
                     <./figure/beamer-colour-plot-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 321--323
+Underfull \hbox (badness 10000) in paragraph at lines 322--324
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 328--329
+Underfull \hbox (badness 10000) in paragraph at lines 329--330
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 334--335
+Underfull \hbox (badness 10000) in paragraph at lines 335--336
 
  []
 
 [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 355--361
+Underfull \hbox (badness 10000) in paragraph at lines 356--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 355--361
+Underfull \hbox (badness 10000) in paragraph at lines 356--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 355--361
+Underfull \hbox (badness 10000) in paragraph at lines 356--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 355--361
+Underfull \hbox (badness 10000) in paragraph at lines 356--362
 
  []
 
@@ -833,7 +881,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.363 \\R
+l.364 \\R
          egression models are statistical tools that provide functions to es...
 
 Your command was ignored.
@@ -841,93 +889,39 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 363--364
+Underfull \hbox (badness 10000) in paragraph at lines 364--372
 
  []
 
 
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.365 \\\textbf
-               {Simple Linear Models}\\
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 365--367
+Underfull \hbox (badness 10000) in paragraph at lines 364--372
 
  []
 
 [15]
 
-LaTeX Warning: Citation `GRM_chp3' on page 16 undefined on input line 387.
+LaTeX Warning: Citation `GRM_chp3' on page 16 undefined on input line 392.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 388--391
-
- []
-
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.404 \\\textbf
-               {Least Squares Estimation}\\
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 404--406
+Underfull \hbox (badness 10000) in paragraph at lines 393--398
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 407--411
+Underfull \hbox (badness 10000) in paragraph at lines 417--421
 
  []
 
 
-LaTeX Warning: Citation `GRM_chp3' on page 16 undefined on input line 412.
+LaTeX Warning: Citation `GRM_chp3' on page 16 undefined on input line 434.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 412--416
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 417--420
+Underfull \hbox (badness 10000) in paragraph at lines 445--447
 
  []
 
 
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.422 \\\textbf
-               {The Band of Confidence:}\\
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 422--424
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 422--424
+Underfull \hbox (badness 10000) in paragraph at lines 445--447
 
  []
 
@@ -939,24 +933,24 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.425 \\\textbf
+l.448 \\\textbf
                {Relation to Scatter Plots}\\
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 425--427
+Underfull \hbox (badness 10000) in paragraph at lines 448--450
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 425--427
+Underfull \hbox (badness 10000) in paragraph at lines 448--450
 
  []
 
 ! Undefined control sequence.
-l.429 \noident
+l.452 \noident
                \textbf{Scatter Plots in Practice}\\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -966,23 +960,23 @@ and I'll forget about whatever was undefined.
 
 
 LaTeX Warning: Reference `fig:cor-matrix-mtcars2' on page 17 undefined on input
- line 432.
+ line 455.
 
 
-LaTeX Warning: Citation `multicoli' on page 17 undefined on input line 434.
+LaTeX Warning: Citation `multicoli' on page 17 undefined on input line 457.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 429--435
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 429--435
+Underfull \hbox (badness 10000) in paragraph at lines 452--458
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 429--435
+Underfull \hbox (badness 10000) in paragraph at lines 452--458
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 452--458
 
  []
 
@@ -990,7 +984,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 429--435
 File: figure/beamer-cor-matrix-mtcars2-1.pdf Graphic file (type pdf)
 <use figure/beamer-cor-matrix-mtcars2-1.pdf>
 Package pdftex.def Info: figure/beamer-cor-matrix-mtcars2-1.pdf  used on input 
-line 440.
+line 463.
 (pdftex.def)             Requested size: 361.34912pt x 208.77946pt.
 [17]
 
@@ -1000,7 +994,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.449 \\
+l.472 \\
         
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1013,7 +1007,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.450 \\
+l.473 \\
         Examining the correlation matrix reveals a high correlation between ...
 
 Your command was ignored.
@@ -1027,7 +1021,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.450 \\E
+l.473 \\E
          xamining the correlation matrix reveals a high correlation between ...
 
 Your command was ignored.
@@ -1035,19 +1029,19 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <7> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 454.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 477.
 <figure/beamer-scatter-plot-1.pdf, id=175, 289.08pt x 216.81pt>
 File: figure/beamer-scatter-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-scatter-plot-1.pdf>
-Package pdftex.def Info: figure/beamer-scatter-plot-1.pdf  used on input line 4
-83.
+Package pdftex.def Info: figure/beamer-scatter-plot-1.pdf  used on input line 5
+06.
 (pdftex.def)             Requested size: 289.07928pt x 216.81938pt.
 [18pdfTeX warning (ext4): destination with the same identifier (name{figure.8})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.489 
+l.512 
        <./figure/beamer-cor-matrix-mtcars2-1.pdf>]
 
 ! LaTeX Error: There's no line here to end.
@@ -1056,7 +1050,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.492 \\
+l.515 \\
         Model selection methods, such as the Akaike Information Criterion (A...
 
 Your command was ignored.
@@ -1070,7 +1064,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.492 \\M
+l.515 \\M
          odel selection methods, such as the Akaike Information Criterion (A...
 
 Your command was ignored.
@@ -1079,31 +1073,31 @@ or  <return>  to continue without it.
 
 
 LaTeX Warning: Reference `subsubsection:Heatmaps, correlation matrix and AIC sc
-ore' on page 19 undefined on input line 492.
+ore' on page 19 undefined on input line 515.
 
 
-LaTeX Warning: Reference `sec:codechunk1' on page 19 undefined on input line 49
-8.
+LaTeX Warning: Reference `sec:codechunk1' on page 19 undefined on input line 52
+1.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 492--499
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 492--499
+Underfull \hbox (badness 10000) in paragraph at lines 515--522
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 492--499
+Underfull \hbox (badness 10000) in paragraph at lines 515--522
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 515--522
 
  []
 
 <codeshoot.png, id=189, 781.92125pt x 33.12375pt>
 File: codeshoot.png Graphic file (type png)
 <use codeshoot.png>
-Package pdftex.def Info: codeshoot.png  used on input line 502.
+Package pdftex.def Info: codeshoot.png  used on input line 525.
 (pdftex.def)             Requested size: 433.62pt x 18.36923pt.
 
 ! LaTeX Error: There's no line here to end.
@@ -1112,7 +1106,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.506 \textbf
+l.529 \textbf
              {Analysis of the scatter plot}\\
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1120,10 +1114,10 @@ or  <return>  to continue without it.
 
 
 LaTeX Warning: Reference `fig:scatter-plot' on page 19 undefined on input line 
-507.
+530.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 509--510
+Underfull \hbox (badness 10000) in paragraph at lines 532--533
 
  []
 
@@ -1132,26 +1126,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 509--510
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.510     \item \textbf
+l.533     \item \textbf
                        {Linear Regression Line}: The regression line provide...
  <./figure/beamer-scatter-plot-1.pdf> <./codeshoot.png>]
-Overfull \hbox (7.1309pt too wide) in paragraph at lines 514--515
+Overfull \hbox (7.1309pt too wide) in paragraph at lines 537--538
 \OT1/cmr/m/n/10 Bubble charts are a cap-ti-vat-ing data vi-su-al-i-sa-tion tool
  that ex-tends be-yond the typ-i-cal two-dimensional
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 514--515
+Underfull \hbox (badness 10000) in paragraph at lines 537--538
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 516--519
+Underfull \hbox (badness 10000) in paragraph at lines 539--542
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 536--537
+Underfull \hbox (badness 10000) in paragraph at lines 559--560
 
  []
 
@@ -1160,20 +1154,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 536--537
 File: figure/beamer-buble-plot-chunk-1.pdf Graphic file (type pdf)
 <use figure/beamer-buble-plot-chunk-1.pdf>
 Package pdftex.def Info: figure/beamer-buble-plot-chunk-1.pdf  used on input li
-ne 560.
+ne 583.
 (pdftex.def)             Requested size: 433.62pt x 216.81168pt.
  [21 <./figure/beamer-buble-plot-chunk-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 579--582
+Underfull \hbox (badness 10000) in paragraph at lines 602--605
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 584--585
+Underfull \hbox (badness 10000) in paragraph at lines 607--608
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 586--587
+Underfull \hbox (badness 10000) in paragraph at lines 609--610
 
  []
 
@@ -1181,18 +1175,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 586--587
 <figure/beamer-barchart2-1.pdf, id=236, 433.62pt x 289.08pt>
 File: figure/beamer-barchart2-1.pdf Graphic file (type pdf)
 <use figure/beamer-barchart2-1.pdf>
-Package pdftex.def Info: figure/beamer-barchart2-1.pdf  used on input line 615.
+Package pdftex.def Info: figure/beamer-barchart2-1.pdf  used on input line 638.
 
 (pdftex.def)             Requested size: 195.12767pt x 130.0848pt.
 <figure/beamer-barchart3-1.pdf, id=237, 433.62pt x 289.08pt>
 File: figure/beamer-barchart3-1.pdf Graphic file (type pdf)
 <use figure/beamer-barchart3-1.pdf>
-Package pdftex.def Info: figure/beamer-barchart3-1.pdf  used on input line 629.
+Package pdftex.def Info: figure/beamer-barchart3-1.pdf  used on input line 652.
 
 (pdftex.def)             Requested size: 195.12767pt x 130.0848pt.
 
 
-LaTeX Warning: Reference `fig:barchart2' on page 23 undefined on input line 639
+LaTeX Warning: Reference `fig:barchart2' on page 23 undefined on input line 662
 .
 
 [23pdfTeX warning (ext4): destination with the same identifier (name{figure.10}
@@ -1200,71 +1194,39 @@ LaTeX Warning: Reference `fig:barchart2' on page 23 undefined on input line 639
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.646 \end{enumerate}
+l.669 \end{enumerate}
                      pdfTeX warning (ext4): destination with the same identifie
 r (name{figure.11}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.646 \end{enumerate}
+l.669 \end{enumerate}
                       <./figure/beamer-barchart2-1.pdf> <./figure/beamer-barcha
 rt3-1.pdf>]
 
-LaTeX Warning: Reference `fig:barchart2' on page 24 undefined on input line 647
+LaTeX Warning: Reference `fig:barchart2' on page 24 undefined on input line 670
 .
 
 <figure/beamer-hist3-1.pdf, id=260, 361.35pt x 216.81pt>
 File: figure/beamer-hist3-1.pdf Graphic file (type pdf)
 <use figure/beamer-hist3-1.pdf>
-Package pdftex.def Info: figure/beamer-hist3-1.pdf  used on input line 675.
+Package pdftex.def Info: figure/beamer-hist3-1.pdf  used on input line 698.
 (pdftex.def)             Requested size: 361.34912pt x 216.80946pt.
-[24]
-! Undefined control sequence.
-l.688 $$\hat{f}(x) = \sum_{\text
-                                {observations}} K\left(\frac{x - \text{obser...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<argument> x - \text 
-                     {observation}
-l.688 ...x - \text{observation}}{\text{bandwidth}}
-                                                  \right)$$
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<argument> \text 
-                 {bandwidth}
-l.688 ...x - \text{observation}}{\text{bandwidth}}
-                                                  \right)$$
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[25pdfTeX warning (ext4): destination with the same identifier (name{figure.12}
-) has been already used, duplicate ignored
+[24] [25pdfTeX warning (ext4): destination with the same identifier (name{figur
+e.12}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.709 \end{kframe}
+l.732 \end{kframe}
                   \begin{figure}[H] <./figure/beamer-hist3-1.pdf>]
 <figure/beamer-kde3-1.pdf, id=280, 361.35pt x 216.81pt>
 File: figure/beamer-kde3-1.pdf Graphic file (type pdf)
 <use figure/beamer-kde3-1.pdf>
-Package pdftex.def Info: figure/beamer-kde3-1.pdf  used on input line 711.
+Package pdftex.def Info: figure/beamer-kde3-1.pdf  used on input line 734.
 (pdftex.def)             Requested size: 361.34912pt x 216.80946pt.
 
 
-LaTeX Warning: Reference `fig:kde3' on page 26 undefined on input line 719.
+LaTeX Warning: Reference `fig:kde3' on page 26 undefined on input line 742.
 
 
 ! LaTeX Error: There's no line here to end.
@@ -1273,7 +1235,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.723 \\
+l.746 \\
         The foundation of a heatmap is a data matrix $M$, where each entry i...
 
 Your command was ignored.
@@ -1287,7 +1249,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.723 \\T
+l.746 \\T
          he foundation of a heatmap is a data matrix $M$, where each entry i...
 
 Your command was ignored.
@@ -1296,10 +1258,10 @@ or  <return>  to continue without it.
 
 
 LaTeX Warning: Reference `fig:fire-by-months-fy13-22' on page 26 undefined on i
-nput line 734.
+nput line 757.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 733--737
+Underfull \hbox (badness 10000) in paragraph at lines 756--760
 
  []
 
@@ -1308,16 +1270,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 733--737
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.737 
+l.760 
        <./figure/beamer-kde3-1.pdf>]
 
-LaTeX Warning: Command \l invalid in math mode on input line 738.
+LaTeX Warning: Command \l invalid in math mode on input line 761.
 
 
-LaTeX Warning: Command \l invalid in math mode on input line 739.
+LaTeX Warning: Command \l invalid in math mode on input line 762.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 738--742
+Underfull \hbox (badness 10000) in paragraph at lines 761--765
 
  []
 
@@ -1328,7 +1290,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.745 \\
+l.768 \\
         The heatmap is a data visualisation technique that uses colour codin...
 
 Your command was ignored.
@@ -1342,7 +1304,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.745 \\T
+l.768 \\T
          he heatmap is a data visualisation technique that uses colour codin...
 
 Your command was ignored.
@@ -1351,34 +1313,34 @@ or  <return>  to continue without it.
 
 
 LaTeX Warning: Reference `fig:spacetime-fy22' on page 27 undefined on input lin
-e 749.
+e 772.
 
 
 LaTeX Warning: Reference `fig:fire-by-months-fy13-22' on page 27 undefined on i
-nput line 753.
+nput line 776.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 745--755
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 745--755
+Underfull \hbox (badness 10000) in paragraph at lines 768--778
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 745--755
+Underfull \hbox (badness 10000) in paragraph at lines 768--778
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 745--755
+Underfull \hbox (badness 10000) in paragraph at lines 768--778
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 745--755
+Underfull \hbox (badness 10000) in paragraph at lines 768--778
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 768--778
 
  []
 
@@ -1387,89 +1349,70 @@ Underfull \hbox (badness 10000) in paragraph at lines 745--755
 File: figure/beamer-spacetime-fy22-1.pdf Graphic file (type pdf)
 <use figure/beamer-spacetime-fy22-1.pdf>
 Package pdftex.def Info: figure/beamer-spacetime-fy22-1.pdf  used on input line
- 800.
+ 824.
 (pdftex.def)             Requested size: 433.62pt x 247.7879pt.
  [28pdfTeX warning (ext4): destination with the same identifier (name{figure.14
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.813 ....969, 0.969}\color{fgcolor}\begin{kframe}
+l.837 ....969, 0.969}\color{fgcolor}\begin{kframe}
                                                    <./figure/beamer-spacetime-f
 y22-1.pdf>]
 <figure/beamer-fire-by-months-fy13-22-1.pdf, id=314, 361.35pt x 187.70125pt>
 File: figure/beamer-fire-by-months-fy13-22-1.pdf Graphic file (type pdf)
 <use figure/beamer-fire-by-months-fy13-22-1.pdf>
 Package pdftex.def Info: figure/beamer-fire-by-months-fy13-22-1.pdf  used on in
-put line 828.
+put line 852.
 (pdftex.def)             Requested size: 361.34912pt x 187.70079pt.
-
-! Undefined control sequence.
-l.847 ...{i+1} - x_i)} \cdot (x - x_i) \quad \text
-                                                  {for} \quad x_i \leq x \le...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[29pdfTeX warning (ext4): destination with the same identifier (name{figure.15}
-) has been already used, duplicate ignored
+ [29pdfTeX warning (ext4): destination with the same identifier (name{figure.15
+}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.854 
+l.878 
        <./figure/beamer-fire-by-months-fy13-22-1.pdf>]
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 878
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 902
 .
 
 (/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/omscmtt.fd
 File: omscmtt.fd 
 )
 LaTeX Font Info:    Font shape `OMS/cmtt/m/n' in size <7> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 878.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 902.
 <figure/beamer-unnamed-chunk-2-1.pdf, id=327, 433.62pt x 289.08pt>
 File: figure/beamer-unnamed-chunk-2-1.pdf Graphic file (type pdf)
 <use figure/beamer-unnamed-chunk-2-1.pdf>
 Package pdftex.def Info: figure/beamer-unnamed-chunk-2-1.pdf  used on input lin
-e 892.
+e 916.
 (pdftex.def)             Requested size: 433.61894pt x 289.09251pt.
 
 [30]
 
 LaTeX Warning: Reference `fig:all exchange rates' on page 31 undefined on input
- line 903.
-
-! Undefined control sequence.
-l.904 \[\text
-             {MA}_{21}(t) = \frac{1}{21} \sum_{k=t-20}^{t} y_k\],
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+ line 927.
 
 [31pdfTeX warning (ext4): destination with the same identifier (name{figure.16}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.904 ...t) = \frac{1}{21} \sum_{k=t-20}^{t} y_k\]
+l.928 ...t) = \frac{1}{21} \sum_{k=t-20}^{t} y_k\]
                                                   , <./figure/beamer-unnamed-ch
 unk-2-1.pdf>]
 <figure/beamer-unnamed-chunk-3-1.pdf, id=346, 361.35pt x 289.08pt>
 File: figure/beamer-unnamed-chunk-3-1.pdf Graphic file (type pdf)
 <use figure/beamer-unnamed-chunk-3-1.pdf>
 Package pdftex.def Info: figure/beamer-unnamed-chunk-3-1.pdf  used on input lin
-e 943.
+e 967.
 (pdftex.def)             Requested size: 361.34912pt x 289.07928pt.
  [32]
 
 LaTeX Warning: Reference `fig:decomposition of time series' on page 33 undefine
-d on input line 954.
+d on input line 978.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 958--959
+Underfull \hbox (badness 10000) in paragraph at lines 982--983
 
  []
 
@@ -1478,50 +1421,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 958--959
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.964 
+l.988 
        <./figure/beamer-unnamed-chunk-3-1.pdf>]
 <figure/beamer-unnamed-chunk-4-1.pdf, id=362, 289.08pt x 252.945pt>
 File: figure/beamer-unnamed-chunk-4-1.pdf Graphic file (type pdf)
 <use figure/beamer-unnamed-chunk-4-1.pdf>
 Package pdftex.def Info: figure/beamer-unnamed-chunk-4-1.pdf  used on input lin
-e 986.
+e 1010.
 (pdftex.def)             Requested size: 289.07928pt x 252.95595pt.
  [34pdfTeX warning (ext4): destination with the same identifier (name{figure.18
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.998 T
-       his persistent autocorrelation suggests that short-term movements in ...
- <./figure/beamer-unnamed-chunk-4-1.pdf>]
-! Undefined control sequence.
-l.1019 \text
-            {Degree}(v) = \sum_{w \in V} A(v, w)
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.1024 \text
-            {In-Degree}(v) = \sum_{w \in V} A(w, v)
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.1027 \text
-            {Out-Degree}(v) = \sum_{w \in V} A(v, w)
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[35]
+l.1021 
+        <./figure/beamer-unnamed-chunk-4-1.pdf>] [35]
 
 ! Package inputenc Error: Unicode character ° (U+B0)
 (inputenc)                not set up for use with LaTeX.
@@ -1530,7 +1444,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1063 ...th. And latitude values range from -90°
+l.1087 ...th. And latitude values range from -90°
                                                    (South Pole) to +90° (No...
 
 You may provide a definition with
@@ -1544,7 +1458,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1063 ...s range from -90° (South Pole) to +90°
+l.1087 ...s range from -90° (South Pole) to +90°
                                                    (North Pole). The equator...
 
 You may provide a definition with
@@ -1558,7 +1472,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1063 ...hern and Southern Hemispheres, is at 0°
+l.1087 ...hern and Southern Hemispheres, is at 0°
                                                    latitude.
 You may provide a definition with
 \DeclareUnicodeCharacter 
@@ -1571,7 +1485,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1065 And longitude values range from -180°
+l.1089 And longitude values range from -180°
                                               to +180°. The prime meridian,...
 
 You may provide a definition with
@@ -1585,7 +1499,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1065 ...itude values range from -180° to +180°
+l.1089 ...itude values range from -180° to +180°
                                                   . The prime meridian, whic...
 
 You may provide a definition with
@@ -1599,7 +1513,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1065 ...0°. The prime meridian, which is at 0°
+l.1089 ...0°. The prime meridian, which is at 0°
                                                    longitude, runs from the ...
 
 You may provide a definition with
@@ -1613,7 +1527,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1068 ...rface. For example, the coordinates (0°
+l.1092 ...rface. For example, the coordinates (0°
                                                    N, 0° E) would indicate ...
 
 You may provide a definition with
@@ -1627,14 +1541,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1068 ...For example, the coordinates (0° N, 0°
+l.1092 ...For example, the coordinates (0° N, 0°
                                                    E) would indicate the int...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1068--1073
+Underfull \hbox (badness 10000) in paragraph at lines 1092--1097
 
  []
 
@@ -1643,41 +1557,41 @@ Underfull \hbox (badness 10000) in paragraph at lines 1068--1073
 File: figure/beamer-unnamed-chunk-6-1.pdf Graphic file (type pdf)
 <use figure/beamer-unnamed-chunk-6-1.pdf>
 Package pdftex.def Info: figure/beamer-unnamed-chunk-6-1.pdf  used on input lin
-e 1095.
+e 1119.
 (pdftex.def)             Requested size: 361.34912pt x 361.34912pt.
 
 
 LaTeX Warning: Reference `fig:London Wards Map' on page 37 undefined on input l
-ine 1107.
+ine 1131.
 
 [37pdfTeX warning (ext4): destination with the same identifier (name{figure.19}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1110 
+l.1134 
         <./figure/beamer-unnamed-chunk-6-1.pdf>]
 <figure/beamer-unnamed-chunk-7-1.pdf, id=407, 361.35pt x 361.35pt>
 File: figure/beamer-unnamed-chunk-7-1.pdf Graphic file (type pdf)
 <use figure/beamer-unnamed-chunk-7-1.pdf>
 Package pdftex.def Info: figure/beamer-unnamed-chunk-7-1.pdf  used on input lin
-e 1124.
+e 1148.
 (pdftex.def)             Requested size: 361.34912pt x 361.34912pt.
 
 
 LaTeX Warning: Reference `fig:crime rate london' on page 38 undefined on input 
-line 1135.
+line 1159.
 
 [38pdfTeX warning (ext4): destination with the same identifier (name{figure.20}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1139 T
+l.1163 T
         he choropleth map of London’s crime rates elucidates key spatial p...
  <./figure/beamer-unnamed-chunk-7-1.pdf>]
 ! Undefined control sequence.
-l.1148 \textbt
+l.1172 \textbt
               {rgl}: This is one of the most popular R packages for creating...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1688,7 +1602,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <recently read> \textbt 
                         
-l.1149 \textbt
+l.1173 \textbt
               {scatterplot}：This package provides a function to create 3D ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1704,7 +1618,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1149 \textbt{scatterplot}：
+l.1173 \textbt{scatterplot}：
                               This package provides a function to create 3D ...
 
 You may provide a definition with
@@ -1713,17 +1627,17 @@ You may provide a definition with
 <figure/beamer-3d1-1.pdf, id=421, 289.08pt x 289.08pt>
 File: figure/beamer-3d1-1.pdf Graphic file (type pdf)
 <use figure/beamer-3d1-1.pdf>
-Package pdftex.def Info: figure/beamer-3d1-1.pdf  used on input line 1171.
+Package pdftex.def Info: figure/beamer-3d1-1.pdf  used on input line 1195.
 (pdftex.def)             Requested size: 289.07928pt x 289.09251pt.
 [39] [40pdfTeX warning (ext4): destination with the same identifier (name{figur
 e.21}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1211 \section
+l.1235 \section
                {Conclusion} <./figure/beamer-3d1-1.pdf>]
 ! You can't use `macro parameter character #' in horizontal mode.
-l.1217 ...://www.earthdata.nasa.gov/faq/firms-faq#
+l.1241 ...://www.earthdata.nasa.gov/faq/firms-faq#
                                                   ed-confidence [Accessed 12...
 Sorry, but I'm not programmed to handle this case;
 I'll just pretend that you didn't ask for it.
@@ -1731,7 +1645,7 @@ If you're in the wrong mode, you might be able to
 return to the right one by typing `I}' or `I$' or `I\par'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1223--1224
+Underfull \hbox (badness 10000) in paragraph at lines 1247--1248
 []\OT1/cmr/m/n/10 Wikipedia Con-trib-u-tors. 2019. \OT1/cmr/m/it/10 Mul-ti-coll
 inear-ity\OT1/cmr/m/n/10 . Avail-able at:
  []
@@ -1739,7 +1653,7 @@ inear-ity\OT1/cmr/m/n/10 . Avail-able at:
 ! Extra }, or forgotten $.
 <recently read> \egroup 
                         
-l.1232 ...tit{$500,000 in 1937 is How Much Today?}
+l.1256 ...tit{$500,000 in 1937 is How Much Today?}
                                                    [online] Available at: ht...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1750,7 +1664,7 @@ deleted material, e.g., by typing `I$}'.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.1233 
+l.1257 
        
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1758,7 +1672,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.1233 
+l.1257 
        
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1767,7 +1681,7 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1232--1233
+Underfull \hbox (badness 10000) in paragraph at lines 1256--1257
 []\OT1/cmr/m/n/10 www.calculateme.com. n.d. $500\OML/cmm/m/it/10 ; \OT1/cmr/m/n
 /10 000\OML/cmm/m/it/10 in\OT1/cmr/m/n/10 1937\OML/cmm/m/it/10 isHowMuchToday\O
 T1/cmr/m/n/10 ?[\OML/cmm/m/it/10 online\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 Availa
@@ -1775,7 +1689,7 @@ bleat \OT1/cmr/m/n/10 :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1232--1233
+Underfull \hbox (badness 10000) in paragraph at lines 1256--1257
 \OML/cmm/m/it/10 https \OT1/cmr/m/n/10 : \OML/cmm/m/it/10 ==www:calculateme:com
 =inflation=\OT1/cmr/m/n/10 500000 \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 dollars
 =from \OMS/cmsy/m/n/10 ^^@ \OT1/cmr/m/n/10 1937\OML/cmm/m/it/10 =to \OMS/cmsy/m
@@ -1783,13 +1697,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 1232--1233
  []
 
 
-Underfull \hbox (badness 1360) in paragraph at lines 1235--1236
+Underfull \hbox (badness 1360) in paragraph at lines 1259--1260
 \OT1/cmr/m/n/10 at: https://www.bbc.co.uk/ideas/videos/five-charts-that-changed
 -the-world/p0fb69c1 [Ac-
  []
 
 
-Underfull \hbox (badness 5231) in paragraph at lines 1238--1239
+Underfull \hbox (badness 5231) in paragraph at lines 1262--1263
 []\OT1/cmr/m/n/10 Hawkins, E. n.d. \OT1/cmr/m/it/10 Warm-ing stripes | Cli-mate
  Lab Book\OT1/cmr/m/n/10 . [on-line] Avail-able at:
  []
@@ -1797,7 +1711,7 @@ Underfull \hbox (badness 5231) in paragraph at lines 1238--1239
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.1241 ... https://en.wikipedia.org/wiki/Florence_
+l.1265 ... https://en.wikipedia.org/wiki/Florence_
                                                   Nightingale [Accessed 20 O...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1805,7 +1719,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.1242 
+l.1266 
        
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1813,7 +1727,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing } inserted.
 <inserted text> 
                 }
-l.1242 
+l.1266 
        
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1822,7 +1736,7 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Underfull \hbox (badness 1838) in paragraph at lines 1241--1242
+Underfull \hbox (badness 1838) in paragraph at lines 1265--1266
 []\OT1/cmr/m/n/10 Wikipedia Con-trib-u-tors. 2019. \OT1/cmr/m/it/10 Flo-rence N
 ightin-gale\OT1/cmr/m/n/10 . [on-line] Wikipedia. Avail-able at:
  []
@@ -1830,7 +1744,7 @@ ightin-gale\OT1/cmr/m/n/10 . [on-line] Wikipedia. Avail-able at:
 ! Extra }, or forgotten \endgroup.
 \par ...m \@noitemerr {\@@par }\fi \else {\@@par }
                                                   \fi 
-l.1242 
+l.1266 
        
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1839,7 +1753,7 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 ! Undefined control sequence.
-l.1250 \printbibliography
+l.1274 \printbibliography
                           % This command prints the cited references.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1848,7 +1762,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.1253 \chapter
+l.1277 \chapter
                {Chapter 1-3}
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1857,7 +1771,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 1254.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 1278.
 
 
 ! LaTeX Error: Environment lstlisting undefined.
@@ -1866,7 +1780,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1255 \begin{lstlisting}
+l.1279 \begin{lstlisting}
                          
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1880,18 +1794,18 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1377 \end{lstlisting}
+l.1401 \end{lstlisting}
                        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1379.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1403.
 [44]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1379.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1403.
  (./main_file.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1379.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1379.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1403.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1403.
 
 
 
@@ -1901,23 +1815,23 @@ Package rerunfilecheck Warning: File `main_file.out' has changed.
 
 Package rerunfilecheck Info: Checksums for `main_file.out':
 (rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  221B324167F0546730A34323F74B586F;4232.
+(rerunfilecheck)             After:  F0B7EAFC0B5CFA6289F6D4AD96D14F24;4246.
 
 LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1379.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1403.
  ) 
 Here is how much of TeX's memory you used:
- 6657 strings out of 492649
- 99622 string characters out of 6129622
- 197727 words of memory out of 5000000
- 10306 multiletter control sequences out of 15000+600000
- 9892 words of font info for 36 fonts, out of 8000000 for 9000
+ 7247 strings out of 492649
+ 106403 string characters out of 6129622
+ 210209 words of memory out of 5000000
+ 10878 multiletter control sequences out of 15000+600000
+ 11020 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,9n,35p,979b,449s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,9n,35p,979b,454s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
@@ -1935,7 +1849,7 @@ live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texl
 ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texli
 ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texliv
 e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on main_file.pdf (44 pages, 7846357 bytes).
+Output written on main_file.pdf (44 pages, 7847867 bytes).
 PDF statistics:
  567 PDF objects out of 1000 (max. 8388607)
  446 compressed objects within 5 object streams
