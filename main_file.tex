@@ -53,7 +53,7 @@
 \usepackage{blindtext}
 \usepackage{graphicx}
 \usepackage{float}
-\usepackage{appendix}
+\usepackage{amsmath}
 \usepackage[a4paper, total={6in, 8in}]{geometry}
 
 \title{Data Visualisation: Theory and Practice}
@@ -70,19 +70,23 @@
 \section{Introduction}
 
 \subsection{Motivation and Background}
-\\\textbf{Motivations for having Data Visualisations - Case Example 1}\\
-\\  
-\\Florence Nightingale was not only a social reformer and the founder of modern nursing but also a pioneering statistician. It was her application of data visualisation during the Crimean War that transformed the field of healthcare and pushed for social reform.
-\\  
-\\During the Crimean War, Nightingale recognised that unsanitary hospital conditions were claiming more lives than the battlefield itself. With the help of William Farr, Nightingale created the coxcomb aimed to illustrate the toll of preventable mortality on soldiers, as shown in Figure \ref{fig:coxcomb}.
-\\  
+
+\textbf{Motivations for having Data Visualisations - Case Example 1}\\
+
+\noindent
+Florence Nightingale was not only a social reformer and the founder of modern nursing but also a pioneering statistician. It was her application of data visualisation during the Crimean War that transformed the field of healthcare and pushed for social reform.\\  
+
+\noindent
+During the Crimean War, Nightingale recognised that unsanitary hospital conditions were claiming more lives than the battlefield itself. With the help of William Farr, Nightingale created the coxcomb aimed to illustrate the toll of preventable mortality on soldiers, as shown in Figure \ref{fig:coxcomb}.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{Nightingale-mortality.jpg}
     \caption{``Diagram of the causes of mortality in the army in the East", in 1858 by Florence Nightingale\cite{wikiFN}}
     \label{fig:coxcomb}
 \end{figure}
-\noindent The coxcomb, resembling an unconventional pie chart, partitioned mortality by causes. Blue indicates preventable deaths, red indicates deaths by wounds, and black indicates other causes.
+\noindent 
+The coxcomb, resembling an unconventional pie chart, partitioned mortality by causes. Blue indicates preventable deaths, red indicates deaths by wounds, and black indicates other causes.
 The blue areas outweighed the red and black sections combined, highlighting the disproportionate impact of unsanitary hospital conditions on the mortality rate.
 \\   
 \\Nightingale leveraged the compelling visualisations in her advocacy efforts, presenting them to MPs and government officials who otherwise are unlikely to read or understand statistical reports. Nightingale successfully persuaded Queen Victoria, head of the British Army at the time, to allocate funding for the improvement of better conditions in military hospitals.
@@ -838,54 +842,51 @@ $$AIC = -2 \l(\hat{\mathbf{\theta}})+2 \dim (\mathbf{\theta}),$$
 
 \subsection{Line Charts and Time Series Visualisation}
 
-In this chapter, we are going to investigate the intricacies of the line chart and its most common application: time series.
-First, a line chart is a statistical representation that uses a Cartesian coordinate system, where each point on the chart corresponds to a pair of coordinates \((x,y)\), to depict changes in numerical values over continuous time intervals or ordered categories. The x-axis typically represents these intervals or categories, while the y-axis conveys quantified data. Hence, data points are represented by coordinates \(\{(x_i,y_i)\}_{1 \leq i \leq n}\), with \(n\) being the total number of data points. In a line chart, consecutive data points are typically connected by straight lines. The line segment between two points \((x_i,y_i)\) and \((x_{i+1},y_{i+1})\) can be described by the equation of a line in the slope-intercept form: \(y=mx+b\), where \(m\) is the slope and \(b\) is the y-intercept.
+Line charts are fundamental tools in data visualisation, particularly useful for displaying time series data. A line chart represents $n$ data points 
+$\{(x_i,y_i)\}_{1 \leq i \leq n}$ on a Cartesian coordinate system, with the x-axis often denoting time intervals or ordered categories and the y-axis representing the measured values.\\ 
 
-A line chart is a series of linear interpolations between pairs of data points. These interpolations assume that the change between two points is uniform or linear, which is a significant simplification of real-world data. This linear approach is mathematically represented as:
-
+\noindent \textbf{Basics of Line Chart}\\\\
+In a line chart, consecutive data points are typically connected by straight lines. The line segment between two points \((x_i,y_i)\) and \((x_{i+1},y_{i+1})\) can be described by the equation of a line in the slope-intercept form: \(y=mx+b\), where \(m\) is the slope and \(b\) is the y-intercept. Also, a series of linear interpolations between pairs of data points could be used. These interpolations assume that the change between two points is uniform or linear. This linear approach is mathematically represented as:
 \[
-y = y_i + \frac{(y_{i+1} - y_i)}{(x_{i+1} - x_i)} \cdot (x - x_i) \quad \text{for} \quad x_i \leq x \leq x_{i+1}
+y = y_i + \frac{(y_{i+1} - y_i)}{(x_{i+1} - x_i)} \cdot (x - x_i) \quad \text{for} \quad x_i \leq x \leq x_{i+1}.
 \]
+\noindent
+This equation highlights that for any point \(x\) between \(x_i\) and \(x_{i+1}\), the corresponding value of \(y\) on the line chart is determined by a linear relation. This method effectively ''fills the gaps'' between actual observed data points and provides a continuous view of the data.\\
 
-This equation highlights that for any point \(x\) between \(x_i\) and \(x_{i+1}\), the corresponding value of \(y\) on the line chart is determined by a linear relation. This method effectively 'fills the gaps' between actual observed data points and provides a continuous view of the data.
+\noindent 
+\textbf{Time Series}\\
 
-\subsubsection{Suitability for Displaying Trends Over Time}
-Line charts effectively visualise data trends over time. By plotting data at intervals like days or years, they highlight trends and patterns. Multiple lines on one chart enable easy data comparison, such as contrasting sales of two products. They aid in recognizing seasonal changes, cyclic events, and unexpected shifts, making them invaluable for forecasting. Due to their simplicity, they're accessible to those with minimal data analysis background. Line charts are a prime choice for time series visualisation.
+\noindent
+Time series visualisation is particularly suited to line charts. A time series is a collection of observations $x_t$, where $t$ denotes the time point at which the observation is recorded. An index set $T_0$ which collects all the time points when observations are available. For instance, we often have $T_0 = \{0,1,2,...,n\}$ for $n \in \mathbb{N}$. By plotting these data points over time, line charts help in identifying long-term trends, seasonal patterns, and anomalies.\\
 
-Time series visualisation is essential in data analysis, showcasing time-ordered data. It reveals long-term trends, helping analysts discern patterns for future planning. It's crucial for spotting seasonality in datasets. This method also identifies anomalies, suggesting areas needing investigation. Predictive modeling, based on historical patterns, becomes feasible, fostering proactive choices. Overlaying multiple data series offers richer comparative analysis. Overall, time series visualisation provides quick insights into chronological data, driving informed decisions by highlighting trends, seasonal changes, and outliers.
+\noindent
+A time series can be viewed as a realisation of a stochastic process. And a stochastic process $X = (X_t)_{t \in T_0}$ is a collection of random variables $X_t$, where $t$ denotes the time index and $T_0$ the index set. For a fixed event $\omega \in \Omega$ we obtain the realisation of the stochastic process (sometimes also called a sample path) which is given by $x_t = X_t(\omega)$, $t \in T_0$. In practice, line charts of time series data provide insights into the behavior of such stochastic processes over time.\\
 
-While line charts are excellent for displaying trends over time, they have limitations. They may not be suitable for showing individual data distributions or for data where there's no logical order. eg. too many points, too many lines, too many zeros.
+\noindent
+\textbf{Time Series Visualisation of Exchange rates}\\
 
-\subsubsection{Showcase real-world examples of time series visualisations}
-
-Here, we are going to investigate 'exchange rate dataset' and plot all daily and 21-day moving average exchange rates in one figure.
+\noindent
+Here, plot all daily and 21-day moving average exchange rates of Exchange rate data in one figure.
 
 \begin{figure}[H]
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlcom{# Plot daily and 21-day moving average exchange rates of CNY, CAN,}
-\hlcom{# EUR, HKD, USD to GBP}
+\hlcom{# Plot daily and 49-day moving average exchange rates of CNY, CAN, EUR, HKD, USD to GBP}
 
 \hlcom{# First plot}
 \hlstd{p1} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(plot_dt,} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=Date,} \hlkwc{y}\hlstd{=Rate,} \hlkwc{color}\hlstd{=Currency))} \hlopt{+} \hlkwd{geom_line}\hlstd{()} \hlopt{+}
-  \hlkwd{labs}\hlstd{(}\hlkwc{title}\hlstd{=}\hlstr{"Daily exchange rates"}\hlstd{,} \hlkwc{y}\hlstd{=}\hlstr{"Exchange Rate to GBP"}\hlstd{,}
-       \hlkwc{x}\hlstd{=}\hlstr{"Date"}\hlstd{,} \hlkwc{color}\hlstd{=}\hlstr{"Currency"}\hlstd{)}\hlopt{+}
-  \hlkwd{theme_minimal}\hlstd{()} \hlopt{+} \hlkwd{theme}\hlstd{(}\hlkwc{legend.position}\hlstd{=}\hlstr{"none"}\hlstd{)}
-
+  \hlkwd{labs}\hlstd{(}\hlkwc{title}\hlstd{=}\hlstr{"Daily exchange rates"}\hlstd{,}\hlkwc{y}\hlstd{=}\hlstr{"Exchange Rate to GBP"}\hlstd{,} \hlkwc{x}\hlstd{=}\hlstr{"Date"}\hlstd{,} \hlkwc{color}\hlstd{=}\hlstr{"Currency"}\hlstd{)}\hlopt{+}
+  \hlkwd{theme_minimal}\hlstd{()} \hlopt{+} \hlkwd{theme}\hlstd{(}\hlkwc{legend.position}\hlstd{=}\hlstr{"none"}\hlstd{,}\hlkwc{plot.title} \hlstd{=} \hlkwd{element_text}\hlstd{(}\hlkwc{size}\hlstd{=}\hlnum{8}\hlstd{))}
 \hlcom{# Second plot}
 \hlstd{p2} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(plot_data,} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=Date,} \hlkwc{y}\hlstd{=Rate,} \hlkwc{color}\hlstd{=Currency))} \hlopt{+} \hlkwd{geom_line}\hlstd{()} \hlopt{+}
-  \hlkwd{labs}\hlstd{(}\hlkwc{title}\hlstd{=}\hlstr{"21-Day moving average \textbackslash{}n exchange rates"}\hlstd{,}
-       \hlkwc{y}\hlstd{=}\hlstr{"Exchange Rate to GBP"}\hlstd{,} \hlkwc{x}\hlstd{=}\hlstr{"Date"}\hlstd{,} \hlkwc{color}\hlstd{=}\hlstr{"Currency"}\hlstd{)}\hlopt{+}
-  \hlkwd{theme_minimal}\hlstd{()} \hlopt{+} \hlkwd{theme}\hlstd{(}\hlkwc{legend.position}\hlstd{=}\hlstr{"none"}\hlstd{)}
-
+  \hlkwd{labs}\hlstd{(}\hlkwc{title}\hlstd{=}\hlstr{"49-Day moving average exchange rates"}\hlstd{,}\hlkwc{y}\hlstd{=}\hlstr{"Exchange Rate to GBP"}\hlstd{,} \hlkwc{x}\hlstd{=}\hlstr{"Date"}\hlstd{,} \hlkwc{color}\hlstd{=}\hlstr{"Currency"}\hlstd{)}\hlopt{+}
+  \hlkwd{theme_minimal}\hlstd{()} \hlopt{+} \hlkwd{theme}\hlstd{(}\hlkwc{legend.position}\hlstd{=}\hlstr{"none"}\hlstd{,}\hlkwc{plot.title} \hlstd{=} \hlkwd{element_text}\hlstd{(}\hlkwc{size}\hlstd{=}\hlnum{8}\hlstd{))}
 \hlcom{# Extract the legend}
-\hlstd{p2_legend} \hlkwb{<-} \hlstd{cowplot}\hlopt{::}\hlkwd{get_legend}\hlstd{(p2} \hlopt{+} \hlkwd{theme}\hlstd{(}\hlkwc{legend.position}\hlstd{=}\hlstr{"bottom"}\hlstd{))}
-\hlcom{# Combine the plots with adjusted widths using cowplot}
-\hlstd{combined_plot} \hlkwb{<-} \hlstd{cowplot}\hlopt{::}\hlkwd{plot_grid}\hlstd{(p1, p2,} \hlkwc{labels} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"1"}\hlstd{,} \hlstr{"2"}\hlstd{),}
-                                    \hlkwc{rel_widths} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{1}\hlstd{),} \hlkwc{nrow}\hlstd{=}\hlnum{1}\hlstd{)}
-\hlcom{# Combine the plots and the legend}
-\hlstd{cowplot}\hlopt{::}\hlkwd{plot_grid}\hlstd{(combined_plot, p2_legend,} \hlkwc{ncol}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{rel_heights} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{.1}\hlstd{))}
+\hlstd{p2_legend} \hlkwb{<-} \hlstd{cowplot}\hlopt{::}\hlkwd{get_legend}\hlstd{(p2} \hlopt{+} \hlkwd{theme}\hlstd{(}\hlkwc{legend.position}\hlstd{=}\hlstr{"right"}\hlstd{))}
+\hlcom{# Combine the plots }
+\hlstd{combined_plot} \hlkwb{<-} \hlstd{cowplot}\hlopt{::}\hlkwd{plot_grid}\hlstd{(p1, p2,} \hlkwc{rel_widths} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{1}\hlstd{),} \hlkwc{nrow}\hlstd{=}\hlnum{2}\hlstd{)}
+\hlstd{cowplot}\hlopt{::}\hlkwd{plot_grid}\hlstd{(combined_plot, p2_legend,} \hlkwc{nrow}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{rel_widths} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{2}\hlstd{,} \hlnum{0.5}\hlstd{))}
 \end{alltt}
 \end{kframe}
 
@@ -896,38 +897,43 @@ Here, we are going to investigate 'exchange rate dataset' and plot all daily and
 
 \end{knitrout}
 \centering
-\caption{Daily and 21-day moving average exchange rates of CNY, CAN, EUR, HKD, USD to GBP}
+\caption{Daily and 49-day moving average exchange rates of CNY, CAN, EUR, HKD, USD to GBP}
 \label{fig:all exchange rates}
 \end{figure}
 
-From the first plot of Figure~\ref{fig:all exchange rates}, we can see the the daily CNY, CAN, EUR, HKD, USD versus GBP exchange in the same plot, which provide us an overview of the trend and comparison. Then we employed a 21-day moving average (MA21) to elucidate long-term trends while mitigating short-term fluctuations. This is mathematically represented as 
-\[\text{MA}_{21}(t) = \frac{1}{21} \sum_{k=t-20}^{t} y_k\], 
-where \( y_k \) denotes the exchange rate on day \( k \). This method effectively filters out daily noise, allowing a clearer view of overarching trends in currency movements against the GBP. The overlay of these moving averages on the daily exchange rates in ourvisualisations provides both a clear comparative and a quantitative perspective.
+\noindent
+The first plot in Figure~\ref{fig:all exchange rates} presents a comparative visualization of daily exchange rates for CNY, CAD, EUR, HKD, and USD against GBP, offering an overview of their trends and relative performance. This plot enables the identification of overall trends and periods of volatility for each currency pair, allowing for an assessment of their stability and strength relative to GBP. Usually, the long term trend attracts financial analyst most. Therefore, filtering fluctuations and anomalies is important. Then, a 49-day moving average (MA49) was employed, shown in the second plot of Figure~\ref{fig:all exchange rates}, to elucidate long-term trends while mitigating short-term fluctuations. This is mathematically represented as 
+\[\text{MA}_{49}(t) = \frac{1}{49} \sum_{k=t-48}^{t} x_k,\] 
+where \( x_k \) denotes the exchange rate on day $k$.\\
 
 \noindent
-\textbf{Decomposition of time series into trend, seasonal, and random:}
+This method effectively filters out daily noise, allowing a clearer view of overarching trends in currency movements against the GBP. The overlay of these moving averages on the daily exchange rates in visualizations provides both a clear comparative and a quantitative perspective.\\
 
-One of the primary advantages of time series visualisation is the ease with which it allows analysts to identify long-term upward or downward trends in data and patterns that repeat over specific intervals. By decomposing the time series, it would be easy to see those features.
+\noindent
+\textbf{Decomposition of Time Series}\\
 
-Time series data, $Y_t$, can often be described as a combination of several distinct components:
-\begin{itemize}
-    \item \textbf{Trend ($T_t$):} The underlying progression in the series.
-    \item \textbf{Seasonal ($S_t$):} Periodic fluctuations due to seasonal factor.
-    \item \textbf{Residual ($R_t$):} The irregular or error component.
-\end{itemize}
+\noindent
+One of the primary advantages of time series visualisation is the ease with which it allows analysts to identify long-term upward or downward trends in data and patterns that repeat over specific intervals. By decomposing the time series, it would be easy to see those features.\\
 
+\noindent
+Time series data, $X_t$, can often be described as a combination of several distinct components: Trend component $t_t$: The underlying progression in the series, Seasonal component $s_t$: Periodic fluctuations due to seasonal factor, Residual $r_t$: The irregular or error component.\\
+
+\noindent
 The decomposition of a time series can be described in two main models:\\
-Additive Model:
-In the additive model, the components are added together:
+\textbf{Additive Model}: In the additive model, the components are added together:
 \[
-Y_t = T_t + S_t + R_t
+X_t = t_t + s_t + r_t.
 \]
-Multiplicative Model:
-In the multiplicative model, the components are multiplied together:
+\textbf{Multiplicative Model}: In the multiplicative model, the components are multiplied together:
 \[
-Y_t = T_t \times S_t \times R_t
+X_t = t_t \times s_t \times r_t \quad \text{or} \quad \log(X_t) = \log(t_t) + \log(s_t) + \log(r_t).
 \]
-In practice, the choice between the additive and multiplicative models often depends on the nature of the time series. If the magnitude of the seasonal fluctuations or the variation around the trend does not vary with the level of the time series, then an additive model is appropriate. If the magnitude of the seasonal fluctuations or the variation around the trend increases or decreases as the time series level changes, then a multiplicative model may be more suitable.
+In practice, the choice between the additive and multiplicative models often depends on the nature of the time series. If the magnitude of the seasonal fluctuations or the variation around the trend does not vary with the level of the time series, then an additive model is appropriate. If the magnitude of the seasonal fluctuations or the variation around the trend increases or decreases as the time series level changes, then a multiplicative model may be more suitable.\\
+
+\noindent
+In R, a built in function named "decompose()" is able to decompose the time series by addictive model or multiplicative model. And below is the demonstration of decomposition.
+
+
 
 
 \begin{figure}[H]
@@ -935,12 +941,12 @@ In practice, the choice between the additive and multiplicative models often dep
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# Plot decomposition of addictive time series model}
-\hlstd{decomposed_ts} \hlkwb{<-} \hlstd{stats}\hlopt{::}\hlkwd{decompose}\hlstd{(ts_data}\hlopt{$}\hlstd{CNYtoGBP)}
-\hlkwd{plot}\hlstd{(decomposed_ts,} \hlkwc{xlab}\hlstd{=}\hlstr{"Date"}\hlstd{)}
+\hlkwd{ggplot}\hlstd{(decomposed_df,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= time,} \hlkwc{y} \hlstd{= value))} \hlopt{+} \hlkwd{geom_line}\hlstd{()} \hlopt{+}
+  \hlkwd{facet_wrap}\hlstd{(}\hlopt{~}\hlstd{component,} \hlkwc{scales} \hlstd{=} \hlstr{"free_y"}\hlstd{,} \hlkwc{ncol} \hlstd{=} \hlnum{1}\hlstd{)} \hlopt{+} \hlkwd{labs}\hlstd{(}\hlkwc{x} \hlstd{=} \hlstr{"Date"}\hlstd{,}\hlkwc{y} \hlstd{=} \hlstr{"Exchange Rate to GBP"}\hlstd{)} \hlopt{+} \hlkwd{theme_minimal}\hlstd{()}
 \end{alltt}
 \end{kframe}
 
-{\centering \includegraphics[width=\maxwidth]{figure/beamer-unnamed-chunk-3-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-unnamed-chunk-4-1} 
 
 }
 
@@ -951,51 +957,62 @@ In practice, the choice between the additive and multiplicative models often dep
 \label{fig:decomposition of time series}
 \end{figure}
 
-In the decomposition of the CNY to GBP exchange rate series using an additive model, we disentangle the data into its fundamental components: trend, seasonality, and residual noise. This additive model, represented mathematically as $Y_t = T_t + S_t + R_t$, allows us to scrutinize each element in isolation. As illustrated in Figure~\ref{fig:decomposition of time series}, the trend component $T_t$ reveals a gradual decrease in the CNY to GBP exchange rate over time, signifying a long-term depreciation of CNY against GBP. This trend is pivotal for understanding the broader economic relationship between these currencies. 
-
-Moreover, the seasonal component $S_t$ of the decomposition highlights cyclical fluctuations, indicative of recurrent patterns within the year. These could be attributed to seasonal economic activities, policy changes, or other cyclical factors influencing the currency market. The clear demarcation of these cyclical trends in the seasonal component helps in isolating such effects from the overarching trend.
-
-Lastly, the residual component $R_t$ encompasses the random, unexplained variations after accounting for the trend and seasonal factors. Analyzing these residuals is crucial for understanding the unpredictability in the exchange rate and can be pivotal in risk management and forecasting.\\
+\noindent
+From Figure~\ref{fig:decomposition of time series}, the CNY to GBP exchange rate time series was decomposed into its fundamental components: trend, seasonality, and residual noise by additive model. This additive model, represented mathematically as $X_t = t_t + s_t + r_t$.\\
 
 \noindent
-\textbf{Autocorrelation Analysis of CNY to GBP Exchange Rate}
+As illustrated in Figure~\ref{fig:decomposition of time series}, the trend component $t_t$ reveals a gradual decrease in the CNY to GBP exchange rate over time, signifying a long-term depreciation of CNY against GBP. This trend is pivotal for understanding the broader economic relationship between these currencies.\\
 
-Autocorrelation, also referred to as serial correlation, is a crucial concept in time series analysis. It describes the correlation of a time series with its own past and future values. The autocorrelation function (ACF) measures the linear predictability of the series at time \( t \) with its values at a previous time \( t-k \).
+\noindent
+Moreover, the seasonal component $s_t$ of the decomposition highlights cyclical fluctuations, indicative of recurrent patterns within the year. These could be attributed to seasonal economic activities, policy changes, or other cyclical factors influencing the currency market. The clear demarcation of these cyclical trends in the seasonal component helps in isolating such effects from the overarching trend.\\
 
-The autocorrelation function at lag \( k \) is defined as:
+\noindent
+Lastly, the residual component $r_t$ encompasses the random, unexplained variations after accounting for the trend and seasonal factors. Analyzing these residuals is crucial for understanding the unpredictability in the exchange rate and can be pivotal in risk management and forecasting.\\
 
-\[
-R(k) = \frac{\sum_{t=1}^{n-k} (y_t - \bar{y})(y_{t+k} - \bar{y})}{\sum_{t=1}^{n} (y_t - \bar{y})^2}
-\]
+\noindent
+\textbf{Autocorrelation Analysis of CNY to GBP Exchange Rate}\\\\
+Autocorrelation, also referred to as serial correlation, is a crucial concept in time series analysis. It describes the correlation of a time series with its own past and future values. The autocorrelation function (ACF) measures the linear predictability of the series at lag h, which is the time $t$ with its values at a previous time $t-h$. The mathematical fomulation of ACF of time series will be given in the following paragraph.\\
 
-where \( y_t \) is the value of the series at time \( t \), \( \bar{y} \) is the mean of the series, and \( n \) is the total number of observations.
+\noindent
+Suppose we have a time series with observations denoted by \( x_1, \ldots, x_n \). Then the sample mean is given by $\bar{x} = \frac{1}{n} \sum_{t=1}^{n} x_t.$
+And the sample autocovariance function at lag $h$ in days of our time series is
+\[\hat{\gamma}(h) := \frac{1}{n} \sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x}), \quad \text{for} \; -n < h < n.\]
+Hence, the sample autocorrelation function at lag $h$ in days is given by
+\[\hat{\rho}(h) := \frac{\hat{\gamma}(h)}{\hat{\gamma}(0)} = \frac{\sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x})}{\sum_{t=1}^{n} (x_t - \bar{x})^{2}}, \quad \text{for} \; -n < h < n.\]
+\noindent
+The value of $\hat{\rho}(h)$ lies between -1 and +1. A value close to +1 indicates a strong positive correlation, while a value close to -1 indicates a strong negative correlation. A value near 0 suggests little to no linear correlation. A slow decay in the ACF plot indicates a strong relationship between past and present values, while spikes at specific lags may suggest seasonality. Autocorrelations outside the 95\% confidence interval are considered statistically significant.\\
 
-The value of \( R(k) \) lies between -1 and +1. A value close to +1 indicates a strong positive correlation, while a value close to -1 indicates a strong negative correlation. A value near 0 suggests little to no linear correlation. A slow decay in the ACF plot indicates a strong relationship between past and present values, while spikes at specific lags may suggest seasonality. Autocorrelations outside the 95\% confidence interval are considered statistically significant.
-
-Next, we'llvisualise the ACF for the CNY to GBP exchange rate to understand its time-dependent structure better.
+\noindent
+Next, visualise the ACF for the CNY to GBP exchange rate to understand its time-dependent structure better.
 
 \begin{figure}[H]
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# Plot the Autocorrelation Function (ACF)}
-\hlkwd{acf}\hlstd{(MyData}\hlopt{$}\hlstd{CNYtoGBP,} \hlkwc{main}\hlstd{=}\hlstr{"ACF of CNY to GBP Exchange Rate"}\hlstd{)}
+\hlstd{acf_data} \hlkwb{<-} \hlkwd{acf}\hlstd{(MyData}\hlopt{$}\hlstd{CNYtoGBP,} \hlkwc{plot} \hlstd{=} \hlnum{FALSE}\hlstd{)}
+\hlcom{# Plot using base R plotting}
+\hlkwd{plot}\hlstd{(acf_data,} \hlkwc{main}\hlstd{=}\hlstr{""}\hlstd{,} \hlkwc{xlab}\hlstd{=}\hlstr{"Lag h"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"ACF"}\hlstd{)}
 \end{alltt}
-\end{kframe}\begin{figure}[H]
+\end{kframe}
 
-{\centering \includegraphics[width=\maxwidth]{figure/beamer-unnamed-chunk-4-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-unnamed-chunk-5-1} 
 
 }
 
-\caption[Autocorrelation Function (ACF) of CNY to GBP Exchange Rate]{Autocorrelation Function (ACF) of CNY to GBP Exchange Rate}\label{fig:unnamed-chunk-4}
-\end{figure}
 
 \end{knitrout}
+\centering
+\caption{Autocorrelation Function at lag h in days of CNY to GBP Exchange Rate}
+\label{fig:ACF}
 \end{figure}
 
-The Autocorrelation Function (ACF) plot for the CNY to GBP exchange rate series reveals a compelling feature: the ACF starts near 1 and decreases gradually. This pattern suggests a strong persistence in the time series, indicating that past values have a significant influence on future values. In time series analysis, such a slow decay in the ACF is indicative of a non-stationary series, where the mean, variance, and autocorrelation structure do not remain constant over time.
+\noindent
+From Figure~\ref{fig:ACF}, the ACF plot for the CNY to GBP exchange rate series reveals a compelling feature: the ACF starts near 1 and decreases gradually. This pattern suggests a strong persistence in the time series, indicating that past values have a significant influence on future values. In time series analysis, such a slow decay in the ACF is indicative of a non-stationary series, where the mean, variance, and autocorrelation structure do not remain constant over time.\\
 
+\noindent
 This persistent autocorrelation suggests that short-term movements in the CNY to GBP exchange rate are heavily influenced by its recent history. Such a characteristic is crucial for forecasting models, as it implies that recent historical data can be a powerful predictor of near-future trends. Models like ARIMA (Autoregressive Integrated Moving Average), which are well-suited for data with high autocorrelation, may be particularly effective in this context.
+
 
 
 \subsection{Network Graphs}
@@ -1092,7 +1109,7 @@ Here, we are going to construct a geographical map of the Greater London and sho
 \end{alltt}
 \end{kframe}
 
-{\centering \includegraphics[width=\maxwidth]{figure/beamer-unnamed-chunk-6-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-unnamed-chunk-7-1} 
 
 }
 
@@ -1121,7 +1138,7 @@ Hence, we will use a more informativevisualisation: a choropleth map showcasing 
 \end{alltt}
 \end{kframe}
 
-{\centering \includegraphics[width=\maxwidth]{figure/beamer-unnamed-chunk-7-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-unnamed-chunk-8-1} 
 
 }
 
