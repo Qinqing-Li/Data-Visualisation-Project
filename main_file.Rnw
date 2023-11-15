@@ -507,6 +507,7 @@ cluttered_plot <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = as
 # Create a clear and simple plot
 clear_plot <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
   geom_point(size = 2) +
+  scale_color_manual(values = c("setosa" = "grey", "versicolor" = "grey", "virginica" = "red")) + 
   labs(title = "Low Visual Complexity",
        x = "Sepal Length",
        y = "Sepal Width",
@@ -817,11 +818,11 @@ Modelwt <- lm(formula = mpg ~ wt, data = mtcars)
 summary(Modelwt)
 @
 
-<<scatter-plot, echo=FALSE, fig.height=3, fig.width=4, fig.cap='Scatter plot of car weights vs MPG', message=FALSE>>=
+<<scatter-plot, echo=FALSE, fig.height=2, fig.width=4, fig.cap='Scatter plot of car weights vs MPG', message=FALSE>>=
 # Create a scatter plot of car weight vs MPG from mtcars dataset
 library(ggplot2)
 ggplot(data = mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
-  geom_point(size = 3, alpha = 0.7) +  # Larger points with transparency
+  geom_point(size = 2, alpha = 0.7) +  # Larger points with transparency
   geom_smooth(method = "lm", se = FALSE, color = "#b2182b", linewidth = 1) +  # Linear regression trend line
   labs(
     x = "Weight (1000 lbs)",
@@ -865,7 +866,7 @@ The formula for calculating the bubble size (\(S\)) often involves applying a li
 S = k \cdot \sqrt{V},
 \]
 
-Where \(S\) represents the size of the bubble, \(V\) the value of the variable being represented, and \(k\) is a scaling factor to control the bubble size.
+\\Where \(S\) represents the size of the bubble, \(V\) the value of the variable being represented, and \(k\) is a scaling factor to control the bubble size.\\
 
 \noindent
 Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the proportionality between the bubble size and the variable being represented.\\
