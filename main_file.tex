@@ -405,38 +405,11 @@ In this chapter, we explore a variety of powerful visualisation methods, from cl
 \subsubsection{Bar Charts}
 A bar chart is a very important method to present data. It organizes information into vertical bars.  Bar charts have lots of advantages in data visualisation. It can present data categories in a frequency distribution. A bar chart is best for comparing classified data. Especially when the values are close, because the human perception of height is better than other visual elements (such as area, angle, etc.), the use of a bar chart is more appropriate. These bars usually have different lengths, and every length is proportional to the size of the information they present.\\
 
-\noindent
-R uses the function $barplot()$ to create bar charts. R can draw both vertical and Horizontal bars in the bar chart. In the bar chart, each of the bars can be given different colors.\\
-
-\noindent
-R is a programming language for data analysis and statistical computing, and its advent has made data visualisation more straightforward and accessible. Among the various tools available in R, ggplot2 stands out as one of the most renowned and powerful tools for creating data visualisations. It offers a wealth of data visualisation capabilities and is celebrated for its versatility and aesthetic appeal. In this chapter, we will focus on how to use ggplot2 to create bar charts for data visualisation.
-
-\subsubsection{Different Types of Bar Charts}
-Here is an overview of the different types of bar charts. \\
-\paragraph{Vertical Bar Chart}
-This is the most common bar chart. We use different vertical columns to display and compare the values of different categories in the same dimension, where the X-axis represents the contrasting categories and the Y-axis represents the frequency or count of their categories.\\
-\paragraph{Horizontal Bar Chart}
-This is very similar to a vertical bar chart but rotated 90 degrees. Categories are shown on the y-axis and frequency or count are shown on the x-axis. Horizontal bar charts are especially useful when category names are long or when there are numerous categories.
-\paragraph{Multi-set Bar Chart}
-Also known as a grouped bar chart or clustered bar chart. A multi-set bar chart is used to represent and compare different sub-groups within individual categories. This type of chart is useful when you want to show and compare multiple sets of data side-by-side.
-Multi-set Bar charts can be horizontal or vertical like the other normal bar charts, and the length of each bar represents the frequency or count of their categories.
-\paragraph{Stacked bar chart}
-Similar to bar charts, stacked bar charts are often used to compare different classes of values and, within each class of values, are divided into sub-classes, which are often referred to by different colors. Each segment's size is proportional to the frequency or count that it represents from the sub-category. The entire bar's length represents the cumulative total of all the sub-categories.
-However, it is very easy to get confused when there are too many categories.
-Bar charts excel due to their structural simplicity, ease of comprehension, straightforward comparison of different data categories, and versatility for representing various data types and multilevel information
+Bar charts are a versatile tool for data visualization, commonly used to compare different categories. The vertical bar chart is the most familiar, displaying categories on the X-axis and their frequencies or counts on the Y-axis. Horizontal bar charts, rotated 90 degrees, are useful for lengthy category names or numerous categories, with categories on the Y-axis and frequencies on the X-axis. Multi-set or grouped bar charts allow for side-by-side comparisons of sub-groups within categories, available in both vertical and horizontal orientations. Stacked bar charts show classes of values divided into sub-classes, often color-coded, with each segment's size representing its frequency or count and the total bar length reflecting the cumulative total. While bar charts are known for their simplicity and ease of understanding, stacked bar charts can become confusing with too many categories. Overall, bar charts are an effective way to present and compare various types of data.
 
 The disadvantages of bar charts include limited suitability for large datasets, potential misinterpretation when lacking a zero baseline, difficulty in handling numerous categories, and their preference for categorical data over continuous data trends, where line graphs are more suitable.
 
-\subsubsection{ToothGrowth Dataset}
-
-This bar chart below illustrates the tooth growth in relation to varying doses of a vitamin. The key observations are:
-
-\begin{enumerate}
-    \item \textbf{X-axis Description:} The X-axis represents different dosages of the vitamin (mg/day). There are three distinct dosage levels.
-    
-    \item \textbf{Y-axis Description:} The Y-axis signifies the length of tooth growth (len). This represents the average tooth growth at the given vitamin dosage.
-    \item \textbf{Data Observation:} From the heights of the bars, it is evident that as the vitamin dosage increases, the tooth growth also appears to increase. This might suggest that higher doses of the vitamin may promote tooth growth.
-\end{enumerate}
+The bar chart depicts the relationship between tooth growth and different dosages of a vitamin, measured in milligrams per day. On the X-axis, three distinct levels of vitamin dosage are presented, while the Y-axis indicates the average tooth growth for each dosage. A key observation from the chart is a noticeable trend where increasing vitamin dosages correlate with increased tooth growth, suggesting that higher vitamin doses may enhance tooth growth.
 
 \begin{figure}[htbp]
   \centering
@@ -469,14 +442,8 @@ This bar chart below illustrates the tooth growth in relation to varying doses o
   \end{minipage}
 \end{figure}
 
-\noindent
-The displayed bar chart~\ref{fig:barchart2} provides insights into tooth growth influenced by varying doses of a vitamin, further categorized by the type of supplement (`supp`). The key insights from this chart are:
+The bar chart referenced as fig:barchart2 in the document illustrates the impact of varying vitamin dosages on tooth growth, further categorized by supplement type (supp). It shows three distinct dosage levels (0.5, 1, and 2 mg/day) on the X-axis and tooth growth length on the Y-axis, representing the average growth for both supplements at each dosage. The chart highlights that tooth growth, as indicated by the total height of each bar, varies not only with the dosage but also with the supplement type, suggesting a need for closer analysis to understand the relative effectiveness of each supplement at different dosages.
 
-\begin{enumerate}
-    \item \textbf{X-axis Description:} The X-axis demarcates different vitamin dosages, categorized into three distinct levels: 0.5, 1, and 2 mg/day.
-    \item \textbf{Y-axis Description:} The Y-axis quantifies tooth growth length, representing the combined average growth for both supplements at the respective vitamin dosages.
-    \item \textbf{Data Observation:} The total height of each bar signifies the combined tooth growth for both supplements at the given dosage. From the stacked sections, it's evident that the impact on tooth growth varies based on the supplement type. A detailed inspection might elucidate the relative effectiveness of the supplements at each dosage level.
-\end{enumerate}
 
 \noindent
 The structure of the second figure~\ref{fig:barchart2} is quite similar to that of the first one, with the main difference lying in the method of data representation. Forming a bar chart, it facilitates the understanding of the combined effects of the two supplements at each dosage level. However, compared to the grouped bar chart, it becomes more challenging to differentiate the individual contributions of each supplement.\\
@@ -494,33 +461,41 @@ Histograms demonstrates the distribution of frequency or quantity across groups.
 
 \noindent
 Now, we want to create a better graph with ggplot2 thanks to the \texttt{geom\_histogram()} function and iris dataset.
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlcom{#Create a histogram using ggplot2 for Sepal Length in the Iris dataset}
-\hlstd{bar_diagram} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(iris,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= Sepal.Length))} \hlopt{+}
-  \hlkwd{geom_histogram}\hlstd{(}
-    \hlkwc{binwidth} \hlstd{=} \hlnum{0.2}\hlstd{,}  \hlcom{# Adjust the box width to 0.2 for smaller data sets}
-    \hlkwc{fill} \hlstd{=} \hlstr{"grey"}\hlstd{,}
-    \hlkwc{color} \hlstd{=} \hlstr{"black"}
-  \hlstd{)} \hlopt{+}
-  \hlkwd{labs}\hlstd{(}
-    \hlkwc{x} \hlstd{=} \hlstr{"Sepal Length/cm"}\hlstd{,}
-    \hlkwc{y} \hlstd{=} \hlstr{"Frequency"}
-  \hlstd{)} \hlopt{+}
-  \hlkwd{theme_minimal}\hlstd{()}
-\hlkwd{print}\hlstd{(bar_diagram)}
-\end{alltt}
-\end{kframe}\begin{figure}[H]
 
-{\centering \includegraphics[width=\maxwidth]{figure/beamer-hist3-1} 
+begin{figure}[htbp]
+  \centering
+  \begin{minipage}[b]{0.45\linewidth}
+
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=\linewidth]{figure/beamer-hist2-1} 
 
 }
 
-\caption[Histogram of Sepal Length in Iris Dataset]{Histogram of Sepal Length in Iris Dataset}\label{fig:hist3}
-\end{figure}
 
 \end{knitrout}
+      \caption{Histogram of Sepal Length in Iris Dataset}
+    \label{fig:barchart2}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.45\linewidth}
+
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=\linewidth]{figure/beamer-kde3-1} 
+
+}
+
+
+\end{knitrout}
+
+    \caption{Kernel Density Estimation of Sepal Length in Iris Dataset}
+    \label{fig:barchart3}
+  \end{minipage}
+\end{figure} 
+  
 
 \subsubsection{Kernel Density Estimation}
 
@@ -535,33 +510,7 @@ $$\hat{f}(x) = \sum_{\text{observations}} K\left(\frac{x - \text{observation}}{\
 $$\hat{f}(x) = \frac{1}{nh} \sum_{i=1}^{n} K\left(\frac{x - x_i}{h}\right)$$\\
 The kernel function \( K(u) \) is a normalized non-negative function that satisfies:
 \[ \int K(u) \, du = 1 \]
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlcom{# Create a Kernel Density Estimate plot using ggplot2 for Sepal Length in the Iris dataset}
-\hlstd{kde_diagram} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(iris,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= Sepal.Length))} \hlopt{+}
-  \hlkwd{geom_density}\hlstd{(}
-    \hlkwc{fill} \hlstd{=} \hlstr{"grey"}\hlstd{,}
-    \hlkwc{alpha} \hlstd{=} \hlnum{0.5}\hlstd{,}  \hlcom{# Adjust the transparency for better visualisation}
-    \hlkwc{adjust} \hlstd{=} \hlnum{1}  \hlcom{# This parameter can be used to control the smoothness}
-  \hlstd{)} \hlopt{+}
-  \hlkwd{labs}\hlstd{(}
-    \hlkwc{x} \hlstd{=} \hlstr{"Sepal Length/cm"}\hlstd{,}
-    \hlkwc{y} \hlstd{=} \hlstr{"Density"}
-  \hlstd{)} \hlopt{+}
-  \hlkwd{theme_minimal}\hlstd{()}
-\hlkwd{print}\hlstd{(kde_diagram)}
-\end{alltt}
-\end{kframe}\begin{figure}[H]
 
-{\centering \includegraphics[width=\maxwidth]{figure/beamer-kde3-1} 
-
-}
-
-\caption[Kernel Density Estimation of Sepal Length in Iris Dataset]{Kernel Density Estimation of Sepal Length in Iris Dataset}\label{fig:kde3}
-\end{figure}
-
-\end{knitrout}
 In figure~\ref{fig:kde3} we present the kernel density estimation of our dataset. The kernel density curve will display the distribution of sepal lengths. The peaks of the curve correspond to the main concentration trends of sepal length in the data. If the curve is unimodal, it means that the sepal lengths of most irises are concentrated in that region; if it is bimodal or multimodal, this indicates the presence of multiple such concentration areas.
 
 \subsection{Scatter Plots and Bubble Charts}
