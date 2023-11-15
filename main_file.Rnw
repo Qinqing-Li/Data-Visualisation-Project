@@ -289,10 +289,13 @@ Data types can be broadly categorised into four main types:
 \subsubsection{Matching Data Types with Appropriate Visualisation Techniques}
 Selecting appropriate visualisation techniques is essential for effective data communication. Various data types demand specific visualisation methods for optimal representation. For \textbf{nominal data}, bar charts and stacked bar charts are effective in displaying categorical information and relative proportions. \textbf{Ordinal data} benefits from ordered bar charts, dot plots, or stacked bar charts, maintaining the ranking and order of categories. \textbf{Interval data} is best visualised using line charts, histograms, and box plots, showcasing trends and distributions without assuming a true zero point. \textbf{Ratio data} finds effective representation through scatter plots, histograms, and line charts, enabling precise comparisons and measurements due to the presence of a meaningful zero point.
 
-<<data-plots, echo=FALSE, message = FALSE, , fig.height=3, fig.width=4, fig.cap='Different types of visualisation according to the data type used'>>=
+<<data-plots, echo=FALSE, message=FALSE, fig.height=8, fig.width=12, fig.cap='Different types of visualisation according to the data type used'>>=
 
-# Define a consistent color palette
-my_palette <- viridis(4)
+library(ggplot2)
+library(gridExtra)
+
+# Define the colors
+my_palette <- c("#4B0082", "#459395", "#EB7C69", "#FDA638")
 
 # Generate nominal data (gender categories and tendencies)
 nominal_data <- data.frame(
@@ -305,11 +308,8 @@ plot1 <- ggplot(nominal_data, aes(fill = gender, y = tendency, x = 1)) +
   geom_bar(stat = "identity") +
   labs(title = "Gender Categories", x = NULL, y = "Percentage") +
   scale_fill_manual(values = my_palette) +
-  theme(plot.title = element_text(size = 10), 
-        axis.text.x = element_blank(), 
+  theme(axis.text.x = element_blank(), 
         axis.ticks = element_blank())   # Remove axis ticks
-
-
 
 # Generate ordinary data (customer satisfaction)
 ordinal_data <- data.frame(
@@ -321,7 +321,7 @@ ordinal_data <- data.frame(
 plot2 <- ggplot(ordinal_data, aes(x = reorder(satisfaction_level, -count), y = count)) +
   geom_bar(stat = "identity", fill = my_palette[2]) +
   labs(title = "Customer Satisfaction Levels", x = NULL, y = "Count") +
-  theme(plot.title = element_text(size = 10)) 
+  theme_minimal()
 
 # Generate interval data (temperature)
 interval_data <- data.frame(
@@ -331,12 +331,9 @@ interval_data <- data.frame(
 
 # Line chart for temperature data
 plot3 <- ggplot(interval_data, aes(x = time, y = temperature)) +
-  geom_line(linewidth = 0.7, color = my_palette[1]) +
+  geom_line(linewidth = 0.7, color = my_palette[3]) +
   labs(title = "Temperature Variation", x = "Time", y = "Temperature (°C)") +
-  theme(plot.title = element_text(size = 10))
-
-# Load necessary libraries
-library(ggplot2)
+  theme_minimal()
 
 # Generate data for income distribution across a population
 income_data <- data.frame(
@@ -345,14 +342,14 @@ income_data <- data.frame(
 
 # Create a histogram for income distribution
 plot4 <-ggplot(income_data, aes(x = income)) +
-  geom_histogram(binwidth = 5000, fill = my_palette[3], color = my_palette[3], alpha = 0.5) +
+  geom_histogram(binwidth = 5000, fill = my_palette[4], color = my_palette[4], alpha = 0.5) +
   labs(title = "Income Distribution", x = "Income", y = "Frequency") +
-  theme(plot.title = element_text(size = 10))
+  theme_minimal()
 
 # Arrange plots in a 2x2 grid
 grid.arrange(plot1, plot2, plot3, plot4, ncol = 2)
-
 @
+
 
 
 \subsection{Data Abstraction and Representation}
@@ -372,8 +369,9 @@ Abstraction operates on multiple levels of granularity. Hierarchies of abstracti
 These are represented in Figure~\ref{fig:abs-plots}. The first visualisations of the mtcars dataset is a scatter plot that provides detailed information about the relationship between car weight and miles per gallon, with points colored by the number of cylinders. The second is an abstract visualisation using a box-and-whisker plot to provide a high-level summary of the distribution of miles per gallon for different numbers of cylinders. Finally, the third visualisation is a bar plot presenting aggregated information about the average miles per gallon for different numbers of cylinders.
 
 <<abs-plots, echo=FALSE, fig.height=4, fig.width=12, fig.cap='Mtcars dataset visualised on 3 different levels of abstraction'>>=
-# Data
-data(mtcars)
+
+# Define a dark red and blue color palette
+dark_red_blue_palette <- c("4" = "#459395", "6" = "#EB7C69", "8" = "#FDA638")  # Adjust the shades of red and blue
 
 # Level 1: Detailed Scatter Plot
 plot1 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
@@ -384,6 +382,7 @@ plot1 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
     y = "Miles per Gallon",
     color = "Cylinders"
   ) +
+  scale_color_manual(values = dark_red_blue_palette) +  # Apply the custom color palette
   theme_minimal()
 
 # Level 2: Aggregated Bar Plot
@@ -397,6 +396,7 @@ plot2 <- ggplot(summary_data, aes(x = factor(cyl), y = mpg, fill = factor(cyl)))
     y = "Average Miles per Gallon",
     fill = "Cylinders"
   ) +
+  scale_fill_manual(values = dark_red_blue_palette) +  # Apply the custom color palette
   theme_minimal()
 
 # Level 3: Abstract Box-and-Whisker Plot
@@ -408,6 +408,7 @@ plot3 <- ggplot(mtcars, aes(x = factor(cyl), y = mpg, fill = factor(cyl))) +
     y = "Miles per Gallon",
     fill = "Cylinders"
   ) +
+  scale_fill_manual(values = dark_red_blue_palette) +  # Apply the custom color palette
   theme_minimal()
 
 # Arrange plots in a grid
@@ -491,7 +492,7 @@ In data visualisation, achieving a balance between complexity and cognitive load
 To reduce cognitive load while maintaining complexity in data visualisation, several strategies can be employed. Firstly, \textbf{establishing a clear visual hierarchy} using size, color, and contrast helps direct attention to crucial elements. Additionally, \textbf{simplifying labels and text} by avoiding unnecessary complexity ensures information is clear and easily digestible.\\
 \noindent Furthermore, \textbf{employing interactive features} like tooltips and drill-down functionality assists in providing additional information when required, reducing the density of static visualisations. A final approach involves the use of \textbf{progressive disclosure}, presenting complex information gradually, beginning with an overview and allowing users to explore details as needed.\\
 
-<<cogload-plot, echo=FALSE, fig.height=3, fig.width=6, fig.cap='High vs low cognitive load demand through the reduction of visual complexity'>>=
+<<cogload-plot, echo=FALSE, fig.height=4, fig.width=10, fig.cap='High vs low cognitive load demand through the reduction of visual complexity'>>=
 
 # Create a cluttered plot with obscure axis labels and labels on all points
 cluttered_plot <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = as.numeric(row.names(iris)), shape = Species, label = rownames(iris))) +
@@ -874,9 +875,9 @@ Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the 
 
 \noindent
 \textbf{Bubble Charts in Practice}\\
-\noident The bubble chart shown in Figure~\ref{fig:buble-plot-chunk} visualises data from the same dataset as above. It depicts the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and color-coding the bubbles based on the number of cylinders (cyl).\\
+\noident The bubble chart shown in Figure~\ref{fig:bubble-plot} visualises data from the same dataset as above. It depicts the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and color-coding the bubbles based on the number of cylinders (cyl).\\
 
-<<buble-plot-chunk, echo=FALSE, fig.height=5, fig.width=10, fig.caption='Bubble plot illustrating the relationship between car models and miles per gallon'>>=
+<<bubble-plot, echo=FALSE, fig.height=5, fig.width=9, fig.caption='Bubble plot illustrating the relationship between car models and miles per gallon'>>=
 #Create bubble plot 
 ggplot(mtcars, aes(x = rownames(mtcars), y = mpg, size = hp, color = cyl)) +
   geom_point() +
@@ -892,7 +893,7 @@ ggplot(mtcars, aes(x = rownames(mtcars), y = mpg, size = hp, color = cyl)) +
   theme(axis.text.x = element_text(angle = 90, hjust =1))
 @
 
-\noindent The bubble plot reveals a clear pattern: as cylinder count increases, so does horsepower, but at the expense of lower fuel efficiency. Contrary to expectations, cars with fewer cylinders, despite lower horsepower, demonstrate better fuel economy, positioned higher on the graph. Meanwhile, vehicles with more cylinders, often associated with higher performance, cluster lower, indicating lower fuel efficiency. This plot highlights the trade-off between horsepower, cylinder count, and fuel efficiency, challenging the assumption that more cylinders equate to better performance, emphasising the significance of considering fuel economy in car selection.
+\\\noindent The bubble plot reveals a clear pattern: as cylinder count increases, so does horsepower, but at the expense of lower fuel efficiency. Contrary to expectations, cars with fewer cylinders, despite lower horsepower, demonstrate better fuel economy, positioned higher on the graph. Meanwhile, vehicles with more cylinders, often associated with higher performance, cluster lower, indicating lower fuel efficiency. This plot highlights the trade-off between horsepower, cylinder count, and fuel efficiency, challenging the assumption that more cylinders equate to better performance, emphasising the significance of considering fuel economy in car selection.
 
 \subsection{Heatmaps, correlation matrix and AIC score}
 
