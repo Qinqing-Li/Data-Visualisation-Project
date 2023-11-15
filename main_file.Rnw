@@ -604,11 +604,10 @@ Histograms demonstrates the distribution of frequency or quantity across groups.
 \noindent
 Now, we want to create a better graph with ggplot2 thanks to the \texttt{geom\_histogram()} function and iris dataset.
 
-begin{figure}[htbp]
+\begin{figure}[htbp]
   \centering
-  \begin{minipage}[b]{0.45\linewidth}
-
-<<hist2, echo=FALSE, fig.height=4, fig.width=6, out.width='\\linewidth'>>=
+  \begin{minipage}[b]{0.48\linewidth}
+<<hist2, echo=FALSE, fig.height=4, fig.width=5, out.width='\\linewidth'>>=
  #Create a histogram using ggplot2 for Sepal Length in the Iris dataset
 bar_diagram <- ggplot(iris, aes(x = Sepal.Length)) +
   geom_histogram(
@@ -623,12 +622,11 @@ bar_diagram <- ggplot(iris, aes(x = Sepal.Length)) +
 print(bar_diagram)
 @  
       \caption{Histogram of Sepal Length in Iris Dataset}
-    \label{fig:barchart2}
+    \label{fig:hist2}
   \end{minipage}
   \hfill
-  \begin{minipage}[b]{0.45\linewidth}
-
-<<kde3, echo=FALSE, fig.height=4, fig.width=6, out.width='\\linewidth'>>=
+  \begin{minipage}[b]{0.48\linewidth}
+<<kde3, echo=FALSE, fig.height=4, fig.width=5, out.width='\\linewidth'>>=
 # Create a Kernel Density Estimate plot using ggplot2 for Sepal Length in the Iris dataset
 kde_diagram <- ggplot(iris, aes(x = Sepal.Length)) +
   geom_density(
@@ -644,9 +642,8 @@ kde_diagram <- ggplot(iris, aes(x = Sepal.Length)) +
   theme_minimal()
 print(kde_diagram)
 @ 
-
     \caption{Kernel Density Estimation of Sepal Length in Iris Dataset}
-    \label{fig:barchart3}
+    \label{fig:kde3}
   \end{minipage}
 \end{figure} 
   

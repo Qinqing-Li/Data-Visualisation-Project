@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.27)  15 NOV 2023 17:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.27)  15 NOV 2023 17:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -387,14 +387,7 @@ File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count316
 \l__pdf_internal_box=\box57
 )
-(./main_file.aux
-
-LaTeX Warning: Label `fig:barchart2' multiply defined.
-
-
-LaTeX Warning: Label `fig:barchart3' multiply defined.
-
-)
+(./main_file.aux)
 \openout1 = `main_file.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
@@ -415,7 +408,8 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 66.
 LaTeX Font Info:    ... okay on input line 66.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 66.
 LaTeX Font Info:    ... okay on input line 66.
- (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+(/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count317
 \scratchdimen=\dimen172
@@ -882,158 +876,59 @@ Underfull \hbox (badness 10000) in paragraph at lines 458--461
 
  []
 
-<figure/beamer-hist2-1.pdf, id=417, 433.62pt x 289.08pt>
+<figure/beamer-hist2-1.pdf, id=418, 361.35pt x 289.08pt>
 File: figure/beamer-hist2-1.pdf Graphic file (type pdf)
 <use figure/beamer-hist2-1.pdf>
-Package pdftex.def Info: figure/beamer-hist2-1.pdf  used on input line 472.
-(pdftex.def)             Requested size: 195.12767pt x 130.0848pt.
-
-! LaTeX Error: \caption outside float.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.478       \caption
-                    {Histogram of Sepal Length in Iris Dataset}
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Undefined control sequence.
-\caption ... \endcsname \fi \fi \@dblarg {\@tempf 
-                                                  \@captype }
-l.478       \caption
-                    {Histogram of Sepal Length in Iris Dataset}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-\caption ...e \fi \fi \@dblarg {\@tempf \@captype 
-                                                  }
-l.478       \caption
-                    {Histogram of Sepal Length in Iris Dataset}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-<figure/beamer-kde3-1.pdf, id=418, 433.62pt x 289.08pt>
+Package pdftex.def Info: figure/beamer-hist2-1.pdf  used on input line 471.
+(pdftex.def)             Requested size: 208.13574pt x 166.51082pt.
+<figure/beamer-kde3-1.pdf, id=419, 361.35pt x 289.08pt>
 File: figure/beamer-kde3-1.pdf Graphic file (type pdf)
 <use figure/beamer-kde3-1.pdf>
-Package pdftex.def Info: figure/beamer-kde3-1.pdf  used on input line 487.
-(pdftex.def)             Requested size: 195.12767pt x 130.0848pt.
+Package pdftex.def Info: figure/beamer-kde3-1.pdf  used on input line 485.
+(pdftex.def)             Requested size: 208.13574pt x 166.51082pt.
 
-! LaTeX Error: \caption outside float.
+Underfull \hbox (badness 10000) in paragraph at lines 499--500
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.494     \caption
-                  {Kernel Density Estimation of Sepal Length in Iris Dataset}
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+ []
 
-! Undefined control sequence.
-\caption ... \endcsname \fi \fi \@dblarg {\@tempf 
-                                                  \@captype }
-l.494     \caption
-                  {Kernel Density Estimation of Sepal Length in Iris Dataset}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
-! Undefined control sequence.
-\caption ...e \fi \fi \@dblarg {\@tempf \@captype 
-                                                  }
-l.494     \caption
-                  {Kernel Density Estimation of Sepal Length in Iris Dataset}
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+Underfull \hbox (badness 10000) in paragraph at lines 501--503
+
+ []
 
 [17
 pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.497 \end{figure}
-                  
+l.503 
+      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.11}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.497 \end{figure}
-                   <./figure/beamer-barchart2-1.pdf> <./figure/beamer-barchart3
--1.pdf>]
-! Too many }'s.
-\@endfloatbox ...pagefalse \outer@nobreak \egroup 
-                                                  \color@endbox 
-l.497 \end{figure}
-                  
-You've closed more groups than you opened.
-Such booboos are generally harmless, so keep going.
+l.503 
+       <./figure/beamer-barchart2-1.pdf> <./figure/beamer-barchart3-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 519--520
 
-! Extra \endgroup.
-\color@endgroup ->\endgraf \endgroup 
-                                     
-l.497 \end{figure}
-                  
-Things are pretty mixed up, but I think the worst is over.
+ []
 
-! Too many }'s.
-\color@endbox ->\color@endgroup \egroup 
-                                        
-l.497 \end{figure}
-                  
-You've closed more groups than you opened.
-Such booboos are generally harmless, so keep going.
+[18
+pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.520 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.520 
+       <./figure/beamer-hist2-1.pdf> <./figure/beamer-kde3-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 526--528
 
-
-! LaTeX Error: \begin{document} ended by \end{figure}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.497 \end{figure}
-                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Extra \endgroup.
-<recently read> \endgroup 
-                          
-l.497 \end{figure}
-                  
-Things are pretty mixed up, but I think the worst is over.
-
-
-LaTeX Warning: Reference `fig:kde3' on page 18 undefined on input line 514.
-
-[18 <./figure/beamer-hist2-1.pdf> <./figure/beamer-kde3-1.pdf>]
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.534 \\
-        Regression models are statistical tools that provide functions to es...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+ []
 
 
 ! LaTeX Error: There's no line here to end.
@@ -1042,72 +937,43 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.536 \\
-        
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.540 \\
-        Let $\mathbf{x} = (x_1, x_2, ..., x_n)^T$ denote $n$ explanatory var...
+l.531 \\R
+         egression models are statistical tools that provide functions to es...
 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-! LaTeX Error: There's no line here to end.
+Underfull \hbox (badness 10000) in paragraph at lines 531--540
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.542 \\
-        In a simple linear model, it is assumed that the response variables ...
-
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+ []
 
 
-! LaTeX Error: There's no line here to end.
+Underfull \hbox (badness 10000) in paragraph at lines 531--540
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.568 \\
-        Given design matrix $\mathbf{X}$ where $X_i = (1, x_i)$ and$\beta = ...
+ []
 
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+
+Underfull \hbox (badness 10000) in paragraph at lines 531--540
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 561--566
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 585--589
+
+ []
 
 [19]
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.616 \\
-        
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
 ! Undefined control sequence.
 <recently read> \noident 
                          
-l.617 \noident
+l.614 \noident
               
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1116,52 +982,93 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-! LaTeX Error: There's no line here to end.
+Underfull \hbox (badness 10000) in paragraph at lines 611--618
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.618 \\
-        \textbf{Case example: 1970s automobiles}\\
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+ []
 
-<figure/beamer-cor-matrix-mtcars2-1.pdf, id=467, 361.35pt x 208.78pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 611--618
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 611--618
+
+ []
+
+<figure/beamer-cor-matrix-mtcars2-1.pdf, id=470, 361.35pt x 208.78pt>
 File: figure/beamer-cor-matrix-mtcars2-1.pdf Graphic file (type pdf)
 <use figure/beamer-cor-matrix-mtcars2-1.pdf>
 Package pdftex.def Info: figure/beamer-cor-matrix-mtcars2-1.pdf  used on input 
-line 635.
+line 632.
 (pdftex.def)             Requested size: 361.34912pt x 208.77946pt.
 [20]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <7> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 650.
-<figure/beamer-scatter-plot-1.pdf, id=476, 289.08pt x 216.81pt>
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 647.
+<figure/beamer-scatter-plot-1.pdf, id=479, 289.08pt x 216.81pt>
 File: figure/beamer-scatter-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-scatter-plot-1.pdf>
 Package pdftex.def Info: figure/beamer-scatter-plot-1.pdf  used on input line 6
-79.
+76.
 (pdftex.def)             Requested size: 289.07928pt x 216.81938pt.
  [21
-pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) h
+pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.685 
+l.682 
        <./figure/beamer-cor-matrix-mtcars2-1.pdf>]
-<codeshoot.png, id=489, 781.92125pt x 33.12375pt>
+Underfull \hbox (badness 10000) in paragraph at lines 684--686
+
+ []
+
+<codeshoot.png, id=492, 781.92125pt x 33.12375pt>
 File: codeshoot.png Graphic file (type png)
 <use codeshoot.png>
-Package pdftex.def Info: codeshoot.png  used on input line 692.
+Package pdftex.def Info: codeshoot.png  used on input line 689.
 (pdftex.def)             Requested size: 433.62pt x 18.36923pt.
- [22
-pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) h
+
+Underfull \hbox (badness 10000) in paragraph at lines 692--695
+
+ []
+
+
+Overfull \hbox (7.1309pt too wide) in paragraph at lines 697--698
+\OT1/cmr/m/n/10 Bubble charts are a cap-ti-vat-ing data vi-su-al-i-sa-tion tool
+ that ex-tends be-yond the typ-i-cal two-dimensional
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 697--698
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 699--701
+
+ []
+
+[22
+pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.707 
-       <./figure/beamer-scatter-plot-1.pdf> <./codeshoot.png>]
+l.702 \noindent
+                <./figure/beamer-scatter-plot-1.pdf> <./codeshoot.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 702--704
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 705--707
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 708--710
+
+ []
+
 
 ! LaTeX Error: There's no line here to end.
 
@@ -1169,8 +1076,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.721 \\
-        \noident Where \(S\) represents the size of the bubble, \(V\) the va...
+l.718 \\\noident
+                 Where \(S\) represents the size of the bubble, \(V\) the va...
 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1179,7 +1086,7 @@ or  <return>  to continue without it.
 ! Undefined control sequence.
 <recently read> \noident 
                          
-l.721 \\\noident
+l.718 \\\noident
                  Where \(S\) represents the size of the bubble, \(V\) the va...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1187,10 +1094,20 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 718--719
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 720--722
+
+ []
+
 ! Undefined control sequence.
 <recently read> \noident 
                          
-l.728 \noident
+l.725 \noident
                The bubble chart shown in Figure~\ref{fig:bubble-plot} visual...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1200,13 +1117,18 @@ and I'll forget about whatever was undefined.
 
 
 LaTeX Warning: Reference `fig:bubble-plot' on page 23 undefined on input line 7
-28.
+25.
 
-<figure/beamer-bubble-plot-1.pdf, id=504, 650.43pt x 361.35pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 723--726
+
+ []
+
+<figure/beamer-bubble-plot-1.pdf, id=507, 650.43pt x 361.35pt>
 File: figure/beamer-bubble-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-bubble-plot-1.pdf>
 Package pdftex.def Info: figure/beamer-bubble-plot-1.pdf  used on input line 73
-3.
+0.
 (pdftex.def)             Requested size: 433.62pt x 240.90675pt.
 
 ! LaTeX Error: There's no line here to end.
@@ -1215,43 +1137,91 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.740 \\
-        \noindent The bubble plot reveals a clear pattern: as cylinder count...
+l.737 \\\noindent
+                  The bubble plot reveals a clear pattern: as cylinder count...
 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[23 <./figure/beamer-bubble-plot-1.pdf>]
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 754--756
 
-LaTeX Warning: Command \l invalid in math mode on input line 763.
+ []
+
+[24 <./figure/beamer-bubble-plot-1.pdf>]
+
+LaTeX Warning: Command \l invalid in math mode on input line 760.
 
 
-LaTeX Warning: Command \l invalid in math mode on input line 764.
+LaTeX Warning: Command \l invalid in math mode on input line 761.
 
-[24]
-<figure/beamer-spacetime-fy22-1.pdf, id=524, 505.89pt x 289.08pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 760--762
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 768--769
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 770--772
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 773--775
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 776--778
+
+ []
+
+[25]
+<figure/beamer-spacetime-fy22-1.pdf, id=533, 505.89pt x 289.08pt>
 File: figure/beamer-spacetime-fy22-1.pdf Graphic file (type pdf)
 <use figure/beamer-spacetime-fy22-1.pdf>
 Package pdftex.def Info: figure/beamer-spacetime-fy22-1.pdf  used on input line
- 831.
+ 828.
 (pdftex.def)             Requested size: 433.62pt x 247.7879pt.
- [25]
-<figure/beamer-fire-by-months-fy13-22-1.pdf, id=531, 361.35pt x 187.70125pt>
+<figure/beamer-fire-by-months-fy13-22-1.pdf, id=534, 361.35pt x 187.70125pt>
 File: figure/beamer-fire-by-months-fy13-22-1.pdf Graphic file (type pdf)
 <use figure/beamer-fire-by-months-fy13-22-1.pdf>
 Package pdftex.def Info: figure/beamer-fire-by-months-fy13-22-1.pdf  used on in
-put line 859.
+put line 856.
 (pdftex.def)             Requested size: 361.34912pt x 187.70079pt.
  [26
-pdfTeX warning (ext4): destination with the same identifier (name{figure.14}) h
+pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.865 
+l.862 
        <./figure/beamer-spacetime-fy22-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 869--871
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 872--874
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 879--882
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 883--885
+
+ []
+
 ! Undefined control sequence.
-l.890 ...T_0 = \{0,1,2,...,n\}$ for $n \in \mathbb
+l.887 ...T_0 = \{0,1,2,...,n\}$ for $n \in \mathbb
                                                   {N}$. By plotting these da...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1259,103 +1229,209 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 886--888
+
+ []
+
 [27
-pdfTeX warning (ext4): destination with the same identifier (name{figure.15}) h
+pdfTeX warning (ext4): destination with the same identifier (name{figure.17}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.894 
-       <./figure/beamer-fire-by-months-fy13-22-1.pdf>]
-<figure/beamer-unnamed-chunk-2-1.pdf, id=554, 433.62pt x 252.945pt>
+l.889 \noindent
+                <./figure/beamer-fire-by-months-fy13-22-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 889--891
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 892--894
+
+ []
+
+<figure/beamer-unnamed-chunk-2-1.pdf, id=556, 433.62pt x 252.945pt>
 File: figure/beamer-unnamed-chunk-2-1.pdf Graphic file (type pdf)
 <use figure/beamer-unnamed-chunk-2-1.pdf>
 Package pdftex.def Info: figure/beamer-unnamed-chunk-2-1.pdf  used on input lin
-e 923.
+e 920.
 (pdftex.def)             Requested size: 433.61894pt x 252.95595pt.
- [28
-pdfTeX warning (ext4): destination with the same identifier (name{figure.16}) h
+[28
+pdfTeX warning (ext4): destination with the same identifier (name{figure.18}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.936 ...) = \frac{1}{49} \sum_{k=t-48}^{t} x_k,\]
-                                                   <./figure/beamer-unnamed-chu
-nk-2-1.pdf>]
-Overfull \hbox (1.47911pt too wide) in paragraph at lines 975--975
+l.933 \[
+        \text{MA}_{49}(t) = \frac{1}{49} \sum_{k=t-48}^{t} x_k,\] <./figure/bea
+mer-unnamed-chunk-2-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 933--935
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 936--938
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 939--941
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 942--944
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 945--947
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 957--959
+
+ []
+
+
+Overfull \hbox (1.47911pt too wide) in paragraph at lines 972--972
 []  []\OT1/cmtt/m/n/7 facet_wrap[][]([][]~[][]component,[] []scales[] []=[] []"
 free_y"[][],[] []ncol[] []=[] []1[][])[] []+[] []labs[][]([][]x[] []=[] []"Date
 "[][],[][]y[] []=[] []"Exchange Rate to GBP"[][])[] []+[] []theme_minimal[][]()
 [][] 
  []
 
-<figure/beamer-unnamed-chunk-4-1.pdf, id=567, 361.35pt x 289.08pt>
+<figure/beamer-unnamed-chunk-4-1.pdf, id=570, 361.35pt x 289.08pt>
 File: figure/beamer-unnamed-chunk-4-1.pdf Graphic file (type pdf)
 <use figure/beamer-unnamed-chunk-4-1.pdf>
 Package pdftex.def Info: figure/beamer-unnamed-chunk-4-1.pdf  used on input lin
-e 979.
+e 976.
 (pdftex.def)             Requested size: 361.34912pt x 289.07928pt.
 [29]
+Underfull \hbox (badness 10000) in paragraph at lines 987--989
 
-! LaTeX Error: There's no line here to end.
+ []
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1003 ...nalysis of CNY to GBP Exchange Rate}\\\\
-                                                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
+
+Underfull \hbox (badness 10000) in paragraph at lines 990--992
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 993--995
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 996--998
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 999--1002
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 999--1002
+
+ []
 
 [30
-pdfTeX warning (ext4): destination with the same identifier (name{figure.17}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.1004 ...l be given in the following paragraph.\\
-                                                   <./figure/beamer-unnamed-chu
-nk-4-1.pdf>]
-<figure/beamer-unnamed-chunk-5-1.pdf, id=585, 289.08pt x 216.81pt>
-File: figure/beamer-unnamed-chunk-5-1.pdf Graphic file (type pdf)
-<use figure/beamer-unnamed-chunk-5-1.pdf>
-Package pdftex.def Info: figure/beamer-unnamed-chunk-5-1.pdf  used on input lin
-e 1029.
-(pdftex.def)             Requested size: 289.07928pt x 216.81938pt.
- [31
-pdfTeX warning (ext4): destination with the same identifier (name{figure.18}) h
-as been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.1041 ...ture do not remain constant over time.\\
-                                                   <./figure/beamer-unnamed-chu
-nk-5-1.pdf>] [32] [33]
-<figure/beamer-unnamed-chunk-7-1.pdf, id=613, 361.35pt x 361.35pt>
-File: figure/beamer-unnamed-chunk-7-1.pdf Graphic file (type pdf)
-<use figure/beamer-unnamed-chunk-7-1.pdf>
-Package pdftex.def Info: figure/beamer-unnamed-chunk-7-1.pdf  used on input lin
-e 1146.
-(pdftex.def)             Requested size: 361.34912pt x 361.34912pt.
-<figure/beamer-unnamed-chunk-8-1.pdf, id=615, 361.35pt x 361.35pt>
-File: figure/beamer-unnamed-chunk-8-1.pdf Graphic file (type pdf)
-<use figure/beamer-unnamed-chunk-8-1.pdf>
-Package pdftex.def Info: figure/beamer-unnamed-chunk-8-1.pdf  used on input lin
-e 1177.
-(pdftex.def)             Requested size: 361.34912pt x 361.34912pt.
- [34
 pdfTeX warning (ext4): destination with the same identifier (name{figure.19}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1187 
-        <./figure/beamer-unnamed-chunk-7-1.pdf>] [35
+l.1002 
+        <./figure/beamer-unnamed-chunk-4-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 1008--1011
+
+ []
+
+<figure/beamer-unnamed-chunk-5-1.pdf, id=588, 289.08pt x 216.81pt>
+File: figure/beamer-unnamed-chunk-5-1.pdf Graphic file (type pdf)
+<use figure/beamer-unnamed-chunk-5-1.pdf>
+Package pdftex.def Info: figure/beamer-unnamed-chunk-5-1.pdf  used on input lin
+e 1026.
+(pdftex.def)             Requested size: 289.07928pt x 216.81938pt.
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 1037--1039
+
+ []
+
+[32
 pdfTeX warning (ext4): destination with the same identifier (name{figure.20}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1196 
+l.1054 \item \textbf
+                    {Nodes and Edges}: Mathematically, a network graph, \(G\...
+ <./figure/beamer-unnamed-chunk-5-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 1102--1103
+
+ []
+
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 1113--1115
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1116--1118
+
+ []
+
+<figure/beamer-unnamed-chunk-7-1.pdf, id=616, 361.35pt x 361.35pt>
+File: figure/beamer-unnamed-chunk-7-1.pdf Graphic file (type pdf)
+<use figure/beamer-unnamed-chunk-7-1.pdf>
+Package pdftex.def Info: figure/beamer-unnamed-chunk-7-1.pdf  used on input lin
+e 1143.
+(pdftex.def)             Requested size: 361.34912pt x 361.34912pt.
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 1155--1157
+
+ []
+
+<figure/beamer-unnamed-chunk-8-1.pdf, id=622, 361.35pt x 361.35pt>
+File: figure/beamer-unnamed-chunk-8-1.pdf Graphic file (type pdf)
+<use figure/beamer-unnamed-chunk-8-1.pdf>
+Package pdftex.def Info: figure/beamer-unnamed-chunk-8-1.pdf  used on input lin
+e 1174.
+(pdftex.def)             Requested size: 361.34912pt x 361.34912pt.
+[35
+pdfTeX warning (ext4): destination with the same identifier (name{figure.21}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1184 
+        <./figure/beamer-unnamed-chunk-7-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 1185--1187
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1188--1190
+
+ []
+
+[36
+pdfTeX warning (ext4): destination with the same identifier (name{figure.22}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1193 
         <./figure/beamer-unnamed-chunk-8-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 1196--1197
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1198--1200
+
+ []
+
 ! Undefined control sequence.
-l.1205 \textbt
+l.1202 \textbt
               {rgl}: This is one of the most popular R packages for creating...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1366,7 +1442,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <recently read> \textbt 
                         
-l.1206 \textbt
+l.1203 \textbt
               {scatterplot}：This package provides a function to create 3D ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1382,23 +1458,33 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1206 \textbt{scatterplot}：
+l.1203 \textbt{scatterplot}：
                               This package provides a function to create 3D ...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-<figure/beamer-3d1-1.pdf, id=640, 289.08pt x 289.08pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1201--1204
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1205--1207
+
+ []
+
+<figure/beamer-3d1-1.pdf, id=647, 289.08pt x 289.08pt>
 File: figure/beamer-3d1-1.pdf Graphic file (type pdf)
 <use figure/beamer-3d1-1.pdf>
-Package pdftex.def Info: figure/beamer-3d1-1.pdf  used on input line 1230.
+Package pdftex.def Info: figure/beamer-3d1-1.pdf  used on input line 1227.
 (pdftex.def)             Requested size: 289.07928pt x 289.09251pt.
-[36] [37
-pdfTeX warning (ext4): destination with the same identifier (name{figure.21}) h
+[37] [38
+pdfTeX warning (ext4): destination with the same identifier (name{figure.23}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1251 \section
+l.1248 \section
                {State-of-the-Art Approaches} <./figure/beamer-3d1-1.pdf>]
 (./main_file.bbl
 Underfull \hbox (badness 1472) in paragraph at lines 4--9
@@ -1430,24 +1516,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 64--68
 tt/m/n/10 https : / / en . wikipedia . org / wiki /
  []
 
-) Excluding 'comment' comment. [38] (./main_file.aux)
+) Excluding 'comment' comment. [39] (./main_file.aux)
 
 LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main_file.out' has not changed.
 (rerunfilecheck)             Checksum: AEAA1A3B4A4FD1977042F3EC88F4635D;9691.
  ) 
 Here is how much of TeX's memory you used:
- 12576 strings out of 476025
- 199241 string characters out of 5790016
+ 12580 strings out of 476025
+ 199277 string characters out of 5790016
  1871388 words of memory out of 5000000
- 32707 multiletter control sequences out of 15000+600000
+ 32708 multiletter control sequences out of 15000+600000
  519833 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,9n,76p,1021b,535s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,9n,76p,1021b,525s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
@@ -1466,10 +1549,10 @@ e/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive
 /2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/
 2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/20
 23/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main_file.pdf (38 pages, 7874122 bytes).
+Output written on main_file.pdf (39 pages, 7875977 bytes).
 PDF statistics:
- 786 PDF objects out of 1000 (max. 8388607)
- 644 compressed objects within 7 object streams
- 127 named destinations out of 1000 (max. 500000)
+ 793 PDF objects out of 1000 (max. 8388607)
+ 650 compressed objects within 7 object streams
+ 130 named destinations out of 1000 (max. 500000)
  483 words of extra memory for PDF output out of 10000 (max. 10000000)
 
