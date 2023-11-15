@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.13)  15 NOV 2023 11:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.13)  15 NOV 2023 11:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -621,18 +621,18 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has
                                                   \__shipout_drop_firstpage_...
 l.270 
        <./figure/beamer-messygraph-1.pdf> <./figure/beamer-cleargraph1-1.pdf>]
-<figure/beamer-data-plots-1.pdf, id=343, 433.62pt x 361.35pt>
+<figure/beamer-data-plots-1.pdf, id=343, 289.08pt x 216.81pt>
 File: figure/beamer-data-plots-1.pdf Graphic file (type pdf)
 <use figure/beamer-data-plots-1.pdf>
 Package pdftex.def Info: figure/beamer-data-plots-1.pdf  used on input line 286.
-(pdftex.def)             Requested size: 433.61894pt x 361.36566pt.
+(pdftex.def)             Requested size: 289.07928pt x 216.81938pt.
  [10] [11
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.305     \item \textbf
-                       {Low-Level Abstraction}: At the lowest level, raw dat... <./figure/beamer-data-plots-1.pdf>]
-<figure/beamer-abs-plots-1.pdf, id=363, 867.24pt x 289.08pt>
+l.308 \end{enumerate}
+                      <./figure/beamer-data-plots-1.pdf>]
+<figure/beamer-abs-plots-1.pdf, id=365, 867.24pt x 289.08pt>
 File: figure/beamer-abs-plots-1.pdf Graphic file (type pdf)
 <use figure/beamer-abs-plots-1.pdf>
 Package pdftex.def Info: figure/beamer-abs-plots-1.pdf  used on input line 315.
@@ -647,17 +647,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 330--331
 
  []
 
-[12
-pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.331 
-       <./figure/beamer-abs-plots-1.pdf>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 332--334
 
  []
 
-
+[12
+pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.336 
+       <./figure/beamer-abs-plots-1.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 338--339
 
  []
@@ -677,13 +677,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 349--351
 
  []
 
-[13]
-<figure/beamer-colour-plot-1.pdf, id=389, 722.7pt x 216.81pt>
+<figure/beamer-colour-plot-1.pdf, id=383, 722.7pt x 216.81pt>
 File: figure/beamer-colour-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-colour-plot-1.pdf>
 Package pdftex.def Info: figure/beamer-colour-plot-1.pdf  used on input line 355.
 (pdftex.def)             Requested size: 433.62pt x 130.08699pt.
-
+[13]
 Underfull \hbox (badness 10000) in paragraph at lines 364--367
 
  []
@@ -698,18 +697,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 373--375
 
  []
 
+<figure/beamer-cogload-plot-1.pdf, id=390, 433.62pt x 216.81pt>
+File: figure/beamer-cogload-plot-1.pdf Graphic file (type pdf)
+<use figure/beamer-cogload-plot-1.pdf>
+Package pdftex.def Info: figure/beamer-cogload-plot-1.pdf  used on input line 379.
+(pdftex.def)             Requested size: 433.61894pt x 216.81938pt.
 [14
 pdfTeX warning (ext4): destination with the same identifier (name{figure.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.375 
-       <./figure/beamer-colour-plot-1.pdf>]
-<figure/beamer-cogload-plot-1.pdf, id=401, 722.7pt x 216.81pt>
-File: figure/beamer-cogload-plot-1.pdf Graphic file (type pdf)
-<use figure/beamer-cogload-plot-1.pdf>
-Package pdftex.def Info: figure/beamer-cogload-plot-1.pdf  used on input line 379.
-(pdftex.def)             Requested size: 433.62pt x 130.08699pt.
- [15
+l.385 
+       <./figure/beamer-colour-plot-1.pdf>] [15
 pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
@@ -1368,7 +1366,7 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  75i,9n,79p,998b,531s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on main_file.pdf (41 pages, 7873805 bytes).
+Output written on main_file.pdf (41 pages, 7874057 bytes).
 PDF statistics:
  819 PDF objects out of 1000 (max. 8388607)
  673 compressed objects within 7 object streams

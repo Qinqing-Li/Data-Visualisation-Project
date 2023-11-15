@@ -289,7 +289,7 @@ Data types can be broadly categorised into four main types:
 \subsubsection{Matching Data Types with Appropriate Visualisation Techniques}
 Selecting appropriate visualisation techniques is essential for effective data communication. Various data types demand specific visualisation methods for optimal representation. For \textbf{nominal data}, bar charts and stacked bar charts are effective in displaying categorical information and relative proportions. \textbf{Ordinal data} benefits from ordered bar charts, dot plots, or stacked bar charts, maintaining the ranking and order of categories. \textbf{Interval data} is best visualised using line charts, histograms, and box plots, showcasing trends and distributions without assuming a true zero point. \textbf{Ratio data} finds effective representation through scatter plots, histograms, and line charts, enabling precise comparisons and measurements due to the presence of a meaningful zero point.
 
-<<data-plots, echo=FALSE, message = FALSE, size = "scriptsize", fig.height=5, fig.width=6, fig.cap='Different types of visualisation according to the data type used'>>=
+<<data-plots, echo=FALSE, message = FALSE, , fig.height=3, fig.width=4, fig.cap='Different types of visualisation according to the data type used'>>=
 
 # Define a consistent color palette
 my_palette <- viridis(4)
@@ -305,7 +305,8 @@ plot1 <- ggplot(nominal_data, aes(fill = gender, y = tendency, x = 1)) +
   geom_bar(stat = "identity") +
   labs(title = "Gender Categories", x = NULL, y = "Percentage") +
   scale_fill_manual(values = my_palette) +
-  theme(axis.text.x = element_blank(), 
+  theme(plot.title = element_text(size = 10), 
+        axis.text.x = element_blank(), 
         axis.ticks = element_blank())   # Remove axis ticks
 
 
@@ -320,7 +321,7 @@ ordinal_data <- data.frame(
 plot2 <- ggplot(ordinal_data, aes(x = reorder(satisfaction_level, -count), y = count)) +
   geom_bar(stat = "identity", fill = my_palette[2]) +
   labs(title = "Customer Satisfaction Levels", x = NULL, y = "Count") +
-  theme_minimal()
+  theme(plot.title = element_text(size = 10)) 
 
 # Generate interval data (temperature)
 interval_data <- data.frame(
@@ -332,7 +333,7 @@ interval_data <- data.frame(
 plot3 <- ggplot(interval_data, aes(x = time, y = temperature)) +
   geom_line(linewidth = 0.7, color = my_palette[1]) +
   labs(title = "Temperature Variation", x = "Time", y = "Temperature (°C)") +
-  theme_minimal()
+  theme(plot.title = element_text(size = 10))
 
 # Load necessary libraries
 library(ggplot2)
@@ -346,7 +347,7 @@ income_data <- data.frame(
 plot4 <-ggplot(income_data, aes(x = income)) +
   geom_histogram(binwidth = 5000, fill = my_palette[3], color = my_palette[3], alpha = 0.5) +
   labs(title = "Income Distribution", x = "Income", y = "Frequency") +
-  theme_minimal()
+  theme(plot.title = element_text(size = 10))
 
 # Arrange plots in a 2x2 grid
 grid.arrange(plot1, plot2, plot3, plot4, ncol = 2)
@@ -490,10 +491,7 @@ In data visualisation, achieving a balance between complexity and cognitive load
 To reduce cognitive load while maintaining complexity in data visualisation, several strategies can be employed. Firstly, \textbf{establishing a clear visual hierarchy} using size, color, and contrast helps direct attention to crucial elements. Additionally, \textbf{simplifying labels and text} by avoiding unnecessary complexity ensures information is clear and easily digestible.\\
 \noindent Furthermore, \textbf{employing interactive features} like tooltips and drill-down functionality assists in providing additional information when required, reducing the density of static visualisations. A final approach involves the use of \textbf{progressive disclosure}, presenting complex information gradually, beginning with an overview and allowing users to explore details as needed.\\
 
-<<cogload-plot, echo=FALSE, fig.height=3, fig.width=10, fig.cap='High vs low cognitive load demand through the reduction of visual complexity'>>=
-
-# Load a sample dataset (e.g., iris dataset)
-data(iris)
+<<cogload-plot, echo=FALSE, fig.height=3, fig.width=6, fig.cap='High vs low cognitive load demand through the reduction of visual complexity'>>=
 
 # Create a cluttered plot with obscure axis labels and labels on all points
 cluttered_plot <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = as.numeric(row.names(iris)), shape = Species, label = rownames(iris))) +
@@ -510,7 +508,7 @@ cluttered_plot <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = as
 # Create a clear and simple plot
 clear_plot <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
   geom_point(size = 2) +
-  scale_color_manual(values = c("setosa" = "grey", "versicolor" = "grey", "virginica" = "red")) + 
+  scale_color_manual(values = c("setosa" = "grey", "versicolor" = "grey", "virginica" = "#b2182b")) + 
   labs(title = "Low Visual Complexity",
        x = "Sepal Length",
        y = "Sepal Width",

@@ -10,8 +10,8 @@
 \contentsline {subsubsection}{\numberline {2.2.2}Matching Data Types with Appropriate Visualisation Techniques}{10}{subsubsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.3}Data Abstraction and Representation}{11}{subsection.2.3}%
 \contentsline {subsubsection}{\numberline {2.3.1}Data Abstraction: Transforming Raw Data}{11}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}Hierarchies and Levels of Abstraction}{12}{subsubsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.4}Visual Perception and Cognition}{13}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.3.2}Hierarchies and Levels of Abstraction}{11}{subsubsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.4}Visual Perception and Cognition}{12}{subsection.2.4}%
 \contentsline {subsubsection}{\numberline {2.4.1}The Gestalt Principles}{13}{subsubsection.2.4.1}%
 \contentsline {subsection}{\numberline {2.5}Colour Theory in Data Visualisation}{13}{subsection.2.5}%
 \contentsline {subsection}{\numberline {2.6}Cognitive Load and Visual Complexity}{14}{subsection.2.6}%
