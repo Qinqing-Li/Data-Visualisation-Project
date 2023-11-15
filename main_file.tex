@@ -763,14 +763,14 @@ The formula for calculating the bubble size (\(S\)) often involves applying a li
 S = k \cdot \sqrt{V},
 \]
 
-\\Where \(S\) represents the size of the bubble, \(V\) the value of the variable being represented, and \(k\) is a scaling factor to control the bubble size.\\
+\\\noident Where \(S\) represents the size of the bubble, \(V\) the value of the variable being represented, and \(k\) is a scaling factor to control the bubble size.\\
 
 \noindent
 Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the proportionality between the bubble size and the variable being represented.\\
 
 \noindent
-\textbf{Bubble Charts in Practice}
-This bubble chart visualises data from the same dataset as above. It depicts the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and color-coding the bubbles based on the number of cylinders (cyl).
+\textbf{Bubble Charts in Practice}\\
+\noident The bubble chart shown in Figure~\ref{fig:buble-plot-chunk} visualises data from the same dataset as above. It depicts the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and color-coding the bubbles based on the number of cylinders (cyl).\\
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
@@ -782,10 +782,7 @@ This bubble chart visualises data from the same dataset as above. It depicts the
 
 \end{knitrout}
 
-\textbf{Analysis of the bubble chart}\\
-
-\noindent XXX
-
+\noindent The bubble plot reveals a clear pattern: as cylinder count increases, so does horsepower, but at the expense of lower fuel efficiency. Contrary to expectations, cars with fewer cylinders, despite lower horsepower, demonstrate better fuel economy, positioned higher on the graph. Meanwhile, vehicles with more cylinders, often associated with higher performance, cluster lower, indicating lower fuel efficiency. This plot highlights the trade-off between horsepower, cylinder count, and fuel efficiency, challenging the assumption that more cylinders equate to better performance, emphasising the significance of considering fuel economy in car selection.
 
 \subsection{Heatmaps, correlation matrix and AIC score}
 

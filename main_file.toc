@@ -10,8 +10,8 @@
 \contentsline {subsubsection}{\numberline {2.2.2}Matching Data Types with Appropriate Visualisation Techniques}{10}{subsubsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.3}Data Abstraction and Representation}{11}{subsection.2.3}%
 \contentsline {subsubsection}{\numberline {2.3.1}Data Abstraction: Transforming Raw Data}{11}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}Hierarchies and Levels of Abstraction}{11}{subsubsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.4}Visual Perception and Cognition}{12}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.3.2}Hierarchies and Levels of Abstraction}{12}{subsubsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.4}Visual Perception and Cognition}{13}{subsection.2.4}%
 \contentsline {subsubsection}{\numberline {2.4.1}The Gestalt Principles}{13}{subsubsection.2.4.1}%
 \contentsline {subsection}{\numberline {2.5}Colour Theory in Data Visualisation}{13}{subsection.2.5}%
 \contentsline {subsection}{\numberline {2.6}Cognitive Load and Visual Complexity}{14}{subsection.2.6}%
@@ -32,8 +32,8 @@
 \contentsline {subsubsection}{\numberline {3.2.1}Scatter Plots}{20}{subsubsection.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2}Simple linear regression}{21}{subsubsection.3.2.2}%
 \contentsline {subsubsection}{\numberline {3.2.3}Bubble Charts}{24}{subsubsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.3}Heatmaps, correlation matrix and AIC score}{25}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Heatmaps - Fire in Brazil}{26}{subsubsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3}Heatmaps, correlation matrix and AIC score}{26}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Heatmaps - Fire in Brazil}{27}{subsubsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.4}Line Charts and Time Series Visualisation}{29}{subsection.3.4}%
 \contentsline {subsection}{\numberline {3.5}Network Graphs}{34}{subsection.3.5}%
 \contentsline {subsubsection}{\numberline {3.5.1}The Mathematics behind Network Graphs:}{35}{subsubsection.3.5.1}%

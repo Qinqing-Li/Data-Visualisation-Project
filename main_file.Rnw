@@ -289,7 +289,7 @@ Data types can be broadly categorised into four main types:
 \subsubsection{Matching Data Types with Appropriate Visualisation Techniques}
 Selecting appropriate visualisation techniques is essential for effective data communication. Various data types demand specific visualisation methods for optimal representation. For \textbf{nominal data}, bar charts and stacked bar charts are effective in displaying categorical information and relative proportions. \textbf{Ordinal data} benefits from ordered bar charts, dot plots, or stacked bar charts, maintaining the ranking and order of categories. \textbf{Interval data} is best visualised using line charts, histograms, and box plots, showcasing trends and distributions without assuming a true zero point. \textbf{Ratio data} finds effective representation through scatter plots, histograms, and line charts, enabling precise comparisons and measurements due to the presence of a meaningful zero point.
 
-<<data-plots, echo=FALSE, message = FALSE, fig.height=4, fig.width=6, fig.cap='Different types of visualisation according to the data type used'>>=
+<<data-plots, echo=FALSE, message = FALSE, size = "scriptsize", fig.height=5, fig.width=6, fig.cap='Different types of visualisation according to the data type used'>>=
 
 # Define a consistent color palette
 my_palette <- viridis(4)
@@ -305,7 +305,10 @@ plot1 <- ggplot(nominal_data, aes(fill = gender, y = tendency, x = 1)) +
   geom_bar(stat = "identity") +
   labs(title = "Gender Categories", x = NULL, y = "Percentage") +
   scale_fill_manual(values = my_palette) +
-  theme_minimal()
+  theme(axis.text.x = element_blank(), 
+        axis.ticks = element_blank())   # Remove axis ticks
+
+
 
 # Generate ordinary data (customer satisfaction)
 ordinal_data <- data.frame(
@@ -818,7 +821,7 @@ Modelwt <- lm(formula = mpg ~ wt, data = mtcars)
 summary(Modelwt)
 @
 
-<<scatter-plot, echo=FALSE, fig.height=2, fig.width=4, fig.cap='Scatter plot of car weights vs MPG', message=FALSE>>=
+<<scatter-plot, echo=FALSE, fig.height=3, fig.width=4, fig.cap='Scatter plot of car weights vs MPG', message=FALSE>>=
 # Create a scatter plot of car weight vs MPG from mtcars dataset
 library(ggplot2)
 ggplot(data = mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
@@ -866,14 +869,14 @@ The formula for calculating the bubble size (\(S\)) often involves applying a li
 S = k \cdot \sqrt{V},
 \]
 
-\\Where \(S\) represents the size of the bubble, \(V\) the value of the variable being represented, and \(k\) is a scaling factor to control the bubble size.\\
+\\\noident Where \(S\) represents the size of the bubble, \(V\) the value of the variable being represented, and \(k\) is a scaling factor to control the bubble size.\\
 
 \noindent
 Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the proportionality between the bubble size and the variable being represented.\\
 
 \noindent
-\textbf{Bubble Charts in Practice}
-This bubble chart visualises data from the same dataset as above. It depicts the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and color-coding the bubbles based on the number of cylinders (cyl).
+\textbf{Bubble Charts in Practice}\\
+\noident The bubble chart shown in Figure~\ref{fig:buble-plot-chunk} visualises data from the same dataset as above. It depicts the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and color-coding the bubbles based on the number of cylinders (cyl).\\
 
 <<buble-plot-chunk, echo=FALSE, fig.height=5, fig.width=10, fig.caption='Bubble plot illustrating the relationship between car models and miles per gallon'>>=
 #Create bubble plot 
@@ -891,10 +894,7 @@ ggplot(mtcars, aes(x = rownames(mtcars), y = mpg, size = hp, color = cyl)) +
   theme(axis.text.x = element_text(angle = 90, hjust =1))
 @
 
-\textbf{Analysis of the bubble chart}\\
-
-\noindent XXX
-
+\noindent The bubble plot reveals a clear pattern: as cylinder count increases, so does horsepower, but at the expense of lower fuel efficiency. Contrary to expectations, cars with fewer cylinders, despite lower horsepower, demonstrate better fuel economy, positioned higher on the graph. Meanwhile, vehicles with more cylinders, often associated with higher performance, cluster lower, indicating lower fuel efficiency. This plot highlights the trade-off between horsepower, cylinder count, and fuel efficiency, challenging the assumption that more cylinders equate to better performance, emphasising the significance of considering fuel economy in car selection.
 
 \subsection{Heatmaps, correlation matrix and AIC score}
 
