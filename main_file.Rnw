@@ -559,7 +559,6 @@ barchart_plot2 <- ggplot(filtered_data, aes(x = factor(dose), y = len, fill = su
   labs(x = "Dose (mg/day)", y = "Tooth Length (mm)", fill = "Supplement") +
   theme_minimal()
 
-# 保存图形
 ggsave("barcharts.pdf", plot = grid.arrange(barchart_plot1, barchart_plot2, ncol = 2), width = 10, height = 3)
 @
 
@@ -587,11 +586,11 @@ Now, we want to create a better graph with ggplot2 thanks to the \texttt{geom\_h
   \centering
   \begin{minipage}[b]{0.48\linewidth}
 <<hist2, echo=FALSE, fig.height=4, fig.width=5, out.width='\\linewidth'>>=
- #Create a histogram using ggplot2 for Sepal Length in the Iris dataset
+ # Create a histogram using ggplot2 for Sepal Length in the Iris dataset
 bar_diagram <- ggplot(iris, aes(x = Sepal.Length)) +
   geom_histogram(
     binwidth = 0.2,  # Adjust the box width to 0.2 for smaller data sets
-    fill = "grey", 
+    fill = "grey"
   ) +
   labs(
     x = "Sepal Length (cm)",
@@ -599,9 +598,7 @@ bar_diagram <- ggplot(iris, aes(x = Sepal.Length)) +
   ) +
   theme_minimal()
 print(bar_diagram)
-@  
-      \caption{Histogram of Sepal Length in Iris Dataset}
-    \label{fig:hist2}
+@
   \end{minipage}
   \hfill
   \begin{minipage}[b]{0.48\linewidth}
@@ -610,22 +607,22 @@ print(bar_diagram)
 kde_diagram <- ggplot(iris, aes(x = Sepal.Length)) +
   geom_density(
     fill = "grey",
-    color=NA,
+    color = NA,
     alpha = 0.5,  # Adjust the transparency for better visualisation
     adjust = 1  # This parameter can be used to control the smoothness
   ) +
   labs(
-    x = "Sepal Length/cm",
+    x = "Sepal Length (cm)",
     y = "Density"
   ) +
   theme_minimal()
 print(kde_diagram)
-@ 
-    \caption{Kernel Density Estimation of Sepal Length in Iris Dataset}
-    \label{fig:kde3}
+@
   \end{minipage}
-\end{figure} 
-  
+  \caption{Histogram and Kernel Density Estimation of Sepal Length in Iris Dataset}
+  \label{fig:iris-plots}
+\end{figure}
+
 
 \subsubsection{Kernel Density Estimation}
 
