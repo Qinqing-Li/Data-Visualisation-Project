@@ -21,8 +21,8 @@
 \contentsline {subsection}{\numberline {3.1}Bar Charts and Histograms}{16}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}Bar Charts}{16}{subsubsection.3.1.1}%
 \contentsline {subsubsection}{\numberline {3.1.2}Histograms}{17}{subsubsection.3.1.2}%
-\contentsline {subsubsection}{\numberline {3.1.3}Kernel Density Estimation}{17}{subsubsection.3.1.3}%
-\contentsline {subsection}{\numberline {3.2}Scatter Plots and Bubble Charts}{18}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.1.3}Kernel Density Estimation}{18}{subsubsection.3.1.3}%
+\contentsline {subsection}{\numberline {3.2}Scatter Plots and Bubble Charts}{19}{subsection.3.2}%
 \contentsline {subsubsection}{\numberline {3.2.1}Scatter Plots}{19}{subsubsection.3.2.1}%
 \contentsline {subsubsection}{\numberline {3.2.2}Simple linear regression}{19}{subsubsection.3.2.2}%
 \contentsline {subsubsection}{\numberline {3.2.3}Bubble Charts}{22}{subsubsection.3.2.3}%

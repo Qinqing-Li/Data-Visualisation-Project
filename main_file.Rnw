@@ -545,44 +545,23 @@ The disadvantages of bar charts include limited suitability for large datasets, 
 
 The bar chart depicts the relationship between tooth growth and different dosages of a vitamin, measured in milligrams per day. On the X-axis, three distinct levels of vitamin dosage are presented, while the Y-axis indicates the average tooth growth for each dosage. A key observation from the chart is a noticeable trend where increasing vitamin dosages correlate with increased tooth growth, suggesting that higher vitamin doses may enhance tooth growth.
 
-\begin{figure}[htbp]
-  \centering
-  \begin{minipage}[b]{0.45\linewidth}
-    <<barchart2, echo=FALSE, fig.height=4, fig.width=6, out.width='\\linewidth'>>=
-    # Screening data included only data with dose 0.5, 1, and 2
-    data(ToothGrowth)
-    filtered_data <- ToothGrowth %>% filter(dose %in% c(0.5, 1, 2))
-    # Create a grouping bar chart and adjust the position of the columns
-    ggplot(filtered_data, aes(x = factor(dose), y = len, fill = supp)) +
-      geom_bar(stat = "identity", position = position_dodge(width = 0.7)) +
-      labs(
-        x = "Dose (mg/day)",
-        y = "Tooth Length (mm)",
-        fill = "Supplement"
-      ) +
-      theme_minimal()
-    @
-    \caption{Tooth Growth by Dose and Supplement (grouping bar chart)}
-    \label{fig:barchart2}
-  \end{minipage}
-  \hfill
-  \begin{minipage}[b]{0.45\linewidth}
-    <<barchart3, echo=FALSE, fig.height=4, fig.width=6, out.width='\\linewidth'>>=
-    filtered_data <- ToothGrowth %>% filter(dose %in% c(0.5, 1, 2))
-    # Create a stacked bar chart
-    ggplot(filtered_data, aes(x = factor(dose), y = len, fill = supp)) +
-      geom_bar(stat = "identity", position = "stack") +
-      labs(
-        x = "Dose (mg/day)",
-        y = "Tooth Length (mm)",
-        fill = "Supplement"
-      ) +
-      theme_minimal()
-    @
-    \caption{Tooth Growth by Dose and Supplement (stacked bar chart)}
-    \label{fig:barchart3}
-  \end{minipage}
-\end{figure}
+<<barcharts, echo=FALSE, fig.height=3, fig.width=10, fig.cap='Visualizing Tooth Growth by Dosage: A Comparison of Grouped and Stacked Bar Chart Techniques'>>=
+data(ToothGrowth)
+filtered_data <- ToothGrowth %>% filter(dose %in% c(0.5, 1, 2))
+
+barchart_plot1 <- ggplot(filtered_data, aes(x = factor(dose), y = len, fill = supp)) +
+  geom_bar(stat = "identity", position = position_dodge(width = 0.9)) +
+  labs(x = "Dose (mg/day)", y = "Tooth Length (mm)", fill = "Supplement") +
+  theme_minimal()
+
+barchart_plot2 <- ggplot(filtered_data, aes(x = factor(dose), y = len, fill = supp)) +
+  geom_bar(stat = "identity", position = "stack") +
+  labs(x = "Dose (mg/day)", y = "Tooth Length (mm)", fill = "Supplement") +
+  theme_minimal()
+
+# 保存图形
+ggsave("barcharts.pdf", plot = grid.arrange(barchart_plot1, barchart_plot2, ncol = 2), width = 10, height = 3)
+@
 
 The bar chart referenced as fig:barchart2 in the document illustrates the impact of varying vitamin dosages on tooth growth, further categorized by supplement type (supp). It shows three distinct dosage levels (0.5, 1, and 2 mg/day) on the X-axis and tooth growth length on the Y-axis, representing the average growth for both supplements at each dosage. The chart highlights that tooth growth, as indicated by the total height of each bar, varies not only with the dosage but also with the supplement type, suggesting a need for closer analysis to understand the relative effectiveness of each supplement at different dosages.
 
