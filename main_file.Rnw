@@ -52,9 +52,14 @@ opts_chunk$set(fig.path = 'figure/beamer-',
 
 \section{Introduction}
 
-\subsection{Motivation and Background}
-
-\textbf{Motivations for having Data Visualisations - Case Example 1}\\
+\subsection{Historical Background and Misuses of Data Visualisation}
+\\Effective data visualisation is crucial for both exploratory data analysis and data communication. visualisations provide insight into data attributes, assisting data scientists in constructing models and addressing questions of interest. The field of data visualisation is covered in numerous method-specific publications, with one notable example being the \href{https://www.tandfonline.com/journals/ucgs20}{Journal of Computational and Graphical Statistics}. This journal publishes research on the latest techniques in computational and graphical methods in statistics, encompassing data analysis and numerical graphical displays. \href{https://www.sciencedirect.com/journal/spatial-statistics}{Spatial Statistics} publishes articles on the theory and application of spatial and spatio-temporal statistics, and \href{https://journal.r-project.org}{The R Journal} publishes research articles in statistical computing that are of interest to R users.
+\\  
+\\Many exceptional design-oriented data visualisations are showcased on \href{https://informationisbeautiful.net/}{Information is Beautiful} by David McCandless. Meanwhile, \href{https://flowingdata.com/}{FlowingData} is a blog on data visualisation and statistics by statistician Nathan Yau.
+\\  
+\\Below, an overview of the historical background is presented, accompanied by case examples of the misuses of data visualisation.
+\\  
+\\\textbf{Motivations for having Data Visualisations - Case Example 1}\\
 
 \noindent
 Florence Nightingale was not only a social reformer and the founder of modern nursing but also a pioneering statistician. It was her application of data visualisation during the Crimean War that transformed the field of healthcare and pushed for social reform.\\  
@@ -1153,12 +1158,12 @@ cowplot::plot_grid(combined_plot, p2_legend, nrow=1, rel_widths = c(2, 0.5))
 \end{figure}
 
 \noindent
-The first plot in Figure~\ref{fig:all exchange rates} presents a comparative visualization of daily exchange rates for CNY, CAD, EUR, HKD, and USD against GBP, offering an overview of their trends and relative performance. This plot enables the identification of overall trends and periods of volatility for each currency pair, allowing for an assessment of their stability and strength relative to GBP. Usually, the long term trend attracts financial analyst most. Therefore, filtering fluctuations and anomalies is important. Then, a 49-day moving average (MA49) was employed, shown in the second plot of Figure~\ref{fig:all exchange rates}, to elucidate long-term trends while mitigating short-term fluctuations. This is mathematically represented as 
+The first plot in Figure~\ref{fig:all exchange rates} presents a comparative visualisation of daily exchange rates for CNY, CAD, EUR, HKD, and USD against GBP, offering an overview of their trends and relative performance. This plot enables the identification of overall trends and periods of volatility for each currency pair, allowing for an assessment of their stability and strength relative to GBP. Usually, the long term trend attracts financial analyst most. Therefore, filtering fluctuations and anomalies is important. Then, a 49-day moving average (MA49) was employed, shown in the second plot of Figure~\ref{fig:all exchange rates}, to elucidate long-term trends while mitigating short-term fluctuations. This is mathematically represented as 
 \[\text{MA}_{49}(t) = \frac{1}{49} \sum_{k=t-48}^{t} x_k,\] 
 where \( x_k \) denotes the exchange rate on day $k$.\\
 
 \noindent
-This method effectively filters out daily noise, allowing a clearer view of overarching trends in currency movements against the GBP. The overlay of these moving averages on the daily exchange rates in visualizations provides both a clear comparative and a quantitative perspective.\\
+This method effectively filters out daily noise, allowing a clearer view of overarching trends in currency movements against the GBP. The overlay of these moving averages on the daily exchange rates in visualisations provides both a clear comparative and a quantitative perspective.\\
 
 \noindent
 \textbf{Decomposition of Time Series}\\
