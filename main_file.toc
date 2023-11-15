@@ -1,52 +1,50 @@
-\contentsline {section}{\numberline {1}Introduction}{3}{section.1}
-\contentsline {subsection}{\numberline {1.1}Motivation and Background}{3}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}Computing and Data Visualisation}{6}{subsection.1.2}
-\contentsline {subsection}{\numberline {1.3}Datasets}{7}{subsection.1.3}
-\contentsline {subsection}{\numberline {1.4}Structure and Organisation of the Thesis}{8}{subsection.1.4}
-\contentsline {section}{\numberline {2}Theoretical Foundations of Data Visualisation}{9}{section.2}
-\contentsline {subsection}{\numberline {2.1}Introduction to Data Visualisation Theory}{9}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Visual Perception and Cognition}{10}{subsection.2.2}
-\contentsline {subsubsection}{\numberline {2.2.1}The Gestalt Principles}{10}{subsubsection.2.2.1}
-\contentsline {subsection}{\numberline {2.3}Data Abstraction and Representation}{10}{subsection.2.3}
-\contentsline {subsubsection}{\numberline {2.3.1}Data Abstraction: Transforming Raw Data}{10}{subsubsection.2.3.1}
-\contentsline {subsubsection}{\numberline {2.3.2}Hierarchies and Levels of Abstraction}{10}{subsubsection.2.3.2}
-\contentsline {subsection}{\numberline {2.4}Data Types and Visualisation Techniques}{11}{subsection.2.4}
-\contentsline {subsubsection}{\numberline {2.4.1}Categorisation of Data Types}{12}{subsubsection.2.4.1}
-\contentsline {subsubsection}{\numberline {2.4.2}Matching Data Types with Appropriate Visualisation Techniques}{12}{subsubsection.2.4.2}
-\contentsline {subsection}{\numberline {2.5}Colour Theory in Data Visualisation}{12}{subsection.2.5}
-\contentsline {subsection}{\numberline {2.6}Theoretical Properties of Visualisations}{13}{subsection.2.6}
-\contentsline {subsubsection}{\numberline {2.6.1}Data-Ink Ratio and the Principle of Minimal Ink}{14}{subsubsection.2.6.1}
-\contentsline {subsection}{\numberline {2.7}Cognitive Load and Visual Complexity}{14}{subsection.2.7}
-\contentsline {subsubsection}{\numberline {2.7.1}Strategies to Reduce Cognitive Load While Maintaining Complexity}{14}{subsubsection.2.7.1}
-\contentsline {subsubsection}{\numberline {2.7.2}Information Overload and Simplification Techniques}{15}{subsubsection.2.7.2}
-\contentsline {section}{\numberline {3}Modern Methods of Data Visualisation}{16}{section.3}
-\contentsline {subsection}{\numberline {3.1}Bar Charts and Histograms}{16}{subsection.3.1}
-\contentsline {subsubsection}{\numberline {3.1.1}Bar Charts}{16}{subsubsection.3.1.1}
-\contentsline {subsubsection}{\numberline {3.1.2}Different Types of Bar Charts}{16}{subsubsection.3.1.2}
-\contentsline {paragraph}{Vertical Bar Chart}{16}{section*.2}
-\contentsline {paragraph}{Horizontal Bar Chart}{16}{section*.3}
-\contentsline {paragraph}{Multi-set Bar Chart}{16}{section*.4}
-\contentsline {paragraph}{Stacked bar chart}{17}{section*.5}
-\contentsline {subsubsection}{\numberline {3.1.3}ToothGrowth Dataset}{17}{subsubsection.3.1.3}
-\contentsline {subsubsection}{\numberline {3.1.4}Histograms}{18}{subsubsection.3.1.4}
-\contentsline {subsubsection}{\numberline {3.1.5}Kernel Density Estimation}{19}{subsubsection.3.1.5}
-\contentsline {subsection}{\numberline {3.2}Scatter Plots and Bubble Charts}{20}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}Scatter Plots}{20}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}Simple linear regression}{21}{subsubsection.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.3}Bubble Charts}{25}{subsubsection.3.2.3}
-\contentsline {subsection}{\numberline {3.3}Heatmaps, correlation matrix and AIC score}{27}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Heatmaps - Fire in Brazil}{27}{subsubsection.3.3.1}
-\contentsline {subsection}{\numberline {3.4}Line Charts and Time Series Visualisation}{30}{subsection.3.4}
-\contentsline {subsection}{\numberline {3.5}Network Graphs}{35}{subsection.3.5}
-\contentsline {subsubsection}{\numberline {3.5.1}The Mathematics behind Network Graphs:}{36}{subsubsection.3.5.1}
-\contentsline {subsubsection}{\numberline {3.5.2}Network Graphs in Practice}{36}{subsubsection.3.5.2}
-\contentsline {subsection}{\numberline {3.6}Geographic Maps and Spatial Data Visualisation}{37}{subsection.3.6}
-\contentsline {subsection}{\numberline {3.7}3D and Interactive Visualisations}{40}{subsection.3.7}
-\contentsline {section}{\numberline {4}Trees Dataset in R}{41}{section.4}
-\contentsline {subsection}{\numberline {4.1}Advanced Visualisation Techniques}{41}{subsection.4.1}
-\contentsline {section}{\numberline {5}Practical Implementations}{41}{section.5}
-\contentsline {section}{\numberline {6}Case Studies}{41}{section.6}
-\contentsline {subsection}{\numberline {6.1}Market Analysis Dashboards}{41}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}Healthcare Data Visualisation}{42}{subsection.6.2}
-\contentsline {section}{\numberline {7}State-of-the-Art Approaches}{42}{section.7}
-\contentsline {section}{\numberline {8}Conclusion}{42}{section.8}
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Motivation and Background}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Computing and Data Visualisation}{6}{subsection.1.2}%
+\contentsline {subsection}{\numberline {1.3}Datasets}{7}{subsection.1.3}%
+\contentsline {subsection}{\numberline {1.4}Structure and Organisation of the Thesis}{8}{subsection.1.4}%
+\contentsline {section}{\numberline {2}Theoretical Foundations of Data Visualisation}{9}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Introduction to Data Visualisation Theory}{9}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Data Types and Visualisation Techniques}{10}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Categorisation of Data Types}{10}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Matching Data Types with Appropriate Visualisation Techniques}{10}{subsubsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.3}Data Abstraction and Representation}{11}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Data Abstraction: Transforming Raw Data}{11}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Hierarchies and Levels of Abstraction}{11}{subsubsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.4}Visual Perception and Cognition}{12}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}The Gestalt Principles}{13}{subsubsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.5}Colour Theory in Data Visualisation}{13}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Cognitive Load and Visual Complexity}{14}{subsection.2.6}%
+\contentsline {subsubsection}{\numberline {2.6.1}Strategies to Reduce Cognitive Load While Maintaining Complexity}{14}{subsubsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.2}Information Overload and Simplification Techniques}{15}{subsubsection.2.6.2}%
+\contentsline {section}{\numberline {3}Modern Methods of Data Visualisation}{16}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Bar Charts and Histograms}{16}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Bar Charts}{16}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Different Types of Bar Charts}{16}{subsubsection.3.1.2}%
+\contentsline {paragraph}{Vertical Bar Chart}{16}{section*.2}%
+\contentsline {paragraph}{Horizontal Bar Chart}{16}{section*.3}%
+\contentsline {paragraph}{Multi-set Bar Chart}{16}{section*.4}%
+\contentsline {paragraph}{Stacked bar chart}{17}{section*.5}%
+\contentsline {subsubsection}{\numberline {3.1.3}ToothGrowth Dataset}{17}{subsubsection.3.1.3}%
+\contentsline {subsubsection}{\numberline {3.1.4}Histograms}{18}{subsubsection.3.1.4}%
+\contentsline {subsubsection}{\numberline {3.1.5}Kernel Density Estimation}{19}{subsubsection.3.1.5}%
+\contentsline {subsection}{\numberline {3.2}Scatter Plots and Bubble Charts}{20}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Scatter Plots}{20}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Simple linear regression}{21}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Bubble Charts}{24}{subsubsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.3}Heatmaps, correlation matrix and AIC score}{26}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Heatmaps - Fire in Brazil}{26}{subsubsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.4}Line Charts and Time Series Visualisation}{29}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Network Graphs}{34}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}The Mathematics behind Network Graphs:}{35}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Network Graphs in Practice}{35}{subsubsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.6}Geographic Maps and Spatial Data Visualisation}{36}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}3D and Interactive Visualisations}{39}{subsection.3.7}%
+\contentsline {section}{\numberline {4}Trees Dataset in R}{40}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Advanced Visualisation Techniques}{40}{subsection.4.1}%
+\contentsline {section}{\numberline {5}Practical Implementations}{40}{section.5}%
+\contentsline {section}{\numberline {6}Case Studies}{40}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Market Analysis Dashboards}{40}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Healthcare Data Visualisation}{41}{subsection.6.2}%
+\contentsline {section}{\numberline {7}State-of-the-Art Approaches}{41}{section.7}%
+\contentsline {section}{\numberline {8}Conclusion}{41}{section.8}%

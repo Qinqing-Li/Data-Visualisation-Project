@@ -219,19 +219,16 @@ Chapter 4: ``Practical Implementation" ventures into the practical application o
 
 \newpage 
 
-\section{Theoretical Foundations of Data Visualisation}
 
+\section{Theoretical Foundations of Data Visualisation}
 This chapter, ``Theoretical Foundations of Data Visualisation," delves into the core principles and concepts that serve as the base of this field. We seek to understand not only the ``how" but also the ``why" behind the creation of visualisations that captivate and inform.
 
 \subsection{Introduction to Data Visualisation Theory}
-
 Creating effective data visualisations requires a robust theoretical framework underlying every chart, graph, or plot. These theoretical underpinnings not only form the basis of data visualisation but also influence how we represent, perceive, understand, and interpret data.\\ 
 
-\noindent 
-\textbf{Guiding Principles for Data Representation}\\
+\noindent \textbf{Guiding Principles for Data Representation}\\
+The theoretical framework of data visualisation involves guiding principles dictating visual representation of data. These principles include \textbf{accuracy}, emphasizing faithful reflection of underlying data to reduce distortion or misinterpretation; \textbf{simplicity}, advocating for streamlined visuals to convey information effectively; \textbf{clarity}, ensuring visuals are easily understood without unnecessary complexity; \textbf{relevance}, presenting information pertinent to the message or question addressed; and \textbf{consistency}, maintaining uniform use of visual elements like color coding and labeling throughout a visualisation.\\
 
-\noindent
-The theoretical framework of data visualisation involves guiding principles dictating visual representation of data. These principles include \textbf{accuracy}, emphasizing faithful reflection of underlying data to reduce distortion or misinterpretation; \textbf{simplicity}, advocating for streamlined visuals to convey information effectively; \textbf{clarity}, ensuring visuals are easily understood without unnecessary complexity; \textbf{relevance}, presenting information pertinent to the message or question addressed; and \textbf{consistency}, maintaining uniform use of visual elements like color coding and labeling throughout a visualisation.
 
 \begin{figure}[htbp]
   \centering
@@ -263,50 +260,54 @@ The theoretical framework of data visualisation involves guiding principles dict
 \caption{Comparison of visualisations of the distribution of sepal and petal legth across three flower species ignoring (right), and adhering (left) to the Guiding Principles}
 \end{figure}
 
-\noindent 
-\textbf{Theoretical Framework and Visual Perception}\\
 
-\noindent
-Understanding how the human brain processes visual information is a fundamental aspect of data visualisation theory. This knowledge plays a crucial role in designing visualisations that effectively connect with viewers. It encompasses several key considerations which will be studied in order: the Gestalt Principles, which encompass proximity, similarity, and continuity, affecting how visual elements are grouped and interpreted; Color Theory, involving the strategic use of color contrasts and harmonies to improve clarity and impact; and the management of Cognitive Load, which emphasizes the importance of reducing mental effort needed to process information.\\
+\noindent \textbf{Theoretical Framework and Visual Perception}\\
+Understanding how the human brain processes visual information is a fundamental aspect of data visualisation theory. This knowledge plays a crucial role in designing visualisations that effectively connect with viewers. It encompasses several key considerations which will be studied in order: the Gestalt Principles, which encompass proximity, similarity, and continuity, affecting how visual elements are grouped and interpreted; Color Theory, involving the strategic use of color contrasts and harmonies to improve clarity and impact; and the management of Cognitive Load, which emphasises the importance of reducing mental effort needed to process information.\\
 
-\subsection{Visual Perception and Cognition}
 
-In this first section, human visual perception is explored, along with the application of cognitive psychology principles in data visualisation and highlight the crucial role of pre-attentive attributes in shaping our perception of data.\\ 
+\subsection{Data Types and Visualisation Techniques}
+To have a discussion about data representation, understanding the nature of the data is key. Data comes in various types, and selecting the appropriate visualisation technique is contingent upon recognising these distinctions. In this section, the data types are categorised and matched with their suitable visualisation techniques.
 
-\noindent 
-\textbf{Human Visual Perception: Decoding Visual Information}\\
+\subsubsection{Categorisation of Data Types}
+Data types can be broadly categorised into four main types: 
+\begin{itemize}
+    \item \textbf{Nominal data}: represents categories or labels without any inherent order. Examples include colours, gender categories, and city names. 
+    \item \textbf{Ordinal data}: implies a meaningful order or ranking among categories but lacks equal intervals between them. Examples include survey responses (eg. “very satisfied”, “satisfied”, “neutral”, “dissatisfied”, “very dissatisfied”)
+    \item \textbf{Interval data}: possesses ordered categories with equal intervals between them, but it lacks a true zero point. Temperature is measured in Celsius or Fahrenheit as an example. 
+    \item \textbf{Ratio data}: includes ordered categories with equal intervals and a meaningful zero point. Examples are age, income, and weight. 
+\end{itemize}
 
-\noindent
-Human visual perception, a remarkable cognitive process, profoundly influences our understanding of the surrounding world. When applied to data visualisation, it elucidates how individuals engage with and derive meaning from visual data representations. Significant aspects of human visual perception within data visualisation encompass \textbf{pattern recognition}, adept at identifying trends, outliers, and relationships in data representations. Additionally, \textbf{perceptual grouping}, where visually similar elements are grouped together, influences the interpretation of data clusters and shapes. Moreover, the \textbf{hierarchy of perception} dictates that certain visual attributes are processed more swiftly and effectively than others, such as color being processed faster than text, influencing the viewer's attention hierarchy.\\
+\subsubsection{Matching Data Types with Appropriate Visualisation Techniques}
+Selecting appropriate visualisation techniques is essential for effective data communication. Various data types demand specific visualisation methods for optimal representation. For \textbf{nominal data}, bar charts and stacked bar charts are effective in displaying categorical information and relative proportions. \textbf{Ordinal data} benefits from ordered bar charts, dot plots, or stacked bar charts, maintaining the ranking and order of categories. \textbf{Interval data} is best visualised using line charts, histograms, and box plots, showcasing trends and distributions without assuming a true zero point. \textbf{Ratio data} finds effective representation through scatter plots, histograms, and line charts, enabling precise comparisons and measurements due to the presence of a meaningful zero point.
 
-\noindent
-By harnessing the principles of human visual perception, applying insights from cognitive psychology, and leveraging pre-attentive attributes, data visualisation designers can create visualisations that are not only aesthetically pleasing but also cognitively efficient.	
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
 
-\subsubsection{The Gestalt Principles}
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-data-plots-1} 
 
-The Gestalt principles play an important role in the realm of visual perception and design. In this discussion, the focus is placed on their relevance to data visualisation and strategies for creating more effective visualisations. Key Gestalt principles crucial in shaping visual information perception include proximity, which groups related elements, \textbf{similarity} that links similar attributes, \textbf{continuity} aiding trend representation, \textbf{closure} for implying connections, and \textbf{symmetry} for balance and aesthetics in visualisations.
+}
+
+\caption[Different types of visualisation according to the data type used]{Different types of visualisation according to the data type used}\label{fig:data-plots}
+\end{figure}
+
+\end{knitrout}
 
 
 \subsection{Data Abstraction and Representation}
-
-The transformation of raw data into meaningful representations is a pivotal step in data visualisation. This process, known as data abstraction, involves distilling complex datasets into visual forms that convey insights. In this section, we explore data abstraction, the hierarchies and levels of abstraction in data visualisation, and the critical trade-offs between abstraction and the potential loss of information.
+The transformation of raw data into meaningful representations is a pivotal step in data representation. This process, known as data abstraction, involves distilling complex datasets into visual forms that convey insights. In this section, we explore data abstraction, the hierarchies and levels of abstraction in data visualisation, and the critical trade-offs between abstraction and the potential loss of information.
 
 \subsubsection{Data Abstraction: Transforming Raw Data}
-
 Data abstraction involves simplifying and structuring raw data into comprehensible and insightful formats. This process serves as the bridge, transforming numbers, text, and variables into visual elements that convey patterns, trends, and relationships, forming the core of informative data visualisations.
 
 \subsubsection{Hierarchies and Levels of Abstraction}
-
-In data visualisation, abstraction operates on multiple levels of granularity. Hierarchies of abstraction allow us to represent data at varying levels of detail:
-
+Abstraction operates on multiple levels of granularity. Hierarchies of abstraction allow us to represent data at varying levels of detail: 
 \begin{enumerate}
     \item \textbf{Low-Level Abstraction}: At the lowest level, raw data is preserved in its most detailed form. This might include individual data points, measurements, or unprocessed text.
-    \item \textbf{Mid-Level Abstraction}: As we move up the hierarchy, data is grouped or aggregated to provide a broader overview. For example, hourly data points may be aggregated into daily or weekly averages.
+    \item \textbf{Mid-Level Abstraction}: At the mid-level, data is grouped or aggregated to provide a broader overview. For example, hourly data points may be aggregated into daily or weekly averages.
     \item \textbf{High-Level Abstraction}: At the highest level, data is represented in a condensed and abstracted form, often as summary statistics or key insights. This level provides a big-picture view.
 \end{enumerate}
 
-\noindent
-This is represented in Figure~\ref{fig:abs-plots}. The first visualisations of the mtcars dataset is a scatter plot that provides detailed information about the relationship between car weight and miles per gallon, with points colored by the number of cylinders. The second is an abstractvisualisation using a box-and-whisker plot to provide a high-level summary of the distribution of miles per gallon for different numbers of cylinders. Finally, the third visualisation is a bar plot presenting aggregated information about the average miles per gallon for different numbers of cylinders.
+These are represented in Figure~\ref{fig:abs-plots}. The first visualisations of the mtcars dataset is a scatter plot that provides detailed information about the relationship between car weight and miles per gallon, with points colored by the number of cylinders. The second is an abstract visualisation using a box-and-whisker plot to provide a high-level summary of the distribution of miles per gallon for different numbers of cylinders. Finally, the third visualisation is a bar plot presenting aggregated information about the average miles per gallon for different numbers of cylinders.
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
@@ -320,50 +321,33 @@ This is represented in Figure~\ref{fig:abs-plots}. The first visualisations of t
 
 \end{knitrout}
 
-\noindent 
-\textbf{Trade-offs Between Abstraction and Information Loss}\\
+\noindent \textbf{Trade-offs Between Abstraction and Information Loss}\\
+While abstraction simplifies complex data, it presents trade-offs. Designers of data visualisation must strike a balance between clarity and detail, generalisation and specificity, and context versus precision. Abstraction increases clarity but may sacrifice crucial detailed information necessary for some analytical tasks. It offers a more generalised view accessible to a wider audience but might overlook specific nuances essential for experts. While providing valuable context, high-level abstraction may lack the precision required for precise decision-making.\\ 
 
-\noindent
-While abstraction simplifies complex data, it presents trade-offs. Designers of data visualisation must strike a balance between clarity and detail, generalization and specificity, and context versus precision. Abstraction increases clarity but may sacrifice crucial detailed information necessary for some analytical tasks. It offers a more generalized view accessible to a wider audience but might overlook specific nuances essential for experts. While providing valuable context, high-level abstraction may lack the precision required for precise decision-making.\\
-
-\noindent
 In data visualisation, the art of data abstraction lies in finding the right level of detail that effectively conveys the intended message while minimising the risk of information loss. This balancing act is a critical consideration in the design of informative and meaningful data visualisations.
 
+\subsection{Visual Perception and Cognition}
+In this first section, human visual perception is explored, along with the application of cognitive psychology principles in data visualisation.\\ 
 
-\subsection{Data Types and Visualisation Techniques}
+\noindent \textbf{Human Visual Perception: Decoding Visual Information}\\
+Human visual perception profoundly influences our understanding of the surrounding world. When applied to data visualisation, it shapes the way that individuals engage with and derive meaning from visual data representations.\\
 
-In the world of data visualisation, understanding the nature of your data is key. Data comes in various types, and selecting the appropriate visualisation technique is contingent upon recognising these distinctions. In this section, we categorise data types, and demonstrate how to match each data type with suitable visualisation techniques.
+Significant aspects of human visual perception within data visualisation encompass \textbf{pattern recognition}, adept at identifying trends, outliers, and relationships in data representations. Additionally, \textbf{perceptual grouping}, where visually similar elements are grouped together, influences the interpretation of data clusters and shapes. Moreover, the \textbf{hierarchy of perception} dictates that certain visual attributes are processed more swiftly and effectively than others, such as color being processed faster than text, influencing the viewer's attention hierarchy.
 
-\subsubsection{Categorisation of Data Types}
+\subsubsection{The Gestalt Principles}
+Furthermore, the Gestalt Principles XXXCITEXXX play an important role in the realm of visual perception and design. Key Gestalt principles crucial in shaping visual information perception include proximity, which groups related elements, \textbf{similarity} that links similar attributes, \textbf{continuity} aiding trend representation, \textbf{closure} for implying connections, and \textbf{symmetry} for balance and aesthetics in visualisations.\\
 
-Data types can be broadly categorised into four main types: 
+By harnessing the principles of human visual perception, applying insights from cognitive psychology, and leveraging pre-attentive attributes, data visualisation designers can create visualisations that are not only aesthetically pleasing but also cognitively efficient.	
 
-\begin{itemize}
-    \item \textbf{Nominal data}: nominal data represents categories or labels without any inherent order. Examples include colours, gender categories, and city names. 
-    \item \textbf{Ordinal data}: ordinal data implies a meaningful order or ranking among categories but lacks equal intervals between them. Examples include survey responses (eg. “very satisfied”, “satisfied”, “neutral”, “dissatisfied”, “very dissatisfied”)
-    \item \textbf{Interval data}: interval data possesses ordered categories with equal intervals between them, but it lacks a true zero point. Temperature is measured in Celsius or Fahrenheit as an example. 
-    \item \textbf{Ratio data}: ratio data includes ordered categories with equal intervals and a meaningful zero point. Examples are age, income, and weight. 
-\end{itemize}
-
-\subsubsection{Matching Data Types with Appropriate Visualisation Techniques}
-
-Selecting appropriate visualisation techniques is essential for effective data communication. Various data types demand specific visualisation methods for optimal representation. For nominal data, bar charts and stacked bar charts are effective in displaying categorical information and relative proportions. Ordinal data benefits from ordered bar charts, dot plots, or stacked bar charts, maintaining the ranking and order of categories. Interval data is best visualised using line charts, histograms, and box plots, showcasing trends and distributions without assuming a true zero point. Ratio data finds effective representation through scatter plots, histograms, and line charts, enabling precise comparisons and measurements due to the presence of a meaningful zero point.
 
 \subsection{Colour Theory in Data Visualisation}
+In this section, the significance of colour in data visualisation, the principles of colour perception and encoding, and the importance of avoiding misleading visualisations through thoughtful colour choices are explored.\\
 
-Here, we explore the significance of colour in data visualisation, the principles of colour perception and encoding, and the importance of avoiding misleading visualisations through thoughtful colour choices.\\
+\noindent \textbf{The Importance of Colour in Conveying Information}\\
+Colour significantly enhances the impact and comprehension of data visualisations. It serves multiple purposes: distinguishing data points, emphasising trends, and offering contextual information. It is utilised to encode categorical data, differentiating between various groups with distinct colours, and to represent quantitative data by using colour intensity or gradients to portray values or magnitudes. Additionally, color is instrumental in adding context to visualisations through background elements, labels, or annotations, imparting meaning to the data.\\
 
-\noindent 
-\textbf{The Importance of Colour in Conveying Information}\\
-
-\noindent
-Color significantly enhances the impact and comprehension of data visualisations. It serves multiple purposes: distinguishing data points, emphasizing trends, and offering contextual information. It is utilized to encode categorical data, differentiating between various groups with distinct colors, and to represent quantitative data by utilizing color intensity or gradients to portray values or magnitudes. Additionally, color is instrumental in adding context to visualisations through background elements, labels, or annotations, imparting meaning to the data.\\
-
-\noindent 
-\textbf{Colour Perception and Colour Encoding in Visualisations}\\
-
-\noindent
-Understanding color perception in data visualisation is crucial. Key principles involve considering color discrimination, ensuring accessibility for individuals with color vision deficiencies, as is illustrated by figure~\ref{fig:colour-plot}. Careful selection of color schemes aligned with the intended message is essential—for instance, using warm colors like red and orange to indicate caution or warmth, and cool colors like blue and green to convey calmness or coldness. Additionally, attention should be paid to how colors interact when combined; certain combinations might create visual vibrations or impact text legibility.\\
+\noindent \textbf{Colour Perception and Colour Encoding in Visualisations}\\
+Understanding color perception in data visualisation is crucial. Key principles involve considering color discrimination, ensuring accessibility for individuals with color vision deficiencies, as is illustrated by Figure~\ref{fig:colour-plot}. Careful selection of color schemes aligned with the intended message is essential—for instance, using warm colours like red and orange to indicate caution or warmth, and cool colours like blue and green to convey calmness or coldness. Additionally, attention should be paid to how colours interact when combined; certain combinations might create visual vibrations or impact text legibility, as was the case in the right plot of Figure~\ref{fig:messygraph}.\\
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
@@ -377,56 +361,33 @@ Understanding color perception in data visualisation is crucial. Key principles 
 
 \end{knitrout}
 
-\noindent 
-\textbf{Avoiding Misleading Visualisations Due to Colour Choices}\\
-Misleading visualisations often stem from inappropriate or deceptive use of color, requiring precautions to prevent such occurrences. First, maintaining consistency in color usage throughout the visualisation is essential. Employing a uniform color scheme for similar data categories or elements helps establish coherence and understanding. Furthermore, it's crucial to avoid color choices that could distort or exaggerate the data. Overly intense or contrasting colors might mislead interpretations, emphasizing the necessity for judicious color selection.\\
-Additionally, providing a clear and concise legend becomes imperative to explain the meaning of colors, especially when dealing with complex or unfamiliar color schemes. A comprehensive legend helps viewers decipher the represented data accurately. User testing stands as another crucial step in the process. Conducting thorough user testing ensures that the chosen color palette effectively conveys the intended message without confusion or misleading the audience. This step validates the visual interpretation and aids in making necessary adjustments to enhance clarity and accuracy in data representation.
+\noindent \textbf{Avoiding Misleading Visualisations Due to Colour Choices}\\
+Misleading visualisations often stem from inappropriate or deceptive use of colour, requiring precautions to prevent such occurrences. First, maintaining consistency in colour usage throughout the visualisation is essential. Employing a uniform colour scheme for similar data categories or elements helps establish coherence and understanding. Furthermore, it's crucial to avoid colour choices that could distort or exaggerate the data. Overly intense or contrasting colours might mislead interpretations, emphasising the necessity for judicious colour selection.\\
+Additionally, providing a clear and concise legend becomes imperative to explain the meaning of colours, especially when dealing with complex or unfamiliar colour schemes. A comprehensive legend helps viewers decipher the represented data accurately.\\
 
-\subsection{Theoretical Properties of Visualisations}
-Effective data visualisation extends beyond aesthetically pleasing graphics; it involves adhering to crucial theoretical properties that enhance expressiveness, precision, accuracy, and scalability in visual representations. This section examines key properties such as expressiveness, effectiveness, the data-ink ratio, principles of minimal ink, as well as precision, accuracy, and scalability.\\
-
-\noindent
-To begin with, we'll define the key concepts that frame this section:
-
-\begin{itemize}
-    \item \textbf{Expressiveness}: Visualisations should be expressive, meaning they should effectively communicate the intended message or insights within the data. Expressive visualisations capture the richness and complexity of the underlying data, revealing patterns, trends, and relationships.
-    \item \textbf{Effectiveness}: An effective visualisation is one that successfully conveys information to its audience. It allows viewers to understand the data, draw meaningful conclusions, and make informed decisions based on the presented information.
-\end{itemize}
-
-\subsubsection{Data-Ink Ratio and the Principle of Minimal Ink} 
-
-This \textbf{Data-Ink Ratio principle}, introduced by Edward Tufte, emphasises maximising the ink (or pixels in digital formats) used to represent the actual data while minimising non-essential ink. A higher data-ink ratio results in a cleaner, more efficient visualisation that reduces clutter and enhances comprehension.\\
-
-\noindent
-The \textbf{Principle of Minimal Ink} builds on the data-ink ratio. This principle advocates for the removal of any visual elements that do not contribute to the viewer's understanding of the data. Eliminating unnecessary ink (e.g., excessive gridlines or decorations) simplifies the visualisation without sacrificing its effectiveness.\\
-
-\noindent 
-\textbf{Precision, Accuracy, and Scalability}\\
-
-\noindent
-The concepts that can be mobilised in order to comply by these principles are precision, accuracy, and scalability. Specifically in the context of data visualisation, precision involves striking a balance between presenting sufficient detail for accurate interpretation while avoiding overwhelming complexity. Accuracy is also vital as its role is ensuring faithful representation of true data values to prevent misleading conclusions. Scalability addresses a visualisation's adaptability to varying data sizes and resolutions, demanding the capability to represent both small and large datasets without compromising clarity or performance.
 
 \subsection{Cognitive Load and Visual Complexity}
-In data visualisation, achieving a balance between complexity and cognitive load is crucial. This section explores the concept of cognitive load in visualisations, strategies to reduce cognitive load while maintaining complexity, and techniques to combat information overload through simplification.\\
-
-\noindent 
-\textbf{Exploring the Concept of Cognitive Load in Visualisations}\\
-
-\noindent
-In data visualisations, cognitive load significantly influences how viewers engage with and comprehend presented data. Striking a balance is crucial to effectively convey information without overwhelming the viewer's cognitive capacity.
+In data visualisation, achieving a balance between complexity and cognitive load is crucial. Cognitive load significantly influences how viewers engage with and comprehend presented data. Finding a balance is crucial to effectively convey information without overwhelming the viewer's cognitive capacity. This section explores the concept of cognitive load in visualisations, strategies to reduce cognitive load while maintaining complexity, and techniques to combat information overload through simplification.\\
 
 \subsubsection{Strategies to Reduce Cognitive Load While Maintaining Complexity}
+To reduce cognitive load while maintaining complexity in data visualisation, several strategies can be employed. Firstly, \textbf{establishing a clear visual hierarchy} using size, color, and contrast helps direct attention to crucial elements. Additionally, \textbf{simplifying labels and text} by avoiding unnecessary complexity ensures information is clear and easily digestible.\\
+\noindent Furthermore, \textbf{employing interactive features} like tooltips and drill-down functionality assists in providing additional information when required, reducing the density of static visualisations. A final approach involves the use of \textbf{progressive disclosure}, presenting complex information gradually, beginning with an overview and allowing users to explore details as needed.\\
 
-To reduce cognitive load while maintaining complexity in data visualisation, several strategies can be employed. Firstly, establishing a clear visual hierarchy using size, color, and contrast helps direct attention to crucial elements. Additionally, simplifying labels and text by avoiding unnecessary complexity and jargon ensures information is clear and easily digestible. Employing interactive features like tooltips and drill-down functionality assists in providing additional information when required, reducing the density of static visualisations. Another approach involves the use of progressive disclosure, presenting complex information gradually, beginning with an overview and allowing users to explore details as needed. Lastly, considering data aggregation where appropriate can help summarize information and alleviate the cognitive load associated with interpreting intricate details.\\
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
 
-\noindent
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-cogload-plot-1} 
 
-These strategies aim to maintain complexity while lessening the cognitive burden on viewers by directing attention effectively, simplifying content, offering interactive elements, gradually revealing information, and summarizing data where feasible.
+}
+
+\caption[High vs low cognitive load demand through the reduction of visual complexity]{High vs low cognitive load demand through the reduction of visual complexity}\label{fig:cogload-plot}
+\end{figure}
+
+\end{knitrout}
+
 
 \subsubsection{Information Overload and Simplification Techniques}
-
-Addressing information overload in visualisations necessitates the strategic application of simplification techniques. Filtering enables focused data selection, while data reduction aggregates information to highlight overarching trends. Storyboarding structures data presentation, aiding in contextual comprehension, and prioritization ensures critical information is prominently displayed, elevating the visualisation's clarity and impact. These strategies collectively combat overwhelming data or excessive visual elements, enhancing comprehension and the effective communication of insights to viewers.
-
+Addressing information overload in visualisations necessitates the strategic application of simplification techniques. Filtering enables focused data selection, while data reduction aggregates information to highlight overarching trends. Storyboarding structures data presentation, aiding in contextual comprehension, and prioritisation ensures critical information is prominently displayed, elevating the visualisation's clarity and impact. These strategies collectively combat overwhelming data or excessive visual elements, enhancing comprehension and the effective communication of insights to viewers.
 
 \newpage
 
@@ -613,8 +574,6 @@ In general, \(Y\) denotes the response variable and \(X\) denotes the explanator
 \noindent
 Here, \(n\) is the number of observations in the set.\\
 
-\noindent
-The mathematical interest of dot plots lies in their ability to provide a simple visual representation of data distribution, center, and spread. While they don't rely on complex equations or statistical principles, dot plots make it easy to observe important characteristics of data, such as the mode, median, variance, skewness and outliers. \\
 
 \subsubsection{Simple linear regression}
 \\Regression models are statistical tools that provide functions to estimate the relationship between the response variable and one or more explanatory variables. Regression analysis is widely adopted by data scientists, who use large datasets to build predictive models for trend forecasting. The fol- lowing paragraphs will introduce simple linear regression models and demonstrate their usage using the mtcars dataset.
@@ -729,9 +688,7 @@ $$\hat{\beta} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}.$$
 \noindent
 \\For the simple linear regression model, the response variable is Miles per Gallon (mpg), and we select weight (wt) as the explanatory variable. Note that mpg and wt are highly correlated, with a correlation coefficient of -0.868. This suggests that wt may have strong predictive power for mpg. Use the R function \texttt{lm()} to calculate the linear regression model, with the summary displayed below.
 \noindent
-\\Observe that the t-test yields a p-value of $1.29 \times 10^{-10}$, which is less than $0.001$. This indicates that the variable wt holds high statistical significance in this model. For the fitted model, the slope is $\beta_1 = -5.3445$, meaning that for every increase of 1000 lbs, the car efficiency decreases by 5 miles per gallon.
-\noindent
-\\The simple linear regression line is displayed in Figure~\ref{fig:scatter-plot}.
+\\Observe that the t-test yields a p-value of $1.29 \times 10^{-10}$, which is less than $0.001$. This indicates that the variable wt holds high statistical significance in this model. For the fitted model, the slope is $\beta_1 = -5.3445$, meaning that for every increase of 1000 lbs, the car efficiency decreases by 5 miles per gallon. The simple linear regression line is displayed in Figure~\ref{fig:scatter-plot}.\\
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
@@ -781,19 +738,8 @@ $$\hat{\beta} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}.$$
     \label{fig:codeshoot}
 \end{figure}
 \noindent
-\\The procedure for selecting the best-fitted linear regression model using the \texttt{step()} algorithm is shown in Appendix A, where our best-fitted model is \texttt{formula = mpg \textasciitilde wt + qsec + am}. Given 10 explanatory variables, Miles per Gallon is best predicted by weight (wt), quarter-mile time (qsec), and Transmission (am), where 0 represents automatic and 1 represents manual.\\
+The procedure for selecting the best-fitted linear regression model using the \texttt{step()} algorithm is shown in Appendix A, where our best-fitted model is \texttt{formula = mpg \textasciitilde wt + qsec + am}. Given 10 explanatory variables, Miles per Gallon is best predicted by weight (wt), quarter-mile time (qsec), and Transmission (am), where 0 represents automatic and 1 represents manual.\\
 \noindent
-\textbf{Analysis of the scatter plot}\\
-
-\noindent
-For detailed procedure of this AIC algorithm, using \texttt{summary(ModelBest)}, please see the output in \ref{sec:codechunk1}.
-\noindent
-Figure~\ref{fig:scatter-plot}, provides insights into the relationship between cars' weight and their MPG, with the added dimension of color-coded cylinders.Particularly it visually highlights and make accessible to the viewer features of the data set, that would otherwise go unnoticed. These are some of the following elements: 
-
-\begin{itemize}
-    \item \textbf{Clustering}: The scatter plot reveals distinct clustering of data points, highlighting specific patterns within the dataset. Cars with four cylinders (color "grey") are predominantly clustered in the lower weight and higher MPG region, representing smaller and more fuel-efficient vehicles. In contrast, cars with eight cylinders (color "blue") tend to be clustered in the higher weight and lower MPG area, indicating larger and less fuel-efficient cars. The identification of this clustering aids iAIC algorithmn visualising how the number of cylinders influences the trade-off between weight and fuel efficiency.
-    \item \textbf{Linear Regression Line}: The regression line provides a visual representation of the overall relationship between car weight and fuel efficiency.If the line has a positive slope, it indicates that as car weight increases, MPG decreases. Conversely, a negative slope suggests that heavier cars tend to have higher MPG. The steepness of the line represents the strength of this relationship. In this case, the reed regression line indicates a negative correlation—cars tend to have lower fuel efficiency as their weight increases.
-\end{itemize}
 
 \subsubsection{Bubble Charts}
 Bubble charts are a captivating data visualisation tool that extends beyond the typical two-dimensional scatter plot by introducing an extra dimension. They represent data points as bubbles or circles on a two-dimensional plane, where the size of each bubble encodes a third variable. This technique enhances data visualisation by facilitating the exploration of multivariate data and uncovering patterns that may be hidden in traditional scatter plots.\\
@@ -805,10 +751,7 @@ Bubble charts are a captivating data visualisation tool that extends beyond the 
 Bubble charts excel in scenarios where three key variables need to be conveyed simultaneously. The x-axis and y-axis represent two variables, as in a standard scatter plot, while the size of the bubble encodes a third variable, often a quantitative one. This allows for the visualisation of relationships between three variables in a single, intuitive graphic.\\
 
 \noindent
-For instance, in economics, bubble charts can illustrate economic indicators, with the x-axis showing time, the y-axis displaying GDP growth, and the bubble size representing a related factor like population or inflation.\\
-
-\noindent
-\textbf{Mathematical Intricacies}\\
+\textbf{Mathematical Intricacies of Bubble Charts}\\
 
 \noindent
 The mathematical intricacies of constructing bubble charts involve scaling the data values to determine the size of each bubble accurately. The size of the bubble is typically proportional to the square root of the variable it represents. The choice of scaling method depends on the data distribution and the message the chart aims to convey.\\
@@ -817,40 +760,20 @@ The mathematical intricacies of constructing bubble charts involve scaling the d
 The formula for calculating the bubble size (\(S\)) often involves applying a linear or nonlinear scaling function:
 
 \[
-S = k \cdot \sqrt{V}
+S = k \cdot \sqrt{V},
 \]
 
-Where:
-\begin{itemize}
-\item \(S\) is the size of the bubble,
-\item \(V\) is the value of the variable being represented, and
-\item \(k\) is a scaling factor to control the bubble size.
-\end{itemize}
+Where \(S\) represents the size of the bubble, \(V\) the value of the variable being represented, and \(k\) is a scaling factor to control the bubble size.
 
+\noindent
 Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the proportionality between the bubble size and the variable being represented.\\
 
 \noindent
 \textbf{Bubble Charts in Practice}
- This bubble plot visualises data from the same dataset as above. The purpose of this plot is to depict the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and color-coding the bubbles based on the number of cylinders (cyl).
+This bubble chart visualises data from the same dataset as above. It depicts the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and color-coding the bubbles based on the number of cylinders (cyl).
 
 \begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlcom{#Create bubble plot }
-\hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{rownames}\hlstd{(mtcars),} \hlkwc{y} \hlstd{= mpg,} \hlkwc{size} \hlstd{= hp,} \hlkwc{color} \hlstd{= cyl))} \hlopt{+}
-  \hlkwd{geom_point}\hlstd{()} \hlopt{+}
-  \hlkwd{labs}\hlstd{(}
-    \hlkwc{x} \hlstd{=} \hlstr{"Car Models"}\hlstd{,}
-    \hlkwc{y} \hlstd{=} \hlstr{"Miles per Gallon"}\hlstd{,}
-    \hlkwc{size} \hlstd{=} \hlstr{"Horsepower (hp)"}\hlstd{,}
-    \hlkwc{color} \hlstd{=} \hlstr{"Cylinders (cyl)"}
-  \hlstd{)} \hlopt{+}
-  \hlkwd{scale_size_continuous}\hlstd{(}\hlkwc{range} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{3}\hlstd{,} \hlnum{10}\hlstd{))} \hlopt{+}
-  \hlkwd{scale_color_gradient}\hlstd{(}\hlkwc{low} \hlstd{=} \hlstr{"lightblue"}\hlstd{,} \hlkwc{high} \hlstd{=} \hlstr{"darkblue"}\hlstd{)} \hlopt{+}
-  \hlkwd{theme_minimal}\hlstd{()} \hlopt{+}
-  \hlkwd{theme}\hlstd{(}\hlkwc{axis.text.x} \hlstd{=} \hlkwd{element_text}\hlstd{(}\hlkwc{angle} \hlstd{=} \hlnum{90}\hlstd{,} \hlkwc{hjust} \hlstd{=}\hlnum{1}\hlstd{))}
-\end{alltt}
-\end{kframe}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
 {\centering \includegraphics[width=\maxwidth]{figure/beamer-buble-plot-chunk-1} 
 
@@ -861,15 +784,7 @@ Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the 
 
 \textbf{Analysis of the bubble chart}\\
 
-\noindent
-The plot's title, axis labels, and legends provide context and clarity to the visualisation, making it accessible and informative. Additionally, the choice of a gradient color scale for the number of cylinders enhances the visual appeal and aids in interpreting the data.This bubble plot allows for quick comparisons between multiple characteristics of different car models.The resulting bubble plot effectively conveys several key insights:
-
-\begin{enumerate}
-\item \textbf{Car Model vs. MPG}: The x-axis displays the car models, offering a clear representation of each vehicle in the dataset. The bubble plot is particularly useful for displaying nominal data, such as car model names, as it allows easy identification and comparison.
-\item \textbf{Miles per Gallon (MPG)}: The y-axis measures miles per gallon, representing the fuel efficiency of each car model. Higher bubbles indicate better fuel efficiency. This variable, which is continuous, is positioned vertically to demonstrate how each car model's fuel efficiency relates to others.
-\item \textbf{Horsepower (HP)}: The size of each bubble represents the car's horsepower (hp). Larger bubbles correspond to higher horsepower, providing an additional dimension to the data. The size encoding helps identify more powerful cars.
-\item \textbf{Cylinders (Cyl)}: The color of each bubble is determined by the number of cylinders (cyl) in the car's engine. The color scheme adds a categorical aspect to the visualisation, making it easy to differentiate between cars with different cylinder counts.
-\end{enumerate}
+\noindent XXX
 
 
 \subsection{Heatmaps, correlation matrix and AIC score}
