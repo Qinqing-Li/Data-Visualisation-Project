@@ -447,7 +447,7 @@ The KDE algorithm takes a parameter, bandwidth, that affects how “smooth” th
 \noindent
 We can express KDE as follows,where the K represent the kernel function:
 $$\hat{f}(x) = \sum_{\text{observations}} K\left(\frac{x - \text{observation}}{\text{bandwidth}}\right),$$
-$$\hat{f}(x) = \frac{1}{nh} \sum_{i=1}^{n} K\left(\frac{x - x_i}{h}\right)$$\\
+$$\hat{f}(x) = \frac{1}{nh} \sum_{i=1}^{n} K\left(\frac{x - x_i}{h}\right).$$\\
 The kernel function \( K(u) \) is a normalised non-negative function that satisfies:
 \[ \int K(u) \, du = 1. \]
 
@@ -528,6 +528,7 @@ where $\mathbf{1}_n$ is an n-vector of 1's.
 \end{pmatrix} = \sigma^2 \mathbf{I}_n.
 \]
 \\  
+\\
 \noindent
 \textbf{Least Squares Estimation}
 \\ \noindent
@@ -650,7 +651,6 @@ The formula for calculating the bubble size (\(S\)) often involves applying a li
 S = k \cdot \sqrt{V},
 \]
 
-\\
 \noident where \(S\) represents the size of the bubble, \(V\) the value of the variable being represented, and \(k\) is a scaling factor to control the bubble size.\\
 
 \noindent
@@ -658,7 +658,7 @@ Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the 
 
 \noindent
 \textbf{Bubble Charts in Practice}\\
-\noident The bubble chart shown in Figure~\ref{fig:bubble-plot} visualises data from the same dataset as above. It depicts the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and color-coding the bubbles based on the number of cylinders (cyl).\\
+\noident The bubble chart shown in the following figure~\ref{fig:bubble-plot} visualises data from the same dataset as above. It depicts the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and color-coding the bubbles based on the number of cylinders (cyl).\\
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
@@ -983,8 +983,9 @@ This persistent autocorrelation suggests that short-term movements in the CNY to
 
 \bibliographystyle{plain} % Choose a style that suits your needs
 \bibliography{reference} % The filename of your .bib file
-\\  
-\\  
+ 
+
+\newpage
 {\Large \textbf{Appendix A}}
 \begin{verbatim}
 Start:  AIC=70.9
