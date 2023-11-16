@@ -77,9 +77,9 @@
 \section{Introduction}
 
 \subsection{Historical Background and Misuses of Data Visualisation}
-\\Effective data visualisation is crucial for both exploratory data analysis and data communication. visualisations provide insight into data attributes, assisting data scientists in constructing models and addressing questions of interest. The field of data visualisation is covered in numerous method-specific publications, with one notable example being the \href{https://www.tandfonline.com/journals/ucgs20}{Journal of Computational and Graphical Statistics}. This journal publishes research on the latest techniques in computational and graphical methods in statistics, encompassing data analysis and numerical graphical displays. \href{https://www.sciencedirect.com/journal/spatial-statistics}{Spatial Statistics} publishes articles on the theory and application of spatial and spatio-temporal statistics, and \href{https://journal.r-project.org}{The R Journal} publishes research articles in statistical computing that are of interest to R users.
+\\Effective data visualisation is crucial for both exploratory data analysis and data communication. Visualisations provide insight into data attributes, assisting data scientists in constructing models and addressing questions of interest. The field of data visualisation is covered in numerous method-specific publications, with one notable example being the \href{https://www.tandfonline.com/journals/ucgs20}{Journal of Computational and Graphical Statistics}. This journal publishes ongoing research on the latest techniques in computational and graphical methods in statistics, encompassing data analysis and numerical graphical displays. Moreover, \href{https://www.sciencedirect.com/journal/spatial-statistics}{Spatial Statistics} publishes articles on the theory and application of spatial and spatio-temporal statistics, and \href{https://journal.r-project.org}{The R Journal} publishes research articles in statistical computing that are of interest to R users. These together reveal the vast potential for current and future research in this ever-evolving domain, particularly as our digital landscape and data sphere expand at an accelerated pace.
 \\  
-\\Many exceptional design-oriented data visualisations are showcased on \href{https://informationisbeautiful.net/}{Information is Beautiful} by David McCandless. Meanwhile, \href{https://flowingdata.com/}{FlowingData} is a blog on data visualisation and statistics by statistician Nathan Yau.
+\\Furthermore, many exceptional design-oriented data visualisations are showcased on \href{https://informationisbeautiful.net/}{Information is Beautiful} by David McCandless. Meanwhile, \href{https://flowingdata.com/}{FlowingData} is a blog on data visualisation and statistics by statistician Nathan Yau.
 \\  
 \\Below, an overview of the historical background is presented, accompanied by case examples of the misuses of data visualisation.
 \\  
@@ -127,7 +127,10 @@ Known as the ``warming stripes," this chart cleverly employs blues to indicate c
 \textbf{Misuses of Data Visualisation - Case Example 1}\\
 
 \noindent
-Inappropriate datavisualisation conceals trends rather than revealing them. Figure~\ref{fig:misuse1} illustrates an instance of this issue. On the left-hand side, an inappropriate scale was used --- the y-scale ranging from 0 to 30 million dollars, obscuring the fluctuations in payroll spending. Conversely, on the right-hand side, observe that there's a significant increase of over 500,000 dollars in just two months. This revelation is substantial; considering inflation, 500,000 dollars in 1937 is worth well over 10 million dollars today\cite{worth}.
+Having observed the remarkable effectiveness of data visualisations, the significance of employing them correctly becomes apparent. The improper use of data visualisations holds the potential to significantly influence the public in misleading ways, resulting in undesired consequences.\\
+
+\noindent
+Inappropriate data visualisation can conceal trends rather than reveal them. Figure~\ref{fig:misuse1} illustrates an instance of this issue. On the left-hand side, an inappropriate scale is used - the y-scale ranging from 0 to 30 million dollars, obscuring the fluctuations in payroll spending. Conversely, on the right-hand side, observe that there's a significant increase of over 500,000 dollars in just two months. This revelation is substantial; considering inflation, 500,000 dollars in 1937 is worth well over 10 million dollars today\cite{worth}.
 
 \begin{figure}[H]
     \centering
@@ -140,7 +143,7 @@ Inappropriate datavisualisation conceals trends rather than revealing them. Figu
 \textbf{Misuses of Data Visualisation - Case Example 2}\\
 
 \noindent
-Data visualisation can be misused, leading to disastrous consequences. One striking example of such misuse is found in the Kallikak Family tree, which was one of the most prominent eugenic narratives of the 20th century.\\
+One striking example of data visualisation misuse is found in the Kallikak Family tree - one of the most prominent eugenic narratives of the 20th century.\\
 
 \noindent
 The visualisation (as shown in Figure~\ref{fig:familytree}) was created by the psychologist Henry Goddard and presented in his 1912 book, ``The Kallikak Family: A Study in the Heredity of Feeble-Mindedness." Goddard's narrative centered around Martin Kallikak, a soldier who, in addition to his marriage to a respected citizen, had a one-night stand with a ``feeble-minded" maid. Goddard believed that intellectual disabilities were inherited traits. In Goddard's account, the legitimate family was successful, while the children of the ``feeble-minded" maid were labeled as ``the lowest types of human beings." However, research has since revealed that the entire story was fictitious, as there was no record of the maid's existence\cite{fakedata}.\\
@@ -160,29 +163,28 @@ Case examples obtained from BBC Ideas\cite{bbcdatavis}.
 
 \subsection{Computing and Data Visualisation}
 
-In data visualisation, we mostly use ggplot as our useful tool to create so many greaet plots to represent our dataset. ggplot2 is based on the Grammar of Graphics, which simply means that you can draw each part of the graph first, and then add the parts together to form a complete graph.\\
+In data visualisation, ggplot is the main tool used to create different plots capable of representing various types of dataset. The foundation of ggplot2 lies in the Grammar of Graphics, allowing the sequential construction of individual elements composing a graph, which are subsequently combined to create a unified graphical representation.\\
 
 \noindent
-As we will explore in subsequent sections, we can achieve numerous visualisations effortlessly by utilizing data in R together with ggplot.
-When using ggplot2, the following objects are used repeatedly, Such as geom, scale, coord, aes, stat, theme labs and so on.\\
+As shown in subsequent sections, it is possible to achieve numerous visualisations rather effortlessly by utilising data in R, or even external data, together with ggplot.
+When using ggplot2, the certain objects are used repeatedly. Some of these are: geom, scale, coord, aes, stat, theme labs and so on.\\
 
-\noindent
-\textbf{\textit{``ggplot2: Elegant Graphics for Data Analysis''}} is a book written by Hadley Wickham, focused on teaching the use of the ggplot2 package in R for datavisualisation. The book thoroughly covers the principles, usage, and advanced techniques of ggplot2, making it an essential resource for learning and mastering this tool.\\
+\noindent \textbf{\textit{``ggplot2: Elegant Graphics for Data Analysis''}} is a book authored by Hadley Wickham, dedicated to instructing the usage of the ggplot2 package in R for data visualisation. It comprehensively covers the principles, application, and advanced techniques of ggplot2, serving as a crucial resource for mastering this tool.\\ç
 
-\noindent
-\textbf{geom} refers to Geometric Objects. Geometric objects are key components of ggplot2 and are used to define how data is visually represented in a plot. Each geom function corresponds to a specific type of graphical representation in a chart.\\
+\noindent Some of the key tools in R mobilised in the creation of visual plots from datasets emcompass:
 
-\noindent
-\textbf{Scales} map data to the aesthetic attributes of a graphic, such as color, size, and shape. In ggplot2, scale functions allow you to adjust the details of these mappings, such as the choice of colors, the format of labels, the layout of legends, and more.\\
+\begin{itemize}
+  \item \textbf{geom} refers to Geometric Objects, pivotal components within ggplot2 used to define the visual representation of data in a plot. Each geom function corresponds to a specific graphical representation type in a chart.
+  
+  \item \textbf{Scales} facilitate the mapping of data onto the aesthetic attributes of a graphic, such as color, size, and shape. In ggplot2, scale functions enable the adjustment of various mapping details, including color choices, label formatting, legend arrangement, and more.
+  
+  \item \textbf{Coord} addresses the mapping of data coordinates onto the plane of the graphic. It provides axes and gridlines to aid in interpreting the graph. Various coordinate systems like Cartesian, polar, and map projections are available.
+  
+  \item \textbf{Faceting} is a robust feature enabling the partitioning of a single plot into multiple plots based on factors present in the dataset. This functionality proves particularly beneficial for exploring and presenting data with multiple groups or categories.
+  
+  \item The \textbf{theme} function holds significance in customizing the non-data elements of plots. The theme system within ggplot2 allows precise adjustment of aesthetic aspects such as fonts, labels, legends, and background colors. This tool is essential for enhancing plot readability and creating visually captivating graphics tailored to specific audiences or publication requirements.
+\end{itemize}
 
-\noindent
-\textbf{Chord} talks about how data coordinates are mapped to the plane of the graphic. It provdes axis and gridlines to make it possible to read the graph. We can use Cartesian coordinate system, polar coordinates and map projections and so on.\\
-
-\noindent
-\textbf{Faceting} is a powerful feature that allows you to split one plot into multiple plots based on a factor (or factors) included in the dataset. This is particularly useful for exploring and presenting data that has multiple groups or categories.\\
-
-\noindent
-The \textbf{theme} function plays a crucial role in customizing the non-data components of your plots. The theme system in ggplot2 allows you to fine-tune the aesthetic details of your plot, such as fonts, labels, legends, and background colors. It is an essential tool for making your plots more readable and for creating visually appealing graphics that can be tailored to specific audiences or publication requirements.
 
 \subsection{Datasets}
 In this section, we unveil the datasets used throughout our study. This section delves into the comprehensive depiction of the diverse datasets employed. Each dataset is meticulously introduced, elucidating its source, structure, and relevance to our investigation.\\
@@ -226,7 +228,7 @@ Creating effective data visualisations requires a robust theoretical framework u
 The theoretical framework of data visualisation involves guiding principles dictating visual representation of data. These principles include \textbf{accuracy}, emphasizing faithful reflection of underlying data to reduce distortion or misinterpretation; \textbf{simplicity}, advocating for streamlined visuals to convey information effectively; \textbf{clarity}, ensuring visuals are easily understood without unnecessary complexity; \textbf{relevance}, presenting information pertinent to the message or question addressed; and \textbf{consistency}, maintaining uniform use of visual elements like color coding and labeling throughout a visualisation.\\
 
 \noindent \textbf{Theoretical Framework and Visual Perception}\\
-Understanding how the human brain processes visual information is a fundamental aspect of data visualisation theory \cite{dastani2002role}. This knowledge plays a crucial role in designing visualisations that effectively connect with viewers. It encompasses several key considerations which will be studied in order: the Gestalt Principles, which encompass proximity, similarity, and continuity, affecting how visual elements are grouped and interpreted; Color Theory, involving the strategic use of color contrasts and harmonies to improve clarity and impact; and the management of Cognitive Load, which emphasises the importance of reducing mental effort needed to process information.\\
+Understanding how the human brain processes visual information is a fundamental aspect of data visualisation theory. This knowledge plays a crucial role in designing visualisations that effectively connect with viewers. It encompasses several key considerations which will be studied in order: the Gestalt Principles, which encompass proximity, similarity, and continuity, affecting how visual elements are grouped and interpreted; Color Theory, involving the strategic use of color contrasts and harmonies to improve clarity and impact; and the management of Cognitive Load, which emphasises the importance of reducing mental effort needed to process information.\\
 
 \subsection{Data Types and Visualisation Techniques}
 To have a discussion about data representation, understanding the nature of the data is key. Data comes in various types, and selecting the appropriate visualisation technique is contingent upon recognising these distinctions. In this section, the data types are categorised and matched with their suitable visualisation techniques.
