@@ -59,9 +59,9 @@ opts_chunk$set(fig.path = 'figure/beamer-',
 \subsection{Historical Background and Misuses of Data Visualisation}
 \\Effective data visualisation is crucial for both exploratory data analysis and data communication. Visualisations provide insight into data attributes, assisting data scientists in constructing models and addressing questions of interest. The field of data visualisation is covered in numerous method-specific publications.
 \\
-\\ One notable example is the \href{https://www.tandfonline.com/journals/ucgs20}{Journal of Computational and Graphical Statistics}. This journal publishes ongoing research on the latest techniques in computational and graphical methods in statistics, encompassing data analysis and numerical graphical displays. Moreover, \href{https://www.sciencedirect.com/journal/spatial-statistics}{Spatial Statistics} publishes articles on the theory and application of spatial and spatio-temporal statistics, and \href{https://journal.r-project.org}{The R Journal} publishes research articles in statistical computing that are of interest to R users. These together reveal the vast potential for current and future research in this ever-evolving domain, particularly as our digital landscape and data sphere expand at an accelerated pace.
+\\ One notable publication is the \href{https://www.tandfonline.com/journals/ucgs20}{Journal of Computational and Graphical Statistics}. This journal publishes ongoing research on the latest techniques in computational and graphical methods in statistics, encompassing data analysis and numerical graphical displays. Moreover, \href{https://www.sciencedirect.com/journal/spatial-statistics}{Spatial Statistics} publishes articles on the theory and application of spatial and spatio-temporal statistics, and \href{https://journal.r-project.org}{The R Journal} publishes research articles in statistical computing that are of interest to R users. These together reveal the vast potential for current and future research in this ever-evolving domain, particularly as our digital landscape and data sphere expand at an accelerated pace.
 \\  
-\\Furthermore, many exceptional design-oriented data visualisations are showcased on \href{https://informationisbeautiful.net/}{Information is Beautiful} by David McCandless. Meanwhile, \href{https://flowingdata.com/}{FlowingData} is a blog on data visualisation and statistics by statistician Nathan Yau.
+\\There are exceptional design-oriented data visualisation websites including \href{https://informationisbeautiful.net/}{Information is Beautiful} by David McCandless, \href{https://flowingdata.com/}{FlowingData} by statistician Nathan Yau and \href{http://www.visualcomplexity.com/vc/}{Visual Complexity} showing complex and intricate data visualisations. These platforms offer visually compelling and informative content, catering to a broader audience with well-presented data visualisations.
 \\  
 \\\textbf{Motivations for having Data Visualisations - Case Example 1}\\
 
@@ -74,7 +74,7 @@ During the Crimean War, Nightingale recognised that unsanitary hospital conditio
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{image_reference/Nightingale-mortality.jpg}
-    \caption{``Diagram of the causes of mortality in the army in the East", in 1858 by Florence Nightingale\cite{wikiFN}}
+    \caption{``Diagram of the causes of mortality in the army in the East" (1858) by Florence Nightingale, a coloured pie chart to illustrate causes of death in the British Army \cite{graphFN}}
     \label{fig:coxcomb}
 \end{figure}
 
@@ -96,7 +96,7 @@ In 2018, Edward Hawkins was invited to deliver a lecture on climate change in Wa
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{image_reference/global.png}
-    \caption{``Latest global stripes (1850-2020)", by Edward Hawkins\cite{blog}}
+    \caption{Latest global stripes (1850-2020) by Edward Hawkins\cite{blog}}
     \label{fig:global}
 \end{figure}
 
@@ -134,7 +134,7 @@ Regrettably, the Kallikak family tree became a central element in the eugenics m
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{image_reference/familytree.jpg}
-    \caption{The Kallikak Family tree, in 1912 by Henry Goddard\cite{ktree}}
+    \caption{The Kallikak Family tree (1912) by Henry Goddard\cite{ktree}}
     \label{fig:familytree}
 \end{figure}
 
@@ -597,7 +597,7 @@ In general, \(Y\) denotes the response variable and \(X\) denotes the explanator
 \noindent where \(n\) is the number of observations in the set.\\
 
 
-\subsubsection{Simple linear regression}
+\subsubsection{Linear Regression}
 \\Regression models are statistical tools that provide functions to estimate the relationship between the response variable and one or more explanatory variables. Regression analysis is widely adopted by data scientists, who use large datasets to build predictive models for trend forecasting. The fol- lowing paragraphs will introduce simple linear regression models and demonstrate their usage using the mtcars dataset.
 \\  
 \\   
@@ -687,10 +687,7 @@ $$\hat{\beta} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}.$$
 \\In this section, we will study the performance of 1970s automobiles using the mtcars dataset, employing the method of linear regression. Performance is measured in Miles per Gallon (mpg); the higher the mileage, the more efficient the automobile. We will start with the visualisation of a simple linear regression model, followed by the discussion of linear regression models and the model selection method.
 
 \noindent
-\\In the preliminary stages of data exploration, calculating the correlation matrix is a crucial step before engaging in regression modeling. The correlation matrix provides valuable insights into the relationships between different variables in the dataset. This is also important for understanding multicollinearity issues, which occur when covariates are highly correlated.
-
-\noindent
-\\Multicollinearity implies that the effects of individual covariates become intertwined. This intertwining can lead to erratic changes in the coefficient estimates of the regression model in response to small changes in the data. The accuracy of the model’s predictions is undermined by the instability of coefficients\cite{multicoli}.\\
+\\In the preliminary stages of data exploration, calculating the correlation matrix is a crucial step before engaging in regression modeling. In real-world scenarios, variables are often correlated, and entirely independent relationships are seldom encountered. Therefore, analysing pairwise correlations becomes essential. This helps in understanding multicollinearity issues within the model. Multicollinearity occurs when one covariate within the model can be accurately predicted from another covariate. When this happens, the coefficient estimates of the model can change unpredictably due to minor changes in the data.\\
 \noindent
 \\The correlation matrix of all variables in the mtcars dataset is shown in Figure~\ref{fig:cor-matrix-mtcars2}.
 
@@ -719,7 +716,7 @@ print(correlation_matrix)
 For the simple linear regression model, the response variable is Miles per Gallon (mpg), and we select weight (wt) as the explanatory variable. Note that mpg and wt are highly correlated, with a correlation coefficient of -0.868. This suggests that wt may have strong predictive power for mpg. Use the R function \texttt{lm()} to calculate the linear regression model, with the summary displayed below.\\
 
 \noindent
-Observe that the t-test yields a p-value of $1.29 \times 10^{-10}$, which is less than $0.001$. This indicates that the variable wt holds high statistical significance in this model. For the fitted model, the slope is $\beta_1 = -5.3445$, meaning that for every increase of 1000 lbs, the car efficiency decreases by 5 miles per gallon. The simple linear regression line is displayed in Figure~\ref{fig:scatter-plot}.
+Observe that the t-test yields a p-value of $1.29 \times 10^{-10}$, which is less than $0.001$. This indicates that the variable wt holds high statistical significance in this model. For the fitted model, the slope is $\beta_1 = -5.3445$, meaning that for every increase of 1000 lbs, the car efficiency decreases by 5 miles per gallon. The RSS is 3.046. The simple linear regression line is displayed in Figure~\ref{fig:scatter-plot}.
 
 <<modelwt, echo=TRUE,message=FALSE,warning=FALSE>>=
 Modelwt <- lm(formula = mpg ~ wt, data = mtcars)
@@ -740,9 +737,18 @@ ggplot(data = mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
   scale_color_manual(values = c("4" = "grey", "6" = "#542788", "8" = "blue")) +  # Custom color palette
   theme_minimal() # Minimalistic theme
 @
+\noindent
+\textbf{Linear Regression Model and Model selection method AIC}
+\\  
+\noindent 
+\\Model selection methods, such as the Akaike Information Criterion (AIC), play a crucial role in statistical modeling. AIC provides an estimate of the information lost when a given model is used to represent the process that generated the data, it is calculated as follows: 
+
+$$\mathrm{AIC} = -2 \l(\mathbf{\hat{\theta}})+2 \dim (\mathbf{\theta}),$$
+\\  
+\\where $\l(\mathbf{\hat{\theta}})$ is the log-likelihood function, let $\l(\mathbf{\hat{\theta}}) = 0$ to find the Maximum Likelihood Estimator $\mathbf{\hat{\theta}}$ of a distribution.\\
 
 \noindent 
-Model selection methods, such as the Akaike Information Criterion (AIC), play a crucial role in statistical modeling. The R algorithm \texttt{step()}, which minimises the AIC score, aids in selecting the most appropriate regression model from a set of explanatory variables. Starting with all explanatory variables, the algorithm iteratively excludes one covariate at each step. This algorithm aims to find the best-fitting model by balancing goodness of fit and simplicity. It's important to note that \texttt{step()} provides comparison between models rather than an absolute measure of model quality.
+The R algorithm \texttt{step()}, which minimises the AIC score, aids in selecting the most appropriate regression model from a set of explanatory variables. This algorithm uses backward selection method. Starting with all explanatory variables, the algorithm iteratively excludes one covariate at each step, until statistically significant reduction in AIC is achieved. This algorithm aims to find the best-fitting model by balancing goodness of fit and simplicity. Note that \texttt{step()} provides comparison between competing models rather than an absolute measure of model quality.
 
 \begin{figure}[H]
     \centering
@@ -750,7 +756,7 @@ Model selection methods, such as the Akaike Information Criterion (AIC), play a 
     \label{fig:codeshoot}
 \end{figure}
 \noindent
-The procedure for selecting the best-fitted linear regression model using the \texttt{step()} algorithm is shown in Appendix A, where our best-fitted model is \texttt{formula = mpg \textasciitilde wt + qsec + am}. Given 10 explanatory variables, Miles per Gallon is best predicted by weight (wt), quarter-mile time (qsec), and Transmission (am), where 0 represents automatic and 1 represents manual.\\
+The procedure for selecting the best linear model for the mtcars dataset is shown in Appendix A, where our best-fitted model is \texttt{formula = mpg \textasciitilde wt + qsec + am}. Given 10 explanatory variables, Miles per Gallon is best predicted by weight (wt), quarter-mile time (qsec), and Transmission (am), where 0 represents automatic and 1 represents manual.\\
 \noindent
 
 \subsubsection{Bubble Charts}
@@ -795,48 +801,31 @@ ggplot(mtcars, aes(x = rownames(mtcars), y = mpg, size = hp, color = cyl)) +
 
 \\\noindent The bubble plot reveals a clear pattern: as cylinder count increases, so does horsepower, but at the expense of lower fuel efficiency. Contrary to expectations, cars with fewer cylinders, despite lower horsepower, demonstrate better fuel economy, positioned higher on the graph. Meanwhile, vehicles with more cylinders, often associated with higher performance, cluster lower, indicating lower fuel efficiency. This plot highlights the trade-off between horsepower, cylinder count, and fuel efficiency, challenging the assumption that more cylinders equate to better performance, emphasising the significance of considering fuel economy in car selection.
 
-\subsection{Heatmaps, correlation matrix and AIC score}
+\subsection{Heatmaps and Fire in Brazil}
+The heatmap is a data visualisation technique that uses colour coding to represent different intensities. It can be represented as an $m \times n$ matrix $\mathrm{M}$, with $m$ observations for variable 1 and $n$ observations for variable 2:
 
-The foundation of a heatmap is a data matrix $M$, where each entry in this matrix represents an observation:
-
-$$M =
+$$\mathrm{M} =
 \left[
 \begin{array}{cccc}
-    M_{11} & M_{12} & \ldots & M_{1j} \\  
-    M_{21} & M_{22} & \ldots & M_{2j} \\  
+    \mathrm{M}_{11} & \mathrm{M}_{12} & \ldots & \mathrm{M}_{1n} \\  
+    \mathrm{M}_{21} & \mathrm{M}_{22} & \ldots & \mathrm{M}_{2n} \\  
     \vdots & \vdots & \ddots & \vdots \\  
-    M_{i1} & M_{i2} & \ldots & M_{ij}
+    \mathrm{M}_{m1} & \mathrm{M}_{m2} & \ldots & \mathrm{M}_{mn}
 \end{array}
-\right].
+\right],
 $$
 
 \noindent
-Therefore, the first step to create a heatmap is to organise the data into columns and rows. In Figure~\ref{fig:fire-by-months-fy13-22}, the structured data is displayed as a grid of coloured cells, where the colour intensity corresponds to the underlying frequency.\\
+where each entry $\mathrm{M}_{mn}$ represent an observation.\\
 
 \noindent
-Heatmaps serve as powerful tools for visualising relationships between covariates within a model. An example of the necessity to analyse a matrix of correlations between variables is found in regression models. In the real world, variables are often correlated, and completely independent relationships are seldom encountered. Therefore, the analysis of pairwise correlations becomes essential. Significantly impacted by highly correlated covariates, the regression model requires the removal of one covariate from the set of covariates. The selection is based on the identification of a regression model with the lowest Akaike Information Criterion (AIC) score among these variables: 
-
-$$AIC = -2 \l(\hat{\mathbf{\theta}})+2 \dim (\mathbf{\theta}),$$
-\\where $\l(\hat{\mathbf{\theta}})$ is the log-likelihood function, which is used to find the Maximum Likelihood Estimator (MLE) of a distribution.\\
+In this illustrative example, heatmaps are used to visualise fire occurrences in Brazil. These heatmaps provide a spatially coherent representation, highlighting regions at high risk and seasonal patterns. The data-driven insights could empower policymakers to make informed decisions regarding preventive measures and firefighting strategies.\\
 
 \noindent
-The AIC measures the extent to which the linear model fits the dataset. To obtain the best model, minimise the AIC score. In other words, the objective is to have the trend explained by the regression model, while avoiding overfitting that captures the noise in the dataset, ultimately leading to inaccurate predictions.
-
-\subsubsection{Heatmaps - Fire in Brazil}
-
-The heatmap is a data visualisation technique that uses colour coding to represent different intensity.\\
+In Figure~\ref{fig:fire22}, it can be observed that significantly higher fire counts are found in certain locations. The presence of two strips with high frequencies of fires are highly unusual. The vertical trend corresponds to the location of BR-230 (Trans-Amazonian Highway) passing through the city of Apuí, State of Amazonas. The horizontal trend corresponds to BR-163 (Brazil highway) passing through Três Pinheiros in Novo Progresso, State of Pará. The western coastal area with a high frequency of fire occurrence corresponds to regions in close proximity to the cities of Vista Alegre do Abunã and Rio Branco. Research has indicated that 95 \% of active fires and the most intense ones (FRP $>$ 500 megawatts) occurred at the edges in forests\cite{forest}.\\
 
 \noindent
-In this illustrative example, heatmaps are used to visualise fire occurrences in Brazil. These heatmaps provide a spatially coherent representation, highlighting regions at high risk and seasonal patterns. Here, the heatmap is a powerful tool for identifying the occurrence of fire incidents. The data-driven insights could empower policymakers to make informed decisions regarding preventive measures and firefighting strategies.\\
-
-\noindent
-In Figure~\ref{fig:spacetime-fy22}, it can be observed that significantly higher fire counts are found in certain locations. The presence of two strips with high frequencies of fires are highly unusual.  The vertical trend corresponds to the location of BR-230 (Trans-Amazonian Highway) passing through the city of Apuí, State of Amazonas, where a high frequency of fire occurrence is observed.  The horizontal trend corresponds to BR-163 (Brazil highway) passing through Três Pinheiros in Novo Progresso, State of Pará. The western coastal area with a high frequency of fire occurrence corresponds to regions in close proximity to the cities of Vista Alegre do Abunã and Rio Branco. Research has indicated that 95 \% of active fires and the most intense ones (FRP > 500 megawatts) occurred at the edges in forests.\\
-
-\noindent
-From the same figure, it can be observed that August and September are the riskiest months in terms of fire hazard, whereas little risk is posed from November to July. The follow-up question naturally arises: How does FY22 compare to previous years? Is it valid to claim that August and September constitute the fire hazard season?\\
-
-\noindent
-In Figure~\ref{fig:fire-by-months-fy13-22}, the data shows a higher number of fire occurrences in the months of August to October compared to the rest of the year, indicating a greater number of fire hazards during these months.
+The seasonal pattern of fire frequency is shown in Figure~\ref{fig:fire-by-months-fy13-22}. Observe that more fire occur in the months of August to October compared to the rest of the year.
 
 <<load-data, echo=FALSE,message=FALSE,warning=FALSE>>=
 # Data from NASA: https://firms.modaps.eosdis.nasa.gov/
@@ -896,7 +885,11 @@ custom_order <- c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep",
 confident_fire_months_fy22$abb_month <- factor(confident_fire_months_fy22$abb_month, levels = custom_order)
 @
 
-<<spacetime-fy22,fig.height=4,fig.cap='Frequency of Fire by Space and Time, FY22',fig.show='hold', message=FALSE, warning=FALSE>>=
+
+\begin{figure}[htbp]
+  \centering
+  \begin{minipage}[b]{0.48\linewidth}
+<<spacetime-fy22,fig.height=6,fig.show='hold', echo=FALSE, message=FALSE, warning=FALSE>>=
 # Obtain the Brazil map data
 brazil_map <- map_data("world", region = "Brazil")
 
@@ -910,22 +903,19 @@ space_heatmap <- ggplot(confident_fire_fy22, aes(x = longitude, y = latitude)) +
   theme_minimal()+
   theme(axis.text = element_text(size = 9))
 
-interactive_plot <- ggplotly(space_heatmap)
-
-time_heatmap <- ggplot(confident_fire_months_fy22, 
-                       aes(x = abb_month, y = as.character(2022), fill = count)) +
-  geom_tile(width = 0.9, height = 0.5) +  # Create the heatmap tiles
-  scale_fill_gradient(low = "#fff7ec", high = "#d7301f") +
-  labs(x = " ", y = " ", name = "count") +
-  theme_minimal() +
-  theme(axis.text = element_text(size = 9))
-
-spacetime_fy22 <- grid.arrange(space_heatmap, time_heatmap, nrow = 2, 
-                               heights = c(2,0.5))
-
-print(spacetime_fy22)
+print(space_heatmap)
 @
-
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.48\linewidth}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{image_reference/mapshoot.png}
+\end{figure}
+  \end{minipage}
+  \caption{Frequency of fire in Brazil (2022), two strips of high frequencies of fires are highly unusual}
+  \label{fig:fire22}
+\end{figure}
 
 <<pivot-table-fy13-22, echo=FALSE,message=FALSE,warning=FALSE>>=
 # Combine all the confident fire datasets into a single dataset
@@ -945,7 +935,7 @@ pivot_table <- pivot_table %>%
   mutate(year = as.numeric(substring(month_year, nchar(month_year) - 3, nchar(month_year))))
 @
 
-<<fire-by-months-fy13-22,fig.height=2.6,fig.width=5,fig.cap='Frequency of Fire Occurrences, FY13-22',fig.show='hold', message=FALSE,warning=FALSE>>=
+<<fire-by-months-fy13-22,fig.height=2.6,fig.width=5,fig.cap='Frequency of fire in Brazil (2013-2022)',fig.show='hold', message=FALSE,warning=FALSE>>=
 heatmap_plot <- ggplot(pivot_table, 
                        aes(x = factor(abb_month, levels = custom_order), 
                            y = as.character(year), fill = count)) +
