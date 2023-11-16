@@ -29,3 +29,4 @@
 \contentsline {subsection}{\numberline {3.3}Heatmaps, correlation matrix and AIC score}{23}{subsection.3.3}%
 \contentsline {subsubsection}{\numberline {3.3.1}Heatmaps - Fire in Brazil}{23}{subsubsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.4}Line Charts and Time Series Visualisation}{26}{subsection.3.4}%
+\contentsline {section}{\numberline {A}Appendix A}{33}{appendix.A}%
