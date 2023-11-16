@@ -555,7 +555,7 @@ The bar chart referenced as fig:barchart2 in the document illustrates the impact
 
 
 \noindent
-The structure of the second figure~\ref{fig:barchart2} is quite similar to that of the first one, with the main difference lying in the method of data representation. Forming a bar chart, it facilitates the understanding of the combined effects of the two supplements at each dosage level. However, compared to the grouped bar chart, it becomes more challenging to differentiate the individual contributions of each supplement.\\
+The structure of the second figure~\ref{fig:barcharts} is quite similar to that of the first one, with the main difference lying in the method of data representation. Forming a bar chart, it facilitates the understanding of the combined effects of the two supplements at each dosage level. However, compared to the grouped bar chart, it becomes more challenging to differentiate the individual contributions of each supplement.\\
 
 \noindent
 In the next part of our section, we will look at another plot which called Histogram.
@@ -627,7 +627,7 @@ $$\hat{f}(x) = \frac{1}{nh} \sum_{i=1}^{n} K\left(\frac{x - x_i}{h}\right)$$\\
 The kernel function \( K(u) \) is a normalized non-negative function that satisfies:
 \[ \int K(u) \, du = 1 \]
 
-In figure~\ref{fig:kde3} we present the kernel density estimation of our dataset. The kernel density curve will display the distribution of sepal lengths. The peaks of the curve correspond to the main concentration trends of sepal length in the data. If the curve is unimodal, it means that the sepal lengths of most irises are concentrated in that region; if it is bimodal or multimodal, this indicates the presence of multiple such concentration areas.
+In figure~\ref{fig:iris-plots} we present the kernel density estimation of our dataset. The kernel density curve will display the distribution of sepal lengths. The peaks of the curve correspond to the main concentration trends of sepal length in the data. If the curve is unimodal, it means that the sepal lengths of most irises are concentrated in that region; if it is bimodal or multimodal, this indicates the presence of multiple such concentration areas.
 
 \subsection{Scatter Plots and Bubble Charts}
 
