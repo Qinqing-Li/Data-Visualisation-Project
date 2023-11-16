@@ -208,7 +208,7 @@ Creating effective data visualisations requires a robust theoretical framework u
 The theoretical framework of data visualisation involves guiding principles dictating visual representation of data. These principles include \textbf{accuracy}, emphasizing faithful reflection of underlying data to reduce distortion or misinterpretation; \textbf{simplicity}, advocating for streamlined visuals to convey information effectively; \textbf{clarity}, ensuring visuals are easily understood without unnecessary complexity; \textbf{relevance}, presenting information pertinent to the message or question addressed; and \textbf{consistency}, maintaining uniform use of visual elements like color coding and labeling throughout a visualisation.\\
 
 \noindent \textbf{Theoretical Framework and Visual Perception}\\
-Understanding how the human brain processes visual information is a fundamental aspect of data visualisation theory. This knowledge plays a crucial role in designing visualisations that effectively connect with viewers. It encompasses several key considerations which will be studied in order: the Gestalt Principles, which encompass proximity, similarity, and continuity, affecting how visual elements are grouped and interpreted; Color Theory, involving the strategic use of color contrasts and harmonies to improve clarity and impact; and the management of Cognitive Load, which emphasises the importance of reducing mental effort needed to process information.\\
+Understanding how the human brain processes visual information is a fundamental aspect of data visualisation theory. This knowledge plays a crucial role in designing visualisations that effectively connect with viewers. It encompasses several key considerations which will be studied in order: the Gestalt Principles, which encompass proximity, similarity, and continuity, affecting how visual elements are grouped and interpreted; Color Theory, involving the strategic use of color contrasts and harmonies to improve clarity and impact; and the management of Cognitive Load, which emphasises the importance of reducing mental effort needed to process information.
 
 \subsection{Data Types and Visualisation Techniques}
 To have a discussion about data representation, understanding the nature of the data is key. Data comes in various types, and selecting the appropriate visualisation technique is contingent upon recognising these distinctions. In this section, the data types are categorised and matched with their suitable visualisation techniques.
@@ -223,8 +223,9 @@ Data types can be broadly categorised into four main types:
 \end{itemize}
 
 \subsubsection{Matching Data Types with Appropriate Visualisation Techniques}
+
 Selecting appropriate visualisation techniques is essential for effective data communication. Various data types demand specific visualisation methods for optimal representation \cite{healy2018data}. For \textbf{nominal data}, bar charts and stacked bar charts are effective in displaying categorical information and relative proportions. \textbf{Ordinal data} benefits from ordered bar charts, dot plots, or stacked bar charts, maintaining the ranking and order of categories. \textbf{Interval data} is best visualised using line charts, histograms, and box plots, showcasing trends and distributions without assuming a true zero point. \textbf{Ratio data} finds effective representation through scatter plots, histograms, and line charts, enabling precise comparisons and measurements due to the presence of a meaningful zero point.
-\\ 
+
 <<data-plots, echo=FALSE, message=FALSE, fig.height=8, fig.width=11, fig.cap='Different types of visualisation according to the data type used'>>=
 
 library(ggplot2)
@@ -713,10 +714,13 @@ correlation_matrix <- ggplot(correlation_matrix, aes(Var1, Var2, fill = Freq)) +
   labs(x = " ",y = " ")
 print(correlation_matrix)
 @
+
 \noindent
-\\For the simple linear regression model, the response variable is Miles per Gallon (mpg), and we select weight (wt) as the explanatory variable. Note that mpg and wt are highly correlated, with a correlation coefficient of -0.868. This suggests that wt may have strong predictive power for mpg. Use the R function \texttt{lm()} to calculate the linear regression model, with the summary displayed below.
+For the simple linear regression model, the response variable is Miles per Gallon (mpg), and we select weight (wt) as the explanatory variable. Note that mpg and wt are highly correlated, with a correlation coefficient of -0.868. This suggests that wt may have strong predictive power for mpg. Use the R function \texttt{lm()} to calculate the linear regression model, with the summary displayed below.\\
+
 \noindent
-\\Observe that the t-test yields a p-value of $1.29 \times 10^{-10}$, which is less than $0.001$. This indicates that the variable wt holds high statistical significance in this model. For the fitted model, the slope is $\beta_1 = -5.3445$, meaning that for every increase of 1000 lbs, the car efficiency decreases by 5 miles per gallon. The simple linear regression line is displayed in Figure~\ref{fig:scatter-plot}.\\
+Observe that the t-test yields a p-value of $1.29 \times 10^{-10}$, which is less than $0.001$. This indicates that the variable wt holds high statistical significance in this model. For the fitted model, the slope is $\beta_1 = -5.3445$, meaning that for every increase of 1000 lbs, the car efficiency decreases by 5 miles per gallon. The simple linear regression line is displayed in Figure~\ref{fig:scatter-plot}.
+
 <<modelwt, echo=TRUE,message=FALSE,warning=FALSE>>=
 Modelwt <- lm(formula = mpg ~ wt, data = mtcars)
 summary(Modelwt)
@@ -736,8 +740,9 @@ ggplot(data = mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
   scale_color_manual(values = c("4" = "grey", "6" = "#542788", "8" = "blue")) +  # Custom color palette
   theme_minimal() # Minimalistic theme
 @
+
 \noindent 
-\\Model selection methods, such as the Akaike Information Criterion (AIC), play a crucial role in statistical modeling. The R algorithm \texttt{step()}, which minimises the AIC score, aids in selecting the most appropriate regression model from a set of explanatory variables. Starting with all explanatory variables, the algorithm iteratively excludes one covariate at each step. This algorithm aims to find the best-fitting model by balancing goodness of fit and simplicity. It's important to note that \texttt{step()} provides comparison between models rather than an absolute measure of model quality.\\
+Model selection methods, such as the Akaike Information Criterion (AIC), play a crucial role in statistical modeling. The R algorithm \texttt{step()}, which minimises the AIC score, aids in selecting the most appropriate regression model from a set of explanatory variables. Starting with all explanatory variables, the algorithm iteratively excludes one covariate at each step. This algorithm aims to find the best-fitting model by balancing goodness of fit and simplicity. It's important to note that \texttt{step()} provides comparison between models rather than an absolute measure of model quality.
 
 \begin{figure}[H]
     \centering
@@ -754,7 +759,7 @@ Bubble charts are a captivating data visualisation tool that extends beyond the 
 
 \noindent
 \textbf{Mathematical Intricacies of Bubble Charts}\\
-\noindentThe mathematical intricacies of constructing bubble charts involve scaling the data values to determine the size of each bubble accurately. The size of the bubble is typically proportional to the square root of the variable it represents. The choice of scaling method depends on the data distribution and the message the chart aims to convey.\\
+The mathematical intricacies of constructing bubble charts involve scaling the data values to determine the size of each bubble accurately. The size of the bubble is typically proportional to the square root of the variable it represents. The choice of scaling method depends on the data distribution and the message the chart aims to convey.\\
 
 \noindent
 The formula for calculating the bubble size (\(S\)) often involves applying a linear or nonlinear scaling function:
@@ -770,7 +775,7 @@ Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the 
 
 \noindent
 \textbf{Bubble Charts in Practice}\\
-\noident The bubble chart shown in the following figure~\ref{fig:bubble-plot} visualises data from the same dataset as above. It depicts the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and color-coding the bubbles based on the number of cylinders (cyl).\\
+The bubble chart shown in the following figure~\ref{fig:bubble-plot} visualises data from the same dataset as above. It depicts the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and color-coding the bubbles based on the number of cylinders (cyl).\\
 
 <<bubble-plot, echo=FALSE, fig.height=5, fig.width=9, Fig.caption='Bubble plot illustrating the relationship between car models and miles per gallon'>>=
 #Create bubble plot 
@@ -962,7 +967,6 @@ $\{(x_i,y_i)\}_{1 \leq i \leq n}$ on a Cartesian coordinate system, with the x-a
 
 \noindent 
 \textbf{Basics of Line Chart}\\
-
 \noindent
 In a line chart, consecutive data points are typically connected by straight lines. The line segment between two points \((x_i,y_i)\) and \((x_{i+1},y_{i+1})\) can be described by the equation of a line in the slope-intercept form: \(y=mx+b\), where \(m\) is the slope and \(b\) is the y-intercept. Also, a series of linear interpolations between pairs of data points could be used. These interpolations assume that the change between two points is uniform or linear. This linear approach is mathematically represented as:
 \[
@@ -973,16 +977,14 @@ This equation highlights that for any point \(x\) between \(x_i\) and \(x_{i+1}\
 
 \noindent 
 \textbf{Time Series}\\
-
 \noindent
 Time series visualisation is particularly suited to line charts. A time series is a collection of observations $x_t$, where $t$ denotes the time point at which the observation is recorded. An index set $T_0$ which collects all the time points when observations are available. For instance, we often have $T_0 = \{0,1,2,...,n\}$ for $n \in \mathbb{N}$. By plotting these data points over time, line charts help in identifying long-term trends, seasonal patterns, and anomalies.\\
 
 \noindent
-A time series can be viewed as a realisation of a stochastic process. And a stochastic process $X = (X_t)_{t \in T_0}$ is a collection of random variables $X_t$, where $t$ denotes the time index and $T_0$ the index set. For a fixed event $\omega \in \Omega$ we obtain the realisation of the stochastic process (sometimes also called a sample path) which is given by $x_t = X_t(\omega)$, $t \in T_0$. In practice, line charts of time series data provide insights into the behavior of such stochastic processes over time.\\
+A time series can be viewed as a realisation of a stochastic process. And a stochastic process \cite{Brockwell2016Introduction} $X = (X_t)_{t \in T_0}$ is a collection of random variables $X_t$, where $t$ denotes the time index and $T_0$ the index set. For a fixed event $\omega \in \Omega$ we obtain the realisation of the stochastic process (sometimes also called a sample path) which is given by $x_t = X_t(\omega)$, $t \in T_0$. In practice, line charts of time series data provide insights into the behavior of such stochastic processes over time.\\
 
 \noindent
 \textbf{Time Series Visualisation of Exchange rates}\\
-
 \noindent
 Here, plot daily and 49-day moving average exchange rates of exchange rate data in one figure.
 <<echo=FALSE,message=FALSE,warning=FALSE>>=
@@ -1064,7 +1066,6 @@ This method effectively filters out daily noise, allowing a clearer view of over
 
 \noindent
 \textbf{Decomposition of Time Series}\\
-
 \noindent
 One of the primary advantages of time series visualisation is the ease with which it allows analysts to identify long-term upward or downward trends in data and patterns that repeat over specific intervals. By decomposing the time series, it would be easy to see those features.\\
 
@@ -1073,11 +1074,11 @@ Time series data, $X_t$, can often be described as a combination of several dist
 
 \noindent
 The decomposition of a time series can be described in two main models:\\
-\textbf{Additive Model}: In the additive model, the components are added together:
+\textbf{Additive Model} \cite{Brockwell2016Introduction}: In the additive model, the components are added together:
 \[
 X_t = t_t + s_t + r_t.
 \]
-\textbf{Multiplicative Model}: In the multiplicative model, the components are multiplied together:
+\textbf{Multiplicative Model} \cite{Brockwell2016Introduction}: In the multiplicative model, the components are multiplied together:
 \[
 X_t = t_t \times s_t \times r_t \quad \text{or} \quad \log(X_t) = \log(t_t) + \log(s_t) + \log(r_t).
 \]
@@ -1124,15 +1125,16 @@ Moreover, the seasonal component $s_t$ of the decomposition highlights cyclical 
 Lastly, the residual component $r_t$ encompasses the random, unexplained variations after accounting for the trend and seasonal factors. Analyzing these residuals is crucial for understanding the unpredictability in the exchange rate and can be pivotal in risk management and forecasting.\\
 
 \noindent
-\textbf{Autocorrelation Analysis of CNY to GBP Exchange Rate}\\\\
+\textbf{Autocorrelation Analysis of CNY to GBP Exchange Rate}\\
+\noindent
 Autocorrelation, also referred to as serial correlation, is a crucial concept in time series analysis. It describes the correlation of a time series with its own past and future values. The autocorrelation function (ACF) measures the linear predictability of the series at lag h, which is the time $t$ with its values at a previous time $t-h$. The mathematical fomulation of ACF of time series will be given in the following paragraph.\\
 
 \noindent
 Suppose we have a time series with observations denoted by \( x_1, \ldots, x_n \). Then the sample mean is given by $\bar{x} = \frac{1}{n} \sum_{t=1}^{n} x_t.$
 And the sample autocovariance function at lag $h$ in days of our time series is
-\[\hat{\gamma}(h) := \frac{1}{n} \sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x}), \quad \text{for} \; -n < h < n.\]
+\[\hat{\gamma}(h) := \frac{1}{n} \sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x}), \quad \text{for} \; -n < h < n \cite{Brockwell2016Introduction}.\]
 Hence, the sample autocorrelation function at lag $h$ in days is given by
-\[\hat{\rho}(h) := \frac{\hat{\gamma}(h)}{\hat{\gamma}(0)} = \frac{\sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x})}{\sum_{t=1}^{n} (x_t - \bar{x})^{2}}, \quad \text{for} \; -n < h < n.\]
+\[\hat{\rho}(h) := \frac{\hat{\gamma}(h)}{\hat{\gamma}(0)} = \frac{\sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x})}{\sum_{t=1}^{n} (x_t - \bar{x})^{2}}, \quad \text{for} \; -n < h < n \cite{Brockwell2016Introduction}.\]
 \noindent
 The value of $\hat{\rho}(h)$ lies between -1 and +1. A value close to +1 indicates a strong positive correlation, while a value close to -1 indicates a strong negative correlation. A value near 0 suggests little to no linear correlation. A slow decay in the ACF plot indicates a strong relationship between past and present values, while spikes at specific lags may suggest seasonality. Autocorrelations outside the 95\% confidence interval are considered statistically significant.\\
 
