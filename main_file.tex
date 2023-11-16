@@ -450,6 +450,7 @@ The KDE algorithm takes a parameter, bandwidth, that affects how “smooth” th
 \noindent
 We can express KDE as follows,where the K represent the kernel function:
 $$\hat{f}(x) = \sum_{\text{observations}} K\left(\frac{x - \text{observation}}{\text{bandwidth}}\right),$$
+In kernel density estimation (KDE), the variable x represents the point of density estimation, which can be any value. The total number of data points, denoted as n, constitutes the sample size, and all these points are used for estimating the dataset's probability density function. The bandwidth (h) is a crucial parameter that controls the smoothness of the estimation, with smaller bandwidths leading to closer fits to data and larger ones smoothing out details. The kernel function (K), such as the Gaussian or triangular kernel, assigns weights around each data point, influencing the density estimate, while $x_i$ represents the individual sample points that collectively contribute to the estimated density function, guided by the kernel function and the bandwidth.
 $$\hat{f}(x) = \frac{1}{nh} \sum_{i=1}^{n} K\left(\frac{x - x_i}{h}\right).$$\\
 The kernel function \( K(u) \) is a normalised non-negative function that satisfies:
 \[ \int K(u) \, du = 1. \]
