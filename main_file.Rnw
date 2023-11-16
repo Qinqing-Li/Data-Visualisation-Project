@@ -46,9 +46,12 @@ opts_chunk$set(fig.path = 'figure/beamer-',
                fig.pos = 'H')
 
 @
-\newpage
+
 \maketitle 
+
+\newpage
 \tableofcontents
+
 \newpage 
 
 \section{Introduction}
@@ -202,68 +205,6 @@ Creating effective data visualisations requires a robust theoretical framework u
 \noindent \textbf{Guiding Principles for Data Representation}\\
 The theoretical framework of data visualisation involves guiding principles dictating visual representation of data. These principles include \textbf{accuracy}, emphasizing faithful reflection of underlying data to reduce distortion or misinterpretation; \textbf{simplicity}, advocating for streamlined visuals to convey information effectively; \textbf{clarity}, ensuring visuals are easily understood without unnecessary complexity; \textbf{relevance}, presenting information pertinent to the message or question addressed; and \textbf{consistency}, maintaining uniform use of visual elements like color coding and labeling throughout a visualisation.\\
 
-
-\begin{figure}[htbp]
-  \centering
-  \begin{minipage}[b]{0.45\linewidth}
-    <<messygraph, echo=FALSE, fig.height=4, fig.width=6, out.width='\\linewidth'>>=
-    # Messy, busy plot with a blue background and white grid lines
-    data(iris)
-    
-    # Create a messy, busy plot with random sizes and meaninglesscolours, blue background, and white grid lines
-    ggplot(iris, aes(x = Sepal.Length, y = Petal.Length, color = Sepal.Width, size = Sepal.Width)) +
-      geom_point(alpha = 0.6, shape = 19) +
-  geom_text(aes(label = paste("(", round(Sepal.Length, 1), ",", round(Petal.Length, 1), ")")),
-            size = 2, hjust = 1, vjust = -1, color = "darkgrey") +
-      scale_color_gradient(low = "orange", high = "purple") +
-      theme_minimal() +
-      theme(panel.background = element_rect(fill = "lightblue"),
-            panel.grid.major = element_line(color = "red"),
-            panel.grid.minor = element_blank()) +
-      labs(
-        x = "Sepal",
-        y = "Petal",
-        color = "Width",
-        size = "Width"
-      ) +
-      guides(color = guide_legend(title.position = "top", title.hjust = 0.5, nrow = 2)) +
-      theme(
-        text = element_text(size = 15, color = "blue"),
-        axis.text = element_text(angle = 30, hjust = 1),
-        legend.position = "right",
-        legend.title = element_text(face = "italic", size = 12),
-        legend.text = element_text(face = "bold")
-      )
-    
-    @
-    \label{fig:messygraph}
-  \end{minipage}
-  \hfill
-  \begin{minipage}[b]{0.45\linewidth}
-    <<cleargraph1, echo=FALSE, fig.height=4, fig.width=6, out.width='\\linewidth'>>=
-    # Clear, simple, and readable plot
-    data(iris)
-    
-    # Create a clear, simple, and readable plot
-    ggplot(iris, aes(x = Sepal.Length, y = Petal.Length, color = Species)) +
-      geom_point(alpha = 0.7) +
-      labs(
-        x = "Sepal Length",
-        y = "Petal Length",
-        color = "Species"
-      ) +
-       scale_color_manual(name = "Species",
-                         values = c("setosa" = "lightblue", "versicolor" = "blue", "virginica" = "purple")) +
-      guides(color = guide_legend(title.position = "top", title.hjust = 0.5, nrow = 3)) +
-      theme_minimal()
-    
-    @
-    \label{fig:cleargraph1}
-  \end{minipage}
-\caption{Comparison of visualisations of the distribution of sepal and petal legth across three flower species ignoring (right), and adhering (left) to the Guiding Principles}
-\end{figure}
-
-
 \noindent \textbf{Theoretical Framework and Visual Perception}\\
 Understanding how the human brain processes visual information is a fundamental aspect of data visualisation theory. This knowledge plays a crucial role in designing visualisations that effectively connect with viewers. It encompasses several key considerations which will be studied in order: the Gestalt Principles, which encompass proximity, similarity, and continuity, affecting how visual elements are grouped and interpreted; Color Theory, involving the strategic use of color contrasts and harmonies to improve clarity and impact; and the management of Cognitive Load, which emphasises the importance of reducing mental effort needed to process information.\\
 
@@ -303,7 +244,9 @@ plot1 <- ggplot(nominal_data, aes(fill = gender, y = tendency, x = 1)) +
   labs(title = "Gender Categories", x = NULL, y = "Percentage") +
   scale_fill_manual(values = my_palette) +
   theme(axis.text.x = element_blank(), 
-        axis.ticks = element_blank())   # Remove axis ticks
+        axis.ticks = element_blank(), # Remove axis ticks
+        panel.grid.major = element_line(color = "lightgrey"),
+        panel.background = element_rect(fill = "white"))   
 
 # Generate ordinary data (customer satisfaction)
 ordinal_data <- data.frame(
@@ -360,6 +303,7 @@ Abstraction operates on multiple levels of granularity. Hierarchies of abstracti
     \item \textbf{High-Level Abstraction}: At the highest level, data is represented in a condensed and abstracted form, often as summary statistics or key insights. This level provides a big-picture view.
 \end{enumerate}
 
+\noindent 
 These are represented in Figure~\ref{fig:abs-plots}. The first visualisations of the mtcars dataset is a scatter plot that provides detailed information about the relationship between car weight and miles per gallon, with points colored by the number of cylinders. The second is an abstract visualisation using a box-and-whisker plot to provide a high-level summary of the distribution of miles per gallon for different numbers of cylinders. Finally, the third visualisation is a bar plot presenting aggregated information about the average miles per gallon for different numbers of cylinders.
 
 <<abs-plots, echo=FALSE, fig.height=4, fig.width=12, fig.cap='Mtcars dataset visualised on 3 different levels of abstraction'>>=
@@ -412,6 +356,7 @@ grid.arrange(plot1, plot2, plot3, ncol = 3)
 \noindent \textbf{Trade-offs Between Abstraction and Information Loss}\\
 While abstraction simplifies complex data, it presents trade-offs. Designers of data visualisation must strike a balance between clarity and detail, generalisation and specificity, and context versus precision. Abstraction increases clarity but may sacrifice crucial detailed information necessary for some analytical tasks. It offers a more generalised view accessible to a wider audience but might overlook specific nuances essential for experts. While providing valuable context, high-level abstraction may lack the precision required for precise decision-making.\\ 
 
+\noindent 
 In data visualisation, the art of data abstraction lies in finding the right level of detail that effectively conveys the intended message while minimising the risk of information loss. This balancing act is a critical consideration in the design of informative and meaningful data visualisations.
 
 \subsection{Visual Perception and Cognition}
@@ -420,6 +365,7 @@ In this first section, human visual perception is explored, along with the appli
 \noindent \textbf{Human Visual Perception: Decoding Visual Information}\\
 Human visual perception profoundly influences our understanding of the surrounding world. When applied to data visualisation, it shapes the way that individuals engage with and derive meaning from visual data representations.\\
 
+\noindent 
 Significant aspects of human visual perception within data visualisation encompass \textbf{pattern recognition}, adept at identifying trends, outliers, and relationships in data representations. Additionally, \textbf{perceptual grouping}, where visually similar elements are grouped together, influences the interpretation of data clusters and shapes. Moreover, the \textbf{hierarchy of perception} dictates that certain visual attributes are processed more swiftly and effectively than others, such as color being processed faster than text, influencing the viewer's attention hierarchy.
 
 \subsubsection{The Gestalt Principles}
@@ -476,7 +422,8 @@ grid.arrange(heatmap_plot1, heatmap_plot2, ncol = 2)
 
 \noindent \textbf{Avoiding Misleading Visualisations Due to Colour Choices}\\
 Misleading visualisations often stem from inappropriate or deceptive use of colour, requiring precautions to prevent such occurrences. First, maintaining consistency in colour usage throughout the visualisation is essential. Employing a uniform colour scheme for similar data categories or elements helps establish coherence and understanding. Furthermore, it's crucial to avoid colour choices that could distort or exaggerate the data. Overly intense or contrasting colours might mislead interpretations, emphasising the necessity for judicious colour selection.\\
-Additionally, providing a clear and concise legend becomes imperative to explain the meaning of colours, especially when dealing with complex or unfamiliar colour schemes. A comprehensive legend helps viewers decipher the represented data accurately.\\
+
+\noident Additionally, providing a clear and concise legend becomes imperative to explain the meaning of colours, especially when dealing with complex or unfamiliar colour schemes. A comprehensive legend helps viewers decipher the represented data accurately.\\
 
 
 \subsection{Cognitive Load and Visual Complexity}
@@ -484,6 +431,7 @@ In data visualisation, achieving a balance between complexity and cognitive load
 
 \subsubsection{Strategies to Reduce Cognitive Load While Maintaining Complexity}
 To reduce cognitive load while maintaining complexity in data visualisation, several strategies can be employed. Firstly, \textbf{establishing a clear visual hierarchy} using size, color, and contrast helps direct attention to crucial elements. Additionally, \textbf{simplifying labels and text} by avoiding unnecessary complexity ensures information is clear and easily digestible.\\
+
 \noindent Furthermore, \textbf{employing interactive features} like tooltips and drill-down functionality assists in providing additional information when required, reducing the density of static visualisations. A final approach involves the use of \textbf{progressive disclosure}, presenting complex information gradually, beginning with an overview and allowing users to explore details as needed.\\
 
 <<cogload-plot, echo=FALSE, fig.height=4, fig.width=10, fig.cap='High vs low cognitive load demand through the reduction of visual complexity'>>=
@@ -503,7 +451,7 @@ cluttered_plot <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = as
 # Create a clear and simple plot
 clear_plot <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
   geom_point(size = 2) +
-  scale_color_manual(values = c("setosa" = "grey", "versicolor" = "grey", "virginica" = "#b2182b")) + 
+  scale_color_manual(values = c("setosa" = "grey", "versicolor" = "grey", "virginica" = "#FDA638")) + 
   labs(title = "Low Visual Complexity",
        x = "Sepal Length",
        y = "Sepal Width",
@@ -522,19 +470,20 @@ Addressing information overload in visualisations necessitates the strategic app
 
 \section{Modern Methods of Data Visualisation}
 
-In this chapter, we explore a variety of powerful visualisation methods, from classic scatter plots and bar charts to advanced techniques like heatmaps and network graphs. Through vivid examples, we'll show when and why each method is used, and delve into the theoretical and mathematical foundations that empower these visualisations to unveil insights hidden within the data.
+This chapter explores a variety of powerful visualisation methods, from classic scatter plots and bar charts to advanced techniques like heatmaps and network graphs. Vivid examples will be used to demonstrate when and why each method is employed, and the theoretical and mathematical foundations that empower these visualisations to unveil insights hidden within the data will be delved into.
 
 \subsection{Bar Charts and Histograms}
 \subsubsection{Bar Charts}
-A bar chart is a very important method to present data. It organizes information into vertical bars.  Bar charts have lots of advantages in data visualisation. It can present data categories in a frequency distribution. A bar chart is best for comparing classified data. Especially when the values are close, because the human perception of height is better than other visual elements (such as area, angle, etc.), the use of a bar chart is more appropriate. These bars usually have different lengths, and every length is proportional to the size of the information they present.\\
+\noindent The bar chart is a crucial tool in data presentation, arranging data into vertical or horizontal bars. Its advantages in data visualisation are manifold, particularly in showcasing data categories through frequency distribution. Bar charts excel in comparing classified data, especially when values are closely aligned. This superiority stems from human perception, as our visual acuity for height surpasses that of other visual elements like area or angle. The varying lengths of these bars directly correspond to the magnitude of the information they represent.\\
 
-Bar charts are a versatile tool for data visualization, commonly used to compare different categories. The vertical bar chart is the most familiar, displaying categories on the X-axis and their frequencies or counts on the Y-axis. Horizontal bar charts, rotated 90 degrees, are useful for lengthy category names or numerous categories, with categories on the Y-axis and frequencies on the X-axis. Multi-set or grouped bar charts allow for side-by-side comparisons of sub-groups within categories, available in both vertical and horizontal orientations. Stacked bar charts show classes of values divided into sub-classes, often color-coded, with each segment's size representing its frequency or count and the total bar length reflecting the cumulative total. While bar charts are known for their simplicity and ease of understanding, stacked bar charts can become confusing with too many categories. Overall, bar charts are an effective way to present and compare various types of data.
+\noindent Bar charts represent a versatile tool for data visualisation, frequently employed to compare distinct categories. The \textbf{vertical bar chart}, commonly recognised, exhibits categories along the X-axis and their frequencies or counts along the Y-axis. \textbf{Horizontal bar charts}, rotated 90 degrees, prove beneficial for extended category names or numerous categories, displaying categories on the Y-axis and frequencies on the X-axis. \textbf{Multi-set or grouped bar charts} facilitate side-by-side comparisons of sub- groups within categories, available in both vertical and horizontal orientations. \textbf{Stacked bar charts} illustrate classes of values subdivided into sub-classes, often differentiated by colour, where each segment's size signifies its frequency or count, and the total bar length reflects the cumulative total.\\
 
-The disadvantages of bar charts include limited suitability for large datasets, potential misinterpretation when lacking a zero baseline, difficulty in handling numerous categories, and their preference for categorical data over continuous data trends, where line graphs are more suitable.
+\noindent The disadvantages of bar charts include limited suitability for large datasets, potential misinterpretation when lacking a zero baseline, difficulty in handling numerous categories, and their preference for categorical data over continuous data trends, where line graphs are more suitable.\\
 
-The bar chart depicts the relationship between tooth growth and different dosages of a vitamin, measured in milligrams per day. On the X-axis, three distinct levels of vitamin dosage are presented, while the Y-axis indicates the average tooth growth for each dosage. A key observation from the chart is a noticeable trend where increasing vitamin dosages correlate with increased tooth growth, suggesting that higher vitamin doses may enhance tooth growth.
+\noindent \textbf{Bar Charts in Practice}\\
+\noident The bar chart in Figure~\ref{fig:barcharts} depicts the relationship between tooth growth and different dosages of a vitamin, measured in milligrams per day. On the X-axis, three distinct levels of vitamin dosage are presented, while the Y-axis indicates the average tooth growth for each dosage. A key observation from the chart is a noticeable trend where increasing vitamin dosages correlate with increased tooth growth, suggesting that higher vitamin doses may enhance tooth growth.
 
-<<barcharts, echo=FALSE, fig.height=3, fig.width=10, fig.cap='Visualizing Tooth Growth by Dosage: A Comparison of Grouped and Stacked Bar Chart Techniques'>>=
+<<barcharts, echo=FALSE, fig.height=3, fig.width=10, fig.cap='visualising Tooth Growth by Dosage: A Comparison of Grouped and Stacked Bar Chart Techniques'>>=
 data(ToothGrowth)
 filtered_data <- ToothGrowth %>% filter(dose %in% c(0.5, 1, 2))
 
@@ -551,25 +500,24 @@ barchart_plot2 <- ggplot(filtered_data, aes(x = factor(dose), y = len, fill = su
 ggsave("barcharts.pdf", plot = grid.arrange(barchart_plot1, barchart_plot2, ncol = 2), width = 10, height = 3)
 @
 
-The bar chart referenced as fig:barchart2 in the document illustrates the impact of varying vitamin dosages on tooth growth, further categorized by supplement type (supp). It shows three distinct dosage levels (0.5, 1, and 2 mg/day) on the X-axis and tooth growth length on the Y-axis, representing the average growth for both supplements at each dosage. The chart highlights that tooth growth, as indicated by the total height of each bar, varies not only with the dosage but also with the supplement type, suggesting a need for closer analysis to understand the relative effectiveness of each supplement at different dosages.
-
-
-\noindent
-The structure of the second figure~\ref{fig:barcharts} is quite similar to that of the first one, with the main difference lying in the method of data representation. Forming a bar chart, it facilitates the understanding of the combined effects of the two supplements at each dosage level. However, compared to the grouped bar chart, it becomes more challenging to differentiate the individual contributions of each supplement.\\
+\noindent 
+The bar chart on the left in Figure~\ref{fig:barcharts} illustrates the impact of varying vitamin dosages on tooth growth, further categorised by supplement type (supp). It shows three distinct dosage levels (0.5, 1, and 2 mg/day) on the X-axis and tooth growth length on the Y-axis, representing the average growth for both supplements at each dosage. The chart highlights that tooth growth, as indicated by the total height of each bar, varies not only with the dosage but also with the supplement type, suggesting a need for closer analysis to understand the relative effectiveness of each supplement at different dosages.\\
 
 \noindent
-In the next part of our section, we will look at another plot which called Histogram.
+The structure of the second bar graph in Figure~\ref{fig:barcharts} is quite similar to that of the first one, with the main difference lying in the method of data representation. The stacked bar chart facilitates the understanding of the combined effects of the two supplements at each dosage level. However, compared to the normal bar chart, it becomes more challenging to differentiate the individual contributions of each supplement.\\
 
 \subsubsection{Histograms}
 
-Histograms, although visually similar to bar charts, convey different meanings. A histogram involves concepts of statistics. It requires data to be categorized into groups and then counts the data points within each of those groups. On a Cartesian coordinate system, the x-axis shows the endpoints of each group, and the y-axis represents frequency. The height of each rectangle indicates the corresponding frequency, making it a frequency distribution histogram. In order to determine the quantity of each group in the histogram, a multiplication of the frequency by the group interval is necessary. Since every histogram has a fixed group interval, if we use the y-axis to directly show quantity and each rectangle's height indicates the number of data points, we can both retain the distribution and simultaneously see the number in each group at a glance. All examples in this text use the non-standard histogram depiction with the y-axis denoting quantity.\\
+Histograms, although visually similar to bar charts, convey different meanings. A histogram involves concepts of statistics. It requires data to be categorised into groups and then counts the data points within each of those groups.\\
+
+\noindent On a Cartesian coordinate system, the x-axis shows the endpoints of each group, and the y-axis represents frequency. The height of each rectangle indicates the corresponding frequency, making it a frequency distribution histogram. In order to determine the quantity of each group in the histogram, a multiplication of the frequency by the group interval is necessary. Since every histogram has a fixed group interval, if we use the y-axis to directly show quantity and each rectangle's height indicates the number of data points, we can both retain the distribution and simultaneously see the number in each group at a glance. All examples in this text use the non-standard histogram depiction with the y-axis denoting quantity.\\
 
 \noindent
-\textbf{Uses of Histograms:}
-Histograms demonstrates the distribution of frequency or quantity across groups. Facilitates the visualisation of differences in frequency or quantity among groups. The R language uses the \texttt{hist()} function to create histograms. This function takes vectors as input and uses a few more parameters to plot the histogram.\\
+\textbf{Uses of Histograms}\\
+\noindent Histograms demonstrates the distribution of frequency or quantity across groups. Facilitates the visualisation of differences in frequency or quantity among groups. The R language uses the \texttt{hist()} function to create histograms. This function takes vectors as input and uses a few more parameters to plot the histogram.\\
 
 \noindent
-Now, we want to create a better graph with ggplot2 thanks to the \texttt{geom\_histogram()} function and iris dataset.
+Consider the following graph with created on ggplot2 with the use of to the \texttt{geom\_histogram()} function and iris dataset.
 
 \begin{figure}[htbp]
   \centering
@@ -621,13 +569,13 @@ Kernel Density Estimation(KDE) is an very useful tool in statistics. In stead of
 The KDE algorithm takes a parameter, bandwidth, that affects how “smooth” the resulting curve is. Changing the bandwidth changes the shape of the kernel: a lower bandwidth means only points very close to the current position are given any weight, which leads to the estimate looking squiggly; a higher bandwidth means a shallow kernel where distant points can contribute.\\
 
 \noindent
-We can express KDE as follows,where the K represent the kernel function.
-$$\hat{f}(x) = \sum_{\text{observations}} K\left(\frac{x - \text{observation}}{\text{bandwidth}}\right)$$
+We can express KDE as follows,where the K represent the kernel function:
+$$\hat{f}(x) = \sum_{\text{observations}} K\left(\frac{x - \text{observation}}{\text{bandwidth}}\right)$$, 
 $$\hat{f}(x) = \frac{1}{nh} \sum_{i=1}^{n} K\left(\frac{x - x_i}{h}\right)$$\\
-The kernel function \( K(u) \) is a normalized non-negative function that satisfies:
-\[ \int K(u) \, du = 1 \]
+The kernel function \( K(u) \) is a normalised non-negative function that satisfies:
+\[ \int K(u) \, du = 1 \].
 
-In figure~\ref{fig:iris-plots} we present the kernel density estimation of our dataset. The kernel density curve will display the distribution of sepal lengths. The peaks of the curve correspond to the main concentration trends of sepal length in the data. If the curve is unimodal, it means that the sepal lengths of most irises are concentrated in that region; if it is bimodal or multimodal, this indicates the presence of multiple such concentration areas.
+\noindent In Figure~\ref{fig:iris-plots}, the kernel density estimation of the dataset is presented. The distribution of sepal lengths is depicted by the kernel density curve. The peaks observed in the curve correspond to the primary concentration trends of sepal length within the data. A unimodal curve signifies a concentration of sepal lengths for most irises in that specific region. Conversely, a bimodal or multimodal curve suggests the existence of multiple concentration areas.
 
 \subsection{Scatter Plots and Bubble Charts}
 
@@ -640,10 +588,10 @@ A scatter plot is a graphical representation of a set of data points in a two-di
 \noindent
 In general, \(Y\) denotes the response variable and \(X\) denotes the explanatory variable. Let \((x_i, y_i)\) represent the coordinates of the \(i\)-th data point on the scatter plot. The scatter plot can be mathematically described as a set of points:
 
-\[ \{(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)\} .\]
+\[ \{(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)\} \],
   
-\noindent
-Here, \(n\) is the number of observations in the set.\\
+\\
+\noindent where \(n\) is the number of observations in the set.\\
 
 
 \subsubsection{Simple linear regression}
@@ -678,6 +626,8 @@ x_n
 \end{array} \right) \beta_1 =
 \mathbf{1}_n \beta_0 + \mathbf{x} \beta_1 \cite{GRM_chp3},
 $$ 
+
+\\
 \noindent
 where $\mathbf{1}_n$ is an n-vector of 1's.
 \\  
@@ -820,7 +770,8 @@ The formula for calculating the bubble size (\(S\)) often involves applying a li
 S = k \cdot \sqrt{V},
 \]
 
-\\\noident Where \(S\) represents the size of the bubble, \(V\) the value of the variable being represented, and \(k\) is a scaling factor to control the bubble size.\\
+\\
+\noident where \(S\) represents the size of the bubble, \(V\) the value of the variable being represented, and \(k\) is a scaling factor to control the bubble size.\\
 
 \noindent
 Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the proportionality between the bubble size and the variable being represented.\\
@@ -829,7 +780,7 @@ Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the 
 \textbf{Bubble Charts in Practice}\\
 \noident The bubble chart shown in Figure~\ref{fig:bubble-plot} visualises data from the same dataset as above. It depicts the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and color-coding the bubbles based on the number of cylinders (cyl).\\
 
-<<bubble-plot, echo=FALSE, fig.height=5, fig.width=9, fig.caption='Bubble plot illustrating the relationship between car models and miles per gallon'>>=
+<<bubble-plot, echo=FALSE, fig.height=4, fig.width=8, fFig.caption='Bubble plot illustrating the relationship between car models and miles per gallon'>>=
 #Create bubble plot 
 ggplot(mtcars, aes(x = rownames(mtcars), y = mpg, size = hp, color = cyl)) +
   geom_point() +
