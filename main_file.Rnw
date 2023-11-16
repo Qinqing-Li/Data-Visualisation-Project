@@ -208,7 +208,6 @@ The theoretical framework of data visualisation involves guiding principles dict
 \noindent \textbf{Theoretical Framework and Visual Perception}\\
 Understanding how the human brain processes visual information is a fundamental aspect of data visualisation theory. This knowledge plays a crucial role in designing visualisations that effectively connect with viewers. It encompasses several key considerations which will be studied in order: the Gestalt Principles, which encompass proximity, similarity, and continuity, affecting how visual elements are grouped and interpreted; Color Theory, involving the strategic use of color contrasts and harmonies to improve clarity and impact; and the management of Cognitive Load, which emphasises the importance of reducing mental effort needed to process information.\\
 
-
 \subsection{Data Types and Visualisation Techniques}
 To have a discussion about data representation, understanding the nature of the data is key. Data comes in various types, and selecting the appropriate visualisation technique is contingent upon recognising these distinctions. In this section, the data types are categorised and matched with their suitable visualisation techniques.
 
@@ -223,8 +222,8 @@ Data types can be broadly categorised into four main types:
 
 \subsubsection{Matching Data Types with Appropriate Visualisation Techniques}
 Selecting appropriate visualisation techniques is essential for effective data communication. Various data types demand specific visualisation methods for optimal representation. For \textbf{nominal data}, bar charts and stacked bar charts are effective in displaying categorical information and relative proportions. \textbf{Ordinal data} benefits from ordered bar charts, dot plots, or stacked bar charts, maintaining the ranking and order of categories. \textbf{Interval data} is best visualised using line charts, histograms, and box plots, showcasing trends and distributions without assuming a true zero point. \textbf{Ratio data} finds effective representation through scatter plots, histograms, and line charts, enabling precise comparisons and measurements due to the presence of a meaningful zero point.
-
-<<data-plots, echo=FALSE, message=FALSE, fig.height=7, fig.width=10, fig.cap='Different types of visualisation according to the data type used'>>=
+\\ 
+<<data-plots, echo=FALSE, message=FALSE, fig.height=8, fig.width=12, fig.cap='Different types of visualisation according to the data type used'>>=
 
 library(ggplot2)
 library(gridExtra)
@@ -372,7 +371,7 @@ Significant aspects of human visual perception within data visualisation encompa
 \subsubsection{The Gestalt Principles}
 Furthermore, the Gestalt Principles XXXCITEXXX play an important role in the realm of visual perception and design. Key Gestalt principles crucial in shaping visual information perception include proximity, which groups related elements, \textbf{similarity} that links similar attributes, \textbf{continuity} aiding trend representation, \textbf{closure} for implying connections, and \textbf{symmetry} for balance and aesthetics in visualisations.\\
 
-By harnessing the principles of human visual perception, applying insights from cognitive psychology, and leveraging pre-attentive attributes, data visualisation designers can create visualisations that are not only aesthetically pleasing but also cognitively efficient.	
+\noindent By harnessing the principles of human visual perception, applying insights from cognitive psychology, and leveraging pre-attentive attributes, data visualisation designers can create visualisations that are not only aesthetically pleasing but also cognitively efficient.	
 
 
 \subsection{Colour Theory in Data Visualisation}
@@ -382,7 +381,7 @@ In this section, the significance of colour in data visualisation, the principle
 Colour significantly enhances the impact and comprehension of data visualisations. It serves multiple purposes: distinguishing data points, emphasising trends, and offering contextual information. It is utilised to encode categorical data, differentiating between various groups with distinct colours, and to represent quantitative data by using colour intensity or gradients to portray values or magnitudes. Additionally, color is instrumental in adding context to visualisations through background elements, labels, or annotations, imparting meaning to the data.\\
 
 \noindent \textbf{Colour Perception and Colour Encoding in Visualisations}\\
-Understanding color perception in data visualisation is crucial. Key principles involve considering color discrimination, ensuring accessibility for individuals with color vision deficiencies, as is illustrated by Figure~\ref{fig:colour-plot}. Careful selection of color schemes aligned with the intended message is essential—for instance, using warm colours like red and orange to indicate caution or warmth, and cool colours like blue and green to convey calmness or coldness. Additionally, attention should be paid to how colours interact when combined; certain combinations might create visual vibrations or impact text legibility, as was the case in the right plot of Figure~\ref{fig:messygraph}.\\
+Understanding color perception in data visualisation is crucial. Key principles involve considering color discrimination, ensuring accessibility for individuals with color vision deficiencies, as is illustrated by Figure~\ref{fig:colour-plot}. Careful selection of color schemes aligned with the intended message is essential — for instance, using warm colours like red and orange to indicate caution or warmth, and cool colours like blue and green to convey calmness or coldness. Additionally, attention should be paid to how colours interact when combined; certain combinations might create visual vibrations or impact text legibility.\\
 
 <<colour-plot, echo=FALSE, fig.height=3, fig.width=10, fig.cap='Colour perception of a heatmap for by a colour blind person'>>=
 
@@ -424,18 +423,19 @@ grid.arrange(heatmap_plot1, heatmap_plot2, ncol = 2)
 \noindent \textbf{Avoiding Misleading Visualisations Due to Colour Choices}\\
 Misleading visualisations often stem from inappropriate or deceptive use of colour, requiring precautions to prevent such occurrences. First, maintaining consistency in colour usage throughout the visualisation is essential. Employing a uniform colour scheme for similar data categories or elements helps establish coherence and understanding. Furthermore, it's crucial to avoid colour choices that could distort or exaggerate the data. Overly intense or contrasting colours might mislead interpretations, emphasising the necessity for judicious colour selection.\\
 
-\noident Additionally, providing a clear and concise legend becomes imperative to explain the meaning of colours, especially when dealing with complex or unfamiliar colour schemes. A comprehensive legend helps viewers decipher the represented data accurately.\\
+\noident 
+Additionally, providing a clear and concise legend becomes imperative to explain the meaning of colours, especially when dealing with complex or unfamiliar colour schemes. A comprehensive legend helps viewers decipher the represented data accurately.\\
 
 
 \subsection{Cognitive Load and Visual Complexity}
-In data visualisation, achieving a balance between complexity and cognitive load is crucial. Cognitive load significantly influences how viewers engage with and comprehend presented data. Finding a balance is crucial to effectively convey information without overwhelming the viewer's cognitive capacity. This section explores the concept of cognitive load in visualisations, strategies to reduce cognitive load while maintaining complexity, and techniques to combat information overload through simplification.\\
+In data visualisation, achieving a balance between complexity and cognitive load is crucial. Cognitive load significantly influences how viewers engage with and comprehend presented data. Finding a balance is crucial to effectively convey information without overwhelming the viewer's cognitive capacity. This section explores the concept of cognitive load in visualisations, strategies to reduce cognitive load while maintaining complexity, and techniques to combat information overload through simplification.
 
 \subsubsection{Strategies to Reduce Cognitive Load While Maintaining Complexity}
 To reduce cognitive load while maintaining complexity in data visualisation, several strategies can be employed. Firstly, \textbf{establishing a clear visual hierarchy} using size, color, and contrast helps direct attention to crucial elements. Additionally, \textbf{simplifying labels and text} by avoiding unnecessary complexity ensures information is clear and easily digestible.\\
 
 \noindent Furthermore, \textbf{employing interactive features} like tooltips and drill-down functionality assists in providing additional information when required, reducing the density of static visualisations. A final approach involves the use of \textbf{progressive disclosure}, presenting complex information gradually, beginning with an overview and allowing users to explore details as needed.\\
 
-<<cogload-plot, echo=FALSE, fig.height=4, fig.width=10, fig.cap='High vs low cognitive load demand through the reduction of visual complexity'>>=
+<<cogload-plot, echo=FALSE, fig.height=3, fig.width=10, fig.cap='High vs low cognitive load demand through the reduction of visual complexity'>>=
 
 # Create a cluttered plot with obscure axis labels and labels on all points
 cluttered_plot <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = as.numeric(row.names(iris)), shape = Species, label = rownames(iris))) +
@@ -462,7 +462,6 @@ clear_plot <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Specie
 # Use grid.arrange to arrange the plots side by side
 grid.arrange(cluttered_plot, clear_plot, ncol = 2)
 @
-
 
 \subsubsection{Information Overload and Simplification Techniques}
 Addressing information overload in visualisations necessitates the strategic application of simplification techniques. Filtering enables focused data selection, while data reduction aggregates information to highlight overarching trends. Storyboarding structures data presentation, aiding in contextual comprehension, and prioritisation ensures critical information is prominently displayed, elevating the visualisation's clarity and impact. These strategies collectively combat overwhelming data or excessive visual elements, enhancing comprehension and the effective communication of insights to viewers.
@@ -751,9 +750,8 @@ Bubble charts are a captivating data visualisation tool that extends beyond the 
 
 
 \noindent
-\textbf{Mathematical Intricacies of Bubble Charts}
-\\\noindent
-The mathematical intricacies of constructing bubble charts involve scaling the data values to determine the size of each bubble accurately. The size of the bubble is typically proportional to the square root of the variable it represents. The choice of scaling method depends on the data distribution and the message the chart aims to convey.\\
+\textbf{Mathematical Intricacies of Bubble Charts}\\
+\noindentThe mathematical intricacies of constructing bubble charts involve scaling the data values to determine the size of each bubble accurately. The size of the bubble is typically proportional to the square root of the variable it represents. The choice of scaling method depends on the data distribution and the message the chart aims to convey.\\
 
 \noindent
 The formula for calculating the bubble size (\(S\)) often involves applying a linear or nonlinear scaling function:
