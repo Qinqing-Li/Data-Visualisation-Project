@@ -11,6 +11,11 @@ K.~Dakwa.
 \newblock \url{https://intelltheory.com/intelli/the-kallikak-family/}, 2001.
 \newblock Accessed 9 Nov. 2023.
 
+\bibitem{dastani2002role}
+Mehdi Dastani.
+\newblock The role of visual perception in data visualization.
+\newblock {\em Journal of Visual Languages \& Computing}, 13(6):601--622, 2002.
+
 \bibitem{lie}
 M.~de~Carvahol.
 \newblock Incomplete data analysis.
@@ -28,11 +33,21 @@ E.~Hawkins.
 \newblock \url{https://www.climate-lab-book.ac.uk/warming-stripes/}, n.d.
 \newblock Accessed 9 Nov. 2023.
 
+\bibitem{healy2018data}
+Kieran Healy.
+\newblock {\em Data visualization: a practical introduction}.
+\newblock Princeton University Press, 2018.
+
 \bibitem{bbcdatavis}
 A.~Proctor.
 \newblock Five charts that changed the world - bbc ideas.
 \newblock \url{https://www.bbc.co.uk/ideas/videos/five-charts-that-changed-the-world/p0fb69c1}, 2023.
 \newblock Accessed 20 Oct. 2023.
+
+\bibitem{rosli2015gestalt}
+Muhammad Hafiz~Wan Rosli and Andres Cabrera.
+\newblock Gestalt principles in multimodal data representation.
+\newblock {\em IEEE computer graphics and applications}, 35(2):80--87, 2015.
 
 \bibitem{eugenics}
 A.~Rutherford.
@@ -44,6 +59,16 @@ A.~Rutherford.
 J.D. Smith and M.L. Wehmeyer.
 \newblock Who was deborah kallikak?
 \newblock {\em Intellectual and Developmental Disabilities}, 50(2):169–178, 2012.
+
+\bibitem{todorovic2008gestalt}
+Dejan Todorovic.
+\newblock Gestalt principles.
+\newblock {\em Scholarpedia}, 3(12):5345, 2008.
+
+\bibitem{tufte2001visual}
+Edward~R Tufte.
+\newblock {\em The visual display of quantitative information}, volume~2.
+\newblock Graphics press Cheshire, CT, 2001.
 
 \bibitem{wikiFN}
 {Wikipedia Contributors}.
