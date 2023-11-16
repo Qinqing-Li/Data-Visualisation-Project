@@ -57,11 +57,11 @@ opts_chunk$set(fig.path = 'figure/beamer-',
 \section{Introduction}
 
 \subsection{Historical Background and Misuses of Data Visualisation}
-\\Effective data visualisation is crucial for both exploratory data analysis and data communication. Visualisations provide insight into data attributes, assisting data scientists in constructing models and addressing questions of interest. The field of data visualisation is covered in numerous method-specific publications, with one notable example being the \href{https://www.tandfonline.com/journals/ucgs20}{Journal of Computational and Graphical Statistics}. This journal publishes ongoing research on the latest techniques in computational and graphical methods in statistics, encompassing data analysis and numerical graphical displays. Moreover, \href{https://www.sciencedirect.com/journal/spatial-statistics}{Spatial Statistics} publishes articles on the theory and application of spatial and spatio-temporal statistics, and \href{https://journal.r-project.org}{The R Journal} publishes research articles in statistical computing that are of interest to R users. These together reveal the vast potential for current and future research in this ever-evolving domain, particularly as our digital landscape and data sphere expand at an accelerated pace.
+\\Effective data visualisation is crucial for both exploratory data analysis and data communication. Visualisations provide insight into data attributes, assisting data scientists in constructing models and addressing questions of interest. The field of data visualisation is covered in numerous method-specific publications.
+\\
+\\ One notable example is the \href{https://www.tandfonline.com/journals/ucgs20}{Journal of Computational and Graphical Statistics}. This journal publishes ongoing research on the latest techniques in computational and graphical methods in statistics, encompassing data analysis and numerical graphical displays. Moreover, \href{https://www.sciencedirect.com/journal/spatial-statistics}{Spatial Statistics} publishes articles on the theory and application of spatial and spatio-temporal statistics, and \href{https://journal.r-project.org}{The R Journal} publishes research articles in statistical computing that are of interest to R users. These together reveal the vast potential for current and future research in this ever-evolving domain, particularly as our digital landscape and data sphere expand at an accelerated pace.
 \\  
 \\Furthermore, many exceptional design-oriented data visualisations are showcased on \href{https://informationisbeautiful.net/}{Information is Beautiful} by David McCandless. Meanwhile, \href{https://flowingdata.com/}{FlowingData} is a blog on data visualisation and statistics by statistician Nathan Yau.
-\\  
-\\Below, an overview of the historical background is presented, accompanied by case examples of the misuses of data visualisation.
 \\  
 \\\textbf{Motivations for having Data Visualisations - Case Example 1}\\
 
@@ -73,7 +73,7 @@ During the Crimean War, Nightingale recognised that unsanitary hospital conditio
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{image_reference/Nightingale-mortality.jpg}
+    \includegraphics[width=0.6\textwidth]{image_reference/Nightingale-mortality.jpg}
     \caption{``Diagram of the causes of mortality in the army in the East", in 1858 by Florence Nightingale\cite{wikiFN}}
     \label{fig:coxcomb}
 \end{figure}
@@ -95,7 +95,7 @@ In 2018, Edward Hawkins was invited to deliver a lecture on climate change in Wa
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{image_reference/global.png}
+    \includegraphics[width=0.6\textwidth]{image_reference/global.png}
     \caption{``Latest global stripes (1850-2020)", by Edward Hawkins\cite{blog}}
     \label{fig:global}
 \end{figure}
@@ -114,7 +114,7 @@ Inappropriate data visualisation can conceal trends rather than reveal them. Fig
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{image_reference/misuse1.png}
+    \includegraphics[width=0.6\textwidth]{image_reference/misuse1.png}
     \caption{Inappropriate use of data visualisation\cite{lie}}
     \label{fig:misuse1}
 \end{figure}
@@ -149,7 +149,7 @@ In data visualisation, ggplot is the main tool used to create different plots ca
 As shown in subsequent sections, it is possible to achieve numerous visualisations rather effortlessly by utilising data in R, or even external data, together with ggplot.
 When using ggplot2, the certain objects are used repeatedly. Some of these are: geom, scale, coord, aes, stat, theme labs and so on.\\
 
-\noindent \textbf{\textit{``ggplot2: Elegant Graphics for Data Analysis''}} is a book authored by Hadley Wickham, dedicated to instructing the usage of the ggplot2 package in R for data visualisation. It comprehensively covers the principles, application, and advanced techniques of ggplot2, serving as a crucial resource for mastering this tool.\\ç
+\noindent \textbf{\textit{``ggplot2: Elegant Graphics for Data Analysis''}} is a book authored by Hadley Wickham, dedicated to instructing the usage of the ggplot2 package in R for data visualisation. It comprehensively covers the principles, application, and advanced techniques of ggplot2, serving as a crucial resource for mastering this tool.\\
 
 \noindent Some of the key tools in R mobilised in the creation of visual plots from datasets emcompass:
 
