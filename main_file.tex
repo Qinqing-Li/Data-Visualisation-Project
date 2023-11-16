@@ -96,8 +96,7 @@ During the Crimean War, Nightingale recognised that unsanitary hospital conditio
 \end{figure}
 
 \noindent 
-The coxcomb, resembling an unconventional pie chart, partitioned mortality by causes. Blue indicates preventable deaths, red indicates deaths by wounds, and black indicates other causes.
-The blue areas outweighed the red and black sections combined, highlighting the disproportionate impact of unsanitary hospital conditions on the mortality rate.\\
+The coxcomb, resembling an unconventional pie chart, partitioned mortality by causes. Blue indicates preventable deaths, red indicates deaths by wounds, and black indicates other causes. The blue areas outweighed the red and black sections combined, highlighting the disproportionate impact of unsanitary hospital conditions on the mortality rate.\\
 
 \noindent
 Nightingale leveraged the compelling visualisations in her advocacy efforts, presenting them to MPs and government officials who otherwise are unlikely to read or understand statistical reports. Nightingale successfully persuaded Queen Victoria, head of the British Army at the time, to allocate funding for the improvement of better conditions in military hospitals.\\
@@ -565,7 +564,7 @@ The residual sum of squares (RSS) is a measure of the goodness of fit in a regre
 \end{equation*}
 
 \noindent
-where $\mathbf{y}$ is n-vector of response variables and $\mathbf{X}$ is the $n \time 2$ design matrix. The partial derivative of $Q$ with respect to vector $\beta$ is:
+where $\mathbf{y}$ is n-vector of response variables and $\mathbf{X}$ is the $n \times 2$ design matrix. The partial derivative of $Q$ with respect to vector $\beta$ is:
 
 $$\frac{\partial Q}{\partial \beta} = 2(\mathbf{X}^T\mathbf{X}\beta - \mathbf{X}^T\mathbf{y})\cite{GRM_chp3},$$
 
@@ -861,22 +860,22 @@ A time series can be viewed as a realisation of a stochastic process. And a stoc
 \textbf{Time Series Visualisation of Exchange rates}\\
 
 \noindent
-Here, plot all daily and 21-day moving average exchange rates of Exchange rate data in one figure.
+Here, plot daily and 49-day moving average exchange rates of exchange rate data in one figure.
 
 \begin{figure}[H]
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlcom{# Plot daily and 49-day moving average exchange rates of CNY, CAN, EUR, HKD, USD to GBP}
+\hlcom{# Plot daily and 49-day moving average exchange rates of CAN, EUR, USD to GBP}
 
 \hlcom{# First plot}
 \hlstd{p1} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(plot_dt,} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=Date,} \hlkwc{y}\hlstd{=Rate,} \hlkwc{color}\hlstd{=Currency))} \hlopt{+} \hlkwd{geom_line}\hlstd{()} \hlopt{+}
-  \hlkwd{labs}\hlstd{(}\hlkwc{title}\hlstd{=}\hlstr{"Daily exchange rates"}\hlstd{,}\hlkwc{y}\hlstd{=}\hlstr{"Exchange Rate to GBP"}\hlstd{,} \hlkwc{x}\hlstd{=}\hlstr{"Date"}\hlstd{,} \hlkwc{color}\hlstd{=}\hlstr{"Currency"}\hlstd{)}\hlopt{+}
-  \hlkwd{theme_minimal}\hlstd{()} \hlopt{+} \hlkwd{theme}\hlstd{(}\hlkwc{legend.position}\hlstd{=}\hlstr{"none"}\hlstd{,}\hlkwc{plot.title} \hlstd{=} \hlkwd{element_text}\hlstd{(}\hlkwc{size}\hlstd{=}\hlnum{8}\hlstd{))}
+  \hlkwd{labs}\hlstd{(}\hlkwc{y}\hlstd{=}\hlstr{"Exchange Rate to GBP"}\hlstd{,} \hlkwc{x} \hlstd{=} \hlstr{""}\hlstd{,} \hlkwc{color}\hlstd{=}\hlstr{"Currency"}\hlstd{)}\hlopt{+}
+  \hlkwd{theme_minimal}\hlstd{()} \hlopt{+} \hlkwd{theme}\hlstd{(}\hlkwc{legend.position}\hlstd{=}\hlstr{"none"}\hlstd{)}
 \hlcom{# Second plot}
 \hlstd{p2} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(plot_data,} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=Date,} \hlkwc{y}\hlstd{=Rate,} \hlkwc{color}\hlstd{=Currency))} \hlopt{+} \hlkwd{geom_line}\hlstd{()} \hlopt{+}
-  \hlkwd{labs}\hlstd{(}\hlkwc{title}\hlstd{=}\hlstr{"49-Day moving average exchange rates"}\hlstd{,}\hlkwc{y}\hlstd{=}\hlstr{"Exchange Rate to GBP"}\hlstd{,} \hlkwc{x}\hlstd{=}\hlstr{"Date"}\hlstd{,} \hlkwc{color}\hlstd{=}\hlstr{"Currency"}\hlstd{)}\hlopt{+}
-  \hlkwd{theme_minimal}\hlstd{()} \hlopt{+} \hlkwd{theme}\hlstd{(}\hlkwc{legend.position}\hlstd{=}\hlstr{"none"}\hlstd{,}\hlkwc{plot.title} \hlstd{=} \hlkwd{element_text}\hlstd{(}\hlkwc{size}\hlstd{=}\hlnum{8}\hlstd{))}
+  \hlkwd{labs}\hlstd{(}\hlkwc{y}\hlstd{=}\hlstr{"Exchange Rate to GBP"}\hlstd{,} \hlkwc{x} \hlstd{=} \hlstr{""}\hlstd{,} \hlkwc{color}\hlstd{=}\hlstr{"Currency"}\hlstd{)}\hlopt{+}
+  \hlkwd{theme_minimal}\hlstd{()} \hlopt{+} \hlkwd{theme}\hlstd{(}\hlkwc{legend.position}\hlstd{=}\hlstr{"none"}\hlstd{)}
 \hlcom{# Extract the legend}
 \hlstd{p2_legend} \hlkwb{<-} \hlstd{cowplot}\hlopt{::}\hlkwd{get_legend}\hlstd{(p2} \hlopt{+} \hlkwd{theme}\hlstd{(}\hlkwc{legend.position}\hlstd{=}\hlstr{"right"}\hlstd{))}
 \hlcom{# Combine the plots }
@@ -892,12 +891,12 @@ Here, plot all daily and 21-day moving average exchange rates of Exchange rate d
 
 \end{knitrout}
 \centering
-\caption{Daily and 49-day moving average exchange rates of CNY, CAN, EUR, HKD, USD to GBP}
+\caption{Daily (top) and 49-day moving average (bottom) exchange rates of CAN, EUR, USD to GBP}
 \label{fig:all exchange rates}
 \end{figure}
 
 \noindent
-The first plot in Figure~\ref{fig:all exchange rates} presents a comparative visualisation of daily exchange rates for CNY, CAD, EUR, HKD, and USD against GBP, offering an overview of their trends and relative performance. This plot enables the identification of overall trends and periods of volatility for each currency pair, allowing for an assessment of their stability and strength relative to GBP. Usually, the long term trend attracts financial analyst most. Therefore, filtering fluctuations and anomalies is important. Then, a 49-day moving average (MA49) was employed, shown in the second plot of Figure~\ref{fig:all exchange rates}, to elucidate long-term trends while mitigating short-term fluctuations. This is mathematically represented as 
+The first plot in Figure~\ref{fig:all exchange rates} presents a comparative visualisation of daily exchange rates for CAD, EUR, and USD against GBP, offering an overview of their trends and relative performance. This plot enables the identification of overall trends and periods of volatility for each currency pair, allowing for an assessment of their stability and strength relative to GBP. Notice that, there was a simultaneous and significant drop in all three currencies relative to the GBP. The concurrent nature of these declines across diverse currency pairs suggests that the driving factor is a depreciation of the GBP, rather than independent appreciations of the USD, EUR, and CAN. This notable depreciation of the GBP occurred around 2016, which coincides with the commencement of BREXIT process. Usually, the long term trend attracts financial analyst most. Therefore, filtering fluctuations and anomalies is important. Then, a 49-day moving average (MA49) was employed, shown in the second plot of Figure~\ref{fig:all exchange rates}, to elucidate long-term trends while mitigating short-term fluctuations. This is mathematically represented as 
 \[\text{MA}_{49}(t) = \frac{1}{49} \sum_{k=t-48}^{t} x_k,\] 
 where \( x_k \) denotes the exchange rate on day $k$.\\
 
@@ -956,7 +955,7 @@ In R, a built in function named "decompose()" is able to decompose the time seri
 From Figure~\ref{fig:decomposition of time series}, the CNY to GBP exchange rate time series was decomposed into its fundamental components: trend, seasonality, and residual noise by additive model. This additive model, represented mathematically as $X_t = t_t + s_t + r_t$.\\
 
 \noindent
-As illustrated in Figure~\ref{fig:decomposition of time series}, the trend component $t_t$ reveals a gradual decrease in the CNY to GBP exchange rate over time, signifying a long-term depreciation of CNY against GBP. This trend is pivotal for understanding the broader economic relationship between these currencies.\\
+As illustrated in Figure~\ref{fig:decomposition of time series}, the trend component $t_t$ of CNY to GBP exchange rate exhibits a distinct pattern over time: initially, it shows a gradual decrease and reached crest in 2022, followed by a sudden increase afterwards. It coincides with the tax reduction policy issued by UK government in 2022, which leads to a depreciation of GBP. This trend is pivotal for understanding the broader economic relationship between these currencies. \\
 
 \noindent
 Moreover, the seasonal component $s_t$ of the decomposition highlights cyclical fluctuations, indicative of recurrent patterns within the year. These could be attributed to seasonal economic activities, policy changes, or other cyclical factors influencing the currency market. The clear demarcation of these cyclical trends in the seasonal component helps in isolating such effects from the overarching trend.\\
