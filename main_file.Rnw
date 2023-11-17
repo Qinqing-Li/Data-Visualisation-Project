@@ -746,9 +746,9 @@ ggplot(data = mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
 \noindent 
 \\Model selection methods, such as the Akaike Information Criterion (AIC), play a crucial role in statistical modeling. AIC provides an estimate of the information lost when a given model is used to represent the process that generated the data, it is calculated as follows: 
 
-$$\mathrm{AIC} = -2 \l(\mathbf{\hat{\theta}})+2 \dim (\mathbf{\theta}) \cite{aic},$$
+$$\mathrm{AIC} = -2 \l(\hat{\boldsymbol {\theta}})+2 \dim (\boldsymbol{\theta}) \cite{aic},$$
 \\  
-\\where $\l(\mathbf{\hat{\theta}})$ is the log-likelihood function, let $\l(\mathbf{\hat{\theta}}) = 0$ to find the Maximum Likelihood Estimator $\mathbf{\hat{\theta}}$ of a distribution.\\
+\\where $\l(\hat{\boldsymbol{\theta}})$ is the log-likelihood function, let $\l(\hat{\boldsymbol{\theta}}) = 0$ to find the Maximum Likelihood Estimator $\hat{\boldsymbol{\theta}}$ of a distribution.\\
 
 \noindent 
 The R algorithm \texttt{step()}, which minimises the AIC score, aids in selecting the most appropriate regression model from a set of explanatory variables. This algorithm uses backward selection method. Starting with all explanatory variables, the algorithm iteratively excludes one covariate at each step, until statistically significant reduction in AIC is achieved. This algorithm aims to find the best-fitting model by balancing goodness of fit and simplicity. Note that \texttt{step()} provides comparison between competing models rather than an absolute measure of model quality.

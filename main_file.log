@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.9.29)  17 NOV 2023 15:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.9.29)  17 NOV 2023 15:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1270,7 +1270,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 673--676
 
  []
 
-<figure/beamer-bubble-plot-1.pdf, id=418, 650.43pt x 361.35pt>
+<figure/beamer-bubble-plot-1.pdf, id=419, 650.43pt x 361.35pt>
 File: figure/beamer-bubble-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-bubble-plot-1.pdf>
 Package pdftex.def Info: figure/beamer-bubble-plot-1.pdf  used on input line 68
@@ -1312,18 +1312,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 711--713
 
  []
 
-<figure/beamer-spacetime-fy22-1.pdf, id=438, 505.89pt x 433.62pt>
+<figure/beamer-spacetime-fy22-1.pdf, id=439, 505.89pt x 433.62pt>
 File: figure/beamer-spacetime-fy22-1.pdf Graphic file (type pdf)
 <use figure/beamer-spacetime-fy22-1.pdf>
 Package pdftex.def Info: figure/beamer-spacetime-fy22-1.pdf  used on input line
  731.
 (pdftex.def)             Requested size: 208.13574pt x 178.40068pt.
-<image_reference/mapshoot.png, id=439, 795.97375pt x 710.655pt>
+<image_reference/mapshoot.png, id=440, 795.97375pt x 710.655pt>
 File: image_reference/mapshoot.png Graphic file (type png)
 <use image_reference/mapshoot.png>
 Package pdftex.def Info: image_reference/mapshoot.png  used on input line 742.
 (pdftex.def)             Requested size: 208.13574pt x 185.81778pt.
-<figure/beamer-fire-by-months-fy13-22-1.pdf, id=440, 361.35pt x 187.70125pt>
+<figure/beamer-fire-by-months-fy13-22-1.pdf, id=441, 361.35pt x 187.70125pt>
 File: figure/beamer-fire-by-months-fy13-22-1.pdf Graphic file (type pdf)
 <use figure/beamer-fire-by-months-fy13-22-1.pdf>
 Package pdftex.def Info: figure/beamer-fire-by-months-fy13-22-1.pdf  used on in
@@ -1372,7 +1372,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 798--800
                                                   \fi \fi 
 l.800 
        <./figure/beamer-fire-by-months-fy13-22-1.pdf>]
-<figure/beamer-unnamed-chunk-2-1.pdf, id=467, 433.62pt x 252.945pt>
+<figure/beamer-unnamed-chunk-2-1.pdf, id=468, 433.62pt x 252.945pt>
 File: figure/beamer-unnamed-chunk-2-1.pdf Graphic file (type pdf)
 <use figure/beamer-unnamed-chunk-2-1.pdf>
 Package pdftex.def Info: figure/beamer-unnamed-chunk-2-1.pdf  used on input lin
@@ -1418,7 +1418,7 @@ free_y"[][],[] []ncol[] []=[] []1[][])[] []+[] []labs[][]([][]x[] []=[] []"Date
 [][] 
  []
 
-<figure/beamer-unnamed-chunk-4-1.pdf, id=485, 361.35pt x 289.08pt>
+<figure/beamer-unnamed-chunk-4-1.pdf, id=486, 361.35pt x 289.08pt>
 File: figure/beamer-unnamed-chunk-4-1.pdf Graphic file (type pdf)
 <use figure/beamer-unnamed-chunk-4-1.pdf>
 Package pdftex.def Info: figure/beamer-unnamed-chunk-4-1.pdf  used on input lin
@@ -1460,7 +1460,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 916--919
 
  []
 
-<figure/beamer-unnamed-chunk-5-1.pdf, id=504, 289.08pt x 216.81pt>
+<figure/beamer-unnamed-chunk-5-1.pdf, id=505, 289.08pt x 216.81pt>
 File: figure/beamer-unnamed-chunk-5-1.pdf Graphic file (type pdf)
 <use figure/beamer-unnamed-chunk-5-1.pdf>
 Package pdftex.def Info: figure/beamer-unnamed-chunk-5-1.pdf  used on input lin
@@ -1538,11 +1538,11 @@ Package rerunfilecheck Info: File `main_file.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1084.
  ) 
 Here is how much of TeX's memory you used:
- 9399 strings out of 492649
- 136871 string characters out of 6129622
+ 9411 strings out of 492649
+ 136995 string characters out of 6129622
  242085 words of memory out of 5000000
- 13043 multiletter control sequences out of 15000+600000
- 10827 words of font info for 40 fonts, out of 8000000 for 9000
+ 13049 multiletter control sequences out of 15000+600000
+ 12657 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,10n,35p,1416b,499s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
@@ -1552,6 +1552,7 @@ Here is how much of TeX's memory you used:
 usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></
 usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
 sr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr
+/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr
 /local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
 ocal/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loc
 al/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local
@@ -1563,10 +1564,10 @@ e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/
 018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/20
 18/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2018
 /texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main_file.pdf (35 pages, 7308441 bytes).
+Output written on main_file.pdf (35 pages, 7315253 bytes).
 PDF statistics:
- 641 PDF objects out of 1000 (max. 8388607)
- 534 compressed objects within 6 object streams
+ 645 PDF objects out of 1000 (max. 8388607)
+ 537 compressed objects within 6 object streams
  109 named destinations out of 1000 (max. 500000)
  346 words of extra memory for PDF output out of 10000 (max. 10000000)
 
