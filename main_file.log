@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.9.29)  16 NOV 2023 21:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.9.29)  17 NOV 2023 05:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -802,12 +802,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 210--211
 
  []
 
-[7]
+
 Underfull \hbox (badness 10000) in paragraph at lines 212--214
 
  []
 
-[8]
+[7] [8]
 Underfull \hbox (badness 10000) in paragraph at lines 225--226
 
  []
@@ -818,7 +818,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 227--229
  []
 
 [9]
-<figure/beamer-data-plots-1.pdf, id=252, 794.97pt x 578.16pt>
+<figure/beamer-data-plots-1.pdf, id=254, 794.97pt x 578.16pt>
 File: figure/beamer-data-plots-1.pdf Graphic file (type pdf)
 <use figure/beamer-data-plots-1.pdf>
 Package pdftex.def Info: figure/beamer-data-plots-1.pdf  used on input line 252
@@ -831,7 +831,7 @@ Package pdftex.def Info: figure/beamer-data-plots-1.pdf  used on input line 252
                                                   \fi \fi 
 l.265 
        <./figure/beamer-data-plots-1.pdf>]
-<figure/beamer-abs-plots-1.pdf, id=269, 867.24pt x 289.08pt>
+<figure/beamer-abs-plots-1.pdf, id=271, 867.24pt x 289.08pt>
 File: figure/beamer-abs-plots-1.pdf Graphic file (type pdf)
 <use figure/beamer-abs-plots-1.pdf>
 Package pdftex.def Info: figure/beamer-abs-plots-1.pdf  used on input line 283.
@@ -905,7 +905,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 320--322
 
  []
 
-<figure/beamer-colour-plot-1.pdf, id=301, 722.7pt x 216.81pt>
+<figure/beamer-colour-plot-1.pdf, id=303, 722.7pt x 216.81pt>
 File: figure/beamer-colour-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-colour-plot-1.pdf>
 Package pdftex.def Info: figure/beamer-colour-plot-1.pdf  used on input line 32
@@ -946,7 +946,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 348--349
 
  []
 
-<figure/beamer-cogload-plot-1.pdf, id=315, 722.7pt x 216.81pt>
+<figure/beamer-cogload-plot-1.pdf, id=317, 722.7pt x 216.81pt>
 File: figure/beamer-cogload-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-cogload-plot-1.pdf>
 Package pdftex.def Info: figure/beamer-cogload-plot-1.pdf  used on input line 3
@@ -984,7 +984,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<figure/beamer-barcharts-1.pdf, id=328, 722.7pt x 216.81pt>
+<figure/beamer-barcharts-1.pdf, id=330, 722.7pt x 216.81pt>
 File: figure/beamer-barcharts-1.pdf Graphic file (type pdf)
 <use figure/beamer-barcharts-1.pdf>
 Package pdftex.def Info: figure/beamer-barcharts-1.pdf  used on input line 385.
@@ -1022,12 +1022,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 406--409
                                                   \fi \fi 
 l.409 
        <./figure/beamer-barcharts-1.pdf>]
-<figure/beamer-hist2-1.pdf, id=346, 361.35pt x 289.08pt>
+<figure/beamer-hist2-1.pdf, id=348, 361.35pt x 289.08pt>
 File: figure/beamer-hist2-1.pdf Graphic file (type pdf)
 <use figure/beamer-hist2-1.pdf>
 Package pdftex.def Info: figure/beamer-hist2-1.pdf  used on input line 419.
 (pdftex.def)             Requested size: 208.13574pt x 166.51082pt.
-<figure/beamer-kde3-1.pdf, id=347, 361.35pt x 289.08pt>
+<figure/beamer-kde3-1.pdf, id=349, 361.35pt x 289.08pt>
 File: figure/beamer-kde3-1.pdf Graphic file (type pdf)
 <use figure/beamer-kde3-1.pdf>
 Package pdftex.def Info: figure/beamer-kde3-1.pdf  used on input line 431.
@@ -1145,7 +1145,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 565--569
  []
 
 [19]
-<figure/beamer-cor-matrix-mtcars2-1.pdf, id=384, 361.35pt x 208.78pt>
+<figure/beamer-cor-matrix-mtcars2-1.pdf, id=386, 361.35pt x 208.78pt>
 File: figure/beamer-cor-matrix-mtcars2-1.pdf Graphic file (type pdf)
 <use figure/beamer-cor-matrix-mtcars2-1.pdf>
 Package pdftex.def Info: figure/beamer-cor-matrix-mtcars2-1.pdf  used on input 
@@ -1165,7 +1165,7 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <7> not available
                                                   \fi \fi 
 l.616 \end{kframe}
                    <./figure/beamer-cor-matrix-mtcars2-1.pdf>]
-<figure/beamer-scatter-plot-1.pdf, id=399, 289.08pt x 216.81pt>
+<figure/beamer-scatter-plot-1.pdf, id=401, 289.08pt x 216.81pt>
 File: figure/beamer-scatter-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-scatter-plot-1.pdf>
 Package pdftex.def Info: figure/beamer-scatter-plot-1.pdf  used on input line 6
@@ -1195,7 +1195,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 636--639
 
  []
 
-<image_reference/codeshoot.png, id=400, 781.92125pt x 33.12375pt>
+<image_reference/codeshoot.png, id=402, 781.92125pt x 33.12375pt>
 File: image_reference/codeshoot.png Graphic file (type png)
 <use image_reference/codeshoot.png>
 Package pdftex.def Info: image_reference/codeshoot.png  used on input line 645.
@@ -1256,7 +1256,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 672--675
 
  []
 
-<figure/beamer-bubble-plot-1.pdf, id=415, 650.43pt x 361.35pt>
+<figure/beamer-bubble-plot-1.pdf, id=417, 650.43pt x 361.35pt>
 File: figure/beamer-bubble-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-bubble-plot-1.pdf>
 Package pdftex.def Info: figure/beamer-bubble-plot-1.pdf  used on input line 67
@@ -1292,18 +1292,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 708--710
  []
 
 [23 <./figure/beamer-bubble-plot-1.pdf>]
-<figure/beamer-spacetime-fy22-1.pdf, id=435, 505.89pt x 433.62pt>
+<figure/beamer-spacetime-fy22-1.pdf, id=437, 505.89pt x 433.62pt>
 File: figure/beamer-spacetime-fy22-1.pdf Graphic file (type pdf)
 <use figure/beamer-spacetime-fy22-1.pdf>
 Package pdftex.def Info: figure/beamer-spacetime-fy22-1.pdf  used on input line
  728.
 (pdftex.def)             Requested size: 208.13574pt x 178.40068pt.
-<image_reference/mapshoot.png, id=436, 795.97375pt x 710.655pt>
+<image_reference/mapshoot.png, id=438, 795.97375pt x 710.655pt>
 File: image_reference/mapshoot.png Graphic file (type png)
 <use image_reference/mapshoot.png>
 Package pdftex.def Info: image_reference/mapshoot.png  used on input line 739.
 (pdftex.def)             Requested size: 208.13574pt x 185.81778pt.
-<figure/beamer-fire-by-months-fy13-22-1.pdf, id=437, 361.35pt x 187.70125pt>
+<figure/beamer-fire-by-months-fy13-22-1.pdf, id=439, 361.35pt x 187.70125pt>
 File: figure/beamer-fire-by-months-fy13-22-1.pdf Graphic file (type pdf)
 <use figure/beamer-fire-by-months-fy13-22-1.pdf>
 Package pdftex.def Info: figure/beamer-fire-by-months-fy13-22-1.pdf  used on in
@@ -1352,7 +1352,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 795--797
                                                   \fi \fi 
 l.797 
        <./figure/beamer-fire-by-months-fy13-22-1.pdf>]
-<figure/beamer-unnamed-chunk-2-1.pdf, id=463, 433.62pt x 252.945pt>
+<figure/beamer-unnamed-chunk-2-1.pdf, id=465, 433.62pt x 252.945pt>
 File: figure/beamer-unnamed-chunk-2-1.pdf Graphic file (type pdf)
 <use figure/beamer-unnamed-chunk-2-1.pdf>
 Package pdftex.def Info: figure/beamer-unnamed-chunk-2-1.pdf  used on input lin
@@ -1398,7 +1398,7 @@ free_y"[][],[] []ncol[] []=[] []1[][])[] []+[] []labs[][]([][]x[] []=[] []"Date
 [][] 
  []
 
-<figure/beamer-unnamed-chunk-4-1.pdf, id=481, 361.35pt x 289.08pt>
+<figure/beamer-unnamed-chunk-4-1.pdf, id=483, 361.35pt x 289.08pt>
 File: figure/beamer-unnamed-chunk-4-1.pdf Graphic file (type pdf)
 <use figure/beamer-unnamed-chunk-4-1.pdf>
 Package pdftex.def Info: figure/beamer-unnamed-chunk-4-1.pdf  used on input lin
@@ -1440,7 +1440,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 913--916
 
  []
 
-<figure/beamer-unnamed-chunk-5-1.pdf, id=500, 289.08pt x 216.81pt>
+<figure/beamer-unnamed-chunk-5-1.pdf, id=502, 289.08pt x 216.81pt>
 File: figure/beamer-unnamed-chunk-5-1.pdf Graphic file (type pdf)
 <use figure/beamer-unnamed-chunk-5-1.pdf>
 Package pdftex.def Info: figure/beamer-unnamed-chunk-5-1.pdf  used on input lin
@@ -1548,10 +1548,10 @@ ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive
 2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2
 018/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/201
 8/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main_file.pdf (34 pages, 7317574 bytes).
+Output written on main_file.pdf (34 pages, 7316478 bytes).
 PDF statistics:
- 633 PDF objects out of 1000 (max. 8388607)
- 526 compressed objects within 6 object streams
+ 636 PDF objects out of 1000 (max. 8388607)
+ 529 compressed objects within 6 object streams
  105 named destinations out of 1000 (max. 500000)
  354 words of extra memory for PDF output out of 10000 (max. 10000000)
 

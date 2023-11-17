@@ -167,22 +167,21 @@ When using ggplot2, the certain objects are used repeatedly. Some of these are: 
 
 
 \subsection{Datasets}
-In this section, we unveil the datasets used throughout our study. This section delves into the comprehensive depiction of the diverse datasets employed. Each dataset is meticulously introduced, elucidating its source, structure, and relevance to our investigation.\\
 
 \noindent
-\textbf{Mtcars}: The \textit{Mtcars} dataset, available as a built-in dataset in R, offers a glimpse into the automotive world of the early 1970s. This dataset encompasses 11 attributes for 32 distinct car models. Some of the variables included are: mpg: Miles per Gallon, cly: Number of cylinders , hp: Horsepower , and wt: Weight of the car in tons .\\
+\textbf{mtcars}: The built-in R dataset, \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars}{mtcars} was extracted from the 1974 Motor Trend US magazine. It includes the fuel consumption and 10 aspects of automobile design for 32 automobiles (1973–74 models). \\
 
 \noindent
-\textbf{Tooth Growth}: \textit{The ToothGrowth dataset}, available as a built-in dataset in R, offers the impact of vitamin C on the tooth growth of Guinea pigs. The dataset consists of 60 observations and 3 variables: len: Length of the Guinea pigs' teeth, supp: Method of vitamin C supplementation, and dose: Dose of vitamin C in milligrams per day.\\
+\textbf{ToothGrowth}: The built-in R dataset, \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/ToothGrowth}{ToothGrowth}, measures the tooth growth of 60 guinea pigs. Each animal was either administered with vitamin C or orange juice.\\
 
 \noindent
-\textbf{Iris}: The Anderson's iris data, available as a built-in dataset in R, offers the measurements in centimeters of sepal length and width, petal length and width, along with the species name for 50 flowers from each of three species of iris. The dataset consists of 5 variables: Sepal.Length, Sepal.Width, Petal.Length, Petal.Width, and Species: Species name.\\
+\textbf{iris}: The built-in R dataset \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/iris}{iris} was collected by Edgar Anderson. This dataset was famously used by British statistician Ronald Fisher to demonstrate linear discriminant analysis in 1936. It encompasses 5 flower characteristics for 3 types of iris, each with 50 samples. \\
 
 \noindent
-\textbf{Annual Fire in Brazil}: Open-source fire observation data is provided on a global scale by \href{https://firms.modaps.eosdis.nasa.gov/}{NASA}. For the purpose of our project, the analysis was focused on Brazil. The dataset covers the year 2013 to 2022, with over 200,000 observations annually. Each observation includes crucial information such as latitude, longitude and date of observation. Notably, the dataset contains the variable confidence, ranging from 0\% to 100\%. This variable quantifies the level of confidence associated with each observation being a fire occurrence. For the reliability of the result, we filtered all observations with a confidence level $\ge$ 95\% \cite{nasa_confidence}.\\
+\textbf{Fire in Brazil}: Open-source fire observation data is provided by \href{https://firms.modaps.eosdis.nasa.gov/}{NASA}. The analysis focuses on Brazil (2013-2022). Note that the dataset contains the variable ``confidence", ranging from 0\% to 100\%. The dataset was filtered with a confidence level of $\ge$ 95\%  to ensure an accurate account of fire occurrences\cite{nasa_confidence}.\\
 
 \noindent
-\textbf{Exchange Rate}: The exchange rate data, available at the \href{https://www.bankofengland.co.uk/boeapps/database/index.asp?first=yes&SectionRequired=I&HideNums=-1&ExtraInfo=true&Travel=NIx}{Bank of England}, provides daily spot exchange rates against GBP over the time period from 2005 to now (without weekends). A subset of daily spot exchange rate of CNY (Chinese Yuan), CAD (Canadian Dollar), EUR (Euro), HKD (Hongkong Dollar), and USD (US Dollar) against GBP (Pounds Sterling) from January 2013 to October 2023 was used in this report. The dataset contains 6 variables: `Date`: Date of spot exchange rate and spot exchange rate of CNY, CAN, EUR, HKD, and USD against GBP.\\
+\textbf{Exchange Rate}: The exchange rate data, available at the \href{https://www.bankofengland.co.uk/boeapps/database/index.asp?first=yes&SectionRequired=I&HideNums=-1&ExtraInfo=true&Travel=NIx}{Bank of England}, provides daily spot exchange rates against the pound Sterling (2005-present). This report examines the daily spot rates of the Canadian Dollar, Euro, and US Dollar against the pound Sterling.\\
 
 
 \subsection{Structure and Organisation of the Thesis}
