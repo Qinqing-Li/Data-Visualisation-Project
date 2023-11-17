@@ -3,11 +3,12 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main_file.aux
 The style file: plain.bst
 Database file #1: reference.bib
+Warning--I didn't find a database entry for "ggplot2"
 Warning--I didn't find a database entry for "wand1994kernel"
 Warning--to sort, need author or key in worth
 You've used 17 entries,
             2118 wiz_defined-function locations,
-            597 strings with 6503 characters,
+            598 strings with 6510 characters,
 and the built_in function-call counts, 4081 in all, are:
 = -- 399
 > -- 131
@@ -46,4 +47,4 @@ warning$ -- 1
 while$ -- 39
 width$ -- 19
 write$ -- 192
-(There were 2 warnings)
+(There were 3 warnings)
