@@ -474,40 +474,7 @@ Addressing information overload in visualisations necessitates the strategic app
 
 This chapter explores a variety of powerful visualisation methods, from classic scatter plots and bar charts to advanced techniques like heatmaps and network graphs. Vivid examples will be used to demonstrate when and why each method is employed, and the theoretical and mathematical foundations that empower these visualisations to unveil insights hidden within the data will be delved into.
 
-\subsection{Bar Charts and Histograms}
-\subsubsection{Bar Charts}
-\noindent The bar chart is a crucial tool in data presentation, arranging data into vertical or horizontal bars. Its advantages in data visualisation are manifold, particularly in showcasing data categories through frequency distribution. Bar charts excel in comparing classified data, especially when values are closely aligned. This superiority stems from human perception, as our visual acuity for height surpasses that of other visual elements like area or angle. The varying lengths of these bars directly correspond to the magnitude of the information they represent.\\
-
-\noindent Bar charts represent a versatile tool for data visualisation, frequently employed to compare distinct categories. The \textbf{vertical bar chart}, commonly recognised, exhibits categories along the X-axis and their frequencies or counts along the Y-axis. \textbf{Horizontal bar charts}, rotated 90 degrees, prove beneficial for extended category names or numerous categories, displaying categories on the Y-axis and frequencies on the X-axis. \textbf{Multi-set or grouped bar charts} facilitate side-by-side comparisons of sub- groups within categories, available in both vertical and horizontal orientations. \textbf{Stacked bar charts} illustrate classes of values subdivided into sub-classes, often differentiated by colour, where each segment's size signifies its frequency or count, and the total bar length reflects the cumulative total.\\
-
-\noindent The disadvantages of bar charts include limited suitability for large datasets, potential misinterpretation when lacking a zero baseline, difficulty in handling numerous categories, and their preference for categorical data over continuous data trends, where line graphs are more suitable.\\
-
-\noindent \textbf{Bar Charts in Practice}\\
-\noident The bar chart in Figure~\ref{fig:barcharts} depicts the relationship between tooth growth and different dosages of a vitamin, measured in milligrams per day. On the X-axis, three distinct levels of vitamin dosage are presented, while the Y-axis indicates the average tooth growth for each dosage. A key observation from the chart is a noticeable trend where increasing vitamin dosages correlate with increased tooth growth, suggesting that higher vitamin doses may enhance tooth growth.
-
-<<barcharts, echo=FALSE, fig.height=3, fig.width=10, fig.cap='visualising Tooth Growth by Dosage: A Comparison of Grouped and Stacked Bar Chart Techniques'>>=
-data(ToothGrowth)
-filtered_data <- ToothGrowth %>% filter(dose %in% c(0.5, 1, 2))
-
-barchart_plot1 <- ggplot(filtered_data, aes(x = factor(dose), y = len, fill = supp)) +
-  geom_bar(stat = "identity", position = position_dodge(width = 0.9)) +
-  labs(x = "Dose (mg/day)", y = "Tooth Length (mm)", fill = "Supplement") +
-  theme_minimal()
-
-barchart_plot2 <- ggplot(filtered_data, aes(x = factor(dose), y = len, fill = supp)) +
-  geom_bar(stat = "identity", position = "stack") +
-  labs(x = "Dose (mg/day)", y = "Tooth Length (mm)", fill = "Supplement") +
-  theme_minimal()
-
-ggsave("barcharts.pdf", plot = grid.arrange(barchart_plot1, barchart_plot2, ncol = 2), width = 10, height = 3)
-@
-
-\noindent 
-The bar chart on the left in Figure~\ref{fig:barcharts} illustrates the impact of varying vitamin dosages on tooth growth, further categorised by supplement type (supp). It shows three distinct dosage levels (0.5, 1, and 2 mg/day) on the X-axis and tooth growth length on the Y-axis, representing the average growth for both supplements at each dosage. The chart highlights that tooth growth, as indicated by the total height of each bar, varies not only with the dosage but also with the supplement type, suggesting a need for closer analysis to understand the relative effectiveness of each supplement at different dosages.\\
-
-\noindent
-The structure of the second bar graph in Figure~\ref{fig:barcharts} is quite similar to that of the first one, with the main difference lying in the method of data representation. The stacked bar chart facilitates the understanding of the combined effects of the two supplements at each dosage level. However, compared to the normal bar chart, it becomes more challenging to differentiate the individual contributions of each supplement.\\
-
+\subsection{ Histograms and Bar Charts }
 \subsubsection{Histograms}
 
 Histograms, although visually similar to bar charts, convey different meanings. A histogram involves concepts of statistics. It requires data to be categorised into groups and then counts the data points within each of those groups.\\
@@ -580,9 +547,40 @@ The kernel function \( K(u) \) is a normalised non-negative function that satisf
 
 \noindent In Figure~\ref{fig:iris-plots}, the kernel density estimation of the dataset is presented. The distribution of sepal lengths is depicted by the kernel density curve. The peaks observed in the curve correspond to the primary concentration trends of sepal length within the data. A unimodal curve signifies a concentration of sepal lengths for most irises in that specific region. Conversely, a bimodal or multimodal curve suggests the existence of multiple concentration areas.
 
-\subsection{Scatter Plots and Bubble Charts}
+\subsubsection{Bar Charts}
+\noindent The bar chart is a crucial tool in data presentation, arranging data into vertical or horizontal bars. Its advantages in data visualisation are manifold, particularly in showcasing data categories through frequency distribution. Bar charts excel in comparing classified data, especially when values are closely aligned. This superiority stems from human perception, as our visual acuity for height surpasses that of other visual elements like area or angle. The varying lengths of these bars directly correspond to the magnitude of the information they represent.\\
 
-Scatter plots and bubble charts are fundamental data visualisation techniques that provide valuable insights into the relationships and patterns within datasets. These visualisations are particularly effective for representing discrete data through data points, since this brings out easily identifiable comparisons, and reveals trends.
+\noindent Bar charts represent a versatile tool for data visualisation, frequently employed to compare distinct categories. The \textbf{vertical bar chart}, commonly recognised, exhibits categories along the X-axis and their frequencies or counts along the Y-axis. \textbf{Horizontal bar charts}, rotated 90 degrees, prove beneficial for extended category names or numerous categories, displaying categories on the Y-axis and frequencies on the X-axis. \textbf{Multi-set or grouped bar charts} facilitate side-by-side comparisons of sub- groups within categories, available in both vertical and horizontal orientations. \textbf{Stacked bar charts} illustrate classes of values subdivided into sub-classes, often differentiated by colour, where each segment's size signifies its frequency or count, and the total bar length reflects the cumulative total.\\
+
+\noindent The disadvantages of bar charts include limited suitability for large datasets, potential misinterpretation when lacking a zero baseline, difficulty in handling numerous categories, and their preference for categorical data over continuous data trends, where line graphs are more suitable.\\
+
+\noindent \textbf{Bar Charts in Practice}\\
+\noident The bar chart in Figure~\ref{fig:barcharts} depicts the relationship between tooth growth and different dosages of a vitamin, measured in milligrams per day. On the X-axis, three distinct levels of vitamin dosage are presented, while the Y-axis indicates the average tooth growth for each dosage. A key observation from the chart is a noticeable trend where increasing vitamin dosages correlate with increased tooth growth, suggesting that higher vitamin doses may enhance tooth growth.
+
+<<barcharts, echo=FALSE, fig.height=3, fig.width=10, fig.cap='visualising Tooth Growth by Dosage: A Comparison of Grouped and Stacked Bar Chart Techniques'>>=
+data(ToothGrowth)
+filtered_data <- ToothGrowth %>% filter(dose %in% c(0.5, 1, 2))
+
+barchart_plot1 <- ggplot(filtered_data, aes(x = factor(dose), y = len, fill = supp)) +
+  geom_bar(stat = "identity", position = position_dodge(width = 0.9)) +
+  labs(x = "Dose (mg/day)", y = "Tooth Length (mm)", fill = "Supplement") +
+  theme_minimal()
+
+barchart_plot2 <- ggplot(filtered_data, aes(x = factor(dose), y = len, fill = supp)) +
+  geom_bar(stat = "identity", position = "stack") +
+  labs(x = "Dose (mg/day)", y = "Tooth Length (mm)", fill = "Supplement") +
+  theme_minimal()
+
+ggsave("barcharts.pdf", plot = grid.arrange(barchart_plot1, barchart_plot2, ncol = 2), width = 10, height = 3)
+@
+
+\noindent 
+The bar chart on the left in Figure~\ref{fig:barcharts} illustrates the impact of varying vitamin dosages on tooth growth, further categorised by supplement type (supp). It shows three distinct dosage levels (0.5, 1, and 2 mg/day) on the X-axis and tooth growth length on the Y-axis, representing the average growth for both supplements at each dosage. The chart highlights that tooth growth, as indicated by the total height of each bar, varies not only with the dosage but also with the supplement type, suggesting a need for closer analysis to understand the relative effectiveness of each supplement at different dosages.\\
+
+\noindent
+The structure of the second bar graph in Figure~\ref{fig:barcharts} is quite similar to that of the first one, with the main difference lying in the method of data representation. The stacked bar chart facilitates the understanding of the combined effects of the two supplements at each dosage level. However, compared to the normal bar chart, it becomes more challenging to differentiate the individual contributions of each supplement.\\
+
+
 
 \subsubsection{Scatter Plots}
 
