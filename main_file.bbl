@@ -99,6 +99,16 @@ Edward~R Tufte.
 \newblock {\em The visual display of quantitative information}, volume~2.
 \newblock Graphics press Cheshire, CT, 2001.
 
+\bibitem{wand1994kernel}
+Matt~P Wand and M~Chris Jones.
+\newblock {\em Kernel smoothing}.
+\newblock CRC press, 1994.
+
+\bibitem{ggplot2}
+Hadley Wickham.
+\newblock {\em ggplot2: Elegant Graphics for Data Analysis}.
+\newblock Springer-Verlag New York, 2016.
+
 \bibitem{GRM_chp3}
 B.~Worton.
 \newblock {\em Generalised Regression Models, Semester 1, 2023–2024}.

@@ -27,4 +27,4 @@
 \contentsline {subsubsection}{\numberline {3.1.6}Bubble Charts}{22}{subsubsection.3.1.6}%
 \contentsline {subsection}{\numberline {3.2}Heatmaps and Fire in Brazil}{23}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Line Charts and Time Series Visualisation}{25}{subsection.3.3}%
-\contentsline {section}{\numberline {A}Appendix A}{32}{appendix.A}%
+\contentsline {section}{\numberline {A}Appendix A}{33}{appendix.A}%
