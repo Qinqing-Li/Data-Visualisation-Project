@@ -187,7 +187,6 @@ When using ggplot2, the certain objects are used repeatedly. Some of these are: 
 
 
 \subsection{Datasets}
-In this section, we unveil the datasets used throughout our study. This section delves into the comprehensive depiction of the diverse datasets employed. Each dataset is meticulously introduced, elucidating its source, structure, and relevance to our investigation.\\
 
 \noindent
 \textbf{mtcars}: The built-in R dataset, \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars}{mtcars} was extracted from the 1974 Motor Trend US magazine. It includes the fuel consumption and 10 aspects of automobile design for 32 automobiles (1973–74 models). \\
@@ -199,7 +198,7 @@ In this section, we unveil the datasets used throughout our study. This section 
 \textbf{iris}: The built-in R dataset \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/iris}{iris} was collected by Edgar Anderson. This dataset was famously used by British statistician Ronald Fisher to demonstrate linear discriminant analysis in 1936. It encompasses 5 flower characteristics for 3 types of iris, each with 50 samples. \\
 
 \noindent
-\textbf{Fire in Brazil}: Open-source fire observation data is provided by \href{https://firms.modaps.eosdis.nasa.gov/}{NASA}. The analysis focuses on Brazil (2013-2022). Note that the dataset contains the variable "confidence", ranging from 0\% to 100\%. The dataset was filtered with a confidence level of $\ge$ 95\%  to ensure an accurate account of fire occurrences. \cite{nasa_confidence}.\\
+\textbf{Fire in Brazil}: Open-source fire observation data is provided by \href{https://firms.modaps.eosdis.nasa.gov/}{NASA}. The analysis focuses on Brazil (2013-2022). Note that the dataset contains the variable ``confidence", ranging from 0\% to 100\%. The dataset was filtered with a confidence level of $\ge$ 95\%  to ensure an accurate account of fire occurrences\cite{nasa_confidence}.\\
 
 \noindent
 \textbf{Exchange Rate}: The exchange rate data, available at the \href{https://www.bankofengland.co.uk/boeapps/database/index.asp?first=yes&SectionRequired=I&HideNums=-1&ExtraInfo=true&Travel=NIx}{Bank of England}, provides daily spot exchange rates against the pound Sterling (2005-present). This report examines the daily spot rates of the Canadian Dollar, Euro, and US Dollar against the pound Sterling.\\
@@ -450,6 +449,7 @@ The KDE algorithm takes a parameter, bandwidth, that affects how “smooth” th
 \noindent
 We can express KDE as follows,where the K represent the kernel function:
 $$\hat{f}(x) = \sum_{\text{observations}} K\left(\frac{x - \text{observation}}{\text{bandwidth}}\right),$$
+In kernel density estimation (KDE), the variable x represents the point of density estimation, which can be any value. The total number of data points, denoted as n, constitutes the sample size, and all these points are used for estimating the dataset's probability density function. The bandwidth (h) is a crucial parameter that controls the smoothness of the estimation, with smaller bandwidths leading to closer fits to data and larger ones smoothing out details. The kernel function (K), such as the Gaussian or triangular kernel, assigns weights around each data point, influencing the density estimate, while $x_i$ represents the individual sample points that collectively contribute to the estimated density function, guided by the kernel function and the bandwidth.
 $$\hat{f}(x) = \frac{1}{nh} \sum_{i=1}^{n} K\left(\frac{x - x_i}{h}\right).$$\\
 The kernel function \( K(u) \) is a normalised non-negative function that satisfies:
 \[ \int K(u) \, du = 1. \]
@@ -862,7 +862,7 @@ X_t = t_t \times s_t \times r_t \quad \text{or} \quad \log(X_t) = \log(t_t) + \l
 In practice, the choice between the additive and multiplicative models often depends on the nature of the time series. If the magnitude of the seasonal fluctuations or the variation around the trend does not vary with the level of the time series, then an additive model is appropriate. If the magnitude of the seasonal fluctuations or the variation around the trend increases or decreases as the time series level changes, then a multiplicative model may be more suitable.\\
 
 \noindent
-In R, a built in function named "decompose()" is able to decompose the time series by addictive model or multiplicative model. And below is the demonstration of decomposition.
+R function \texttt{decompose()} is able to decompose the time series by addictive model or multiplicative model. And below is the demonstration of decomposition.
 
 
 
