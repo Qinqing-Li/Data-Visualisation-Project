@@ -497,7 +497,7 @@ Consider the following graph with created on ggplot2 with the use of to the \tex
 bar_diagram <- ggplot(iris, aes(x = Sepal.Length)) +
   geom_histogram(
     binwidth = 0.2,  # Adjust the box width to 0.2 for smaller data sets
-    fill = "green"
+    fill = "#74c476"
   ) +
   labs(
     x = "Sepal Length (cm)",
@@ -513,7 +513,7 @@ print(bar_diagram)
 # Create a Kernel Density Estimate plot using ggplot2 for Sepal Length in the Iris dataset
 kde_diagram <- ggplot(iris, aes(x = Sepal.Length)) +
   geom_density(
-    fill = "green",
+    fill = "#74c476",
     color = NA,
     alpha = 0.5,  # Adjust the transparency for better visualisation
     adjust = 1  # This parameter can be used to control the smoothness
@@ -584,7 +584,7 @@ The structure of the second bar graph in Figure~\ref{fig:barcharts} is quite sim
 
 
 
-\subsubsection{Scatter Plots}
+\subsection{Scatter Plots}
 
 A scatter plot is a graphical representation of a set of data points in a two-dimensional coordinate system. Each data point is represented by a dot, and the position of the dot is determined by the values of two variables.\\
 
@@ -746,7 +746,7 @@ ggplot(data = mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
 \noindent 
 \\Model selection methods, such as the Akaike Information Criterion (AIC), play a crucial role in statistical modeling. AIC provides an estimate of the information lost when a given model is used to represent the process that generated the data, it is calculated as follows: 
 
-$$\mathrm{AIC} = -2 \l(\mathbf{\hat{\theta}})+2 \dim (\mathbf{\theta}),$$
+$$\mathrm{AIC} = -2 \l(\mathbf{\hat{\theta}})+2 \dim (\mathbf{\theta}) \cite{aic},$$
 \\  
 \\where $\l(\mathbf{\hat{\theta}})$ is the log-likelihood function, let $\l(\mathbf{\hat{\theta}}) = 0$ to find the Maximum Likelihood Estimator $\mathbf{\hat{\theta}}$ of a distribution.\\
 
