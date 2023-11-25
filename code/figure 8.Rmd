@@ -1,0 +1,41 @@
+---
+title: "figure 8"
+author: "Pia"
+date: "25/11/2023"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(ggplot2)
+library(gridExtra)
+# Load dataset
+data(mtcars)
+```
+
+
+```{r cars}
+# Create a cluttered plot with obscure axis labels and labels on all points
+cluttered_plot <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = as.numeric(row.names(iris)), shape = Species, label = rownames(iris))) +
+  geom_point(size = 3) +
+  geom_text(size = 2, vjust = 1.5, hjust = 1.5) +  # Add text labels
+  labs(title = "High Visual Complexity",
+       x = "sep.width",
+       y = "sep.len",
+       color = "Index",
+       shape = "Species") +
+  scale_color_gradient(low = "red", high = "purple") +  # Rainbow-colored points
+  theme_minimal()
+
+# Create a clear and simple plot
+clear_plot <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Species)) +
+  geom_point(size = 2) +
+  scale_color_manual(values = c("setosa" = "grey", "versicolor" = "grey", "virginica" = "#FDA638")) + 
+  labs(title = "Low Visual Complexity",
+       x = "Sepal Length",
+       y = "Sepal Width",
+       color = "Species") +
+  theme_minimal()
+
+# Use grid.arrange to arrange the plots side by side
+grid.arrange(cluttered_plot, clear_plot, ncol = 2)
+```

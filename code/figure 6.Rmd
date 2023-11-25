@@ -1,0 +1,58 @@
+---
+title: "figure 6"
+author: "Pia"
+date: "25/11/2023"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(ggplot2)
+library(gridExtra)
+```
+
+
+```{r cars}
+# Define a dark red and blue color palette
+dark_red_blue_palette <- c("4" = "#459395", "6" = "#EB7C69", "8" = "#FDA638")  # Adjust the shades of red and blue
+
+# Level 1: Detailed Scatter Plot
+plot1 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
+  geom_point(size = 3, alpha = 0.8) +
+  labs(
+    title = "Low-Level Abstraction",
+    x = "Weight (1000 lbs)",
+    y = "Miles per Gallon",
+    color = "Cylinders"
+  ) +
+  scale_color_manual(values = dark_red_blue_palette) +  # Apply the custom color palette
+  theme_minimal()
+
+# Level 2: Aggregated Bar Plot
+summary_data <- aggregate(mpg ~ cyl, data = mtcars, FUN = mean)
+
+plot2 <- ggplot(summary_data, aes(x = factor(cyl), y = mpg, fill = factor(cyl))) +
+  geom_bar(stat = "identity", width = 0.7) +
+  labs(
+    title = "Mid-Level Abstraction",
+    x = "Cylinders",
+    y = "Average Miles per Gallon",
+    fill = "Cylinders"
+  ) +
+  scale_fill_manual(values = dark_red_blue_palette) +  # Apply the custom color palette
+  theme_minimal()
+
+# Level 3: Abstract Box-and-Whisker Plot
+plot3 <- ggplot(mtcars, aes(x = factor(cyl), y = mpg, fill = factor(cyl))) +
+  geom_boxplot() +
+  labs(
+    title = "High-Level Abstraction",
+    x = "Cylinders",
+    y = "Miles per Gallon",
+    fill = "Cylinders"
+  ) +
+  scale_fill_manual(values = dark_red_blue_palette) +  # Apply the custom color palette
+  theme_minimal()
+
+# Arrange plots in a grid
+grid.arrange(plot1, plot2, plot3, ncol = 3)
+```

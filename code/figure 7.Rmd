@@ -1,0 +1,55 @@
+---
+title: "figure 7"
+author: "Pia"
+date: "25/11/2023"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+# Load dataset
+data(mtcars)
+```
+
+
+```{r cars}
+# Heatmap with color encoding for correlations
+correlation_matrix <- cor(mtcars[, c("mpg", "wt", "hp", "qsec")])
+correlation_data <- as.data.frame(as.table(correlation_matrix))
+names(correlation_data) <- c("Variable1", "Variable2", "Correlation")
+
+heatmap_plot1 <- ggplot(correlation_data, aes(x = Variable1, y = Variable2, fill = Correlation)) +
+  geom_tile(color = "white") +
+  scale_fill_gradient2(low = "#1E88E5", high = "#D81B60", mid = "white", midpoint = 0, limit = c(-1, 1), name = "Correlation") +
+  labs(
+    title = "Real Colours",
+    x = NULL,
+    y = NULL
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+heatmap_plot2 <- ggplot(correlation_data, aes(x = Variable1, y = Variable2, fill = Correlation)) +
+  geom_tile(color = "white") +
+  scale_fill_gradient2(low = "#1E88E5", high = "#5D8DB7", mid = "white", midpoint = 0, limit = c(-1, 1), name = "Correlation") +
+  labs(
+    title = "Perception of protan-type colour blind",
+    x = NULL,
+    y = NULL
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+
+# Arrange plots in a grid
+grid.arrange(heatmap_plot1, heatmap_plot2, ncol = 2)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

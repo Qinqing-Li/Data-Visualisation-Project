@@ -1,0 +1,72 @@
+---
+title: "figure 5"
+author: "Pia"
+date: "25/11/2023"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(ggplot2)
+library(gridExtra)
+```
+
+
+```{r cars}
+# Define the colors
+my_palette <- c("#4B0082", "#459395", "#EB7C69", "#FDA638")
+
+# Generate nominal data (gender categories and tendencies)
+nominal_data <- data.frame(
+  gender = c("Male", "Female", "Non-binary", "Prefer not to say"),
+  tendency = c(30, 40, 15, 15)
+)
+
+# Stacked bar chart showing proportions for nominal data
+plot1 <- ggplot(nominal_data, aes(fill = gender, y = tendency, x = 1)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Gender Categories", x = NULL, y = "Percentage") +
+  scale_fill_manual(values = my_palette) +
+  theme(axis.text.x = element_blank(), 
+        axis.ticks = element_blank(), # Remove axis ticks
+        panel.grid.major = element_line(color = "lightgrey"),
+        panel.background = element_rect(fill = "white"))   
+
+# Generate ordinary data (customer satisfaction)
+ordinal_data <- data.frame(
+  satisfaction_level = c("Satisfied", "Neutral", "Dissatisfied"),
+  count = c(45, 30, 25)
+)
+
+# Ordered bar graph for customer satisfaction data
+plot2 <- ggplot(ordinal_data, aes(x = reorder(satisfaction_level, -count), y = count)) +
+  geom_bar(stat = "identity", fill = my_palette[2]) +
+  labs(title = "Customer Satisfaction Levels", x = NULL, y = "Count") +
+  theme_minimal()
+
+# Generate interval data (temperature)
+interval_data <- data.frame(
+  time = 1:30,
+  temperature = c(18, 19, 20, 22, 25, 28, 26, 24, 22, 20)
+)
+
+# Line chart for temperature data
+plot3 <- ggplot(interval_data, aes(x = time, y = temperature)) +
+  geom_line(linewidth = 0.7, color = my_palette[3]) +
+  labs(title = "Temperature Variation", x = "Time", y = "Temperature (°C)") +
+  theme_minimal()
+
+# Generate data for income distribution across a population
+income_data <- data.frame(
+  income = c(40000, 45000, 45000, 50000, 50000, 50000, 55000, 60000, 60000)
+)
+
+# Create a histogram for income distribution
+plot4 <-ggplot(income_data, aes(x = income)) +
+  geom_histogram(binwidth = 5000, fill = my_palette[4], color = my_palette[4], alpha = 0.5) +
+  labs(title = "Income Distribution", x = "Income", y = "Frequency") +
+  theme_minimal()
+
+# Arrange plots in a 2x2 grid
+grid.arrange(plot1, plot2, plot3, plot4, ncol = 2)
+```
+
