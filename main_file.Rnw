@@ -683,9 +683,6 @@ $$\mathbf{X}^T(\mathbf{y}-\mathbf{X}\hat{\beta})=\mathbf{0}.$$
 The least squares estimate of $\beta$ is given by:
 $$\hat{\beta} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}.$$
 \\ 
-\\
-\\
-\\
 \noident 
 \\\textbf{Case example: 1970s automobiles}\\
 \noindent
