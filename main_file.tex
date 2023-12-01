@@ -185,7 +185,7 @@ Some of the key tools in R mobilised in the creation of visual plots from datase
 The R language is a powerful data analysis tool, and its power lies in the wide variety of R packages that help it achieve a wide variety of functions. Through out this project, we will use many different packages, such as $maps$, $dplyr$, $tidyverse$, $gridExtra$ and so on. These packages significantly enhances the analysis and presentation of data. \\
 
 \noindent
-\textit{dplyr}: This packages plays a crucial role in data manipulation and transformation. It helps us easily filter, sort, summarize, and transform datasets, making data analysis more efficient and manageable. \textit{maps}: This package is primarily used for providing map data and tools, allowing you to easily draw and display maps in geospatial analyses. \textit{tidyverse}: This package is indeed a collection of R packages designed to provide a cohesive and comprehensive set of tools for data science. It includes several widely used packages such as $ggplot2$ and $dplyr$. \textit{gridExtra}: This packages offers the capability to combine several graphical objects into a cohesive display.\\
+The \textit{dplyr} packages plays a crucial role in data manipulation and transformation. It helps us easily filter, sort, summarize, and transform datasets, making data analysis more efficient and manageable. The \textit{maps} package is primarily used for providing map data and tools, allowing you to easily draw and display maps in geospatial analyses. The \textit{tidyverse} package is indeed a collection of R packages designed to provide a cohesive and comprehensive set of tools for data science. It includes several widely used packages such as \textit{ggplot2} and \textit{dplyr}. The \textit{gridExtra} packages offers the capability to combine several graphical objects into a cohesive display.\\
 
 \noindent
 Utilising these packages in your R project not only boosts efficiency but also ensures clarity and effectiveness in your data analysis and visualization tasks. Each package brings its unique strengths to the table, collectively enriching the R programming experience and enabling more sophisticated and comprehensive data analysis solutions.
@@ -385,6 +385,16 @@ Histograms, although visually similar to bar charts, convey different meanings. 
 \textbf{Uses of Histograms}\\
 
 \noindent Histograms demonstrates the distribution of frequency or quantity across groups. Facilitates the visualisation of differences in frequency or quantity among groups. The R language uses the \texttt{hist} function to create histograms. This function takes vectors as input and uses a few more parameters to plot the histogram.\\
+
+Let \(X_1, X_2, \ldots, X_n\) be independent and identically distributed random variables with finite mean \( \mu \) and variance \( \sigma^2 \). Then for any \( \epsilon > 0 \), 
+\[ P\left(\left|\frac{1}{n}\sum_{i=1}^n X_i - \mu\right| < \epsilon\right) \rightarrow 1 \] 
+as \( n \rightarrow \infty \).\\
+Histograms can be used to visualize the convergence of sample means to the population mean.\\
+
+Let \(X_1, X_2, \ldots, X_n\) be independent and identically distributed random variables with finite mean \( \mu \) and variance \( \sigma^2 \). Define the sample mean \( \bar{X} = \frac{1}{n}\sum_{i=1}^n X_i \). Then, as \( n \) becomes large, the variable 
+\[ Z = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \] approaches a standard normal distribution.\\
+
+By plotting histograms of a large number of sample means, one can observe the shape gradually resembling a normal distribution.
 
 \noindent
 Consider the following graph with created on ggplot2 with the use of to the \texttt{geom\_histogram} function and iris dataset.
