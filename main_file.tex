@@ -70,6 +70,10 @@
 \maketitle 
 
 \newpage
+\section{Abstract}
+Graphical Statistics are an essential tool in the toolbox of every modern Data Scientist. Among other things, they allow their user to see through data, to explore it, as well as to communicate empirical findings in a visual way. This project will overview modern methods of data visualization, will study their theoretical properties, and will illustrate the power of these methodologies using synthetic as well as real data. Computational implementations via dashboards—using Python Dash or R Shiny—will be used to showcase the methodologies in practice. The project will keep in mind that the development of novel methods for visualising data is still an active field of research (e.g. Rodu and Kafadar, 2022), and thus will aim to cover both textbook methods as well as state-of-the-art approaches and open problems.
+
+\newpage
 \tableofcontents
 
 \newpage 
@@ -184,7 +188,7 @@ The R language is a powerful data analysis tool, and its power lies in the wide 
 \textit{dplyr}: This packages plays a crucial role in data manipulation and transformation. It helps us easily filter, sort, summarize, and transform datasets, making data analysis more efficient and manageable. \textit{maps}: This package is primarily used for providing map data and tools, allowing you to easily draw and display maps in geospatial analyses. \textit{tidyverse}: This package is indeed a collection of R packages designed to provide a cohesive and comprehensive set of tools for data science. It includes several widely used packages such as $ggplot2$ and $dplyr$. \textit{gridExtra}: This packages offers the capability to combine several graphical objects into a cohesive display.\\
 
 \noindent
-Utilizing these packages in your R project not only boosts efficiency but also ensures clarity and effectiveness in your data analysis and visualization tasks. Each package brings its unique strengths to the table, collectively enriching the R programming experience and enabling more sophisticated and comprehensive data analysis solutions.
+Utilising these packages in your R project not only boosts efficiency but also ensures clarity and effectiveness in your data analysis and visualization tasks. Each package brings its unique strengths to the table, collectively enriching the R programming experience and enabling more sophisticated and comprehensive data analysis solutions.
 \end{itemize}
 
 
@@ -247,7 +251,7 @@ Data types can be broadly categorised into four main types:
 
 \subsubsection{Matching Data Types with Appropriate Visualisation Techniques}
 
-Selecting appropriate visualisation techniques is essential for effective data communication. Various data types demand specific visualisation methods for optimal representation \cite{healy2018data}. For \textbf{nominal data}, bar charts and stacked bar charts are effective in displaying categorical information and relative proportions. \textbf{Ordinal data} benefits from ordered bar charts, dot plots, or stacked bar charts, maintaining the ranking and order of categories. \textbf{Interval data} is best visualised using line charts, histograms, and box plots, showcasing trends and distributions without assuming a true zero point. \textbf{Ratio data} finds effective representation through scatter plots, histograms, and line charts, enabling precise comparisons and measurements due to the presence of a meaningful zero point.
+Selecting appropriate visualisation techniques is essential for effective data communication. Various data types demand specific visualisation methods for optimal representation \cite{healy2018data}. For \textbf{nominal data}, bar charts and stacked bar charts are effective in displaying categorical information and relative proportions. \textbf{Ordinal data} benefits from ordered bar charts, dot plots, or stacked bar charts, maintaining the ranking and order of categories. \textbf{Interval data} is best visualised using line charts, histograms, and box plots, showcasing trends and distributions without assuming a true zero point. \textbf{Ratio data} finds effective representation through scatter plots, histograms, and line charts, enabling precise comparisons and measurements due to the presence of a meaningful zero point.These are represented in Figure~\ref{fig:data-plots}, where artificial data from a class of 4th-year university students is visualised.
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
@@ -260,7 +264,6 @@ Selecting appropriate visualisation techniques is essential for effective data c
 \end{figure}
 
 \end{knitrout}
-
 
 
 \subsection{Data Abstraction and Representation}
@@ -949,6 +952,30 @@ From Figure~\ref{fig:ACF}, the ACF plot for the CNY to GBP exchange rate series 
 \noindent
 This persistent autocorrelation suggests that short-term movements in the CNY to GBP exchange rate are heavily influenced by its recent history. Such a characteristic is crucial for forecasting models, as it implies that recent historical data can be a powerful predictor of near-future trends. Models like ARIMA (Autoregressive Integrated Moving Average), which are well-suited for data with high autocorrelation, may be particularly effective in this context.
 
+
+\newpage  
+
+\section{Index}  
+
+\begin{itemize}
+    \item \textbf{Accuracy}: Emphasising faithful reflection of data to reduce distortion or misinterpretation.
+    \item \textbf{Clarity}: Ensuring visuals are easily understood without unnecessary complexity.
+    \item \textbf{Cognitive Load}: The mental effort required to process information presented visually.
+    \item \textbf{Cognitive psychology}: Understanding how mental processes affect perception and understanding of visual data.
+    \item \textbf{Color Theory}: Principles guiding the strategic use of color in visualisations for clarity and impact.
+    \item \textbf{Colour encoding}: Utilising colors to represent data categories or values in visualisations.
+    \item \textbf{Colour perception}: Understanding how humans perceive and interpret colors in visualisations.
+    \item \textbf{Consistency}: Maintaining uniform use of visual elements throughout a visualisation.
+    \item \textbf{Data abstraction}: Simplifying and structuring raw data into comprehensible visual forms.
+    \item \textbf{Gestalt Principles}: Rules affecting how visual elements are grouped and interpreted in perception.
+    \item \textbf{Hierarchies of abstraction}: Representing data at various levels of detail in visualisation.
+    \item \textbf{Information overload}: Occurs when excessive data or visual elements overwhelm understanding.
+    \item \textbf{Interval data}: Ordered categories with equal intervals but lacking a true zero point.
+    \item \textbf{Nominal data}: Represents categories or labels without any inherent order.
+    \item \textbf{Ordinal data}: Implies a meaningful order among categories but lacks equal intervals.
+    \item \textbf{Ratio data}: Includes ordered categories with equal intervals and a meaningful zero point.
+    \item \textbf{Relevance}: Presenting information pertinent to the addressed message or question.
+\end{itemize}
 
 
 \newpage
