@@ -8,6 +8,8 @@
 \usepackage{amsmath}
 \usepackage{comment}
 \usepackage{natbib}
+\usepackage{makeidx}
+\makeindex
 \usepackage[a4paper, total={6in, 8in}]{geometry}
 
 \title{Data Visualisation: Theory and Practice}
@@ -52,17 +54,24 @@ opts_chunk$set(fig.path = 'figure/beamer-',
 \newpage
 \tableofcontents
 
-\newpage 
-
-\section{Introduction}
+\newpage  % Start overview section on a new page
+\section*{Overview}
+\addcontentsline{toc}{section}{Overview} % Add section to the table of contents
+\noindent
+This thesis aims to explore the theoretical foundations underlying various visualisation methodologies and demonstrate their application using real-world datasets. In particular, Chapters 3, 4, and 5 focus on standard Graphical Statistics implementations for univariate, bivariate, and multivariate datasets. Chapter 3 will discuss the Kernel Density Estimate, ROC Curve, and Time Series Analysis, showcasing their implementation using the tooth growth dataset and exchange rate dataset. Chapter 4 will focus on the topic of regression, discussing the theory of Simple Linear Regression followed by LOESS regression. Chapter 5 includes the introduction of the model selection method AIC and Multiple Linear Regression, followed by the theoretical foundation of biplots and t-SNE. Subsequent chapters will cover active research areas in Graphical Statistics and implementation of dashboards. Implementations will be conducted using R, Python Dash, and R Shiny. In this thesis, \textit{package name} is italicised, and \texttt{R command} is displayed in a teletype font.\\
 
 \noindent
-This thesis aims to explore the theoretical foundations underlying various visualisation methodologies and demonstrate their application using real-world datasets. In particular, Chapter 3 will encompass standard approaches such as regression models, time series analysis, and kernel density estimation. Chapter 3 will also demonstrate different visualisation methodologies for bivariate and multivariate data. Subsequent chapters will cover active research areas in Graphical Statistics and implementation of dashboards. Implementations will be conducted using R, Python Dash, and R Shiny. In this thesis, \textit{package name} is italicised, and \texttt{R command} is displayed in a teletype font.\\
+Chapter 4: ``Practical Implementation" ventures into the practical application of Python Dash and R Shiny for constructing interactive data visualisation dashboards. Subsequently, Chapter 5: ``Case Studies" presents case studies, which serve as practical demonstrations of the efficacy and relevance of the discussed visualisation methods in resolving real-world problems. Finally, Chapter 6 ``State-of-the-Art Approaches" critically examines state-of-the-art approaches in data visualisation, highlighting emerging trends, methodologies, and technologies in the field.\\
 
 \noindent
 Graphical Statistics are crucial for data scientists. Data visualisations are statistical summary of the data. Data visualisations provide insights into data attributes and help data scientists and statisticians communicate findings visually. Data visualisation is an area of interest in numerous method-specific publications. One notable publication is the \href{https://www.tandfonline.com/journals/ucgs20}{Journal of Computational and Graphical Statistics}. This journal publishes ongoing research on the latest techniques in computational and graphical methods in statistics, encompassing data analysis and numerical graphical displays. \href{https://www.sciencedirect.com/journal/spatial-statistics}{Spatial Statistics} publishes articles on the theory and application of spatial and spatio-temporal statistics. \href{https://journal.r-project.org}{The R Journal} publishes research articles in statistical computing that are of interest to R users. These together reveal the vast potential for current and future research in this ever-evolving domain, particularly as our digital landscape and data sphere expand at an accelerated pace.\\
 
-\noindent R code chunks for each figure are separately copied into the \href{https://github.com/Qinqing-Li/Data-Visualisation-Project/tree/main/code}{GitHub code folder} for review.\\
+\noindent
+R code chunks for each figure are separately copied into the \href{https://github.com/Qinqing-Li/Data-Visualisation-Project/tree/main/code}{GitHub code folder} for review.\\
+
+\newpage 
+
+\section{Introduction}
 
 \noindent
 Chapter 1 will present case examples of the impact and misuses of data visualisations, followed by an introduction to R package \textit{ggplot2}, a list of datasets used in this thesis and the organisation of the thesis.
@@ -186,17 +195,6 @@ The datasets that will be analysed and visualised in later chapters is introduce
 
 \noindent
 \textbf{Exchange Rate}: The exchange rate data, available at the \href{https://www.bankofengland.co.uk/boeapps/database/index.asp?first=yes&SectionRequired=I&HideNums=-1&ExtraInfo=true&Travel=NIx}{Bank of England}, provides daily spot exchange rates against the pound Sterling (2005-present). This report examines the daily spot rates of the Canadian Dollar, Euro, and US Dollar against the pound Sterling.\\
-
-
-\subsection{Structure and Organisation of the Thesis}
-
-The remainder of this thesis is composed by, firstly, Chapter 2: ``Theoretical Foundations of Data Visualisation", an introductory section that lays the theoretical foundation for the subsequent discussions.\\
-
-\noindent 
-The crux of this document, Chapter 3: ``Modern Methods of Data Visualisation", conducts a detailed exploration of various modern methods of data visualisation. This chapter offers an in-depth analysis and critical evaluation of their applications, strengths, and limitations.\\
-
-\noindent 
-Chapter 4: ``Practical Implementation" ventures into the practical application of Python Dash and R Shiny for constructing interactive data visualisation dashboards. Subsequently, Chapter 5: ``Case Studies" presents case studies, which serve as practical demonstrations of the efficacy and relevance of the discussed visualisation methods in resolving real-world problems. Finally, Chapter 6 ``State-of-the-Art Approaches" critically examines state-of-the-art approaches in data visualisation, highlighting emerging trends, methodologies, and technologies in the field.
 
 \newpage 
 
@@ -374,7 +372,7 @@ Human visual perception profoundly influences our understanding of the surroundi
 \noindent 
 Significant aspects of human visual perception within data visualisation encompass \textbf{pattern recognition}, adept at identifying trends, outliers, and relationships in data representations. Additionally, \textbf{perceptual grouping}, where visually similar elements are grouped together, influences the interpretation of data clusters and shapes. Moreover, the \textbf{hierarchy of perception} dictates that certain visual attributes are processed more swiftly and effectively than others, such as color being processed faster than text, influencing the viewer's attention hierarchy \cite{dastani2002role}.
 
-\subsubsection{The Gestalt Principles}
+\textbf{The Gestalt Principles \index{The Gestalt Principles}}\\
 Furthermore, the Gestalt Principles play an important role in the realm of visual perception and design \cite{rosli2015gestalt}. Key Gestalt principles crucial in shaping visual information perception include proximity, which groups related elements, \textbf{similarity} that links similar attributes, \textbf{continuity} aiding trend representation, \textbf{closure} for implying connections, and \textbf{symmetry} for balance and aesthetics in visualisations \cite{todorovic2008gestalt}. \\
 
 \noindent By harnessing the principles of human visual perception, applying insights from cognitive psychology, and leveraging pre-attentive attributes, data visualisation designers can create visualisations that are not only aesthetically pleasing but also cognitively efficient.	
@@ -474,12 +472,11 @@ Addressing information overload in visualisations necessitates the strategic app
 
 \newpage
 
-\section{Modern Methods of Data Visualisation}
+\section{Univariate Data Methods}
 
 This chapter explores a variety of powerful visualisation methods, from classic scatter plots and bar charts to advanced techniques like heatmaps and network graphs. Vivid examples will be used to demonstrate when and why each method is employed, and the theoretical and mathematical foundations that empower these visualisations to unveil insights hidden within the data will be delved into.
 
-\subsection{ Histograms and Bar Charts }
-\subsubsection{Histograms}
+\subsection{Histograms}
 
 Histograms, although visually similar to bar charts, convey different meanings. A histogram involves concepts of statistics. It requires data to be categorised into groups and then counts the data points within each of those groups.\\
 
@@ -534,25 +531,7 @@ print(kde_diagram)
   \label{fig:iris-plots}
 \end{figure}
 
-
-\subsubsection{Kernel Density Estimation}
-
-Kernel Density Estimation(KDE) is an very useful tool in statistics. Instead of discrete histograms, it helps us to create a smooth curve given by a dataset. KDE is used to infer the distribution of a population based on a limited sample. Thus, the result of the kernel density estimation is an estimate of the sample's probability density function. Based on this estimated probability density function, we can ascertain certain characteristics of the data distribution, such as the regions where data is concentrated.\\
-
-\noindent
-The KDE algorithm takes a parameter, bandwidth, that affects how “smooth” the resulting curve is. Changing the bandwidth changes the shape of the kernel: a lower bandwidth means only points very close to the current position are given any weight, which leads to the estimate looking squiggly; a higher bandwidth means a shallow kernel where distant points can contribute.\\
-
-\noindent
-We can express KDE as follows,where the K represent the kernel function:
-$$\hat{f}(x) = \sum_{\text{observations}} K\left(\frac{x - \text{observation}}{\text{bandwidth}}\right),$$
-In kernel density estimation (KDE), the variable x represents the point of density estimation, which can be any value. The total number of data points, denoted as $n$, constitutes the sample size, and all these points are used for estimating the dataset's probability density function. The bandwidth $(h)$ is a crucial parameter that controls the smoothness of the estimation, with smaller bandwidths leading to closer fits to data and larger ones smoothing out details. The kernel function $(K)$, such as the Gaussian or triangular kernel, assigns weights around each data point, influencing the density estimate, while $x_i$ represents the individual sample points that collectively contribute to the estimated density function, guided by the kernel function and the bandwidth\cite{wand1994kernel}.
-$$\hat{f}(x) = \frac{1}{nh} \sum_{i=1}^{n} K\left(\frac{x - x_i}{h}\right).$$\\
-The kernel function \( K(u) \) is a normalised non-negative function that satisfies:
-\[ \int K(u) \, du = 1. \]
-
-\noindent In Figure~\ref{fig:iris-plots}, the kernel density estimation of the dataset is presented. The distribution of sepal lengths is depicted by the kernel density curve. The peaks observed in the curve correspond to the primary concentration trends of sepal length within the data. A unimodal curve signifies a concentration of sepal lengths for most irises in that specific region. Conversely, a bimodal or multimodal curve suggests the existence of multiple concentration areas.
-
-\subsubsection{Bar Charts}
+\subsection{Bar Charts}
 \noindent The bar chart is a crucial tool in data presentation, arranging data into vertical or horizontal bars. Its advantages in data visualisation are manifold, particularly in showcasing data categories through frequency distribution. Bar charts excel in comparing classified data, especially when values are closely aligned. This superiority stems from human perception, as our visual acuity for height surpasses that of other visual elements like area or angle. The varying lengths of these bars directly correspond to the magnitude of the information they represent.\\
 
 \noindent The disadvantages of bar charts include limited suitability for large datasets, potential misinterpretation when lacking a zero baseline, difficulty in handling numerous categories, and their preference for categorical data over continuous data trends, where line graphs are more suitable.\\
@@ -586,374 +565,29 @@ The bar chart on the left in Figure~\ref{fig:barcharts} illustrates the impact o
 \noindent
 The structure of the second bar graph in Figure~\ref{fig:barcharts} is quite similar to that of the first one, with the main difference lying in the method of data representation. The stacked bar chart facilitates the understanding of the combined effects of the two supplements at each dosage level. However, compared to the normal bar chart, it becomes more challenging to differentiate the individual contributions of each supplement.\\
 
+\subsection{Kernel Density Estimation}
 
-
-\subsection{Scatter Plots}
-
-A scatter plot is a graphical representation of a set of data points in a two-dimensional coordinate system. Each data point is represented by a dot, and the position of the dot is determined by the values of two variables.\\
+Kernel Density Estimation(KDE) is an very useful tool in statistics. Instead of discrete histograms, it helps us to create a smooth curve given by a dataset. KDE is used to infer the distribution of a population based on a limited sample. Thus, the result of the kernel density estimation is an estimate of the sample's probability density function. Based on this estimated probability density function, we can ascertain certain characteristics of the data distribution, such as the regions where data is concentrated.\\
 
 \noindent
-In general, \(Y\) denotes the response variable and \(X\) denotes the explanatory variable. Let \((x_i, y_i)\) represent the coordinates of the \(i\)-th data point on the scatter plot. The scatter plot can be mathematically described as a set of points:
-
-\[ \{(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)\}, \]
-  
-\\
-\noindent where \(n\) is the number of observations in the set.\\
-
-
-\subsubsection{Linear Regression}
-\\Regression models are statistical tools that provide functions to estimate the relationship between the response variable and one or more explanatory variables. Regression analysis is widely adopted by data scientists, who use large datasets to build predictive models for trend forecasting. The fol- lowing paragraphs will introduce simple linear regression models and demonstrate their usage using the mtcars dataset.
-\\  
-\\   
-\noindent
-\textbf{Theory of Simple Linear Regression}
-\\Let $\mathbf{x} = (x_1, x_2, ..., x_n)^T$ denote $n$ explanatory variables and let $\mathbf{Y} = (Y_1,Y_2,...,Y_n)^T$ denote $n$ corresponding response variables.
-\\  
-\\In a simple linear model, it is assumed that the response variables $Y_1,Y_2,...,Y_n$ are uncorrelated with a common variance $\sigma^2$, and their expectations are given by $E(Y_i| x_i) = \beta_0 + \beta_1 x_i$. The expectations generated by $\beta_0$ and $\beta_1$ given $x_i$ can be expressed as:
-
-$$\mathrm{E}(\mathbf{Y} | \mathbf{x}) =
-\left( \begin{array}{ccc}
-\beta_0+\beta_1 x_1\\
-\beta_0+\beta_1 x_2\\
-\vdots\\
-\beta_0+\beta_1 x_n
-\end{array} \right) = 
-\left( \begin{array}{ccc}
-1\\
-1\\
-\vdots\\
-1
-\end{array} \right) \beta_0 + 
-\left( \begin{array}{ccc}
-x_1\\
-x_2\\
-\vdots\\
-x_n
-\end{array} \right) \beta_1 =
-\mathbf{1}_n \beta_0 + \mathbf{x} \beta_1  \cite{GRM_chp3},
-$$ 
-
-\\
-\noindent
-where $\mathbf{1}_n$ is an n-vector of 1's.
-\\  
-\\Given design matrix $\mathbf{X}$ where $X_i = (1, x_i)$ and$\beta = (\beta_0, \beta_1)^T$, then $E(Y_i|x_i) = X_i \beta$. These assumptions can be equivalently written in the vector form:
-
-\[\mathrm{E}(\mathbf{Y} | \mathbf{x}) = 
-\left( \begin{array}{cc}
-1 & x_1\\
-1 & x_2\\
-\vdots& \vdots\\
-1 & x_n
-\end{array} \right) 
-\left( \begin{array}{cc}
-\beta_0 \\
-\beta_1
-\end{array} \right) = \mathbf{X} \beta, \quad \text{and} \quad
-\text{var}(\mathbf{Y} | \mathbf{x}) =
-\begin{pmatrix}
-\sigma^2 & 0 & \cdots & 0 \\
-0 & \sigma^2 & \cdots & 0 \\
-\vdots & \vdots & \ddots & \vdots \\
-0 & 0 & \cdots & \sigma^2
-\end{pmatrix} = \sigma^2 \mathbf{I}_n.
-\]
-\\  
-\\
-\noindent
-\textbf{Least Squares Estimation}
-\\ \noindent
-The residual sum of squares (RSS) is a measure of the goodness of fit in a regression model, where residuals are the differences between the response variables $y_i$ and responses generated by the regression model $\mathrm{E}(\mathbf{Y}_i | \mathbf{x})$. In least squares estimation, the goal is to find values of parameters $\beta = (\beta_0, \beta_1)^T$ to minimise the RSS, denoted by $\mathrm{Q}$: 
-
-\begin{equation*}
-\mathrm{Q} = \sum_{i=1}^{n} [y_i - \mathrm{E} (Y_i | \mathbf{x})]^2 
-           = [\mathbf{y}- \mathrm{E} (\mathbf{Y} | \mathbf{x})]^{T} [\mathbf{y}- \mathrm{E} (\mathbf{Y} | \mathbf{x})] 
-           = [\mathbf{y}- \mathbf{X} \beta]^{T} [\mathbf{y}- \mathbf{X} \beta],
-\end{equation*}
+The KDE algorithm takes a parameter, bandwidth, that affects how “smooth” the resulting curve is. Changing the bandwidth changes the shape of the kernel: a lower bandwidth means only points very close to the current position are given any weight, which leads to the estimate looking squiggly; a higher bandwidth means a shallow kernel where distant points can contribute.\\
 
 \noindent
-where $\mathbf{y}$ is n-vector of response variables and $\mathbf{X}$ is the $n \times 2$ design matrix. The partial derivative of $Q$ with respect to vector $\beta$ is:
+We can express KDE as follows,where the K represent the kernel function:
+$$\hat{f}(x) = \sum_{\text{observations}} K\left(\frac{x - \text{observation}}{\text{bandwidth}}\right),$$
+In kernel density estimation (KDE), the variable x represents the point of density estimation, which can be any value. The total number of data points, denoted as $n$, constitutes the sample size, and all these points are used for estimating the dataset's probability density function. The bandwidth $(h)$ is a crucial parameter that controls the smoothness of the estimation, with smaller bandwidths leading to closer fits to data and larger ones smoothing out details. The kernel function $(K)$, such as the Gaussian or triangular kernel, assigns weights around each data point, influencing the density estimate, while $x_i$ represents the individual sample points that collectively contribute to the estimated density function, guided by the kernel function and the bandwidth\cite{wand1994kernel}.
+$$\hat{f}(x) = \frac{1}{nh} \sum_{i=1}^{n} K\left(\frac{x - x_i}{h}\right).$$\\
+The kernel function \( K(u) \) is a normalised non-negative function that satisfies:
+\[ \int K(u) \, du = 1. \]
 
-$$\frac{\partial Q}{\partial \beta} = 2(\mathbf{X}^T\mathbf{X}\beta - \mathbf{X}^T\mathbf{y})\cite{GRM_chp3},$$
+\noindent In Figure~\ref{fig:iris-plots}, the kernel density estimation of the dataset is presented. The distribution of sepal lengths is depicted by the kernel density curve. The peaks observed in the curve correspond to the primary concentration trends of sepal length within the data. A unimodal curve signifies a concentration of sepal lengths for most irises in that specific region. Conversely, a bimodal or multimodal curve suggests the existence of multiple concentration areas.
 
-\noindent
-Equating $\frac{\partial Q}{\partial \beta} = \mathbf{0}$, the vector $\hat{\beta}$, the least squares estimate of $\beta$, can be written as:
+\subsection{ROC Curve}
+write on ROC curve and visualisation example.
 
-$$\mathbf{X}^T(\mathbf{y}-\mathbf{X}\hat{\beta})=\mathbf{0}.$$
-
-\noindent 
-The least squares estimate of $\beta$ is given by:
-$$\hat{\beta} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}.$$
-\\ 
-\noident 
-\\\textbf{Case example: 1970s automobiles}\\
-\noindent
-\\In this section, we will study the performance of 1970s automobiles using the mtcars dataset, employing the method of linear regression. Performance is measured in Miles per Gallon (mpg); the higher the mileage, the more efficient the automobile. We will start with the visualisation of a simple linear regression model, followed by the discussion of linear regression models and the model selection method.
+\subsection{Time Series Analysis}
 
 \noindent
-\\In the preliminary stages of data exploration, calculating the correlation matrix is a crucial step before engaging in regression modeling. In real-world scenarios, variables are often correlated, and entirely independent relationships are seldom encountered. Therefore, analysing pairwise correlations becomes essential. This helps in understanding multicollinearity issues within the model. Multicollinearity occurs when one covariate within the model can be accurately predicted from another covariate. When this happens, the coefficient estimates of the model can change unpredictably due to minor changes in the data.\\
-\noindent
-\\The correlation matrix of all variables in the mtcars dataset is shown in Figure~\ref{fig:cor-matrix-mtcars2}.
-
-<<cor-matrix-mtcars,echo=FALSE,message=FALSE,warning=FALSE>>=
-correlation_matrix <- cor(mtcars)
-rounded_correlation_matrix <- round(correlation_matrix, 3)
-# Reshape the correlation matrix for ggplot
-correlation_matrix <- as.data.frame(as.table(rounded_correlation_matrix))
-@
-
-<<cor-matrix-mtcars2, echo=FALSE,message=FALSE,warning=FALSE,fig.cap='Correlation matrix of variables in mtcars dataset',fig.height=2.9,fig.width=5>>=
-# Create a heatmap using ggplot2
-correlation_matrix <- ggplot(correlation_matrix, aes(Var1, Var2, fill = Freq)) +
-  geom_tile(color = "white") +
-  geom_text(aes(label = Freq), vjust = 0.5, size = 2) +  # Display numbers inside the grid
-  scale_fill_gradient2(low = "#542788", mid = "white", high = "#b2182b", 
-                       midpoint = 0, limits = c(-1, 1), space = "Lab",
-                       name = "Correlation") +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+
-  labs(x = " ",y = " ")
-print(correlation_matrix)
-@
-
-\noindent
-For the simple linear regression model, the response variable is Miles per Gallon (mpg), and we select weight (wt) as the explanatory variable. Note that mpg and wt are highly correlated, with a correlation coefficient of -0.868. This suggests that wt may have strong predictive power for mpg. Use the R function \texttt{lm()} to calculate the linear regression model, with the summary displayed below.\\
-
-\noindent
-Observe that the t-test yields a p-value of $1.29 \times 10^{-10}$, which is less than $0.001$. This indicates that the variable wt holds high statistical significance in this model. For the fitted model, the slope is $\beta_1 = -5.3445$, meaning that for every increase of 1000 lbs, the car efficiency decreases by 5 miles per gallon. The RSS is 3.046. The simple linear regression line is displayed in Figure~\ref{fig:scatter-plot}.
-
-<<modelwt, echo=TRUE,message=FALSE,warning=FALSE>>=
-Modelwt <- lm(formula = mpg ~ wt, data = mtcars)
-summary(Modelwt)
-@
-
-<<scatter-plot, echo=FALSE, fig.height=3, fig.width=4, fig.cap='Scatter plot of car weights vs MPG', message=FALSE>>=
-# Create a scatter plot of car weight vs MPG from mtcars dataset
-library(ggplot2)
-ggplot(data = mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
-  geom_point(size = 2, alpha = 0.7) +  # Larger points with transparency
-  geom_smooth(method = "lm", se = FALSE, color = "#b2182b", linewidth = 1) +  # Linear regression trend line
-  labs(
-    x = "Weight (1000 lbs)",
-    y = "Miles per Gallon",
-    color = "Cylinders"
-  ) +
-  scale_color_manual(values = c("4" = "grey", "6" = "#542788", "8" = "blue")) +  # Custom color palette
-  theme_minimal() # Minimalistic theme
-@
-\noindent
-\textbf{Linear Regression Model and Model selection method AIC}
-\\  
-\noindent 
-\\Model selection methods, such as the Akaike Information Criterion (AIC), play a crucial role in statistical modeling. AIC provides an estimate of the information lost when a given model is used to represent the process that generated the data, it is calculated as follows: 
-
-$$\mathrm{AIC} = -2 \l(\hat{\boldsymbol {\theta}})+2 \dim (\boldsymbol{\theta}) \cite{aic},$$
-\\  
-\\where $\l(\hat{\boldsymbol{\theta}})$ is the log-likelihood function, let $\l(\hat{\boldsymbol{\theta}}) = 0$ to find the Maximum Likelihood Estimator $\hat{\boldsymbol{\theta}}$ of a distribution.\\
-
-\noindent 
-The R algorithm \texttt{step()}, which minimises the AIC score, aids in selecting the most appropriate regression model from a set of explanatory variables. This algorithm uses backward selection method. Starting with all explanatory variables, the algorithm iteratively excludes one covariate at each step, until statistically significant reduction in AIC is achieved. This algorithm aims to find the best-fitting model by balancing goodness of fit and simplicity. Note that \texttt{step} provides comparison between competing models rather than an absolute measure of model quality.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{image_reference/codeshoot.png}
-    \label{fig:codeshoot}
-\end{figure}
-\noindent
-The procedure for selecting the best linear model for the mtcars dataset is shown in Appendix A, where our best-fitted model is \texttt{formula = mpg \textasciitilde wt + qsec + am}. Given 10 explanatory variables, Miles per Gallon is best predicted by weight (wt), quarter-mile time (qsec), and Transmission (am), where 0 represents automatic and 1 represents manual.
-
-\subsubsection{Bubble Charts}
-Bubble charts are a captivating data visualisation tool that extends beyond the typical two-dimensional scatter plot by introducing an extra dimension. They represent data points as bubbles or circles on a two-dimensional plane, where the size of each bubble encodes a third variable. This technique enhances data visualisation by facilitating the exploration of multivariate data and uncovering patterns that may be hidden in traditional scatter plots.\\
-
-\noindent
-\textbf{Mathematical Intricacies of Bubble Charts}\\
-The mathematical intricacies of constructing bubble charts involve scaling the data values to determine the size of each bubble accurately. The size of the bubble is typically proportional to the square root of the variable it represents. The choice of scaling method depends on the data distribution and the message the chart aims to convey.\\
-
-\noindent
-The formula for calculating the bubble size (\(S\)) often involves applying a linear or nonlinear scaling function:
-
-\[
-S = k \cdot \sqrt{V},
-\]
-
-\noindent where \(S\) represents the size of the bubble, \(V\) the value of the variable being represented, and \(k\) is a scaling factor to control the bubble size.\\
-
-\noindent
-Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the proportionality between the bubble size and the variable being represented.\\
-
-\noindent
-\textbf{Bubble Charts in Practice}\\
-The bubble chart shown in Figure~\ref{fig:bubble-plot} visualises data from the same dataset as above. It depicts the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and color-coding the bubbles based on the number of cylinders (cyl).\\
-
-<<bubble-plot, echo=FALSE, fig.height=5, fig.width=9, fig.cap='Bubble plot illustrating trends in car types and performance', message=FALSE>>=
-#Create bubble plot 
-ggplot(mtcars, aes(x = rownames(mtcars), y = mpg, size = hp, color = cyl)) +
-  geom_point() +
-  labs(
-    x = "Car Models",
-    y = "Miles per Gallon",
-    size = "Horsepower (hp)",
-    color = "Cylinders (cyl)"
-  ) +
-  scale_size_continuous(range = c(3, 10)) +
-  scale_color_gradient(low = "lightblue", high = "darkblue") +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 90, hjust =1))
-@
-
-\\\noindent The bubble plot reveals a clear pattern: as cylinder count increases, so does horsepower, but at the expense of lower fuel efficiency. Contrary to expectations, cars with fewer cylinders, despite lower horsepower, demonstrate better fuel economy, positioned higher on the graph. Meanwhile, vehicles with more cylinders, often associated with higher performance, cluster lower, indicating lower fuel efficiency. This plot highlights the trade-off between horsepower, cylinder count, and fuel efficiency, challenging the assumption that more cylinders equate to better performance, emphasising the significance of considering fuel economy in car selection.
-
-\subsection{Heatmaps and Fire in Brazil}
-The heatmap is a data visualisation technique that uses colour coding to represent different intensities. It can be represented as an $m \times n$ matrix $\mathrm{M}$, with $m$ observations for variable 1 and $n$ observations for variable 2:
-
-$$\mathrm{M} =
-\left[
-\begin{array}{cccc}
-    \mathrm{M}_{11} & \mathrm{M}_{12} & \ldots & \mathrm{M}_{1n} \\  
-    \mathrm{M}_{21} & \mathrm{M}_{22} & \ldots & \mathrm{M}_{2n} \\  
-    \vdots & \vdots & \ddots & \vdots \\  
-    \mathrm{M}_{m1} & \mathrm{M}_{m2} & \ldots & \mathrm{M}_{mn}
-\end{array}
-\right],
-$$
-
-\noindent
-where each entry $\mathrm{M}_{mn}$ represent an observation.\\
-
-\noindent
-In this illustrative example, heatmaps are used to visualise fire occurrences in Brazil. These heatmaps provide a spatially coherent representation, highlighting regions at high risk and seasonal patterns. The data-driven insights could empower policymakers to make informed decisions regarding preventive measures and firefighting strategies.\\
-
-\noindent
-In Figure~\ref{fig:fire22}, it can be observed that significantly higher fire counts are found in certain locations. The presence of two strips with high frequencies of fires are highly unusual. The vertical trend corresponds to the location of BR-230 (Trans-Amazonian Highway) passing through the city of Apuí, State of Amazonas. The horizontal trend corresponds to BR-163 (Brazil highway) passing through Três Pinheiros in Novo Progresso, State of Pará. The western coastal area with a high frequency of fire occurrence corresponds to regions in close proximity to the cities of Vista Alegre do Abunã and Rio Branco. Research has indicated that 95 \% of active fires and the most intense ones (FRP $>$ 500 megawatts) occurred at the edges in forests \cite{forest}.\\
-
-\noindent
-The seasonal pattern of fire frequency is shown in Figure~\ref{fig:fire-by-months-fy13-22}. Observe that more fire occur in the months of August to October compared to the rest of the year.
-
-<<load-data, echo=FALSE,message=FALSE,warning=FALSE>>=
-# Data from NASA: https://firms.modaps.eosdis.nasa.gov/
-brazil_fire_fy13 <- read.csv("fire_data/modis_2013_Brazil.csv")
-brazil_fire_fy14 <- read.csv("fire_data/modis_2014_Brazil.csv")
-brazil_fire_fy15 <- read.csv("fire_data/modis_2015_Brazil.csv")
-brazil_fire_fy16 <- read.csv("fire_data/modis_2016_Brazil.csv")
-brazil_fire_fy17 <- read.csv("fire_data/modis_2017_Brazil.csv")
-brazil_fire_fy18 <- read.csv("fire_data/modis_2018_Brazil.csv")
-brazil_fire_fy19 <- read.csv("fire_data/modis_2019_Brazil.csv")
-brazil_fire_fy20 <- read.csv("fire_data/modis_2020_Brazil.csv")
-brazil_fire_fy21 <- read.csv("fire_data/modis_2021_Brazil.csv")
-brazil_fire_fy22 <- read.csv("fire_data/modis_2022_Brazil.csv")
-@
-
-
-<<data-cleaning, echo=FALSE,message=FALSE,warning=FALSE>>=
-data_list <- list(
-  brazil_fire_fy13,
-  brazil_fire_fy14,
-  brazil_fire_fy15,
-  brazil_fire_fy16,
-  brazil_fire_fy17,
-  brazil_fire_fy18,
-  brazil_fire_fy19,
-  brazil_fire_fy20,
-  brazil_fire_fy21,
-  brazil_fire_fy22)
-
-# Function to filter confident fire observation
-filter_fire <- function(data) {
-  filter_fire <- data %>% filter(confidence >= 95)
-  return(filter_fire)
-}
-
-# Apply the filtering function to all data frames in the list
-confident_fire_decade <- lapply(data_list, filter_fire)
-
-# Access filtered data for a specific fiscal year, fy22
-confident_fire_fy22 <- confident_fire_decade[[10]]
-@
-
-<<pivot-data-by-month, echo=FALSE,message=FALSE,warning=FALSE>>=
-# Create a pivot table, no. of fire occurrences vs. Months (Jan-Dec), in FY22.
-confident_fire_months_fy22 <- confident_fire_fy22 %>%
-  mutate(acq_date = as.Date(acq_date, format = "%Y-%m-%d")) %>%
-  group_by(month = floor_date(acq_date, 'month')) %>%
-  summarize(count = n())
-
-# change "2022-01-01" to Jan etc.
-confident_fire_months_fy22$abb_month <- format(confident_fire_months_fy22$month, "%b")
-
-# Create a custom order for the months
-custom_order <- c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
-
-# Reorder the "abb_month" factor based on the custom order
-confident_fire_months_fy22$abb_month <- factor(confident_fire_months_fy22$abb_month, levels = custom_order)
-@
-
-
-\begin{figure}[htbp]
-  \centering
-  \begin{minipage}[b]{0.48\linewidth}
-<<spacetime-fy22,fig.height=6,fig.show='hold', echo=FALSE, message=FALSE, warning=FALSE>>=
-# Obtain the Brazil map data
-brazil_map <- map_data("world", region = "Brazil")
-
-# Create the heatmap of fire occurrences
-space_heatmap <- ggplot(confident_fire_fy22, aes(x = longitude, y = latitude)) +
-  geom_polygon(data = brazil_map, aes(x = long, y = lat, group = group), 
-               fill = "#bdbdbd") +
-  geom_bin2d(bins = 300) +
-  scale_fill_gradient(low = "#fee6ce", high = "#d7301f") +
-  coord_fixed(ratio = 1) +
-  theme_minimal()+
-  theme(axis.text = element_text(size = 9))
-
-print(space_heatmap)
-@
-  \end{minipage}
-  \hfill
-  \begin{minipage}[b]{0.48\linewidth}
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\linewidth]{image_reference/mapshoot.png}
-\end{figure}
-  \end{minipage}
-  \caption{Frequency of fire in Brazil (2022), two strips of high frequencies of fires are highly unusual}
-  \label{fig:fire22}
-\end{figure}
-
-<<pivot-table-fy13-22, echo=FALSE,message=FALSE,warning=FALSE>>=
-# Combine all the confident fire datasets into a single dataset
-combined_confident_fire <- bind_rows(confident_fire_decade)
-
-# Create a pivot table for fy13-22
-pivot_table <- combined_confident_fire %>%
-  mutate(acq_date = as.Date(acq_date, format = "%Y-%m-%d"),
-         month_year = format(acq_date, "%b %Y")) %>%
-  group_by(month_year) %>%
-  summarize(count = n())
-
-# Add column "abb_month" and "year" to the dataset "pivot_table"
-pivot_table <- pivot_table %>%
-  mutate(abb_month = gsub(".*?([A-Za-z]{3}).*", "\\1", month_year)) %>%
-  mutate(abb_month = factor(abb_month, levels = custom_order)) %>%
-  mutate(year = as.numeric(substring(month_year, nchar(month_year) - 3, nchar(month_year))))
-@
-
-<<fire-by-months-fy13-22,fig.height=2.6,fig.width=5,fig.cap='Frequency of fire in Brazil (2013-2022)',fig.show='hold', message=FALSE,warning=FALSE>>=
-heatmap_plot <- ggplot(pivot_table, 
-                       aes(x = factor(abb_month, levels = custom_order), 
-                           y = as.character(year), fill = count)) +
-  geom_tile() +
-  scale_fill_gradient(low = "#fff7ec", high = "#d7301f") +
-  labs(x = " ", y = " ") +
-  theme_minimal() +
-  theme(axis.text = element_text(size = 9))
-
-print(heatmap_plot)
-@
-
-
-
-\subsection{Line Charts and Time Series Visualisation}
-
 Line charts are fundamental tools in data visualisation, particularly useful for displaying time series data. A line chart represents $n$ data points 
 $\{(x_i,y_i)\}_{1 \leq i \leq n}$ on a Cartesian coordinate system, with the x-axis often denoting time intervals or ordered categories and the y-axis representing the measured values.\\ 
 
@@ -1150,6 +784,391 @@ From Figure~\ref{fig:ACF}, the ACF plot for the CNY to GBP exchange rate series 
 
 \noindent
 This persistent autocorrelation suggests that short-term movements in the CNY to GBP exchange rate are heavily influenced by its recent history. Such a characteristic is crucial for forecasting models, as it implies that recent historical data can be a powerful predictor of near-future trends. Models like ARIMA (Autoregressive Integrated Moving Average), which are well-suited for data with high autocorrelation, may be particularly effective in this context.
+
+
+\section{Bivariate Data Methods}
+
+
+\subsection{Heatmaps}
+The heatmap is a data visualisation technique that uses colour coding to represent different intensities. It can be represented as an $m \times n$ matrix $\mathrm{M}$, with $m$ observations for variable 1 and $n$ observations for variable 2:
+
+$$\mathrm{M} =
+\left[
+\begin{array}{cccc}
+    \mathrm{M}_{11} & \mathrm{M}_{12} & \ldots & \mathrm{M}_{1n} \\  
+    \mathrm{M}_{21} & \mathrm{M}_{22} & \ldots & \mathrm{M}_{2n} \\  
+    \vdots & \vdots & \ddots & \vdots \\  
+    \mathrm{M}_{m1} & \mathrm{M}_{m2} & \ldots & \mathrm{M}_{mn}
+\end{array}
+\right],
+$$
+
+\noindent
+where each entry $\mathrm{M}_{mn}$ represent an observation.\\
+
+\noindent
+In this illustrative example, heatmaps are used to visualise fire occurrences in Brazil. These heatmaps provide a spatially coherent representation, highlighting regions at high risk and seasonal patterns. The data-driven insights could empower policymakers to make informed decisions regarding preventive measures and firefighting strategies.\\
+
+\noindent
+In Figure~\ref{fig:fire22}, it can be observed that significantly higher fire counts are found in certain locations. The presence of two strips with high frequencies of fires are highly unusual. The vertical trend corresponds to the location of BR-230 (Trans-Amazonian Highway) passing through the city of Apuí, State of Amazonas. The horizontal trend corresponds to BR-163 (Brazil highway) passing through Três Pinheiros in Novo Progresso, State of Pará. The western coastal area with a high frequency of fire occurrence corresponds to regions in close proximity to the cities of Vista Alegre do Abunã and Rio Branco. Research has indicated that 95 \% of active fires and the most intense ones (FRP $>$ 500 megawatts) occurred at the edges in forests \cite{forest}.\\
+
+\noindent
+The seasonal pattern of fire frequency is shown in Figure~\ref{fig:fire-by-months-fy13-22}. Observe that more fire occur in the months of August to October compared to the rest of the year.
+
+<<load-data, echo=FALSE,message=FALSE,warning=FALSE>>=
+# Data from NASA: https://firms.modaps.eosdis.nasa.gov/
+brazil_fire_fy13 <- read.csv("fire_data/modis_2013_Brazil.csv")
+brazil_fire_fy14 <- read.csv("fire_data/modis_2014_Brazil.csv")
+brazil_fire_fy15 <- read.csv("fire_data/modis_2015_Brazil.csv")
+brazil_fire_fy16 <- read.csv("fire_data/modis_2016_Brazil.csv")
+brazil_fire_fy17 <- read.csv("fire_data/modis_2017_Brazil.csv")
+brazil_fire_fy18 <- read.csv("fire_data/modis_2018_Brazil.csv")
+brazil_fire_fy19 <- read.csv("fire_data/modis_2019_Brazil.csv")
+brazil_fire_fy20 <- read.csv("fire_data/modis_2020_Brazil.csv")
+brazil_fire_fy21 <- read.csv("fire_data/modis_2021_Brazil.csv")
+brazil_fire_fy22 <- read.csv("fire_data/modis_2022_Brazil.csv")
+@
+
+
+<<data-cleaning, echo=FALSE,message=FALSE,warning=FALSE>>=
+data_list <- list(
+  brazil_fire_fy13,
+  brazil_fire_fy14,
+  brazil_fire_fy15,
+  brazil_fire_fy16,
+  brazil_fire_fy17,
+  brazil_fire_fy18,
+  brazil_fire_fy19,
+  brazil_fire_fy20,
+  brazil_fire_fy21,
+  brazil_fire_fy22)
+
+# Function to filter confident fire observation
+filter_fire <- function(data) {
+  filter_fire <- data %>% filter(confidence >= 95)
+  return(filter_fire)
+}
+
+# Apply the filtering function to all data frames in the list
+confident_fire_decade <- lapply(data_list, filter_fire)
+
+# Access filtered data for a specific fiscal year, fy22
+confident_fire_fy22 <- confident_fire_decade[[10]]
+@
+
+<<pivot-data-by-month, echo=FALSE,message=FALSE,warning=FALSE>>=
+# Create a pivot table, no. of fire occurrences vs. Months (Jan-Dec), in FY22.
+confident_fire_months_fy22 <- confident_fire_fy22 %>%
+  mutate(acq_date = as.Date(acq_date, format = "%Y-%m-%d")) %>%
+  group_by(month = floor_date(acq_date, 'month')) %>%
+  summarize(count = n())
+
+# change "2022-01-01" to Jan etc.
+confident_fire_months_fy22$abb_month <- format(confident_fire_months_fy22$month, "%b")
+
+# Create a custom order for the months
+custom_order <- c("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
+
+# Reorder the "abb_month" factor based on the custom order
+confident_fire_months_fy22$abb_month <- factor(confident_fire_months_fy22$abb_month, levels = custom_order)
+@
+
+
+\begin{figure}[htbp]
+  \centering
+  \begin{minipage}[b]{0.48\linewidth}
+<<spacetime-fy22,fig.height=6,fig.show='hold', echo=FALSE, message=FALSE, warning=FALSE>>=
+# Obtain the Brazil map data
+brazil_map <- map_data("world", region = "Brazil")
+
+# Create the heatmap of fire occurrences
+space_heatmap <- ggplot(confident_fire_fy22, aes(x = longitude, y = latitude)) +
+  geom_polygon(data = brazil_map, aes(x = long, y = lat, group = group), 
+               fill = "#bdbdbd") +
+  geom_bin2d(bins = 300) +
+  scale_fill_gradient(low = "#fee6ce", high = "#d7301f") +
+  coord_fixed(ratio = 1) +
+  theme_minimal()+
+  theme(axis.text = element_text(size = 9))
+
+print(space_heatmap)
+@
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.48\linewidth}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{image_reference/mapshoot.png}
+\end{figure}
+  \end{minipage}
+  \caption{Frequency of fire in Brazil (2022), two strips of high frequencies of fires are highly unusual}
+  \label{fig:fire22}
+\end{figure}
+
+<<pivot-table-fy13-22, echo=FALSE,message=FALSE,warning=FALSE>>=
+# Combine all the confident fire datasets into a single dataset
+combined_confident_fire <- bind_rows(confident_fire_decade)
+
+# Create a pivot table for fy13-22
+pivot_table <- combined_confident_fire %>%
+  mutate(acq_date = as.Date(acq_date, format = "%Y-%m-%d"),
+         month_year = format(acq_date, "%b %Y")) %>%
+  group_by(month_year) %>%
+  summarize(count = n())
+
+# Add column "abb_month" and "year" to the dataset "pivot_table"
+pivot_table <- pivot_table %>%
+  mutate(abb_month = gsub(".*?([A-Za-z]{3}).*", "\\1", month_year)) %>%
+  mutate(abb_month = factor(abb_month, levels = custom_order)) %>%
+  mutate(year = as.numeric(substring(month_year, nchar(month_year) - 3, nchar(month_year))))
+@
+
+<<fire-by-months-fy13-22,fig.height=2.6,fig.width=5,fig.cap='Frequency of fire in Brazil (2013-2022)',fig.show='hold', message=FALSE,warning=FALSE>>=
+heatmap_plot <- ggplot(pivot_table, 
+                       aes(x = factor(abb_month, levels = custom_order), 
+                           y = as.character(year), fill = count)) +
+  geom_tile() +
+  scale_fill_gradient(low = "#fff7ec", high = "#d7301f") +
+  labs(x = " ", y = " ") +
+  theme_minimal() +
+  theme(axis.text = element_text(size = 9))
+
+print(heatmap_plot)
+@
+
+
+\subsection{Scatter Plots}
+
+A scatter plot is a graphical representation of a set of data points in a two-dimensional coordinate system. Each data point is represented by a dot, and the position of the dot is determined by the values of two variables.\\
+
+\noindent
+In general, \(Y\) denotes the response variable and \(X\) denotes the explanatory variable. Let \((x_i, y_i)\) represent the coordinates of the \(i\)-th data point on the scatter plot. The scatter plot can be mathematically described as a set of points:
+
+\[ \{(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)\}, \]
+  
+\\
+\noindent where \(n\) is the number of observations in the set.\\
+
+
+\subsection{Bubble Charts}
+Bubble charts are a captivating data visualisation tool that extends beyond the typical two-dimensional scatter plot by introducing an extra dimension. They represent data points as bubbles or circles on a two-dimensional plane, where the size of each bubble encodes a third variable. This technique enhances data visualisation by facilitating the exploration of multivariate data and uncovering patterns that may be hidden in traditional scatter plots.\\
+
+\noindent
+\textbf{Mathematical Intricacies of Bubble Charts}\\
+The mathematical intricacies of constructing bubble charts involve scaling the data values to determine the size of each bubble accurately. The size of the bubble is typically proportional to the square root of the variable it represents. The choice of scaling method depends on the data distribution and the message the chart aims to convey.\\
+
+\noindent
+The formula for calculating the bubble size (\(S\)) often involves applying a linear or nonlinear scaling function:
+
+\[
+S = k \cdot \sqrt{V},
+\]
+
+\noindent where \(S\) represents the size of the bubble, \(V\) the value of the variable being represented, and \(k\) is a scaling factor to control the bubble size.\\
+
+\noindent
+Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the proportionality between the bubble size and the variable being represented.\\
+
+\noindent
+\textbf{Bubble Charts in Practice}\\
+The bubble chart shown in Figure~\ref{fig:bubble-plot} visualises data from the same dataset as above. It depicts the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and color-coding the bubbles based on the number of cylinders (cyl).\\
+
+<<bubble-plot, echo=FALSE, fig.height=5, fig.width=9, fig.cap='Bubble plot illustrating trends in car types and performance', message=FALSE>>=
+#Create bubble plot 
+ggplot(mtcars, aes(x = rownames(mtcars), y = mpg, size = hp, color = cyl)) +
+  geom_point() +
+  labs(
+    x = "Car Models",
+    y = "Miles per Gallon",
+    size = "Horsepower (hp)",
+    color = "Cylinders (cyl)"
+  ) +
+  scale_size_continuous(range = c(3, 10)) +
+  scale_color_gradient(low = "lightblue", high = "darkblue") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust =1))
+@
+
+\\\noindent The bubble plot reveals a clear pattern: as cylinder count increases, so does horsepower, but at the expense of lower fuel efficiency. Contrary to expectations, cars with fewer cylinders, despite lower horsepower, demonstrate better fuel economy, positioned higher on the graph. Meanwhile, vehicles with more cylinders, often associated with higher performance, cluster lower, indicating lower fuel efficiency. This plot highlights the trade-off between horsepower, cylinder count, and fuel efficiency, challenging the assumption that more cylinders equate to better performance, emphasising the significance of considering fuel economy in car selection.
+
+
+\subsection{Simple Linear Regression}
+\\Regression models are statistical tools that provide functions to estimate the relationship between the response variable and one or more explanatory variables. Regression analysis is widely adopted by data scientists, who use large datasets to build predictive models for trend forecasting. The fol- lowing paragraphs will introduce simple linear regression models and demonstrate their usage using the mtcars dataset.
+\\  
+\\   
+\noindent
+\textbf{Theory of Simple Linear Regression}
+\\Let $\mathbf{x} = (x_1, x_2, ..., x_n)^T$ denote $n$ explanatory variables and let $\mathbf{Y} = (Y_1,Y_2,...,Y_n)^T$ denote $n$ corresponding response variables.
+\\  
+\\In a simple linear model, it is assumed that the response variables $Y_1,Y_2,...,Y_n$ are uncorrelated with a common variance $\sigma^2$, and their expectations are given by $E(Y_i| x_i) = \beta_0 + \beta_1 x_i$. The expectations generated by $\beta_0$ and $\beta_1$ given $x_i$ can be expressed as:
+
+$$\mathrm{E}(\mathbf{Y} | \mathbf{x}) =
+\left( \begin{array}{ccc}
+\beta_0+\beta_1 x_1\\
+\beta_0+\beta_1 x_2\\
+\vdots\\
+\beta_0+\beta_1 x_n
+\end{array} \right) = 
+\left( \begin{array}{ccc}
+1\\
+1\\
+\vdots\\
+1
+\end{array} \right) \beta_0 + 
+\left( \begin{array}{ccc}
+x_1\\
+x_2\\
+\vdots\\
+x_n
+\end{array} \right) \beta_1 =
+\mathbf{1}_n \beta_0 + \mathbf{x} \beta_1  \cite{GRM_chp3},
+$$ 
+
+\\
+\noindent
+where $\mathbf{1}_n$ is an n-vector of 1's.
+\\  
+\\Given design matrix $\mathbf{X}$ where $X_i = (1, x_i)$ and$\beta = (\beta_0, \beta_1)^T$, then $E(Y_i|x_i) = X_i \beta$. These assumptions can be equivalently written in the vector form:
+
+\[\mathrm{E}(\mathbf{Y} | \mathbf{x}) = 
+\left( \begin{array}{cc}
+1 & x_1\\
+1 & x_2\\
+\vdots& \vdots\\
+1 & x_n
+\end{array} \right) 
+\left( \begin{array}{cc}
+\beta_0 \\
+\beta_1
+\end{array} \right) = \mathbf{X} \beta, \quad \text{and} \quad
+\text{var}(\mathbf{Y} | \mathbf{x}) =
+\begin{pmatrix}
+\sigma^2 & 0 & \cdots & 0 \\
+0 & \sigma^2 & \cdots & 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 & 0 & \cdots & \sigma^2
+\end{pmatrix} = \sigma^2 \mathbf{I}_n.
+\]
+\\  
+\\
+\noindent
+\textbf{Least Squares Estimation}
+\\ \noindent
+The residual sum of squares (RSS) is a measure of the goodness of fit in a regression model, where residuals are the differences between the response variables $y_i$ and responses generated by the regression model $\mathrm{E}(\mathbf{Y}_i | \mathbf{x})$. In least squares estimation, the goal is to find values of parameters $\beta = (\beta_0, \beta_1)^T$ to minimise the RSS, denoted by $\mathrm{Q}$: 
+
+\begin{equation*}
+\mathrm{Q} = \sum_{i=1}^{n} [y_i - \mathrm{E} (Y_i | \mathbf{x})]^2 
+           = [\mathbf{y}- \mathrm{E} (\mathbf{Y} | \mathbf{x})]^{T} [\mathbf{y}- \mathrm{E} (\mathbf{Y} | \mathbf{x})] 
+           = [\mathbf{y}- \mathbf{X} \beta]^{T} [\mathbf{y}- \mathbf{X} \beta],
+\end{equation*}
+
+\noindent
+where $\mathbf{y}$ is n-vector of response variables and $\mathbf{X}$ is the $n \times 2$ design matrix. The partial derivative of $Q$ with respect to vector $\beta$ is:
+
+$$\frac{\partial Q}{\partial \beta} = 2(\mathbf{X}^T\mathbf{X}\beta - \mathbf{X}^T\mathbf{y})\cite{GRM_chp3},$$
+
+\noindent
+Equating $\frac{\partial Q}{\partial \beta} = \mathbf{0}$, the vector $\hat{\beta}$, the least squares estimate of $\beta$, can be written as:
+
+$$\mathbf{X}^T(\mathbf{y}-\mathbf{X}\hat{\beta})=\mathbf{0}.$$
+
+\noindent 
+The least squares estimate of $\beta$ is given by:
+$$\hat{\beta} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}.$$
+\\ 
+\noident 
+\\\textbf{Case example: 1970s automobiles}\\
+\noindent
+\\In this section, we will study the performance of 1970s automobiles using the mtcars dataset, employing the method of linear regression. Performance is measured in Miles per Gallon (mpg); the higher the mileage, the more efficient the automobile. We will start with the visualisation of a simple linear regression model, followed by the discussion of linear regression models and the model selection method.
+
+\noindent
+\\In the preliminary stages of data exploration, calculating the correlation matrix is a crucial step before engaging in regression modeling. In real-world scenarios, variables are often correlated, and entirely independent relationships are seldom encountered. Therefore, analysing pairwise correlations becomes essential. This helps in understanding multicollinearity issues within the model. Multicollinearity occurs when one covariate within the model can be accurately predicted from another covariate. When this happens, the coefficient estimates of the model can change unpredictably due to minor changes in the data.\\
+\noindent
+\\The correlation matrix of all variables in the mtcars dataset is shown in Figure~\ref{fig:cor-matrix-mtcars2}.
+
+<<cor-matrix-mtcars,echo=FALSE,message=FALSE,warning=FALSE>>=
+correlation_matrix <- cor(mtcars)
+rounded_correlation_matrix <- round(correlation_matrix, 3)
+# Reshape the correlation matrix for ggplot
+correlation_matrix <- as.data.frame(as.table(rounded_correlation_matrix))
+@
+
+<<cor-matrix-mtcars2, echo=FALSE,message=FALSE,warning=FALSE,fig.cap='Correlation matrix of variables in mtcars dataset',fig.height=2.9,fig.width=5>>=
+# Create a heatmap using ggplot2
+correlation_matrix <- ggplot(correlation_matrix, aes(Var1, Var2, fill = Freq)) +
+  geom_tile(color = "white") +
+  geom_text(aes(label = Freq), vjust = 0.5, size = 2) +  # Display numbers inside the grid
+  scale_fill_gradient2(low = "#542788", mid = "white", high = "#b2182b", 
+                       midpoint = 0, limits = c(-1, 1), space = "Lab",
+                       name = "Correlation") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1))+
+  labs(x = " ",y = " ")
+print(correlation_matrix)
+@
+
+\noindent
+For the simple linear regression model, the response variable is Miles per Gallon (mpg), and we select weight (wt) as the explanatory variable. Note that mpg and wt are highly correlated, with a correlation coefficient of -0.868. This suggests that wt may have strong predictive power for mpg. Use the R function \texttt{lm()} to calculate the linear regression model, with the summary displayed below.\\
+
+\noindent
+Observe that the t-test yields a p-value of $1.29 \times 10^{-10}$, which is less than $0.001$. This indicates that the variable wt holds high statistical significance in this model. For the fitted model, the slope is $\beta_1 = -5.3445$, meaning that for every increase of 1000 lbs, the car efficiency decreases by 5 miles per gallon. The RSS is 3.046. The simple linear regression line is displayed in Figure~\ref{fig:scatter-plot}.
+
+<<modelwt, echo=TRUE,message=FALSE,warning=FALSE>>=
+Modelwt <- lm(formula = mpg ~ wt, data = mtcars)
+summary(Modelwt)
+@
+
+<<scatter-plot, echo=FALSE, fig.height=3, fig.width=4, fig.cap='Scatter plot of car weights vs MPG', message=FALSE>>=
+# Create a scatter plot of car weight vs MPG from mtcars dataset
+library(ggplot2)
+ggplot(data = mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
+  geom_point(size = 2, alpha = 0.7) +  # Larger points with transparency
+  geom_smooth(method = "lm", se = FALSE, color = "#b2182b", linewidth = 1) +  # Linear regression trend line
+  labs(
+    x = "Weight (1000 lbs)",
+    y = "Miles per Gallon",
+    color = "Cylinders"
+  ) +
+  scale_color_manual(values = c("4" = "grey", "6" = "#542788", "8" = "blue")) +  # Custom color palette
+  theme_minimal() # Minimalistic theme
+@
+
+\subsection{LOESS Regression}
+
+
+\section{Multivariate Data Methods}
+
+\subsection{multiple linear regrerssion}
+
+\noindent
+\textbf{Linear Regression Model and Model selection method AIC}
+\\  
+\noindent 
+\\Model selection methods, such as the Akaike Information Criterion (AIC), play a crucial role in statistical modeling. AIC provides an estimate of the information lost when a given model is used to represent the process that generated the data, it is calculated as follows: 
+
+$$\mathrm{AIC} = -2 \l(\hat{\boldsymbol {\theta}})+2 \dim (\boldsymbol{\theta}) \cite{aic},$$
+\\  
+\\where $\l(\hat{\boldsymbol{\theta}})$ is the log-likelihood function, let $\l(\hat{\boldsymbol{\theta}}) = 0$ to find the Maximum Likelihood Estimator $\hat{\boldsymbol{\theta}}$ of a distribution.\\
+
+\noindent 
+The R algorithm \texttt{step()}, which minimises the AIC score, aids in selecting the most appropriate regression model from a set of explanatory variables. This algorithm uses backward selection method. Starting with all explanatory variables, the algorithm iteratively excludes one covariate at each step, until statistically significant reduction in AIC is achieved. This algorithm aims to find the best-fitting model by balancing goodness of fit and simplicity. Note that \texttt{step} provides comparison between competing models rather than an absolute measure of model quality.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{image_reference/codeshoot.png}
+    \label{fig:codeshoot}
+\end{figure}
+\noindent
+The procedure for selecting the best linear model for the mtcars dataset is shown in Appendix A, where our best-fitted model is \texttt{formula = mpg \textasciitilde wt + qsec + am}. Given 10 explanatory variables, Miles per Gallon is best predicted by weight (wt), quarter-mile time (qsec), and Transmission (am), where 0 represents automatic and 1 represents manual.
+
+\subsection{biplot}
+theory and visualisation of biplot
+\subsection{t-SNE}
+theory and visualisation of t-SNE in 2D and 3D
+
+
+
+\printindex
 
 
 
