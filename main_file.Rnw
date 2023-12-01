@@ -8,8 +8,6 @@
 \usepackage{amsmath}
 \usepackage{comment}
 \usepackage{natbib}
-\usepackage{makeidx}
-\makeindex
 \usepackage[a4paper, total={6in, 8in}]{geometry}
 
 \title{Data Visualisation: Theory and Practice}
@@ -57,17 +55,19 @@ opts_chunk$set(fig.path = 'figure/beamer-',
 \newpage  % Start overview section on a new page
 \section*{Overview}
 \addcontentsline{toc}{section}{Overview} % Add section to the table of contents
-\noindent
-This thesis aims to explore the theoretical foundations underlying various visualisation methodologies and demonstrate their application using real-world datasets. In particular, Chapters 3, 4, and 5 focus on standard Graphical Statistics implementations for univariate, bivariate, and multivariate datasets. Chapter 3 will discuss the Kernel Density Estimate, ROC Curve, and Time Series Analysis, showcasing their implementation using the tooth growth dataset and exchange rate dataset. Chapter 4 will focus on the topic of regression, discussing the theory of Simple Linear Regression followed by LOESS regression. Chapter 5 includes the introduction of the model selection method AIC and Multiple Linear Regression, followed by the theoretical foundation of biplots and t-SNE. Subsequent chapters will cover active research areas in Graphical Statistics and implementation of dashboards. Implementations will be conducted using R, Python Dash, and R Shiny. In this thesis, \textit{package name} is italicised, and \texttt{R command} is displayed in a teletype font.\\
 
 \noindent
-Chapter 4: ``Practical Implementation" ventures into the practical application of Python Dash and R Shiny for constructing interactive data visualisation dashboards. Subsequently, Chapter 5: ``Case Studies" presents case studies, which serve as practical demonstrations of the efficacy and relevance of the discussed visualisation methods in resolving real-world problems. Finally, Chapter 6 ``State-of-the-Art Approaches" critically examines state-of-the-art approaches in data visualisation, highlighting emerging trends, methodologies, and technologies in the field.\\
+Graphical Statistics are an essential tool in the toolbox of every modern Data Scientist. Among other things, they allow their user to see through data, to explore it, as well as to communicate empirical findings in a visual way. This project will overview modern methods of data visualization, will study their theoretical properties, and will illustrate the power of these methodologies using synthetic as well as real data. Computational implementations via dashboards—using Python Dash or R Shiny—will be used to showcase the methodologies in practice. The project will keep in mind that the development of novel methods for visualising data is still an active field of research (e.g. Rodu and Kafadar, 2022), and thus will aim to cover both textbook methods as well as state-of-the-art approaches and open problems.\\
 
 \noindent
-Graphical Statistics are crucial for data scientists. Data visualisations are statistical summary of the data. Data visualisations provide insights into data attributes and help data scientists and statisticians communicate findings visually. Data visualisation is an area of interest in numerous method-specific publications. One notable publication is the \href{https://www.tandfonline.com/journals/ucgs20}{Journal of Computational and Graphical Statistics}. This journal publishes ongoing research on the latest techniques in computational and graphical methods in statistics, encompassing data analysis and numerical graphical displays. \href{https://www.sciencedirect.com/journal/spatial-statistics}{Spatial Statistics} publishes articles on the theory and application of spatial and spatio-temporal statistics. \href{https://journal.r-project.org}{The R Journal} publishes research articles in statistical computing that are of interest to R users. These together reveal the vast potential for current and future research in this ever-evolving domain, particularly as our digital landscape and data sphere expand at an accelerated pace.\\
+This thesis aims to explore the theoretical foundations underlying various visualisation methodologies and demonstrate their application using real-world datasets. In particular, Chapters 3, 4, and 5 focus on standard Graphical Statistics implementations for univariate, bivariate, and multivariate datasets. Chapter 3 will discuss the Kernel Density Estimate, ROC Curve, and Time Series Analysis, showcasing their implementation using the tooth growth dataset and exchange rate dataset. Chapter 4 will focus on the topic of regression, discussing the theory of Simple Linear Regression followed by LOESS regression. Chapter 5 includes the introduction of the model selection method AIC and Multiple Linear Regression, followed by the theoretical foundation of biplots and t-SNE. Subsequent chapters will cover active research areas in Graphical Statistics and implementation of dashboards. \\
+
 
 \noindent
-R code chunks for each figure are separately copied into the \href{https://github.com/Qinqing-Li/Data-Visualisation-Project/tree/main/code}{GitHub code folder} for review.\\
+R code chunks for each figure are separately copied into the \href{https://github.com/Qinqing-Li/Data-Visualisation-Project/tree/main/code}{GitHub code folder} for review. In this thesis, \textit{package name} is italicised, and \texttt{R command} is displayed in a teletype font.\\
+
+\noindent
+Data visualisation is an area of interest in numerous method-specific publications. One notable publication is the \href{https://www.tandfonline.com/journals/ucgs20}{Journal of Computational and Graphical Statistics}. This journal publishes ongoing research on the latest techniques in computational and graphical methods in statistics, encompassing data analysis and numerical graphical displays. \href{https://www.sciencedirect.com/journal/spatial-statistics}{Spatial Statistics} publishes articles on the theory and application of spatial and spatio-temporal statistics. \href{https://journal.r-project.org}{The R Journal} publishes research articles in statistical computing that are of interest to R users. These together reveal the vast potential for current and future research in this ever-evolving domain, particularly as our digital landscape and data sphere expand at an accelerated pace.\\
 
 \newpage 
 
@@ -170,10 +170,10 @@ Some of the key tools in R mobilised in the creation of visual plots from datase
 The R language is a powerful data analysis tool, and its power lies in the wide variety of R packages that help it achieve a wide variety of functions. Through out this project, we will use many different packages, such as $maps$, $dplyr$, $tidyverse$, $gridExtra$ and so on. These packages significantly enhances the analysis and presentation of data. \\
 
 \noindent
-\textit{dplyr}: This packages plays a crucial role in data manipulation and transformation. It helps us easily filter, sort, summarize, and transform datasets, making data analysis more efficient and manageable. \textit{maps}: This package is primarily used for providing map data and tools, allowing you to easily draw and display maps in geospatial analyses. \textit{tidyverse}: This package is indeed a collection of R packages designed to provide a cohesive and comprehensive set of tools for data science. It includes several widely used packages such as $ggplot2$ and $dplyr$. \textit{gridExtra}: This packages offers the capability to combine several graphical objects into a cohesive display.\\
+The \textit{dplyr} packages plays a crucial role in data manipulation and transformation. It helps us easily filter, sort, summarize, and transform datasets, making data analysis more efficient and manageable. The \textit{maps} package is primarily used for providing map data and tools, allowing you to easily draw and display maps in geospatial analyses. The \textit{tidyverse} package is indeed a collection of R packages designed to provide a cohesive and comprehensive set of tools for data science. It includes several widely used packages such as \textit{ggplot2} and \textit{dplyr}. The \textit{gridExtra} packages offers the capability to combine several graphical objects into a cohesive display.\\
 
 \noindent
-Utilizing these packages in your R project not only boosts efficiency but also ensures clarity and effectiveness in your data analysis and visualization tasks. Each package brings its unique strengths to the table, collectively enriching the R programming experience and enabling more sophisticated and comprehensive data analysis solutions.
+Utilising these packages in your R project not only boosts efficiency but also ensures clarity and effectiveness in your data analysis and visualization tasks. Each package brings its unique strengths to the table, collectively enriching the R programming experience and enabling more sophisticated and comprehensive data analysis solutions.
 \end{itemize}
 
 
@@ -225,12 +225,9 @@ Data types can be broadly categorised into four main types:
 
 \subsubsection{Matching Data Types with Appropriate Visualisation Techniques}
 
-Selecting appropriate visualisation techniques is essential for effective data communication. Various data types demand specific visualisation methods for optimal representation \cite{healy2018data}. For \textbf{nominal data}, bar charts and stacked bar charts are effective in displaying categorical information and relative proportions. \textbf{Ordinal data} benefits from ordered bar charts, dot plots, or stacked bar charts, maintaining the ranking and order of categories. \textbf{Interval data} is best visualised using line charts, histograms, and box plots, showcasing trends and distributions without assuming a true zero point. \textbf{Ratio data} finds effective representation through scatter plots, histograms, and line charts, enabling precise comparisons and measurements due to the presence of a meaningful zero point.
+Selecting appropriate visualisation techniques is essential for effective data communication. Various data types demand specific visualisation methods for optimal representation \cite{healy2018data}. For \textbf{nominal data}, bar charts and stacked bar charts are effective in displaying categorical information and relative proportions. \textbf{Ordinal data} benefits from ordered bar charts, dot plots, or stacked bar charts, maintaining the ranking and order of categories. \textbf{Interval data} is best visualised using line charts, histograms, and box plots, showcasing trends and distributions without assuming a true zero point. \textbf{Ratio data} finds effective representation through scatter plots, histograms, and line charts, enabling precise comparisons and measurements due to the presence of a meaningful zero point.These are represented in Figure~\ref{fig:data-plots}, where artificial data from a class of 4th-year university students is visualised.
 
 <<data-plots, echo=FALSE, message=FALSE, fig.height=8, fig.width=11, fig.cap='Different types of visualisation according to the data type used'>>=
-
-library(ggplot2)
-library(gridExtra)
 
 # Define the colors
 my_palette <- c("#4B0082", "#459395", "#EB7C69", "#FDA638")
@@ -251,7 +248,7 @@ plot1 <- ggplot(nominal_data, aes(fill = gender, y = tendency, x = 1)) +
         panel.grid.major = element_line(color = "lightgrey"),
         panel.background = element_rect(fill = "white"))   
 
-# Generate ordinary data (customer satisfaction)
+# Generate ordinary data (student satisfaction)
 ordinal_data <- data.frame(
   satisfaction_level = c("Satisfied", "Neutral", "Dissatisfied"),
   count = c(45, 30, 25)
@@ -260,36 +257,37 @@ ordinal_data <- data.frame(
 # Ordered bar graph for customer satisfaction data
 plot2 <- ggplot(ordinal_data, aes(x = reorder(satisfaction_level, -count), y = count)) +
   geom_bar(stat = "identity", fill = my_palette[2]) +
-  labs(title = "Customer Satisfaction Levels", x = NULL, y = "Count") +
+  labs(title = "Students Satisfaction Levels with the Course", x = NULL, y = "Count") +
   theme_minimal()
 
-# Generate interval data (temperature)
-interval_data <- data.frame(
-  time = 1:30,
-  temperature = c(18, 19, 20, 22, 25, 28, 26, 24, 22, 20)
+# Generating sample data for student attendance (replace this with your actual attendance data)
+attendance_data <- data.frame(
+  week = 1:11,  # Weeks of the semester
+  attendance = c(20, 22, 25, 27, 30, 32, 28, 26, 25, 28, 30)  # Replace this with your attendance numbers
 )
 
 # Line chart for temperature data
-plot3 <- ggplot(interval_data, aes(x = time, y = temperature)) +
+plot3 <-  ggplot(attendance_data, aes(x = week, y = attendance)) +
   geom_line(linewidth = 0.7, color = my_palette[3]) +
-  labs(title = "Temperature Variation", x = "Time", y = "Temperature (°C)") +
-  theme_minimal()
+  labs(title = "Student Lecture Attendance", x = "Week of the semester", y = "Number of Students") +
+  theme_minimal() +
+  scale_y_continuous(breaks = seq(20, 32, by = 2), labels = function(x) round(x))  # Adjust the breaks and labels
+
 
 # Generate data for income distribution across a population
 income_data <- data.frame(
-  income = c(40000, 45000, 45000, 50000, 50000, 50000, 55000, 60000, 60000)
+  income = c(40000, 45000, 45000, 50000, 50000, 50000, 55000, 60000, 60000, 40000, 45000, 45000, 50000, 50000, 50000, 55000, 60000, 60000, 40000, 45000, 45000, 50000, 50000, 50000, 55000, 60000, 60000)
 )
 
 # Create a histogram for income distribution
 plot4 <-ggplot(income_data, aes(x = income)) +
   geom_histogram(binwidth = 5000, fill = my_palette[4], color = my_palette[4], alpha = 0.5) +
-  labs(title = "Income Distribution", x = "Income", y = "Frequency") +
+  labs(title = "Expected Income Distribution", x = "Income (£/month)", y = "Frequency") +
   theme_minimal()
 
 # Arrange plots in a 2x2 grid
 grid.arrange(plot1, plot2, plot3, plot4, ncol = 2)
 @
-
 
 
 \subsection{Data Abstraction and Representation}
@@ -486,6 +484,16 @@ Histograms, although visually similar to bar charts, convey different meanings. 
 \textbf{Uses of Histograms}\\
 
 \noindent Histograms demonstrates the distribution of frequency or quantity across groups. Facilitates the visualisation of differences in frequency or quantity among groups. The R language uses the \texttt{hist} function to create histograms. This function takes vectors as input and uses a few more parameters to plot the histogram.\\
+
+Let \(X_1, X_2, \ldots, X_n\) be independent and identically distributed random variables with finite mean \( \mu \) and variance \( \sigma^2 \). Then for any \( \epsilon > 0 \), 
+\[ P\left(\left|\frac{1}{n}\sum_{i=1}^n X_i - \mu\right| < \epsilon\right) \rightarrow 1 \] 
+as \( n \rightarrow \infty \).\\
+Histograms can be used to visualize the convergence of sample means to the population mean.\\
+
+Let \(X_1, X_2, \ldots, X_n\) be independent and identically distributed random variables with finite mean \( \mu \) and variance \( \sigma^2 \). Define the sample mean \( \bar{X} = \frac{1}{n}\sum_{i=1}^n X_i \). Then, as \( n \) becomes large, the variable 
+\[ Z = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \] approaches a standard normal distribution.\\
+
+By plotting histograms of a large number of sample means, one can observe the shape gradually resembling a normal distribution.
 
 \noindent
 Consider the following graph with created on ggplot2 with the use of to the \texttt{geom\_histogram} function and iris dataset.
@@ -786,6 +794,7 @@ From Figure~\ref{fig:ACF}, the ACF plot for the CNY to GBP exchange rate series 
 This persistent autocorrelation suggests that short-term movements in the CNY to GBP exchange rate are heavily influenced by its recent history. Such a characteristic is crucial for forecasting models, as it implies that recent historical data can be a powerful predictor of near-future trends. Models like ARIMA (Autoregressive Integrated Moving Average), which are well-suited for data with high autocorrelation, may be particularly effective in this context.
 
 
+<<<<<<< HEAD
 \section{Bivariate Data Methods}
 
 
@@ -1167,9 +1176,29 @@ theory and visualisation of biplot
 theory and visualisation of t-SNE in 2D and 3D
 
 
+\newpage  
 
-\printindex
+\section{Index}  
 
+\begin{itemize}
+    \item \textbf{Accuracy}: Emphasising faithful reflection of data to reduce distortion or misinterpretation.
+    \item \textbf{Clarity}: Ensuring visuals are easily understood without unnecessary complexity.
+    \item \textbf{Cognitive Load}: The mental effort required to process information presented visually.
+    \item \textbf{Cognitive psychology}: Understanding how mental processes affect perception and understanding of visual data.
+    \item \textbf{Color Theory}: Principles guiding the strategic use of color in visualisations for clarity and impact.
+    \item \textbf{Colour encoding}: Utilising colors to represent data categories or values in visualisations.
+    \item \textbf{Colour perception}: Understanding how humans perceive and interpret colors in visualisations.
+    \item \textbf{Consistency}: Maintaining uniform use of visual elements throughout a visualisation.
+    \item \textbf{Data abstraction}: Simplifying and structuring raw data into comprehensible visual forms.
+    \item \textbf{Gestalt Principles}: Rules affecting how visual elements are grouped and interpreted in perception.
+    \item \textbf{Hierarchies of abstraction}: Representing data at various levels of detail in visualisation.
+    \item \textbf{Information overload}: Occurs when excessive data or visual elements overwhelm understanding.
+    \item \textbf{Interval data}: Ordered categories with equal intervals but lacking a true zero point.
+    \item \textbf{Nominal data}: Represents categories or labels without any inherent order.
+    \item \textbf{Ordinal data}: Implies a meaningful order among categories but lacks equal intervals.
+    \item \textbf{Ratio data}: Includes ordered categories with equal intervals and a meaningful zero point.
+    \item \textbf{Relevance}: Presenting information pertinent to the addressed message or question.
+\end{itemize}
 
 
 \newpage
