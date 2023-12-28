@@ -77,15 +77,16 @@
 \addcontentsline{toc}{section}{Overview} % Add section to the table of contents
 
 \noindent
-Graphical Statistics are an essential tool in the toolbox of every modern Data Scientist. Among other things, they allow their user to see through data, to explore it, as well as to communicate empirical findings in a visual way. This project will overview modern methods of data visualization, will study their theoretical properties, and will illustrate the power of these methodologies using synthetic as well as real data. Computational implementations via dashboards—using Python Dash or R Shiny—will be used to showcase the methodologies in practice. The project will keep in mind that the development of novel methods for visualising data is still an active field of research (e.g. Rodu and Kafadar, 2022), and thus will aim to cover both textbook methods as well as state-of-the-art approaches and open problems.\\
+Graphical statistics is an indispensable tool in the arsenal of every contemporary data scientist. Primarily, it enables users to delve into data, explore its nuances, and effectively communicate empirical discoveries through visual means.This project aims to provide an overview of modern data visualisation methods, delve into their theoretical underpinnings, and demonstrate the potency of these methodologies using both synthetic and authentic datasets. Computational implementations via dashboards — using Python Dash or R Shiny — are used to showcase the methodologies in practice. Furthermore, the project is aware of the ongoing evolution of novel data visualisation techniques, recognising it as an active area of research (e.g. Rodu and Kafadar, 2022), and thus aims to cover both textbook methods as well as state-of-the-art approaches and open problems.\\
 
 \noindent
-This thesis aims to explore the theoretical foundations underlying various visualisation methodologies and demonstrate their application using real-world datasets. In particular, Chapters 3, 4, and 5 focus on standard Graphical Statistics implementations for univariate, bivariate, and multivariate datasets. Chapter 3 will discuss the Kernel Density Estimate, ROC Curve, and Time Series Analysis, showcasing their implementation using the tooth growth dataset and exchange rate dataset. Chapter 4 will focus on the topic of regression, discussing the theory of Simple Linear Regression followed by LOESS regression. Chapter 5 includes the introduction of the model selection method AIC and Multiple Linear Regression, followed by the theoretical foundation of biplots and t-SNE. Subsequent chapters will cover active research areas in Graphical Statistics and implementation of dashboards. \\
+This thesis aims to explore the theoretical foundations that underlie various visualisation methodologies, study their mathematical construction, and illustrate their practical application. In particular, Chapters 3, 4, and 5 concentrate on standard implementations of Graphical Statistics for univariate, bivariate, and multivariate datasets. Chapter 3 discusses the Kernel Density Estimate, ROC Curve, and Time Series Analysis, showcasing their use through the Tooth Growth and the Exchange Rate datasets. Chapter 4 is focused on the topic of regression, discussing the theory behind Simple Linear Regression followed by LOESS regression. Chapter 5 introduces the model selection method AIC and Multiple Linear Regression, followed by the theoretical foundation of biplots and t-SNE. Subsequent chapters cover active research areas in Graphical Statistics and implementation of dashboards. \\
 
 
 \noindent
-R code chunks for each figure are separately copied into the \href{https://github.com/Qinqing-Li/Data-Visualisation-Project/tree/main/code}{GitHub code folder} for review. In this thesis, \textit{package name} is italicised, and \texttt{R command} is displayed in a teletype font.\\
+Throughout this thesis, R package names such as \textit{ggplot2} are italicised, while R commands like \texttt{faceting} are displayed in a teletype font.The R code chunks for each figure in the report can be found in a separate \href{https://github.com/Qinqing-Li/Data-Visualisation-Project/tree/main/code}{GitHub code folder}. \\
 
+\noindent \textbf{Literature and Research} %This section doens´t seem to be too relevant here (the overview of our work)
 \noindent
 Data visualisation is an area of interest in numerous method-specific publications. One notable publication is the \href{https://www.tandfonline.com/journals/ucgs20}{Journal of Computational and Graphical Statistics}. This journal publishes ongoing research on the latest techniques in computational and graphical methods in statistics, encompassing data analysis and numerical graphical displays. \href{https://www.sciencedirect.com/journal/spatial-statistics}{Spatial Statistics} publishes articles on the theory and application of spatial and spatio-temporal statistics. \href{https://journal.r-project.org}{The R Journal} publishes research articles in statistical computing that are of interest to R users. These together reveal the vast potential for current and future research in this ever-evolving domain, particularly as our digital landscape and data sphere expand at an accelerated pace.\\
 
@@ -94,11 +95,11 @@ Data visualisation is an area of interest in numerous method-specific publicatio
 \section{Introduction}
 
 \noindent
-Chapter 1 will present case examples of the impact and misuses of data visualisations, followed by an introduction to R package \textit{ggplot2}, a list of datasets used in this thesis and the organisation of the thesis.
+This chapter will provide case examples demonstrating both the influential applications and potential misuses of data visualisations, with the aim of underscoring the enduring importance of data visualisation. Following this, an introduction to the R package \textit{ggplot2} will be provided, along with a presentation of the datasets used in this thesis, and an overview of its organization.
 
 \subsection{Historical Background and Misuses of Data Visualisation}
  
-\\\textbf{Motivations for Having Data Visualisations - Case Example 1}\\
+\\\textbf{Motivations for Using Data Visualisations - Case 1}\\
 
 \noindent
 Florence Nightingale was not only a social reformer and the founder of modern nursing but also a pioneering statistician. It was her application of data visualisation during the Crimean War that transformed the field of healthcare and pushed for social reform.\\  
@@ -117,7 +118,7 @@ During the Crimean War, Nightingale recognised that unsanitary hospital conditio
 Nightingale leveraged the compelling visualisations in her advocacy efforts, presenting them to MPs and government officials who otherwise are unlikely to read or understand statistical reports. Nightingale successfully persuaded Queen Victoria, head of the British Army at the time, to allocate funding for the improvement of better conditions in military hospitals.\\
 
 \noindent
-\textbf{Motivations for Having Data Visualisations - Case Example 2}\\
+\textbf{Motivations for Using Data Visualisations - Case 2}\\
 
 \noindent
 Sometimes, one glance is enough to convey the most powerful idea. Edward Hawkins, a British climate scientist and Professor of climate science at the University of Reading, is renowned for his exceptional datavisualisations of climate change.\\
@@ -136,7 +137,7 @@ In 2018, Edward Hawkins was invited to deliver a lecture on climate change in Wa
 Known as the ``warming stripes," this chart cleverly employs blues to indicate cooler-than-average years and reds to signify hotter-than-average years. Its influence reached far and wide, gracing the front pages of major media outlets and featured in news broadcasts worldwide. It became a symbol in climate change demonstrations. Arguably, it stands as one of the most iconic graphics in modern times.\\
 
 \noindent
-\textbf{Misuses of Data Visualisation - Case Example 1}\\
+\textbf{Misuses of Data Visualisation - Case 1}\\
 
 \noindent
 Having observed the remarkable effectiveness of data visualisations, the significance of employing them correctly becomes apparent. The improper use of data visualisations holds the potential to significantly influence the public in misleading ways, resulting in undesired consequences.\\
@@ -152,7 +153,7 @@ Inappropriate data visualisation can conceal trends rather than reveal them. Fig
 \end{figure}
 
 \noindent 
-\textbf{Misuses of Data Visualisation - Case Example 2}\\
+\textbf{Misuses of Data Visualisation - Case 2}\\
 
 \noindent
 One striking example of data visualisation misuse is found in the Kallikak Family tree - one of the most prominent eugenic narratives of the 20th century.\\
@@ -175,31 +176,31 @@ Case examples obtained from BBC Ideas \cite{bbcdatavis}.
 
 \subsection{Computing and Data Visualisation}
 
-R language holds a pivotal position in the field of data visualization. As a powerful tool for statistical analysis and graphic creation, R offers a wide array of functionalities to cater to a range of data visualization needs, from basic to advanced. In data visualisation, \textit{ggplot2} is the main tool used to create different plots capable of representing various types of dataset. The foundation of \textit{ggplot2} lies in the Grammar of Graphics, allowing the sequential construction of individual elements composing a graph, which are subsequently combined to create a unified graphical representation.\\
+As a powerful tool for statistical analysis and graphic creation, R offers a wide array of functionalities to cater to a range of data visualisation needs. In data visualisation, \textit{ggplot2} is the main tool used to create plots capable of representing various types of datasets. The foundation of \textit{ggplot2} lies in the Grammar of Graphics, allowing the sequential construction of individual elements composing a graph, which are subsequently combined to create a unified graphical representation.\\
 
 \noindent
-As shown in subsequent sections, it is possible to achieve numerous visualisations rather effortlessly by utilising data in R, or even external data, together with \textit{ggplot2}.When using \textit{ggplot2}, the certain objects are used repeatedly. Some of these are: \texttt{geom}, \texttt{scale}, \texttt{coord}, \texttt{aes}, \texttt{stat}, \texttt{theme} \texttt{labs} and so on.\\
+As shown in subsequent sections, it is possible to produce visualisations rather effortlessly by utilising internal data from R, or even external data, together with \textit{ggplot2}. When using \textit{ggplot2}, certain key tools are used repeatedly to create visual plots from datasets. Some of these include: \texttt{geom}, \texttt{scale}, \texttt{coord}, \texttt{theme}, and more.\\
 
 
 \noindent 
-Some of the key tools in R mobilised in the creation of visual plots from datasets emcompass \cite{ggplot2}:
+These particular tools serve the following functions \cite{ggplot2}: %This section needs to be revised
 \noindent
-\texttt{geom} refers to geometric objects, pivotal components within \textit{ggplot2} used to define the visual representation of data in a plot. Each \texttt{geom} function corresponds to a specific graphical representation type in a chart. \texttt{scales} facilitate the mapping of data onto the aesthetic attributes of a graphic, such as colour, size, and shape. In \textit{ggplot2}, scale functions enable the adjustment of various mapping details, including colour choices, label formatting, legend arrangement, and more. \texttt{coord} addresses the mapping of data coordinates onto the plane of the graphic. It provides axes and gridlines to aid in interpreting the graph. Various coordinate systems like Cartesian, polar, and map projections are available. \texttt{faceting} is a robust feature enabling the partitioning of a single plot into multiple plots based on factors present in the dataset. This functionality proves particularly beneficial for exploring and presenting data with multiple groups or categories. The \texttt{theme} function holds significance in customising the non-data elements of plots. The theme system within \textit{ggplot2} allows precise adjustment of aesthetic aspects such as fonts, labels, legends, and background colours. This tool is essential for enhancing plot readability and creating visually captivating graphics tailored to specific audiences or publication requirements.\\
+\texttt{geom} refers to geometric objects, pivotal components within \textit{ggplot2} used to define the visual representation of data in a plot. Each \texttt{geom} function corresponds to a specific graphical representation type in a chart. Additionally, in \textit{ggplot2}, \texttt{scales} functions enable the adjustment of various mapping details, including colour choices, label formatting, legend arrangement, and more.\\
+
+\noindent \texttt{coord} provides the axes and gridlines which aid in interpreting the graph. Various coordinate systems such as cartesian, polar, and map projections are available. Furthermore, \texttt{faceting} is a robust feature enabling the partitioning of a single plot into multiple plots based on factors present in the dataset. This functionality proves particularly beneficial for exploring and presenting data with multiple groups or categories.\\
+
+\noindent The \texttt{theme} function holds significance in customising the non-data elements of plots. The theme system within \textit{ggplot2} allows precise adjustment of aesthetic aspects such as fonts, labels, legends, and background colours. This tool is essential for enhancing plot readability and creating visually captivating graphics tailored to specific audiences or publication requirements.\\
 
 \noindent
-The R language is a powerful data analysis tool, and its power lies in the wide variety of R packages that help it achieve a wide variety of functions. Through out this project, we will use many different packages, such as $maps$, $dplyr$, $tidyverse$, $gridExtra$ and so on. These packages significantly enhances the analysis and presentation of data. \\
+The R language is a powerful data analysis tool, and its power lies in the wide variety of R packages that help it achieve a wide variety of functions. Through out this project, different packages, such as $maps$, $dplyr$, $tidyverse$, and $gridExtra$ will be used. These packages significantly enhances the analysis and presentation of data. \\
 
 \noindent
-The \textit{dplyr} packages plays a crucial role in data manipulation and transformation. It helps us easily filter, sort, summarize, and transform datasets, making data analysis more efficient and manageable. The \textit{maps} package is primarily used for providing map data and tools, allowing you to easily draw and display maps in geospatial analyses. The \textit{tidyverse} package is indeed a collection of R packages designed to provide a cohesive and comprehensive set of tools for data science. It includes several widely used packages such as \textit{ggplot2} and \textit{dplyr}. The \textit{gridExtra} packages offers the capability to combine several graphical objects into a cohesive display.\\
-
-\noindent
-Utilising these packages in your R project not only boosts efficiency but also ensures clarity and effectiveness in your data analysis and visualization tasks. Each package brings its unique strengths to the table, collectively enriching the R programming experience and enabling more sophisticated and comprehensive data analysis solutions.
-\end{itemize}
+The \textit{dplyr} packages plays a crucial role in data manipulation and transformation. It helps us filter, sort, summarise, and transform datasets, making data analysis more efficient and manageable. The \textit{maps} package is used for providing map data and tools, allowing one to easily draw and display maps in geospatial analyses. The \textit{tidyverse} package is indeed a collection of R packages designed to provide a cohesive and comprehensive set of tools for data science. It includes several widely used packages such as \textit{ggplot2} and \textit{dplyr}. The \textit{gridExtra} packages offers the capability to combine several graphical objects into a cohesive display.\\
 
 
 \subsection{Datasets}
 \noindent
-The datasets that will be analysed and visualised in later chapters is introduced in this subsection.\\
+This section introduces the datasets analysed and visualised in the subsequent chapters.\\
 
 \noindent
 \textbf{mtcars}: The built-in R dataset, \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars}{mtcars} was extracted from the 1974 Motor Trend US magazine. It includes the fuel consumption and 10 aspects of automobile design for 32 automobiles (1973–74 models). \\
@@ -217,7 +218,6 @@ The datasets that will be analysed and visualised in later chapters is introduce
 \textbf{Exchange Rate}: The exchange rate data, available at the \href{https://www.bankofengland.co.uk/boeapps/database/index.asp?first=yes&SectionRequired=I&HideNums=-1&ExtraInfo=true&Travel=NIx}{Bank of England}, provides daily spot exchange rates against the pound Sterling (2005-present). This report examines the daily spot rates of the Canadian Dollar, Euro, and US Dollar against the pound Sterling.\\
 
 \newpage 
-
 
 \section{Theoretical Foundations of Data Visualisation}
 This chapter, ``Theoretical Foundations of Data Visualisation," delves into the core principles and concepts that serve as the base of this field. We seek to understand not only the ``how" but also the ``why" behind the creation of visualisations that captivate and inform.
