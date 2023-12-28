@@ -66,7 +66,7 @@ This thesis aims to explore the theoretical foundations that underlie various vi
 \noindent
 Throughout this thesis, R package names such as \textit{ggplot2} are italicised, while R commands like \texttt{faceting} are displayed in a teletype font.The R code chunks for each figure in the report can be found in a separate \href{https://github.com/Qinqing-Li/Data-Visualisation-Project/tree/main/code}{GitHub code folder}. \\
 
-\noindent \textbf{Literature and Research} %This section doens´t seem to be too relevant here (the overview of our work)
+\noindent \textbf{Literature and Research}\\ %This section doens´t seem to be too relevant here (the overview of our work)
 \noindent
 Data visualisation is an area of interest in numerous method-specific publications. One notable publication is the \href{https://www.tandfonline.com/journals/ucgs20}{Journal of Computational and Graphical Statistics}. This journal publishes ongoing research on the latest techniques in computational and graphical methods in statistics, encompassing data analysis and numerical graphical displays. \href{https://www.sciencedirect.com/journal/spatial-statistics}{Spatial Statistics} publishes articles on the theory and application of spatial and spatio-temporal statistics. \href{https://journal.r-project.org}{The R Journal} publishes research articles in statistical computing that are of interest to R users. These together reveal the vast potential for current and future research in this ever-evolving domain, particularly as our digital landscape and data sphere expand at an accelerated pace.\\
 
@@ -98,8 +98,8 @@ During the Crimean War, Nightingale recognised that unsanitary hospital conditio
 Nightingale leveraged the compelling visualisations in her advocacy efforts, presenting them to MPs and government officials who otherwise are unlikely to read or understand statistical reports. Nightingale successfully persuaded Queen Victoria, head of the British Army at the time, to allocate funding for the improvement of better conditions in military hospitals.\\
 
 \noindent
-\textbf{Motivations for Using Data Visualisations - Case 2}\\
-
+\textbf{Motivations for Using Data Visualisations - Case 2}
+\\
 \noindent
 Sometimes, one glance is enough to convey the most powerful idea. Edward Hawkins, a British climate scientist and Professor of climate science at the University of Reading, is renowned for his exceptional datavisualisations of climate change.\\
 
@@ -158,7 +158,8 @@ Case examples obtained from BBC Ideas \cite{bbcdatavis}.
 
 As a powerful tool for statistical analysis and graphic creation, R offers a wide array of functionalities to cater to a range of data visualisation needs. In data visualisation, \textit{ggplot2} is the main tool used to create plots capable of representing various types of datasets. The foundation of \textit{ggplot2} lies in the Grammar of Graphics, allowing the sequential construction of individual elements composing a graph, which are subsequently combined to create a unified graphical representation.\\
 
-\noindent
+\noindent\textbf{Key R Commands}\\
+\noindent 
 As shown in subsequent sections, it is possible to produce visualisations rather effortlessly by utilising internal data from R, or even external data, together with \textit{ggplot2}. When using \textit{ggplot2}, certain key tools are used repeatedly to create visual plots from datasets. Some of these include: \texttt{geom}, \texttt{scale}, \texttt{coord}, \texttt{theme}, and more.\\
 
 
@@ -171,6 +172,7 @@ These particular tools serve the following functions \cite{ggplot2}: %This secti
 
 \noindent The \texttt{theme} function holds significance in customising the non-data elements of plots. The theme system within \textit{ggplot2} allows precise adjustment of aesthetic aspects such as fonts, labels, legends, and background colours. This tool is essential for enhancing plot readability and creating visually captivating graphics tailored to specific audiences or publication requirements.\\
 
+\noindent\textbf{Key R Packages}\\
 \noindent
 The R language is a powerful data analysis tool, and its power lies in the wide variety of R packages that help it achieve a wide variety of functions. Through out this project, different packages, such as $maps$, $dplyr$, $tidyverse$, and $gridExtra$ will be used. These packages significantly enhances the analysis and presentation of data. \\
 
@@ -288,8 +290,6 @@ plot4 <-ggplot(income_data, aes(x = income)) +
 # Arrange plots in a 2x2 grid
 grid.arrange(plot1, plot2, plot3, plot4, ncol = 2)
 @
-
-
 \subsection{Data Abstraction and Representation}
 The transformation of raw data into meaningful representations is a pivotal step in data representation. This process, known as data abstraction, involves distilling complex datasets into visual forms that convey insights. In this section, we explore data abstraction, the hierarchies and levels of abstraction in data visualisation, and the critical trade-offs between abstraction and the potential loss of information.
 
