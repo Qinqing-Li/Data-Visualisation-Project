@@ -67,7 +67,8 @@ This thesis aims to explore the theoretical foundations that underlie various vi
 \noindent
 Throughout this thesis, R package names such as \textit{ggplot2} are italicised, while R commands like \texttt{faceting} are displayed in a teletype font.The R code chunks for each figure in the report can be found in a separate \href{https://github.com/Qinqing-Li/Data-Visualisation-Project/tree/main/code}{GitHub code folder}. \\
 
-\noindent \textbf{Literature and Research}\\ %This section doens´t seem to be too relevant here (the overview of our work)
+\noindent \textbf{Literature and Research}\\ %This section doesn´t seem to be too relevant here (the overview of our work)
+\\
 \noindent
 Data visualisation is an area of interest in numerous method-specific publications. One notable publication is the \href{https://www.tandfonline.com/journals/ucgs20}{Journal of Computational and Graphical Statistics}. This journal publishes ongoing research on the latest techniques in computational and graphical methods in statistics, encompassing data analysis and numerical graphical displays. \href{https://www.sciencedirect.com/journal/spatial-statistics}{Spatial Statistics} publishes articles on the theory and application of spatial and spatio-temporal statistics. \href{https://journal.r-project.org}{The R Journal} publishes research articles in statistical computing that are of interest to R users. These together reveal the vast potential for current and future research in this ever-evolving domain, particularly as our digital landscape and data sphere expand at an accelerated pace.\\
 
@@ -1206,7 +1207,7 @@ The updated model estimate $\hat{y}(x)$, is computed using the local fitting met
 
 \section{Multivariate Data Methods}
 
-\subsection{multiple linear regrerssion}
+\subsection{Multiple Linear Regression}
 
 \noindent
 \textbf{Linear Regression Model and Model selection method AIC}
@@ -1229,8 +1230,41 @@ The R algorithm \texttt{step()}, which minimises the AIC score, aids in selectin
 \noindent
 The procedure for selecting the best linear model for the mtcars dataset is shown in Appendix A, where our best-fitted model is \texttt{formula = mpg \textasciitilde wt + qsec + am}. Given 10 explanatory variables, Miles per Gallon is best predicted by weight (wt), quarter-mile time (qsec), and Transmission (am), where 0 represents automatic and 1 represents manual.
 
-\subsection{biplot}
-theory and visualisation of biplot
+\subsection{Biplots}
+Biplots serve as influential visual tools for representing multivariate data in two dimensions, enabling the simultaneous visualization of both observations and variables in a dataset. They are designed to project high-dimensional data onto a lower-dimensional space while retaining the essential information present in the original dataset.
+
+For the creation of a biplot, a matrix of observations is utilized, where rows denote individual cases and columns represent variables. These variables should ideally be quantitative and on the same scale to avoid biases arising from differences in magnitude. Additionally, the absence of perfect correlation among variables is assumed to prevent numerical instability or distorted representations.
+
+The construction of a biplot involves mathematical computations often derived from techniques like Singular Value Decomposition (SVD) or Principal Component Analysis (PCA). These methods facilitate the reduction of dimensions while preserving as much variance as possible.
+
+In the context of PCA-based biplots, the primary steps involve determining principal components from the covariance or correlation matrix of the data. The first two principal components, capturing the most significant variation, form the basis of the biplot. In this graphical representation, observations are depicted as points, while variables are represented as vectors emanating from the origin. The angles and lengths of these vectors signify relationships between variables and their contributions to the principal components, while the proximity of points reflects similarity or dissimilarity between observations.
+
+Mathematically, the coordinates of observations on the first two principal components can be calculated using formulas derived from PCA:
+
+\[
+x_{i1} = s_{i1} \cdot u_{1}
+\]
+\[
+x_{i2} = s_{i2} \cdot u_{2}
+\]
+
+Where \( x_{i1} \) and \( x_{i2} \) are the coordinates of observation \( i \) on the first and second principal components respectively, \( s_{i1} \) and \( s_{i2} \) are the scores of observation \( i \) on these components, and \( u_{1} \) and \( u_{2} \) are the unit eigenvectors corresponding to the first and second principal components.
+
+Similarly, the coordinates of the variable vectors are computed using the following formulas:
+
+\[
+v_{j1} = \sqrt{\lambda_{1}} \cdot c_{j1}
+\]
+\[
+v_{j2} = \sqrt{\lambda_{2}} \cdot c_{j2}
+\]
+
+Here, \( v_{j1} \) and \( v_{j2} \) represent the coordinates of variable \( j \) on the first and second principal components respectively, \( \lambda_{1} \) and \( \lambda_{2} \) are the eigenvalues corresponding to the first and second principal components, and \( c_{j1} \) and \( c_{j2} \) are the loadings of variable \( j \) on these components.
+
+In summary, biplots provide a geometrically intuitive way to visualize multivariate data in reduced dimensions, relying on mathematical techniques such as PCA for their construction.
+
+
+
 \subsection{t-SNE}
 theory and visualisation of t-SNE in 2D and 3D
 
