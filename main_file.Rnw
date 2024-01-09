@@ -1231,9 +1231,7 @@ The R algorithm \texttt{step()}, which minimises the AIC score, aids in selectin
 The procedure for selecting the best linear model for the mtcars dataset is shown in Appendix A, where our best-fitted model is \texttt{formula = mpg \textasciitilde wt + qsec + am}. Given 10 explanatory variables, Miles per Gallon is best predicted by weight (wt), quarter-mile time (qsec), and Transmission (am), where 0 represents automatic and 1 represents manual.
 
 \subsection{Biplots}
-Biplots serve as influential visual tools for representing multivariate data in two dimensions, enabling the simultaneous visualization of both observations and variables in a dataset. They are designed to project high-dimensional data onto a lower-dimensional space while retaining the essential information present in the original dataset.
-
-For the creation of a biplot, a matrix of observations is utilized, where rows denote individual cases and columns represent variables. These variables should ideally be quantitative and on the same scale to avoid biases arising from differences in magnitude. Additionally, the absence of perfect correlation among variables is assumed to prevent numerical instability or distorted representations.
+Biplots serve as influential visual tools for representing multivariate data in two dimensions, enabling the simultaneous visualisation of both observations and variables in a dataset. They are designed to project high-dimensional data onto a lower-dimensional space while retaining the essential information present in the original dataset.
 
 The construction of a biplot involves mathematical computations often derived from techniques like Singular Value Decomposition (SVD) or Principal Component Analysis (PCA). These methods facilitate the reduction of dimensions while preserving as much variance as possible.
 
