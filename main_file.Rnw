@@ -1231,35 +1231,47 @@ The R algorithm \texttt{step()}, which minimises the AIC score, aids in selectin
 The procedure for selecting the best linear model for the mtcars dataset is shown in Appendix A, where our best-fitted model is \texttt{formula = mpg \textasciitilde wt + qsec + am}. Given 10 explanatory variables, Miles per Gallon is best predicted by weight (wt), quarter-mile time (qsec), and Transmission (am), where 0 represents automatic and 1 represents manual.
 
 \subsection{Biplots}
-Biplots serve as influential visual tools for representing multivariate data in two dimensions, enabling the simultaneous visualisation of both observations and variables in a dataset. They are designed to project high-dimensional data onto a lower-dimensional space while retaining the essential information present in the original dataset.
+\noindent 
+Biplots serve as a valuable tool in visualising multivariate data by displaying both sample points and variables simultaneously in a lower-dimensional space. That is, they are designed to project high-dimensional data onto a lower-dimensional space while retaining the essential information present in the original dataset. This technique, introduced by Herman Chernoff in the 1970s, is a geometric representation that aids in understanding the relationships and patterns within high-dimensional data.\\
 
-The construction of a biplot involves mathematical computations often derived from techniques like Singular Value Decomposition (SVD) or Principal Component Analysis (PCA). These methods facilitate the reduction of dimensions while preserving as much variance as possible.
+\noindent At its core, a biplot offers a graphical representation of the rows and columns of a data matrix, projecting them onto a two-dimensional plane while preserving the most significant information. It combines information about both the samples and the variables, allowing analysts to simultaneously discern correlations, clusters, and trends.
 
-In the context of PCA-based biplots, the primary steps involve determining principal components from the covariance or correlation matrix of the data. The first two principal components, capturing the most significant variation, form the basis of the biplot. In this graphical representation, observations are depicted as points, while variables are represented as vectors emanating from the origin. The angles and lengths of these vectors signify relationships between variables and their contributions to the principal components, while the proximity of points reflects similarity or dissimilarity between observations.
+\noindent The construction of a biplot involves mathematical computations often derived from techniques like Singular Value Decomposition (SVD) or Principal Component Analysis (PCA). These methods facilitate the reduction of dimensions while preserving as much variance as possible.\\
 
-Mathematically, the coordinates of observations on the first two principal components can be calculated using formulas derived from PCA:
+\noindent SVD breaks down the data matrix into three constituent matrices, allowing for the extraction of singular values and singular vectors. These singular vectors form the basis for plotting the data in the reduced-dimensional space.\\
 
-\[
+\noindent In practical terms, the steps to generate a biplot involve:
+\begin{itemize}
+    \item \textbf{Data Standardisation}: Before creating a biplot, it's common to standardize the data by centering and scaling it to ensure each variable contributes equally.
+    \item \textbf{Calculating Singular Value Decomposition}: Applying SVD to the standardized data matrix to obtain the singular values and vectors.
+    \item \textbf{Projection}: Projecting both the samples and variables onto a two-dimensional space using the singular vectors obtained from SVD. This projection helps represent the relationships between variables and samples.
+\end{itemize}
+
+
+\noindent In the context of PCA-based biplots, the primary steps involve determining principal components from the covariance or correlation matrix of the data. The first two principal components, capturing the most significant variation, form the basis of the biplot. In this graphical representation, observations are depicted as points, while variables are represented as vectors emanating from the origin. The angles and lengths of these vectors signify relationships between variables and their contributions to the principal components, while the proximity of points reflects similarity or dissimilarity between observations.\\
+
+\noindent Mathematically, the coordinates of observations on the first two principal components can be calculated using formulas derived from PCA:
+
+$$\[
 x_{i1} = s_{i1} \cdot u_{1}
 \]
 \[
-x_{i2} = s_{i2} \cdot u_{2}
+x_{i2} = s_{i2} \cdot u_{2},
 \]
 
-Where \( x_{i1} \) and \( x_{i2} \) are the coordinates of observation \( i \) on the first and second principal components respectively, \( s_{i1} \) and \( s_{i2} \) are the scores of observation \( i \) on these components, and \( u_{1} \) and \( u_{2} \) are the unit eigenvectors corresponding to the first and second principal components.
+\noindent where \( x_{i1} \) and \( x_{i2} \) are the coordinates of observation \( i \) on the first and second principal components respectively, \( s_{i1} \) and \( s_{i2} \) are the scores of observation \( i \) on these components, and \( u_{1} \) and \( u_{2} \) are the unit eigenvectors corresponding to the first and second principal components.\\
 
-Similarly, the coordinates of the variable vectors are computed using the following formulas:
+\noindent Similarly, the coordinates of the variable vectors are computed using the following formulas:
 
 \[
 v_{j1} = \sqrt{\lambda_{1}} \cdot c_{j1}
 \]
 \[
-v_{j2} = \sqrt{\lambda_{2}} \cdot c_{j2}
+v_{j2} = \sqrt{\lambda_{2}} \cdot c_{j2}.
 \]
 
-Here, \( v_{j1} \) and \( v_{j2} \) represent the coordinates of variable \( j \) on the first and second principal components respectively, \( \lambda_{1} \) and \( \lambda_{2} \) are the eigenvalues corresponding to the first and second principal components, and \( c_{j1} \) and \( c_{j2} \) are the loadings of variable \( j \) on these components.
+\noindent Here, \( v_{j1} \) and \( v_{j2} \) represent the coordinates of variable \( j \) on the first and second principal components respectively, \( \lambda_{1} \) and \( \lambda_{2} \) are the eigenvalues corresponding to the first and second principal components, and \( c_{j1} \) and \( c_{j2} \) are the loadings of variable \( j \) on these components.\\
 
-In summary, biplots provide a geometrically intuitive way to visualize multivariate data in reduced dimensions, relying on mathematical techniques such as PCA for their construction.
 
 
 
