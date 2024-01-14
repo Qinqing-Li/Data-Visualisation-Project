@@ -37,6 +37,7 @@ library(cowplot)
 library(datasets)
 library(zoo)
 library(viridis)
+library(graphics)
 data(ToothGrowth)
 data(mtcars)
 data(trees)
@@ -67,7 +68,8 @@ This thesis aims to explore the theoretical foundations that underlie various vi
 \noindent
 Throughout this thesis, R package names such as \textit{ggplot2} are italicised, while R commands like \texttt{faceting} are displayed in a teletype font.The R code chunks for each figure in the report can be found in a separate \href{https://github.com/Qinqing-Li/Data-Visualisation-Project/tree/main/code}{GitHub code folder}. \\
 
-\noindent \textbf{Literature and Research}\\ %This section doens´t seem to be too relevant here (the overview of our work)
+\noindent \textbf{Literature and Research}\\ %This section doesn´t seem to be too relevant here (the overview of our work)
+\\
 \noindent
 Data visualisation is an area of interest in numerous method-specific publications. One notable publication is the \href{https://www.tandfonline.com/journals/ucgs20}{Journal of Computational and Graphical Statistics}. This journal publishes ongoing research on the latest techniques in computational and graphical methods in statistics, encompassing data analysis and numerical graphical displays. \href{https://www.sciencedirect.com/journal/spatial-statistics}{Spatial Statistics} publishes articles on the theory and application of spatial and spatio-temporal statistics. \href{https://journal.r-project.org}{The R Journal} publishes research articles in statistical computing that are of interest to R users. These together reveal the vast potential for current and future research in this ever-evolving domain, particularly as our digital landscape and data sphere expand at an accelerated pace.\\
 
@@ -1242,7 +1244,7 @@ The updated model estimate $\hat{y}(x)$, is computed using the local fitting met
 
 \section{Multivariate Data Methods}
 
-\subsection{multiple linear regrerssion}
+\subsection{Multiple Linear Regression}
 
 \noindent
 \textbf{Linear Regression Model and Model selection method AIC}
@@ -1265,6 +1267,7 @@ The R algorithm \texttt{step()}, which minimises the AIC score, aids in selectin
 \noindent
 The procedure for selecting the best linear model for the mtcars dataset is shown in Appendix A, where our best-fitted model is \texttt{formula = mpg \textasciitilde wt + qsec + am}. Given 10 explanatory variables, Miles per Gallon is best predicted by weight (wt), quarter-mile time (qsec), and Transmission (am), where 0 represents automatic and 1 represents manual.
 
+<<<<<<< HEAD
 \subsection{biplot}
 theory and visualisation of biplot
 
@@ -1301,6 +1304,64 @@ Finally, project the standardized data $Z$ onto the subspace defined by the prin
 where $Y \in \mathbb{R}^{N \times k}$ is the transformed data matrix in the new subspace.
 
 In the reduced space, the variance along each principal component $v_i$ is maximized, preserving the most significant variances in the data. PCA also attempts to preserve pairwise Euclidean distances between data points in the lower-dimensional representation.    
+=======
+\subsection{Biplots}
+\noindent 
+Biplots serve as a valuable tool in visualising designed to project high-dimensional data onto a lower-dimensional space while retaining essential information. This technique, introduced by Herman Chernoff in the 1970s, aids in understanding the relationships and patterns within high-dimensional data.\\
+
+\noindent At its core, a biplot offers a graphical representation of the rows and columns of a data matrix, projecting them onto a two-dimensional plane while preserving the most significant information. It combines information about both the samples and the variables, allowing analysts to simultaneously discern correlations, clusters, and trends.\\
+
+\noindent The construction of a biplot involves mathematical computations derived from techniques like Singular Value Decomposition (SVD) or Principal Component Analysis (PCA). SVD breaks down the data matrix into three constituent matrices, allowing for the extraction of singular values and singular vectors. These singular vectors form the basis for plotting the data in the reduced-dimensional space.\\
+
+\noindent In practical terms, the steps to generate a biplot involve:
+\begin{itemize}
+    \item \textbf{Data Standardisation}: Standardising the data by centering and scaling it to ensure each variable contributes equally.
+    \item \textbf{Calculating Singular Value Decomposition}: Applying SVD to the standardised data matrix to obtain the singular values and vectors.
+    \item \textbf{Projection}: Projecting both the samples and variables onto a two-dimensional space using the singular vectors obtained from SVD. This projection helps represent the relationships between variables and samples.
+\end{itemize}
+
+\noindent In the context of PCA-based biplots, the primary steps involve determining principal components from the covariance or correlation matrix of the data. The first two principal components, capturing the most significant variation, form the basis of the biplot. In this graphical representation, observations are depicted as points, while variables are represented as vectors emanating from the origin. The angles and lengths of these vectors signify relationships between variables and their contributions to the principal components, while the proximity of points reflects similarity or dissimilarity between observations.\\
+
+\noindent Mathematically, the coordinates of observations on the first two principal components can be calculated using formulas derived from PCA:
+
+$$\[
+x_{i1} = s_{i1} \cdot u_{1}
+\]
+\[
+x_{i2} = s_{i2} \cdot u_{2},
+\]
+
+\noindent where \( x_{i1} \) and \( x_{i2} \) are the coordinates of observation \( i \) on the first and second principal components respectively, \( s_{i1} \) and \( s_{i2} \) are the scores of observation \( i \) on these components, and \( u_{1} \) and \( u_{2} \) are the unit eigenvectors corresponding to the first and second principal components.\\
+
+\noindent Similarly, the coordinates of the variable vectors are computed using the following formulas:
+
+\[
+v_{j1} = \sqrt{\lambda_{1}} \cdot c_{j1}
+\]
+\[
+v_{j2} = \sqrt{\lambda_{2}} \cdot c_{j2}.
+\]
+
+\noindent Here, \( v_{j1} \) and \( v_{j2} \) represent the coordinates of variable \( j \) on the first and second principal components respectively, \( \lambda_{1} \) and \( \lambda_{2} \) are the eigenvalues corresponding to the first and second principal components, and \( c_{j1} \) and \( c_{j2} \) are the loadings of variable \( j \) on these components.\\
+
+<<biplot, echo=FALSE, fig.height=3, fig.width=4, fig.cap='PCA Biplot of mtcars Dataset: Principal Component Analysis', message=FALSE>>=
+data(mtcars)
+
+# Standardize the data
+scaled_data <- scale(mtcars)
+
+# Perform Principal Component Analysis (PCA)
+pca_result <- prcomp(scaled_data, scale. = TRUE)
+
+# Create a biplot
+biplot(pca_result, cex = 0.7)
+
+# Add titles and labels
+
+@
+
+
+>>>>>>> 41f59a236279f06470d5ee084fab22798f1aa871
 
 
 \subsection{t-SNE}
