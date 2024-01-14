@@ -1424,7 +1424,8 @@ Perplexity influences the variance of the Gaussians in the high-dimensional spac
     \item \textbf{Ratio data}: Includes ordered categories with equal intervals and a meaningful zero point.
     \item \textbf{Relevance}: Presenting information pertinent to the addressed message or question.
 \end{itemize}
-
+  
+  
 
 \newpage
 
