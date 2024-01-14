@@ -592,8 +592,44 @@ The kernel function \( K(u) \) is a normalised non-negative function that satisf
 \noindent In Figure~\ref{fig:iris-plots}, the kernel density estimation of the dataset is presented. The distribution of sepal lengths is depicted by the kernel density curve. The peaks observed in the curve correspond to the primary concentration trends of sepal length within the data. A unimodal curve signifies a concentration of sepal lengths for most irises in that specific region. Conversely, a bimodal or multimodal curve suggests the existence of multiple concentration areas.
 
 \subsection{ROC Curve}
-write on ROC curve and visualisation example.
 
+The Receiver Operating Characteristic (ROC) graph is a technique for assessing the performance of classification models in machine learning and statistics. It's particularly useful for evaluating diagnostic tests and binary classifiers. 
+
+The ROC curve is a plot that displays the performance of a binary classification system as its discrimination threshold is varied. It plots two parameters: True Positive Rate (TPR, also known as Sensitivity) and False Positive Rate (FPR, 1 - Specificity). TPR is the proportion of positive instances correctly identified, while FPR is the proportion of negative instances incorrectly identified as positive.
+
+The curve shows trade-off between sensitivity (true positive rate) and specificity (1 - false positive rate) across different thresholds by plotting TPR against FPR at various threshold settings. A classifier that performs better than random guessing will have a ROC curve that bows towards the top left corner of the plot.
+
+The Area Under the Curve (AUC) provides a single measure of overall performance of a classifier. The larger the area under the curve, the better the classifier. An AUC of 0.5 suggests no discriminative ability, while an AUC of 1.0 represents perfect classification.
+
+
+\textbf{ROC analysis in COVID-19 test}
+
+The COVID-19 pandemic underscores the need for accurate diagnostic tests to differentiate between positive and negative cases, which is crucial in pandemic management. An effective means for evaluating accuracy of various diagnostic tests is necessary. Here, the ROC analysis, a robust method for assessing diagnostic tests, is introduced. ROC analysis comprehensively examines test accuracy by integrating sensitivity, specificity, and AUC metrics. These metrics are calculated by comparing test outcomes against a recognized gold standard, thereby determining the true disease status. This approach is vital for understanding the efficacy of COVID-19 diagnostic tools and guiding public health decisions.
+
+
+
+From COVID-19 test dataset, 
+
+Nucleic acid testing (such as PCR tests)
+evaluate the diagnostic accuracy of these tests. The principles of ROC analysis in this context involve assessing the sensitivity and specificity of nucleic acid tests in detecting a particular genetic material
+
+Sensitivity and Specificity: In nucleic acid testing, sensitivity refers to the test's ability to correctly identify those with the target nucleic acid (true positives), while specificity refers to correctly identifying those without the target nucleic acid (true negatives). An ideal nucleic acid test would have both high sensitivity (few false negatives) and high specificity (few false positives).
+ Trade-off Between Sensitivity and Specificity: ROC curves in this context illustrate the trade-off between sensitivity and specificity. Different threshold levels for a positive test result can be set, and the ROC curve shows how these thresholds affect the sensitivity and specificity.
+
+Determining Cut-off Points: By analyzing the ROC curve, researchers or clinicians can determine the optimal cut-off point for a nucleic acid test. This is the point that offers the best balance between sensitivity and specificity for the specific application, whether it be diagnostic, forensic, or research-related.
+
+Area Under the Curve (AUC): The AUC in nucleic acid testing ROC analysis provides a single measure of the test's overall performance. A higher AUC indicates a better overall ability of the test to correctly classify those with and without the target nucleic acid.
+
+Comparing Different Tests: ROC curves are particularly useful in comparing the diagnostic accuracy of different nucleic acid testing methodologies. For instance, comparing traditional PCR with real-time PCR or comparing different assay designs or reagents.
+
+https://people.inf.elte.hu/kiss/11dwhdm/roc.pdf
+https://bmcpulmmed.biomedcentral.com/articles/10.1186/s12890-023-02691-2
+
+
+ROC curves are created by plotting sensitivity (true positives) on the y axis against 1 − specificity (true negatives) on the x axis for every value found in a sample of subjects with and without the disease. It is expected that higher values would be more common among the subjects with the disease, and lower values would be more common among the subjects without the disease. In a perfect test, an obvious cutoff threshold can be identified that differentiates subjects with the disease from those without the disease, sensitivity and specificity being both 100\%. Such a perfect differentiation is rarely the case for tests in real life, so ROC curves plot the trade-off between sensitivity and specificity for all possible cutoffs and the overall test accuracy. To express the diagnostic accuracy of a test numerically, we calculate the AUC, which estimates the probability of a random subject with the disease to have a higher value on the test than a subject without the disease. The probability ranges from 0\% (AUC = 0) to 100\% (AUC = 1).
+
+receiver operating characteristic (ROC) curves, area under the curve (AUC) of ROC, sensitivity, specificity and likelihood ratios were calculated to determine levels of clinical and biomolecular markers that best differentiate survivors versus non-survivors in severe COVID subjects that live at a high altitude setting.
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8332830/#sec-a.d.dtitle
 \subsection{Time Series Analysis}
 
 \noindent
@@ -1231,8 +1267,77 @@ The procedure for selecting the best linear model for the mtcars dataset is show
 
 \subsection{biplot}
 theory and visualisation of biplot
+
+\subsection{PCA}
+
+For a collection of $N$ high-dimensional objects $X_1,\dots,X_N$, where each $X_i$ is a vector in a D-dimensional space. The entire dataset can be represented as a matrix $X \in \mathbb{R}^{N \times D}$, where each row corresponds to one of the N objects.
+
+Then, visualising multiple variables at a time becomes quite challenging. To address this, dimensionality reduction techniques are employed to simplify the data while perserving the most significant features, typically transforming it into 2D or 3D for more accessible visualization.
+
+Principal Component Analysis (PCA) is a linear method particularly suited for datasets with a linear structure. The core principle of PCA is to identify the principal components directions in the data by projecting the data onto a lower-dimensional space (such as 2D or 3D), maximizing variance of projected data, and preserving large pairwise distances in the map. 
+
+Before applying PCA, it is crucial to standardize the dataset. For $i\in N$ and $j \in D$, the standardized value $Z_{ij}$ for each data point $X_{ij}$ is calculated as:
+    \begin{equation}
+        Z_{ij} = \frac{X_{ij} - \mu_j}{\sigma_j},
+    \end{equation}
+where $X_{ij}$ is the original value, $\mu_j$ is the mean of feature $j$, and $\sigma_j$ is the standard deviation of feature $j$. The result is a standardized dataset $Z$.
+
+After standardization, consider the dataset $Z = \{Z_1, Z_2, \dots, Z_N\}$ with $N$ objects, each represented in a $D$-dimensional standardized space, compute the covariance matrix $\Sigma$ for the standardized dataset $Z$. The covariance matrix is a $D \times D$ matrix, calculated as:
+    \begin{equation}
+        \Sigma = \frac{1}{N-1} Z^T Z.
+    \end{equation}
+Since $Z$ is standardized, this matrix reflects the covariance between each pair of features.
+    
+The eigen decomposition of the covariance matrix $\Sigma$ is given by:
+    \begin{equation}
+        \Sigma v = \lambda v,
+    \end{equation}
+where each eigenvector $v$ and its corresponding eigenvalue $\lambda$ satisfy this equation. The eigenvectors represent the principal axes and the eigenvalues indicate the amount of variance captured by these axes. Then, order the eigenvectors by their corresponding eigenvalues in descending order and select the top $k$ eigenvectors $\{v_1, v_2, \ldots, v_k\}$, which correspond to the largest $k$ eigenvalues. These form the columns of the matrix $W \in \mathbb{R}^{D \times k}$.
+
+Finally, project the standardized data $Z$ onto the subspace defined by the principal components:
+    \begin{equation}
+        Y = ZW,
+    \end{equation}
+where $Y \in \mathbb{R}^{N \times k}$ is the transformed data matrix in the new subspace.
+
+In the reduced space, the variance along each principal component $v_i$ is maximized, preserving the most significant variances in the data. PCA also attempts to preserve pairwise Euclidean distances between data points in the lower-dimensional representation.    
+
+
 \subsection{t-SNE}
-theory and visualisation of t-SNE in 2D and 3D
+https://jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf
+
+
+Since PCA is a linear method and may not perform well with non-linear data structures, often missing complex non-linear relationships. Although effective in capturing the global structure of data, PCA focuses on maintaining large pairwise distances to maximize variance and overlook important local patterns and structures. 
+
+Unlike PCA, t-Distributed Stochastic Neighbor Embedding (t-SNE) is a nonlinear technique for embedding high-dimensional data for visualization in a low-dimensional space of two or three dimensions, focusing on preserving the small pairwise similarities between data points thus retain the local structure of the dataset in a lower-dimensional space. It starts by converting high-dimensional Euclidean distances into probabilities that reflect the similarity between points, then maps these points to a lower-dimensional space in a way that tries to preserve these similarities.
+
+
+First, for each pair of high-dimensional points $x_i$ and $x_j$, the similarity between data points is quantified using conditional probabilities $p_{j|i}$, which is calculated using a Gaussian distribution centered at $x_i$:
+    \begin{equation}
+        p_{j|i} = \frac{\exp(-||\mathbf{x}_i - \mathbf{x}_j||^2 / 2\sigma_i^2)}{\sum_{k \neq i}\exp(-||\mathbf{x}_i - \mathbf{x}_k||^2 / 2\sigma_i^2)}
+    \end{equation}
+
+
+Then, the joint probability distribution $P$ in the high-dimensional space is symmetrized as follows:
+    \begin{equation}
+        p_{ij} = \frac{p_{j|i} + p_{i|j}}{2N}
+    \end{equation}
+
+In the low-dimensional space, t-SNE alleviates the crowding problem, which is a common issue in methods like PCA (Principal Component Analysis). It does so by using a t-distribution in the low-dimensional space, which has heavier tails than a Gaussian distribution. t-SNE calculates similar probabilities using a Student's t-distribution:
+    \begin{equation}
+        q_{ij} = \frac{(1 + ||\mathbf{y}_i - \mathbf{y}_j||^2)^{-1}}{\sum_{k \neq l}(1 + ||\mathbf{y}_k - \mathbf{y}_l||^2)^{-1}}
+    \end{equation}
+
+The objective is to minimize the Kullback-Leibler divergence between the joint probability distributions $P$ and $Q$:
+    \begin{equation}
+        C = \text{KL}(P || Q) = \sum_{i \neq j} p_{ij} \log \frac{p_{ij}}{q_{ij}}
+    \end{equation}
+This process is achieved through gradient descent. The gradient of symmetric SNE is fairly similar to that of asymmetric SNE, and is given 
+\begin{equation}
+        \partial C = \text{KL}(P || Q) = \sum_{i \neq j} p_{ij} \log \frac{p_{ij}}{q_{ij}}
+    \end{equation}
+
+Perplexity influences the variance of the Gaussians in the high-dimensional space and is a crucial hyperparameter in t-SNE.
 
 
 \newpage  
