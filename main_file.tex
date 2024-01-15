@@ -78,17 +78,16 @@
 \addcontentsline{toc}{section}{Overview} % Add section to the table of contents
 
 \noindent
-Graphical statistics is an indispensable tool in the arsenal of every contemporary data scientist. Primarily, it enables users to delve into data, explore its nuances, and effectively communicate empirical discoveries through visual means.This project aims to provide an overview of modern data visualisation methods, delve into their theoretical underpinnings, and demonstrate the potency of these methodologies using both synthetic and authentic datasets. Computational implementations via dashboards — using Python Dash or R Shiny — are used to showcase the methodologies in practice. Furthermore, the project is aware of the ongoing evolution of novel data visualisation techniques, recognising it as an active area of research (e.g. Rodu and Kafadar, 2022), and thus aims to cover both textbook methods as well as state-of-the-art approaches and open problems.\\
+Graphical statistics is an indispensable tool in the arsenal of every contemporary data scientist. Primarily, it enables users to delve into data, explore its nuances, and effectively communicate empirical discoveries through visual means. This project aims to provide an overview of modern data visualisation methods, delve into their theoretical underpinnings, and demonstrate the potency of these methodologies using both synthetic and authentic datasets. Computational implementations via dashboards — using Python Dash or R Shiny — are used to showcase the methodologies in practice. Furthermore, the project is aware of the ongoing evolution of novel data visualisation techniques, recognising it as an active area of research (e.g. Rodu and Kafadar, 2022), and thus aims to cover both textbook methods as well as state-of-the-art approaches and open problems.\\
 
 \noindent
-This thesis aims to explore the theoretical foundations that underlie various visualisation methodologies, study their mathematical construction, and illustrate their practical application. In particular, Chapters 3, 4, and 5 concentrate on standard implementations of Graphical Statistics for univariate, bivariate, and multivariate datasets. Chapter 3 discusses the Kernel Density Estimate, ROC Curve, and Time Series Analysis, showcasing their use through the Tooth Growth and the Exchange Rate datasets. Chapter 4 is focused on the topic of regression, discussing the theory behind Simple Linear Regression followed by LOESS regression. Chapter 5 introduces the model selection method AIC and Multiple Linear Regression, followed by the theoretical foundation of biplots and t-SNE. Subsequent chapters cover active research areas in Graphical Statistics and implementation of dashboards. \\
+This thesis aims to explore the theoretical foundations that underlie various visualisation methodologies, study their mathematical construction, and illustrate their practical application. In particular, Chapters 3, 4, and 5 concentrate on standard implementations of Graphical Statistics for univariate, bivariate, and multivariate datasets respectively. Chapter 3 discusses the Kernel Density Estimate, ROC Curve, and Time Series Analysis, showcasing their use through the Tooth Growth and the Exchange Rate datasets. Chapter 4 is focused on the topic of regression, discussing the theory behind Simple Linear Regression followed by LOESS regression. Chapter 5 introduces the model selection method AIC and Multiple Linear Regression, followed by the theoretical foundation of biplots and t-SNE. Subsequent chapters cover active research areas in Graphical Statistics and implementation of dashboards. \\
 
 
 \noindent
 Throughout this thesis, R package names such as \textit{ggplot2} are italicised, while R commands like \texttt{faceting} are displayed in a teletype font.The R code chunks for each figure in the report can be found in a separate \href{https://github.com/Qinqing-Li/Data-Visualisation-Project/tree/main/code}{GitHub code folder}. \\
 
 \noindent \textbf{Literature and Research}\\ %This section doesn´t seem to be too relevant here (the overview of our work)
-\\
 \noindent
 Data visualisation is an area of interest in numerous method-specific publications. One notable publication is the \href{https://www.tandfonline.com/journals/ucgs20}{Journal of Computational and Graphical Statistics}. This journal publishes ongoing research on the latest techniques in computational and graphical methods in statistics, encompassing data analysis and numerical graphical displays. \href{https://www.sciencedirect.com/journal/spatial-statistics}{Spatial Statistics} publishes articles on the theory and application of spatial and spatio-temporal statistics. \href{https://journal.r-project.org}{The R Journal} publishes research articles in statistical computing that are of interest to R users. These together reveal the vast potential for current and future research in this ever-evolving domain, particularly as our digital landscape and data sphere expand at an accelerated pace.\\
 
@@ -97,11 +96,11 @@ Data visualisation is an area of interest in numerous method-specific publicatio
 \section{Introduction}
 
 \noindent
-This chapter will provide case examples demonstrating both the influential applications and potential misuses of data visualisations, with the aim of underscoring the enduring importance of data visualisation. Following this, an introduction to the R package \textit{ggplot2} will be provided, along with a presentation of the datasets used in this thesis, and an overview of its organization.
+This chapter provides case examples demonstrating both the influential applications and potential misuses of data visualisations, with the aim of underscoring the enduring importance of data visualisation.These are sourced from BBC Ideas \cite{bbcdatavis}. Following this, an introduction to the R package \textit{ggplot2} is provided, along with a presentation of the datasets used in this thesis.
 
 \subsection{Historical Background and Misuses of Data Visualisation}
  
-\\\textbf{Motivations for Using Data Visualisations - Case 1}\\
+\\\textbf{Motivations for Using Data Visualisations - Case 1}
 
 \noindent
 Florence Nightingale was not only a social reformer and the founder of modern nursing but also a pioneering statistician. It was her application of data visualisation during the Crimean War that transformed the field of healthcare and pushed for social reform.\\  
@@ -112,7 +111,7 @@ During the Crimean War, Nightingale recognised that unsanitary hospital conditio
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{image_reference/Nightingale-mortality.jpg}
-    \caption{``Diagram of the causes of mortality in the army in the East" (1858) by Florence Nightingale, a coloured pie chart to illustrate causes of death in the British Army \cite{graphFN}}
+    \caption{``Diagram of the causes of mortality in the army in the East" (1858) by Florence Nightingale \cite{graphFN}}
     \label{fig:coxcomb}
 \end{figure}
 
@@ -139,7 +138,7 @@ In 2018, Edward Hawkins was invited to deliver a lecture on climate change in Wa
 Known as the ``warming stripes," this chart cleverly employs blues to indicate cooler-than-average years and reds to signify hotter-than-average years. Its influence reached far and wide, gracing the front pages of major media outlets and featured in news broadcasts worldwide. It became a symbol in climate change demonstrations. Arguably, it stands as one of the most iconic graphics in modern times.\\
 
 \noindent
-\textbf{Misuses of Data Visualisation - Case 1}\\
+\textbf{Misuses of Data Visualisation - Case 1}
 
 \noindent
 Having observed the remarkable effectiveness of data visualisations, the significance of employing them correctly becomes apparent. The improper use of data visualisations holds the potential to significantly influence the public in misleading ways, resulting in undesired consequences.\\
@@ -155,7 +154,7 @@ Inappropriate data visualisation can conceal trends rather than reveal them. Fig
 \end{figure}
 
 \noindent 
-\textbf{Misuses of Data Visualisation - Case 2}\\
+\textbf{Misuses of Data Visualisation - Case 2}
 
 \noindent
 One striking example of data visualisation misuse is found in the Kallikak Family tree - one of the most prominent eugenic narratives of the 20th century.\\
@@ -172,9 +171,6 @@ Regrettably, the Kallikak family tree became a central element in the eugenics m
     \caption{The Kallikak Family tree (1912) by Henry Goddard \cite{ktree}}
     \label{fig:familytree}
 \end{figure}
-
-\noindent
-Case examples obtained from BBC Ideas \cite{bbcdatavis}.
 
 \subsection{Computing and Data Visualisation}
 
@@ -249,7 +245,7 @@ Data types can be broadly categorised into four main types:
 
 \subsubsection{Matching Data Types with Appropriate Visualisation Techniques}
 
-Selecting appropriate visualisation techniques is essential for effective data communication. Various data types demand specific visualisation methods for optimal representation \cite{healy2018data}. For \textbf{nominal data}, bar charts and stacked bar charts are effective in displaying categorical information and relative proportions. \textbf{Ordinal data} benefits from ordered bar charts, dot plots, or stacked bar charts, maintaining the ranking and order of categories. \textbf{Interval data} is best visualised using line charts, histograms, and box plots, showcasing trends and distributions without assuming a true zero point. \textbf{Ratio data} finds effective representation through scatter plots, histograms, and line charts, enabling precise comparisons and measurements due to the presence of a meaningful zero point.These are represented in Figure~\ref{fig:data-plots}, where artificial data from a class of 4th-year university students is visualised.
+Selecting appropriate visualisation techniques is essential for effective data communication. Various data types demand specific visualisation methods for optimal representation \cite{healy2018data}. For \textbf{nominal data}, bar charts and stacked bar charts are effective in displaying categorical information and relative proportions. \textbf{Ordinal data} benefits from ordered bar charts, dot plots, or stacked bar charts, maintaining the ranking and order of categories. \textbf{Interval data} is best visualised using line charts, histograms, and box plots, showcasing trends and distributions without assuming a true zero point. \textbf{Ratio data} finds effective representation through scatter plots, histograms, and line charts, enabling precise comparisons and measurements due to the presence of a meaningful zero point. These are represented in Figure~\ref{fig:data-plots}, where artificial data from a class of 4th-year university students is visualised.
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
@@ -258,7 +254,7 @@ Selecting appropriate visualisation techniques is essential for effective data c
 
 }
 
-\caption[Different types of visualisation according to the data type used]{Different types of visualisation according to the data type used}\label{fig:data-plots}
+\caption[Different types of visualisation techniques according to the data type]{Different types of visualisation techniques according to the data type}\label{fig:data-plots}
 \end{figure}
 
 \end{knitrout}
@@ -305,9 +301,9 @@ In this first section, human visual perception is explored, along with the appli
 Human visual perception profoundly influences our understanding of the surrounding world. When applied to data visualisation, it shapes the way that individuals engage with and derive meaning from visual data representations.\\
 
 \noindent 
-Significant aspects of human visual perception within data visualisation encompass \textbf{pattern recognition}, adept at identifying trends, outliers, and relationships in data representations. Additionally, \textbf{perceptual grouping}, where visually similar elements are grouped together, influences the interpretation of data clusters and shapes. Moreover, the \textbf{hierarchy of perception} dictates that certain visual attributes are processed more swiftly and effectively than others, such as color being processed faster than text, influencing the viewer's attention hierarchy \cite{dastani2002role}.
+Significant aspects of human visual perception within data visualisation encompass \textbf{pattern recognition}, adept at identifying trends, outliers, and relationships in data representations. Additionally, \textbf{perceptual grouping}, where visually similar elements are grouped together, influences the interpretation of data clusters and shapes. Moreover, the \textbf{hierarchy of perception} dictates that certain visual attributes are processed more swiftly and effectively than others, such as color being processed faster than text, influencing the viewer's attention hierarchy \cite{dastani2002role}.\\
 
-\textbf{The Gestalt Principles \index{The Gestalt Principles}}\\
+\noindent \textbf{The Gestalt Principles \index{The Gestalt Principles}}\\
 Furthermore, the Gestalt Principles play an important role in the realm of visual perception and design \cite{rosli2015gestalt}. Key Gestalt principles crucial in shaping visual information perception include proximity, which groups related elements, \textbf{similarity} that links similar attributes, \textbf{continuity} aiding trend representation, \textbf{closure} for implying connections, and \textbf{symmetry} for balance and aesthetics in visualisations \cite{todorovic2008gestalt}. \\
 
 \noindent By harnessing the principles of human visual perception, applying insights from cognitive psychology, and leveraging pre-attentive attributes, data visualisation designers can create visualisations that are not only aesthetically pleasing but also cognitively efficient.	
@@ -356,7 +352,7 @@ To reduce cognitive load while maintaining complexity in data visualisation, sev
 
 }
 
-\caption[High vs low cognitive load demand through the reduction of visual complexity]{High vs low cognitive load demand through the reduction of visual complexity}\label{fig:cogload-plot}
+\caption[High versus low cognitive load demand through the reduction of visual complexity]{High versus low cognitive load demand through the reduction of visual complexity}\label{fig:cogload-plot}
 \end{figure}
 
 \end{knitrout}
@@ -366,30 +362,31 @@ Addressing information overload in visualisations necessitates the strategic app
 
 \newpage
 
-\section{Univariate Data Methods}
+\section{Univariate Data Visualisation Methods}
 
-This chapter explores a variety of powerful visualisation methods, from classic scatter plots and bar charts to advanced techniques like heatmaps and network graphs. Vivid examples will be used to demonstrate when and why each method is employed, and the theoretical and mathematical foundations that empower these visualisations to unveil insights hidden within the data will be delved into.
+This chapter, initiates the discussion about data visualisation methods. This chapter particularly introduces techniques for graphically representing for datasets of the simplest nature - that is, single-variable datasets. It focuses on histograms, bar charts, Kernel Density Estimate, ROC Curves, and Time Series Analysis. 
 
 \subsection{Histograms}
 
-Histograms, although visually similar to bar charts, convey different meanings. A histogram involves concepts of statistics. It requires data to be categorised into groups and then counts the data points within each of those groups.\\
+A histogram is a graphical representation of the distribution of a dataset. It consists of bars, each representing a range of data values, and whose height corresponds to the frequency or count of data points within that range.In this way, histograms facilitate the visualisation of differences in frequency or quantity among groups.\\
 
 \noindent On a Cartesian coordinate system, the x-axis shows the endpoints of each group, and the y-axis represents frequency. The height of each rectangle indicates the corresponding frequency, making it a frequency distribution histogram. In order to determine the quantity of each group in the histogram, a multiplication of the frequency by the group interval is necessary. Since every histogram has a fixed group interval, if we use the y-axis to directly show quantity and each rectangle's height indicates the number of data points, we can both retain the distribution and simultaneously see the number in each group at a glance. All examples in this text use the non-standard histogram depiction with the y-axis denoting quantity.\\
 
 \noindent
-\textbf{Uses of Histograms}\\
+\textbf{Histograms in Practice}\\
 
-\noindent Histograms demonstrates the distribution of frequency or quantity across groups. Facilitates the visualisation of differences in frequency or quantity among groups. The R language uses the \texttt{hist} function to create histograms. This function takes vectors as input and uses a few more parameters to plot the histogram.\\
+\noindent The R language uses the \texttt{hist} function to create histograms. This function takes vectors as input, along with other parameters to plot a histogram.\\
 
-Let \(X_1, X_2, \ldots, X_n\) be independent and identically distributed random variables with finite mean \( \mu \) and variance \( \sigma^2 \). Then for any \( \epsilon > 0 \), 
+\noindent Let \(X_1, X_2, \ldots, X_n\) be independent and identically distributed random variables with finite mean \( \mu \) and variance \( \sigma^2 \). Then for any \( \epsilon > 0 \), 
 \[ P\left(\left|\frac{1}{n}\sum_{i=1}^n X_i - \mu\right| < \epsilon\right) \rightarrow 1 \] 
 as \( n \rightarrow \infty \).\\
-Histograms can be used to visualize the convergence of sample means to the population mean.\\
 
-Let \(X_1, X_2, \ldots, X_n\) be independent and identically distributed random variables with finite mean \( \mu \) and variance \( \sigma^2 \). Define the sample mean \( \bar{X} = \frac{1}{n}\sum_{i=1}^n X_i \). Then, as \( n \) becomes large, the variable 
+\noindent Histograms can be used to visualize the convergence of sample means to the population mean.\\
+
+\noindent Let \(X_1, X_2, \ldots, X_n\) be independent and identically distributed random variables with finite mean \( \mu \) and variance \( \sigma^2 \). Define the sample mean \( \bar{X} = \frac{1}{n}\sum_{i=1}^n X_i \). Then, as \( n \) becomes large, the variable 
 \[ Z = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \] approaches a standard normal distribution.\\
 
-By plotting histograms of a large number of sample means, one can observe the shape gradually resembling a normal distribution.
+\noindent By plotting histograms of a large number of sample means, one can observe the shape gradually resembling a normal distribution.
 
 \noindent
 Consider the following graph with created on ggplot2 with the use of to the \texttt{geom\_histogram} function and iris dataset.
@@ -424,15 +421,12 @@ Consider the following graph with created on ggplot2 with the use of to the \tex
 \end{figure}
 
 \subsection{Bar Charts}
-\noindent The bar chart is a crucial tool in data presentation, arranging data into vertical or horizontal bars. Its advantages in data visualisation are manifold, particularly in showcasing data categories through frequency distribution. Bar charts excel in comparing classified data, especially when values are closely aligned. This superiority stems from human perception, as our visual acuity for height surpasses that of other visual elements like area or angle. The varying lengths of these bars directly correspond to the magnitude of the information they represent.\\
-
-\noindent The disadvantages of bar charts include limited suitability for large datasets, potential misinterpretation when lacking a zero baseline, difficulty in handling numerous categories, and their preference for categorical data over continuous data trends, where line graphs are more suitable.\\
-
+\noindent Bar charts are a crucial tool in data presentation, arranging data into vertical or horizontal bars. The varying lengths of these bars directly correspond to the magnitude of the information they represent. Bar charts excel in comparing classified data, especially when values are closely aligned. This stems from the nature of human perception, as our visual acuity for height surpasses that of other visual elements like area or angle.\\
 
 \noindent Bar charts represent a versatile tool for data visualisation, frequently employed to compare distinct categories. The \textbf{vertical bar chart}, commonly recognised, exhibits categories along the X-axis and their frequencies or counts along the Y-axis. \textbf{Horizontal bar charts}, rotated 90 degrees, prove beneficial for extended category names or numerous categories, displaying categories on the Y-axis and frequencies on the X-axis. \textbf{Multi-set or grouped bar charts} facilitate side-by-side comparisons of sub- groups within categories, available in both vertical and horizontal orientations. \textbf{Stacked bar charts} illustrate classes of values subdivided into sub-classes, often differentiated by colour, where each segment's size signifies its frequency or count, and the total bar length reflects the cumulative total.\\
 
 \noindent \textbf{Bar Charts in Practice}\\
-\noident The bar chart in Figure~\ref{fig:barcharts} depicts the relationship between tooth growth and different dosages of a vitamin, measured in milligrams per day. On the X-axis, three distinct levels of vitamin dosage are presented, while the Y-axis indicates the average tooth growth for each dosage. A key observation from the chart is a noticeable trend where increasing vitamin dosages correlate with increased tooth growth, suggesting that higher vitamin doses may enhance tooth growth.
+\noident The two bar charts in Figure~\ref{fig:barcharts} depict the relationship between tooth growth and different dosages of a vitamin. On the X-axis, three distinct levels of vitamin dosage are presented, while the Y-axis indicates the average tooth growth for each dosage. 
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
@@ -447,10 +441,9 @@ Consider the following graph with created on ggplot2 with the use of to the \tex
 \end{knitrout}
 
 \noindent 
-The bar chart on the left in Figure~\ref{fig:barcharts} illustrates the impact of varying vitamin dosages on tooth growth, further categorised by supplement type (supp). It shows three distinct dosage levels (0.5, 1, and 2 mg/day) on the X-axis and tooth growth length on the Y-axis, representing the average growth for both supplements at each dosage. The chart highlights that tooth growth, as indicated by the total height of each bar, varies not only with the dosage but also with the supplement type, suggesting a need for closer analysis to understand the relative effectiveness of each supplement at different dosages.\\
+The bar charts on in Figure~\ref{fig:barcharts} illustrate the impact of varying vitamin dosages on tooth growth, further categorised by supplement type. They display three distinct dosage levels (0.5, 1, and 2 mg/day) on the X-axis and tooth growth length on the Y-axis, representing the average growth for both supplements at each dosage.\\
 
-\noindent
-The structure of the second bar graph in Figure~\ref{fig:barcharts} is quite similar to that of the first one, with the main difference lying in the method of data representation. The stacked bar chart facilitates the understanding of the combined effects of the two supplements at each dosage level. However, compared to the normal bar chart, it becomes more challenging to differentiate the individual contributions of each supplement.\\
+\noindent From the grouped bar chart found on the left of the figure, due to the side-by-side positioning of the bars, it is easy to identify that tooth growth varies not only with the dosage but also with the supplement type. In contrast, the second bar graph in Figure~\ref{fig:barcharts} is stacked bar chart. This facilitates the understanding of the combined effects of the two supplements at each dosage level. However, compared to the latter, it becomes more challenging to differentiate the individual contributions of each supplement.\\
 
 \subsection{Kernel Density Estimation}
 
@@ -1218,7 +1211,8 @@ Perplexity influences the variance of the Gaussians in the high-dimensional spac
     \item \textbf{Ratio data}: Includes ordered categories with equal intervals and a meaningful zero point.
     \item \textbf{Relevance}: Presenting information pertinent to the addressed message or question.
 \end{itemize}
-
+  
+  
 
 \newpage
 

@@ -16,7 +16,7 @@
 \contentsline {subsection}{\numberline {2.6}Cognitive Load and Visual Complexity}{13}{subsection.2.6}%
 \contentsline {subsubsection}{\numberline {2.6.1}Strategies to Reduce Cognitive Load While Maintaining Complexity}{14}{subsubsection.2.6.1}%
 \contentsline {subsubsection}{\numberline {2.6.2}Information Overload and Simplification Techniques}{14}{subsubsection.2.6.2}%
-\contentsline {section}{\numberline {3}Univariate Data Methods}{15}{section.3}%
+\contentsline {section}{\numberline {3}Univariate Data Visualisation Methods}{15}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Histograms}{15}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Bar Charts}{16}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Kernel Density Estimation}{17}{subsection.3.3}%
