@@ -493,7 +493,7 @@ as \( n \rightarrow \infty \).\\
 \noindent Let \(X_1, X_2, \ldots, X_n\) be independent and identically distributed random variables with finite mean \( \mu \) and variance \( \sigma^2 \). Define the sample mean \( \bar{X} = \frac{1}{n}\sum_{i=1}^n X_i \). Then, as \( n \) becomes large, the variable 
 \[ Z = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \] approaches a standard normal distribution.\\
 
-\noindent By plotting histograms of a large number of sample means, one can observe the shape gradually resembling a normal distribution.
+\noindent By plotting histograms of a large number of sample means, one can observe the shape gradually resembling a normal distribution.\\
 
 \noindent
 Consider the following graph with created on ggplot2 with the use of to the \texttt{geom\_histogram} function and iris dataset.
@@ -567,7 +567,7 @@ ggsave("barcharts.pdf", plot = grid.arrange(barchart_plot1, barchart_plot2, ncol
 \noindent 
 The bar charts on in Figure~\ref{fig:barcharts} illustrate the impact of varying vitamin dosages on tooth growth, further categorised by supplement type. They display three distinct dosage levels (0.5, 1, and 2 mg/day) on the X-axis and tooth growth length on the Y-axis, representing the average growth for both supplements at each dosage.\\
 
-\noindent From the grouped bar chart found on the left of the figure, due to the side-by-side positioning of the bars, it is easy to identify that tooth growth varies not only with the dosage but also with the supplement type. In contrast, the second bar graph in Figure~\ref{fig:barcharts} is stacked bar chart. This facilitates the understanding of the combined effects of the two supplements at each dosage level. However, compared to the latter, it becomes more challenging to differentiate the individual contributions of each supplement.\\
+\noindent From the grouped bar chart found on the left of Figure~\ref{fig:barcharts}, due to the side-by-side positioning of the bars, it is easy to identify that tooth growth varies not only with the dosage but also with the supplement type. In contrast, the stacked bar graph on the right of Figure~\ref{fig:barcharts} facilitates the understanding of the combined effects of the two supplements at each dosage level. However, compared to the latter, it becomes more challenging to differentiate the individual contributions of each supplement.\\
 
 \subsection{Kernel Density Estimation}
 
@@ -588,18 +588,18 @@ The kernel function \( K(u) \) is a normalised non-negative function that satisf
 
 \subsection{ROC Curve}
 
-The Receiver Operating Characteristic (ROC) graph is a technique for assessing the performance of classification models in machine learning and statistics. It's particularly useful for evaluating diagnostic tests and binary classifiers. 
+The Receiver Operating Characteristic (ROC) graph is a technique for assessing the performance of classification models in machine learning and statistics. It's particularly useful for evaluating diagnostic tests and binary classifiers.\\ 
 
-The ROC curve is a plot that displays the performance of a binary classification system as its discrimination threshold is varied. It plots two parameters: True Positive Rate (TPR, also known as Sensitivity) and False Positive Rate (FPR, 1 - Specificity). TPR is the proportion of positive instances correctly identified, while FPR is the proportion of negative instances incorrectly identified as positive.
+\noindent The ROC curve is a plot that displays the performance of a binary classification system as its discrimination threshold is varied. It plots two parameters: True Positive Rate (TPR, also known as Sensitivity) and False Positive Rate (FPR, 1 - Specificity). TPR is the proportion of positive instances correctly identified, while FPR is the proportion of negative instances incorrectly identified as positive.\\
 
-The curve shows trade-off between sensitivity (true positive rate) and specificity (1 - false positive rate) across different thresholds by plotting TPR against FPR at various threshold settings. A classifier that performs better than random guessing will have a ROC curve that bows towards the top left corner of the plot.
+\noindent The curve shows trade-off between sensitivity (true positive rate) and specificity (1 - false positive rate) across different thresholds by plotting TPR against FPR at various threshold settings. A classifier that performs better than random guessing will have a ROC curve that bows towards the top left corner of the plot.\\
 
-The Area Under the Curve (AUC) provides a single measure of overall performance of a classifier. The larger the area under the curve, the better the classifier. An AUC of 0.5 suggests no discriminative ability, while an AUC of 1.0 represents perfect classification.
+\noindent The Area Under the Curve (AUC) provides a single measure of overall performance of a classifier. The larger the area under the curve, the better the classifier. An AUC of 0.5 suggests no discriminative ability, while an AUC of 1.0 represents perfect classification.\\
 
 
-\textbf{ROC analysis in COVID-19 test}
+\noindent \textbf{ROC analysis in COVID-19 test}\\
 
-The COVID-19 pandemic underscores the need for accurate diagnostic tests to differentiate between positive and negative cases, which is crucial in pandemic management. An effective means for evaluating accuracy of various diagnostic tests is necessary. Here, the ROC analysis, a robust method for assessing diagnostic tests, is introduced. ROC analysis comprehensively examines test accuracy by integrating sensitivity, specificity, and AUC metrics. These metrics are calculated by comparing test outcomes against a recognized gold standard, thereby determining the true disease status. This approach is vital for understanding the efficacy of COVID-19 diagnostic tools and guiding public health decisions.
+\noindent The COVID-19 pandemic underscores the need for accurate diagnostic tests to differentiate between positive and negative cases, which is crucial in pandemic management. An effective means for evaluating accuracy of various diagnostic tests is necessary. Here, the ROC analysis, a robust method for assessing diagnostic tests, is introduced. ROC analysis comprehensively examines test accuracy by integrating sensitivity, specificity, and AUC metrics. These metrics are calculated by comparing test outcomes against a recognized gold standard, thereby determining the true disease status. This approach is vital for understanding the efficacy of COVID-19 diagnostic tools and guiding public health decisions.
 
 
 
@@ -1261,9 +1261,6 @@ The R algorithm \texttt{step()}, which minimises the AIC score, aids in selectin
 The procedure for selecting the best linear model for the mtcars dataset is shown in Appendix A, where our best-fitted model is \texttt{formula = mpg \textasciitilde wt + qsec + am}. Given 10 explanatory variables, Miles per Gallon is best predicted by weight (wt), quarter-mile time (qsec), and Transmission (am), where 0 represents automatic and 1 represents manual.
 
 <<<<<<< HEAD
-\subsection{biplot}
-theory and visualisation of biplot
-
 \subsection{PCA}
 
 For a collection of $N$ high-dimensional objects $X_1,\dots,X_N$, where each $X_i$ is a vector in a D-dimensional space. The entire dataset can be represented as a matrix $X \in \mathbb{R}^{N \times D}$, where each row corresponds to one of the N objects.
