@@ -1184,24 +1184,36 @@ ggplot(data = mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
 
 \subsection{LOESS Regression}
 \noindent
-Locally estimated scatterplot smoothing (LOESS) is a local regression method. It is a non-parametric regression method that uses multiple regression models for each localised subset of data. Unlike GLM, it doesn't require the data analyst to specify a global function to fit a model to the data; rather, it fits segments of the data.
-\\   
+Locally estimated scatterplot smoothing (LOESS) is a local regression method. It is a non-parametric regression method that fits a line segment for each neighbourhood of data. Unlike GLM, the LOESS model does not provide a global function to fit the data; rather, it fits neighborhoods of the data.\\
+
 \noindent
-The size of the neighbourhood (localised subsets of data) indicates the number of data points used to fit each multiple regression model and is often expressed as a fraction $\alpha$ of the sample data. The smoothness of the LOESS curve depends on $\alpha$.
-\\   
+Suppose we have $n$ observations $(x_1,y_1) \dots (x_n,y_n)$ with explanatory variable $x_i$ and response variable $y_i$. For each point $(x,y)$ consider the neighbourhood to fit a line segment around it. The size of the neighbourhood indicates the number of data points used to fit the line segments and is often expressed as a fraction $\alpha$ of the sample data. For $\alpha \leq 1$, each  neighbourhood consists of $\frac{n}{\alpha}$ number of points. Each data point $(x_i, y_i)$ in the neighbourhood of point $(x,y)$ is assigned with a weight, ``importance" of the data point to the line segment. The weight of $(x_i,y_i)$ is denoted as $w_i(x)$, which is defined as:
+
+$$w_i(x) = T(\Delta_i (x); \Delta _{(q)}(x)).$$
+
 \noindent
-Let $\Delta_i(x) = |x - x_i|$ represent the distance between $x$ and the $i^{th}$ observation of the predictors. Let $\Delta_{(i)}(x)$ denote the ordered distances, arranged from smallest to largest.
-\\   
-\noindent
-Define the tricube weight function as
+Tricube weight function $T(u,t)$ is defined as:
 
 $$T(u;t) = \left\{
   \begin{array}{ll}
     (1-(u/t)^3)^3 & \text{for } 0 \leq u < t \\
-    0 & \text{for } u \geq t. \\
+    0 & \text{for } u \geq t \\
   \end{array}
-\right.
-$$
+\right, 
+$$ 
+
+\noindent
+where $u$ is the horizontal distance between neighbourhood point of interest $(x_i,y_i)$ to point $(x,y)$ and $t$ is the maximum distance threshold. For points in the neighbourhood with horizontal distance exceeding threshold $t$, they are assigned with weight $0$ by the tricube weight function.\\
+
+\noindent
+For $\alpha > 1$, for each point $(x,y)$ the neighbourhood include all points. The maximum distance threshold is assumed to be $\alpha^{\frac{1}{p}}$, for $p$ explanatory variables.\\
+
+\noindent
+The smoothness of the LOESS curve depends on $\alpha$, therefore $\alpha$ is called the ``smoothing parameter".\\
+
+\noindent
+Let $\Delta_i(x) = |x - x_i|$ represent the distance between $x$ and the $i^{th}$ observation of the predictors. Let $\Delta_{(i)}(x)$ denote the ordered distances, arranged from smallest to largest.
+
 
 \noindent
 This function assigns a positive weight to points with distance $u$ less than the threshold distance $t$. Define the smoothing parameter $\alpha > 0$. For $\alpha \leq 1$, the neighbourhood weight for observation $(x_i, y_i)$ is given by:
@@ -1265,7 +1277,7 @@ The R algorithm \texttt{step()}, which minimises the AIC score, aids in selectin
 \noindent
 The procedure for selecting the best linear model for the mtcars dataset is shown in Appendix A, where our best-fitted model is \texttt{formula = mpg \textasciitilde wt + qsec + am}. Given 10 explanatory variables, Miles per Gallon is best predicted by weight (wt), quarter-mile time (qsec), and Transmission (am), where 0 represents automatic and 1 represents manual.
 
-<<<<<<< HEAD
+
 \subsection{PCA}
 
 For a collection of $N$ high-dimensional objects $X_1,\dots,X_N$, where each $X_i$ is a vector in a D-dimensional space. The entire dataset can be represented as a matrix $X \in \mathbb{R}^{N \times D}$, where each row corresponds to one of the N objects.
@@ -1356,7 +1368,7 @@ biplot(pca_result, cex = 0.7)
 @
 
 
->>>>>>> 41f59a236279f06470d5ee084fab22798f1aa871
+
 
 
 \subsection{t-SNE}
