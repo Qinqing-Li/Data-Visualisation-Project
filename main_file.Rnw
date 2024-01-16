@@ -545,7 +545,7 @@ print(kde_diagram)
 \noindent Bar charts represent a versatile tool for data visualisation, frequently employed to compare distinct categories. The \textbf{vertical bar chart}, commonly recognised, exhibits categories along the X-axis and their frequencies or counts along the Y-axis. \textbf{Horizontal bar charts}, rotated 90 degrees, prove beneficial for extended category names or numerous categories, displaying categories on the Y-axis and frequencies on the X-axis. \textbf{Multi-set or grouped bar charts} facilitate side-by-side comparisons of sub- groups within categories, available in both vertical and horizontal orientations. \textbf{Stacked bar charts} illustrate classes of values subdivided into sub-classes, often differentiated by colour, where each segment's size signifies its frequency or count, and the total bar length reflects the cumulative total.\\
 
 \noindent \textbf{Bar Charts in Practice}\\
-\noident The two bar charts in Figure~\ref{fig:barcharts} depict the relationship between tooth growth and different dosages of a vitamin. On the X-axis, three distinct levels of vitamin dosage are presented, while the Y-axis indicates the average tooth growth for each dosage. 
+\noident The two bar charts on in Figure~\ref{fig:barcharts} illustrate the impact of varying vitamin dosages on tooth growth, further categorised by supplement type. On the X-axis, three distinct levels of vitamin dosage are presented, while the Y-axis indicates the average tooth growth for each dosage. 
 
 <<barcharts, echo=FALSE, fig.height=3, fig.width=10, fig.cap='Visualising Tooth Growth by Dosage: A Comparison of Grouped and Stacked Bar Chart Techniques'>>=
 data(ToothGrowth)
@@ -564,22 +564,20 @@ barchart_plot2 <- ggplot(filtered_data, aes(x = factor(dose), y = len, fill = su
 ggsave("barcharts.pdf", plot = grid.arrange(barchart_plot1, barchart_plot2, ncol = 2), width = 10, height = 3)
 @
 
-\noindent 
-The bar charts on in Figure~\ref{fig:barcharts} illustrate the impact of varying vitamin dosages on tooth growth, further categorised by supplement type. They display three distinct dosage levels (0.5, 1, and 2 mg/day) on the X-axis and tooth growth length on the Y-axis, representing the average growth for both supplements at each dosage.\\
-
-\noindent From the grouped bar chart found on the left of Figure~\ref{fig:barcharts}, due to the side-by-side positioning of the bars, it is easy to identify that tooth growth varies not only with the dosage but also with the supplement type. In contrast, the stacked bar graph on the right of Figure~\ref{fig:barcharts} facilitates the understanding of the combined effects of the two supplements at each dosage level. However, compared to the latter, it becomes more challenging to differentiate the individual contributions of each supplement.\\
+\noindent From the grouped bar, chart found on the left of Figure~\ref{fig:barcharts}, due to the side-by-side positioning of the bars, it is easy to note that tooth growth varies not only with the dosage but also with the supplement type. In contrast, the stacked bar graph on the right of Figure~\ref{fig:barcharts} facilitates the understanding of the combined effects of the two supplements at each dosage level. However, compared to the latter, it becomes more challenging to differentiate the individual contribution of each supplement.\\
 
 \subsection{Kernel Density Estimation}
 
-Kernel Density Estimation(KDE) is an very useful tool in statistics. Instead of discrete histograms, it helps us to create a smooth curve given by a dataset. KDE is used to infer the distribution of a population based on a limited sample. Thus, the result of the kernel density estimation is an estimate of the sample's probability density function. Based on this estimated probability density function, we can ascertain certain characteristics of the data distribution, such as the regions where data is concentrated.\\
+Kernel Density Estimation (KDE) is an very useful tool in statistics. Instead of discrete histograms, it helps create a smooth curve from values in a dataset. KDE is used to infer the distribution of a population based on a limited sample. Thus, the result of the kernel density estimation is an estimate of the sample's probability density function. Based on this estimated probability density function, one can ascertain certain characteristics of the data distribution, such as the regions where data is concentrated.\\
 
 \noindent
-The KDE algorithm takes a parameter, bandwidth, that affects how “smooth” the resulting curve is. Changing the bandwidth changes the shape of the kernel: a lower bandwidth means only points very close to the current position are given any weight, which leads to the estimate looking squiggly; a higher bandwidth means a shallow kernel where distant points can contribute.\\
+The KDE algorithm takes a parameter called bandwidth, that affects how smooth the resulting curve is. Changing the bandwidth changes the shape of the kernel: a lower bandwidth implies only points very close to the chosen position are given any weight, which leads to the estimate looking squiggly. In contrast, a higher bandwidth means having a shallow kernel, where distant points can contribute. Thus, leading to a smoother curve. %REVISE THIS TEXT.
+\\
 
 \noindent
-We can express KDE as follows,where the K represent the kernel function:
-$$\hat{f}(x) = \sum_{\text{observations}} K\left(\frac{x - \text{observation}}{\text{bandwidth}}\right),$$
-In kernel density estimation (KDE), the variable x represents the point of density estimation, which can be any value. The total number of data points, denoted as $n$, constitutes the sample size, and all these points are used for estimating the dataset's probability density function. The bandwidth $(h)$ is a crucial parameter that controls the smoothness of the estimation, with smaller bandwidths leading to closer fits to data and larger ones smoothing out details. The kernel function $(K)$, such as the Gaussian or triangular kernel, assigns weights around each data point, influencing the density estimate, while $x_i$ represents the individual sample points that collectively contribute to the estimated density function, guided by the kernel function and the bandwidth\cite{wand1994kernel}.
+We can express KDE as follows, where the K represent the kernel function:
+$$\hat{f}(x) = \sum_{\text{observations}} K\left(\frac{x - \text{observation}}{\text{bandwidth}}\right).$$
+In KDE, the variable $x$ represents the point of density estimation. The total number of data points, denoted as $n$, constitutes the sample size, and all these points are used for estimating the dataset's probability density function. The bandwidth $(h)$ is a crucial parameter that controls the smoothness of the estimation, with smaller bandwidths leading to closer fits to data and larger ones smoothing out details. The kernel function $(K)$, such as the Gaussian or triangular kernel, assigns weights around each data point, influencing the density estimate, while $x_i$ represents the individual sample points that collectively contribute to the estimated density function, guided by the kernel function and the bandwidth\cite{wand1994kernel}.
 $$\hat{f}(x) = \frac{1}{nh} \sum_{i=1}^{n} K\left(\frac{x - x_i}{h}\right).$$\\
 The kernel function \( K(u) \) is a normalised non-negative function that satisfies:
 \[ \int K(u) \, du = 1. \]
@@ -826,7 +824,7 @@ From Figure~\ref{fig:ACF}, the ACF plot for the CNY to GBP exchange rate series 
 This persistent autocorrelation suggests that short-term movements in the CNY to GBP exchange rate are heavily influenced by its recent history. Such a characteristic is crucial for forecasting models, as it implies that recent historical data can be a powerful predictor of near-future trends. Models like ARIMA (Autoregressive Integrated Moving Average), which are well-suited for data with high autocorrelation, may be particularly effective in this context.
 
 
-<<<<<<< HEAD
+\newpage
 \section{Bivariate Data Methods}
 
 
@@ -983,39 +981,25 @@ print(heatmap_plot)
 A scatter plot is a graphical representation of a set of data points in a two-dimensional coordinate system. Each data point is represented by a dot, and the position of the dot is determined by the values of two variables.\\
 
 \noindent
-In general, \(Y\) denotes the response variable and \(X\) denotes the explanatory variable. Let \((x_i, y_i)\) represent the coordinates of the \(i\)-th data point on the scatter plot. The scatter plot can be mathematically described as a set of points:
-
-\[ \{(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)\}, \]
-  
-\\
-\noindent where \(n\) is the number of observations in the set.\\
+In general, \(Y\) denotes the response, or dependent,variable and \(X\) denotes the explanatory, or indenpendent,  variable. Let \((x_i, y_i)\) represent the coordinates of the \(i\)-th data point on the scatter plot. The scatter plot can be mathematically described as a set of points: \[ \{(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)\}, \] where \(n\) is the number of observations in the set.\\
 
 
 \subsection{Bubble Charts}
-Bubble charts are a captivating data visualisation tool that extends beyond the typical two-dimensional scatter plot by introducing an extra dimension. They represent data points as bubbles or circles on a two-dimensional plane, where the size of each bubble encodes a third variable. This technique enhances data visualisation by facilitating the exploration of multivariate data and uncovering patterns that may be hidden in traditional scatter plots.\\
+Bubble charts are a captivating data visualisation tool that extends beyond the typical two-dimensional scatter plot by introducing an extra dimension. They represent data points as bubbles or circles on a two-dimensional plane, where the size of each bubble encodes a third variable.\\
 
-\noindent
-\textbf{Mathematical Intricacies of Bubble Charts}\\
-The mathematical intricacies of constructing bubble charts involve scaling the data values to determine the size of each bubble accurately. The size of the bubble is typically proportional to the square root of the variable it represents. The choice of scaling method depends on the data distribution and the message the chart aims to convey.\\
+\noindent The construction of bubble charts, is parallel to that of a scatter plot, but involves the scaling the data values to determine the size of each bubble. While it isn't alwaysthe case, the size of these is typically proportional to the variable it represents. The choice of scaling method depends on the data distribution and the message the chart aims to convey.\\
 
-\noindent
-The formula for calculating the bubble size (\(S\)) often involves applying a linear or nonlinear scaling function:
-
+\noindent Generally, the formula for calculating the bubble size (\(S\)) often involves applying the scaling function
 \[
-S = k \cdot \sqrt{V},
+S = k \cdot V,
 \]
-
-\noindent where \(S\) represents the size of the bubble, \(V\) the value of the variable being represented, and \(k\) is a scaling factor to control the bubble size.\\
-
-\noindent
-Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the proportionality between the bubble size and the variable being represented.\\
+\noindent where \(S\) represents the size of the bubble, \(V\) the value of the variable being represented, and \(k\) a scaling factor to control the bubble size. Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the proportionality between the bubble size and the variable being represented.\\
 
 \noindent
 \textbf{Bubble Charts in Practice}\\
-The bubble chart shown in Figure~\ref{fig:bubble-plot} visualises data from the same dataset as above. It depicts the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and color-coding the bubbles based on the number of cylinders (cyl).\\
+The bubble chart shown in Figure~\ref{fig:bubble-plot} visualises data from the mtcars dataset. It depicts the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and color-coding the bubbles based on the number of cylinders (cyl). Hence, making it a multivariate data visualisation.\\
 
-<<bubble-plot, echo=FALSE, fig.height=5, fig.width=9, fig.cap='Bubble plot illustrating trends in car types and performance', message=FALSE>>=
-#Create bubble plot 
+<<bubble-plot, echo=FALSE, fig.height=4, fig.width=10, fig.cap='Bubble plot illustrating trends in car types and performance', message=FALSE>>=
 ggplot(mtcars, aes(x = rownames(mtcars), y = mpg, size = hp, color = cyl)) +
   geom_point() +
   labs(
@@ -1030,7 +1014,30 @@ ggplot(mtcars, aes(x = rownames(mtcars), y = mpg, size = hp, color = cyl)) +
   theme(axis.text.x = element_text(angle = 90, hjust =1))
 @
 
-\\\noindent The bubble plot reveals a clear pattern: as cylinder count increases, so does horsepower, but at the expense of lower fuel efficiency. Contrary to expectations, cars with fewer cylinders, despite lower horsepower, demonstrate better fuel economy, positioned higher on the graph. Meanwhile, vehicles with more cylinders, often associated with higher performance, cluster lower, indicating lower fuel efficiency. This plot highlights the trade-off between horsepower, cylinder count, and fuel efficiency, challenging the assumption that more cylinders equate to better performance, emphasising the significance of considering fuel economy in car selection.
+\\\noindent To capture just some of the information provided by this single bubble chat - that is, the information regarding the car models, the miles covered per gallon, and the horsepower of each of these, one would require three different scatter plots. These are displayed in Figure~\ref{fig:bubble-plot-construction}. The contrast between the simplicity and readability of Figure~\ref{fig:bubble-plot}, and the density and complexity of Figure~\ref{fig:bubble-plot-construction} emphasises the advantages of bubble charts in representing datasets with a higher number of variables. 
+
+<<bubble-plot-construction, echo=FALSE, fig.height=3, fig.width=11, fig.cap='Scatter plots deconstruction of Figure 16', message=FALSE>>=
+
+# Scatter plot 1: Car models vs. Miles per gallon
+plot1 <- ggplot(mtcars, aes(x = rownames(mtcars), y = mpg)) +
+  geom_point(color = "blue", size=2) +
+  labs(x = "Car Models", y = "Miles per Gallon", title = "Car Models vs. MPG") +
+  theme(axis.text.x = element_blank())
+
+# Scatter plot 2: Car models vs. Horsepower
+plot2 <- ggplot(mtcars, aes(x = rownames(mtcars), y = hp)) +
+  geom_point(color = "darkblue", size=2) +
+  labs(x = "Car Models", y = "Horsepower", title = "Car Models vs. Horsepower") +
+  theme(axis.text.x = element_blank())
+
+# Scatter plot 3: Miles per gallon vs. Horsepower
+plot3 <- ggplot(mtcars, aes(x = mpg, y = hp)) +
+  geom_point(color = "purple", size=2) +
+  labs(x = "Miles per Gallon", y = "Horsepower", title = "MPG vs. Horsepower")
+
+# Arrange plots side by side
+grid.arrange(plot1, plot2, plot3, ncol = 3)
+@
 
 
 \subsection{Simple Linear Regression}
@@ -1038,7 +1045,7 @@ ggplot(mtcars, aes(x = rownames(mtcars), y = mpg, size = hp, color = cyl)) +
 \\  
 \\   
 \noindent
-\textbf{Theory of Simple Linear Regression}
+\textbf{Theory of Simple Linear Regression} 
 \\Let $\mathbf{x} = (x_1 \dots x_n)^T$ denote $n$ explanatory variables and let $\mathbf{Y} = (Y_1 \dots Y_n)^T$ denote $n$ corresponding response variables.
 \\  
 \\In a simple linear model, it is assumed that the response variables $Y_1 \dots Y_n$ are uncorrelated with a common variance $\sigma^2$, and their expectations are given by $E(Y_i| x_i) = \beta_0 + \beta_1 x_i$. The expectations generated by $\beta_0$ and $\beta_1$ given $x_i$ can be expressed as:
@@ -1231,9 +1238,7 @@ $$r_i = B(\hat{\varepsilon}_i, 6\mathrm{m}).$$
 \noindent
 The updated model estimate $\hat{y}(x)$, is computed using the local fitting method, but with the neighborhood weights $w_i{(x)$ replaced by $r_i w_i(x)$.
 
-
-
-
+\newpage
 
 \section{Multivariate Data Methods}
 
