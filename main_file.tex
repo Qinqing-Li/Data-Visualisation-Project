@@ -972,10 +972,23 @@ Observe that the t-test yields a p-value of $1.29 \times 10^{-10}$, which is les
 
 \subsection{LOESS Regression}
 \noindent
-Locally estimated scatterplot smoothing (LOESS) is a local regression method. It is a non-parametric regression method that fits a line segment for each neighbourhood of data. Unlike GLM, the LOESS model does not provide a global function to fit the data; rather, it fits neighborhoods of the data.\\
+Locally weighted scatterplot smoothing (LOWESS) is a local regression method for a response variable $Y$ on a single predictor $X$. LOWESS was proposed by William S. Cleveland in 1979, it is the special case to higher dimention locally estimated scatterplot smoothing (LOESS) regression method. They are non-parametric regression methods that fits a linear regression model for each neighbourhood of data. Unlike GLM, the LOESS model does not provide a global function to fit the data; rather, it fits neighborhoods of the data.\\
 
 \noindent
-Suppose we have $n$ observations $(x_1,y_1) \dots (x_n,y_n)$ with explanatory variable $x_i$ and response variable $y_i$. For each point $(x,y)$, consider the neighbourhood to fit a line segment around it. The size of the neighbourhood indicates the number of data points used to fit the line segments and is often expressed as a fraction $\alpha$ of the sample data. For $\alpha \leq 1$, each  neighbourhood consists of $\frac{n}{\alpha}$ number of points. Each data point $(x_i, y_i)$ in the neighbourhood of point $(x,y)$ is assigned with a weight, ``importance" of the data point to the line segment. The weight of $(x_i,y_i)$ is denoted as $w_i(x)$, which is defined as:
+\textbf{Theory of LOESS regression}\\
+
+\noindent
+Suppose we have $n$ ordered observations $(x_1,y_1) \dots (x_n,y_n)$ with predictors $x_i$ and response variables $y_i$. Assume a model of the form
+
+$$y_i = g(x_i) +  \varepsilon_i,$$
+\noindent
+where $g(\cdot)$ is an unknown smooth function and $\varepsilon_i$ is i.i.d. Gaussian error terms with mean $0$ and variance $\sigma^2$.\\
+
+\noindent
+Let $\Delta_i(x) = |x - x_i|$ represent the horizontal distance between $x$ and $x_i$. Let $\Delta_{(i)}(x)$ denote the ordered distances to $x$, arranged from smallest to largest.\\
+
+\noindent
+For each point $(x,y)$ consider the neighbourhood to fit a line segment around it. The size of the neighbourhood indicates the number of data points used to fit the line segments and is determined by the smoothing parameter $\alpha$. For $\alpha \leq 1$, each  neighbourhood consists of $\frac{n}{\alpha}$ number of points. Each point $(x_i, y_i)$ in the neighbourhood of point $(x,y)$ is assigned with a weight, ``importance" of the data point to the line segment. The weight of $(x_i,y_i)$ is denoted as $w_i(x)$, which is defined as:
 
 $$w_i(x) = T(\Delta_i (x); \Delta _{(q)}(x)).$$
 
@@ -994,49 +1007,53 @@ $$
 where $u$ is the horizontal distance between neighbourhood point of interest $(x_i,y_i)$ to point $(x,y)$ and $t$ is the maximum distance threshold. For points in the neighbourhood with horizontal distance exceeding threshold $t$, they are assigned with weight $0$ by the tricube weight function.\\
 
 \noindent
-For $\alpha > 1$, for each point $(x,y)$ the neighbourhood include all points. The maximum distance threshold is assumed to be $\alpha^{\frac{1}{p}}$, for $p$ explanatory variables.\\
+For $\alpha > 1$, for each point $(x,y)$ the neighbourhood include all points. The maximum distance threshold is assumed to be $\alpha^{\frac{1}{p}}$, for $p$ explanatory variables. The weight is given by:
+
+$$w_i(x) = T(\Delta_i (x); \Delta _{(n)}(x))\alpha.$$\\
 
 \noindent
-The smoothness of the LOESS curve depends on $\alpha$, therefore $\alpha$ is called the ``smoothing parameter".\\
+The line segment is fitted by weighted least square, and this is the preliminary estimation $\hat{g}(x)$ for every point $(x,y)$.
 
 \noindent
-Let $\Delta_i(x) = |x - x_i|$ represent the distance between $x$ and the $i^{th}$ observation of the predictors. Let $\Delta_{(i)}(x)$ denote the ordered distances, arranged from smallest to largest.
-
-
-\noindent
-This function assigns a positive weight to points with distance $u$ less than the threshold distance $t$. Define the smoothing parameter $\alpha > 0$. For $\alpha \leq 1$, the neighbourhood weight for observation $(x_i, y_i)$ is given by:
-
-$$w_i(x) = T(\Delta_i (x); \Delta _{(q)}(x)).$$
+Both LOWESS and LOESS penalise the outliers in the preliminary estimation by assigning points further away from $\hat{g}(x)$ with less weight than before. The robustness weight (the adjusted weight) is given by:
+$$r_i = B(\hat{\varepsilon}_i, 6\mathrm{m}),$$
 
 \noindent
-For $\alpha > 1$, the neighbourhood weight is given by:
-
-$$w_i(x) = T(\Delta_i (x); \Delta _{(n)}(x))\alpha.$$
-
-\noindent
-Outliers in the neighbourhood are going to affect the model's prediction. To address this issue, weights are adjusted such that points further away from the regression line are assigned smaller weights than before.
-\\   
-\noindent
-Let the model estimate be $\hat{y}$. The residuals are given by:
-
-$$\hat{\varepsilon}_i = y_i - \hat{y}(x_i).$$
-
-\noindent
-Define the bisquare weight function as:
+where bisquare weight function is defined as:
 
 $$B(u;b) = \left\{
   \begin{array}{ll}
     (1-(u/b)^2)^2 & \text{for } 0 \leq |u| < b \\
     0 & \text{for } |u| \geq b \\
-  \end{array}
-\right.$$
+  \end{array},
+\right$$
 
 \noindent
-Define the median absolute residual as $\mathrm{m} = \mathrm{median}(|\hat{\varepsilon}_i|)$. The robustness weight (the adjusted weight) is therefore given by:
-$$r_i = B(\hat{\varepsilon}_i, 6\mathrm{m}).$$
+and the median absolute residual $\mathrm{m}$ is defined as $\mathrm{m} = \mathrm{median}(|\hat{\varepsilon}_i|)$, the residual $\hat{\varepsilon}_i$ is defined as $\hat{\varepsilon}_i = y_i - \hat{y}(x_i)$. \\
 
 \noindent
-The updated model estimate $\hat{y}(x)$, is computed using the local fitting method, but with the neighborhood weights $w_i{(x)$ replaced by $r_i w_i(x)$.
+Note the process of weight adjustment using previous estimation is iterated several times until a smooth curve is obtained.\\
+
+\noindent
+The updated model estimate $\hat{g}(x)$, is computed using the local fitting method, but with the neighborhood weights $w_i{(x)$ replaced by $r_i w_i(x)$.\\
+
+\noindent
+\textbf{Case example: 1970s automobiles}\\
+
+\noindent
+Using the same dataset, we explore the relations between maximum oil displacement (which is Engine Volume) and car efficiency (mearsured in Miles per Gallon), using two methods: LOESS and linear regression model. The LOESS model
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-loess-plot-1} 
+
+}
+
+\caption[LOESS regression model is indicated in red, linear regression model is indicated in blue]{LOESS regression model is indicated in red, linear regression model is indicated in blue.}\label{fig:loess-plot}
+\end{figure}
+
+\end{knitrout}
+
 
 \newpage
 
