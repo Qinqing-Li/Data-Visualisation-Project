@@ -766,18 +766,17 @@ The seasonal pattern of fire frequency is shown in Figure~\ref{fig:fire-by-month
 
 \subsection{Scatter Plots}
 
-A scatter plot is a graphical representation of a set of data points in a two-dimensional coordinate system. Each data point is represented by a dot, and the position of the dot is determined by the values of two variables.\\
+A scatter plot is a graphical representation of a set of data points in a two-dimensional coordinate system. Each data point is represented by a dot, and the position of the dot is determined by the values of two variables. Some examples of this type of visualisation can be found in Figure~\ref{fig:abs-plots}, Figure~\ref{fig:cogload-plot}, and Figure~\ref{fig:bubble-plot-construction}.\\
 
 \noindent
-In general, \(Y\) denotes the response, or dependent,variable and \(X\) denotes the explanatory, or indenpendent,  variable. Let \((x_i, y_i)\) represent the coordinates of the \(i\)-th data point on the scatter plot. The scatter plot can be mathematically described as a set of points: \[ \{(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)\}, \] where \(n\) is the number of observations in the set.\\
-
+In general, \(Y\) denotes the response, or dependent,variable and \(X\) denotes the explanatory, or indenpendent,  variable. Let \((x_i, y_i)\) represent the coordinates of the \(i\)-th data point on the scatter plot. The scatter plot can be mathematically described as a set of points: \( \{(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)\}, \) where \(n\) is the number of observations in the set.
 
 \subsection{Bubble Charts}
 Bubble charts are a captivating data visualisation tool that extends beyond the typical two-dimensional scatter plot by introducing an extra dimension. They represent data points as bubbles or circles on a two-dimensional plane, where the size of each bubble encodes a third variable.\\
 
 \noindent The construction of bubble charts, is parallel to that of a scatter plot, but involves the scaling the data values to determine the size of each bubble. While it isn't alwaysthe case, the size of these is typically proportional to the variable it represents. The choice of scaling method depends on the data distribution and the message the chart aims to convey.\\
 
-\noindent Generally, the formula for calculating the bubble size (\(S\)) often involves applying the scaling function
+\noindent Generally, the formula for calculating the bubble size (\(S\)) involves applying the scaling function
 \[
 S = k \cdot V,
 \]
@@ -799,7 +798,10 @@ The bubble chart shown in Figure~\ref{fig:bubble-plot} visualises data from the 
 
 \end{knitrout}
 
-\\\noindent To capture just some of the information provided by this single bubble chat - that is, the information regarding the car models, the miles covered per gallon, and the horsepower of each of these, one would require three different scatter plots. These are displayed in Figure~\ref{fig:bubble-plot-construction}. The contrast between the simplicity and readability of Figure~\ref{fig:bubble-plot}, and the density and complexity of Figure~\ref{fig:bubble-plot-construction} emphasises the advantages of bubble charts in representing datasets with a higher number of variables. 
+\\\noindent In Figure~\ref{fig:bubble-plot} a strong correlation between the cars' number of cylinder and their horsepower can be quickly identified. This is due to the fact that as size of the dots (representing horsepower) increases, their colour (representing the number of cylinders) simultaneously becomes darker. Furthermore, a correlation between the miles per gallon consumed by the different types of cars and their number of cylinders and horsepower is easily identifiable in Figure~\ref{fig:bubble-plot}. This is shown by the fact that in the same way that the darker dots cluster towards the bottom of the graph and become lighter as they reach the top of the graph, those with a large diameter also cluster near the lower part and decrease in size as they ascend. \\ 
+
+\noindent 
+The efficiency of bubble charts is highlighted by the fact that to capture just some of the information provided by this single bubble chat - that is, the information regarding the car models, the miles covered per gallon, and the horsepower of each of these, one would require three different scatter plots. These are displayed in Figure~\ref{fig:bubble-plot-construction}. The contrast between the simplicity and readability of Figure~\ref{fig:bubble-plot}, and the density and complexity of Figure~\ref{fig:bubble-plot-construction} emphasises the advantages of bubble charts in representing datasets with a higher number of variables. 
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
@@ -808,7 +810,7 @@ The bubble chart shown in Figure~\ref{fig:bubble-plot} visualises data from the 
 
 }
 
-\caption[Scatter plots deconstruction of Figure 16]{Scatter plots deconstruction of Figure 16}\label{fig:bubble-plot-construction}
+\caption[Scatter plot deconstruction of Figure 16]{Scatter plot deconstruction of Figure 16}\label{fig:bubble-plot-construction}
 \end{figure}
 
 \end{knitrout}
@@ -903,8 +905,8 @@ The least squares estimate of $\beta$ is given by:
 \\ 
 \noident 
 \\\textbf{Case example: 1970s automobiles}\\
-\noindent
-\\In this section, we will study the performance of 1970s automobiles using the mtcars dataset, employing the method of linear regression. Performance is measured in Miles per Gallon (mpg); the higher the mileage, the more efficient the automobile. We will start with the visualisation of a simple linear regression model, followed by the discussion of linear regression models and the model selection method.
+
+\noindent In this section, we will study the performance of 1970s automobiles using the mtcars dataset, employing the method of linear regression. Performance is measured in Miles per Gallon (mpg); the higher the mileage, the more efficient the automobile. We will start with the visualisation of a simple linear regression model, followed by the discussion of linear regression models and the model selection method.
 
 \noindent
 \\In the preliminary stages of data exploration, calculating the correlation matrix is a crucial step before engaging in regression modeling, as shown in Figure~\ref{fig:cor-matrix-mtcars2}. In real-world scenarios, variables are often correlated, and entirely independent relationships are seldom encountered. Therefore, analysing pairwise correlations becomes essential. This helps in understanding multicollinearity issues within the model. Multicollinearity occurs when one covariate within the model can be accurately predicted from another covariate. When this happens, the coefficient estimates of the model can change unpredictably due to minor changes in the data.\\
@@ -1119,9 +1121,9 @@ In the reduced space, the variance along each principal component $v_i$ is maxim
 =======
 \subsection{Biplots}
 \noindent 
-Biplots serve as a valuable tool in visualising designed to project high-dimensional data onto a lower-dimensional space while retaining essential information. This technique, introduced by Herman Chernoff in the 1970s, aids in understanding the relationships and patterns within high-dimensional data.\\
+Biplots serve as a valuable tool in visualising designed to project high-dimensional data onto a lower-dimensional space while retaining essential information. This technique, introduced by Herman Chernoff in the 1970s, aids in understanding the relationships and patterns within high-dimensional data. They are commonly understood to be a generalisation of the simple two-variable scatterplot.\\
 
-\noindent At its core, a biplot offers a graphical representation of the rows and columns of a data matrix, projecting them onto a two-dimensional plane while preserving the most significant information. It combines information about both the samples and the variables, allowing analysts to simultaneously discern correlations, clusters, and trends.\\
+\noindent At its core, a biplot offers a graphical representation a data matrix, whose rows \(n\) are the samples, and whose columns \(p\) are the variables, by projecting these onto a two-dimensional plane while preserving the most significant information.\\
 
 \noindent The construction of a biplot involves mathematical computations derived from techniques like Singular Value Decomposition (SVD) or Principal Component Analysis (PCA). SVD breaks down the data matrix into three constituent matrices, allowing for the extraction of singular values and singular vectors. These singular vectors form the basis for plotting the data in the reduced-dimensional space.\\
 

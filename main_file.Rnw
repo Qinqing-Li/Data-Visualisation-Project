@@ -309,7 +309,7 @@ These are represented in Figure~\ref{fig:abs-plots}. The first visualisations of
 <<abs-plots, echo=FALSE, fig.height=4, fig.width=12, fig.cap='Mtcars dataset visualised on 3 different levels of abstraction'>>=
 
 # Define a dark red and blue color palette
-dark_red_blue_palette <- c("4" = "#459395", "6" = "#EB7C69", "8" = "#FDA638")  # Adjust the shades of red and blue
+dark_red_blue_palette <- c("4" = "#459395", "6" = "#EB7C69", "8" = "#FDA638")  # Adjust the shades of red and blue %jhgjgj
 
 # Level 1: Detailed Scatter Plot
 plot1 <- ggplot(mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
@@ -978,18 +978,17 @@ print(heatmap_plot)
 
 \subsection{Scatter Plots}
 
-A scatter plot is a graphical representation of a set of data points in a two-dimensional coordinate system. Each data point is represented by a dot, and the position of the dot is determined by the values of two variables.\\
+A scatter plot is a graphical representation of a set of data points in a two-dimensional coordinate system. Each data point is represented by a dot, and the position of the dot is determined by the values of two variables. Some examples of this type of visualisation can be found in Figure~\ref{fig:abs-plots}, Figure~\ref{fig:cogload-plot}, and Figure~\ref{fig:bubble-plot-construction}.\\
 
 \noindent
-In general, \(Y\) denotes the response, or dependent,variable and \(X\) denotes the explanatory, or indenpendent,  variable. Let \((x_i, y_i)\) represent the coordinates of the \(i\)-th data point on the scatter plot. The scatter plot can be mathematically described as a set of points: \[ \{(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)\}, \] where \(n\) is the number of observations in the set.\\
-
+In general, \(Y\) denotes the response, or dependent,variable and \(X\) denotes the explanatory, or indenpendent,  variable. Let \((x_i, y_i)\) represent the coordinates of the \(i\)-th data point on the scatter plot. The scatter plot can be mathematically described as a set of points: \( \{(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)\}, \) where \(n\) is the number of observations in the set.
 
 \subsection{Bubble Charts}
 Bubble charts are a captivating data visualisation tool that extends beyond the typical two-dimensional scatter plot by introducing an extra dimension. They represent data points as bubbles or circles on a two-dimensional plane, where the size of each bubble encodes a third variable.\\
 
 \noindent The construction of bubble charts, is parallel to that of a scatter plot, but involves the scaling the data values to determine the size of each bubble. While it isn't alwaysthe case, the size of these is typically proportional to the variable it represents. The choice of scaling method depends on the data distribution and the message the chart aims to convey.\\
 
-\noindent Generally, the formula for calculating the bubble size (\(S\)) often involves applying the scaling function
+\noindent Generally, the formula for calculating the bubble size (\(S\)) involves applying the scaling function
 \[
 S = k \cdot V,
 \]
@@ -999,7 +998,7 @@ S = k \cdot V,
 \textbf{Bubble Charts in Practice}\\
 The bubble chart shown in Figure~\ref{fig:bubble-plot} visualises data from the mtcars dataset. It depicts the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and color-coding the bubbles based on the number of cylinders (cyl). Hence, making it a multivariate data visualisation.\\
 
-<<bubble-plot, echo=FALSE, fig.height=4, fig.width=10, fig.cap='Bubble plot illustrating trends in car types and performance', message=FALSE>>=
+<<bubble-plot, echo=FALSE, fig.height=5, fig.width=11, fig.cap='Bubble plot illustrating trends in car types and performance', message=FALSE>>=
 ggplot(mtcars, aes(x = rownames(mtcars), y = mpg, size = hp, color = cyl)) +
   geom_point() +
   labs(
@@ -1014,26 +1013,35 @@ ggplot(mtcars, aes(x = rownames(mtcars), y = mpg, size = hp, color = cyl)) +
   theme(axis.text.x = element_text(angle = 90, hjust =1))
 @
 
-\\\noindent To capture just some of the information provided by this single bubble chat - that is, the information regarding the car models, the miles covered per gallon, and the horsepower of each of these, one would require three different scatter plots. These are displayed in Figure~\ref{fig:bubble-plot-construction}. The contrast between the simplicity and readability of Figure~\ref{fig:bubble-plot}, and the density and complexity of Figure~\ref{fig:bubble-plot-construction} emphasises the advantages of bubble charts in representing datasets with a higher number of variables. 
+\\\noindent In Figure~\ref{fig:bubble-plot} a strong correlation between the cars' number of cylinder and their horsepower can be quickly identified. This is due to the fact that as size of the dots (representing horsepower) increases, their colour (representing the number of cylinders) simultaneously becomes darker. Furthermore, a correlation between the miles per gallon consumed by the different types of cars and their number of cylinders and horsepower is easily identifiable in Figure~\ref{fig:bubble-plot}. This is shown by the fact that in the same way that the darker dots cluster towards the bottom of the graph and become lighter as they reach the top of the graph, those with a large diameter also cluster near the lower part and decrease in size as they ascend. \\ 
 
-<<bubble-plot-construction, echo=FALSE, fig.height=3, fig.width=11, fig.cap='Scatter plots deconstruction of Figure 16', message=FALSE>>=
+\noindent 
+The efficiency of bubble charts is highlighted by the fact that to capture just some of the information provided by this single bubble chat - that is, the information regarding the car models, the miles covered per gallon, and the horsepower of each of these, one would require three different scatter plots. These are displayed in Figure~\ref{fig:bubble-plot-construction}. The contrast between the simplicity and readability of Figure~\ref{fig:bubble-plot}, and the density and complexity of Figure~\ref{fig:bubble-plot-construction} emphasises the advantages of bubble charts in representing datasets with a higher number of variables. 
+
+<<bubble-plot-construction, echo=FALSE, fig.height=4, fig.width=11, fig.cap='Scatter plot deconstruction of Figure 16', message=FALSE>>=
 
 # Scatter plot 1: Car models vs. Miles per gallon
 plot1 <- ggplot(mtcars, aes(x = rownames(mtcars), y = mpg)) +
-  geom_point(color = "blue", size=2) +
+  geom_point(color = "blue", size =2) +
   labs(x = "Car Models", y = "Miles per Gallon", title = "Car Models vs. MPG") +
-  theme(axis.text.x = element_blank())
+  theme_bw() +
+  theme(axis.text.x = element_blank(),
+        panel.border = element_blank())
 
 # Scatter plot 2: Car models vs. Horsepower
 plot2 <- ggplot(mtcars, aes(x = rownames(mtcars), y = hp)) +
-  geom_point(color = "darkblue", size=2) +
+  geom_point(color = "darkblue", size =2) +
   labs(x = "Car Models", y = "Horsepower", title = "Car Models vs. Horsepower") +
-  theme(axis.text.x = element_blank())
+  theme_bw() +
+  theme(axis.text.x = element_blank(),
+        panel.border = element_blank())
 
 # Scatter plot 3: Miles per gallon vs. Horsepower
 plot3 <- ggplot(mtcars, aes(x = mpg, y = hp)) +
-  geom_point(color = "purple", size=2) +
-  labs(x = "Miles per Gallon", y = "Horsepower", title = "MPG vs. Horsepower")
+  geom_point(color = "purple", size =2) +
+  labs(x = "Miles per Gallon", y = "Horsepower", title = "MPG vs. Horsepower") +
+  theme_bw() +
+  theme(panel.border = element_blank())
 
 # Arrange plots side by side
 grid.arrange(plot1, plot2, plot3, ncol = 3)
@@ -1129,8 +1137,8 @@ The least squares estimate of $\beta$ is given by:
 \\ 
 \noident 
 \\\textbf{Case example: 1970s automobiles}\\
-\noindent
-\\In this section, we will study the performance of 1970s automobiles using the mtcars dataset, employing the method of linear regression. Performance is measured in Miles per Gallon (mpg); the higher the mileage, the more efficient the automobile. We will start with the visualisation of a simple linear regression model, followed by the discussion of linear regression models and the model selection method.
+
+\noindent In this section, we will study the performance of 1970s automobiles using the mtcars dataset, employing the method of linear regression. Performance is measured in Miles per Gallon (mpg); the higher the mileage, the more efficient the automobile. We will start with the visualisation of a simple linear regression model, followed by the discussion of linear regression models and the model selection method.
 
 \noindent
 \\In the preliminary stages of data exploration, calculating the correlation matrix is a crucial step before engaging in regression modeling, as shown in Figure~\ref{fig:cor-matrix-mtcars2}. In real-world scenarios, variables are often correlated, and entirely independent relationships are seldom encountered. Therefore, analysing pairwise correlations becomes essential. This helps in understanding multicollinearity issues within the model. Multicollinearity occurs when one covariate within the model can be accurately predicted from another covariate. When this happens, the coefficient estimates of the model can change unpredictably due to minor changes in the data.\\
@@ -1167,7 +1175,7 @@ Modelwt <- lm(formula = mpg ~ wt, data = mtcars)
 summary(Modelwt)
 @
 
-<<scatter-plot, echo=FALSE, fig.height=3, fig.width=4, fig.cap='Scatter plot of car weights vs MPG', message=FALSE>>=
+<<scatter-plot, echo=FALSE, fig.height=2.6, fig.width=4, fig.cap='Scatter plot of car weights vs MPG', message=FALSE>>=
 # Create a scatter plot of car weight vs MPG from mtcars dataset
 library(ggplot2)
 ggplot(data = mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
@@ -1341,9 +1349,9 @@ In the reduced space, the variance along each principal component $v_i$ is maxim
 =======
 \subsection{Biplots}
 \noindent 
-Biplots serve as a valuable tool in visualising designed to project high-dimensional data onto a lower-dimensional space while retaining essential information. This technique, introduced by Herman Chernoff in the 1970s, aids in understanding the relationships and patterns within high-dimensional data.\\
+Biplots serve as a valuable tool in visualising designed to project high-dimensional data onto a lower-dimensional space while retaining essential information. This technique, introduced by Herman Chernoff in the 1970s, aids in understanding the relationships and patterns within high-dimensional data. They are commonly understood to be a generalisation of the simple two-variable scatterplot.\\
 
-\noindent At its core, a biplot offers a graphical representation of the rows and columns of a data matrix, projecting them onto a two-dimensional plane while preserving the most significant information. It combines information about both the samples and the variables, allowing analysts to simultaneously discern correlations, clusters, and trends.\\
+\noindent At its core, a biplot offers a graphical representation a data matrix, whose rows \(n\) are the samples, and whose columns \(p\) are the variables, by projecting these onto a two-dimensional plane while preserving the most significant information.\\
 
 \noindent The construction of a biplot involves mathematical computations derived from techniques like Singular Value Decomposition (SVD) or Principal Component Analysis (PCA). SVD breaks down the data matrix into three constituent matrices, allowing for the extraction of singular values and singular vectors. These singular vectors form the basis for plotting the data in the reduced-dimensional space.\\
 
@@ -1378,7 +1386,7 @@ v_{j2} = \sqrt{\lambda_{2}} \cdot c_{j2}.
 
 \noindent Here, \( v_{j1} \) and \( v_{j2} \) represent the coordinates of variable \( j \) on the first and second principal components respectively, \( \lambda_{1} \) and \( \lambda_{2} \) are the eigenvalues corresponding to the first and second principal components, and \( c_{j1} \) and \( c_{j2} \) are the loadings of variable \( j \) on these components.\\
 
-<<biplot, echo=FALSE, fig.height=3, fig.width=4, fig.cap='PCA Biplot of mtcars Dataset: Principal Component Analysis', message=FALSE>>=
+<<biplot, echo=FALSE, fig.height=7, fig.width=10, fig.cap='PCA Biplot of mtcars Dataset: Principal Component Analysis', message=FALSE>>=
 data(mtcars)
 
 # Standardize the data
