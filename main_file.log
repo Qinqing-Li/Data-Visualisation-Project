@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.27)  17 JAN 2024 22:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.27)  18 JAN 2024 12:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1561,8 +1561,19 @@ as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.1198     \end{equation}
-                          <./figure/beamer-biplot-1.pdf>] [39] [40]
-(./main_file.bbl
+                          <./figure/beamer-biplot-1.pdf>]
+<figure/beamer-t-SNE-1.pdf, id=628, 361.35pt x 216.81pt>
+File: figure/beamer-t-SNE-1.pdf Graphic file (type pdf)
+<use figure/beamer-t-SNE-1.pdf>
+Package pdftex.def Info: figure/beamer-t-SNE-1.pdf  used on input line 1220.
+(pdftex.def)             Requested size: 361.34912pt x 216.80946pt.
+ [39
+pdfTeX warning (ext4): destination with the same identifier (name{figure.22}) h
+as been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.1230 \newpage
+                <./figure/beamer-t-SNE-1.pdf>] [40] (./main_file.bbl
 Underfull \hbox (badness 1472) in paragraph at lines 4--9
 []\TS1/cmr/m/n/10 $\OT1/cmr/m/n/10 500,000 in 1937 is how much to-day?  []$\OT1
 /cmtt/m/n/10 https : / / www . calculateme . com / inflation /
@@ -1615,10 +1626,10 @@ Package rerunfilecheck Info: File `main_file.out' has not changed.
 (rerunfilecheck)             Checksum: 6C45E4D763BE2E1EA1F4F8B944C61C03;7059.
  ) 
 Here is how much of TeX's memory you used:
- 12599 strings out of 476025
- 199693 string characters out of 5790016
+ 12610 strings out of 476025
+ 199990 string characters out of 5790016
  1866388 words of memory out of 5000000
- 32710 multiletter control sequences out of 15000+600000
+ 32719 multiletter control sequences out of 15000+600000
  521304 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,10n,76p,1201b,622s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1641,10 +1652,10 @@ e/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 23/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/202
 3/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2023/
 texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main_file.pdf (45 pages, 7391605 bytes).
+Output written on main_file.pdf (45 pages, 7417177 bytes).
 PDF statistics:
- 792 PDF objects out of 1000 (max. 8388607)
- 647 compressed objects within 7 object streams
- 143 named destinations out of 1000 (max. 500000)
- 417 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 802 PDF objects out of 1000 (max. 8388607)
+ 655 compressed objects within 7 object streams
+ 144 named destinations out of 1000 (max. 500000)
+ 422 words of extra memory for PDF output out of 10000 (max. 10000000)
 

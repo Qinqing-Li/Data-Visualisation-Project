@@ -38,6 +38,8 @@ library(datasets)
 library(zoo)
 library(viridis)
 library(graphics)
+library(palmerpenguins)
+library(Rtsne)
 data(ToothGrowth)
 data(mtcars)
 data(trees)
@@ -1442,6 +1444,39 @@ This process is achieved through gradient descent. The gradient of symmetric SNE
     \end{equation}
 
 Perplexity influences the variance of the Gaussians in the high-dimensional space and is a crucial hyperparameter in t-SNE.
+
+R provides us with a dedicated package for t-SNE analysis, Rtsne, which allows us to conduct the analysis conveniently using the \textit{Rtsne} function. We will use \textbf{Palmer Penguin} dataset to make a tSNE plot in R.
+<<t-SNE, echo=FALSE, fig.height=3, fig.width=5, fig.cap='t-SNE of Penguins Dataset', message=FALSE>>=
+penguins %>% 
+  select(where(is.numeric),-year,species) %>%
+  mutate(ID=row_number()) %>% 
+  column_to_rownames("ID") %>% 
+  na.omit()-> df
+
+tSNE_fit<-df %>% 
+  select(-species) %>% 
+  scale() %>% 
+  Rtsne()
+tSNE_fit$Y %>% 
+  as.data.frame() %>% 
+  rename(tSNE1="V1",
+         tSNE2="V2") %>% 
+  mutate(Species=df$species) -> tSNE.plot
+library(ggplot2)
+ggplot()+
+  geom_point(data=tSNE.plot,
+             aes(x=tSNE1,y=tSNE2,color=Species))+
+  stat_ellipse(data=tSNE.plot,
+               geom="polygon",
+               aes(x=tSNE1,y=tSNE2,
+                   group=Species,
+                   fill=Species),
+               alpha=0.5,
+               lty="dashed",
+               color="black",
+               key_glyph="blank")+
+  theme_bw()
+@
 
 
 \newpage  
