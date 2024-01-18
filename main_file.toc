@@ -33,5 +33,5 @@
 \contentsline {subsection}{\numberline {5.2}PCA}{35}{subsection.5.2}
 \contentsline {subsection}{\numberline {5.3}Biplots}{36}{subsection.5.3}
 \contentsline {subsection}{\numberline {5.4}t-SNE}{38}{subsection.5.4}
-\contentsline {section}{\numberline {6}Index}{40}{section.6}
-\contentsline {section}{\numberline {A}Appendix A}{43}{appendix.A}
+\contentsline {section}{\numberline {6}Index}{41}{section.6}
+\contentsline {section}{\numberline {A}Appendix A}{44}{appendix.A}

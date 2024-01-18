@@ -1482,6 +1482,8 @@ ggplot()+
 @
 
 The dashed lines enclose ellipses that represent the distribution of different penguin species in a t-SNE plot from the above figure~\ref{fig:t-SNE}.
+
+Although t-SNE is a very powerful tool in data visualization, it indeed has its own limitations as well. It is important to select the appropriate method according to different requirments.
 \newpage  
 
 \section{Index}  
