@@ -1445,7 +1445,7 @@ This process is achieved through gradient descent. The gradient of symmetric SNE
 
 Perplexity influences the variance of the Gaussians in the high-dimensional space and is a crucial hyperparameter in t-SNE.
 
-R provides us with a dedicated package for t-SNE analysis, Rtsne, which allows us to conduct the analysis conveniently using the \textit{Rtsne} function. We will use \textbf{Palmer Penguin} dataset to make a tSNE plot in R.
+R provides us with a dedicated package for t-SNE analysis, \textit{Rtsne}, which allows us to conduct the analysis conveniently using the \textit{Rtsne} function. We will use \textbf{Palmer Penguin} dataset to make a tSNE plot in R.
 <<t-SNE, echo=FALSE, fig.height=3, fig.width=5, fig.cap='t-SNE of Penguins Dataset', message=FALSE>>=
 penguins %>% 
   select(where(is.numeric),-year,species) %>%
@@ -1478,7 +1478,7 @@ ggplot()+
   theme_bw()
 @
 
-
+The dashed lines enclose ellipses that represent the distribution of different penguin species in a t-SNE plot from the above figure~\ref{fig:t-SNE}.
 \newpage  
 
 \section{Index}  
