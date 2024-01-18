@@ -1261,7 +1261,10 @@ The updated model estimate $\hat{g}(x)$, is computed using the local fitting met
 \textbf{Case example: 1970s automobiles}\\
 
 \noindent
-Using the same dataset, we explore the relations between maximum oil displacement (which is Engine Volume) and car efficiency (mearsured in Miles per Gallon), using two methods: LOESS and linear regression model. The LOESS model
+Using the mtcars dataset, we explore the relations between maximum oil displacement (which is Engine Volume) and car efficiency (mearsured in Miles per Gallon), using two regression methods: LOESS and linear regression model, shown in Figure~\ref{fig:loess-plot}.\\
+
+\noindent
+The residual standard error of the LOESS model gives 2.828 and the residual standard error of the linear model is 3.251. One method to compare the goodness of fit between two models is cross validation.
 <<loess-plot, echo=FALSE, fig.height=3, fig.width=4, fig.cap='LOESS regression model is indicated in red, linear regression model is indicated in blue.', message=FALSE>>=
 # Obtain the order of rows based on the "disp" column
 order_disp <- order(mtcars$disp)
