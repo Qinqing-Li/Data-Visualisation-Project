@@ -38,6 +38,8 @@ library(datasets)
 library(zoo)
 library(viridis)
 library(graphics)
+library(palmerpenguins)
+library(Rtsne)
 data(ToothGrowth)
 data(mtcars)
 data(trees)
@@ -545,18 +547,19 @@ print(kde_diagram)
 \noindent Bar charts represent a versatile tool for data visualisation, frequently employed to compare distinct categories. The \textbf{vertical bar chart}, commonly recognised, exhibits categories along the X-axis and their frequencies or counts along the Y-axis. \textbf{Horizontal bar charts}, rotated 90 degrees, prove beneficial for extended category names or numerous categories, displaying categories on the Y-axis and frequencies on the X-axis. \textbf{Multi-set or grouped bar charts} facilitate side-by-side comparisons of sub- groups within categories, available in both vertical and horizontal orientations. \textbf{Stacked bar charts} illustrate classes of values subdivided into sub-classes, often differentiated by colour, where each segment's size signifies its frequency or count, and the total bar length reflects the cumulative total.\\
 
 \noindent \textbf{Bar Charts in Practice}\\
-\noident The two bar charts on in Figure~\ref{fig:barcharts} illustrate the impact of varying vitamin dosages on tooth growth, further categorised by supplement type. On the X-axis, three distinct levels of vitamin dosage are presented, while the Y-axis indicates the average tooth growth for each dosage. 
+\noident The two bar charts on in Figure~\ref{fig:barcharts} illustrate the impact of varying vitamin dosages on tooth growth, further categorised by supplement type. On the X-axis, three distinct levels of vitamin dosage are presented, while the Y-axis indicates the average lenth of tooth for each dosage.
 
 <<barcharts, echo=FALSE, fig.height=3, fig.width=10, fig.cap='Visualising Tooth Growth by Dosage: A Comparison of Grouped and Stacked Bar Chart Techniques'>>=
-data(ToothGrowth)
-filtered_data <- ToothGrowth %>% filter(dose %in% c(0.5, 1, 2))
+# average length
+average_lengths <- ToothGrowth %>%
+  group_by(dose, supp) %>%
+  summarize(average_len = mean(len))
 
-barchart_plot1 <- ggplot(filtered_data, aes(x = factor(dose), y = len, fill = supp)) +
+barchart_plot1 <- ggplot(average_lengths, aes(x = factor(dose), y = average_len, fill = supp)) +
   geom_bar(stat = "identity", position = position_dodge(width = 0.9)) +
-  labs(x = "Dose (mg/day)", y = "Tooth Length (mm)", fill = "Supplement") +
+  labs(x = "Dose (mg/day)", y = "Average Tooth Length (mm)", fill = "Supplement") +
   theme_minimal()
-
-barchart_plot2 <- ggplot(filtered_data, aes(x = factor(dose), y = len, fill = supp)) +
+barchart_plot2 <- ggplot(average_lengths, aes(x = factor(dose), y = average_len, fill = supp)) +
   geom_bar(stat = "identity", position = "stack") +
   labs(x = "Dose (mg/day)", y = "Tooth Length (mm)", fill = "Supplement") +
   theme_minimal()
@@ -1445,7 +1448,40 @@ This process is achieved through gradient descent. The gradient of symmetric SNE
 
 Perplexity influences the variance of the Gaussians in the high-dimensional space and is a crucial hyperparameter in t-SNE.
 
+R provides us with a dedicated package for t-SNE analysis, \textit{Rtsne}, which allows us to conduct the analysis conveniently using the \textit{Rtsne} function. We will use \textbf{Palmer Penguin} dataset to make a tSNE plot in R.
+<<t-SNE, echo=FALSE, fig.height=3, fig.width=5, fig.cap='t-SNE of Penguins Dataset', message=FALSE>>=
+penguins %>% 
+  select(where(is.numeric),-year,species) %>%
+  mutate(ID=row_number()) %>% 
+  column_to_rownames("ID") %>% 
+  na.omit()-> df
 
+tSNE_fit<-df %>% 
+  select(-species) %>% 
+  scale() %>% 
+  Rtsne()
+tSNE_fit$Y %>% 
+  as.data.frame() %>% 
+  rename(tSNE1="V1",
+         tSNE2="V2") %>% 
+  mutate(Species=df$species) -> tSNE.plot
+library(ggplot2)
+ggplot()+
+  geom_point(data=tSNE.plot,
+             aes(x=tSNE1,y=tSNE2,color=Species))+
+  stat_ellipse(data=tSNE.plot,
+               geom="polygon",
+               aes(x=tSNE1,y=tSNE2,
+                   group=Species,
+                   fill=Species),
+               alpha=0.5,
+               lty="dashed",
+               color="black",
+               key_glyph="blank")+
+  theme_bw()
+@
+
+The dashed lines enclose ellipses that represent the distribution of different penguin species in a t-SNE plot from the above figure~\ref{fig:t-SNE}.
 \newpage  
 
 \section{Index}  
