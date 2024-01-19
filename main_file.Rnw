@@ -1355,19 +1355,46 @@ In the reduced space, the variance along each principal component $v_i$ is maxim
 =======
 \subsection{Biplots}
 \noindent 
-Biplots serve as a valuable tool in visualising designed to project high-dimensional data onto a lower-dimensional space while retaining essential information. This technique, introduced by Herman Chernoff in the 1970s, aids in understanding the relationships and patterns within high-dimensional data. They are commonly understood to be a generalisation of the simple two-variable scatterplot.\\
-
-\noindent At its core, a biplot offers a graphical representation a data matrix, whose rows \(n\) are the samples, and whose columns \(p\) are the variables, by projecting these onto a two-dimensional plane while preserving the most significant information.\\
+Biplots serve as a valuable tool in visualising designed to project high-dimensional data onto a lower-dimensional space while retaining essential information. This technique, introduced by Herman Chernoff in the 1970s, aids in understanding the relationships and patterns within high-dimensional data. Biplots are commonly understood to be the mutivariate analogue of two-variable scatterplots.\\
 
 \noindent The construction of a biplot involves mathematical computations derived from techniques like Singular Value Decomposition (SVD) or Principal Component Analysis (PCA). SVD breaks down the data matrix into three constituent matrices, allowing for the extraction of singular values and singular vectors. These singular vectors form the basis for plotting the data in the reduced-dimensional space.\\
 
-\noindent In practical terms, the steps to generate a biplot involve:
+\noindent In practical terms, the computational steps leading to the generation of a biplot involve: %https://eur02.safelinks.protection.outlook.com/ap/b-59584e83/?url=https%3A%2F%2Fuoe-my.sharepoint.com%2F%3Ab%3A%2Fg%2Fpersonal%2Fs2099120_ed_ac_uk%2FEWNG5FSX0fhLum4QCPr0kJYBhh_hjTO0fExMP2NYeljovA&data=05%7C02%7CP.Fullaondo%40sms.ed.ac.uk%7C9bf8d798a0594caf645908dc18fc3cd7%7C2e9f06b016694589878910a06934dc61%7C1%7C0%7C638412718818516401%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C3000%7C%7C%7C&sdata=wprd1%2BRyQ6w9hGpO0LMFey3MyIIdsXaovrqkHWRCUAI%3D&reserved=0
 \begin{itemize}
-    \item \textbf{Data Standardisation}: Standardising the data by centering and scaling it to ensure each variable contributes equally.
-    \item \textbf{Calculating Singular Value Decomposition}: Applying SVD to the standardised data matrix to obtain the singular values and vectors.
-    \item \textbf{Projection}: Projecting both the samples and variables onto a two-dimensional space using the singular vectors obtained from SVD. This projection helps represent the relationships between variables and samples.
+    \item \textbf{Data Standardisation}: Standardising the data matrix by centering (substracting the mean) and scaling it to ensure each variable contributes equally.
+    \item \textbf{Calculating Singular Value Decomposition}: Applying SVD to the standardised data matrix to obtain the singular values and vectors. This extracts the dimensions coneying most of the variability of the information included in the initial data. 
+    \item \textbf{Projection}: Projecting both the samples and variables onto a two-dimensional space using the singular vectors obtained from SVD.
 \end{itemize}
 
+\noindent \textbf{Data Matrices}\\
+\noindent Data matrices used to produce biplots can take 3 different forms. They are most commonly composed by cases x variables (where the cases are always assumed to be the row and the variables be the columns). But data matrices can also be composed by categories x categories (a cross tabulation), or by cases x categories (compositional data), and more.\\
+
+\noindent \textbf{Data Standardisation}\\
+\noindent Depending on the data matrix, different transformations may need to occur. Some of the ones that could take place involve: functional transformations such as logarithmic, sine, power, etc., matrix transformations such as observed/expected frequence ratio, odds ratio, logratio, etc., application of row and/or columns weights, (weighted) centering of rows and columns, double-centering, and normalisation of rows and columns.\\
+
+\noindent \textbf {(Weighted)Singular Value Decomposition (SVD)}\\
+\noindent We perform (Weighted) Singular Value Decomposition (SVD) via the eigendecomposition of a cross-product matrix whose order depends on the number of columns of $Z$ (i.e., $Z^TZ$), since the number of columns is usually less than the number of rows – if this is not so, then we will merely be calculating a larger than necessary matrix and using more computational time for the solution.\\
+
+\noindent The most general situation we shall need is when there are weights $r$ for the rows and weights $c$ for the columns, with associated diagonal matrices $D_r$ and $D_c$. Defaults are $D_r = (1/n)I$ (each of the $n$ rows is weighted equally by $1/n$) and $D_c = I$.\\
+
+\noindent The weighted SVD is obtained by decomposing the matrix \(D_r^{1/2} Z D_c^{1/2} = U\Gamma V^T\), where \(\Gamma\) is the diagonal matrix of eigenvalues. Alternatively, if proceeding via the weighted eigendecomposition, \(D_c^{1/2} Z^T D_r Z D_c^{1/2} = V\Gamma^2 V^T\) where \(\Gamma_2\) is the diagonal matrix of eigenvalues, followed by the transformation to the left vectors: \(U = D_r^{1/2} Z D_c^{1/2} V\Gamma^{-1}\).\\
+
+\noindent \textbf{Projection: Computation of Coordinates}\\
+\noindent There are three types of coordinates.\\
+\noindent \textbf{Standard coordinates:} Rows: $F_s = D^{-1/2}_r U$, Columns: $G_s = D^{-1/2}_c V$\\
+\noindent \textbf{Principal coordinates:} Rows: $F_p = Fs\Gamma$, Columns: $G_p = Gs\Gamma$\\
+\noindent \textbf{“Canonical” coordinates:} Rows: $F_c = Fs\Gamma^{1/2}$, Columns: $G_c = Gs\Gamma^{1/2}$\\
+
+\noindent Usual choices of coordinates give the following standard types of biplots or maps:
+\begin{itemize}
+  \item Asymmetric map (form biplot) of the rows: plot $F_p$ and $G_s$.
+  \item Asymmetric map (covariance biplot) of the columns: plot $F_s$ and $G_p$.
+  \item Symmetric map (not a biplot): plot $F_p$ and $G_p$.
+  \item Symmetric or canonical biplot: plot $F_c$ and $G_c$.
+\end{itemize}
+
+
+\noindent \textbf{PCA-Based Biplots}\\
 \noindent In the context of PCA-based biplots, the primary steps involve determining principal components from the covariance or correlation matrix of the data. The first two principal components, capturing the most significant variation, form the basis of the biplot. In this graphical representation, observations are depicted as points, while variables are represented as vectors emanating from the origin. The angles and lengths of these vectors signify relationships between variables and their contributions to the principal components, while the proximity of points reflects similarity or dissimilarity between observations.\\
 
 \noindent Mathematically, the coordinates of observations on the first two principal components can be calculated using formulas derived from PCA:
@@ -1407,10 +1434,6 @@ biplot(pca_result, cex = 0.7)
 # Add titles and labels
 
 @
-
-
-
-
 
 \subsection{t-SNE}
 https://jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf
