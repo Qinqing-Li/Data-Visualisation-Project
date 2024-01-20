@@ -100,7 +100,7 @@ This chapter provides case examples demonstrating both the influential applicati
 
 \subsection{Historical Background and Misuses of Data Visualisation}
  
-\\\textbf{Motivations for Using Data Visualisations - Case 1}
+\\\textbf{Motivations for Using Data Visualisations — Case 1}
 
 \noindent
 Florence Nightingale was not only a social reformer and the founder of modern nursing but also a pioneering statistician. It was her application of data visualisation during the Crimean War that transformed the field of healthcare and pushed for social reform.\\  
@@ -119,7 +119,7 @@ During the Crimean War, Nightingale recognised that unsanitary hospital conditio
 Nightingale leveraged the compelling visualisations in her advocacy efforts, presenting them to MPs and government officials who otherwise are unlikely to read or understand statistical reports. Nightingale successfully persuaded Queen Victoria, head of the British Army at the time, to allocate funding for the improvement of better conditions in military hospitals.\\
 
 \noindent
-\textbf{Motivations for Using Data Visualisations - Case 2}
+\textbf{Motivations for Using Data Visualisations — Case 2}
 \\
 \noindent
 Sometimes, one glance is enough to convey the most powerful idea. Edward Hawkins, a British climate scientist and Professor of climate science at the University of Reading, is renowned for his exceptional datavisualisations of climate change.\\
@@ -374,16 +374,15 @@ A histogram is a graphical representation of the distribution of a dataset. It c
 
 \noindent
 \textbf{Histograms in Practice}\\
-
 \noindent The R language uses the \texttt{hist} function to create histograms. This function takes vectors as input, along with other parameters to plot a histogram.\\
 
-\noindent Let \(X_1, X_2, \ldots, X_n\) be independent and identically distributed random variables with finite mean \( \mu \) and variance \( \sigma^2 \). Then for any \( \epsilon > 0 \), 
+\noindent Let \(X_1, \ldots, X_n\) be independent and identically distributed random variables with finite mean \( \mu \) and variance \( \sigma^2 \). Then for any \( \epsilon > 0 \), 
 \[ P\left(\left|\frac{1}{n}\sum_{i=1}^n X_i - \mu\right| < \epsilon\right) \rightarrow 1 \] 
 as \( n \rightarrow \infty \).\\
 
 \noindent Histograms can be used to visualize the convergence of sample means to the population mean.\\
 
-\noindent Let \(X_1, X_2, \ldots, X_n\) be independent and identically distributed random variables with finite mean \( \mu \) and variance \( \sigma^2 \). Define the sample mean \( \bar{X} = \frac{1}{n}\sum_{i=1}^n X_i \). Then, as \( n \) becomes large, the variable 
+\noindent Let \(X_1, \ldots, X_n\) be independent and identically distributed random variables with finite mean \( \mu \) and variance \( \sigma^2 \). Define the sample mean \( \bar{X} = \frac{1}{n}\sum_{i=1}^n X_i \). Then, as \( n \) becomes large, the variable 
 \[ Z = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \] approaches a standard normal distribution.\\
 
 \noindent By plotting histograms of a large number of sample means, one can observe the shape gradually resembling a normal distribution.\\
@@ -438,12 +437,12 @@ Consider the following graph with created on ggplot2 with the use of to the \tex
 
 }
 
-\caption[Visualising Tooth Growth by Dosage]{Visualising Tooth Growth by Dosage: A Comparison of Grouped and Stacked Bar Chart Techniques}\label{fig:barcharts}
+\caption[Visualising tooth growth by gosage]{Visualising tooth growth by gosage: A comparison of grouped and stacked bar chart techniques}\label{fig:barcharts}
 \end{figure}
 
 \end{knitrout}
 
-\noindent From the grouped bar, chart found on the left of Figure~\ref{fig:barcharts}, due to the side-by-side positioning of the bars, it is easy to note that tooth growth varies not only with the dosage but also with the supplement type. In contrast, the stacked bar graph on the right of Figure~\ref{fig:barcharts} facilitates the understanding of the combined effects of the two supplements at each dosage level. However, compared to the latter, it becomes more challenging to differentiate the individual contribution of each supplement.\\
+\noindent From the grouped bar, chart found on the left of Figure~\ref{fig:barcharts}, due to the side-by-side positioning of the bars, it is easy to note that tooth growth varies not only with the dosage but also with the supplement type. In contrast, the stacked bar graph on the right of Figure~\ref{fig:barcharts} facilitates the understanding of the combined effects of the two supplements at each dosage level. However, compared to the latter, it becomes more challenging to differentiate the individual contribution of each supplement.
 
 \subsection{Kernel Density Estimation}
 
@@ -456,7 +455,7 @@ The KDE algorithm takes a parameter called bandwidth, that affects how smooth th
 \noindent
 We can express KDE as follows, where the K represent the kernel function:
 $$\hat{f}(x) = \sum_{\text{observations}} K\left(\frac{x - \text{observation}}{\text{bandwidth}}\right).$$
-In KDE, the variable $x$ represents the point of density estimation. The total number of data points, denoted as $n$, constitutes the sample size, and all these points are used for estimating the dataset's probability density function. The bandwidth $(h)$ is a crucial parameter that controls the smoothness of the estimation, with smaller bandwidths leading to closer fits to data and larger ones smoothing out details. The kernel function $(K)$, such as the Gaussian or triangular kernel, assigns weights around each data point, influencing the density estimate, while $x_i$ represents the individual sample points that collectively contribute to the estimated density function, guided by the kernel function and the bandwidth\cite{wand1994kernel}.
+In KDE, the variable $x$ represents the point of density estimation. The total number of data points, denoted as $n$, constitutes the sample size, and all these points are used for estimating the dataset's probability density function. The bandwidth $(h)$ is a crucial parameter that controls the smoothness of the estimation, with smaller bandwidths leading to closer fits to data and larger ones smoothing out details. The kernel function $(K)$, such as the Gaussian or triangular kernel, assigns mass around each data point, influencing the density estimate, while $x_i$ represents the individual sample points that collectively contribute to the estimated density function, guided by the kernel function and the bandwidth\cite{wand1994kernel}.
 $$\hat{f}(x) = \frac{1}{nh} \sum_{i=1}^{n} K\left(\frac{x - x_i}{h}\right).$$\\
 The kernel function \( K(u) \) is a normalised non-negative function that satisfies:
 \[ \int K(u) \, du = 1. \]
@@ -502,6 +501,7 @@ ROC curves are created by plotting sensitivity (true positives) on the y axis ag
 
 receiver operating characteristic (ROC) curves, area under the curve (AUC) of ROC, sensitivity, specificity and likelihood ratios were calculated to determine levels of clinical and biomolecular markers that best differentiate survivors versus non-survivors in severe COVID subjects that live at a high altitude setting.
 https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8332830/#sec-a.d.dtitle
+
 \subsection{Time Series Analysis}
 
 \noindent
@@ -509,22 +509,21 @@ Line charts are fundamental tools in data visualisation, particularly useful for
 $\{(x_i,y_i)\}_{1 \leq i \leq n}$ on a Cartesian coordinate system, with the x-axis often denoting time intervals or ordered categories and the y-axis representing the measured values.\\ 
 
 \noindent 
-\textbf{Basics of Line Chart}\\
+\textbf{Basics of Line Charts}\\
 \noindent
 In a line chart, consecutive data points are typically connected by straight lines. The line segment between two points \((x_i,y_i)\) and \((x_{i+1},y_{i+1})\) can be described by the equation of a line in the slope-intercept form: \(y=mx+b\), where \(m\) is the slope and \(b\) is the y-intercept. Also, a series of linear interpolations between pairs of data points could be used. These interpolations assume that the change between two points is uniform or linear. This linear approach is mathematically represented as:
 \[
 y = y_i + \frac{(y_{i+1} - y_i)}{(x_{i+1} - x_i)} \cdot (x - x_i) \quad \text{for} \quad x_i \leq x \leq x_{i+1}.
 \]
 \noindent
-This equation highlights that for any point \(x\) between \(x_i\) and \(x_{i+1}\), the corresponding value of \(y\) on the line chart is determined by a linear relation. This method effectively ''fills the gaps'' between actual observed data points and provides a continuous view of the data.\\
+This equation highlights that for any point \(x\) between \(x_i\) and \(x_{i+1}\), the corresponding value of \(y\) on the line chart is determined by a linear relation. This method effectively ``fills the gaps'' between actual observed data points and provides a continuous view of the data.
 
-\noindent 
-\textbf{Time Series}\\
+\subsubsection{Time Series}\\
 \noindent
-Time series visualisation is particularly suited to line charts. A time series is a collection of observations $x_t$, where $t$ denotes the time point at which the observation is recorded. An index set $T_0$ which collects all the time points when observations are available. For instance, we often have $T_0 = \{0,1,2,...,n\}$ for $n \in \mathbb{N}$. By plotting these data points over time, line charts help in identifying long-term trends, seasonal patterns, and anomalies.\\
+Time series visualisation is particularly suited to line charts. A time series is a collection of observations $x_t$, where $t$ denotes the time point at which the observation is recorded. An index set $T_0$ which collects all the time points when observations are available. For instance, we often have $T_0 = \{0,\dots ,n\}$ for $n \in \mathbb{N}$. By plotting these data points over time, line charts help in identifying long-term trends, seasonal patterns, and anomalies.\\
 
 \noindent
-A time series can be viewed as a realisation of a stochastic process. And a stochastic process \cite{Brockwell2016Introduction} $X = (X_t)_{t \in T_0}$ is a collection of random variables $X_t$, where $t$ denotes the time index and $T_0$ the index set. For a fixed event $\omega \in \Omega$ we obtain the realisation of the stochastic process (sometimes also called a sample path) which is given by $x_t = X_t(\omega)$, $t \in T_0$. In practice, line charts of time series data provide insights into the behavior of such stochastic processes over time.\\
+A time series can be viewed as a realisation of a stochastic process. A stochastic process \cite{Brockwell2016Introduction} $X = (X_t)_{t \in T_0}$ is a collection of random variables $X_t$, where $t$ denotes the time index and $T_0$ the index set. For a fixed event $\omega \in \Omega$ we obtain the realisation of the stochastic process (sometimes also called a sample path) which is given by $x_t = X_t(\omega)$, $t \in T_0$. In practice, line charts of time series data provide insights into the behavior of such stochastic processes over time.\\
 
 \noindent
 \textbf{Time Series Visualisation of Exchange rates}\\
@@ -671,20 +670,20 @@ Next, visualise the ACF for the CNY to GBP exchange rate to understand its time-
 \end{figure}
 
 \noindent
-From Figure~\ref{fig:ACF}, the ACF plot for the CNY to GBP exchange rate series reveals a compelling feature: the ACF starts near 1 and decreases gradually. This pattern suggests a strong persistence in the time series, indicating that past values have a significant influence on future values. In time series analysis, such a slow decay in the ACF is indicative of a non-stationary series, where the mean, variance, and autocorrelation structure do not remain constant over time.\\
+From Figure~\ref{fig:ACF}, the ACF plot for the CNY to GBP exchange rate series reveals that the ACF starts near 1 and decreases gradually. This pattern suggests a strong persistence in the time series, indicating that past values have a significant influence on future values. In time series analysis, such a slow decay in the ACF is indicative of a non-stationary series, where the mean, variance, and autocorrelation structure do not remain constant over time.\\
 
 \noindent
 This persistent autocorrelation suggests that short-term movements in the CNY to GBP exchange rate are heavily influenced by its recent history. Such a characteristic is crucial for forecasting models, as it implies that recent historical data can be a powerful predictor of near-future trends. Models like ARIMA (Autoregressive Integrated Moving Average), which are well-suited for data with high autocorrelation, may be particularly effective in this context.
 
 
 \newpage
-\section{Bivariate Data Methods}
+\section{Bivariate Data Visualisation Methods}
 
 
 \subsection{Heatmaps}
-The heatmap is a data visualisation technique that uses colour coding to represent different intensities. It can be represented as an $m \times n$ matrix $\mathrm{M}$, with $m$ observations for variable 1 and $n$ observations for variable 2:
+The heatmap is a data visualisation technique that uses colour coding to represent different intensities. It can be represented as an $m \times n$ matrix $\mathbf{M}$, with $m$ observations for variable 1 and $n$ observations for variable 2:
 
-$$\mathrm{M} =
+$$\mathbf{M} =
 \left[
 \begin{array}{cccc}
     \mathrm{M}_{11} & \mathrm{M}_{12} & \ldots & \mathrm{M}_{1n} \\  
@@ -821,10 +820,9 @@ The efficiency of bubble charts is highlighted by the fact that to capture just 
 
 \subsection{Simple Linear Regression}
 \\Regression models are statistical tools that provide functions to estimate the relationship between the response variable and one or more explanatory variables. Regression analysis is widely adopted by data scientists, who use large datasets to build predictive models for trend forecasting. The fol- lowing paragraphs will introduce simple linear regression models and demonstrate their usage using the mtcars dataset.
-\\  
-\\   
-\noindent
-\textbf{Theory of Simple Linear Regression} 
+
+\subsubsection{Theory of Simple Linear Regression} 
+
 \\Let $\mathbf{x} = (x_1 \dots x_n)^T$ denote $n$ explanatory variables and let $\mathbf{Y} = (Y_1 \dots Y_n)^T$ denote $n$ corresponding response variables.
 \\  
 \\In a simple linear model, it is assumed that the response variables $Y_1 \dots Y_n$ are uncorrelated with a common variance $\sigma^2$, and their expectations are given by $E(Y_i| x_i) = \beta_0 + \beta_1 x_i$. The expectations generated by $\beta_0$ and $\beta_1$ given $x_i$ can be expressed as:
@@ -864,7 +862,7 @@ where $\mathbf{1}_n$ is an n-vector of 1's.
 \left( \begin{array}{cc}
 \beta_0 \\
 \beta_1
-\end{array} \right) = \mathbf{X} \beta, \quad \text{and} \quad
+\end{array} \right) = \mathbf{X} \beta, \quad 
 \text{var}(\mathbf{Y} | \mathbf{x}) =
 \begin{pmatrix}
 \sigma^2 & 0 & \cdots & 0 \\
@@ -873,12 +871,10 @@ where $\mathbf{1}_n$ is an n-vector of 1's.
 0 & 0 & \cdots & \sigma^2
 \end{pmatrix} = \sigma^2 \mathbf{I}_n.
 \end{equation}
-\\  
-\\
-\noindent
-\textbf{Least Squares Estimation}
-\\ \noindent
-The residual sum of squares (RSS) is a measure of the goodness of fit in a regression model, where residuals are the differences between the response variables $y_i$ and responses generated by the regression model $\mathrm{E}(\mathbf{Y}_i | \mathbf{x})$. In least squares estimation, the goal is to find values of parameters $\beta = (\beta_0, \beta_1)^T$ to minimise the RSS, denoted by $\mathrm{Q}$: 
+
+\subsubsection{Least Squares Estimation}
+
+\noindent The residual sum of squares (RSS) is a measure of the goodness of fit in a regression model, where residuals are the differences between the response variables $y_i$ and responses generated by the regression model $\mathrm{E}(\mathbf{Y}_i | \mathbf{x})$. In least squares estimation, the goal is to find values of parameters $\mathbf{\beta} = (\beta_0, \beta_1)^T$ to minimise the RSS, denoted by $\mathrm{Q}$: 
 
 \begin{equation}\label{eq:4-3}
 \mathrm{Q} = \sum_{i=1}^{n} [y_i - \mathrm{E} (Y_i | \mathbf{x})]^2 
@@ -908,7 +904,6 @@ The least squares estimate of $\beta$ is given by:
 \\ 
 \noident 
 \\\textbf{Case example: 1970s automobiles}\\
-
 \noindent In this section, we will study the performance of 1970s automobiles using the mtcars dataset, employing the method of linear regression. Performance is measured in Miles per Gallon (mpg); the higher the mileage, the more efficient the automobile. We will start with the visualisation of a simple linear regression model, followed by the discussion of linear regression models and the model selection method.
 
 \noindent
@@ -1065,7 +1060,7 @@ The residual standard error of the LOESS model gives 2.828 and the residual stan
 
 \newpage
 
-\section{Multivariate Data Methods}
+\section{Visualising Beyond Two Dimensions}
 
 \subsection{Multiple Linear Regression}
 
@@ -1127,18 +1122,43 @@ In the reduced space, the variance along each principal component $v_i$ is maxim
 =======
 \subsection{Biplots}
 \noindent 
-Biplots serve as a valuable tool in visualising designed to project high-dimensional data onto a lower-dimensional space while retaining essential information. This technique, introduced by Herman Chernoff in the 1970s, aids in understanding the relationships and patterns within high-dimensional data. They are commonly understood to be a generalisation of the simple two-variable scatterplot.\\
+Biplots are designed visualise high-dimensional data by projecting it onto a lower-dimensional space while retaining essential information. They are commonly understood to be a generalisation of the simple two-variable scatterplot.\\
 
-\noindent At its core, a biplot offers a graphical representation a data matrix, whose rows \(n\) are the samples, and whose columns \(p\) are the variables, by projecting these onto a two-dimensional plane while preserving the most significant information.\\
+\noindent At their core, biplots offer a graphical representation of a standardised data matrix, whose rows \(n\) are the samples, and whose columns \(p\) are the variables, by projecting these onto a two-dimensional plane. To do this, mathematical computations derived from techniques like Singular Value Decomposition (SVD) or Principal Component Analysis (PCA) are required. SVD is particularly essential in the generation of biplots as it breaks down the data matrix into three constituent matrices, allowing for the extraction of singular values and singular vectors — which form the basis for plotting the data in the reduced-dimensional space.
 
-\noindent The construction of a biplot involves mathematical computations derived from techniques like Singular Value Decomposition (SVD) or Principal Component Analysis (PCA). SVD breaks down the data matrix into three constituent matrices, allowing for the extraction of singular values and singular vectors. These singular vectors form the basis for plotting the data in the reduced-dimensional space.\\
+\subsubsection{Construction of Biplots}
 
-\noindent In practical terms, the steps to generate a biplot involve:
+\noindent As we will see in detail subsequently, the steps to generate a biplot involve:
 \begin{itemize}
     \item \textbf{Data Standardisation}: Standardising the data by centering and scaling it to ensure each variable contributes equally.
-    \item \textbf{Calculating Singular Value Decomposition}: Applying SVD to the standardised data matrix to obtain the singular values and vectors.
-    \item \textbf{Projection}: Projecting both the samples and variables onto a two-dimensional space using the singular vectors obtained from SVD. This projection helps represent the relationships between variables and samples.
+    \item \textbf{Calculating Singular Value Decomposition (SVD)}: Applying SVD to the standardised data matrix to obtain the singular values and vectors.
+    \item \textbf{Projection}: Projecting both the samples and variables onto a two-dimensional space using the singular vectors obtained from SVD. 
 \end{itemize}
+
+\noindent \textbf{The Data Matrix}\\
+\noindent Data matrices used to produce biplots can take 3 different forms. They are most commonly composed by cases $\times$ variables (where the cases are always assumed to be the row and the variables be the columns). But data matrices can also be composed by categories $\times$ categories (a cross tabulation), or by cases $\times$ categories (compositional data), and more.\\
+
+\noindent \textbf{Data Standardisation}\\
+Depending on the initial data matrix $\mathbf{M}$, various transformations may be necessary to arrived at the standardised data matrix $\mathbf{H}$. These may include functional transformations like logarithmic, sine, power, etc., as well as matrix transformations such as observed/expected frequency ratio, odds ratio, log ratio, etc. Additionally, transformations may involve applying weights to rows and/or columns, (weighted) centering of rows and columns, double-centering, and normalization of rows and columns.\\
+
+\noindent \textbf {(Weighted) Singular Value Decomposition (SVD)}\\
+\noindent (Weighted) Singular Value Decomposition (SVD) is performed via the eigendecomposition of a cross-product matrix whose order depends on the number of columns of $\mathbf{H}$, since the number of columns is usually less than the number of rows.\\
+
+\noindent The most general situation is that in which there are weights $r$ for the rows and weights $c$ for the columns, with associated diagonal matrices $\mathbf{D}_r$ and $\mathbf{D}_c$. Defaults are $\mathbf{D}_r = (1/n)\mathbf{I}$ (each of the $n$ rows is weighted equally by $1/n$) and $\mathbf{D}_c = \mathbf{I}$.\\
+
+\noindent The weighted SVD is obtained by decomposing the matrix \(D_r^{1/2} Z D_c^{1/2} = U\Gamma V^T\), where \(\Gamma\) is the diagonal matrix of eigenvalues. Alternatively, if proceeding via the weighted eigendecomposition, \(D_c^{1/2} Z^T D_r Z D_c^{1/2} = V\Gamma^2 V^T\) where \(\Gamma_2\) is the diagonal matrix of eigenvalues, followed by the transformation to the left vectors: \(U = D_r^{1/2} Z D_c^{1/2} V\Gamma^{-1}\).\\
+
+\noindent \textbf{Projection: Computation of Coordinates}\\
+\noindent There are three types of coordinates. Firstly, the most common, there's the \textbf{standard coordinates} whose rows are given by $F_s = D^{-1/2}_r U$, and the columns by $G_s = D^{-1/2}_c V$. There's also the \textbf{principal coordinates} which have rows given by $F_p = Fs\Gamma$ and columns given by $G_p = Gs\Gamma$. Finally, there's the \textbf{“canonical” coordinates} which have rows given by $F_c = Fs\Gamma^{1/2}$ and columns $G_c = Gs\Gamma^{1/2}$.\\
+
+\noindent Usual choices of coordinates give the following standard types of biplots:
+\begin{itemize}
+  \item Asymmetric map (form biplot) of the rows: plot $F_p$ and $G_s$.
+  \item Asymmetric map (covariance biplot) of the columns: plot $F_s$ and $G_p$.
+  \item Symmetric or canonical biplot: plot $F_c$ and $G_c$.
+\end{itemize} \\
+
+!!!!!!!!!!!!!!!!!!\\
 
 \noindent In the context of PCA-based biplots, the primary steps involve determining principal components from the covariance or correlation matrix of the data. The first two principal components, capturing the most significant variation, form the basis of the biplot. In this graphical representation, observations are depicted as points, while variables are represented as vectors emanating from the origin. The angles and lengths of these vectors signify relationships between variables and their contributions to the principal components, while the proximity of points reflects similarity or dissimilarity between observations.\\
 
@@ -1165,20 +1185,30 @@ v_{j2} = \sqrt{\lambda_{2}} \cdot c_{j2}.
 \noindent Here, \( v_{j1} \) and \( v_{j2} \) represent the coordinates of variable \( j \) on the first and second principal components respectively, \( \lambda_{1} \) and \( \lambda_{2} \) are the eigenvalues corresponding to the first and second principal components, and \( c_{j1} \) and \( c_{j2} \) are the loadings of variable \( j \) on these components.\\
 
 \begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{data}\hlstd{(mtcars)}
+\hlcom{#Generation of a PCA Biplot }
 
-{\centering \includegraphics[width=\maxwidth]{figure/beamer-biplot-1} 
+\hlcom{# Standardise the data}
+\hlstd{scaled_data} \hlkwb{<-} \hlkwd{scale}\hlstd{(mtcars)}
+
+\hlcom{# Perform Principal Component Analysis (PCA)}
+\hlstd{pca_result} \hlkwb{<-} \hlkwd{prcomp}\hlstd{(scaled_data,} \hlkwc{scale.} \hlstd{=} \hlnum{TRUE}\hlstd{)}
+
+\hlcom{# Create a biplot}
+\hlkwd{biplot}\hlstd{(pca_result,} \hlkwc{cex} \hlstd{=} \hlnum{0.7}\hlstd{)}
+\end{alltt}
+\end{kframe}\begin{figure}[H]
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-PCAbiplot-1} 
 
 }
 
-\caption[PCA Biplot of mtcars Dataset]{PCA Biplot of mtcars Dataset: Principal Component Analysis}\label{fig:biplot}
+\caption[PCA Biplot of mtcars Dataset]{PCA Biplot of mtcars Dataset: Principal Component Analysis}\label{fig:PCAbiplot}
 \end{figure}
 
 \end{knitrout}
-
-
-
-
 
 \subsection{t-SNE}
 https://jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf
