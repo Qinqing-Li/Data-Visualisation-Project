@@ -56,6 +56,8 @@
 \usepackage{listings}
 \usepackage{appendix}
 \usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
 \numberwithin{equation}{section}
 \usepackage{comment}
 \usepackage{natbib}
@@ -243,9 +245,8 @@ Data types can be broadly categorised into four main types:
     \item \textbf{Ratio data}: includes ordered categories with equal intervals and a meaningful zero point. Examples are age, income, and weight. 
 \end{itemize}
 
-\subsubsection{Matching Data Types with Appropriate Visualisation Techniques}
-
-Selecting appropriate visualisation techniques is essential for effective data communication. Various data types demand specific visualisation methods for optimal representation \cite{healy2018data}. For \textbf{nominal data}, bar charts and stacked bar charts are effective in displaying categorical information and relative proportions. \textbf{Ordinal data} benefits from ordered bar charts, dot plots, or stacked bar charts, maintaining the ranking and order of categories. \textbf{Interval data} is best visualised using line charts, histograms, and box plots, showcasing trends and distributions without assuming a true zero point. \textbf{Ratio data} finds effective representation through scatter plots, histograms, and line charts, enabling precise comparisons and measurements due to the presence of a meaningful zero point. These are represented in Figure~\ref{fig:data-plots}, where artificial data from a class of 4th-year university students is visualised.
+\noindent \textbf{Matching Data Types with Appropriate Visualisation Techniques}\\
+\noindent Selecting appropriate visualisation techniques is essential for effective data communication. Various data types demand specific visualisation methods for optimal representation \cite{healy2018data}. For \textbf{nominal data}, bar charts and stacked bar charts are effective in displaying categorical information and relative proportions. \textbf{ordinal data} benefits from ordered bar charts, dot plots, or stacked bar charts, maintaining the ranking and order of categories. \textbf{interval data} is best visualised using line charts, histograms, and box plots, showcasing trends and distributions without assuming a true zero point. \textbf{ratio data} finds effective representation through scatter plots, histograms, and line charts, enabling precise comparisons and measurements due to the presence of a meaningful zero point. These are represented in Figure~\ref{fig:data-plots}, where artificial data from a class of 4th-year university students is visualised.
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
@@ -259,9 +260,9 @@ Selecting appropriate visualisation techniques is essential for effective data c
 
 \end{knitrout}
 \subsection{Data Abstraction and Representation}
-The transformation of raw data into meaningful representations is a pivotal step in data representation. This process, known as data abstraction, involves distilling complex datasets into visual forms that convey insights. In this section, we explore data abstraction, the hierarchies and levels of abstraction in data visualisation, and the critical trade-offs between abstraction and the potential loss of information.
+The transformation of raw data into meaningful representations is a pivotal step in data representation. This process, known as data abstraction, involves distilling complex datasets into visual forms that convey insights. In this section, we explore data abstraction, the hierarchies and levels of abstraction in data visualisation, and the critical trade-offs between abstraction and the potential loss of information.\\
 
-\subsubsection{Data Abstraction: Transforming Raw Data}
+\noindent \textbf{Data Abstraction: Transforming Raw Data}\\
 Data abstraction involves simplifying and structuring raw data into comprehensible and insightful formats. This process serves as the bridge, transforming numbers, text, and variables into visual elements that convey patterns, trends, and relationships, forming the core of informative data visualisations \cite{tufte2001visual}.
 
 \subsubsection{Hierarchies and Levels of Abstraction}
@@ -273,7 +274,7 @@ Abstraction operates on multiple levels of granularity. Hierarchies of abstracti
 \end{enumerate}
 
 \noindent 
-These are represented in Figure~\ref{fig:abs-plots}. The first visualisations of the mtcars dataset is a scatter plot that provides detailed information about the relationship between car weight and miles per gallon, with points colored by the number of cylinders. The second is an abstract visualisation using a box-and-whisker plot to provide a high-level summary of the distribution of miles per gallon for different numbers of cylinders. Finally, the third visualisation is a bar plot presenting aggregated information about the average miles per gallon for different numbers of cylinders.
+These different levels of abstraction are represented in Figure~\ref{fig:abs-plots}. The first visualisations of the mtcars dataset is a scatter plot that provides detailed information about the relationship between car weight and miles per gallon, with points colored by the number of cylinders. The second is an abstract visualisation using a box-and-whisker plot to provide a high-level summary of the distribution of miles per gallon for different numbers of cylinders. Finally, the third visualisation is a bar plot presenting aggregated information about the average miles per gallon for different numbers of cylinders.
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
@@ -638,9 +639,9 @@ Autocorrelation, also referred to as serial correlation, is a crucial concept in
 \noindent
 Suppose we have a time series with observations denoted by \( x_1, \ldots, x_n \). Then the sample mean is given by $\bar{x} = \frac{1}{n} \sum_{t=1}^{n} x_t.$
 And the sample autocovariance function at lag $h$ in days of our time series is
-\[\hat{\gamma}(h) := \frac{1}{n} \sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x}), \quad \text{for} \; -n < h < n \cite{Brockwell2016Introduction}.\]
+\[\hat{\gamma}(h) := \frac{1}{n} \sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x}), \quad -n < h < n \cite{Brockwell2016Introduction}.\]
 Hence, the sample autocorrelation function at lag $h$ in days is given by
-\[\hat{\rho}(h) := \frac{\hat{\gamma}(h)}{\hat{\gamma}(0)} = \frac{\sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x})}{\sum_{t=1}^{n} (x_t - \bar{x})^{2}}, \quad \text{for} \; -n < h < n \cite{Brockwell2016Introduction}.\]
+\[\hat{\rho}(h) := \frac{\hat{\gamma}(h)}{\hat{\gamma}(0)} = \frac{\sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x})}{\sum_{t=1}^{n} (x_t - \bar{x})^{2}}, \quad -n < h < n \cite{Brockwell2016Introduction}.\]
 \noindent
 The value of $\hat{\rho}(h)$ lies between -1 and +1. A value close to +1 indicates a strong positive correlation, while a value close to -1 indicates a strong negative correlation. A value near 0 suggests little to no linear correlation. A slow decay in the ACF plot indicates a strong relationship between past and present values, while spikes at specific lags may suggest seasonality. Autocorrelations outside the 95\% confidence interval are considered statistically significant.\\
 
@@ -1088,38 +1089,25 @@ The procedure for selecting the best linear model for the mtcars dataset is show
 
 \subsection{PCA}
 
-For a collection of $N$ high-dimensional objects $X_1,\dots,X_N$, where each $X_i$ is a vector in a D-dimensional space. The entire dataset can be represented as a matrix $X \in \mathbb{R}^{N \times D}$, where each row corresponds to one of the N objects.
+Visualizing and analyzing data with many variables can be challenging due to the complexity and high dimensionality. Dimensionality reduction techniques like Principal Component Analysis (PCA) simplify this by transforming the data into a lower-dimensional space (typically 2D or 3D), making it more accessible and manageable. PCA, a linear method, is especially effective for datasets with linear relationships, identifying the principal components that maximize variance and preserve significant features of the original data. This not only aids in visualization but also enhances computational efficiency and helps mitigate the curse of dimensionality.\\
 
-Then, visualising multiple variables at a time becomes quite challenging. To address this, dimensionality reduction techniques are employed to simplify the data while perserving the most significant features, typically transforming it into 2D or 3D for more accessible visualization.
+\noindent
+For a collection of $N$ high-dimensional objects $\mathbf{X_1},\dots,\mathbf{X_N}$, where each $\mathbf{X_i}$ is a vector in a D-dimensional space. The entire dataset can be represented as a matrix $X \in \mathbb{R}^{N \times D}$, where each row corresponds to one of the N objects.\\
 
-Principal Component Analysis (PCA) is a linear method particularly suited for datasets with a linear structure. The core principle of PCA is to identify the principal components directions in the data by projecting the data onto a lower-dimensional space (such as 2D or 3D), maximizing variance of projected data, and preserving large pairwise distances in the map. 
+\noindent
+Before applying PCA, it is crucial to standardize the dataset because it ensures that each feature contributes equally to the analysis. Without standardization, features with larger scales dominate the variance, potentially skewing the PCA results. For $1 \leq i \leq N$ and $1 \leq j \leq D$, the standardized value $Z_{ij}$ for each data point $X_{ij}$ is calculated as:
+    \[Z_{ij} = \frac{X_{ij} - \mu_j}{\sigma_j},\]
+where $X_{ij}$ is the original value, $\mu_j$ is the mean of feature $j$, and $\sigma_j$ is the standard deviation of feature $j$. The result is a standardized dataset $\mathbf{Z} = \{\mathbf{Z_1}, \dots, \mathbf{Z_N}\}$ with $N$ objects, each represented in a $D$-dimensional standardized space. Then, the covariance matrix is $\mathbf{\Sigma}$ for the standardized dataset $\mathbf{Z}$. The covariance matrix is a $D \times D$ matrix, calculated as:
+    \[\mathbf{\Sigma} = \frac{1}{N-1} \mathbf{Z}^T \mathbf{Z}.\]
+Since $\mathbf{Z}$ is standardized, this matrix reflects the covariance between each pair of features. Therefore, the eigen decomposition of the covariance matrix $\Sigma$ is given by:
+    \[\mathbf{\Sigma} \mathbf{v} = \lambda \mathbf{v},\]
+where each eigenvector $\mathbf{v}$ and its corresponding eigenvalue $\lambda$ satisfy this equation. The eigen decomposition of the covariance matrix $\mathbf{\Sigma}$ reveals the principal components of the data. Each eigenvector represents a direction in the feature space along which the data is variably distributed, and the corresponding eigenvalue indicates the variance of its eigenvector. Importantly, these eigenvectors are orthogonal to each other, underscoring the identification of uncorrelated principal components in the data. Then, order the eigenvectors by their corresponding eigenvalues in descending order and select the top $k$ eigenvectors $\{\mathbf{v_1}, \ldots, \mathbf{v_k}\}$, which correspond to the largest $k$ eigenvalues. These form the columns of the matrix $\mathbf{W} \in \mathbb{R}^{D \times k}$.\\
 
-Before applying PCA, it is crucial to standardize the dataset. For $i\in N$ and $j \in D$, the standardized value $Z_{ij}$ for each data point $X_{ij}$ is calculated as:
-    \begin{equation}
-        Z_{ij} = \frac{X_{ij} - \mu_j}{\sigma_j},
-    \end{equation}
-where $X_{ij}$ is the original value, $\mu_j$ is the mean of feature $j$, and $\sigma_j$ is the standard deviation of feature $j$. The result is a standardized dataset $Z$.
+\noindent
+Finally, project the standardized data $\mathbf{Z}$ onto the subspace defined by the principal components:
+    \[\mathbf{Y} = \mathbf{Z}\mathbf{W},\]
+where $\mathbf{Y} \in \mathbb{R}^{N \times k}$ is the transformed data matrix in the new subspace. Hence, in the reduced space, the variance along each principal component $\mathbf{v_i}$ is maximized, preserving the most significant variances in the data. PCA also attempts to preserve pairwise Euclidean distances between data points in the lower-dimensional representation.    
 
-After standardization, consider the dataset $Z = \{Z_1, Z_2, \dots, Z_N\}$ with $N$ objects, each represented in a $D$-dimensional standardized space, compute the covariance matrix $\Sigma$ for the standardized dataset $Z$. The covariance matrix is a $D \times D$ matrix, calculated as:
-    \begin{equation}
-        \Sigma = \frac{1}{N-1} Z^T Z.
-    \end{equation}
-Since $Z$ is standardized, this matrix reflects the covariance between each pair of features.
-    
-The eigen decomposition of the covariance matrix $\Sigma$ is given by:
-    \begin{equation}
-        \Sigma v = \lambda v,
-    \end{equation}
-where each eigenvector $v$ and its corresponding eigenvalue $\lambda$ satisfy this equation. The eigenvectors represent the principal axes and the eigenvalues indicate the amount of variance captured by these axes. Then, order the eigenvectors by their corresponding eigenvalues in descending order and select the top $k$ eigenvectors $\{v_1, v_2, \ldots, v_k\}$, which correspond to the largest $k$ eigenvalues. These form the columns of the matrix $W \in \mathbb{R}^{D \times k}$.
-
-Finally, project the standardized data $Z$ onto the subspace defined by the principal components:
-    \begin{equation}
-        Y = ZW,
-    \end{equation}
-where $Y \in \mathbb{R}^{N \times k}$ is the transformed data matrix in the new subspace.
-
-In the reduced space, the variance along each principal component $v_i$ is maximized, preserving the most significant variances in the data. PCA also attempts to preserve pairwise Euclidean distances between data points in the lower-dimensional representation.    
-=======
 \subsection{Biplots}
 \noindent 
 Biplots are designed visualise high-dimensional data by projecting it onto a lower-dimensional space while retaining essential information. They are commonly understood to be a generalisation of the simple two-variable scatterplot.\\
