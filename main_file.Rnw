@@ -202,6 +202,9 @@ This section introduces the datasets analysed and visualised in the subsequent c
 \noindent
 \textbf{Exchange Rate}: The exchange rate data, available at the \href{https://www.bankofengland.co.uk/boeapps/database/index.asp?first=yes&SectionRequired=I&HideNums=-1&ExtraInfo=true&Travel=NIx}{Bank of England}, provides daily spot exchange rates against the pound Sterling (2005-present). This report examines the daily spot rates of the Canadian Dollar, Euro, and US Dollar against the pound Sterling.\\
 
+\noindent
+\textbf{Taipei Housing}: The historical real estate valuation from Sindian Dist., New Taipei City, Taiwan,  available at \href{https://archive.ics.uci.edu/dataset/477/real+estate+valuation+data+set}{UC Irvine Machine Learning Repository}.\\
+
 \newpage 
 
 \section{Theoretical Foundations of Data Visualisation}
@@ -1194,7 +1197,7 @@ ggplot(data = mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
 Locally weighted scatterplot smoothing (LOWESS) is a local regression method for a response variable $Y$ on a single predictor $X$. LOWESS was proposed by William S. Cleveland in 1979, it is the special case to higher dimention locally estimated scatterplot smoothing (LOESS) regression method. They are non-parametric regression methods that fits a linear regression model for each neighbourhood of data. Unlike GLM, the LOESS model does not provide a global function to fit the data; rather, it fits neighborhoods of the data.\\
 
 \noindent
-\textbf{Theory of LOESS regression}\\
+\subsubsection{Theory of LOESS regression}\\
 
 \noindent
 Suppose we have $n$ ordered observations $(x_1,y_1) \dots (x_n,y_n)$ with predictors $x_i$ and response variables $y_i$. Assume a model of the form
@@ -1207,20 +1210,22 @@ where $g(\cdot)$ is an unknown smooth function and $\varepsilon_i$ is i.i.d. Gau
 Let $\Delta_i(x) = |x - x_i|$ represent the horizontal distance between $x$ and $x_i$. Let $\Delta_{(i)}(x)$ denote the ordered distances to $x$, arranged from smallest to largest.\\
 
 \noindent
-For each point $(x,y)$ consider the neighbourhood to fit a line segment around it. The size of the neighbourhood indicates the number of data points used to fit the line segments and is determined by the smoothing parameter $\alpha$. For $\alpha \leq 1$, each  neighbourhood consists of $\frac{n}{\alpha}$ number of points. Each point $(x_i, y_i)$ in the neighbourhood of point $(x,y)$ is assigned with a weight, ``importance" of the data point to the line segment. The weight of $(x_i,y_i)$ is denoted as $w_i(x)$, which is defined as:
+For each point $(x,y)$ consider the neighbourhood to fit a line segment around it. The size of the neighbourhood indicates the number of data points used to fit the line segments and is determined by the smoothing parameter $\alpha$. For $\alpha \leq 1$, each  neighbourhood consists of $\frac{n}{\alpha}$ number of points \cite{rloess}. Each point $(x_i, y_i)$ in the neighbourhood of point $(x,y)$ is assigned with a weight, ``importance" of the data point to the line segment \cite{ytloess}. The weight of $(x_i,y_i)$ is denoted as $w_i(x)$, which is defined as:
 
-$$w_i(x) = T(\Delta_i (x); \Delta _{(q)}(x)).$$
+\begin{equation}\label{eq:4-7}
+w_i(x) = T(\Delta_i (x); \Delta _{(q)}(x)).
+\end{equation}
 
 \noindent
 Tricube weight function $T(u,t)$ is defined as:
-
-$$T(u;t) = \left\{
+\begin{equation}\label{eq:4-8}
+T(u;t) = \left\{
   \begin{array}{ll}
     (1-(u/t)^3)^3 & \text{for } 0 \leq u < t \\
     0 & \text{for } u \geq t \\
   \end{array}
 \right, 
-$$ 
+\end{equation}
 
 \noindent
 where $u$ is the horizontal distance between neighbourhood point of interest $(x_i,y_i)$ to point $(x,y)$ and $t$ is the maximum distance threshold. For points in the neighbourhood with horizontal distance exceeding threshold $t$, they are assigned with weight $0$ by the tricube weight function.\\
@@ -1228,10 +1233,12 @@ where $u$ is the horizontal distance between neighbourhood point of interest $(x
 \noindent
 For $\alpha > 1$, for each point $(x,y)$ the neighbourhood include all points. The maximum distance threshold is assumed to be $\alpha^{\frac{1}{p}}$, for $p$ explanatory variables. The weight is given by:
 
-$$w_i(x) = T(\Delta_i (x); \Delta _{(n)}(x))\alpha.$$\\
+\begin{equation}\label{eq:4-9}
+w_i(x) = T(\Delta_i (x); \Delta _{(n)}(x))\alpha.\\
+\end{equation}
 
 \noindent
-The line segment is fitted by weighted least square, and this is the preliminary estimation $\hat{g}(x)$ for every point $(x,y)$.
+The line segment is fitted by weighted least square, and this is the preliminary estimation $\hat{g}(x)$ for every point $(x,y)$.\\
 
 \noindent
 Both LOWESS and LOESS penalise the outliers in the preliminary estimation by assigning points further away from $\hat{g}(x)$ with less weight than before. The robustness weight (the adjusted weight) is given by:
@@ -1240,12 +1247,14 @@ $$r_i = B(\hat{\varepsilon}_i, 6\mathrm{m}),$$
 \noindent
 where bisquare weight function is defined as:
 
-$$B(u;b) = \left\{
+\begin{equation}\label{eq:4-10}
+B(u;b) = \left\{
   \begin{array}{ll}
     (1-(u/b)^2)^2 & \text{for } 0 \leq |u| < b \\
     0 & \text{for } |u| \geq b \\
   \end{array},
-\right$$
+\right
+\end{equation}
 
 \noindent
 and the median absolute residual $\mathrm{m}$ is defined as $\mathrm{m} = \mathrm{median}(|\hat{\varepsilon}_i|)$, the residual $\hat{\varepsilon}_i$ is defined as $\hat{\varepsilon}_i = y_i - \hat{y}(x_i)$. \\
@@ -1254,39 +1263,49 @@ and the median absolute residual $\mathrm{m}$ is defined as $\mathrm{m} = \mathr
 Note the process of weight adjustment using previous estimation is iterated several times until a smooth curve is obtained.\\
 
 \noindent
-The updated model estimate $\hat{g}(x)$, is computed using the local fitting method, but with the neighborhood weights $w_i{(x)$ replaced by $r_i w_i(x)$.\\
+The updated model estimate $\hat{g}(x)$, is computed using the local fitting method, but with the neighborhood weights $w_i{(x)$ replaced by $r_i w_i(x)$ \cite{loess}.\\
 
 \noindent
-\textbf{Case example: 1970s automobiles}\\
+\textbf{Case example: Taiwan Housing dataset}\\
 
 \noindent
-Using the mtcars dataset, we explore the relations between maximum oil displacement (which is Engine Volume) and car efficiency (mearsured in Miles per Gallon), using two regression methods: LOESS and linear regression model, shown in Figure~\ref{fig:loess-plot}.\\
+Property valuation can be modelled as a regression problem, in this analysis, we delve into the pricing of properties based on their age. Using the Taipei Housing dataset, we investigate the relationship between the age of houses (measured in years) and their prices (measured in New Taiwan dollars per unit area). Linear regression model and the LOESS regression model are used, as shown in Figure~\ref{fig:loess-plot}.\\
 
 \noindent
-The residual standard error of the LOESS model gives 2.828 and the residual standard error of the linear model is 3.251. One method to compare the goodness of fit between two models is cross validation.
-<<loess-plot, echo=FALSE, fig.height=3, fig.width=4, fig.cap='LOESS regression model is indicated in red, linear regression model is indicated in blue.', message=FALSE>>=
-# Obtain the order of rows based on the "disp" column
-order_disp <- order(mtcars$disp)
+The linear model has a residual standard error of 13.32, while the LOESS model has a residual standard error of 12.16. Cross-validation is a method to compare model goodness of fit. LOESS, with its ability to capture local variations may outperform linear regression, which minimises the least squares estimate $\hat{\beta}$.\\
 
-# Reorder the mtcars dataset
-mtcars_reordered <- mtcars[order_disp, ]
+<<estate-data-1, echo=FALSE,message=FALSE,warning=FALSE>>=
+estate <- read.csv("RealEstate.csv")
+@
 
-ggplot(data = mtcars_reordered, aes(x = disp, y = mpg)) +
-  geom_point() +  # Scatterplot
-  geom_smooth(method = "loess", se = FALSE, color = "#bd0026", span = 10) + 
+<<estate-data-2, echo=FALSE,message=FALSE,warning=FALSE>>=
+# Specify custom variable names
+var_names <- c("No","transaction_date", "house_age", "dist_to_station", "no_of_stores", "lat","long","price_per_area")
+
+# Read the CSV file with custom variable names
+estate <- read.csv("/Users/margaretli/Downloads/realestate.csv", header = FALSE, col.names = var_names)
+# Delete the first row of the data frame
+estate <- estate[-1, ]
+
+estate$house_age <- as.numeric(estate$house_age)
+estate$price_per_area <- as.numeric(estate$price_per_area)
+@
+
+<<estate-data-plot,fig.height=2.5,fig.width=3,fig.cap='Estate valuation using house age, linear regression and smooth regression methods', message=FALSE,warning=FALSE>>=
+ggplot(data = estate, aes(x = house_age, y = price_per_area)) +
+  geom_point(size =0.5) +
+  theme_minimal()+
+  scale_x_continuous(labels = scales::number_format(scale = 1)) +
+  scale_y_continuous(labels = scales::number_format(scale = 1)) +
+  geom_smooth(method = "loess", se = FALSE, color = "#bd0026", span = 0.5) + 
   geom_smooth(method = "lm", se = FALSE, color = "#0868ac", formula = y ~ x) +
-  labs(title = "Engine Volume (disp) vs. Miles per Gallon (mpg)", 
-       x = "disp (cubic inches)", 
-       y = "mpg") +
-  theme_minimal() +
-  theme(plot.title = element_text(size = 10))
+  labs(title = "House Age vs. House Price", 
+       x = "house age (year)", 
+       y = "price (unit area)") +
+  theme_minimal()
 @
 
-<<loess-plot-comment, echo=FALSE,message=FALSE,warning=FALSE>>=
-# cannot perform F test as the data do not follow normality assumption: car types are manually selectted and enginee volume (disp) is certainly not normally distributed.
 
-# cannot perform likelihood-ratio test, loess do not have log likelihood
-@
 \newpage
 
 \section{Visualising Beyond Two Dimensions}
