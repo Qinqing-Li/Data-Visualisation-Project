@@ -43,6 +43,16 @@ William S.~Cleveland et. al.
 \newblock {\em Local regression models. Chapter 8 of Statistical Models in S}.
 \newblock Wadsworth & Brooks/Cole, 1992.
 
+\bibitem{rocAnalysis}
+Tom Fawcett.
+\newblock Introduction to roc analysis.
+\newblock {\em Pattern Recognition Letters}, 27:861--874, 06 2006.
+
+\bibitem{Garcia2021ROCAlly}
+JP~Garc{\'i}a, JC~Ferreira, and CM~Patino.
+\newblock Receiver operating characteristic analysis: an ally in the pandemic.
+\newblock {\em J Bras Pneumol}, 47(2):e20210139, Apr 30 2021.
+
 \bibitem{blog}
 E.~Hawkins.
 \newblock Warming stripes | climate lab book.
