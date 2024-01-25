@@ -552,7 +552,7 @@ print(kde_diagram)
 \noindent \textbf{Bar Charts in Practice}\\
 \noident The two bar charts on in Figure~\ref{fig:barcharts} illustrate the impact of varying vitamin dosages on tooth growth, further categorised by supplement type. On the X-axis, three distinct levels of vitamin dosage are presented, while the Y-axis indicates the average lenth of tooth for each dosage.
 
-<<barcharts, echo=FALSE, warning=FALSE, fig.height=3, fig.width=10, fig.cap='Visualising tooth growth by gosage: A comparison of grouped and stacked bar chart techniques' >>=
+<<barcharts, echo=FALSE, warning=FALSE, message=FALSE, fig.height=3, fig.width=10, fig.cap='Visualising tooth growth by gosage: A comparison of grouped and stacked bar chart techniques' >>=
 # average length
 average_lengths <- ToothGrowth %>%
   group_by(dose, supp) %>%
@@ -1502,7 +1502,7 @@ ggplot()+
   theme_bw()
 @
 
-The dashed lines enclose ellipses that represent the distribution of different penguin species in a t-SNE plot from the above figure~\ref{fig:t-SNE}.
+In this case, using the T-sne algorithm helps us to reduce the multidimensional numerical data of the penguin dataset to a 2-dimensional space, and to we can also using scatter plots and elliptical areas  to visualize the distribution of different penguin. The dashed lines enclose ellipses that represent the distribution of different penguin species in a t-SNE plot from the above figure~\ref{fig:t-SNE}.
 
 Although t-SNE is a very powerful tool in data visualization, it indeed has its own limitations as well. It is important to select the appropriate method according to different requirments.
 \newpage  

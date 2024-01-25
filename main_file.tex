@@ -432,10 +432,7 @@ Consider the following graph with created on ggplot2 with the use of to the \tex
 \noident The two bar charts on in Figure~\ref{fig:barcharts} illustrate the impact of varying vitamin dosages on tooth growth, further categorised by supplement type. On the X-axis, three distinct levels of vitamin dosage are presented, while the Y-axis indicates the average lenth of tooth for each dosage.
 
 \begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# `summarise()` has grouped output by 'dose'. You can override using the\\\#\# `.groups` argument.}}\end{kframe}\begin{figure}[H]
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
 
 {\centering \includegraphics[width=\maxwidth]{figure/beamer-barcharts-1} 
 
@@ -1058,7 +1055,16 @@ The linear model has a residual standard error of 13.32, while the LOESS model h
 
 
 
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in file(file, "{}rt"{}): cannot open the connection}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in `\$<-.data.frame`(`*tmp*`, house\_age, value = numeric(0)): replacement has 0 rows, data has 413}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in `\$<-.data.frame`(`*tmp*`, price\_per\_area, value = numeric(0)): replacement has 0 rows, data has 413}}\end{kframe}
+\end{knitrout}
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -1075,15 +1081,9 @@ The linear model has a residual standard error of 13.32, while the LOESS model h
        \hlkwc{y} \hlstd{=} \hlstr{"price (unit area)"}\hlstd{)} \hlopt{+}
   \hlkwd{theme_minimal}\hlstd{()}
 \end{alltt}
-\end{kframe}\begin{figure}[H]
 
-{\centering \includegraphics[width=\maxwidth]{figure/beamer-estate-data-plot-1} 
 
-}
-
-\caption[Estate valuation using house age, linear regression and smooth regression methods]{Estate valuation using house age, linear regression and smooth regression methods}\label{fig:estate-data-plot}
-\end{figure}
-
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in `geom\_point()`:\\\#\# ! Problem while computing aesthetics.\\\#\# i Error occurred in the 1st layer.\\\#\# Caused by error in `FUN()`:\\\#\# ! object 'house\_age' not found}}\end{kframe}
 \end{knitrout}
 
 
@@ -1275,7 +1275,7 @@ R provides us with a dedicated package for t-SNE analysis, \textit{Rtsne}, which
 
 \end{knitrout}
 
-The dashed lines enclose ellipses that represent the distribution of different penguin species in a t-SNE plot from the above figure~\ref{fig:t-SNE}.
+In this case, using the T-sne algorithm helps us to reduce the multidimensional numerical data of the penguin dataset to a 2-dimensional space, and to we can also using scatter plots and elliptical areas  to visualize the distribution of different penguin. The dashed lines enclose ellipses that represent the distribution of different penguin species in a t-SNE plot from the above figure~\ref{fig:t-SNE}.
 
 Although t-SNE is a very powerful tool in data visualization, it indeed has its own limitations as well. It is important to select the appropriate method according to different requirments.
 \newpage  
