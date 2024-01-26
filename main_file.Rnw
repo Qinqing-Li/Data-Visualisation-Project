@@ -1388,18 +1388,15 @@ Biplots are designed visualise high-dimensional data by projecting it onto a low
     \item \textbf{Projection}: Projecting both the samples and variables onto a two-dimensional space using the singular vectors obtained from SVD. 
 \end{itemize}
 
-\noindent \textbf{The Data Matrix}\\
-\noindent Data matrices used to produce biplots can take 3 different forms. They are most commonly composed by cases $\times$ variables (where the cases are always assumed to be the row and the variables be the columns). But data matrices can also be composed by categories $\times$ categories (a cross tabulation), or by cases $\times$ categories (compositional data), and more.\\
-
 \noindent \textbf{Data Standardisation}\\
 Depending on the initial data matrix $\mathbf{M}$, various transformations may be necessary to arrived at the standardised data matrix $\mathbf{H}$. These may include functional transformations like logarithmic, sine, power, etc., as well as matrix transformations such as observed/expected frequency ratio, odds ratio, log ratio, etc. Additionally, transformations may involve applying weights to rows and/or columns, (weighted) centering of rows and columns, double-centering, and normalization of rows and columns.\\
 
-\noindent \textbf {(Weighted) Singular Value Decomposition (SVD)}\\
-\noindent (Weighted) Singular Value Decomposition (SVD) is performed via the eigendecomposition of a cross-product matrix whose order depends on the number of columns of $\mathbf{H}$, since the number of columns is usually less than the number of rows.\\
+\noindent \textbf {Singular Value Decomposition (SVD)}\\
+\noindent (Weighted) SVD is performed via the eigendecomposition of a cross-product matrix whose order depends on the number of columns of $\mathbf{H}$, since the number of columns is usually less than the number of rows.\\
 
 \noindent The most general situation is that in which there are weights $r$ for the rows and weights $c$ for the columns, with associated diagonal matrices $\mathbf{D}_r$ and $\mathbf{D}_c$. Defaults are $\mathbf{D}_r = (1/n)\mathbf{I}$ (each of the $n$ rows is weighted equally by $1/n$) and $\mathbf{D}_c = \mathbf{I}$.\\
 
-\noindent The weighted SVD is obtained by decomposing the matrix \(D_r^{1/2} Z D_c^{1/2} = U\Gamma V^T\), where \(\Gamma\) is the diagonal matrix of eigenvalues. Alternatively, if proceeding via the weighted eigendecomposition, \(D_c^{1/2} Z^T D_r Z D_c^{1/2} = V\Gamma^2 V^T\) where \(\Gamma_2\) is the diagonal matrix of eigenvalues, followed by the transformation to the left vectors: \(U = D_r^{1/2} Z D_c^{1/2} V\Gamma^{-1}\).\\
+\noindent The weighted SVD is obtained by decomposing the matrix \[\mathbf{D}_r^{1/2} \mathbf{H} \mathbf{D}_c^{1/2} = U\Gamma V^T\], where \(\Gamma\) is the diagonal matrix of eigenvalues. Alternatively, if proceeding via the weighted eigendecomposition, \[\mathbf{D}_c^{1/2} \mathbf{H}^T \mathbf{D}_r \mathbf{H} \mathbf{D}_c^{1/2} = V\Gamma^2 V^T\] where \(\Gamma_2\) is the diagonal matrix of eigenvalues, followed by the transformation to the left vectors: \(U = D_r^{1/2} Z D_c^{1/2} V\Gamma^{-1}\).\\
 
 \noindent \textbf{Projection: Computation of Coordinates}\\
 \noindent There are three types of coordinates. Firstly, the most common, there's the \textbf{standard coordinates} whose rows are given by $F_s = D^{-1/2}_r U$, and the columns by $G_s = D^{-1/2}_c V$. There's also the \textbf{principal coordinates} which have rows given by $F_p = Fs\Gamma$ and columns given by $G_p = Gs\Gamma$. Finally, there's the \textbf{“canonical” coordinates} which have rows given by $F_c = Fs\Gamma^{1/2}$ and columns $G_c = Gs\Gamma^{1/2}$.\\
