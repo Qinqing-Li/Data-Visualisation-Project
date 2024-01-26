@@ -18,8 +18,8 @@
 \contentsline {subsection}{\numberline {3.1}Histograms}{15}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Bar Charts}{16}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Kernel Density Estimation}{17}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}ROC Curve}{17}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Time Series Analysis}{19}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.4}ROC Curve}{18}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Time Series Analysis}{20}{subsection.3.5}%
 \contentsline {subsubsection}{\numberline {3.5.1}Time Series}{20}{subsubsection.3.5.1}%
 \contentsline {section}{\numberline {4}Bivariate Data Visualisation Methods}{26}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Heatmaps}{26}{subsection.4.1}%

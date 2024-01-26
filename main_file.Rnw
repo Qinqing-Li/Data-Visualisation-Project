@@ -554,7 +554,6 @@ print(kde_diagram)
 
 
 <<barcharts, echo=FALSE, warning=FALSE, message=FALSE, fig.height=3, fig.width=10, fig.cap='Visualising tooth growth by gosage: A comparison of grouped and stacked bar chart techniques' >>=
->>>>>>> 152992594fdc38f065f2cd73424993608e2de712
 # average length
 average_lengths <- ToothGrowth %>%
   group_by(dose, supp) %>%
