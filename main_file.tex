@@ -1062,16 +1062,7 @@ The linear model has a residual standard error of 13.32, while the LOESS model h
 
 
 
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in file(file, "{}rt"{}): cannot open the connection}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in `\$<-.data.frame`(`*tmp*`, house\_age, value = numeric(0)): replacement has 0 rows, data has 413}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in `\$<-.data.frame`(`*tmp*`, price\_per\_area, value = numeric(0)): replacement has 0 rows, data has 413}}\end{kframe}
-\end{knitrout}
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -1088,9 +1079,15 @@ The linear model has a residual standard error of 13.32, while the LOESS model h
        \hlkwc{y} \hlstd{=} \hlstr{"price (unit area)"}\hlstd{)} \hlopt{+}
   \hlkwd{theme_minimal}\hlstd{()}
 \end{alltt}
+\end{kframe}\begin{figure}[H]
 
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-estate-data-plot-1} 
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in `geom\_point()`:\\\#\# ! Problem while computing aesthetics.\\\#\# i Error occurred in the 1st layer.\\\#\# Caused by error:\\\#\# ! object 'house\_age' not found}}\end{kframe}
+}
+
+\caption[Estate valuation using house age, linear regression and smooth regression methods]{Estate valuation using house age, linear regression and smooth regression methods}\label{fig:estate-data-plot}
+\end{figure}
+
 \end{knitrout}
 
 

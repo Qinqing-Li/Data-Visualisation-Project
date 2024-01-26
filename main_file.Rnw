@@ -1298,7 +1298,7 @@ estate <- read.csv("RealEstate.csv")
 var_names <- c("No","transaction_date", "house_age", "dist_to_station", "no_of_stores", "lat","long","price_per_area")
 
 # Read the CSV file with custom variable names
-estate <- read.csv("/Users/margaretli/Downloads/realestate.csv", header = FALSE, col.names = var_names)
+estate <- read.csv("realestate.csv", header = FALSE, col.names = var_names)
 # Delete the first row of the data frame
 estate <- estate[-1, ]
 
