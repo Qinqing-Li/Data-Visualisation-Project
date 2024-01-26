@@ -187,14 +187,13 @@ The \textit{dplyr} packages plays a crucial role in data manipulation and transf
 \noindent
 This section introduces the datasets analysed and visualised in the subsequent chapters.\\
 
-\noindent
-\textbf{mtcars}: The built-in R dataset, \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars}{mtcars} was extracted from the 1974 Motor Trend US magazine. It includes the fuel consumption and 10 aspects of automobile design for 32 automobiles (1973–74 models). \\
-
-\noindent
-\textbf{ToothGrowth}: The built-in R dataset, \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/ToothGrowth}{ToothGrowth}, measures the tooth growth of 60 guinea pigs. Each animal was either administered with vitamin C or orange juice.\\
+\noindent \textbf{mtcars}: The built-in R dataset, \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars}{mtcars} was extracted from the 1974 Motor Trend US magazine. It includes the fuel consumption and 10 aspects of automobile design for 32 automobiles (1973–74 models). \\
 
 \noindent
 \textbf{iris}: The built-in R dataset \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/iris}{iris} was collected by Edgar Anderson. This dataset was famously used by British statistician Ronald Fisher to demonstrate linear discriminant analysis in 1936. It encompasses 5 flower characteristics for 3 types of iris, each with 50 samples. \\
+
+\noindent
+\textbf{ToothGrowth}: The built-in R dataset, \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/ToothGrowth}{ToothGrowth}, measures the tooth growth of 60 guinea pigs. Each animal was either administered with vitamin C or orange juice.\\
 
 \noindent
 \textbf{Fire in Brazil}: Open-source fire observation data is provided by \href{https://firms.modaps.eosdis.nasa.gov/}{NASA}. The analysis focuses on Brazil (2013-2022). Note that the dataset contains the variable ``confidence", ranging from 0\% to 100\%. The dataset was filtered with a confidence level of $\ge$ 95\%  to ensure an accurate account of fire occurrences \cite{nasa_confidence}.\\
@@ -493,15 +492,13 @@ A histogram is a graphical representation of the distribution of a dataset. It c
 \[ P\left(\left|\frac{1}{n}\sum_{i=1}^n X_i - \mu\right| < \epsilon\right) \rightarrow 1 \] 
 as \( n \rightarrow \infty \).\\
 
-\noindent Histograms can be used to visualize the convergence of sample means to the population mean.\\
-
-\noindent Let \(X_1, \ldots, X_n\) be independent and identically distributed random variables with finite mean \( \mu \) and variance \( \sigma^2 \). Define the sample mean \( \bar{X} = \frac{1}{n}\sum_{i=1}^n X_i \). Then, as \( n \) becomes large, the variable 
+\noindent Histograms can be also used to visualise the convergence of sample means to the population mean. Let \(X_1, \ldots, X_n\) be independent and identically distributed random variables with finite mean \( \mu \) and variance \( \sigma^2 \). Define the sample mean \( \bar{X} = \frac{1}{n}\sum_{i=1}^n X_i \). Then, as \( n \) becomes large, the variable 
 \[ Z = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \] approaches a standard normal distribution.\\
 
 \noindent By plotting histograms of a large number of sample means, one can observe the shape gradually resembling a normal distribution.\\
 
 \noindent
-Consider the following graph with created on ggplot2 with the use of to the \texttt{geom\_histogram} function and iris dataset.
+Consider Figure~\ref{fig:htbp} with created on ggplot2 with the use of to the \texttt{geom\_histogram} function and iris dataset.
 
 \begin{figure}[htbp]
   \centering
@@ -1005,7 +1002,7 @@ print(heatmap_plot)
 A scatter plot is a graphical representation of a set of data points in a two-dimensional coordinate system. Each data point is represented by a dot, and the position of the dot is determined by the values of two variables. Some examples of this type of visualisation can be found in Figure~\ref{fig:abs-plots}, Figure~\ref{fig:cogload-plot}, and Figure~\ref{fig:bubble-plot-construction}.\\
 
 \noindent
-In general, \(Y\) denotes the response, or dependent,variable and \(X\) denotes the explanatory, or indenpendent,  variable. Let \((x_i, y_i)\) represent the coordinates of the \(i\)-th data point on the scatter plot. The scatter plot can be mathematically described as a set of points: \( \{(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)\}, \) where \(n\) is the number of observations in the set.
+In general, the\(Y\)-axis denotes the response, or dependent, variable and the \(X\)-axis denotes the explanatory, or independent,  variable. Each observation of a dataset is mapped to a dot in the 2-dimentional space. Let \((x_i, y_i)\) represent the coordinates of the \(i\)-th data point on the scatter plot produced by mapping a set of data. The scatter plot can be mathematically described as a set of points: \( \{(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)\}, \) where \(n\) is the number of observations in the set.
 
 \subsection{Bubble Charts}
 Bubble charts are a captivating data visualisation tool that extends beyond the typical two-dimensional scatter plot by introducing an extra dimension. They represent data points as bubbles or circles on a two-dimensional plane, where the size of each bubble encodes a third variable.\\
@@ -1016,7 +1013,7 @@ Bubble charts are a captivating data visualisation tool that extends beyond the 
 \[
 S = k \cdot V,
 \]
-\noindent where \(S\) represents the size of the bubble, \(V\) the value of the variable being represented, and \(k\) a scaling factor to control the bubble size. Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the proportionality between the bubble size and the variable being represented.\\
+\noindent where \(S\) represents the size of the bubble, \(V\) the value of the variable being represented, and \(k\) a scaling factor to control the bubble size. Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the proportionality between the bubble size and the variable being represented. (INCLUDE EXMAPLE?)\\ 
 
 \noindent
 \textbf{Bubble Charts in Practice}\\
@@ -1042,7 +1039,7 @@ ggplot(mtcars, aes(x = rownames(mtcars), y = mpg, size = hp, color = cyl)) +
 \noindent 
 The efficiency of bubble charts is highlighted by the fact that to capture just some of the information provided by this single bubble chat - that is, the information regarding the car models, the miles covered per gallon, and the horsepower of each of these, one would require three different scatter plots. These are displayed in Figure~\ref{fig:bubble-plot-construction}. The contrast between the simplicity and readability of Figure~\ref{fig:bubble-plot}, and the density and complexity of Figure~\ref{fig:bubble-plot-construction} emphasises the advantages of bubble charts in representing datasets with a higher number of variables. 
 
-<<bubble-plot-construction, echo=FALSE, fig.height=4, fig.width=11, fig.cap='Scatter plot deconstruction of Figure 16', message=FALSE>>=
+<<bubble-plot-construction, echo=FALSE, fig.height=3.5, fig.width=11, fig.cap='Scatter plot deconstruction of Figure 16', message=FALSE>>=
 
 # Scatter plot 1: Car models vs. Miles per gallon
 plot1 <- ggplot(mtcars, aes(x = rownames(mtcars), y = mpg)) +
@@ -1396,19 +1393,12 @@ Depending on the initial data matrix $\mathbf{M}$, various transformations may b
 
 \noindent The most general situation is that in which there are weights $r$ for the rows and weights $c$ for the columns, with associated diagonal matrices $\mathbf{D}_r$ and $\mathbf{D}_c$. Defaults are $\mathbf{D}_r = (1/n)\mathbf{I}$ (each of the $n$ rows is weighted equally by $1/n$) and $\mathbf{D}_c = \mathbf{I}$.\\
 
-\noindent The weighted SVD is obtained by decomposing the matrix \[\mathbf{D}_r^{1/2} \mathbf{H} \mathbf{D}_c^{1/2} = U\Gamma V^T\], where \(\Gamma\) is the diagonal matrix of eigenvalues. Alternatively, if proceeding via the weighted eigendecomposition, \[\mathbf{D}_c^{1/2} \mathbf{H}^T \mathbf{D}_r \mathbf{H} \mathbf{D}_c^{1/2} = V\Gamma^2 V^T\] where \(\Gamma_2\) is the diagonal matrix of eigenvalues, followed by the transformation to the left vectors: \(U = D_r^{1/2} Z D_c^{1/2} V\Gamma^{-1}\).\\
+\noindent The weighted SVD is obtained by decomposing the matrix \[\mathbf{D}_r^{1/2} \mathbf{H} \mathbf{D}_c^{1/2} = \mathbf{U}\Gamma \mathbf{V^T}\], where \(\Gamma\) is the diagonal matrix of eigenvalues. Alternatively, if proceeding via the weighted eigendecomposition, \[\mathbf{D}_c^{1/2} \mathbf{H^T} \mathbf{D}_r \mathbf{H} \mathbf{D}_c^{1/2} = \mathbf{V}\Gamma^2 \mathbf{D^T}\] where \(\Gamma_2\) is the diagonal matrix of eigenvalues, followed by the transformation to the left vectors: \[\mathbf{U} = \mathbf{D}_r^{1/2} \mathbf{H} \mathbf{D}_c^{1/2} \mathbf{V}\Gamma^{-1}\].\\
 
 \noindent \textbf{Projection: Computation of Coordinates}\\
-\noindent There are three types of coordinates. Firstly, the most common, there's the \textbf{standard coordinates} whose rows are given by $F_s = D^{-1/2}_r U$, and the columns by $G_s = D^{-1/2}_c V$. There's also the \textbf{principal coordinates} which have rows given by $F_p = Fs\Gamma$ and columns given by $G_p = Gs\Gamma$. Finally, there's the \textbf{“canonical” coordinates} which have rows given by $F_c = Fs\Gamma^{1/2}$ and columns $G_c = Gs\Gamma^{1/2}$.\\
+\noindent There are three types of coordinates. Firstly, there's the standard coordinates whose rows are given by \(\mathbf{F}_s = \mathbf{D}^{-1/2}_r \mathbf{U}\), and the columns by \(\mathbf{G}_s = \mathbf{D}^{-1/2}_c \mathbf{V}\). There's also the principal coordinates which have rows given by \(\mathbf{F}_p = \mathbf{D}_s\Gamma\) and columns given by \(\mathbf{G}_p = \mathbf{G}_s\Gamma\). Finally, there's the “canonical” coordinates which have rows given by \(\mathbf{F}_c = \mathbf{F}_s\Gamma^{1/2}\) and columns \(\mathbf{G}_c = \mathbf{G}_s\Gamma^{1/2}\).\\
 
-\noindent Usual choices of coordinates give the following standard types of biplots:
-\begin{itemize}
-  \item Asymmetric map (form biplot) of the rows: plot $F_p$ and $G_s$.
-  \item Asymmetric map (covariance biplot) of the columns: plot $F_s$ and $G_p$.
-  \item Symmetric or canonical biplot: plot $F_c$ and $G_c$.
-\end{itemize} \\
-
-!!!!!!!!!!!!!!!!!!\\
+\noindent \textbf{PCA-based Biplots}\\
 
 \noindent In the context of PCA-based biplots, the primary steps involve determining principal components from the covariance or correlation matrix of the data. The first two principal components, capturing the most significant variation, form the basis of the biplot. In this graphical representation, observations are depicted as points, while variables are represented as vectors emanating from the origin. The angles and lengths of these vectors signify relationships between variables and their contributions to the principal components, while the proximity of points reflects similarity or dissimilarity between observations.\\
 
