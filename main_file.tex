@@ -191,6 +191,8 @@ These particular tools serve the following functions \cite{ggplot2}: %This secti
 \noindent \texttt{coord} provides the axes and gridlines which aid in interpreting the graph. Various coordinate systems such as cartesian, polar, and map projections are available. Furthermore, \texttt{faceting} is a robust feature enabling the partitioning of a single plot into multiple plots based on factors present in the dataset. This functionality proves particularly beneficial for exploring and presenting data with multiple groups or categories.\\
 
 \noindent The \texttt{theme} function holds significance in customising the non-data elements of plots. The theme system within \textit{ggplot2} allows precise adjustment of aesthetic aspects such as fonts, labels, legends, and background colours. This tool is essential for enhancing plot readability and creating visually captivating graphics tailored to specific audiences or publication requirements.\\
+\\
+\\
 
 \noindent\textbf{Key R Packages}\\
 \noindent
@@ -202,7 +204,7 @@ The \textit{dplyr} packages plays a crucial role in data manipulation and transf
 
 \subsection{Datasets}
 \noindent
-This section introduces the datasets analysed and visualised in the subsequent chapters.\\
+This section introduces the different datasets analysed and visualised in the subsequent chapters.\\
 
 \noindent \textbf{mtcars}: The built-in R dataset, \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars}{mtcars} was extracted from the 1974 Motor Trend US magazine. It includes the fuel consumption and 10 aspects of automobile design for 32 automobiles (1973–74 models). \\
 
@@ -485,13 +487,13 @@ Here, the simulated data will be used to demonstrate the ROC analysis in COVID-1
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# Plot of ROC curves}
-\hlkwd{plot}\hlstd{(roc_test1,} \hlkwc{col}\hlstd{=}\hlstr{"#1c61b6"}\hlstd{,} \hlkwc{lwd}\hlstd{=}\hlnum{2}\hlstd{)}
-\hlkwd{lines}\hlstd{(roc_test2,} \hlkwc{col}\hlstd{=}\hlstr{"#008600"}\hlstd{,} \hlkwc{lwd}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{)}
+\hlkwd{plot}\hlstd{(roc_test1,} \hlkwc{col}\hlstd{=}\hlstr{"#459395"}\hlstd{,} \hlkwc{lwd}\hlstd{=}\hlnum{2}\hlstd{)}
+\hlkwd{lines}\hlstd{(roc_test2,} \hlkwc{col}\hlstd{=}\hlstr{"#FDA638"}\hlstd{,} \hlkwc{lwd}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{)}
 \hlkwd{legend}\hlstd{(}\hlstr{"bottomright"}\hlstd{,} \hlkwc{legend}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"Diagnostic Test 1"}\hlstd{,} \hlstr{"Diagnostic Test 2"}\hlstd{),}
-       \hlkwc{col}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"#1c61b6"}\hlstd{,} \hlstr{"#008600"}\hlstd{),} \hlkwc{lwd}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{2}\hlstd{),} \hlkwc{cex}\hlstd{=}\hlnum{0.5}\hlstd{)}
+       \hlkwc{col}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"#459395"}\hlstd{,} \hlstr{"#FDA638"}\hlstd{),} \hlkwc{lwd}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{2}\hlstd{),} \hlkwc{cex}\hlstd{=}\hlnum{0.5}\hlstd{)}
 \hlcom{# Add the perfect lines}
 \hlkwd{abline}\hlstd{(}\hlkwc{h}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{col}\hlstd{=}\hlstr{"red"}\hlstd{)}
-\hlkwd{abline}\hlstd{(}\hlkwc{v}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{col}\hlstd{=}\hlstr{"red"}\hlstd{)} \hlcom{# Perfect Diagnostic Test (AUC = 1)}
+\hlkwd{abline}\hlstd{(}\hlkwc{v}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{col}\hlstd{=}\hlstr{"red"}\hlstd{)} \hlcom{# Perfect Diagnostic Test (AUC = 1) }
 \end{alltt}
 \end{kframe}\begin{figure}[H]
 
@@ -544,19 +546,30 @@ Here, plot daily and 49-day moving average exchange rates of exchange rate data 
 \begin{alltt}
 \hlcom{# Plot daily and 49-day moving average exchange rates of CAN, EUR, USD to GBP}
 
-\hlcom{# First plot}
-\hlstd{p1} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(plot_dt,} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=Date,} \hlkwc{y}\hlstd{=Rate,} \hlkwc{color}\hlstd{=Currency))} \hlopt{+} \hlkwd{geom_line}\hlstd{()} \hlopt{+}
-  \hlkwd{labs}\hlstd{(}\hlkwc{y}\hlstd{=}\hlstr{"Exchange Rate to GBP"}\hlstd{,} \hlkwc{x} \hlstd{=} \hlstr{""}\hlstd{,} \hlkwc{color}\hlstd{=}\hlstr{"Currency"}\hlstd{)}\hlopt{+}
-  \hlkwd{theme_minimal}\hlstd{()} \hlopt{+} \hlkwd{theme}\hlstd{(}\hlkwc{legend.position}\hlstd{=}\hlstr{"none"}\hlstd{)}
-\hlcom{# Second plot}
-\hlstd{p2} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(plot_data,} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=Date,} \hlkwc{y}\hlstd{=Rate,} \hlkwc{color}\hlstd{=Currency))} \hlopt{+} \hlkwd{geom_line}\hlstd{()} \hlopt{+}
-  \hlkwd{labs}\hlstd{(}\hlkwc{y}\hlstd{=}\hlstr{"Exchange Rate to GBP"}\hlstd{,} \hlkwc{x} \hlstd{=} \hlstr{""}\hlstd{,} \hlkwc{color}\hlstd{=}\hlstr{"Currency"}\hlstd{)}\hlopt{+}
-  \hlkwd{theme_minimal}\hlstd{()} \hlopt{+} \hlkwd{theme}\hlstd{(}\hlkwc{legend.position}\hlstd{=}\hlstr{"none"}\hlstd{)}
+\hlcom{# Define the color palette}
+\hlstd{color_palette} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlstr{"#459395"}\hlstd{,} \hlstr{"#EB7C69"}\hlstd{,} \hlstr{"#FDA638"}\hlstd{)}
+
+\hlcom{# Modify the plots to use the color palette}
+\hlstd{p1} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(plot_dt,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= Date,} \hlkwc{y} \hlstd{= Rate,} \hlkwc{color} \hlstd{= Currency))} \hlopt{+}
+  \hlkwd{geom_line}\hlstd{()} \hlopt{+}
+  \hlkwd{labs}\hlstd{(}\hlkwc{y} \hlstd{=} \hlstr{"Exchange Rate to GBP"}\hlstd{,} \hlkwc{x} \hlstd{=} \hlstr{""}\hlstd{,} \hlkwc{color} \hlstd{=} \hlstr{"Currency"}\hlstd{)} \hlopt{+}
+  \hlkwd{theme_minimal}\hlstd{()} \hlopt{+}
+  \hlkwd{theme}\hlstd{(}\hlkwc{legend.position} \hlstd{=} \hlstr{"none"}\hlstd{)} \hlopt{+}
+  \hlkwd{scale_color_manual}\hlstd{(}\hlkwc{values} \hlstd{= color_palette)}
+
+\hlstd{p2} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(plot_data,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= Date,} \hlkwc{y} \hlstd{= Rate,} \hlkwc{color} \hlstd{= Currency))} \hlopt{+}
+  \hlkwd{geom_line}\hlstd{()} \hlopt{+}
+  \hlkwd{labs}\hlstd{(}\hlkwc{y} \hlstd{=} \hlstr{"Exchange Rate to GBP"}\hlstd{,} \hlkwc{x} \hlstd{=} \hlstr{""}\hlstd{,} \hlkwc{color} \hlstd{=} \hlstr{"Currency"}\hlstd{)} \hlopt{+}
+  \hlkwd{theme_minimal}\hlstd{()} \hlopt{+}
+  \hlkwd{theme}\hlstd{(}\hlkwc{legend.position} \hlstd{=} \hlstr{"none"}\hlstd{)} \hlopt{+}
+  \hlkwd{scale_color_manual}\hlstd{(}\hlkwc{values} \hlstd{= color_palette)}
+
 \hlcom{# Extract the legend}
-\hlstd{p2_legend} \hlkwb{<-} \hlstd{cowplot}\hlopt{::}\hlkwd{get_legend}\hlstd{(p2} \hlopt{+} \hlkwd{theme}\hlstd{(}\hlkwc{legend.position}\hlstd{=}\hlstr{"right"}\hlstd{))}
+\hlstd{p2_legend} \hlkwb{<-} \hlstd{cowplot}\hlopt{::}\hlkwd{get_legend}\hlstd{(p2} \hlopt{+} \hlkwd{theme}\hlstd{(}\hlkwc{legend.position} \hlstd{=} \hlstr{"right"}\hlstd{))}
+
 \hlcom{# Combine the plots }
-\hlstd{combined_plot} \hlkwb{<-} \hlstd{cowplot}\hlopt{::}\hlkwd{plot_grid}\hlstd{(p1, p2,} \hlkwc{rel_widths} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{1}\hlstd{),} \hlkwc{nrow}\hlstd{=}\hlnum{2}\hlstd{)}
-\hlstd{cowplot}\hlopt{::}\hlkwd{plot_grid}\hlstd{(combined_plot, p2_legend,} \hlkwc{nrow}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{rel_widths} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{2}\hlstd{,} \hlnum{0.5}\hlstd{))}
+\hlstd{combined_plot} \hlkwb{<-} \hlstd{cowplot}\hlopt{::}\hlkwd{plot_grid}\hlstd{(p1, p2,} \hlkwc{rel_widths} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{1}\hlstd{),} \hlkwc{nrow} \hlstd{=} \hlnum{2}\hlstd{)}
+\hlstd{cowplot}\hlopt{::}\hlkwd{plot_grid}\hlstd{(combined_plot, p2_legend,} \hlkwc{nrow} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{rel_widths} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{2}\hlstd{,} \hlnum{0.5}\hlstd{))}
 \end{alltt}
 \end{kframe}
 
@@ -566,6 +579,8 @@ Here, plot daily and 49-day moving average exchange rates of exchange rate data 
 
 
 \end{knitrout}
+
+
 \centering
 \caption{Daily (top) and 49-day moving average (bottom) exchange rates of CAN, EUR, USD to GBP}
 \label{fig:all exchange rates}
@@ -779,18 +794,29 @@ The seasonal pattern of fire frequency is shown in Figure~\ref{fig:fire-by-month
 A scatter plot is a graphical representation of a set of data points in a two-dimensional coordinate system. Each data point is represented by a dot, and the position of the dot is determined by the values of two variables. Some examples of this type of visualisation can be found in Figure~\ref{fig:abs-plots}, Figure~\ref{fig:cogload-plot}, and Figure~\ref{fig:bubble-plot-construction}.\\
 
 \noindent
-In general, the\(Y\)-axis denotes the response, or dependent, variable and the \(X\)-axis denotes the explanatory, or independent,  variable. Each observation of a dataset is mapped to a dot in the 2-dimentional space. Let \((x_i, y_i)\) represent the coordinates of the \(i\)-th data point on the scatter plot produced by mapping a set of data. The scatter plot can be mathematically described as a set of points: \( \{(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)\}, \) where \(n\) is the number of observations in the set.
+In general, the \(Y\)-axis denotes the response, or dependent, variable and the \(X\)-axis denotes the explanatory, or independent,  variable. Each observation of a dataset is mapped to a dot in the 2-dimentional space. Let \((x_i, y_i)\) represent the coordinates of the \(i\)-th data point on the scatter plot produced by mapping a set of data. The scatter plot can be mathematically described as a set of points: \( \{(x_1, y_1), \ldots, (x_n, y_n)\}\) where \(n\) is the number of observations in the set.
 
 \subsection{Bubble Charts}
+\noindent \textbf{Theory of Bubble Charts}
 Bubble charts are a captivating data visualisation tool that extends beyond the typical two-dimensional scatter plot by introducing an extra dimension. They represent data points as bubbles or circles on a two-dimensional plane, where the size of each bubble encodes a third variable.\\
 
-\noindent The construction of bubble charts, is parallel to that of a scatter plot, but involves the scaling the data values to determine the size of each bubble. While it isn't alwaysthe case, the size of these is typically proportional to the variable it represents. The choice of scaling method depends on the data distribution and the message the chart aims to convey.\\
+\noindent The construction of bubble charts, is parallel to that of a scatter plot, but involves the scaling the data values to determine the size of each bubble. While it isn't always the case, the size of these is typically proportional to the variable it represents. The choice of scaling method depends on the data distribution and the message the chart aims to convey.\\
 
-\noindent Generally, the formula for calculating the bubble size (\(S\)) involves applying the scaling function
+\noindent Generally, the formula for calculating the bubble radius (\(R)) involves applying the scaling function
 \[
-S = k \cdot V,
+R = k \cdot V,
 \]
-\noindent where \(S\) represents the size of the bubble, \(V\) the value of the variable being represented, and \(k\) a scaling factor to control the bubble size. Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the proportionality between the bubble size and the variable being represented. (INCLUDE EXMAPLE?)\\ 
+\noindent where \(R\) represents the size of the bubble, \(V\) the value of the variable being represented, and \(k\) a scaling factor to control the bubble size. Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the proportionality between the bubble size and the variable being represented.\\ 
+
+\noindent Hence, bubble chart represents data points in three dimensions: x-coordinate, y-coordinate, and bubble size. Each data point is represented by a set of three values: \((x_i, y_i, C_i)\), where \(x_i\) and \(y_i\) are the coordinates, and \(C_i\) is the equation of the circle for the \(i\)-th observation. In the case of a bubble chart, where the radius of the bubble is denoted by \(R_i = k \cdot V_i\), we can write the equation for the each circle as:
+
+\[
+(x - x_i)^2 + (y - y_i)^2 = (k \cdot V)^2 ,
+\]
+
+\noindent where, \(x_i\) and \(y_i\) are the coordinates of the center of the circle.\\
+
+\noindent Since each bubble \(B_i\) can be mathematically described as a set of three values: \((x_i, y_i, C_i\), similarly to the scatter plot, the bubble plot can be mathematically described as a set of points: \( \{B_1, \ldots, B_n\}\), that is, \( \{(x_1, y_1, C_1), \ldots, (x_n, y_n, C_n)\}\), where \(n\) is the number of observations in the set.\\
 
 \noindent
 \textbf{Bubble Charts in Practice}\\

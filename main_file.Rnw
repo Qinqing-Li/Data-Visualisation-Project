@@ -174,6 +174,8 @@ These particular tools serve the following functions \cite{ggplot2}: %This secti
 \noindent \texttt{coord} provides the axes and gridlines which aid in interpreting the graph. Various coordinate systems such as cartesian, polar, and map projections are available. Furthermore, \texttt{faceting} is a robust feature enabling the partitioning of a single plot into multiple plots based on factors present in the dataset. This functionality proves particularly beneficial for exploring and presenting data with multiple groups or categories.\\
 
 \noindent The \texttt{theme} function holds significance in customising the non-data elements of plots. The theme system within \textit{ggplot2} allows precise adjustment of aesthetic aspects such as fonts, labels, legends, and background colours. This tool is essential for enhancing plot readability and creating visually captivating graphics tailored to specific audiences or publication requirements.\\
+\\
+\\
 
 \noindent\textbf{Key R Packages}\\
 \noindent
@@ -185,7 +187,7 @@ The \textit{dplyr} packages plays a crucial role in data manipulation and transf
 
 \subsection{Datasets}
 \noindent
-This section introduces the datasets analysed and visualised in the subsequent chapters.\\
+This section introduces the different datasets analysed and visualised in the subsequent chapters.\\
 
 \noindent \textbf{mtcars}: The built-in R dataset, \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars}{mtcars} was extracted from the 1974 Motor Trend US magazine. It includes the fuel consumption and 10 aspects of automobile design for 32 automobiles (1973–74 models). \\
 
@@ -233,7 +235,7 @@ Data types can be broadly categorised into four main types:
 \noindent \textbf{Matching Data Types with Appropriate Visualisation Techniques}\\
 \noindent Selecting appropriate visualisation techniques is essential for effective data communication. Various data types demand specific visualisation methods for optimal representation \cite{healy2018data}. For \textbf{nominal data}, bar charts and stacked bar charts are effective in displaying categorical information and relative proportions. \textbf{ordinal data} benefits from ordered bar charts, dot plots, or stacked bar charts, maintaining the ranking and order of categories. \textbf{interval data} is best visualised using line charts, histograms, and box plots, showcasing trends and distributions without assuming a true zero point. \textbf{ratio data} finds effective representation through scatter plots, histograms, and line charts, enabling precise comparisons and measurements due to the presence of a meaningful zero point. These are represented in Figure~\ref{fig:data-plots}, where artificial data from a class of 4th-year university students is visualised.
 
-<<data-plots, echo=FALSE, message=FALSE, fig.height=8, fig.width=11, fig.cap='Different types of visualisation techniques according to the data type'>>=
+<<data-plots, echo=FALSE, message=FALSE, fig.height=8, fig.width=11, fig.pos = 'H', fig.cap='Different types of visualisation techniques according to the data type'>>=
 
 # Define the colors
 my_palette <- c("#4B0082", "#459395", "#EB7C69", "#FDA638")
@@ -311,7 +313,7 @@ Abstraction operates on multiple levels of granularity. Hierarchies of abstracti
 \noindent 
 These different levels of abstraction are represented in Figure~\ref{fig:abs-plots}. The first visualisations of the mtcars dataset is a scatter plot that provides detailed information about the relationship between car weight and miles per gallon, with points colored by the number of cylinders. The second is an abstract visualisation using a box-and-whisker plot to provide a high-level summary of the distribution of miles per gallon for different numbers of cylinders. Finally, the third visualisation is a bar plot presenting aggregated information about the average miles per gallon for different numbers of cylinders.
 
-<<abs-plots, echo=FALSE, fig.height=4, fig.width=12, fig.cap='Mtcars dataset visualised on 3 different levels of abstraction'>>=
+<<abs-plots, echo=FALSE, fig.height=4, fig.width=12, fig.pos = 'H', fig.cap='Mtcars dataset visualised on 3 different levels of abstraction'>>=
 
 # Define a dark red and blue color palette
 dark_red_blue_palette <- c("4" = "#459395", "6" = "#EB7C69", "8" = "#FDA638")  # Adjust the shades of red and blue %jhgjgj
@@ -389,7 +391,7 @@ Colour significantly enhances the impact and comprehension of data visualisation
 \noindent \textbf{Colour Perception and Colour Encoding in Visualisations}\\
 Understanding color perception in data visualisation is crucial. Key principles involve considering color discrimination, ensuring accessibility for individuals with color vision deficiencies, as is illustrated by Figure~\ref{fig:colour-plot}. Careful selection of color schemes aligned with the intended message is essential — for instance, using warm colours like red and orange to indicate caution or warmth, and cool colours like blue and green to convey calmness or coldness. Additionally, attention should be paid to how colours interact when combined; certain combinations might create visual vibrations or impact text legibility.\\
 
-<<colour-plot, echo=FALSE, fig.height=3, fig.width=10, fig.cap='Colour perception of a heatmap for by a colour blind person'>>=
+<<colour-plot, echo=FALSE, fig.height=3, fig.width=10, fig.pos = 'H', fig.cap='Colour perception of a heatmap for by a colour blind person'>>=
 
 # Load dataset
 data(mtcars)
@@ -441,7 +443,7 @@ To reduce cognitive load while maintaining complexity in data visualisation, sev
 
 \noindent Furthermore, employing \textbf{interactive features} like tooltips and drill-down functionality assists in providing additional information when required, reducing the density of static visualisations. A final approach involves the use of \textbf{progressive disclosure}, presenting complex information gradually, beginning with an overview and allowing users to explore details as needed.\\
 
-<<cogload-plot, echo=FALSE, fig.height=3, fig.width=10, fig.cap='High versus low cognitive load demand through the reduction of visual complexity'>>=
+<<cogload-plot, echo=FALSE, fig.height=3, fig.width=10, fig.pos = 'H', fig.cap='High versus low cognitive load demand through the reduction of visual complexity'>>=
 
 # Create a cluttered plot with obscure axis labels and labels on all points
 cluttered_plot <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = as.numeric(row.names(iris)), shape = Species, label = rownames(iris))) +
@@ -508,7 +510,7 @@ Consider Figure~\ref{fig:htbp} with created on ggplot2 with the use of to the \t
 bar_diagram <- ggplot(iris, aes(x = Sepal.Length)) +
   geom_histogram(
     binwidth = 0.2,  # Adjust the box width to 0.2 for smaller datasets
-    fill = "#74c476"
+    fill = "#459395"
   ) +
   labs(
     x = "Sepal Length (cm)",
@@ -524,7 +526,7 @@ print(bar_diagram)
 # Create a Kernel Density Estimate plot using ggplot2 for Sepal Length in the Iris dataset
 kde_diagram <- ggplot(iris, aes(x = Sepal.Length)) +
   geom_density(
-    fill = "#74c476",
+    fill = "#459395",
     color = NA,
     alpha = 0.5,  # Adjust the transparency for better visualisation
     adjust = 1  # This parameter can be used to control the smoothness
@@ -550,7 +552,7 @@ print(kde_diagram)
 \noident The two bar charts on in Figure~\ref{fig:barcharts} illustrate the impact of varying vitamin dosages on tooth growth, further categorised by supplement type. On the X-axis, three distinct levels of vitamin dosage are presented, while the Y-axis indicates the average lenth of tooth for each dosage.
 
 
-<<barcharts, echo=FALSE, warning=FALSE, message=FALSE, fig.height=3, fig.width=10, fig.cap='Visualising tooth growth by gosage: A comparison of grouped and stacked bar chart techniques' >>=
+<<barcharts, echo=FALSE, warning=FALSE, message=FALSE, fig.height=3, fig.width=10, fig.pos = 'H', fig.cap='Visualising tooth growth by gosage: A comparison of grouped and stacked bar chart techniques' >>=
 # average length
 average_lengths <- ToothGrowth %>%
   group_by(dose, supp) %>%
@@ -559,11 +561,14 @@ average_lengths <- ToothGrowth %>%
 barchart_plot1 <- ggplot(average_lengths, aes(x = factor(dose), y = average_len, fill = supp)) +
   geom_bar(stat = "identity", position = position_dodge(width = 0.9)) +
   labs(x = "Dose (mg/day)", y = "Average Tooth Length (mm)", fill = "Supplement") +
-  theme_minimal()
+  theme_minimal() +
+  scale_fill_manual(values = c("#459395", "#FDA638"))
+
 barchart_plot2 <- ggplot(average_lengths, aes(x = factor(dose), y = average_len, fill = supp)) +
   geom_bar(stat = "identity", position = "stack") +
   labs(x = "Dose (mg/day)", y = "Tooth Length (mm)", fill = "Supplement") +
-  theme_minimal()
+  theme_minimal()+
+  scale_fill_manual(values = c("#459395", "#FDA638"))
 
 ggsave("barcharts.pdf", plot = grid.arrange(barchart_plot1, barchart_plot2, ncol = 2), width = 10, height = 3)
 @
@@ -628,15 +633,16 @@ roc_test1 <- roc(conditions, scores_test1)
 roc_test2 <- roc(conditions, scores_test2)
 @
 
-<<roc, message=FALSE, warning=FALSE, fig.height=3.5, fig.width=3.5,fig.cap='ROC Curves for Two Diagnostic Tests'>>=
+<<roc, message=FALSE, warning=FALSE, fig.height=3.5, fig.width=3.5, fig.pos = 'H', fig.cap='ROC Curves for Two Diagnostic Tests'>>=
 # Plot of ROC curves
-plot(roc_test1, col="#1c61b6", lwd=2)
-lines(roc_test2, col="#008600", lwd=2, lty=2)
+plot(roc_test1, col="#459395", lwd=2)
+lines(roc_test2, col="#FDA638", lwd=2, lty=2)
 legend("bottomright", legend=c("Diagnostic Test 1", "Diagnostic Test 2"),
-       col=c("#1c61b6", "#008600"), lwd=2, lty=c(1, 2), cex=0.5)
+       col=c("#459395", "#FDA638"), lwd=2, lty=c(1, 2), cex=0.5)
 # Add the perfect lines
 abline(h=1, lty=2, col="red")
-abline(v=1, lty=2, col="red") # Perfect Diagnostic Test (AUC = 1)
+abline(v=1, lty=2, col="red") # Perfect Diagnostic Test (AUC = 1) 
+
 @
 
 \noindent
@@ -722,20 +728,34 @@ plot_data$Currency <- gsub("_MA49", "", plot_data$Currency)
 <<message=FALSE,warning=FALSE,fig.dim = c(6, 3.5)>>=
 # Plot daily and 49-day moving average exchange rates of CAN, EUR, USD to GBP
 
-# First plot
-p1 <- ggplot(plot_dt, aes(x=Date, y=Rate, color=Currency)) + geom_line() +
-  labs(y="Exchange Rate to GBP", x = "", color="Currency")+
-  theme_minimal() + theme(legend.position="none")
-# Second plot
-p2 <- ggplot(plot_data, aes(x=Date, y=Rate, color=Currency)) + geom_line() +
-  labs(y="Exchange Rate to GBP", x = "", color="Currency")+
-  theme_minimal() + theme(legend.position="none")
+# Define the color palette
+color_palette <- c("#459395", "#EB7C69", "#FDA638")
+
+# Modify the plots to use the color palette
+p1 <- ggplot(plot_dt, aes(x = Date, y = Rate, color = Currency)) +
+  geom_line() +
+  labs(y = "Exchange Rate to GBP", x = "", color = "Currency") +
+  theme_minimal() +
+  theme(legend.position = "none") +
+  scale_color_manual(values = color_palette)
+
+p2 <- ggplot(plot_data, aes(x = Date, y = Rate, color = Currency)) +
+  geom_line() +
+  labs(y = "Exchange Rate to GBP", x = "", color = "Currency") +
+  theme_minimal() +
+  theme(legend.position = "none") +
+  scale_color_manual(values = color_palette)
+
 # Extract the legend
-p2_legend <- cowplot::get_legend(p2 + theme(legend.position="right"))
+p2_legend <- cowplot::get_legend(p2 + theme(legend.position = "right"))
+
 # Combine the plots 
-combined_plot <- cowplot::plot_grid(p1, p2, rel_widths = c(1, 1), nrow=2)
-cowplot::plot_grid(combined_plot, p2_legend, nrow=1, rel_widths = c(2, 0.5))
+combined_plot <- cowplot::plot_grid(p1, p2, rel_widths = c(1, 1), nrow = 2)
+cowplot::plot_grid(combined_plot, p2_legend, nrow = 1, rel_widths = c(2, 0.5))
+
 @
+
+
 \centering
 \caption{Daily (top) and 49-day moving average (bottom) exchange rates of CAN, EUR, USD to GBP}
 \label{fig:all exchange rates}
@@ -1002,24 +1022,35 @@ print(heatmap_plot)
 A scatter plot is a graphical representation of a set of data points in a two-dimensional coordinate system. Each data point is represented by a dot, and the position of the dot is determined by the values of two variables. Some examples of this type of visualisation can be found in Figure~\ref{fig:abs-plots}, Figure~\ref{fig:cogload-plot}, and Figure~\ref{fig:bubble-plot-construction}.\\
 
 \noindent
-In general, the\(Y\)-axis denotes the response, or dependent, variable and the \(X\)-axis denotes the explanatory, or independent,  variable. Each observation of a dataset is mapped to a dot in the 2-dimentional space. Let \((x_i, y_i)\) represent the coordinates of the \(i\)-th data point on the scatter plot produced by mapping a set of data. The scatter plot can be mathematically described as a set of points: \( \{(x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n)\}, \) where \(n\) is the number of observations in the set.
+In general, the \(Y\)-axis denotes the response, or dependent, variable and the \(X\)-axis denotes the explanatory, or independent,  variable. Each observation of a dataset is mapped to a dot in the 2-dimentional space. Let \((x_i, y_i)\) represent the coordinates of the \(i\)-th data point on the scatter plot produced by mapping a set of data. The scatter plot can be mathematically described as a set of points: \( \{(x_1, y_1), \ldots, (x_n, y_n)\}\) where \(n\) is the number of observations in the set.
 
 \subsection{Bubble Charts}
+\noindent \textbf{Theory of Bubble Charts}
 Bubble charts are a captivating data visualisation tool that extends beyond the typical two-dimensional scatter plot by introducing an extra dimension. They represent data points as bubbles or circles on a two-dimensional plane, where the size of each bubble encodes a third variable.\\
 
-\noindent The construction of bubble charts, is parallel to that of a scatter plot, but involves the scaling the data values to determine the size of each bubble. While it isn't alwaysthe case, the size of these is typically proportional to the variable it represents. The choice of scaling method depends on the data distribution and the message the chart aims to convey.\\
+\noindent The construction of bubble charts, is parallel to that of a scatter plot, but involves the scaling the data values to determine the size of each bubble. While it isn't always the case, the size of these is typically proportional to the variable it represents. The choice of scaling method depends on the data distribution and the message the chart aims to convey.\\
 
-\noindent Generally, the formula for calculating the bubble size (\(S\)) involves applying the scaling function
+\noindent Generally, the formula for calculating the bubble radius (\(R)) involves applying the scaling function
 \[
-S = k \cdot V,
+R = k \cdot V,
 \]
-\noindent where \(S\) represents the size of the bubble, \(V\) the value of the variable being represented, and \(k\) a scaling factor to control the bubble size. Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the proportionality between the bubble size and the variable being represented. (INCLUDE EXMAPLE?)\\ 
+\noindent where \(R\) represents the size of the bubble, \(V\) the value of the variable being represented, and \(k\) a scaling factor to control the bubble size. Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the proportionality between the bubble size and the variable being represented.\\ 
+
+\noindent Hence, bubble chart represents data points in three dimensions: x-coordinate, y-coordinate, and bubble size. Each data point is represented by a set of three values: \((x_i, y_i, C_i)\), where \(x_i\) and \(y_i\) are the coordinates, and \(C_i\) is the equation of the circle for the \(i\)-th observation. In the case of a bubble chart, where the radius of the bubble is denoted by \(R_i = k \cdot V_i\), we can write the equation for the each circle as:
+
+\[
+(x - x_i)^2 + (y - y_i)^2 = (k \cdot V)^2 ,
+\]
+
+\noindent where, \(x_i\) and \(y_i\) are the coordinates of the center of the circle.\\
+
+\noindent Since each bubble \(B_i\) can be mathematically described as a set of three values: \((x_i, y_i, C_i\), similarly to the scatter plot, the bubble plot can be mathematically described as a set of points: \( \{B_1, \ldots, B_n\}\), that is, \( \{(x_1, y_1, C_1), \ldots, (x_n, y_n, C_n)\}\), where \(n\) is the number of observations in the set.\\
 
 \noindent
 \textbf{Bubble Charts in Practice}\\
 The bubble chart shown in Figure~\ref{fig:bubble-plot} visualises data from the mtcars dataset. It depicts the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and color-coding the bubbles based on the number of cylinders (cyl). Hence, making it a multivariate data visualisation.\\
 
-<<bubble-plot, echo=FALSE, fig.height=5, fig.width=11, fig.cap='Bubble plot illustrating trends in car types and performance', message=FALSE>>=
+<<bubble-plot, echo=FALSE, fig.height=5, fig.width=11, fig.pos = 'H', fig.cap='Bubble plot illustrating trends in car types and performance', message=FALSE>>=
 ggplot(mtcars, aes(x = rownames(mtcars), y = mpg, size = hp, color = cyl)) +
   geom_point() +
   labs(
@@ -1029,7 +1060,7 @@ ggplot(mtcars, aes(x = rownames(mtcars), y = mpg, size = hp, color = cyl)) +
     color = "Cylinders (cyl)"
   ) +
   scale_size_continuous(range = c(3, 10)) +
-  scale_color_gradient(low = "lightblue", high = "darkblue") +
+  scale_color_gradient(low = "#e8c9fe", high = "#4B0082") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 90, hjust =1))
 @
@@ -1039,11 +1070,11 @@ ggplot(mtcars, aes(x = rownames(mtcars), y = mpg, size = hp, color = cyl)) +
 \noindent 
 The efficiency of bubble charts is highlighted by the fact that to capture just some of the information provided by this single bubble chat - that is, the information regarding the car models, the miles covered per gallon, and the horsepower of each of these, one would require three different scatter plots. These are displayed in Figure~\ref{fig:bubble-plot-construction}. The contrast between the simplicity and readability of Figure~\ref{fig:bubble-plot}, and the density and complexity of Figure~\ref{fig:bubble-plot-construction} emphasises the advantages of bubble charts in representing datasets with a higher number of variables. 
 
-<<bubble-plot-construction, echo=FALSE, fig.height=3.5, fig.width=11, fig.cap='Scatter plot deconstruction of Figure 16', message=FALSE>>=
+<<bubble-plot-construction, echo=FALSE, fig.height=3.5, fig.width=11, fig.cap='Scatter plot deconstruction of Figure 16', message=FALSE>>= 
 
 # Scatter plot 1: Car models vs. Miles per gallon
 plot1 <- ggplot(mtcars, aes(x = rownames(mtcars), y = mpg)) +
-  geom_point(color = "blue", size =2) +
+  geom_point(color = "#459395", size =2) +
   labs(x = "Car Models", y = "Miles per Gallon", title = "Car Models vs. MPG") +
   theme_bw() +
   theme(axis.text.x = element_blank(),
@@ -1051,7 +1082,7 @@ plot1 <- ggplot(mtcars, aes(x = rownames(mtcars), y = mpg)) +
 
 # Scatter plot 2: Car models vs. Horsepower
 plot2 <- ggplot(mtcars, aes(x = rownames(mtcars), y = hp)) +
-  geom_point(color = "darkblue", size =2) +
+  geom_point(color = "#EB7C69", size =2) +
   labs(x = "Car Models", y = "Horsepower", title = "Car Models vs. Horsepower") +
   theme_bw() +
   theme(axis.text.x = element_blank(),
@@ -1059,7 +1090,7 @@ plot2 <- ggplot(mtcars, aes(x = rownames(mtcars), y = hp)) +
 
 # Scatter plot 3: Miles per gallon vs. Horsepower
 plot3 <- ggplot(mtcars, aes(x = mpg, y = hp)) +
-  geom_point(color = "purple", size =2) +
+  geom_point(color = "#FDA638", size =2) +
   labs(x = "Miles per Gallon", y = "Horsepower", title = "MPG vs. Horsepower") +
   theme_bw() +
   theme(panel.border = element_blank())
