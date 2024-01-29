@@ -43,6 +43,7 @@ library(graphics)
 library(palmerpenguins)
 library(Rtsne)
 library(pROC)
+library(gganimate)
 data(ToothGrowth)
 data(mtcars)
 data(trees)
@@ -1022,59 +1023,15 @@ print(heatmap_plot)
 A scatter plot is a graphical representation of a set of data points in a two-dimensional coordinate system. Each data point is represented by a dot, and the position of the dot is determined by the values of two variables. Some examples of this type of visualisation can be found in Figure~\ref{fig:abs-plots}, Figure~\ref{fig:cogload-plot}, and Figure~\ref{fig:bubble-plot-construction}.\\
 
 \noindent
-In general, the \(Y\)-axis denotes the response, or dependent, variable and the \(X\)-axis denotes the explanatory, or independent,  variable. Each observation of a dataset is mapped to a dot in the 2-dimentional space. Let \((x_i, y_i)\) represent the coordinates of the \(i\)-th data point on the scatter plot produced by mapping a set of data. The scatter plot can be mathematically described as a set of points: \( \{(x_1, y_1), \ldots, (x_n, y_n)\}\) where \(n\) is the number of observations in the set.
+In general, the \(Y\)-axis denotes the response, or dependent, variable and the \(X\)-axis denotes the explanatory, or independent,  variable. Each observation of a dataset is mapped to a dot in the 2-dimentional space. Let \((x_i, y_i)\) represent the coordinates of the \(i\)-th data point on the scatter plot produced by mapping a set of data. The scatter plot can be mathematically described as a set of points: \( \{(x_1, y_1), \ldots, (x_n, y_n)\}\) where \(n\) is the number of observations in the set.\\
 
-\subsection{Bubble Charts}
-\noindent \textbf{Theory of Bubble Charts}
-Bubble charts are a captivating data visualisation tool that extends beyond the typical two-dimensional scatter plot by introducing an extra dimension. They represent data points as bubbles or circles on a two-dimensional plane, where the size of each bubble encodes a third variable.\\
+\noindent The scatter plots in Figure~\ref{fig:bubble-plot-construction} visualise data from the mtcars dataset. Each of these three graphs represents different information drawn from the dataset. The first plot displays the various car models and their corresponding miles per gallon. The middle plot, once again, shows the car models, but this time their horsepower is represented. Finally, the last scatter plot visualises the relationship between the cars' miles per gallon and their horsepower.
 
-\noindent The construction of bubble charts, is parallel to that of a scatter plot, but involves the scaling the data values to determine the size of each bubble. While it isn't always the case, the size of these is typically proportional to the variable it represents. The choice of scaling method depends on the data distribution and the message the chart aims to convey.\\
-
-\noindent Generally, the formula for calculating the bubble radius (\(R)) involves applying the scaling function
-\[
-R = k \cdot V,
-\]
-\noindent where \(R\) represents the size of the bubble, \(V\) the value of the variable being represented, and \(k\) a scaling factor to control the bubble size. Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the proportionality between the bubble size and the variable being represented.\\ 
-
-\noindent Hence, bubble chart represents data points in three dimensions: x-coordinate, y-coordinate, and bubble size. Each data point is represented by a set of three values: \((x_i, y_i, C_i)\), where \(x_i\) and \(y_i\) are the coordinates, and \(C_i\) is the equation of the circle for the \(i\)-th observation. In the case of a bubble chart, where the radius of the bubble is denoted by \(R_i = k \cdot V_i\), we can write the equation for the each circle as:
-
-\[
-(x - x_i)^2 + (y - y_i)^2 = (k \cdot V)^2 ,
-\]
-
-\noindent where, \(x_i\) and \(y_i\) are the coordinates of the center of the circle.\\
-
-\noindent Since each bubble \(B_i\) can be mathematically described as a set of three values: \((x_i, y_i, C_i\), similarly to the scatter plot, the bubble plot can be mathematically described as a set of points: \( \{B_1, \ldots, B_n\}\), that is, \( \{(x_1, y_1, C_1), \ldots, (x_n, y_n, C_n)\}\), where \(n\) is the number of observations in the set.\\
-
-\noindent
-\textbf{Bubble Charts in Practice}\\
-The bubble chart shown in Figure~\ref{fig:bubble-plot} visualises data from the mtcars dataset. It depicts the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and color-coding the bubbles based on the number of cylinders (cyl). Hence, making it a multivariate data visualisation.\\
-
-<<bubble-plot, echo=FALSE, fig.height=5, fig.width=11, fig.pos = 'H', fig.cap='Bubble plot illustrating trends in car types and performance', message=FALSE>>=
-ggplot(mtcars, aes(x = rownames(mtcars), y = mpg, size = hp, color = cyl)) +
-  geom_point() +
-  labs(
-    x = "Car Models",
-    y = "Miles per Gallon",
-    size = "Horsepower (hp)",
-    color = "Cylinders (cyl)"
-  ) +
-  scale_size_continuous(range = c(3, 10)) +
-  scale_color_gradient(low = "#e8c9fe", high = "#4B0082") +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 90, hjust =1))
-@
-
-\\\noindent In Figure~\ref{fig:bubble-plot} a strong correlation between the cars' number of cylinder and their horsepower can be quickly identified. This is due to the fact that as size of the dots (representing horsepower) increases, their colour (representing the number of cylinders) simultaneously becomes darker. Furthermore, a correlation between the miles per gallon consumed by the different types of cars and their number of cylinders and horsepower is easily identifiable in Figure~\ref{fig:bubble-plot}. This is shown by the fact that in the same way that the darker dots cluster towards the bottom of the graph and become lighter as they reach the top of the graph, those with a large diameter also cluster near the lower part and decrease in size as they ascend. \\ 
-
-\noindent 
-The efficiency of bubble charts is highlighted by the fact that to capture just some of the information provided by this single bubble chat - that is, the information regarding the car models, the miles covered per gallon, and the horsepower of each of these, one would require three different scatter plots. These are displayed in Figure~\ref{fig:bubble-plot-construction}. The contrast between the simplicity and readability of Figure~\ref{fig:bubble-plot}, and the density and complexity of Figure~\ref{fig:bubble-plot-construction} emphasises the advantages of bubble charts in representing datasets with a higher number of variables. 
-
-<<bubble-plot-construction, echo=FALSE, fig.height=3.5, fig.width=11, fig.cap='Scatter plot deconstruction of Figure 16', message=FALSE>>= 
+<<bubble-plot-construction, echo=FALSE, fig.height=3.5, fig.width=11, fig.cap='Partial scatter plot deconstruction of the mtcars dataset', message=FALSE>>= 
 
 # Scatter plot 1: Car models vs. Miles per gallon
 plot1 <- ggplot(mtcars, aes(x = rownames(mtcars), y = mpg)) +
-  geom_point(color = "#459395", size =2) +
+  geom_point(color = "#4B0082", size =2) +
   labs(x = "Car Models", y = "Miles per Gallon", title = "Car Models vs. MPG") +
   theme_bw() +
   theme(axis.text.x = element_blank(),
@@ -1098,6 +1055,59 @@ plot3 <- ggplot(mtcars, aes(x = mpg, y = hp)) +
 # Arrange plots side by side
 grid.arrange(plot1, plot2, plot3, ncol = 3)
 @
+
+\subsubsection{Animated Scatter Plots}
+\noindent While static scatter plots are effective in depicting relationships between two variables, animated scatter plot visualisations take this a step further by introducing, for example, a temporal dimension to the data visualisation. Unlike static plots, animated scatter plots enable the depiction of changes in relationships, clusters, or outliers over time. In R, the $gganimate$ package, building on the foundation of $ggplot2$ package, facilitates the creation of animated plots, including animated scatter plots. \\
+
+\noindent \textbf{Construction of Animated Scatter Plots}\\
+\noindent 
+
+
+\subsection{Bubble Charts}
+\noindent \textbf{Theory of Bubble Charts}
+\noindent Bubble charts are a captivating data visualisation tool that extends beyond the typical two-dimensional scatter plot by introducing an extra dimension. They represent data points as bubbles or circles on a two-dimensional plane, where the size of each bubble encodes a third variable.\\
+
+\noindent The construction of bubble charts, is parallel to that of a scatter plot, but involves the scaling the data values to determine the size of each bubble. While it isn't always the case, the size of these is typically proportional to the variable it represents. The choice of scaling method depends on the data distribution and the message the chart aims to convey.\\
+
+\noindent Generally, the formula for calculating the bubble radius (\(R)\) involves applying the scaling function
+\[
+R = k \cdot V,
+\]
+\noindent where \(R\) represents the size of the bubble, \(V\) the value of the variable being represented, and \(k\) a scaling factor to control the bubble size. Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the proportionality between the bubble size and the variable being represented.\\ 
+
+\noindent Hence, bubble chart represents data points in three dimensions: x-coordinate, y-coordinate, and bubble size. Each data point is represented by a set of three values: \((x_i, y_i, C_i)\), where \(x_i\) and \(y_i\) are the coordinates, and \(C_i\) is the equation of the circle for the \(i\)-th observation. In the case of a bubble chart, where the radius of the bubble is denoted by \(R_i = k \cdot V_i\), we can write the equation for the each circle as:
+
+\[
+(x - x_i)^2 + (y - y_i)^2 = (k \cdot V)^2 ,
+\]
+
+\noindent where, \(x_i\) and \(y_i\) are the coordinates of the center of the circle.\\
+
+\noindent Since each bubble \(B_i\) can be mathematically defined by the set of three values: \((x_i, y_i, C_i)\), similarly to the scatter plot, the bubble plot can be mathematically described as a set of points: \( \{B_1, \ldots, B_n\}\), that is, \( \{(x_1, y_1, C_1), \ldots, (x_n, y_n, C_n)\}\), where \(n\) is the number of observations in the set.\\
+
+\noindent
+\textbf{Bubble Charts in Practice}\\
+The bubble chart shown in Figure~\ref{fig:bubble-plot}, as the scatter plots above, visualises data from the mtcars dataset. The single graph deplics the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and even color-coding the bubbles based on the number of cylinders (cyl).\\
+
+<<bubble-plot, echo=FALSE, fig.height=5, fig.width=11, fig.pos = 'H', fig.cap='Bubble plot illustrating trends in car types and performance', message=FALSE>>=
+ggplot(mtcars, aes(x = rownames(mtcars), y = mpg, size = hp, color = cyl)) +
+  geom_point() +
+  labs(
+    x = "Car Models",
+    y = "Miles per Gallon",
+    size = "Horsepower (hp)",
+    color = "Cylinders (cyl)"
+  ) +
+  scale_size_continuous(range = c(3, 10)) +
+  scale_color_gradient(low = "#91cacc", high = "#3e7071") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust =1))
+@
+
+\\\noindent In Figure~\ref{fig:bubble-plot} a strong correlation between the cars' number of cylinder and their horsepower can be quickly identified. This is due to the fact that as size of the dots (representing horsepower) increases, their colour (representing the number of cylinders) simultaneously becomes darker. Furthermore, a correlation between the miles per gallon consumed by the different types of cars and their number of cylinders and horsepower is easily identifiable in Figure~\ref{fig:bubble-plot}. This is shown by the fact that, in the same way that the darker dots cluster towards the bottom of the graph and become lighter as they reach the top of the graph, those with a large diameter also cluster near the lower part and decrease in size as they ascend. \\ 
+
+\noindent 
+The efficiency of bubble charts is highlighted by the fact that capturing just some of the information provided by this single bubble chat - that is, the information regarding the car models, the miles covered per gallon, and the horsepower of each of these, requires three different scatter plots. These are displayed in Figure~\ref{fig:bubble-plot-construction}. The contrast between the simplicity and readability of Figure~\ref{fig:bubble-plot}, and the density and complexity of Figure~\ref{fig:bubble-plot-construction} emphasises the advantages of bubble charts in representing datasets with a higher number of variables. 
 
 
 \subsection{Simple Linear Regression}
