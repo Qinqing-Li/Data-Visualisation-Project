@@ -1063,6 +1063,29 @@ grid.arrange(plot1, plot2, plot3, ncol = 3)
 \noindent 
 
 
+<<animated-plot, echo=FALSE, fig.height=6, fig.width=6, fig.pos = 'H', fig.cap='Animated scatter plot: Horsepower vs MPG', message=FALSE>>=
+
+# Basic scatter plot
+p <- ggplot(mtcars, aes(x = mpg, y = wt)) +
+  geom_point() +
+  labs(title = 'Animated Scatter Plot', x = 'Miles per Gallon', y = 'Weight')
+
+# Add animation
+animated_plot <- p + transition_states(gear, transition_length = 2, state_length = 1) +
+  enter_fade() +
+  exit_fade()
+
+# Preview the animation
+animate(animated_plot, nframes = 100)
+@
+
+\noindent This animated scatter plot effectively visualises the relationship between miles per gallon (mpg) and weight (wt) in the mtcars dataset across different gear categories. As the animation progresses, one can observe how the scatter plot evolves with changes in the 'gear' variable, providing insights into the dynamic nature of the relationship between the two variables.\\
+
+\noindent The initial scatter plot is set up using the $ggplot$ function, specifying the x-axis as mpg and the y-axis as wt. The animation is introduced with the transition_states function, which animates the scatter plot by transitioning between different states based on the 'gear' variable. The enter_fade and exit_fade functions add a fading effect when entering or exiting a state.\\
+
+\noindent The animation is previewed using the animate function, specifying 100 frames for a smoother visual experience. This allows viewers to observe how the scatter plot changes dynamically with varying 'gear' categories, providing insights into the relationship between miles per gallon and weight over different car specifications.
+
+
 \subsection{Bubble Charts}
 \noindent \textbf{Theory of Bubble Charts}
 \noindent Bubble charts are a captivating data visualisation tool that extends beyond the typical two-dimensional scatter plot by introducing an extra dimension. They represent data points as bubbles or circles on a two-dimensional plane, where the size of each bubble encodes a third variable.\\

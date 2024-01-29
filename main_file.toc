@@ -25,7 +25,7 @@
 \contentsline {subsection}{\numberline {4.1}Heatmaps}{27}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Scatter Plots}{28}{subsection.4.2}%
 \contentsline {subsubsection}{\numberline {4.2.1}Animated Scatter Plots}{29}{subsubsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.3}Bubble Charts}{29}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.3}Bubble Charts}{30}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Simple Linear Regression}{31}{subsection.4.4}%
 \contentsline {subsubsection}{\numberline {4.4.1}Theory of Simple Linear Regression}{31}{subsubsection.4.4.1}%
 \contentsline {subsubsection}{\numberline {4.4.2}Least Squares Estimation}{32}{subsubsection.4.4.2}%

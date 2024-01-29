@@ -817,6 +817,20 @@ In general, the \(Y\)-axis denotes the response, or dependent, variable and the 
 \noindent 
 
 
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: No renderer available. Please install the gifski, av, or magick package to create animated output}}\end{kframe}
+\end{knitrout}
+
+\noindent This animated scatter plot effectively visualises the relationship between miles per gallon (mpg) and weight (wt) in the mtcars dataset across different gear categories. As the animation progresses, one can observe how the scatter plot evolves with changes in the 'gear' variable, providing insights into the dynamic nature of the relationship between the two variables.\\
+
+\noindent The initial scatter plot is set up using the $ggplot$ function, specifying the x-axis as mpg and the y-axis as wt. The animation is introduced with the transition_states function, which animates the scatter plot by transitioning between different states based on the 'gear' variable. The enter_fade and exit_fade functions add a fading effect when entering or exiting a state.\\
+
+\noindent The animation is previewed using the animate function, specifying 100 frames for a smoother visual experience. This allows viewers to observe how the scatter plot changes dynamically with varying 'gear' categories, providing insights into the relationship between miles per gallon and weight over different car specifications.
+
+
 \subsection{Bubble Charts}
 \noindent \textbf{Theory of Bubble Charts}
 \noindent Bubble charts are a captivating data visualisation tool that extends beyond the typical two-dimensional scatter plot by introducing an extra dimension. They represent data points as bubbles or circles on a two-dimensional plane, where the size of each bubble encodes a third variable.\\
