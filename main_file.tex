@@ -702,6 +702,7 @@ This persistent autocorrelation suggests that short-term movements in the CNY to
 \newpage
 \section{Bivariate Data Visualisation Methods}
 
+\noindent This chapter transitions from the study of univariate data visualisations to the exploration of bivariate data. Fundamental bivariate data visualisation methods, including heatmaps, scatter plots, and bubble charts, are introduced, scrutinised, and modelled throughout this chapter. In order to facilitate a more profound analysis of bivariate data, the chapter further delves into the examination of linear regression, as well as LOESS regression. Notably, within the context of scatter plots, an intriguing deviation is observed with the incorporation of animated data visualisations.
 
 \subsection{Heatmaps}
 The heatmap is a data visualisation technique that uses colour coding to represent different intensities. It can be represented as an $m \times n$ matrix $\mathbf{M}$, with $m$ observations for variable 1 and $n$ observations for variable 2:
@@ -826,7 +827,7 @@ In general, the \(Y\)-axis denotes the response, or dependent, variable and the 
 
 \noindent This animated scatter plot effectively visualises the relationship between miles per gallon (mpg) and weight (wt) in the mtcars dataset across different gear categories. As the animation progresses, one can observe how the scatter plot evolves with changes in the 'gear' variable, providing insights into the dynamic nature of the relationship between the two variables.\\
 
-\noindent The initial scatter plot is set up using the $ggplot$ function, specifying the x-axis as mpg and the y-axis as wt. The animation is introduced with the transition_states function, which animates the scatter plot by transitioning between different states based on the 'gear' variable. The enter_fade and exit_fade functions add a fading effect when entering or exiting a state.\\
+\noindent The initial scatter plot is set up using the $ggplot$ function, specifying the x-axis as mpg and the y-axis as wt. The animation is introduced with the transition-states function, which animates the scatter plot by transitioning between different states based on the 'gear' variable. The enter_fade and exit_fade functions add a fading effect when entering or exiting a state.\\
 
 \noindent The animation is previewed using the animate function, specifying 100 frames for a smoother visual experience. This allows viewers to observe how the scatter plot changes dynamically with varying 'gear' categories, providing insights into the relationship between miles per gallon and weight over different car specifications.
 
@@ -1147,6 +1148,8 @@ The linear model has a residual standard error of 13.32, while the LOESS model h
 \newpage
 
 \section{Visualising Beyond Two Dimensions}
+
+\noindent This  chapter extends beyond the realm of two dimensional data visualisations. Within this chapter, advanced techniques are explored to unravel complex relationships involving multiple variables. The foundational framework includes an exploration of multiple linear regression. The Principal Component Analysis (PCA) is introduced as a powerful method for dimensionality reduction, enabling a concise representation of high-dimensional datasets. Multiple innovative approaches facilitating the visualisation of high-dimensional data in lower-dimensional biplots and t-distributed Stochastic Neighbor Embedding (t-SNE) are studied. 
 
 \noindent
 \subsection{Generalized Linear Models}
