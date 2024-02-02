@@ -594,76 +594,21 @@ The kernel function \( K(u) \) is a normalised non-negative function that satisf
 
 \noindent In Figure~\ref{fig:iris-plots}, the kernel density estimation of the dataset is presented. The distribution of sepal lengths is depicted by the kernel density curve. The peaks observed in the curve correspond to the primary concentration trends of sepal length within the data. A unimodal curve signifies a concentration of sepal lengths for most irises in that specific region. Conversely, a bimodal or multimodal curve suggests the existence of multiple concentration areas.
 
-\subsection{ROC Curve}
-
-The Receiver Operating Characteristic (ROC) graph is a technique for assessing the performance of classification models, particularly useful for evaluating diagnostic tests and binary classifiers. 
-It displays the performance of a binary classification system as its discrimination threshold is varied.\\
+\subsection{Line Charts and Time Series}
 
 \noindent
-ROC graph plots two parameters\cite{rocAnalysis}: True Positive Rate (TPR, also known as Sensitivity, is the proportion of positive instances correctly identified) and False Positive Rate (FPR, 1 - Specificity, is the proportion of negative instances incorrectly identified as positive). Also, the Area Under the Curve (AUC) provides a single measure of overall performance of a classifier. The larger the area under the curve, the better the classifier. An AUC of 0.5 suggests no discriminative ability, while an AUC of 1.0 represents perfect classification.\\
+The previous subsections explored Histograms, Bar Charts, and Kernel Density Estimation, which are univariate methods used for analyzing independent variables in isolation, revealing patterns and intrinsic properties within data. Now, the focus shifts to univariate methods of dependent variables, specifically Line Charts, which are crucial for visualizing relationships between variables to understanding their interactions and dependencies over time.
 
-\noindent 
-\textbf{ROC analysis in COVID-19 test}\\
-The COVID-19 pandemic underscores the need for accurate diagnostic tests to differentiate between positive and negative cases\cite{Garcia2021ROCAlly}. An effective mean for evaluating accuracy of various diagnostic tests is the ROC analysis. ROC analysis comprehensively examines test accuracy by integrating TPR, FPR, and AUC. These metrics are calculated by comparing test outcomes against a recognized gold standard, thereby determining the true disease status. This approach is vital for understanding the efficacy of COVID-19 diagnostic tools and guiding public health decisions.\\
-
-\noindent
-The TPR, or sensitivity, measures the proportion of actual positives correctly identified, reflecting the test's ability to detect COVID-19 cases. The FPR, conversely, indicates the rate of false alarms, where non-infected individuals are wrongly identified as infected. An ideal test minimizes FPR, avoiding unnecessary treatments or quarantine. The ROC curve visualizes the trade-off between TPR and FPR at various thresholds. A curve arching towards the upper left indicates high sensitivity and low FPR — the hallmarks of a reliable test. The AUC consolidates the ROC performance into a single value: 0.5 denotes no better accuracy than random chance, while 1.0 represents perfect accuracy. A higher AUC indicates a better overall ability of the test.\\
-
-\noindent
-Here, the simulated data will be used to demonstrate the ROC analysis in COVID-19 test. Score\_Test1 and Score\_Test2 are the simulated test scores from two different diagnostic tests for COVID-19. These scores are continuous variables that typically would represent the likelihood of a positive diagnosis. The scores might come from a lab test result, such as a PCR test or a rapid antigen test, where higher scores indicate a higher likelihood of infection. The Condition column indicates the true condition of the patient, with 1 representing a positive COVID-19 case and 0 representing a negative case.
-
-<<message=FALSE, echo=FALSE, warning=FALSE, fig.height=3.5, fig.width=3.5,fig.cap='ROC Curves for Two Diagnostic Tests'>>=
-# Set seed for reproducibility
-set.seed(0)
-
-# Simulate scores for two diagnostic tests
-scores_positive_test1 <- rnorm(100, mean = 0.75, sd = 0.2)
-scores_negative_test1 <- rnorm(100, mean = 0.35, sd = 0.2)
-scores_positive_test2 <- rnorm(100, mean = 0.7, sd = 0.2)
-scores_negative_test2 <- rnorm(100, mean = 0.4, sd = 0.2)
-
-# Combine the positive and negative scores
-scores_test1 <- c(scores_positive_test1, scores_negative_test1)
-scores_test2 <- c(scores_positive_test2, scores_negative_test2)
-
-# Create a vector of true conditions (1 = positive, 0 = negative)
-conditions <- c(rep(1, 100), rep(0, 100))
-
-# Create ROC objects for both tests
-roc_test1 <- roc(conditions, scores_test1)
-roc_test2 <- roc(conditions, scores_test2)
-@
-
-<<roc, message=FALSE, warning=FALSE, fig.height=3.5, fig.width=3.5, fig.pos = 'H', fig.cap='ROC Curves for Two Diagnostic Tests'>>=
-# Plot of ROC curves
-plot(roc_test1, col="#459395", lwd=2)
-lines(roc_test2, col="#FDA638", lwd=2, lty=2)
-legend("bottomright", legend=c("Diagnostic Test 1", "Diagnostic Test 2"),
-       col=c("#459395", "#FDA638"), lwd=2, lty=c(1, 2), cex=0.5)
-# Add the perfect lines
-abline(h=1, lty=2, col="red")
-abline(v=1, lty=2, col="red") # Perfect Diagnostic Test (AUC = 1) 
-
-@
-
-\noindent
-From the plot~\ref{fig:roc}, the Diagnostic Test 1 has higher AUC. This test is likely to be more accurate in diagnosing COVID-19. It suggests that the test has a higher combined sensitivity and specificity, meaning it can identify positive cases more correctly and has fewer false alarms. Also, the Diagnostic Test 2 has a lower AUC than Test 1, This test is less accurate but still better than random guessing. It may miss more true cases (lower sensitivity) or incorrectly identify healthy individuals as having COVID-19 (higher false positive rate).\\
-
-\noindent
-In practice, the choice of which test to use may depend on other factors. For instance, if the cost of missing a COVID-19 case is high (for example, in a nursing home setting), a test with higher sensitivity might be preferred. Conversely, if the cost of false positives is high (for example, leading to unnecessary quarantine), a test with higher specificity might be favored.
-
-\subsection{Time Series Analysis}
+\subsubsection{Theory of Line Charts}
 
 \noindent
 Line charts are fundamental tools in data visualisation, particularly useful for displaying time series data. A line chart represents $n$ data points 
 $\{(x_i,y_i)\}_{1 \leq i \leq n}$ on a Cartesian coordinate system, with the x-axis often denoting time intervals or ordered categories and the y-axis representing the measured values.\\ 
 
-\noindent 
-\textbf{Basics of Line Charts}\\
 \noindent
 In a line chart, consecutive data points are typically connected by straight lines. The line segment between two points \((x_i,y_i)\) and \((x_{i+1},y_{i+1})\) can be described by the equation of a line in the slope-intercept form: \(y=mx+b\), where \(m\) is the slope and \(b\) is the y-intercept. Also, a series of linear interpolations between pairs of data points could be used. These interpolations assume that the change between two points is uniform or linear. This linear approach is mathematically represented as:
 \[
-y = y_i + \frac{(y_{i+1} - y_i)}{(x_{i+1} - x_i)} \cdot (x - x_i), \quad  x_i \leq x \leq x_{i+1}.
+y = y_i + \frac{y_{i+1} - y_i}{x_{i+1} - x_i} \cdot (x - x_i), \quad  x_i \leq x \leq x_{i+1}.
 \]
 \noindent
 This equation highlights that for any point \(x\) between \(x_i\) and \(x_{i+1}\), the corresponding value of \(y\) on the line chart is determined by a linear relation. This method effectively ``fills the gaps'' between actual observed data points and provides a continuous view of the data.
@@ -727,36 +672,24 @@ plot_data$Currency <- gsub("_MA49", "", plot_data$Currency)
 @
 \begin{figure}[H]
 <<message=FALSE,warning=FALSE,fig.dim = c(6, 3.5)>>=
-# Plot daily and 49-day moving average exchange rates of CAN, EUR, USD to GBP
-
+# PLOT OF DAILY AND 49-DAY MOVING AVERAGE EXCHANGE RATES OF CAN, EUR, USD TO GBP
 # Define the color palette
 color_palette <- c("#459395", "#EB7C69", "#FDA638")
 
-# Modify the plots to use the color palette
-p1 <- ggplot(plot_dt, aes(x = Date, y = Rate, color = Currency)) +
-  geom_line() +
+p1 <- ggplot(plot_dt, aes(x = Date, y = Rate, color = Currency)) + geom_line() +
   labs(y = "Exchange Rate to GBP", x = "", color = "Currency") +
-  theme_minimal() +
-  theme(legend.position = "none") +
+  theme_minimal() + theme(legend.position = "none") +
+  scale_color_manual(values = color_palette)
+p2 <- ggplot(plot_data, aes(x = Date, y = Rate, color = Currency)) + geom_line() +
+  labs(y = "Exchange Rate to GBP", x = "", color = "Currency") +
+  theme_minimal() + theme(legend.position = "none") +
   scale_color_manual(values = color_palette)
 
-p2 <- ggplot(plot_data, aes(x = Date, y = Rate, color = Currency)) +
-  geom_line() +
-  labs(y = "Exchange Rate to GBP", x = "", color = "Currency") +
-  theme_minimal() +
-  theme(legend.position = "none") +
-  scale_color_manual(values = color_palette)
-
-# Extract the legend
+# Extract the legend and combine the plots 
 p2_legend <- cowplot::get_legend(p2 + theme(legend.position = "right"))
-
-# Combine the plots 
 combined_plot <- cowplot::plot_grid(p1, p2, rel_widths = c(1, 1), nrow = 2)
 cowplot::plot_grid(combined_plot, p2_legend, nrow = 1, rel_widths = c(2, 0.5))
-
 @
-
-
 \centering
 \caption{Daily (top) and 49-day moving average (bottom) exchange rates of CAN, EUR, USD to GBP}
 \label{fig:all exchange rates}
@@ -1387,6 +1320,63 @@ ggplot(data = estate, aes(x = house_age, y = price_per_area)) +
   theme_minimal()
 @
 
+\subsection{ROC Curve}
+
+The Receiver Operating Characteristic (ROC) graph is a technique for assessing the performance of classification models, particularly useful for evaluating diagnostic tests and binary classifiers. 
+It displays the performance of a binary classification system as its discrimination threshold is varied.\\
+
+\noindent
+ROC graph plots two parameters\cite{rocAnalysis}: True Positive Rate (TPR, also known as Sensitivity, is the proportion of positive instances correctly identified) and False Positive Rate (FPR, 1 - Specificity, is the proportion of negative instances incorrectly identified as positive). Also, the Area Under the Curve (AUC) provides a single measure of overall performance of a classifier. The larger the area under the curve, the better the classifier. An AUC of 0.5 suggests no discriminative ability, while an AUC of 1.0 represents perfect classification.\\
+
+\noindent 
+\textbf{ROC analysis in COVID-19 test}\\
+The COVID-19 pandemic underscores the need for accurate diagnostic tests to differentiate between positive and negative cases\cite{Garcia2021ROCAlly}. An effective mean for evaluating accuracy of various diagnostic tests is the ROC analysis. ROC analysis comprehensively examines test accuracy by integrating TPR, FPR, and AUC. These metrics are calculated by comparing test outcomes against a recognized gold standard, thereby determining the true disease status. This approach is vital for understanding the efficacy of COVID-19 diagnostic tools and guiding public health decisions.\\
+
+\noindent
+The TPR, or sensitivity, measures the proportion of actual positives correctly identified, reflecting the test's ability to detect COVID-19 cases. The FPR, conversely, indicates the rate of false alarms, where non-infected individuals are wrongly identified as infected. An ideal test minimizes FPR, avoiding unnecessary treatments or quarantine. The ROC curve visualizes the trade-off between TPR and FPR at various thresholds. A curve arching towards the upper left indicates high sensitivity and low FPR — the hallmarks of a reliable test. The AUC consolidates the ROC performance into a single value: 0.5 denotes no better accuracy than random chance, while 1.0 represents perfect accuracy. A higher AUC indicates a better overall ability of the test.\\
+
+\noindent
+Here, the simulated data will be used to demonstrate the ROC analysis in COVID-19 test. Score\_Test1 and Score\_Test2 are the simulated test scores from two different diagnostic tests for COVID-19. These scores are continuous variables that typically would represent the likelihood of a positive diagnosis. The scores might come from a lab test result, such as a PCR test or a rapid antigen test, where higher scores indicate a higher likelihood of infection. The Condition column indicates the true condition of the patient, with 1 representing a positive COVID-19 case and 0 representing a negative case.
+
+<<message=FALSE, echo=FALSE, warning=FALSE, fig.height=3.5, fig.width=3.5,fig.cap='ROC Curves for Two Diagnostic Tests'>>=
+# Set seed for reproducibility
+set.seed(0)
+
+# Simulate scores for two diagnostic tests
+scores_positive_test1 <- rnorm(100, mean = 0.75, sd = 0.2)
+scores_negative_test1 <- rnorm(100, mean = 0.35, sd = 0.2)
+scores_positive_test2 <- rnorm(100, mean = 0.7, sd = 0.2)
+scores_negative_test2 <- rnorm(100, mean = 0.4, sd = 0.2)
+
+# Combine the positive and negative scores
+scores_test1 <- c(scores_positive_test1, scores_negative_test1)
+scores_test2 <- c(scores_positive_test2, scores_negative_test2)
+
+# Create a vector of true conditions (1 = positive, 0 = negative)
+conditions <- c(rep(1, 100), rep(0, 100))
+
+# Create ROC objects for both tests
+roc_test1 <- roc(conditions, scores_test1)
+roc_test2 <- roc(conditions, scores_test2)
+@
+
+<<roc, message=FALSE, warning=FALSE, fig.height=3.5, fig.width=3.5, fig.pos = 'H', fig.cap='ROC Curves for Two Diagnostic Tests'>>=
+# Plot of ROC curves
+plot(roc_test1, col="#459395", lwd=2)
+lines(roc_test2, col="#FDA638", lwd=2, lty=2)
+legend("bottomright", legend=c("Diagnostic Test 1", "Diagnostic Test 2"),
+       col=c("#459395", "#FDA638"), lwd=2, lty=c(1, 2), cex=0.5)
+# Add the perfect lines
+abline(h=1, lty=2, col="red")
+abline(v=1, lty=2, col="red") # Perfect Diagnostic Test (AUC = 1) 
+
+@
+
+\noindent
+From the plot~\ref{fig:roc}, the Diagnostic Test 1 has higher AUC. This test is likely to be more accurate in diagnosing COVID-19. It suggests that the test has a higher combined sensitivity and specificity, meaning it can identify positive cases more correctly and has fewer false alarms. Also, the Diagnostic Test 2 has a lower AUC than Test 1, This test is less accurate but still better than random guessing. It may miss more true cases (lower sensitivity) or incorrectly identify healthy individuals as having COVID-19 (higher false positive rate).\\
+
+\noindent
+In practice, the choice of which test to use may depend on other factors. For instance, if the cost of missing a COVID-19 case is high (for example, in a nursing home setting), a test with higher sensitivity might be preferred. Conversely, if the cost of false positives is high (for example, leading to unnecessary quarantine), a test with higher specificity might be favored.
 
 \newpage
 
