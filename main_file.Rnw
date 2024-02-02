@@ -1558,31 +1558,31 @@ Unlike PCA, t-Distributed Stochastic Neighbor Embedding (t-SNE) is a nonlinear t
 
 \noindent
 First, for each pair of high-dimensional points $x_i$ and $x_j$, the similarity between data points is quantified using conditional probabilities $p_{j|i}$, which is calculated using a Gaussian distribution centered at $x_i$:
-    \begin{equation}
+    \[
         p_{j|i} = \frac{\exp(-||\mathbf{x}_i - \mathbf{x}_j||^2 / 2\sigma_i^2)}{\sum_{k \neq i}\exp(-||\mathbf{x}_i - \mathbf{x}_k||^2 / 2\sigma_i^2)}
-    \end{equation}\\
+    \] \\
 
 \noindent
 Then, the joint probability distribution $P$ in the high-dimensional space is symmetrized as follows:
-    \begin{equation}
+    \[
         p_{ij} = \frac{p_{j|i} + p_{i|j}}{2N}
-    \end{equation}\\
+    \] \\
 
 \noindent
 In the low-dimensional space, t-SNE alleviates the crowding problem, which is a common issue in methods like PCA (Principal Component Analysis). It does so by using a t-distribution in the low-dimensional space, which has heavier tails than a Gaussian distribution. t-SNE calculates similar probabilities using a Student's t-distribution:
-    \begin{equation}
+    \[
         q_{ij} = \frac{(1 + ||\mathbf{y}_i - \mathbf{y}_j||^2)^{-1}}{\sum_{k \neq l}(1 + ||\mathbf{y}_k - \mathbf{y}_l||^2)^{-1}}
-    \end{equation}\\
+    \] \\
     
 \noindent
 The objective is to minimize the Kullback-Leibler divergence between the joint probability distributions $P$ and $Q$:
-    \begin{equation}
+    \[
         C = \text{KL}(P || Q) = \sum_{i \neq j} p_{ij} \log \frac{p_{ij}}{q_{ij}}
-    \end{equation}
+    \]
 This process is achieved through gradient descent. The gradient of symmetric SNE is fairly similar to that of asymmetric SNE, and is given 
-\begin{equation}
+\[
         \partial C = \text{KL}(P || Q) = \sum_{i \neq j} p_{ij} \log \frac{p_{ij}}{q_{ij}}
-    \end{equation}
+    \] \\
     
 \noindent
 Perplexity influences the variance of the Gaussians in the high-dimensional space and is a crucial hyperparameter in t-SNE.\\
