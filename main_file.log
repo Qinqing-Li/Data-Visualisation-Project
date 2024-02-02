@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.13)  2 FEB 2024 14:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.13)  2 FEB 2024 15:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1454,134 +1454,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 1265--1266
 
  []
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.1267 ...composition of the data matrix (n \times
-                                                   p) matrix $\mathbf{X}$ of...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
 
+Underfull \hbox (badness 10000) in paragraph at lines 1271--1272
 
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1267 ...data matrix (n \times p) matrix $\mathbf
-                                                  {X}$ of $n$ observations o...
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.1268 
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1271 ...ix. Furthermore, the columns of $\mathbf
-                                                  {U}$ and $\mathbf{S}$ are ...
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1271 ...the columns of $\mathbf{U}$ and $\mathbf
-                                                  {S}$ are the so-called \te...
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1271 ...textbf{right singular vectors}. $\mathbf
-                                                  {B}$ is a $(r \times r) di...
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.1271 ...r vectors}. $\mathbf{B}$ is a $(r \times
-                                                   r) diagonal matrix with e...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.1271 ...imes r) diagonal matrix with entries $b_
-                                                  1, \ldots, b_r$ such that ...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-
-Overfull \hbox (98.31815pt too wide) in paragraph at lines 1271--1272
-\OT1/cmr/m/n/10 where $\OT1/cmr/bx/n/10 U$ \OT1/cmr/m/n/10 is an $(\OML/cmm/m/it/10 n \OMS/cmsy/m/n/10 ^^B \OML/cmm/m/it/10 r\OT1/cmr/m/n/10 )$ or-thog-o-nal ma-trix, and $\OT1/cmr/bx/n/10 S$ \OT1/cmr/m/n/10 is an $(\OML/cmm/m/it/10 p \OMS/cmsy/m/n/10 ^^B \OML/cmm/m/it/10 r\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 orthogonalmatrix:Furthermore; thecolumnsof$\OT1/cmr/m/n/10 U$\OML/cmm/m/it/10 and$\OT1/cmr/m/n/10 S$\OML/cmm/m/it/10 aretheso \OMS/cmsy/m/n/10 ^^@
  []
 
 
-Overfull \hbox (8.85814pt too wide) in paragraph at lines 1271--1272
-\OML/cmm/m/it/10 called[]and[]:$\OT1/cmr/m/n/10 B$\OML/cmm/m/it/10 isa$\OT1/cmr/m/n/10 (r $\OMS/cmsy/m/n/10 ^^B\OML/cmm/m/it/10 r\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 diagonalmatrixwithentries$\OT1/cmr/m/n/10 b$[]\OML/cmm/m/it/10 ; [] ; b[]$ \OT1/cmr/m/n/10 such that $\OML/cmm/m/it/10 b[] \OMS/cmsy/m/n/10 ^^U
+Underfull \hbox (badness 10000) in paragraph at lines 1273--1274
+
  []
-
-! Display math should end with $$.
-<to be read again> 
-                   \protect 
-l.1278 ...{h}_1, \dot , \mathbf{h}_p]^T = $\mathbf
-                                                  {B}^{1-\alpha}\mathbf{S}^T...
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-
-! LaTeX Error: \mathbf allowed only in math mode.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1278 ...{h}_1, \dot , \mathbf{h}_p]^T = $\mathbf
-                                                  {B}^{1-\alpha}\mathbf{S}^T...
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.1278 ...1, \dot , \mathbf{h}_p]^T = $\mathbf{B}^
-                                                  {1-\alpha}\mathbf{S}^T, \]
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.1278 ...= $\mathbf{B}^{1-\alpha}\mathbf{S}^T, \]
-                                                  
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
 
 ! Extra }, or forgotten $.
 l.1280 ...hbf{B}^{a} \equiv \text{diag}(b_{1}^{a}}
@@ -1598,34 +1479,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 1280--1281
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1293--1294
+Underfull \hbox (badness 10000) in paragraph at lines 1290--1291
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1295--1296
+Underfull \hbox (badness 10000) in paragraph at lines 1292--1293
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1294--1295
 
  []
 
 [41]
-<figure/beamer-PCAbiplot-1.pdf, id=716, 722.7pt x 505.89pt>
+<figure/beamer-PCAbiplot-1.pdf, id=716, 578.16pt x 397.485pt>
 File: figure/beamer-PCAbiplot-1.pdf Graphic file (type pdf)
 <use figure/beamer-PCAbiplot-1.pdf>
-Package pdftex.def Info: figure/beamer-PCAbiplot-1.pdf  used on input line 1317.
-(pdftex.def)             Requested size: 433.62pt x 303.53633pt.
+Package pdftex.def Info: figure/beamer-PCAbiplot-1.pdf  used on input line 1315.
+(pdftex.def)             Requested size: 433.62pt x 298.113pt.
 
 Runaway argument?
 ! Paragraph ended before \href@split was complete.
 <to be read again> 
                    \par 
-l.1330 
+l.1328 
        
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1331--1333
+Underfull \hbox (badness 10000) in paragraph at lines 1329--1331
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1332--1334
 
  []
 
@@ -1633,69 +1524,64 @@ Underfull \hbox (badness 10000) in paragraph at lines 1331--1333
 pdfTeX warning (ext4): destination with the same identifier (name{figure.22}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1334 \noindent
-                 <./figure/beamer-PCAbiplot-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 1334--1336
+l.1334 
+        <./figure/beamer-PCAbiplot-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 1339--1340
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1341--1342
+Underfull \hbox (badness 10000) in paragraph at lines 1345--1346
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1347--1348
+Underfull \hbox (badness 10000) in paragraph at lines 1351--1352
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1353--1354
+Underfull \hbox (badness 10000) in paragraph at lines 1361--1362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1363--1364
+Underfull \hbox (badness 10000) in paragraph at lines 1363--1365
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1365--1367
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1368--1369
+Underfull \hbox (badness 10000) in paragraph at lines 1366--1367
 
  []
 
 <figure/beamer-t-SNE-1.pdf, id=727, 361.35pt x 216.81pt>
 File: figure/beamer-t-SNE-1.pdf Graphic file (type pdf)
 <use figure/beamer-t-SNE-1.pdf>
-Package pdftex.def Info: figure/beamer-t-SNE-1.pdf  used on input line 1375.
+Package pdftex.def Info: figure/beamer-t-SNE-1.pdf  used on input line 1373.
 (pdftex.def)             Requested size: 361.34912pt x 216.80946pt.
 [43]
-Underfull \hbox (badness 10000) in paragraph at lines 1385--1387
+Underfull \hbox (badness 10000) in paragraph at lines 1383--1385
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1388--1390
+Underfull \hbox (badness 10000) in paragraph at lines 1386--1388
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1391--1393
+Underfull \hbox (badness 10000) in paragraph at lines 1389--1391
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1394--1396
+Underfull \hbox (badness 10000) in paragraph at lines 1392--1394
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1397--1399
+Underfull \hbox (badness 10000) in paragraph at lines 1395--1397
 
  []
 
@@ -1703,8 +1589,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 1397--1399
 pdfTeX warning (ext4): destination with the same identifier (name{figure.23}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1399 
-        <./figure/beamer-t-SNE-1.pdf>] [45] [46] (./main_file.bbl
+l.1401 \newpage
+                <./figure/beamer-t-SNE-1.pdf>] [45] (./main_file.bbl
 Underfull \hbox (badness 1472) in paragraph at lines 4--7
 []\TS1/cmr/m/n/10 $\OT1/cmr/m/n/10 500,000 in 1937 is how much to-day?  []$\OT1/cmtt/m/n/10 https : / / www . calculateme . com / inflation /
  []
@@ -1754,12 +1640,12 @@ Underfull \hbox (badness 6284) in paragraph at lines 91--95
 \OT1/cmtt/m/n/10 where-[]science-[]meets-[]fiction-[]the-[]dark-[]history-[]of-[]eugenics$[]\OT1/cmr/m/n/10 , 2022.  Ac-cessed 9
  []
 
-[47]
+[46]
 Underfull \hbox (badness 1939) in paragraph at lines 133--137
 []\OT1/cmr/m/n/10 Bruce Wor-ton.  Gen-er-al-ized lin-ear mod-els.  []$\OT1/cmtt/m/n/10 http : / / www . drps . ed . ac . uk / 20-[]21 / dpt /
  []
 
-) [48] [49] [50] [51] (./main_file.aux)
+) [47] [48] [49] [50] (./main_file.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-10-10>
@@ -1769,21 +1655,21 @@ Package rerunfilecheck Info: File `main_file.out' has not changed.
  )
 (\end occurred inside a group at level 1)
 
-### semi simple group (level 1) entered at line 1329 (\begingroup)
+### semi simple group (level 1) entered at line 1327 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 13062 strings out of 476463
- 205379 string characters out of 5799821
+ 13061 strings out of 476463
+ 205372 string characters out of 5799821
  1938043 words of memory out of 5000000
  34443 multiletter control sequences out of 15000+600000
  569566 words of font info for 80 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  75i,10n,79p,1201b,735s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main_file.pdf (51 pages, 7483985 bytes).
+Output written on main_file.pdf (50 pages, 7483200 bytes).
 PDF statistics:
- 930 PDF objects out of 1000 (max. 8388607)
- 768 compressed objects within 8 object streams
- 163 named destinations out of 1000 (max. 500000)
+ 925 PDF objects out of 1000 (max. 8388607)
+ 764 compressed objects within 8 object streams
+ 162 named destinations out of 1000 (max. 500000)
  515 words of extra memory for PDF output out of 10000 (max. 10000000)
 

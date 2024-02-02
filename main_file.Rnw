@@ -1503,33 +1503,32 @@ A biplot is a graphical representation that succinctly captures the relationship
 
 \subsubsection{Construction of PCA Biplots}
 
-\noindent \text{Singular Value Decomposition}\\
+\noindent \textbf{Singular Value Decomposition}\\
 
-\noindent Principal component biplots are based on singular value decomposition of the data matrix (n \times p) matrix $\mathbf{X}$ of $n$ observations on $p$ variables with rank $r$. SVD claims that 
+\noindent Principal component biplots are based on singular value decomposition of the $(n \times p)$ data matrix $\mathbf{X}$ of $n$ observations on $p$ variables with rank $r$. SVD claims that 
 
-\[\mathbf{X} = \mathbf{U}\mathbf{L}\mathbf{s}^{T}, \]
+\[\mathbf{X} = \mathbf{U}\mathbf{B}\mathbf{S}^{T}, \]
 
-\noindent where $\mathbf{U}$ is an $(n \times r)$ orthogonal matrix, and $\mathbf{S}$ is an $(p \times r) orthogonal matrix. Furthermore, the columns of $\mathbf{U}$ and $\mathbf{S}$ are the so-called \textbf{left} and \textbf{right singular vectors}. $\mathbf{B}$ is a $(r \times r) diagonal matrix with entries $b_1, \ldots, b_r$ such that $b_1 \geq \dots b_r \geq 0$. These entries are known as the singular values. 
+\noindent where $\mathbf{U}$ is an $(n \times r)$ orthogonal matrix, and $\mathbf{S}$ is an $(p \times r)$ orthogonal matrix. Furthermore, the columns of $\mathbf{U}$ and $\mathbf{S}$ are the so-called \textbf{left} and \textbf{right singular vectors}. $\mathbf{B}$ is a $(r \times r)$ diagonal matrix with entries $b_1, \ldots, b_r$ such that $b_1 \geq \dots b_r \geq 0$. These entries are known as the singular values.\\
 
-\noindent EXPLAIN HOW IT IS OBTAINED 
+\noindent EXPLAIN HOW IT IS OBTAINED \\
 
 \noindent Having this decomposition of the data, it can be rewritten as
-\[\mathbf{X} = \mathbf{U}\mathbf{L}\mathbf{S}^{T}= \mathbf{G}\mathbf{H}^{T}],\]
+\[\mathbf{X} = \mathbf{U}\mathbf{B}\mathbf{S}^{T}= \mathbf{G}\mathbf{H}^{T},\]
 
-\noindent where \[\mathbf{G} = [\mathbf{g}_1, \dot , \mathbf{g}_n],  \mathbf{H}^T = [\mathbf{h}_1, \dot , \mathbf{h}_p]^T = $\mathbf{B}^{1-\alpha}\mathbf{S}^T, \]
+\noindent where \[\mathbf{G} = [\mathbf{g}_1, \dots , \mathbf{g}_n] = \mathbf{U}\mathbf{B}^\alpha, \space \mathbf{H}^T = [\mathbf{h}_1, \dots , \mathbf{h}_p]^T = \mathbf{B}^{1-\alpha}\mathbf{S}^T, \]
 
 \noindent and $\mathbf{B}^{a} \equiv \text{diag}(b_{1}^{a}}, \ldots, b_{r}^{a})$, where $a \in \mathbb{R}$.\\
 
 \noindent Hence, the $i$th observation of the $j$th variable can be rewritten as
 
-\[ x_{ij} = g_i^T h_j, \]
+\[ x_{ij} = \mathbf{g}_i^T \mathbf{h}_j, \]
 
-\noindent thus suggesting that if instead of using the $\mathbf{g}_i$ and the $\mathbf{h}_j$, we can just use their first elements, respectively denoted by  $\mathbf{g}_{i}^{*}$  and  $\mathbf{h}_{j}^{*}$ , to get
+\noindent thus suggesting that if instead of using the $\mathbf{g}_i$ and the $\mathbf{h}_j$, we can just use their first elements (say, 2), respectively denoted by  $\mathbf{g}_{i}^{*}$  and  $\mathbf{h}_{j}^{*}$ , to get
 
 \[ x_{ij} \approx \mathbf{g}_{i}^{*T}\mathbf{h}_{j}^{*}.\]
 
-\noindent Thus, $\mathbf{g}_i$ and $\mathbf{h}_j$ should provide a reasonable two-dimensional approximation of the $n$ observations and the
-$p$ variables.
+\noindent Thus, $\mathbf{g}_i$ and $\mathbf{h}_j$ should provide a reasonable two-dimensional approximation of the $n$ observations and the $p$ variables.\\
 
 \noindent \textbf{Understanding Biplots}\\
 
@@ -1538,10 +1537,9 @@ $p$ variables.
 \noindent \textbf{Sample Points:} The position of each sample point in relation to the variable vectors conveys information about the relationships between observations and variables. The distance between sample points provides a measure of similarity or dissimilarity between observations.
 
 
-<<PCAbiplot, fig.height=7, fig.width=10, fig.cap='PCA Biplot of mtcars Dataset: Principal Component Analysis', message=FALSE>>=
+<<PCAbiplot, fig.height=5.5, fig.width=8, fig.cap='PCA Biplot of mtcars Dataset: Principal Component Analysis', message=FALSE>>=
+#GENERATION OF A BIPLOT
 data(mtcars)
-#Generation of a PCA Biplot 
-
 # Standardise the data
 scaled_data <- scale(mtcars)
 
