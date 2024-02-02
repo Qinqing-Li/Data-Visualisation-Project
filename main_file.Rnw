@@ -1495,57 +1495,48 @@ where $\mathbf{Y} \in \mathbb{R}^{N \times k}$ is the transformed data matrix in
 
 \subsection{Biplots}
 \noindent 
-Biplots are designed visualise high-dimensional data by projecting it onto a lower-dimensional space while retaining essential information. They are commonly understood to be a generalisation of the simple two-variable scatterplot.\\
+A biplot is a graphical representation that succinctly captures the relationships between variables and observations in a reduced-dimensional space defined by the principal components. This visualisation method facilitates the exploration of complex multivariate data by providing a simultaneous display of both samples (observations) and variables in a single plot. They are commonly understood to be a generalisation of the simple two-variable scatterplot.\\
 
-\noindent At their core, biplots offer a graphical representation of a standardised data matrix, whose rows \(n\) are the samples, and whose columns \(p\) are the variables, by projecting these onto a two-dimensional plane. To do this, mathematical computations derived from techniques like Singular Value Decomposition (SVD) or Principal Component Analysis (PCA) are required. SVD is particularly essential in the generation of biplots as it breaks down the data matrix into three constituent matrices, allowing for the extraction of singular values and singular vectors — which form the basis for plotting the data in the reduced-dimensional space.
+\noindent At their core, biplots offer a graphical representation of a standardised data matrix, whose rows \(n\) are the samples, and whose columns \(p\) are the variables, by projecting these onto a two-dimensional plane. To do this, mathematical computations derived from techniques like Singular Value Decomposition (SVD) or Principal Component Analysis (PCA) are required.\\
 
-\subsubsection{Construction of Biplots}
+\noindent In recent years, there have been substantial developments in biplots (REFRENCE Gower and Hand in 1996). The technique has expanded far beyond what is now referred to as the "classical biplots" or "PCA biplots". The concept now finds broad application in conjunction with various other techniques of multivariate analysis. Nevertheless, this section studies the foundations of this visualisation technique, and thus, the emphasis is on biplots within the framework of PCA.
 
-\noindent As we will see in detail subsequently, the steps to generate a biplot involve:
-\begin{itemize}
-    \item \textbf{Data Standardisation}: Standardising the data by centering and scaling it to ensure each variable contributes equally.
-    \item \textbf{Calculating Singular Value Decomposition (SVD)}: Applying SVD to the standardised data matrix to obtain the singular values and vectors.
-    \item \textbf{Projection}: Projecting both the samples and variables onto a two-dimensional space using the singular vectors obtained from SVD. 
-\end{itemize}
+\subsubsection{Construction of PCA Biplots}
 
-\noindent \textbf{Data Standardisation}\\
-Depending on the initial data matrix $\mathbf{M}$, various transformations may be necessary to arrived at the standardised data matrix $\mathbf{H}$. These may include functional transformations like logarithmic, sine, power, etc., as well as matrix transformations such as observed/expected frequency ratio, odds ratio, log ratio, etc. Additionally, transformations may involve applying weights to rows and/or columns, (weighted) centering of rows and columns, double-centering, and normalization of rows and columns.\\
+\noindent \text{Singular Value Decomposition}\\
 
-\noindent \textbf {Singular Value Decomposition (SVD)}\\
-\noindent (Weighted) SVD is performed via the eigendecomposition of a cross-product matrix whose order depends on the number of columns of $\mathbf{H}$, since the number of columns is usually less than the number of rows.\\
+\noindent Principal component biplots are based on singular value decomposition of the data matrix (n \times p) matrix $\mathbf{X}$ of $n$ observations on $p$ variables with rank $r$. SVD claims that 
 
-\noindent The most general situation is that in which there are weights $r$ for the rows and weights $c$ for the columns, with associated diagonal matrices $\mathbf{D}_r$ and $\mathbf{D}_c$. Defaults are $\mathbf{D}_r = (1/n)\mathbf{I}$ (each of the $n$ rows is weighted equally by $1/n$) and $\mathbf{D}_c = \mathbf{I}$.\\
+\[\mathbf{X} = \mathbf{U}\mathbf{L}\mathbf{s}^{T}, \]
 
-\noindent The weighted SVD is obtained by decomposing the matrix \[\mathbf{D}_r^{1/2} \mathbf{H} \mathbf{D}_c^{1/2} = \mathbf{U}\Gamma \mathbf{V^T}\], where \(\Gamma\) is the diagonal matrix of eigenvalues. Alternatively, if proceeding via the weighted eigendecomposition, \[\mathbf{D}_c^{1/2} \mathbf{H^T} \mathbf{D}_r \mathbf{H} \mathbf{D}_c^{1/2} = \mathbf{V}\Gamma^2 \mathbf{D^T}\] where \(\Gamma_2\) is the diagonal matrix of eigenvalues, followed by the transformation to the left vectors: \[\mathbf{U} = \mathbf{D}_r^{1/2} \mathbf{H} \mathbf{D}_c^{1/2} \mathbf{V}\Gamma^{-1}\].\\
+\noindent where $\mathbf{U}$ is an $(n \times r)$ orthogonal matrix, and $\mathbf{S}$ is an $(p \times r) orthogonal matrix. Furthermore, the columns of $\mathbf{U}$ and $\mathbf{S}$ are the so-called \textbf{left} and \textbf{right singular vectors}. $\mathbf{B}$ is a $(r \times r) diagonal matrix with entries $b_1, \ldots, b_r$ such that $b_1 \geq \dots b_r \geq 0$. These entries are known as the singular values. 
 
-\noindent \textbf{Projection: Computation of Coordinates}\\
-\noindent There are three types of coordinates. Firstly, there's the standard coordinates whose rows are given by \(\mathbf{F}_s = \mathbf{D}^{-1/2}_r \mathbf{U}\), and the columns by \(\mathbf{G}_s = \mathbf{D}^{-1/2}_c \mathbf{V}\). There's also the principal coordinates which have rows given by \(\mathbf{F}_p = \mathbf{D}_s\Gamma\) and columns given by \(\mathbf{G}_p = \mathbf{G}_s\Gamma\). Finally, there's the “canonical” coordinates which have rows given by \(\mathbf{F}_c = \mathbf{F}_s\Gamma^{1/2}\) and columns \(\mathbf{G}_c = \mathbf{G}_s\Gamma^{1/2}\).\\
+\noindent EXPLAIN HOW IT IS OBTAINED 
 
-\noindent \textbf{PCA-based Biplots}\\
+\noindent Having this decomposition of the data, it can be rewritten as
+\[\mathbf{X} = \mathbf{U}\mathbf{L}\mathbf{S}^{T}= \mathbf{G}\mathbf{H}^{T}],\]
 
-\noindent In the context of PCA-based biplots, the primary steps involve determining principal components from the covariance or correlation matrix of the data. The first two principal components, capturing the most significant variation, form the basis of the biplot. In this graphical representation, observations are depicted as points, while variables are represented as vectors emanating from the origin. The angles and lengths of these vectors signify relationships between variables and their contributions to the principal components, while the proximity of points reflects similarity or dissimilarity between observations.\\
+\noindent where \[\mathbf{G} = [\mathbf{g}_1, \dot , \mathbf{g}_n],  \mathbf{H}^T = [\mathbf{h}_1, \dot , \mathbf{h}_p]^T = $\mathbf{B}^{1-\alpha}\mathbf{S}^T, \]
 
-\noindent Mathematically, the coordinates of observations on the first two principal components can be calculated using formulas derived from PCA:
+\noindent and $\mathbf{B}^{a} \equiv \text{diag}(b_{1}^{a}}, \ldots, b_{r}^{a})$, where $a \in \mathbb{R}$.\\
 
-$$\[
-x_{i1} = s_{i1} \cdot u_{1}
-\]
-\[
-x_{i2} = s_{i2} \cdot u_{2},
-\]
+\noindent Hence, the $i$th observation of the $j$th variable can be rewritten as
 
-\noindent where \( x_{i1} \) and \( x_{i2} \) are the coordinates of observation \( i \) on the first and second principal components respectively, \( s_{i1} \) and \( s_{i2} \) are the scores of observation \( i \) on these components, and \( u_{1} \) and \( u_{2} \) are the unit eigenvectors corresponding to the first and second principal components.\\
+\[ x_{ij} = g_i^T h_j, \]
 
-\noindent Similarly, the coordinates of the variable vectors are computed using the following formulas:
+\noindent thus suggesting that if instead of using the $\mathbf{g}_i$ and the $\mathbf{h}_j$, we can just use their first elements, respectively denoted by  $\mathbf{g}_{i}^{*}$  and  $\mathbf{h}_{j}^{*}$ , to get
 
-\[
-v_{j1} = \sqrt{\lambda_{1}} \cdot c_{j1}
-\]
-\[
-v_{j2} = \sqrt{\lambda_{2}} \cdot c_{j2}.
-\]
+\[ x_{ij} \approx \mathbf{g}_{i}^{*T}\mathbf{h}_{j}^{*}.\]
 
-\noindent Here, \( v_{j1} \) and \( v_{j2} \) represent the coordinates of variable \( j \) on the first and second principal components respectively, \( \lambda_{1} \) and \( \lambda_{2} \) are the eigenvalues corresponding to the first and second principal components, and \( c_{j1} \) and \( c_{j2} \) are the loadings of variable \( j \) on these components.\\
+\noindent Thus, $\mathbf{g}_i$ and $\mathbf{h}_j$ should provide a reasonable two-dimensional approximation of the $n$ observations and the
+$p$ variables.
+
+\noindent \textbf{Understanding Biplots}\\
+
+\noindent \textbf{Variable Vectors:} Each variable is represented as a vector originating from the origin of the plot. The direction and length of these vectors encode information about the relationships between variables.Closer vectors suggest higher correlations, while wider angles imply lower correlations. The direction of the vector corresponds to the orientation of the variable in the reduced-dimensional space, and the length reflects the variable's contribution to the overall variability of the data.\\
+
+\noindent \textbf{Sample Points:} The position of each sample point in relation to the variable vectors conveys information about the relationships between observations and variables. The distance between sample points provides a measure of similarity or dissimilarity between observations.
+
 
 <<PCAbiplot, fig.height=7, fig.width=10, fig.cap='PCA Biplot of mtcars Dataset: Principal Component Analysis', message=FALSE>>=
 data(mtcars)
@@ -1560,6 +1551,8 @@ pca_result <- prcomp(scaled_data, scale. = TRUE)
 # Create a biplot
 biplot(pca_result, cex = 0.7)
 @
+
+\noindent The biplot displays variable vectors and sample points in a two-dimensional space defined by the principal components. Each variable is represented as a vector, and each car model (observation) is represented as a point.
 
 \subsection{t-SNE}
 \href{https://jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf}
