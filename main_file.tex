@@ -223,6 +223,8 @@ This section introduces the different datasets analysed and visualised in the su
 \noindent
 \textbf{Taipei Housing}: The historical real estate valuation from Sindian Dist., New Taipei City, Taiwan,  available at \href{https://archive.ics.uci.edu/dataset/477/real+estate+valuation+data+set}{UC Irvine Machine Learning Repository}.\\
 
+\noindent
+\textbf{palmerpenguins}: The built-in R dataset \href{https://www.rdocumentation.org/packages/palmerpenguins/versions/0.1.1}{palmerpenguins} was provided by the Palmer Station Long Term Ecological Research. This dataset contains biometric measurements from three distinct penguin species inhabiting the Palmer Archipelago in Antarctica, namely the Adélie, Chinstrap, and Gentoo penguins.
 \newpage 
 
 \section{Theoretical Foundations of Data Visualisation}
@@ -482,7 +484,7 @@ y = y_i + \frac{y_{i+1} - y_i}{x_{i+1} - x_i} \cdot (x - x_i), \quad  x_i \leq x
 \noindent
 This equation highlights that for any point \(x\) between \(x_i\) and \(x_{i+1}\), the corresponding value of \(y\) on the line chart is determined by a linear relation. This method effectively ``fills the gaps'' between actual observed data points and provides a continuous view of the data.
 
-\subsubsection{Time Series}\\
+\subsubsection{Time Series Analysis}\\
 \noindent
 Time series visualisation is particularly suited to line charts. A time series is a collection of observations $x_t$, where $t$ denotes the time point at which the observation is recorded. An index set $T_0$ which collects all the time points when observations are available. For instance, we often have $T_0 = \{0,\dots ,n\}$ for $n \in \mathbb{N}$. By plotting these data points over time, line charts help in identifying long-term trends, seasonal patterns, and anomalies.\\
 
@@ -567,7 +569,7 @@ R function \texttt{decompose()} is able to decompose the time series by addictiv
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlcom{# Plot decomposition of addictive time series model}
+\hlcom{# PLOT OF DECOMPOSITION OF ADDICTIVE TIME SERIES MODEL}
 \hlkwd{ggplot}\hlstd{(decomposed_df,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= time,} \hlkwc{y} \hlstd{= value))} \hlopt{+} \hlkwd{geom_line}\hlstd{()} \hlopt{+}
   \hlkwd{facet_wrap}\hlstd{(}\hlopt{~}\hlstd{component,} \hlkwc{scales} \hlstd{=} \hlstr{"free_y"}\hlstd{,} \hlkwc{ncol} \hlstd{=} \hlnum{1}\hlstd{)} \hlopt{+} \hlkwd{labs}\hlstd{(}\hlkwc{x} \hlstd{=} \hlstr{"Date"}\hlstd{,}\hlkwc{y} \hlstd{=} \hlstr{"Exchange Rate to GBP"}\hlstd{)} \hlopt{+} \hlkwd{theme_minimal}\hlstd{()}
 \end{alltt}
@@ -617,10 +619,9 @@ Next, visualise the ACF for the CNY to GBP exchange rate to understand its time-
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlcom{# Plot the Autocorrelation Function (ACF)}
+\hlcom{# PLOT OF THE AUTOCORRELATION FUNCTION}
 \hlstd{acf_data} \hlkwb{<-} \hlkwd{acf}\hlstd{(MyData}\hlopt{$}\hlstd{CNYtoGBP,} \hlkwc{plot} \hlstd{=} \hlnum{FALSE}\hlstd{)}
-\hlcom{# Plot using base R plotting}
-\hlkwd{plot}\hlstd{(acf_data,} \hlkwc{main}\hlstd{=}\hlstr{""}\hlstd{,} \hlkwc{xlab}\hlstd{=}\hlstr{"Lag h"}\hlstd{,} \hlkwc{ylab}\hlstd{=}\hlstr{"ACF"}\hlstd{)}
+\hlkwd{plot}\hlstd{(acf_data,} \hlkwc{main} \hlstd{=} \hlstr{""}\hlstd{,} \hlkwc{xlab} \hlstd{=} \hlstr{"Lag h"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"ACF"}\hlstd{)}
 \end{alltt}
 \end{kframe}
 
@@ -1089,11 +1090,37 @@ The linear model has a residual standard error of 13.32, while the LOESS model h
 
 \subsection{ROC Curve}
 
-The Receiver Operating Characteristic (ROC) graph is a technique for assessing the performance of classification models, particularly useful for evaluating diagnostic tests and binary classifiers. 
-It displays the performance of a binary classification system as its discrimination threshold is varied.\\
+After modeling and visualizing the relationship between two continuous variables, the focus shifts to assessing the performance of binary classification models. The Receiver Operating Characteristic (ROC) graph is a technique for assessing the performance of classification models as its discrimination threshold is varied.\\
 
 \noindent
-ROC graph plots two parameters\cite{rocAnalysis}: True Positive Rate (TPR, also known as Sensitivity, is the proportion of positive instances correctly identified) and False Positive Rate (FPR, 1 - Specificity, is the proportion of negative instances incorrectly identified as positive). Also, the Area Under the Curve (AUC) provides a single measure of overall performance of a classifier. The larger the area under the curve, the better the classifier. An AUC of 0.5 suggests no discriminative ability, while an AUC of 1.0 represents perfect classification.\\
+\textbf{Theory of ROC curve}\\
+Let $Y$ be a binary variable indicating the true class of an instance, with $Y = 1$ for positive instances and $Y = 0$ for negative instances. Let $X$ be a continuous variable representing the predicted score or probability of an instance being classified as positive by the classifier.\\
+
+\noindent
+Since ROC graph plots two parameters\cite{rocAnalysis}: True Positive Rate (TPR, also known as Sensitivity, is the proportion of positive instances correctly identified) and False Positive Rate (FPR, 1 - Specificity, is the proportion of negative instances incorrectly identified as positive). Then define the TPR and the FPR as functions of a threshold $p$ in the interval $[0, 1]$, where $p$ denotes the probability threshold for classifying an instance as positive.\\
+
+\noindent
+TPR is defined as:
+\[ \text{TPR}(p) = \frac{\text{TP}(p)}{\text{TP}(p) + \text{FN}(p)}, \]
+where $\text{TP}(p)$ represents the number of true positives, and $ \text{FN}(p)$ represents the number of false negatives at threshold $p$.\\
+
+\noindent
+FPR is defined as:
+\[ \text{FPR}(p) = \frac{\text{FP}(p)}{\text{FP}(p) + \text{TN}(p)}, \]
+where $\text{FP}(p)$ is the number of false positives, and $\text{TN}(p)$ is the number of true negatives at threshold $p$.\\
+
+\noindent
+The ROC curve is then the set of points $(\text{FPR}(p), \text{TPR}(p))$ for all $p$ in the interval $[0, 1]$. The ROC curve can be represented as a parametric function of $p$, with $p$ varying from 0 to 1:
+
+\[ \text{ROC} = \{ (\text{FPR}(p), \text{TPR}(p)) \,|\, p \in [0, 1] \} \]
+
+\noindent
+Also, the Area Under the Curve (AUC) provides a single measure of overall performance of a classifier. This definition represents the integral of the TPR $\text{TPR}(p)$ with respect to the FPR $\text{FPR}(p)$ over the interval from 0 to 1. It can be defined as:
+
+\[ \text{AUC} = \int_{0}^{1} \text{TPR}(p) \quad d(\text{FPR}(p)) \]
+
+\noindent
+The larger the AUC, the better the classifier. An AUC of 0.5 suggests no discriminative ability, while an AUC of 1.0 represents perfect classification.\\
 
 \noindent 
 \textbf{ROC analysis in COVID-19 test}\\
@@ -1110,14 +1137,14 @@ Here, the simulated data will be used to demonstrate the ROC analysis in COVID-1
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlcom{# Plot of ROC curves}
+\hlcom{# PLOT OF ROC CURVES}
 \hlkwd{plot}\hlstd{(roc_test1,} \hlkwc{col}\hlstd{=}\hlstr{"#459395"}\hlstd{,} \hlkwc{lwd}\hlstd{=}\hlnum{2}\hlstd{)}
 \hlkwd{lines}\hlstd{(roc_test2,} \hlkwc{col}\hlstd{=}\hlstr{"#FDA638"}\hlstd{,} \hlkwc{lwd}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{)}
 \hlkwd{legend}\hlstd{(}\hlstr{"bottomright"}\hlstd{,} \hlkwc{legend}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"Diagnostic Test 1"}\hlstd{,} \hlstr{"Diagnostic Test 2"}\hlstd{),}
        \hlkwc{col}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"#459395"}\hlstd{,} \hlstr{"#FDA638"}\hlstd{),} \hlkwc{lwd}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{2}\hlstd{),} \hlkwc{cex}\hlstd{=}\hlnum{0.5}\hlstd{)}
 \hlcom{# Add the perfect lines}
 \hlkwd{abline}\hlstd{(}\hlkwc{h}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{col}\hlstd{=}\hlstr{"red"}\hlstd{)}
-\hlkwd{abline}\hlstd{(}\hlkwc{v}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{col}\hlstd{=}\hlstr{"red"}\hlstd{)} \hlcom{# Perfect Diagnostic Test (AUC = 1) }
+\hlkwd{abline}\hlstd{(}\hlkwc{v}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{col}\hlstd{=}\hlstr{"red"}\hlstd{)}
 \end{alltt}
 \end{kframe}\begin{figure}[H]
 
@@ -1358,12 +1385,25 @@ R provides us with a dedicated package for t-SNE analysis, \textit{Rtsne}, which
 
 \end{knitrout}
 
-\noindent
-The provided plot in Figure~\ref{fig:t-SNE} is a t-SNE visualization of the Penguins dataset, rendered using the $ggplot2$ package in R. In this case, using the T-sne algorithm helps us to reduce the multidimensional numerical data of the penguin dataset to a $2$-dimensional space,and we also using scatter plots and elliptical areas  to visualize the distribution of different penguin. The data points are color-coded to distinguish between three penguin species: Adelie in red, Chinstrap in green, and Gentoo in blue. This color coding aids in the visual differentiation of the species clusters. The axes are labeled $tSNE1$ and $tSNE2$, corresponding to the dimensions reduced by the t-SNE algorithm. Dashed ellipses overlaid on the scatter plot demarcate the clusters of each species, providing a visual guide to the density and separation of the species within the transformed feature space. The plot effectively uses the t-SNE technique to illustrate the grouping of species, highlighting the algorithm's utility in discerning inherent data patterns in a lower-dimensional representation. \\
-
 
 \noindent
-While t-SNE is an exceptionally potent tool for data visualization, it does come with its own set of constraints. Firstly, it has a significant memory footprint and can be time-consuming to run, which may pose challenges when dealing with large datasets. Secondly, it is tailored specifically for visualization, which constrains the embedding space to two or three dimensions. This limitation means that t-SNE is optimized for human interpretability rather than for capturing higher-dimensional relationships. Additionally, it requires experimentation with different initializations to mitigate the risk of local suboptimal solutions affecting the results. Therefore, it's crucial to carefully consider and select the most suitable method based on the specific requirements and nature of the data at hand.\\
+The provided plot in Figure~\ref{fig:t-SNE} is a t-SNE visualization of the Penguins dataset, rendered using the $ggplot2$ package in R. In this case, using the T-sne algorithm helps us to reduce the multidimensional numerical data of the penguin dataset to a $2$-dimensional space. We also use scatter plots and elliptical areas to visualize the distribution of different penguin species. The data points are color-coded to distinguish between three penguin species: Adelie in red, Chinstrap in green, and Gentoo in blue. This color coding aids in the visual differentiation of the species clusters.\\
+
+\noindent
+The axes are labeled $tSNE1$ and $tSNE2$, corresponding to the dimensions reduced by the t-SNE algorithm. Dashed ellipses overlaid on the scatter plot demarcate the clusters of each species, providing a visual guide to the density and separation of the species within the transformed feature space. The plot effectively uses the t-SNE technique to illustrate the grouping of species, highlighting the algorithm's utility in discerning inherent data patterns in a lower-dimensional representation.\\
+
+\noindent
+While t-SNE is an exceptionally potent tool for data visualization, it does come with its own set of constraints. Firstly, it has a significant memory footprint and can be time-consuming to run, which may pose challenges when dealing with large datasets.\\
+
+\noindent
+Secondly, t-SNE is tailored specifically for visualization, which constrains the embedding space to two or three dimensions. This limitation means that t-SNE is optimized for human interpretability rather than for capturing higher-dimensional relationships.\\
+
+\noindent
+Additionally, it requires experimentation with different initializations to mitigate the risk of local suboptimal solutions affecting the results. Therefore, it's crucial to carefully consider and select the most suitable method based on the specific requirements and nature of the data at hand.\\
+
+
+
+
 \newpage  
 
 \section{Index}  
