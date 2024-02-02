@@ -211,6 +211,10 @@ This section introduces the different datasets analysed and visualised in the su
 \noindent
 \textbf{iris}: The built-in R dataset \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/iris}{iris} was collected by Edgar Anderson. This dataset was famously used by British statistician Ronald Fisher to demonstrate linear discriminant analysis in 1936. It encompasses 5 flower characteristics for 3 types of iris, each with 50 samples. \\
 
+
+\noindent
+\textbf{palmerpenguins}: The built-in R dataset \href{https://www.rdocumentation.org/packages/palmerpenguins/versions/0.1.1}{palmerpenguins} was provided by the Palmer Station Long Term Ecological Research. This dataset contains biometric measurements from three distinct penguin species inhabiting the Palmer Archipelago in Antarctica, namely the Adélie, Chinstrap, and Gentoo penguins.\\
+
 \noindent
 \textbf{ToothGrowth}: The built-in R dataset, \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/ToothGrowth}{ToothGrowth}, measures the tooth growth of 60 guinea pigs. Each animal was either administered with vitamin C or orange juice.\\
 
@@ -221,10 +225,8 @@ This section introduces the different datasets analysed and visualised in the su
 \textbf{Exchange Rate}: The exchange rate data, available at the \href{https://www.bankofengland.co.uk/boeapps/database/index.asp?first=yes&SectionRequired=I&HideNums=-1&ExtraInfo=true&Travel=NIx}{Bank of England}, provides daily spot exchange rates against the pound Sterling (2005-present). This report examines the daily spot rates of the Canadian Dollar, Euro, and US Dollar against the pound Sterling.\\
 
 \noindent
-\textbf{Taipei Housing}: The historical real estate valuation from Sindian Dist., New Taipei City, Taiwan,  available at \href{https://archive.ics.uci.edu/dataset/477/real+estate+valuation+data+set}{UC Irvine Machine Learning Repository}.\\
+\textbf{Taipei Housing}: The historical real estate valuation from Sindian Dist., New Taipei City, Taiwan,  available at \href{https://archive.ics.uci.edu/dataset/477/real+estate+valuation+data+set}{UC Irvine Machine Learning Repository}.
 
-\noindent
-\textbf{palmerpenguins}: The built-in R dataset \href{https://www.rdocumentation.org/packages/palmerpenguins/versions/0.1.1}{palmerpenguins} was provided by the Palmer Station Long Term Ecological Research. This dataset contains biometric measurements from three distinct penguin species inhabiting the Palmer Archipelago in Antarctica, namely the Adélie, Chinstrap, and Gentoo penguins.
 \newpage 
 
 \section{Theoretical Foundations of Data Visualisation}
@@ -393,7 +395,7 @@ as \( n \rightarrow \infty \).\\
 \noindent By plotting histograms of a large number of sample means, one can observe the shape gradually resembling a normal distribution.\\
 
 \noindent
-Consider Figure~\ref{fig:htbp} with created on ggplot2 with the use of to the \texttt{geom\_histogram} function and iris dataset.
+Consider Figure~\ref{fig:iris-plots} with created on ggplot2 with the use of to the \texttt{geom\_histogram} function and iris dataset.
 
 \begin{figure}[htbp]
   \centering
@@ -829,7 +831,7 @@ In general, the \(Y\)-axis denotes the response, or dependent, variable and the 
 
 \noindent This animated scatter plot effectively visualises the relationship between miles per gallon (mpg) and weight (wt) in the mtcars dataset across different gear categories. As the animation progresses, one can observe how the scatter plot evolves with changes in the 'gear' variable, providing insights into the dynamic nature of the relationship between the two variables.\\
 
-\noindent The initial scatter plot is set up using the $ggplot$ function, specifying the x-axis as mpg and the y-axis as wt. The animation is introduced with the transition-states function, which animates the scatter plot by transitioning between different states based on the 'gear' variable. The enter_fade and exit_fade functions add a fading effect when entering or exiting a state.\\
+\noindent The initial scatter plot is set up using the $ggplot$ function, specifying the x-axis as mpg and the y-axis as wt. The animation is introduced with the transition-states function, which animates the scatter plot by transitioning between different states based on the 'gear' variable. The enter-fade and exit-fade functions add a fading effect when entering or exiting a state.\\
 
 \noindent The animation is previewed using the animate function, specifying 100 frames for a smoother visual experience. This allows viewers to observe how the scatter plot changes dynamically with varying 'gear' categories, providing insights into the relationship between miles per gallon and weight over different car specifications.
 
@@ -846,15 +848,15 @@ R = k \cdot V,
 \]
 \noindent where \(R\) represents the size of the bubble, \(V\) the value of the variable being represented, and \(k\) a scaling factor to control the bubble size. Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the proportionality between the bubble size and the variable being represented.\\ 
 
-\noindent Hence, bubble chart represents data points in three dimensions: x-coordinate, y-coordinate, and bubble size. Each data point is represented by a set of three values: \((x_i, y_i, C_i)\), where \(x_i\) and \(y_i\) are the coordinates, and \(C_i\) is the equation of the circle for the \(i\)-th observation. In the case of a bubble chart, where the radius of the bubble is denoted by \(R_i = k \cdot V_i\), we can write the equation for the each circle as:
+\noindent Hence, bubble chart represents data points in three dimensions: x-coordinate, y-coordinate, and bubble size. Each data point is denoted by a triplet of values \((x_i, y_i, C_i)\), where \(x_i\) and \(y_i\) represent the coordinates, and \(C_i\) is the equation of the circle for the \(i\)-th observation. In the context of a bubble chart, the radius \(R_i\) of each bubble is expressed as \(k \cdot V_i\), allowing us to formulate the equation for each circle as:
 
 \[
 (x - x_i)^2 + (y - y_i)^2 = (k \cdot V)^2 ,
 \]
 
-\noindent where, \(x_i\) and \(y_i\) are the coordinates of the center of the circle.\\
+\noindent Here, \(x_i\) and \(y_i\) denote the coordinates of the circle's center.\\
 
-\noindent Since each bubble \(B_i\) can be mathematically defined by the set of three values: \((x_i, y_i, C_i)\), similarly to the scatter plot, the bubble plot can be mathematically described as a set of points: \( \{B_1, \ldots, B_n\}\), that is, \( \{(x_1, y_1, C_1), \ldots, (x_n, y_n, C_n)\}\), where \(n\) is the number of observations in the set.\\
+\noindent Since each bubble \(B_i\) can be defined mathematically by the triplet \((x_i, y_i, C_i)\), akin to the scatter plot, the bubble plot can be described mathematically as a set of points \( \{B_1, \ldots, B_n\}\), specifically \( \{(x_1, y_1, C_1), \ldots, (x_n, y_n, C_n)\}\), where \(n\) represents the number of observations in the set.\\
 
 \noindent
 \textbf{Bubble Charts in Practice}\\
@@ -1128,8 +1130,8 @@ The linear model has a residual standard error of 13.32, while the LOESS model h
   \hlkwd{theme_minimal}\hlstd{()}\hlopt{+}
   \hlkwd{scale_x_continuous}\hlstd{(}\hlkwc{labels} \hlstd{= scales}\hlopt{::}\hlkwd{number_format}\hlstd{(}\hlkwc{scale} \hlstd{=} \hlnum{1}\hlstd{))} \hlopt{+}
   \hlkwd{scale_y_continuous}\hlstd{(}\hlkwc{labels} \hlstd{= scales}\hlopt{::}\hlkwd{number_format}\hlstd{(}\hlkwc{scale} \hlstd{=} \hlnum{1}\hlstd{))} \hlopt{+}
-  \hlkwd{geom_smooth}\hlstd{(}\hlkwc{method} \hlstd{=} \hlstr{"loess"}\hlstd{,} \hlkwc{se} \hlstd{=} \hlnum{FALSE}\hlstd{,} \hlkwc{color} \hlstd{=} \hlstr{"#bd0026"}\hlstd{,} \hlkwc{span} \hlstd{=} \hlnum{0.5}\hlstd{)} \hlopt{+}
-  \hlkwd{geom_smooth}\hlstd{(}\hlkwc{method} \hlstd{=} \hlstr{"lm"}\hlstd{,} \hlkwc{se} \hlstd{=} \hlnum{FALSE}\hlstd{,} \hlkwc{color} \hlstd{=} \hlstr{"#0868ac"}\hlstd{,} \hlkwc{formula} \hlstd{= y} \hlopt{~} \hlstd{x)} \hlopt{+}
+  \hlkwd{geom_smooth}\hlstd{(}\hlkwc{method} \hlstd{=} \hlstr{"loess"}\hlstd{,} \hlkwc{se} \hlstd{=} \hlnum{FALSE}\hlstd{,} \hlkwc{color} \hlstd{=} \hlstr{"#EB7C69"}\hlstd{,} \hlkwc{span} \hlstd{=} \hlnum{0.5}\hlstd{)} \hlopt{+}
+  \hlkwd{geom_smooth}\hlstd{(}\hlkwc{method} \hlstd{=} \hlstr{"lm"}\hlstd{,} \hlkwc{se} \hlstd{=} \hlnum{FALSE}\hlstd{,} \hlkwc{color} \hlstd{=} \hlstr{"#459395"}\hlstd{,} \hlkwc{formula} \hlstd{= y} \hlopt{~} \hlstd{x)} \hlopt{+}
   \hlkwd{labs}\hlstd{(}\hlkwc{title} \hlstd{=} \hlstr{"House Age vs. House Price"}\hlstd{,}
        \hlkwc{x} \hlstd{=} \hlstr{"house age (year)"}\hlstd{,}
        \hlkwc{y} \hlstd{=} \hlstr{"price (unit area)"}\hlstd{)} \hlopt{+}
@@ -1154,13 +1156,13 @@ The linear model has a residual standard error of 13.32, while the LOESS model h
 \noindent This  chapter extends beyond the realm of two dimensional data visualisations. Within this chapter, advanced techniques are explored to unravel complex relationships involving multiple variables. The foundational framework includes an exploration of multiple linear regression. The Principal Component Analysis (PCA) is introduced as a powerful method for dimensionality reduction, enabling a concise representation of high-dimensional datasets. Multiple innovative approaches facilitating the visualisation of high-dimensional data in lower-dimensional biplots and t-distributed Stochastic Neighbor Embedding (t-SNE) are studied. 
 
 \noindent
-\subsection{Generalized Linear Models}
+\subsection{Generalised Linear Models}
 
 \noindent
-\subsubsection{Theory of Generalized Linear Models}
+\subsubsection{Theory of Generalised Linear Models}
 
 \noindent
-\\By definition \cite{glm} a Generalized Linear Model has three components: 
+\\By definition a Generalised Linear Model has three components \cite{glm}: 
 \begin{itemize}
     \item \textbf{Model matrix}:
     $$\mathbf{X} = \left( \begin{array}{ccc}
