@@ -602,7 +602,7 @@ ggsave("barcharts.pdf", plot = grid.arrange(barchart_plot1, barchart_plot2, ncol
 \subsection{Line Charts and Time Series}
 
 \noindent
-The previous subsections explored Histograms, Bar Charts, and Kernel Density Estimation, which are univariate methods used for analyzing independent variables in isolation, revealing patterns and intrinsic properties within data. Now, the focus shifts to univariate methods of dependent variables, specifically Line Charts, which are crucial for visualizing relationships between variables to understanding their interactions and dependencies over time.
+The previous subsections explored Histograms, Bar Charts, and Kernel Density Estimation, which are univariate methods used for analysing independent variables in isolation, revealing patterns and intrinsic properties within data. Now, the focus shifts to univariate methods of dependent variables, specifically Line Charts, which are crucial for visualising relationships between variables to understanding their interactions and dependencies over time.
 
 \subsubsection{Theory of Line Charts}
 
@@ -1085,7 +1085,6 @@ grid.arrange(plot1, plot2, plot3, ncol = 3)
 \noindent \textbf{Construction of Animated Scatter Plots}\\
 \noindent 
 
-
 <<animated-plot, echo=FALSE, fig.height=6, fig.width=6, fig.pos = 'H', fig.cap='Animated scatter plot: Horsepower vs MPG', message=FALSE>>=
 
 # Basic scatter plot
@@ -1110,7 +1109,7 @@ animate(animated_plot, nframes = 100)
 
 
 \subsection{Bubble Charts}
-\noindent \textbf{Theory of Bubble Charts}
+\subsubsection{Theory of Bubble Charts}
 \noindent Bubble charts are a captivating data visualisation tool that extends beyond the typical two-dimensional scatter plot by introducing an extra dimension. They represent data points as bubbles or circles on a two-dimensional plane, where the size of each bubble encodes a third variable.\\
 
 \noindent The construction of bubble charts, is parallel to that of a scatter plot, but involves the scaling the data values to determine the size of each bubble. While it isn't always the case, the size of these is typically proportional to the variable it represents. The choice of scaling method depends on the data distribution and the message the chart aims to convey.\\
@@ -1129,11 +1128,12 @@ R = k \dot V,
 
 \noindent Here, \(x_i\) and \(y_i\) denote the coordinates of the circle's center.\\
 
-\noindent Since each bubble \(B_i\) can be defined mathematically by the triplet \((x_i, y_i, C_i)\), akin to the scatter plot, the bubble plot can be described mathematically as a set of points \( \{B_1, \ldots, B_n\}\), where \(n\) represents the number of observations in the set.\\
+\noindent Since each bubble \(B_i\) can be defined mathematically by the triplet \((x_i, y_i, C_i)\), akin to the scatter plot, the bubble plot can be described mathematically as a set of "bubbles" \( \{B_1, \ldots, B_n\}\), where \(n\) represents the number of observations in the set.\\
 
 \noindent
-\textbf{Bubble Charts in Practice}\\
-The bubble chart shown in Figure~\ref{fig:bubble-plot}, as the scatter plots above, visualises data from the mtcars dataset. The single graph deplics the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and even color-coding the bubbles based on the number of cylinders (cyl).\\
+\subsubsection{Bubble Charts in Practice}\\
+
+\noindent The bubble chart shown in Figure~\ref{fig:bubble-plot}, as the scatter plots above, visualises data from the mtcars dataset. The single graph deplics the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and even color-coding the bubbles based on the number of cylinders (cyl).\\
 
 <<bubble-plot, echo=FALSE, fig.height=5, fig.width=11, fig.pos = 'H', fig.cap='Bubble plot illustrating trends in car types and performance', message=FALSE>>=
 ggplot(mtcars, aes(x = rownames(mtcars), y = mpg, size = hp, color = cyl)) +
@@ -1294,10 +1294,6 @@ ggplot(data = mtcars, aes(x = wt, y = mpg, color = factor(cyl))) +
   scale_color_manual(values = c("4" = "grey", "6" = "#4B0082", "8" = "#459395")) +  # Custom color palette
   theme_minimal() 
 @
-
-\subsection{LOESS Regression}
-\noindent
-Locally weighted scatterplot smoothing (LOWESS) is a local regression method for a response variable $Y$ on a single predictor $X$. LOWESS was proposed by William S. Cleveland in 1979, it is the special case to higher dimention locally estimated scatterplot smoothing (LOESS) regression method. They are non-parametric regression methods that fits a linear regression model for each neighbourhood of data. Unlike GLM, the LOESS model does not provide a global function to fit the data; rather, it fits neighborhoods of the data.\\
 
 \subsection{LOESS Regression}
 \noindent
@@ -1475,9 +1471,9 @@ The R algorithm \texttt{step()}, which minimises the AIC score, aids in selectin
 The procedure for selecting the best linear model for the mtcars dataset is shown in Appendix A, where our best-fitted model is \texttt{formula = mpg \textasciitilde wt + qsec + am}. Given 10 explanatory variables, Miles per Gallon is best predicted by weight (wt), quarter-mile time (qsec), and Transmission (am), where 0 represents automatic and 1 represents manual.
 
 
-\subsection{PCA}
+\subsection{Principal Component Analysis}
 
-Visualizing and analyzing data with many variables can be challenging due to the complexity and high dimensionality. Dimensionality reduction techniques like Principal Component Analysis (PCA) simplify this by transforming the data into a lower-dimensional space (typically 2D or 3D), making it more accessible and manageable. PCA, a linear method, is especially effective for datasets with linear relationships, identifying the principal components that maximize variance and preserve significant features of the original data. This not only aids in visualization but also enhances computational efficiency and helps mitigate the curse of dimensionality.\\
+Visualising and analysing data with many variables can be challenging due to the complexity and high dimensionality. Dimensionality reduction techniques like Principal Component Analysis (PCA) simplify this by transforming the data into a lower-dimensional space (typically 2D or 3D), making it more accessible and manageable. PCA, a linear method, is especially effective for datasets with linear relationships, identifying the principal components that maximize variance and preserve significant features of the original data. This not only aids in visualization but also enhances computational efficiency and helps mitigate the curse of dimensionality.\\
 
 \noindent
 For a collection of $N$ high-dimensional objects $\mathbf{X_1},\dots,\mathbf{X_N}$, where each $\mathbf{X_i}$ is a vector in a D-dimensional space. The entire dataset can be represented as a matrix $X \in \mathbb{R}^{N \times D}$, where each row corresponds to one of the N objects.\\
@@ -1494,13 +1490,19 @@ where each eigenvector $\mathbf{v}$ and its corresponding eigenvalue $\lambda$ s
 \noindent
 Finally, project the standardized data $\mathbf{Z}$ onto the subspace defined by the principal components:
     \[\mathbf{Y} = \mathbf{Z}\mathbf{W},\]
-where $\mathbf{Y} \in \mathbb{R}^{N \times k}$ is the transformed data matrix in the new subspace. Hence, in the reduced space, the variance along each principal component $\mathbf{v_i}$ is maximized, preserving the most significant variances in the data. PCA also attempts to preserve pairwise Euclidean distances between data points in the lower-dimensional representation.    
+where $\mathbf{Y} \in \mathbb{R}^{N \times k}$ is the transformed data matrix in the new subspace. Hence, in the reduced space, the variance along each principal component $\mathbf{v_i}$ is maximized, preserving the most significant variances in the data. PCA also attempts to preserve pairwise Euclidean distances between data points in the lower-dimensional representation. 
+
+\subsubsection{Principal Curves}
+
+\noindent XXX
+
+\noindent 
 
 \subsection{Biplots}
 \noindent 
 A biplot is a graphical representation that succinctly captures the relationships between variables and observations in a reduced-dimensional space defined by the principal components. This visualisation method facilitates the exploration of complex multivariate data by providing a simultaneous display of both samples (observations) and variables in a single plot. They are commonly understood to be a generalisation of the simple two-variable scatterplot.\\
 
-\noindent At their core, biplots offer a graphical representation of a standardised data matrix, whose rows \(n\) are the samples, and whose columns \(p\) are the variables, by projecting these onto a two-dimensional plane. To do this, mathematical computations derived from techniques like Singular Value Decomposition (SVD) or Principal Component Analysis (PCA) are required.\\
+\noindent At their core, biplots offer a graphical representation of a standardised data matrix, whose rows \(n\) are the samples, and whose columns \(p\) are the variables, by projecting these onto a two-dimensional plane. To do this, mathematical computations derived from techniques like Singular Value Decomposition (SVD) and Principal Component Analysis (PCA) are required.\\
 
 \noindent In recent years, there have been substantial developments in biplots (REFRENCE Gower and Hand in 1996). The technique has expanded far beyond what is now referred to as the "classical biplots" or "PCA biplots". The concept now finds broad application in conjunction with various other techniques of multivariate analysis. Nevertheless, this section studies the foundations of this visualisation technique, and thus, the emphasis is on biplots within the framework of PCA.
 
@@ -1508,15 +1510,43 @@ A biplot is a graphical representation that succinctly captures the relationship
 
 \noindent \textbf{Singular Value Decomposition}\\
 
-\noindent Principal component biplots are based on singular value decomposition of the $(n \times p)$ data matrix $\mathbf{X}$ of $n$ observations on $p$ variables with rank $r$. SVD claims that 
+\noindent Principal component biplots are based on singular value decomposition of the $(n \times p)$ data matrix $\mathbf{X}$ of $n$ observations on $p$ variables with rank $r$. The singular value decomposition of the standardised matrix $\mathbf{X}$ is found to be the following:
 
 \[\mathbf{X} = \mathbf{U}\mathbf{B}\mathbf{S}^{T}, \]
 
-\noindent where $\mathbf{U}$ is an $(n \times r)$ orthogonal matrix, and $\mathbf{S}$ is an $(p \times r)$ orthogonal matrix. Furthermore, the columns of $\mathbf{U}$ and $\mathbf{S}$ are the so-called \textbf{left} and \textbf{right singular vectors}. $\mathbf{B}$ is a $(r \times r)$ diagonal matrix with entries $b_1, \ldots, b_r$ such that $b_1 \geq \dots b_r \geq 0$. These entries are known as the singular values.\\
+\noindent where $\mathbf{U}$ is an $(n \times r)$ orthogonal matrix, and $\mathbf{S}$ is an $(p \times r)$ orthogonal matrix. The columns of $\mathbf{U}$ and $\mathbf{S}$ are the left and right singular vectors. $\mathbf{B}$ is a $(r \times r)$ diagonal matrix with entries $b_1, \ldots, b_r$ such that $b_1 \geq \dots b_r \geq 0$. These entries the singular values.\\
 
-\noindent EXPLAIN HOW IT IS OBTAINED \\
+\noindent In order to find this singular value decomposition, firstly we require the computation of the orthogonal diagonalisation  
+\[
+\mathbf{X}^T\mathbf{X}=\mathbf{PDP}^T,
+\] 
 
-\noindent Having this decomposition of the data, it can be rewritten as
+where $\mathbf{D}$ is the diagonal matrix of eigenvalues of $\mathbf{X}^T\mathbf{X}$ and $\mathbf{P}$ is an orthogonal matrix composed of the normalised eigenvectors of $\mathbf{X}^T\mathbf{X}$.\\
+
+\noindent Now, $\mathbf{B}$ and $\mathbf{S}$ are computed. Matrix $\mathbf{S}$ is equivalent to the matrix $\mathbf{P}$ previously computed, and matrix $\mathbf{B}$ is a $(n \times p)$ diagonal matrix, where the diagonal entries are the "singular values" with any additional rows and columns of zero to make the dimensions of $\mathbf{B}$ match those of $\mathbf{X}$. The singular values referenced are square root of the eigenvalues of $\mathbf{X}^T\mathbf{X}$.Hence matrix $\mathbf{B}$ is of the form
+
+\[
+\mathbf{B} = 
+\begin{bmatrix}
+    D & 0 \\
+    0 & 0 \\
+\end{bmatrix}.
+\]
+
+
+\noindent Finally, the $\mathbf{U}$ orthogonal matrix is calculated. The $i$-th column of $\mathbf{U}$ is given by
+
+\[
+\mathbf{u}_i = \frac{1}{\sigma_1}\mathbf{X}\mathbf{s}_i,
+\]
+
+\noindent where $\sigma_i$ are the singular values, and $\mathbf{s}_i$ are the columns of the matrix $\mathbf{S}$.\\
+
+%\noindent Reference: https://www.youtube.com/watch?v=vbGw7BTWYS4
+
+\noident \textbf{PCA and biplots}\\
+
+\noindent Having this decomposition of the data , it can be further rewritten as
 \[\mathbf{X} = \mathbf{U}\mathbf{B}\mathbf{S}^{T}= \mathbf{G}\mathbf{H}^{T},\]
 
 \noindent where \[\mathbf{G} = [\mathbf{g}_1, \dots , \mathbf{g}_n] = \mathbf{U}\mathbf{B}^\alpha, \space \mathbf{H}^T = [\mathbf{h}_1, \dots , \mathbf{h}_p]^T = \mathbf{B}^{1-\alpha}\mathbf{S}^T, \]
