@@ -426,6 +426,24 @@ Consider Figure~\ref{fig:iris-plots} with created on ggplot2 with the use of to 
   \label{fig:iris-plots}
 \end{figure}
 
+\subsection{Kernel Density Estimation}
+
+Kernel Density Estimation (KDE) is an very useful tool in statistics. Instead of discrete histograms, it helps create a smooth curve from values in a dataset. KDE is used to infer the distribution of a population based on a limited sample. Thus, the result of the kernel density estimation is an estimate of the sample's probability density function. Based on this estimated probability density function, one can ascertain certain characteristics of the data distribution, such as the regions where data is concentrated.\\
+
+\noindent
+The KDE algorithm takes a parameter called bandwidth, that affects how smooth the resulting curve is. Changing the bandwidth changes the shape of the kernel: a lower bandwidth implies only points very close to the chosen position are given any weight, which leads to the estimate looking squiggly. In contrast, a higher bandwidth means having a shallow kernel, where distant points can contribute. Thus, leading to a smoother curve. %REVISE THIS TEXT.
+\\
+
+\noindent
+We can express KDE as follows, where the K represent the kernel function:
+$$\hat{f}(x) = \sum_{\text{observations}} K\left(\frac{x - \text{observation}}{\text{bandwidth}}\right).$$
+In KDE, the variable $x$ represents the point of density estimation. The total number of data points, denoted as $n$, constitutes the sample size, and all these points are used for estimating the dataset's probability density function. The bandwidth $(h)$ is a crucial parameter that controls the smoothness of the estimation, with smaller bandwidths leading to closer fits to data and larger ones smoothing out details. The kernel function $(K)$, such as the Gaussian or triangular kernel, assigns mass around each data point, influencing the density estimate, while $x_i$ represents the individual sample points that collectively contribute to the estimated density function, guided by the kernel function and the bandwidth\cite{wand1994kernel}.
+$$\hat{f}(x) = \frac{1}{nh} \sum_{i=1}^{n} K\left(\frac{x - x_i}{h}\right).$$\\
+The kernel function \( K(u) \) is a normalised non-negative function that satisfies:
+\[ \int K(u) \, du = 1. \]
+
+\noindent In Figure~\ref{fig:iris-plots}, the kernel density estimation of the dataset is presented. The distribution of sepal lengths is depicted by the kernel density curve. The peaks observed in the curve correspond to the primary concentration trends of sepal length within the data. A unimodal curve signifies a concentration of sepal lengths for most irises in that specific region. Conversely, a bimodal or multimodal curve suggests the existence of multiple concentration areas.
+
 \subsection{Bar Charts}
 \noindent Bar charts are a crucial tool in data presentation, arranging data into vertical or horizontal bars. The varying lengths of these bars directly correspond to the magnitude of the information they represent. Bar charts excel in comparing classified data, especially when values are closely aligned. This stems from the nature of human perception, as our visual acuity for height surpasses that of other visual elements like area or angle.\\
 
@@ -448,24 +466,6 @@ Consider Figure~\ref{fig:iris-plots} with created on ggplot2 with the use of to 
 \end{knitrout}
 
 \noindent From the grouped bar, chart found on the left of Figure~\ref{fig:barcharts}, due to the side-by-side positioning of the bars, it is easy to note that tooth growth varies not only with the dosage but also with the supplement type. In contrast, the stacked bar graph on the right of Figure~\ref{fig:barcharts} facilitates the understanding of the combined effects of the two supplements at each dosage level. However, compared to the latter, it becomes more challenging to differentiate the individual contribution of each supplement.
-
-\subsection{Kernel Density Estimation}
-
-Kernel Density Estimation (KDE) is an very useful tool in statistics. Instead of discrete histograms, it helps create a smooth curve from values in a dataset. KDE is used to infer the distribution of a population based on a limited sample. Thus, the result of the kernel density estimation is an estimate of the sample's probability density function. Based on this estimated probability density function, one can ascertain certain characteristics of the data distribution, such as the regions where data is concentrated.\\
-
-\noindent
-The KDE algorithm takes a parameter called bandwidth, that affects how smooth the resulting curve is. Changing the bandwidth changes the shape of the kernel: a lower bandwidth implies only points very close to the chosen position are given any weight, which leads to the estimate looking squiggly. In contrast, a higher bandwidth means having a shallow kernel, where distant points can contribute. Thus, leading to a smoother curve. %REVISE THIS TEXT.
-\\
-
-\noindent
-We can express KDE as follows, where the K represent the kernel function:
-$$\hat{f}(x) = \sum_{\text{observations}} K\left(\frac{x - \text{observation}}{\text{bandwidth}}\right).$$
-In KDE, the variable $x$ represents the point of density estimation. The total number of data points, denoted as $n$, constitutes the sample size, and all these points are used for estimating the dataset's probability density function. The bandwidth $(h)$ is a crucial parameter that controls the smoothness of the estimation, with smaller bandwidths leading to closer fits to data and larger ones smoothing out details. The kernel function $(K)$, such as the Gaussian or triangular kernel, assigns mass around each data point, influencing the density estimate, while $x_i$ represents the individual sample points that collectively contribute to the estimated density function, guided by the kernel function and the bandwidth\cite{wand1994kernel}.
-$$\hat{f}(x) = \frac{1}{nh} \sum_{i=1}^{n} K\left(\frac{x - x_i}{h}\right).$$\\
-The kernel function \( K(u) \) is a normalised non-negative function that satisfies:
-\[ \int K(u) \, du = 1. \]
-
-\noindent In Figure~\ref{fig:iris-plots}, the kernel density estimation of the dataset is presented. The distribution of sepal lengths is depicted by the kernel density curve. The peaks observed in the curve correspond to the primary concentration trends of sepal length within the data. A unimodal curve signifies a concentration of sepal lengths for most irises in that specific region. Conversely, a bimodal or multimodal curve suggests the existence of multiple concentration areas.
 
 \subsection{Line Charts and Time Series}
 
@@ -644,8 +644,85 @@ From Figure~\ref{fig:ACF}, the ACF plot for the CNY to GBP exchange rate series 
 \noindent
 This persistent autocorrelation suggests that short-term movements in the CNY to GBP exchange rate are heavily influenced by its recent history. Such a characteristic is crucial for forecasting models, as it implies that recent historical data can be a powerful predictor of near-future trends. Models like ARIMA (Autoregressive Integrated Moving Average), which are well-suited for data with high autocorrelation, may be particularly effective in this context.
 
+\subsection{ROC Curve}
+
+GOING FROM ONE TO TWO POPULATIONS (two sample framework), BUT MAINTAINING ONE VARIABLE EACH 
+
+After modeling and visualizing the relationship between two continuous variables, the focus shifts to assessing the performance of binary classification models. The Receiver Operating Characteristic (ROC) graph is a technique for assessing the performance of classification models as its discrimination threshold is varied.\\
+
+\noindent
+\textbf{Theory of ROC curve}\\
+Let $Y$ be a binary variable indicating the true class of an instance, with $Y = 1$ for positive instances and $Y = 0$ for negative instances. Let $X$ be a continuous variable representing the predicted score or probability of an instance being classified as positive by the classifier.\\
+
+\noindent
+Since ROC graph plots two parameters\cite{rocAnalysis}: True Positive Rate (TPR, also known as Sensitivity, is the proportion of positive instances correctly identified) and False Positive Rate (FPR, 1 - Specificity, is the proportion of negative instances incorrectly identified as positive). Then define the TPR and the FPR as functions of a threshold $p$ in the interval $[0, 1]$, where $p$ denotes the probability threshold for classifying an instance as positive.\\
+
+\noindent
+TPR is defined as:
+\[ \text{TPR}(p) = \frac{\text{TP}(p)}{\text{TP}(p) + \text{FN}(p)}, \]
+where $\text{TP}(p)$ represents the number of true positives, and $ \text{FN}(p)$ represents the number of false negatives at threshold $p$.\\
+
+\noindent
+FPR is defined as:
+\[ \text{FPR}(p) = \frac{\text{FP}(p)}{\text{FP}(p) + \text{TN}(p)}, \]
+where $\text{FP}(p)$ is the number of false positives, and $\text{TN}(p)$ is the number of true negatives at threshold $p$.\\
+
+\noindent
+The ROC curve is then the set of points $(\text{FPR}(p), \text{TPR}(p))$ for all $p$ in the interval $[0, 1]$. The ROC curve can be represented as a parametric function of $p$, with $p$ varying from 0 to 1:
+
+\[ \text{ROC} = \{ (\text{FPR}(p), \text{TPR}(p)) \,|\, p \in [0, 1] \} \]
+
+\noindent
+Also, the Area Under the Curve (AUC) provides a single measure of overall performance of a classifier. This definition represents the integral of the TPR $\text{TPR}(p)$ with respect to the FPR $\text{FPR}(p)$ over the interval from 0 to 1. It can be defined as:
+
+\[ \text{AUC} = \int_{0}^{1} \text{TPR}(p) \quad d(\text{FPR}(p)) \]
+
+\noindent
+The larger the AUC, the better the classifier. An AUC of 0.5 suggests no discriminative ability, while an AUC of 1.0 represents perfect classification.\\
+
+\noindent 
+\textbf{ROC analysis in COVID-19 test}\\
+The COVID-19 pandemic underscores the need for accurate diagnostic tests to differentiate between positive and negative cases\cite{Garcia2021ROCAlly}. An effective mean for evaluating accuracy of various diagnostic tests is the ROC analysis. ROC analysis comprehensively examines test accuracy by integrating TPR, FPR, and AUC. These metrics are calculated by comparing test outcomes against a recognized gold standard, thereby determining the true disease status. This approach is vital for understanding the efficacy of COVID-19 diagnostic tools and guiding public health decisions.\\
+
+\noindent
+The TPR, or sensitivity, measures the proportion of actual positives correctly identified, reflecting the test's ability to detect COVID-19 cases. The FPR, conversely, indicates the rate of false alarms, where non-infected individuals are wrongly identified as infected. An ideal test minimizes FPR, avoiding unnecessary treatments or quarantine. The ROC curve visualizes the trade-off between TPR and FPR at various thresholds. A curve arching towards the upper left indicates high sensitivity and low FPR — the hallmarks of a reliable test. The AUC consolidates the ROC performance into a single value: 0.5 denotes no better accuracy than random chance, while 1.0 represents perfect accuracy. A higher AUC indicates a better overall ability of the test.\\
+
+\noindent
+Here, the simulated data will be used to demonstrate the ROC analysis in COVID-19 test. Score\_Test1 and Score\_Test2 are the simulated test scores from two different diagnostic tests for COVID-19. These scores are continuous variables that typically would represent the likelihood of a positive diagnosis. The scores might come from a lab test result, such as a PCR test or a rapid antigen test, where higher scores indicate a higher likelihood of infection. The Condition column indicates the true condition of the patient, with 1 representing a positive COVID-19 case and 0 representing a negative case.
+
+
+
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{# PLOT OF ROC CURVES}
+\hlkwd{plot}\hlstd{(roc_test1,} \hlkwc{col}\hlstd{=}\hlstr{"#459395"}\hlstd{,} \hlkwc{lwd}\hlstd{=}\hlnum{2}\hlstd{)}
+\hlkwd{lines}\hlstd{(roc_test2,} \hlkwc{col}\hlstd{=}\hlstr{"#FDA638"}\hlstd{,} \hlkwc{lwd}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{)}
+\hlkwd{legend}\hlstd{(}\hlstr{"bottomright"}\hlstd{,} \hlkwc{legend}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"Diagnostic Test 1"}\hlstd{,} \hlstr{"Diagnostic Test 2"}\hlstd{),}
+       \hlkwc{col}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"#459395"}\hlstd{,} \hlstr{"#FDA638"}\hlstd{),} \hlkwc{lwd}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{2}\hlstd{),} \hlkwc{cex}\hlstd{=}\hlnum{0.5}\hlstd{)}
+\hlcom{# Add the perfect lines}
+\hlkwd{abline}\hlstd{(}\hlkwc{h}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{col}\hlstd{=}\hlstr{"red"}\hlstd{)}
+\hlkwd{abline}\hlstd{(}\hlkwc{v}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{col}\hlstd{=}\hlstr{"red"}\hlstd{)}
+\end{alltt}
+\end{kframe}\begin{figure}[H]
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-roc-1} 
+
+}
+
+\caption[ROC Curves for Two Diagnostic Tests]{ROC Curves for Two Diagnostic Tests}\label{fig:roc}
+\end{figure}
+
+\end{knitrout}
+
+\noindent
+From the plot~\ref{fig:roc}, the Diagnostic Test 1 has higher AUC. This test is likely to be more accurate in diagnosing COVID-19. It suggests that the test has a higher combined sensitivity and specificity, meaning it can identify positive cases more correctly and has fewer false alarms. Also, the Diagnostic Test 2 has a lower AUC than Test 1, This test is less accurate but still better than random guessing. It may miss more true cases (lower sensitivity) or incorrectly identify healthy individuals as having COVID-19 (higher false positive rate).\\
+
+\noindent
+In practice, the choice of which test to use may depend on other factors. For instance, if the cost of missing a COVID-19 case is high (for example, in a nursing home setting), a test with higher sensitivity might be preferred. Conversely, if the cost of false positives is high (for example, leading to unnecessary quarantine), a test with higher specificity might be favored.
 
 \newpage
+
 \section{Bivariate Data Visualisation Methods}
 
 \noindent This chapter transitions from the study of univariate data visualisations to the exploration of bivariate data. Fundamental bivariate data visualisation methods, including heatmaps, scatter plots, and bubble charts, are introduced, scrutinised, and modelled throughout this chapter. In order to facilitate a more profound analysis of bivariate data, the chapter further delves into the examination of linear regression, as well as LOESS regression. Notably, within the context of scatter plots, an intriguing deviation is observed with the incorporation of animated data visualisations.
@@ -786,19 +863,19 @@ In general, the \(Y\)-axis denotes the response, or dependent, variable and the 
 
 \noindent Generally, the formula for calculating the bubble radius (\(R)\) involves applying the scaling function
 \[
-R = k \cdot V,
+R = k \dot V,
 \]
 \noindent where \(R\) represents the size of the bubble, \(V\) the value of the variable being represented, and \(k\) a scaling factor to control the bubble size. Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the proportionality between the bubble size and the variable being represented.\\ 
 
 \noindent Hence, bubble chart represents data points in three dimensions: x-coordinate, y-coordinate, and bubble size. Each data point is denoted by a triplet of values \((x_i, y_i, C_i)\), where \(x_i\) and \(y_i\) represent the coordinates, and \(C_i\) is the equation of the circle for the \(i\)-th observation. In the context of a bubble chart, the radius \(R_i\) of each bubble is expressed as \(k \cdot V_i\), allowing us to formulate the equation for each circle as:
 
 \[
-(x - x_i)^2 + (y - y_i)^2 = (k \cdot V)^2 ,
+(x - x_i)^2 + (y - y_i)^2 = (kV_i)^2 ,
 \]
 
 \noindent Here, \(x_i\) and \(y_i\) denote the coordinates of the circle's center.\\
 
-\noindent Since each bubble \(B_i\) can be defined mathematically by the triplet \((x_i, y_i, C_i)\), akin to the scatter plot, the bubble plot can be described mathematically as a set of points \( \{B_1, \ldots, B_n\}\), specifically \( \{(x_1, y_1, C_1), \ldots, (x_n, y_n, C_n)\}\), where \(n\) represents the number of observations in the set.\\
+\noindent Since each bubble \(B_i\) can be defined mathematically by the triplet \((x_i, y_i, C_i)\), akin to the scatter plot, the bubble plot can be described mathematically as a set of points \( \{B_1, \ldots, B_n\}\), where \(n\) represents the number of observations in the set.\\
 
 \noindent
 \textbf{Bubble Charts in Practice}\\
@@ -1090,81 +1167,6 @@ The linear model has a residual standard error of 13.32, while the LOESS model h
 
 \end{knitrout}
 
-\subsection{ROC Curve}
-
-After modeling and visualizing the relationship between two continuous variables, the focus shifts to assessing the performance of binary classification models. The Receiver Operating Characteristic (ROC) graph is a technique for assessing the performance of classification models as its discrimination threshold is varied.\\
-
-\noindent
-\textbf{Theory of ROC curve}\\
-Let $Y$ be a binary variable indicating the true class of an instance, with $Y = 1$ for positive instances and $Y = 0$ for negative instances. Let $X$ be a continuous variable representing the predicted score or probability of an instance being classified as positive by the classifier.\\
-
-\noindent
-Since ROC graph plots two parameters\cite{rocAnalysis}: True Positive Rate (TPR, also known as Sensitivity, is the proportion of positive instances correctly identified) and False Positive Rate (FPR, 1 - Specificity, is the proportion of negative instances incorrectly identified as positive). Then define the TPR and the FPR as functions of a threshold $p$ in the interval $[0, 1]$, where $p$ denotes the probability threshold for classifying an instance as positive.\\
-
-\noindent
-TPR is defined as:
-\[ \text{TPR}(p) = \frac{\text{TP}(p)}{\text{TP}(p) + \text{FN}(p)}, \]
-where $\text{TP}(p)$ represents the number of true positives, and $ \text{FN}(p)$ represents the number of false negatives at threshold $p$.\\
-
-\noindent
-FPR is defined as:
-\[ \text{FPR}(p) = \frac{\text{FP}(p)}{\text{FP}(p) + \text{TN}(p)}, \]
-where $\text{FP}(p)$ is the number of false positives, and $\text{TN}(p)$ is the number of true negatives at threshold $p$.\\
-
-\noindent
-The ROC curve is then the set of points $(\text{FPR}(p), \text{TPR}(p))$ for all $p$ in the interval $[0, 1]$. The ROC curve can be represented as a parametric function of $p$, with $p$ varying from 0 to 1:
-
-\[ \text{ROC} = \{ (\text{FPR}(p), \text{TPR}(p)) \,|\, p \in [0, 1] \} \]
-
-\noindent
-Also, the Area Under the Curve (AUC) provides a single measure of overall performance of a classifier. This definition represents the integral of the TPR $\text{TPR}(p)$ with respect to the FPR $\text{FPR}(p)$ over the interval from 0 to 1. It can be defined as:
-
-\[ \text{AUC} = \int_{0}^{1} \text{TPR}(p) \quad d(\text{FPR}(p)) \]
-
-\noindent
-The larger the AUC, the better the classifier. An AUC of 0.5 suggests no discriminative ability, while an AUC of 1.0 represents perfect classification.\\
-
-\noindent 
-\textbf{ROC analysis in COVID-19 test}\\
-The COVID-19 pandemic underscores the need for accurate diagnostic tests to differentiate between positive and negative cases\cite{Garcia2021ROCAlly}. An effective mean for evaluating accuracy of various diagnostic tests is the ROC analysis. ROC analysis comprehensively examines test accuracy by integrating TPR, FPR, and AUC. These metrics are calculated by comparing test outcomes against a recognized gold standard, thereby determining the true disease status. This approach is vital for understanding the efficacy of COVID-19 diagnostic tools and guiding public health decisions.\\
-
-\noindent
-The TPR, or sensitivity, measures the proportion of actual positives correctly identified, reflecting the test's ability to detect COVID-19 cases. The FPR, conversely, indicates the rate of false alarms, where non-infected individuals are wrongly identified as infected. An ideal test minimizes FPR, avoiding unnecessary treatments or quarantine. The ROC curve visualizes the trade-off between TPR and FPR at various thresholds. A curve arching towards the upper left indicates high sensitivity and low FPR — the hallmarks of a reliable test. The AUC consolidates the ROC performance into a single value: 0.5 denotes no better accuracy than random chance, while 1.0 represents perfect accuracy. A higher AUC indicates a better overall ability of the test.\\
-
-\noindent
-Here, the simulated data will be used to demonstrate the ROC analysis in COVID-19 test. Score\_Test1 and Score\_Test2 are the simulated test scores from two different diagnostic tests for COVID-19. These scores are continuous variables that typically would represent the likelihood of a positive diagnosis. The scores might come from a lab test result, such as a PCR test or a rapid antigen test, where higher scores indicate a higher likelihood of infection. The Condition column indicates the true condition of the patient, with 1 representing a positive COVID-19 case and 0 representing a negative case.
-
-
-
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlcom{# PLOT OF ROC CURVES}
-\hlkwd{plot}\hlstd{(roc_test1,} \hlkwc{col}\hlstd{=}\hlstr{"#459395"}\hlstd{,} \hlkwc{lwd}\hlstd{=}\hlnum{2}\hlstd{)}
-\hlkwd{lines}\hlstd{(roc_test2,} \hlkwc{col}\hlstd{=}\hlstr{"#FDA638"}\hlstd{,} \hlkwc{lwd}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{)}
-\hlkwd{legend}\hlstd{(}\hlstr{"bottomright"}\hlstd{,} \hlkwc{legend}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"Diagnostic Test 1"}\hlstd{,} \hlstr{"Diagnostic Test 2"}\hlstd{),}
-       \hlkwc{col}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"#459395"}\hlstd{,} \hlstr{"#FDA638"}\hlstd{),} \hlkwc{lwd}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{2}\hlstd{),} \hlkwc{cex}\hlstd{=}\hlnum{0.5}\hlstd{)}
-\hlcom{# Add the perfect lines}
-\hlkwd{abline}\hlstd{(}\hlkwc{h}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{col}\hlstd{=}\hlstr{"red"}\hlstd{)}
-\hlkwd{abline}\hlstd{(}\hlkwc{v}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{col}\hlstd{=}\hlstr{"red"}\hlstd{)}
-\end{alltt}
-\end{kframe}\begin{figure}[H]
-
-{\centering \includegraphics[width=\maxwidth]{figure/beamer-roc-1} 
-
-}
-
-\caption[ROC Curves for Two Diagnostic Tests]{ROC Curves for Two Diagnostic Tests}\label{fig:roc}
-\end{figure}
-
-\end{knitrout}
-
-\noindent
-From the plot~\ref{fig:roc}, the Diagnostic Test 1 has higher AUC. This test is likely to be more accurate in diagnosing COVID-19. It suggests that the test has a higher combined sensitivity and specificity, meaning it can identify positive cases more correctly and has fewer false alarms. Also, the Diagnostic Test 2 has a lower AUC than Test 1, This test is less accurate but still better than random guessing. It may miss more true cases (lower sensitivity) or incorrectly identify healthy individuals as having COVID-19 (higher false positive rate).\\
-
-\noindent
-In practice, the choice of which test to use may depend on other factors. For instance, if the cost of missing a COVID-19 case is high (for example, in a nursing home setting), a test with higher sensitivity might be preferred. Conversely, if the cost of false positives is high (for example, leading to unnecessary quarantine), a test with higher specificity might be favored.
-
 \newpage
 
 \section{Visualising Beyond Two Dimensions}
@@ -1367,6 +1369,8 @@ Perplexity influences the variance of the Gaussians in the high-dimensional spac
 
 \noindent
 R provides us with a dedicated package for t-SNE analysis, \textit{Rtsne}, which allows us to conduct the analysis conveniently using the \textit{Rtsne} function. In the graph presented below, we observe a t-SNE visualization of the penguin dataset.\\
+\\
+
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
 
@@ -1395,7 +1399,34 @@ Secondly, t-SNE is tailored specifically for visualization, which constrains the
 \noindent
 Additionally, it requires experimentation with different initializations to mitigate the risk of local suboptimal solutions affecting the results. Therefore, it's crucial to carefully consider and select the most suitable method based on the specific requirements and nature of the data at hand.\\
 
+\newpage 
 
+\section{State-Of-The-Art Modern Approaches}
+Data visualisation plays a pivotal role in modern mathematics, aiding researchers and practitioners in gaining insights from complex datasets. Among the diverse range of visualisation techniques, box plots and functional box plots have emerged as powerful tools for summarising and understanding the distributional characteristics of numerical data. This section provides a brief overview of the state of the art in box plots and functional box plots, highlighting key developments and advancements in these visualization methods.
+
+\subsection{Box Plots}
+
+\noindent Box plots, also known as box-and-whisker plots, were introduced by John W. Tukey in 1977 as a robust method for representing the distribution of a dataset. Over the years, box plots have become a staple in exploratory data analysis, offering a concise summary of the central tendency, spread, and skewness of a dataset. Traditional box plots display the median, quartiles, and any potential outliers, making them effective for comparing multiple datasets and identifying patterns within each.\\
+
+\noindent Recent advancements in box plot techniques include variations such as notched box plots, violin plots, and modified box plots that incorporate additional statistical measures. These adaptations enhance the interpretability and utility of box plots across diverse applications, making them more versatile for researchers and data analysts.
+
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-box-plot-1} 
+
+}
+
+\caption[Box Plot of Sepal Length by Species]{Box Plot of Sepal Length by Species}\label{fig:box-plot}
+\end{figure}
+
+\end{knitrout}
+
+\subsection{Functional Box Plots}
+
+\noindent Functional data analysis (FDA) extends traditional statistical methods to handle functional data, where the observations are curves or functions rather than single values. Functional box plots were introduced as an extension of box plots to accommodate the unique challenges posed by functional data. Developed by Hadley Wickham and Dianne Cook in 2011, functional box plots offer a visual representation of the central tendency, spread, and shape of a distribution for functional datasets.
+
+\noindent Functional box plots have found applications in various fields, such as biology, finance, and signal processing, where researchers deal with data in the form of curves or functions. The incorporation of concepts such as depth functions and band depth in functional box plots has improved their robustness and made them suitable for analyzing complex functional datasets.
 
 
 \newpage  
