@@ -1280,8 +1280,8 @@ A biplot is a graphical representation that succinctly captures the relationship
 \[
 \mathbf{B} = 
 \begin{bmatrix}
-    D & 0 \\
-    0 & 0 \\
+    \mathbf{D} & \mathbf{0} \\
+    \mathbf{0} & \mathbf{0} \\
 \end{bmatrix}.
 \]
 
@@ -1295,35 +1295,128 @@ A biplot is a graphical representation that succinctly captures the relationship
 
 %\noindent Reference: https://www.youtube.com/watch?v=vbGw7BTWYS4
 
-\noindent \textbf{PCA and biplots}\\
 
-\noindent The heuristic argument motivating PCA biplots is the following. Defining $\mathbf{B}^{\alpha}$, for $0 \leq \alpha \leq 1$, as a diagonal matrix who's elements are $b_1^{\alpha}, \ldots, b_r^{\alpha}$ with a similar definition for $\mathbf{B}^{1-\alpha}.$ Then, with the decomposition of the data found through SVD, the data can be further rewritten as
-\[\mathbf{X} = \mathbf{U}\mathbf{B}^{\alpha}\math{B}^{1-\alpha}\mathbf{S}^{T} = \mathbf{U}\mathbf{B}\mathbf{S}^{T} = \mathbf{G}\mathbf{H}^{T},\]
+\noindent Now, the heuristic argument motivating PCA biplots is the following. Define $\mathbf{B}^{\alpha}$, for $0 \leq \alpha \leq 1$, as a diagonal matrix who's elements are $b_1^{\alpha}, \ldots, b_r^{\alpha}$, with a similar definition for $\mathbf{B}^{1-\alpha}.$ Then, with the decomposition of matrix $\mathbf{X}$ found through SVD, the data can be further rewritten as
+\[\mathbf{X} = \mathbf{U}\mathbf{B}^{\alpha}\mathbf{B}^{1-\alpha}\mathbf{S}^{T} = \mathbf{U}\mathbf{B}\mathbf{S}^{T} = \mathbf{G}\mathbf{H}^{T},\]
 
 \noindent where \[\mathbf{G} = [\mathbf{g}_1, \dots , \mathbf{g}_n] = \mathbf{U}\mathbf{B}^\alpha, \quad \mathbf{H}^T = [\mathbf{h}_1, \dots , \mathbf{h}_p]^T = \mathbf{B}^{1-\alpha}\mathbf{S}^T. \]
 
 \noindent Hence, the $i$th observation of the $j$th variable can be rewritten as
 
-\[ x_{ij} = \mathbf{g}_i^T \mathbf{h}_j, \]
+\[ x_{ij} = \mathbf{g}_i^T \mathbf{h}_j. \]
 
-\noindent thus suggesting that if instead of using the $\mathbf{g}_i$ and the $\mathbf{h}_j$, we can just use their first elements (say, 2), respectively denoted by  $\mathbf{g}_{i}^{*}$  and  $\mathbf{h}_{j}^{*}$ , to get
+\noindent Both the $\mathbf{g}_i$ and $\mathbf{h}_j$ have $r$ elements, and hence, if $\mathbf{X}$ has rank 2, all could be plotted as points in two-dimensional space. Note that for the more general case, where $r > 2$, $x_{ij}$ can be written as
+
+\[
+x_{ij} = \sum_{k=1}^{r} u_{ik}b_{k}s_{jk}
+\]
+
+\noindent which is often well approximated by
+
+\[
+_m\tilde{x}_{ij} = \sum_{k=1}^{m} u_{ik}b_{k}s_{jk}, \quad \text{with } m < r.
+\]
+
+\noindent But this can be written
+\[
+_m\tilde{x}_{ij} = \sum_{k=1}^{m} \mathbf{g}_{ik}\mathbf{h}_{jk} = \mathbf{g}_{i}^{*T}\mathbf{h}_{j}^{*},
+\]
+
+\noindent where $\mathbf{g}^*_{i}, \mathbf{h}^*_{j}$ contain the first $m$ elements of $\mathbf{g}_i$ and $\mathbf{h}_j$ respectively. Hence, suggesting that if instead of using the $\mathbf{g}_i$ and the $\mathbf{h}_j$, we can just use their first elements (say, 2), respectively denoted by  $\mathbf{g}_{i}^{*}$  and  $\mathbf{h}_{j}^{*}$, to get
 
 \[ x_{ij} \approx \mathbf{g}_{i}^{*T}\mathbf{h}_{j}^{*}.\]
 
 \noindent Thus, $\mathbf{g}_i$ and $\mathbf{h}_j$ should provide a reasonable two-dimensional approximation of the $n$ observations and the $p$ variables.\\
 
-\noindent \textbf{Understanding Biplots}\\
+\subsubsection{Biplots in Practice: The mtcars Dataset}
 
-\noindent \textbf{Variable Vectors:} Each variable is represented as a vector originating from the origin of the plot. The direction and length of these vectors encode information about the relationships between variables.Closer vectors suggest higher correlations, while wider angles imply lower correlations. The direction of the vector corresponds to the orientation of the variable in the reduced-dimensional space, and the length reflects the variable's contribution to the overall variability of the data.\\
+\noindent This section will study the generation of biplots in R. The production of a biplot based on data from the mtcars dataset will be generated in two ways. The first will follow the mathematical construction of this object, while the other will make use of R's built-in function to produce the biplot. The comparison of these two should shed light on how these visualisations are produced. 
 
-\noindent \textbf{Sample Points:} The position of each sample point in relation to the variable vectors conveys information about the relationships between observations and variables. The distance between sample points provides a measure of similarity or dissimilarity between observations.
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{#MATHEMATICAL CONSTRUCTION OF A BIPLOT USING THE MTCARS DATASET}
 
+\hlcom{# Standardise the data}
+\hlstd{scaled_data} \hlkwb{<-} \hlkwd{scale}\hlstd{(mtcars)}
+
+\hlcom{# Set the alpha parameter for SVD}
+\hlstd{alpha} \hlkwb{<-} \hlnum{0}
+
+\hlcom{# Preprocess the data using SVD}
+\hlstd{preprocess} \hlkwb{<-} \hlstd{scaled_data} \hlopt{-} \hlkwd{matrix}\hlstd{(}\hlkwd{colMeans}\hlstd{(scaled_data),} \hlkwc{nrow} \hlstd{=} \hlkwd{nrow}\hlstd{(scaled_data),} \hlkwc{ncol} \hlstd{=} \hlkwd{ncol}\hlstd{(scaled_data),} \hlkwc{byrow} \hlstd{=} \hlnum{TRUE}\hlstd{)}
+\hlstd{svd_mtcars} \hlkwb{<-} \hlkwd{svd}\hlstd{(preprocess)}
+\hlstd{U} \hlkwb{<-} \hlstd{svd_mtcars}\hlopt{$}\hlstd{u}
+\hlstd{L} \hlkwb{<-} \hlkwd{diag}\hlstd{(svd_mtcars}\hlopt{$}\hlstd{d)}
+\hlstd{A} \hlkwb{<-} \hlstd{svd_mtcars}\hlopt{$}\hlstd{v}
+
+\hlcom{# Calculate G and H matrices}
+\hlstd{G} \hlkwb{<-} \hlstd{U} \hlopt{%*%} \hlstd{(L}\hlopt{%^%}\hlstd{(alpha))}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in L \%\textasciicircum{}\% (alpha): could not find function "{}\%\textasciicircum{}\%"{}}}\begin{alltt}
+\hlstd{H} \hlkwb{<-} \hlkwd{t}\hlstd{((L}\hlopt{%^%} \hlstd{(}\hlnum{1}\hlopt{-}\hlstd{alpha))} \hlopt{%*%} \hlkwd{t}\hlstd{(A))}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in L \%\textasciicircum{}\% (1 - alpha): could not find function "{}\%\textasciicircum{}\%"{}}}\begin{alltt}
+\hlcom{# Extract the first two columns for biplot}
+\hlstd{G2} \hlkwb{<-} \hlstd{G[,} \hlnum{1}\hlopt{:}\hlnum{2}\hlstd{]}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'G' not found}}\begin{alltt}
+\hlstd{H2} \hlkwb{<-} \hlstd{H[,} \hlnum{1}\hlopt{:}\hlnum{2}\hlstd{]}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'H' not found}}\begin{alltt}
+\hlcom{# Create a biplot-like plot}
+\hlkwd{par}\hlstd{(}\hlkwc{mfrow} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{2}\hlstd{),} \hlkwc{pty} \hlstd{=} \hlstr{"s"}\hlstd{)}
+\hlkwd{plot}\hlstd{(G2,} \hlkwc{xlim} \hlstd{=} \hlkwd{c}\hlstd{(}\hlopt{-}\hlnum{0.25}\hlstd{,} \hlnum{0.4}\hlstd{),} \hlkwc{xlab} \hlstd{=} \hlstr{"PC1"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"PC2"}\hlstd{)}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'G2' not found}}\begin{alltt}
+\hlkwd{par}\hlstd{(}\hlkwc{new} \hlstd{=} \hlnum{TRUE}\hlstd{)}
+\end{alltt}
+
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning in par(new = TRUE): calling par(new=TRUE) with no plot}}\begin{alltt}
+\hlkwd{plot}\hlstd{(H2,} \hlkwc{xlim} \hlstd{=} \hlkwd{c}\hlstd{(}\hlopt{-}\hlnum{4.5}\hlstd{,} \hlnum{8}\hlstd{),} \hlkwc{ylim} \hlstd{=} \hlkwd{c}\hlstd{(}\hlopt{-}\hlnum{4.5}\hlstd{,} \hlnum{8}\hlstd{),} \hlkwc{col} \hlstd{=} \hlstr{"#EB7C69"}\hlstd{,}
+     \hlkwc{xaxt} \hlstd{=} \hlstr{"n"}\hlstd{,} \hlkwc{yaxt} \hlstd{=} \hlstr{"n"}\hlstd{,} \hlkwc{xlab} \hlstd{=} \hlstr{""}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{""}\hlstd{)}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'H2' not found}}\begin{alltt}
+\hlcom{# Draw pseudo-axis}
+\hlkwa{for} \hlstd{(i} \hlkwa{in} \hlnum{1}\hlopt{:}\hlkwd{ncol}\hlstd{(scaled_data)) \{}
+  \hlkwd{lines}\hlstd{(}\hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{, H2[i,} \hlnum{1}\hlstd{]),} \hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{, H2[i,} \hlnum{2}\hlstd{]),} \hlkwc{col} \hlstd{=} \hlstr{"#EB7C69"}\hlstd{,} \hlkwc{lwd} \hlstd{=} \hlnum{1.5}\hlstd{)}
+\hlstd{\}}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'H2' not found}}\begin{alltt}
+\hlkwd{axis}\hlstd{(}\hlnum{3}\hlstd{)}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in axis(3): plot.new has not been called yet}}\begin{alltt}
+\hlkwd{axis}\hlstd{(}\hlnum{4}\hlstd{)}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in axis(4): plot.new has not been called yet}}\end{kframe}
+\end{knitrout}
+
+\
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{#GENERATION OF A BIPLOT}
-\hlkwd{data}\hlstd{(mtcars)}
+
 \hlcom{# Standardise the data}
 \hlstd{scaled_data} \hlkwb{<-} \hlkwd{scale}\hlstd{(mtcars)}
 
@@ -1339,7 +1432,7 @@ A biplot is a graphical representation that succinctly captures the relationship
 
 }
 
-\caption[PCA Biplot of mtcars Dataset]{PCA Biplot of mtcars Dataset: Principal Component Analysis}\label{fig:PCAbiplot}
+\caption[PCA Biplot of mtcars Dataset]{PCA Biplot of mtcars Dataset: R In-built Function}\label{fig:PCAbiplot}
 \end{figure}
 
 \end{knitrout}

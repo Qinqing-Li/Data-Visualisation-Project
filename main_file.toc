@@ -45,9 +45,10 @@
 \contentsline {subsubsection}{\numberline {5.2.1}Principal Curves}{40}{subsubsection.5.2.1}%
 \contentsline {subsection}{\numberline {5.3}Biplots}{40}{subsection.5.3}%
 \contentsline {subsubsection}{\numberline {5.3.1}Construction of PCA Biplots}{41}{subsubsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.4}t-SNE}{43}{subsection.5.4}%
-\contentsline {section}{\numberline {6}State-Of-The-Art Modern Approaches}{46}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Box Plots}{46}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Functional Box Plots}{46}{subsection.6.2}%
-\contentsline {section}{\numberline {7}Index}{48}{section.7}%
-\contentsline {section}{\numberline {A}Appendix A}{51}{appendix.A}%
+\contentsline {subsubsection}{\numberline {5.3.2}Biplots in Practice: The mtcars Dataset}{42}{subsubsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.4}t-SNE}{44}{subsection.5.4}%
+\contentsline {section}{\numberline {6}State-Of-The-Art Modern Approaches}{47}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Box Plots}{47}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Functional Box Plots}{47}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Index}{49}{section.7}%
+\contentsline {section}{\numberline {A}Appendix A}{52}{appendix.A}%
