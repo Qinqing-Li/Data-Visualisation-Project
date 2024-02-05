@@ -1085,21 +1085,6 @@ grid.arrange(plot1, plot2, plot3, ncol = 3)
 \noindent \textbf{Construction of Animated Scatter Plots}\\
 \noindent 
 
-<<animated-plot, echo=FALSE, fig.height=6, fig.width=6, fig.pos = 'H', fig.cap='Animated scatter plot: Horsepower vs MPG', message=FALSE>>=
-
-# Basic scatter plot
-p <- ggplot(mtcars, aes(x = mpg, y = wt)) +
-  geom_point() +
-  labs(title = 'Animated Scatter Plot', x = 'Miles per Gallon', y = 'Weight')
-
-# Add animation
-animated_plot <- p + transition_states(gear, transition_length = 2, state_length = 1) +
-  enter_fade() +
-  exit_fade()
-
-# Preview the animation
-animate(animated_plot, nframes = 100)
-@
 
 \noindent This animated scatter plot effectively visualises the relationship between miles per gallon (mpg) and weight (wt) in the mtcars dataset across different gear categories. As the animation progresses, one can observe how the scatter plot evolves with changes in the 'gear' variable, providing insights into the dynamic nature of the relationship between the two variables.\\
 
@@ -1390,7 +1375,7 @@ estate$house_age <- as.numeric(estate$house_age)
 estate$price_per_area <- as.numeric(estate$price_per_area)
 @
 
-<<estate-data-plot,fig.height=3,fig.width=4,fig.cap='Estate valuation using house age, linear regression and smooth regression methods', message=FALSE,warning=FALSE>>=
+<<estate-data-plot,fig.height=2.5,fig.width=3.5,fig.pos='H', fig.cap='Estate valuation using house age, linear regression and smooth regression methods', message=FALSE,warning=FALSE>>=
 # linear regression vs. LOESS model
 ggplot(data = estate, aes(x = house_age, y = price_per_area)) +
   geom_point(size =0.5) +
@@ -1509,19 +1494,19 @@ A biplot is a graphical representation that succinctly captures the relationship
 \subsubsection{Construction of PCA Biplots}
 
 \noindent \textbf{Singular Value Decomposition}\\
-
 \noindent Principal component biplots are based on singular value decomposition of the $(n \times p)$ data matrix $\mathbf{X}$ of $n$ observations on $p$ variables with rank $r$. The singular value decomposition of the standardised matrix $\mathbf{X}$ is found to be the following:
 
 \[\mathbf{X} = \mathbf{U}\mathbf{B}\mathbf{S}^{T}, \]
 
-\noindent where $\mathbf{U}$ is an $(n \times r)$ orthogonal matrix, and $\mathbf{S}$ is an $(p \times r)$ orthogonal matrix. The columns of $\mathbf{U}$ and $\mathbf{S}$ are the left and right singular vectors. $\mathbf{B}$ is a $(r \times r)$ diagonal matrix with entries $b_1, \ldots, b_r$ such that $b_1 \geq \dots b_r \geq 0$. These entries the singular values.\\
+\noindent where $\mathbf{U}$ is an $(n \times r)$ orthogonal matrix, and $\mathbf{S}$ is an $(p \times r)$ orthogonal matrix. The columns of $\mathbf{U}$ and $\mathbf{S}$ are the left and right singular vectors. $\mathbf{B}$ is a $(r \times r)$ diagonal matrix with entries $b_1, \ldots, b_r$ such that $b_1 \geq \dots b_r \geq 0$. These entries the singular values discussed later on. %Reference Miguel lecture\\
 
 \noindent In order to find this singular value decomposition, firstly we require the computation of the orthogonal diagonalisation  
+
 \[
 \mathbf{X}^T\mathbf{X}=\mathbf{PDP}^T,
 \] 
 
-where $\mathbf{D}$ is the diagonal matrix of eigenvalues of $\mathbf{X}^T\mathbf{X}$ and $\mathbf{P}$ is an orthogonal matrix composed of the normalised eigenvectors of $\mathbf{X}^T\mathbf{X}$.\\
+\noindent where $\mathbf{D}$ is the diagonal matrix of eigenvalues of $\mathbf{X}^T\mathbf{X}$ and $\mathbf{P}$ is an orthogonal matrix composed of the normalised eigenvectors of $\mathbf{X}^T\mathbf{X}$.\\
 
 \noindent Now, $\mathbf{B}$ and $\mathbf{S}$ are computed. Matrix $\mathbf{S}$ is equivalent to the matrix $\mathbf{P}$ previously computed, and matrix $\mathbf{B}$ is a $(n \times p)$ diagonal matrix, where the diagonal entries are the "singular values" with any additional rows and columns of zero to make the dimensions of $\mathbf{B}$ match those of $\mathbf{X}$. The singular values referenced are square root of the eigenvalues of $\mathbf{X}^T\mathbf{X}$.Hence matrix $\mathbf{B}$ is of the form
 
@@ -1533,7 +1518,6 @@ where $\mathbf{D}$ is the diagonal matrix of eigenvalues of $\mathbf{X}^T\mathbf
 \end{bmatrix}.
 \]
 
-
 \noindent Finally, the $\mathbf{U}$ orthogonal matrix is calculated. The $i$-th column of $\mathbf{U}$ is given by
 
 \[
@@ -1544,14 +1528,12 @@ where $\mathbf{D}$ is the diagonal matrix of eigenvalues of $\mathbf{X}^T\mathbf
 
 %\noindent Reference: https://www.youtube.com/watch?v=vbGw7BTWYS4
 
-\noident \textbf{PCA and biplots}\\
+\noindent \textbf{PCA and biplots}\\
 
-\noindent Having this decomposition of the data , it can be further rewritten as
-\[\mathbf{X} = \mathbf{U}\mathbf{B}\mathbf{S}^{T}= \mathbf{G}\mathbf{H}^{T},\]
+\noindent The heuristic argument motivating PCA biplots is the following. Defining $\mathbf{B}^{\alpha}$, for $0 \leq \alpha \leq 1$, as a diagonal matrix who's elements are $b_1^{\alpha}, \ldots, b_r^{\alpha}$ with a similar definition for $\mathbf{B}^{1-\alpha}.$ Then, with the decomposition of the data found through SVD, the data can be further rewritten as
+\[\mathbf{X} = \mathbf{U}\mathbf{B}^{\alpha}\math{B}^{1-\alpha}\mathbf{S}^{T} = \mathbf{U}\mathbf{B}\mathbf{S}^{T} = \mathbf{G}\mathbf{H}^{T},\]
 
-\noindent where \[\mathbf{G} = [\mathbf{g}_1, \dots , \mathbf{g}_n] = \mathbf{U}\mathbf{B}^\alpha, \space \mathbf{H}^T = [\mathbf{h}_1, \dots , \mathbf{h}_p]^T = \mathbf{B}^{1-\alpha}\mathbf{S}^T, \]
-
-\noindent and $\mathbf{B}^{a} \equiv \text{diag}(b_{1}^{a}}, \ldots, b_{r}^{a})$, where $a \in \mathbb{R}$.\\
+\noindent where \[\mathbf{G} = [\mathbf{g}_1, \dots , \mathbf{g}_n] = \mathbf{U}\mathbf{B}^\alpha, \quad \mathbf{H}^T = [\mathbf{h}_1, \dots , \mathbf{h}_p]^T = \mathbf{B}^{1-\alpha}\mathbf{S}^T. \]
 
 \noindent Hence, the $i$th observation of the $j$th variable can be rewritten as
 
