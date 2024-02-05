@@ -1352,62 +1352,36 @@ _m\tilde{x}_{ij} = \sum_{k=1}^{m} \mathbf{g}_{ik}\mathbf{h}_{jk} = \mathbf{g}_{i
 
 \hlcom{# Calculate G and H matrices}
 \hlstd{G} \hlkwb{<-} \hlstd{U} \hlopt{%*%} \hlstd{(L}\hlopt{%^%}\hlstd{(alpha))}
-\end{alltt}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in L \%\textasciicircum{}\% (alpha): could not find function "{}\%\textasciicircum{}\%"{}}}\begin{alltt}
 \hlstd{H} \hlkwb{<-} \hlkwd{t}\hlstd{((L}\hlopt{%^%} \hlstd{(}\hlnum{1}\hlopt{-}\hlstd{alpha))} \hlopt{%*%} \hlkwd{t}\hlstd{(A))}
-\end{alltt}
 
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in L \%\textasciicircum{}\% (1 - alpha): could not find function "{}\%\textasciicircum{}\%"{}}}\begin{alltt}
 \hlcom{# Extract the first two columns for biplot}
 \hlstd{G2} \hlkwb{<-} \hlstd{G[,} \hlnum{1}\hlopt{:}\hlnum{2}\hlstd{]}
-\end{alltt}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'G' not found}}\begin{alltt}
 \hlstd{H2} \hlkwb{<-} \hlstd{H[,} \hlnum{1}\hlopt{:}\hlnum{2}\hlstd{]}
-\end{alltt}
 
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'H' not found}}\begin{alltt}
 \hlcom{# Create a biplot-like plot}
 \hlkwd{par}\hlstd{(}\hlkwc{mfrow} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{2}\hlstd{),} \hlkwc{pty} \hlstd{=} \hlstr{"s"}\hlstd{)}
 \hlkwd{plot}\hlstd{(G2,} \hlkwc{xlim} \hlstd{=} \hlkwd{c}\hlstd{(}\hlopt{-}\hlnum{0.25}\hlstd{,} \hlnum{0.4}\hlstd{),} \hlkwc{xlab} \hlstd{=} \hlstr{"PC1"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"PC2"}\hlstd{)}
-\end{alltt}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'G2' not found}}\begin{alltt}
 \hlkwd{par}\hlstd{(}\hlkwc{new} \hlstd{=} \hlnum{TRUE}\hlstd{)}
-\end{alltt}
-
-
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in par(new = TRUE): calling par(new=TRUE) with no plot}}\begin{alltt}
 \hlkwd{plot}\hlstd{(H2,} \hlkwc{xlim} \hlstd{=} \hlkwd{c}\hlstd{(}\hlopt{-}\hlnum{4.5}\hlstd{,} \hlnum{8}\hlstd{),} \hlkwc{ylim} \hlstd{=} \hlkwd{c}\hlstd{(}\hlopt{-}\hlnum{4.5}\hlstd{,} \hlnum{8}\hlstd{),} \hlkwc{col} \hlstd{=} \hlstr{"#EB7C69"}\hlstd{,}
      \hlkwc{xaxt} \hlstd{=} \hlstr{"n"}\hlstd{,} \hlkwc{yaxt} \hlstd{=} \hlstr{"n"}\hlstd{,} \hlkwc{xlab} \hlstd{=} \hlstr{""}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{""}\hlstd{)}
-\end{alltt}
 
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'H2' not found}}\begin{alltt}
 \hlcom{# Draw pseudo-axis}
 \hlkwa{for} \hlstd{(i} \hlkwa{in} \hlnum{1}\hlopt{:}\hlkwd{ncol}\hlstd{(scaled_data)) \{}
   \hlkwd{lines}\hlstd{(}\hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{, H2[i,} \hlnum{1}\hlstd{]),} \hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{, H2[i,} \hlnum{2}\hlstd{]),} \hlkwc{col} \hlstd{=} \hlstr{"#EB7C69"}\hlstd{,} \hlkwc{lwd} \hlstd{=} \hlnum{1.5}\hlstd{)}
 \hlstd{\}}
-\end{alltt}
 
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'H2' not found}}\begin{alltt}
 \hlkwd{axis}\hlstd{(}\hlnum{3}\hlstd{)}
-\end{alltt}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in axis(3): plot.new has not been called yet}}\begin{alltt}
 \hlkwd{axis}\hlstd{(}\hlnum{4}\hlstd{)}
 \end{alltt}
+\end{kframe}\begin{figure}[H]
 
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-PCAbiplot-deconstruction-1} 
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in axis(4): plot.new has not been called yet}}\end{kframe}
+}
+
+\caption[PCA Biplot of mtcars Dataset]{PCA Biplot of mtcars Dataset: Mathematical Construction}\label{fig:PCAbiplot-deconstruction}
+\end{figure}
+
 \end{knitrout}
 
 \
