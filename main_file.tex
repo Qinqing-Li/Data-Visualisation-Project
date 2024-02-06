@@ -1182,10 +1182,10 @@ x_{1,1} & x_{1,2} & \cdots & x_{1,D} \\
 x_{N,1} & x_{N,2} & \cdots & x_{N,D}
 \end{pmatrix},$$
 \noindent
-with $N$ observations and $D$ variables (also know as features).\\
+with $N$ observations and $D$ variables (also known as features).\\
 
 \noindent
-Define a linear and orthogonal mapping, denoted as $\mathbf{W}: \mathbf{x} \to \mathbf{z}$ which acts as a `transformer' between high-dimensional data point $\mathbf{x}$ and its low-dimensional projection $\mathbf{z}$. Matrix $\mathbf{W}$ is defined as a $D \times L$ orthogonal and normalised matrix. Therefore, it can be expressed as $\mathbf{W} = [\mathbf{W}_1, \dots, \mathbf{W}_L]$, where $\mathbf{W}_i \mathbf{W}_j = 0$ for all $i \ne j$ and $\mathbf{W}_i^T \mathbf{W}_i = 1$. This matrix allows us to project the data from its original high-dimensional space to the low-dimensional subspace using $\mathbf{z} = \mathbf{W}^T\mathbf{x}$ and to unproject $\mathbf{z}$ to obtain a high-dimensional approximation, denoted as $\hat{\mathbf{x}} = \mathbf{W}\mathbf{z}$.\\
+Define a linear and orthogonal mapping, denoted as $\mathbf{W}: \mathbf{x} \to \mathbf{z}$ which acts as a `transformer' between high-dimensional data point $\mathbf{x}$ and its low-dimensional projection $\mathbf{z}$. Matrix $\mathbf{W}$ is defined as a $D \times L$ orthogonal and normalised matrix. Therefore, it can be expressed as $\mathbf{W} = [\mathbf{W}_1, \dots, \mathbf{W}_L]$, where $\mathbf{W}_i \mathbf{W}_j = 0$ for all $i \ne j$ and $\mathbf{W}_i^T \mathbf{W}_i = 1$. This matrix allows us to project the data from its original high-dimensional space to the low-dimensional subspace using $\mathbf{z} = \mathbf{W}^T\mathbf{x}$; this process is called encoding. To unproject $\mathbf{z}$ and obtain a high-dimensional approximation, denoted as $\hat{\mathbf{x}} = \mathbf{W}\mathbf{z}$, this process is called decoding.\\
 
 \noindent
 The optimal solution of PCA is obtained by minimising the reconstruction error subject to constraint $\mathbf{W}$, which is defined below:
@@ -1193,7 +1193,28 @@ $$\mathcal{L}(\mathbf{W}) = \frac{1}{N}\sum_{n=1}^{N}||\mathbf{x}_n - \hat{\math
 $$
 
 \subsubsection{Derivation of PCA}
+The optimal encoding $\mathbf{Z}$ ensures the least amount of information loss when data is projected from a high-dimensional space to a lower-dimensional one. To determine this optimal encoding, we minimise the reconstruction error with respect to $\mathbf{w}$ and $\mathbf{z}$.
+
+\begin{equation}
+\begin{aligned}
+\mathcal{L}(\mathbf{w},\mathbf{z}) &= \frac{1}{N}\sum ||\mathbf{x}_n - \mathbf{W}\mathbf{z}_n||^2  \\
+&= \frac{1}{N}\sum (\mathbf{x}_n - \mathbf{W}\mathbf{z}_n)^T(\mathbf{x}_n - \mathbf{W}\mathbf{z}_n)  \\
+&= \frac{1}{N}\sum \mathbf{x}_n^T\mathbf{x}_n - 2\mathbf{x}_n^T\mathbf{W}\mathbf{z}_n+\mathbf{z}_n^T\mathbf{W}^T\mathbf{W}\mathbf{z}_n .
+\end{aligned}
+\end{equation}
+
+\noindent
+To find the optimal encoding $\mathbf{z}_n$ for the $n^{th}$ observation, set the derivative against $\mathbf{z}_n = 0$. We can write:
+
+$$\frac{\partial \mathcal{L}(\mathbf{w},\mathbf{z})}{\partial \mathbf{z}_n} = \frac{1}{N} (-2 \mathbf{x}_n^T\mathbf{W} + 2\mathbf{z}_n)= \mathbf{0}.$$
+
+\noindent
+Therefore, $\mathbf{z}_n = \mathbf{W}^T\mathbf{x}_n$ is the optimal encoding for the $n^{th}$ observation.\\
+
+\noindent
+Now, we need to find matrix $\mathbf{W}$ which gives the optimal encoding.\\
 \subsubsection{Case Example: Image of handwritten digits}
+
 
 \noindent
 Before applying PCA, it is crucial to standardize the dataset because it ensures that each feature contributes equally to the analysis. Without standardization, features with larger scales dominate the variance, potentially skewing the PCA results. For $1 \leq i \leq N$ and $1 \leq j \leq D$, the standardized value $Z_{ij}$ for each data point $X_{ij}$ is calculated as:
