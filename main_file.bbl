@@ -138,4 +138,15 @@ Hadley Wickham.
 \newblock {\em ggplot2: Elegant Graphics for Data Analysis}.
 \newblock Springer-Verlag New York, 2016.
 
+\bibitem{aic}
+Simon~N. Wood.
+\newblock {\em Core Statistics}.
+\newblock Cambridge University Press, 2015.
+
+\bibitem{glm}
+Bruce Worton.
+\newblock Generalized linear models.
+\newblock \url{http://www.drps.ed.ac.uk/20-21/dpt/cxmath11187.htm}, 2023.
+\newblock Accessed 31 Jan. 2024.
+
 \end{thebibliography}
