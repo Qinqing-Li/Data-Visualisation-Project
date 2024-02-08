@@ -1161,74 +1161,70 @@ The linear model has a residual standard error of 13.32, while the LOESS model h
 
 \section{Visualising Beyond Two Dimensions}
 
-\noindent This  chapter extends beyond the realm of two dimensional data visualisations. Within this chapter, advanced techniques are explored to unravel complex relationships involving multiple variables. The foundational framework includes an exploration of multiple linear regression. The Principal Component Analysis (PCA) is introduced as a powerful method for dimensionality reduction, enabling a concise representation of high-dimensional datasets. Multiple innovative approaches facilitating the visualisation of high-dimensional data in lower-dimensional biplots and t-distributed Stochastic Neighbor Embedding (t-SNE) are studied. 
+
+\noindent This  chapter extends beyond the realm of two dimensional data visualisations. Within this chapter, advanced techniques are explored to unravel complex relationships involving multiple variables. The Principal Component Analysis (PCA) is introduced as a powerful method for dimensionality reduction, enabling a concise representation of high-dimensional datasets. Multiple innovative approaches facilitating the visualisation of high-dimensional data in lower-dimensional biplots and t-distributed Stochastic Neighbor Embedding (t-SNE) are studied. 
+
+\subsection{Principal Component Analysis (PCA)}
+
+\subsubsection{Theory of PCA}
+\noindent
+Principal Component Analysis (PCA) is one of the most widely-used dimensionality reduction techniques. The basic idea behind PCA is to project high-dimensional data into a low-dimensional subspace, aiming to create a visual representation that captures most of the variability present in the data.\\
 
 \noindent
-\subsection{Generalised Linear Models}
-
-\noindent
-\subsubsection{Theory of Generalised Linear Models}
-
-\noindent
-\\By definition a Generalised Linear Model has three components \cite{glm}: 
-\begin{itemize}
-    \item \textbf{Model matrix}:
-    $$\mathbf{X} = \left( \begin{array}{ccc}
+The feature matrix $\mathbf{X}$ is an $N \times D$ real-valued matrix collecting the observed data:
+$$\mathbf{X} = \left( \begin{array}{ccc}
     \mathbf{x}^{T}_{1}\\
     \vdots\\
     \mathbf{x}^{T}_{n}
-    \end{array} \right),$$
-    
-    \noindent
-    with associated parameters $\boldsymbol{\beta} = (\beta_1, \ldots, \beta_p)^T$.
-
-    \item \textbf{Link function}:
-    \noindent
-    A link function $\mathrm{g}$ which links together the mean $\mu_i = \mathrm{E}(Y_i)$ and the linear component $\mathbf{x}^T_i = \boldsymbol{\beta}$, $\mathrm{g}(\mu_i) = \mathbf{x}_i^T \boldsymbol{\beta}$.
-    
-    \item \textbf{Exponential family}:
-    \noindent
-    Each response $Y_i$ has a distribution that is from a member of the exponential family with pdf $f(y;\theta) = \mathrm{exp}\{yb(\theta) + c(\theta) + d(y)\}$. Many distributions such as Normal distribution, Poisson distribution and Binomial belong to this family.
-\end{itemize}    
+    \end{array} \right) = \begin{pmatrix}
+x_{1,1} & x_{1,2} & \cdots & x_{1,D} \\
+ &\vdots & & \\
+x_{N,1} & x_{N,2} & \cdots & x_{N,D}
+\end{pmatrix},$$
+\noindent
+with $N$ observations and $D$ variables (also known as features).\\
 
 \noindent
-\subsubsection{Model fitting using MLE}
-\noindent
-\\The Maximum Likelihood Estimation (MLE) is a statistical method used to find the parameter estimates that maximise the likelihood of observed data in a given model. We use MLE to fit the Generalized Linear Model (GLM). Usually there's no direct solution available for the MLE of the parameters in $\boldsymbol{\beta}$. Instead we use an iterative approach, Fisher's method of scoring to calculate the MLEs.
+Define a linear and orthogonal mapping, denoted as $\mathbf{W}: \mathbf{x} \to \mathbf{z}$ which acts as a `transformer' between high-dimensional data point $\mathbf{x}$ and its low-dimensional projection $\mathbf{z}$. Matrix $\mathbf{W}$ is defined as a $D \times L$ orthogonal and normalised matrix. Therefore, it can be expressed as $\mathbf{W} = [\mathbf{W}_1, \dots, \mathbf{W}_L]$, where $\mathbf{W}_i \mathbf{W}_j = 0$ for all $i \ne j$ and $\mathbf{W}_i^T \mathbf{W}_i = 1$. This matrix allows us to project the data from its original high-dimensional space to the low-dimensional subspace using $\mathbf{z} = \mathbf{W}^T\mathbf{x}$; this process is called encoding. To unproject $\mathbf{z}$ and obtain a high-dimensional approximation, denoted as $\hat{\mathbf{x}} = \mathbf{W}\mathbf{z}$, this process is called decoding.\\
 
 \noindent
-\\Iterate $\hat{\boldsymbol{\beta}} = (X^{T}WX)^{-1}X^{T}Wz$ to find MLE of $\boldsymbol{\beta}$. Where $W$ is the weighting matrix with weights $w_{ii}$, calculated using $W = \mathrm{diag}(w_{ii})$ where $w_{ii} = \frac{1}{\mathrm{var(Y_i)}}\left(\frac{\partial \mu_i}{\partial \eta_i}\right)^2$.
+The optimal solution of PCA is obtained by minimising the reconstruction error subject to constraint $\mathbf{W}$, which is defined below:
+$$\mathcal{L}(\mathbf{W}) = \frac{1}{N}\sum_{n=1}^{N}||\mathbf{x}_n - \hat{\mathbf{x}}||^2_2.
+$$
 
+\subsubsection{Derivation of PCA}
 
-
-\noindent
-\subsubsection{Model selection method AIC}
-\\  
-\noindent 
-\\Model selection methods, such as the Akaike Information Criterion (AIC), play a crucial role in statistical modeling. AIC provides an estimate of the information lost when a given model is used to represent the process that generated the data, it is calculated as follows: 
-
-$$\mathrm{AIC} = -2 \l(\hat{\boldsymbol {\theta}})+2 \dim (\boldsymbol{\theta}) \cite{aic},$$
-\\  
-\\where $\l(\hat{\boldsymbol{\theta}})$ is the log-likelihood function, let $\l(\hat{\boldsymbol{\theta}}) = 0$ to find the Maximum Likelihood Estimator $\hat{\boldsymbol{\theta}}$ of a distribution.\\
-
-\noindent 
-The R algorithm \texttt{step()}, which minimises the AIC score, aids in selecting the most appropriate regression model from a set of explanatory variables. This algorithm uses backward selection method. Starting with all explanatory variables, the algorithm iteratively excludes one covariate at each step, until statistically significant reduction in AIC is achieved. This algorithm aims to find the best-fitting model by balancing goodness of fit and simplicity. Note that \texttt{step} provides comparison between competing models rather than an absolute measure of model quality.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{image_reference/codeshoot.png}
-    \label{fig:codeshoot}
-\end{figure}
-\noindent
-The procedure for selecting the best linear model for the mtcars dataset is shown in Appendix A, where our best-fitted model is \texttt{formula = mpg \textasciitilde wt + qsec + am}. Given 10 explanatory variables, Miles per Gallon is best predicted by weight (wt), quarter-mile time (qsec), and Transmission (am), where 0 represents automatic and 1 represents manual.
-
-
-\subsection{Principal Component Analysis}
-
-Visualising and analysing data with many variables can be challenging due to the complexity and high dimensionality. Dimensionality reduction techniques like Principal Component Analysis (PCA) simplify this by transforming the data into a lower-dimensional space (typically 2D or 3D), making it more accessible and manageable. PCA, a linear method, is especially effective for datasets with linear relationships, identifying the principal components that maximize variance and preserve significant features of the original data. This not only aids in visualization but also enhances computational efficiency and helps mitigate the curse of dimensionality.\\
+In general, the vector $\mathbf{w}_i$ is given by the equation $\mathbf{\Sigma} \mathbf{W}_i = \lambda \mathbf{W}i$, where $\mathbf{\Sigma}$ is the covariance matrix and $\lambda$ is the $i^{th}$ largest eigenvalue of $\mathbf{\Sigma}$, for $i = 1, \dots, N$.\\
 
 \noindent
-For a collection of $N$ high-dimensional objects $\mathbf{X_1},\dots,\mathbf{X_N}$, where each $\mathbf{X_i}$ is a vector in a D-dimensional space. The entire dataset can be represented as a matrix $X \in \mathbb{R}^{N \times D}$, where each row corresponds to one of the N objects.\\
+Define the covariance matrix $\mathbf{\Sigma}$ as $\mathbf{\Sigma} = \frac{1}{N} \sum_{n=1}^N(\mathbf{x}_n-\bar{x})(\mathbf{x}_n-\bar{x})^T$. Without loss of generality, let's assume that the data matrix $\mathbf{X}$ is centred around $0$ mean denoted as $\bar{x} = 0$. Then, the covariance matrix can be written as:
+
+\begin{equation}
+\mathbf{\Sigma} = \frac{1}{N} \sum_{n=1}^N\mathbf{x}_n\mathbf{x}_n^T = \frac{1}{N} \mathbf{X}\mathbf{X}^T.
+\end{equation}
+
+\noindent
+The optimal encoding $\mathbf{Z}$ ensures the least amount of information loss when data is projected from a high-dimensional space to a lower-dimensional one. To determine this optimal encoding, we minimise the reconstruction error with respect to $\mathbf{w}$ and $\mathbf{z}$.
+
+\begin{equation}
+\begin{aligned}
+\mathcal{L}(\mathbf{w},\mathbf{z}) &= \frac{1}{N}\sum ||\mathbf{x}_n - \mathbf{W}\mathbf{z}_n||^2  \\
+&= \frac{1}{N}\sum (\mathbf{x}_n - \mathbf{W}\mathbf{z}_n)^T(\mathbf{x}_n - \mathbf{W}\mathbf{z}_n)  \\
+&= \frac{1}{N}\sum \mathbf{x}_n^T\mathbf{x}_n - 2\mathbf{x}_n^T\mathbf{W}\mathbf{z}_n+\mathbf{z}_n^T\mathbf{W}^T\mathbf{W}\mathbf{z}_n .
+\end{aligned}
+\end{equation}
+
+\noindent
+To find the optimal encoding $\mathbf{z}_n$ for the $n^{th}$ observation, set the derivative against $\mathbf{z}_n = \mathbf{0}$. We can write:
+
+$$\frac{\partial \mathcal{L}(\mathbf{w},\mathbf{z})}{\partial \mathbf{z}_n} = \frac{1}{N} (-2 \mathbf{x}_n^T\mathbf{W} + 2\mathbf{z}_n)= \mathbf{0}.$$
+
+\noindent
+Therefore, $\mathbf{z}_n = \mathbf{W}^T\mathbf{x}_n$ is the optimal encoding for the $n^{th}$ observation.\\
+
+\noindent
+Now, we need to find matrix $\mathbf{W}$ which gives the optimal encoding.\\
+
 
 \noindent
 Before applying PCA, it is crucial to standardize the dataset because it ensures that each feature contributes equally to the analysis. Without standardization, features with larger scales dominate the variance, potentially skewing the PCA results. For $1 \leq i \leq N$ and $1 \leq j \leq D$, the standardized value $Z_{ij}$ for each data point $X_{ij}$ is calculated as:
