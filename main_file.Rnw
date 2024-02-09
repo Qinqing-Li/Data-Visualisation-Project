@@ -49,6 +49,7 @@ library(lubridate)
 library(gifski)
 library(viridis)
 library(expm)
+library(princurve)
 data(ToothGrowth)
 data(mtcars)
 data(trees)
@@ -1507,11 +1508,38 @@ Finally, project the standardized data $\mathbf{Z}$ onto the subspace defined by
     \[\mathbf{Y} = \mathbf{Z}\mathbf{W},\]
 where $\mathbf{Y} \in \mathbb{R}^{N \times k}$ is the transformed data matrix in the new subspace. Hence, in the reduced space, the variance along each principal component $\mathbf{v_i}$ is maximized, preserving the most significant variances in the data. PCA also attempts to preserve pairwise Euclidean distances between data points in the lower-dimensional representation. 
 
-\subsubsection{Principal Curves}
+\subsection{Principal Curves}
 
-\noindent XXX
+\noindent Principal curves are a concept closely related to PCA but, they are more flexible and powerful in capturing the intrinsic structure of high-dimensional data. While PCA focuses on finding linear projections that maximize variance, principal curves seek to identify smooth, nonlinear trajectories that capture the most significant variations in the data. These curves are essentially one-dimensional paths embedded within the multidimensional space of the data points.\\
 
-\noindent 
+\noindent Principal curves find application in various domains, including dimensionality reduction, and exploratory data analysis. They can reveal the underlying structure and patterns in complex datasets, aiding in understanding the relationships between variables and identifying important features. Principal curves can be used for data preprocessing, clustering, classification, and regression tasks, offering insights into the data's intrinsic geometry and facilitating more accurate modeling and decision-making processes. 
+
+\subsubsection{Construction of Principal Curves}
+
+<<P-curves, fig.height=4, fig.width=9, fig.cap='Principal curve fitting illustration on artifical dataset', message=FALSE>>=
+# Generate random values for t
+t <- runif(100, -1, 1)
+
+# Create the dataset x with two dimensions
+x <- cbind(t, t^3) + rnorm(200, sd = 0.05)
+
+# Rename the columns
+colnames(x) <- c("dim1", "dim2")
+
+# Set up a multi-paneled plotting window
+par(mfrow = c(1, 2))
+
+# Plot the first dataset
+plot(x, main = "Artificial Dataset 1", xlab = "Dimension 1", ylab = "Dimension 2", col = "#459395")
+
+# Fit principal curve to the dataset
+fit <- principal_curve(x)
+
+# Plot the principal curve along with the data points
+plot(fit, main = "Principal Curve", xlab = "Dimension 1", ylab = "Dimension 2")
+whiskers(x, fit$s, col = "#EB7C69") 
+@
+
 
 
 \subsection{Biplots}
@@ -1650,6 +1678,9 @@ pca_result <- prcomp(scaled_data, scale. = TRUE)
 # Create a biplot
 biplot(pca_result, cex = 0.7)
 @
+
+
+
 
 \noindent The biplot displays variable vectors and sample points in a two-dimensional space defined by the principal components. Each variable is represented as a vector, and each car model (observation) is represented as a point.
 

@@ -1273,11 +1273,50 @@ Finally, project the standardized data $\mathbf{Z}$ onto the subspace defined by
     \[\mathbf{Y} = \mathbf{Z}\mathbf{W},\]
 where $\mathbf{Y} \in \mathbb{R}^{N \times k}$ is the transformed data matrix in the new subspace. Hence, in the reduced space, the variance along each principal component $\mathbf{v_i}$ is maximized, preserving the most significant variances in the data. PCA also attempts to preserve pairwise Euclidean distances between data points in the lower-dimensional representation. 
 
-\subsubsection{Principal Curves}
+\subsection{Principal Curves}
 
-\noindent XXX
+\noindent Principal curves are a concept closely related to PCA but, they are more flexible and powerful in capturing the intrinsic structure of high-dimensional data. While PCA focuses on finding linear projections that maximize variance, principal curves seek to identify smooth, nonlinear trajectories that capture the most significant variations in the data. These curves are essentially one-dimensional paths embedded within the multidimensional space of the data points.\\
 
-\noindent 
+\noindent Principal curves find application in various domains, including dimensionality reduction, and exploratory data analysis. They can reveal the underlying structure and patterns in complex datasets, aiding in understanding the relationships between variables and identifying important features. Principal curves can be used for data preprocessing, clustering, classification, and regression tasks, offering insights into the data's intrinsic geometry and facilitating more accurate modeling and decision-making processes. 
+
+\subsubsection{Construction of Principal Curves}
+
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{# Generate random values for t}
+\hlstd{t} \hlkwb{<-} \hlkwd{runif}\hlstd{(}\hlnum{100}\hlstd{,} \hlopt{-}\hlnum{1}\hlstd{,} \hlnum{1}\hlstd{)}
+
+\hlcom{# Create the dataset x with two dimensions}
+\hlstd{x} \hlkwb{<-} \hlkwd{cbind}\hlstd{(t, t}\hlopt{^}\hlnum{3}\hlstd{)} \hlopt{+} \hlkwd{rnorm}\hlstd{(}\hlnum{200}\hlstd{,} \hlkwc{sd} \hlstd{=} \hlnum{0.05}\hlstd{)}
+
+\hlcom{# Rename the columns}
+\hlkwd{colnames}\hlstd{(x)} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlstr{"dim1"}\hlstd{,} \hlstr{"dim2"}\hlstd{)}
+
+\hlcom{# Set up a multi-paneled plotting window}
+\hlkwd{par}\hlstd{(}\hlkwc{mfrow} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{2}\hlstd{))}
+
+\hlcom{# Plot the first dataset}
+\hlkwd{plot}\hlstd{(x,} \hlkwc{main} \hlstd{=} \hlstr{"Artificial Dataset 1"}\hlstd{,} \hlkwc{xlab} \hlstd{=} \hlstr{"Dimension 1"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"Dimension 2"}\hlstd{,} \hlkwc{col} \hlstd{=} \hlstr{"#459395"}\hlstd{)}
+
+\hlcom{# Fit principal curve to the dataset}
+\hlstd{fit} \hlkwb{<-} \hlkwd{principal_curve}\hlstd{(x)}
+
+\hlcom{# Plot the principal curve along with the data points}
+\hlkwd{plot}\hlstd{(fit,} \hlkwc{main} \hlstd{=} \hlstr{"Principal Curve"}\hlstd{,} \hlkwc{xlab} \hlstd{=} \hlstr{"Dimension 1"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"Dimension 2"}\hlstd{)}
+\hlkwd{whiskers}\hlstd{(x, fit}\hlopt{$}\hlstd{s,} \hlkwc{col} \hlstd{=} \hlstr{"#EB7C69"}\hlstd{)}
+\end{alltt}
+\end{kframe}\begin{figure}[H]
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-P-curves-1} 
+
+}
+
+\caption[Principal curve fitting illustration on artifical dataset]{Principal curve fitting illustration on artifical dataset}\label{fig:P-curves}
+\end{figure}
+
+\end{knitrout}
+
 
 
 \subsection{Biplots}
@@ -1440,6 +1479,9 @@ XXX
 \end{figure}
 
 \end{knitrout}
+
+
+
 
 \noindent The biplot displays variable vectors and sample points in a two-dimensional space defined by the principal components. Each variable is represented as a vector, and each car model (observation) is represented as a point.
 
