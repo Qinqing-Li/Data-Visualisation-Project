@@ -226,7 +226,7 @@ This chapter, ``Theoretical Foundations of Data Visualisation," delves into the 
 Creating effective data visualisations requires a robust theoretical framework underlying every chart, graph, or plot. These theoretical underpinnings not only form the basis of data visualisation but also influence how we represent, perceive, understand, and interpret data.\\ 
 
 \noindent \textbf{Guiding Principles for Data Representation}\\
-The theoretical framework of data visualisation involves guiding principles dictating visual representation of data. These principles include \textbf{accuracy}, emphasising faithful reflection of underlying data to reduce distortion or misinterpretation; \textbf{simplicity}, advocating for streamlined visuals to convey information effectively; \textbf{clarity}, ensuring visuals are easily understood without unnecessary complexity; \textbf{relevance}, presenting information pertinent to the message or question addressed; and \textbf{consistency}, maintaining uniform use of visual elements like color coding and labeling throughout a visualisation.\\
+The theoretical framework of data visualisation involves guiding principles dictating visual representation of data. These principles include accuracy, emphasising faithful reflection of underlying data to reduce distortion or misinterpretation; simplicity, advocating for streamlined visuals to convey information effectively; clarity, ensuring visuals are easily understood without unnecessary complexity; relevance, presenting information pertinent to the message or question addressed; and consistency, maintaining uniform use of visual elements like color coding and labeling throughout a visualisation.\\
 
 \noindent \textbf{Theoretical Framework and Visual Perception}\\
 Understanding how the human brain processes visual information is a fundamental aspect of data visualisation theory. This knowledge plays a crucial role in designing visualisations that effectively connect with viewers. It encompasses several key considerations which will be studied in order: the Gestalt Principles, which encompass proximity, similarity, and continuity, affecting how visual elements are grouped and interpreted; Color Theory, involving the strategic use of color contrasts and harmonies to improve clarity and impact; and the management of Cognitive Load, which emphasises the importance of reducing mental effort needed to process information.
@@ -244,7 +244,7 @@ Data types can be broadly categorised into four main types:
 \end{itemize}
 
 \noindent \textbf{Matching Data Types with Appropriate Visualisation Techniques}\\
-\noindent Selecting appropriate visualisation techniques is essential for effective data communication. Various data types demand specific visualisation methods for optimal representation \cite{healy2018data}. For \textbf{nominal data}, bar charts and stacked bar charts are effective in displaying categorical information and relative proportions. \textbf{ordinal data} benefits from ordered bar charts, dot plots, or stacked bar charts, maintaining the ranking and order of categories. \textbf{interval data} is best visualised using line charts, histograms, and box plots, showcasing trends and distributions without assuming a true zero point. \textbf{ratio data} finds effective representation through scatter plots, histograms, and line charts, enabling precise comparisons and measurements due to the presence of a meaningful zero point. These are represented in Figure~\ref{fig:data-plots}, where artificial data from a class of 4th-year university students is visualised.
+\noindent Selecting appropriate visualisation techniques is essential for effective data communication. Various data types demand specific visualisation methods for optimal representation \cite{healy2018data}. For nominal data, bar charts and stacked bar charts are effective in displaying categorical information and relative proportions. Ordinal data benefits from ordered bar charts, dot plots, or stacked bar charts, maintaining the ranking and order of categories. Interval data is best visualised using line charts, histograms, and box plots, showcasing trends and distributions without assuming a true zero point. Finally, ratio data finds effective representation through scatter plots, histograms, and line charts, enabling precise comparisons and measurements due to the presence of a meaningful zero point. These are represented in Figure~\ref{fig:data-plots}, where artificial data from a class of 4th-year university students is visualised.
 
 <<data-plots, echo=FALSE, message=FALSE, fig.height=8, fig.width=11, fig.pos = 'H', fig.cap='Different types of visualisation techniques according to the data type'>>=
 
@@ -385,10 +385,10 @@ In this first section, human visual perception is explored, along with the appli
 Human visual perception profoundly influences our understanding of the surrounding world. When applied to data visualisation, it shapes the way that individuals engage with and derive meaning from visual data representations.\\
 
 \noindent 
-Significant aspects of human visual perception within data visualisation encompass \textbf{pattern recognition}, adept at identifying trends, outliers, and relationships in data representations. Additionally, \textbf{perceptual grouping}, where visually similar elements are grouped together, influences the interpretation of data clusters and shapes. Moreover, the \textbf{hierarchy of perception} dictates that certain visual attributes are processed more swiftly and effectively than others, such as color being processed faster than text, influencing the viewer's attention hierarchy \cite{dastani2002role}.\\
+Significant aspects of human visual perception within data visualisation encompass pattern recognition, adept at identifying trends, outliers, and relationships in data representations. Additionally, perceptual grouping, where visually similar elements are grouped together, influences the interpretation of data clusters and shapes. Moreover, the =hierarchy of perception dictates that certain visual attributes are processed more swiftly and effectively than others, such as color being processed faster than text, influencing the viewer's attention hierarchy \cite{dastani2002role}.\\
 
 \noindent \textbf{The Gestalt Principles \index{The Gestalt Principles}}\\
-Furthermore, the Gestalt Principles play an important role in the realm of visual perception and design \cite{rosli2015gestalt}. Key Gestalt principles crucial in shaping visual information perception include proximity, which groups related elements, \textbf{similarity} that links similar attributes, \textbf{continuity} aiding trend representation, \textbf{closure} for implying connections, and \textbf{symmetry} for balance and aesthetics in visualisations \cite{todorovic2008gestalt}. \\
+Furthermore, the Gestalt Principles play an important role in the realm of visual perception and design \cite{rosli2015gestalt}. Key Gestalt principles crucial in shaping visual information perception include proximity, which groups related elements, similarity that links similar attributes, continuity aiding trend representation, closure for implying connections, and symmetry for balance and aesthetics in visualisations \cite{todorovic2008gestalt}. \\
 
 \noindent By harnessing the principles of human visual perception, applying insights from cognitive psychology, and leveraging pre-attentive attributes, data visualisation designers can create visualisations that are not only aesthetically pleasing but also cognitively efficient.	
 
@@ -450,9 +450,9 @@ Additionally, providing a clear and concise legend becomes imperative to explain
 In data visualisation, achieving a balance between complexity and cognitive load is crucial. Cognitive load significantly influences how viewers engage with and comprehend presented data. Finding a balance is crucial to effectively convey information without overwhelming the viewer's cognitive capacity. This section explores the concept of cognitive load in visualisations, strategies to reduce cognitive load while maintaining complexity, and techniques to combat information overload through simplification.
 
 \subsubsection{Strategies to Reduce Cognitive Load While Maintaining Complexity}
-To reduce cognitive load while maintaining complexity in data visualisation, several strategies can be employed. Firstly, establishing a clear \textbf{visual hierarchy} using size, color, and contrast helps direct attention to crucial elements. Additionally, simplifying \textbf{labels and text} by avoiding unnecessary complexity ensures information is clear and easily digestible.\\
+To reduce cognitive load while maintaining complexity in data visualisation, several strategies can be employed. Firstly, establishing a clear visual hierarchy using size, color, and contrast helps direct attention to crucial elements. Additionally, simplifying labels and text by avoiding unnecessary complexity ensures information is clear and easily digestible.\\
 
-\noindent Furthermore, employing \textbf{interactive features} like tooltips and drill-down functionality assists in providing additional information when required, reducing the density of static visualisations. A final approach involves the use of \textbf{progressive disclosure}, presenting complex information gradually, beginning with an overview and allowing users to explore details as needed.\\
+\noindent Furthermore, employing interactive features like tooltips and drill-down functionality assists in providing additional information when required, reducing the density of static visualisations. A final approach involves the use of progressive disclosure, presenting complex information gradually, beginning with an overview and allowing users to explore details as needed.\\
 
 <<cogload-plot, echo=FALSE, fig.height=3, fig.width=10, fig.pos = 'H', fig.cap='High versus low cognitive load demand through the reduction of visual complexity'>>=
 
@@ -511,7 +511,7 @@ as \( n \rightarrow \infty \).\\
 \noindent By plotting histograms of a large number of sample means, one can observe the shape gradually resembling a normal distribution.\\
 
 \noindent
-Consider Figure~\ref{fig:iris-plots} with created on ggplot2 with the use of to the \texttt{geom\_histogram} function and iris dataset.
+Consider Figure~\ref{fig:iris-plots} which was created on \textit{ggplot2} with the use of to the \texttt{geom\_histogram} function and iris dataset.
 
 \begin{figure}[htbp]
   \centering
@@ -575,13 +575,13 @@ The kernel function \( K(u) \) is a normalised non-negative function that satisf
 \subsection{Bar Charts}
 \noindent Bar charts are a crucial tool in data presentation, arranging data into vertical or horizontal bars. The varying lengths of these bars directly correspond to the magnitude of the information they represent. Bar charts excel in comparing classified data, especially when values are closely aligned. This stems from the nature of human perception, as our visual acuity for height surpasses that of other visual elements like area or angle.\\
 
-\noindent Bar charts represent a versatile tool for data visualisation, frequently employed to compare distinct categories. The \textbf{vertical bar chart}, commonly recognised, exhibits categories along the X-axis and their frequencies or counts along the Y-axis. \textbf{Horizontal bar charts}, rotated 90 degrees, prove beneficial for extended category names or numerous categories, displaying categories on the Y-axis and frequencies on the X-axis. \textbf{Multi-set or grouped bar charts} facilitate side-by-side comparisons of sub- groups within categories, available in both vertical and horizontal orientations. \textbf{Stacked bar charts} illustrate classes of values subdivided into sub-classes, often differentiated by colour, where each segment's size signifies its frequency or count, and the total bar length reflects the cumulative total.\\
+\noindent Bar charts represent a versatile tool for data visualisation, frequently employed to compare distinct categories. The vertical bar chart, commonly recognised, exhibits categories along the X-axis and their frequencies or counts along the Y-axis. Horizontal bar charts, rotated 90 degrees, prove beneficial for extended category names or numerous categories, displaying categories on the Y-axis and frequencies on the X-axis. Multi-set or grouped bar charts facilitate side-by-side comparisons of sub- groups within categories, available in both vertical and horizontal orientations. Stacked bar charts illustrate classes of values subdivided into sub-classes, often differentiated by colour, where each segment's size signifies its frequency or count, and the total bar length reflects the cumulative total.\\
 
 \noindent \textbf{Bar Charts in Practice}\\
 \noident The two bar charts on in Figure~\ref{fig:barcharts} illustrate the impact of varying vitamin dosages on tooth growth, further categorised by supplement type. On the X-axis, three distinct levels of vitamin dosage are presented, while the Y-axis indicates the average lenth of tooth for each dosage.
 
 
-<<barcharts, echo=FALSE, warning=FALSE, message=FALSE, fig.height=3, fig.width=10, fig.pos = 'H', fig.cap='Visualising tooth growth by gosage: A comparison of grouped and stacked bar chart techniques' >>=
+<<barcharts, echo=FALSE, warning=FALSE, message=FALSE, fig.height=3, fig.width=10, fig.pos = 'H', fig.cap='Visualising tooth growth by dosage: A comparison of grouped and stacked bar chart techniques' >>=
 # average length
 average_lengths <- ToothGrowth %>%
   group_by(dose, supp) %>%
@@ -607,7 +607,7 @@ ggsave("barcharts.pdf", plot = grid.arrange(barchart_plot1, barchart_plot2, ncol
 \subsection{Line Charts and Time Series}
 
 \noindent
-The previous subsections explored Histograms, Bar Charts, and Kernel Density Estimation, which are univariate methods used for analysing independent variables in isolation, revealing patterns and intrinsic properties within data. Now, the focus shifts to univariate methods of dependent variables, specifically Line Charts, which are crucial for visualising relationships between variables to understanding their interactions and dependencies over time.
+The previous subsections explored Histograms, Kernel Density Estimation, and Bar Charts, which are univariate methods used for analysing independent variables in isolation, revealing patterns and intrinsic properties within data. Now, the focus shifts to univariate methods of dependent variables, specifically Line Charts, which are crucial for visualising relationships between variables to understanding their interactions and dependencies over time.
 
 \subsubsection{Theory of Line Charts}
 
@@ -683,7 +683,7 @@ plot_data$Currency <- gsub("_MA49", "", plot_data$Currency)
 \begin{figure}[H]
 <<message=FALSE,warning=FALSE,fig.dim = c(6, 3.5)>>=
 # PLOT OF DAILY AND 49-DAY MOVING AVERAGE EXCHANGE RATES OF CAN, EUR, USD TO GBP
-# Define the color palette
+
 color_palette <- c("#459395", "#EB7C69", "#FDA638")
 
 p1 <- ggplot(plot_dt, aes(x = Date, y = Rate, color = Currency)) + geom_line() +
@@ -722,8 +722,10 @@ One of the primary advantages of time series visualisation is the ease with whic
 Time series data, $X_t$, can often be described as a combination of several distinct components: Trend component $t_t$: The underlying progression in the series, Seasonal component $s_t$: Periodic fluctuations due to seasonal factor, Residual $r_t$: The irregular or error component.\\
 
 \noindent
-The decomposition of a time series can be described in two main models:\\
-\textbf{Additive Model} \cite{Brockwell2016Introduction}: In the additive model, the components are added together:
+The decomposition of a time series can be described in two main models:
+\\
+
+\noindent \textbf{Additive Model} \cite{Brockwell2016Introduction}: In the additive model, the components are added together:
 \[
 X_t = t_t + s_t + r_t.
 \]
@@ -734,7 +736,7 @@ X_t = t_t \times s_t \times r_t \quad \text{or} \quad \log(X_t) = \log(t_t) + \l
 In practice, the choice between the additive and multiplicative models often depends on the nature of the time series. If the magnitude of the seasonal fluctuations or the variation around the trend does not vary with the level of the time series, then an additive model is appropriate. If the magnitude of the seasonal fluctuations or the variation around the trend increases or decreases as the time series level changes, then a multiplicative model may be more suitable.\\
 
 \noindent
-R function \texttt{decompose()} is able to decompose the time series by addictive model or multiplicative model. And below is the demonstration of decomposition.
+R function \texttt{decompose()} is able to decompose the time series by additive model or multiplicative model. And below is the demonstration of decomposition.
 
 
 <<message=FALSE,warning=FALSE,echo=FALSE>>=
@@ -751,7 +753,7 @@ decomposed_df <- data.frame(
 @
 
 \begin{figure}[H]
-<<message=FALSE,warning=FALSE,fig.dim = c(5, 4)>>=
+<<message=FALSE,warning=FALSE,fig.dim = c(5, 3)>>=
 # PLOT OF DECOMPOSITION OF ADDICTIVE TIME SERIES MODEL
 ggplot(decomposed_df, aes(x = time, y = value)) + geom_line() +
   facet_wrap(~component, scales = "free_y", ncol = 1) + labs(x = "Date",y = "Exchange Rate to GBP") + theme_minimal()
