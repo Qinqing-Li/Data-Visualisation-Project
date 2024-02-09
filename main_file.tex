@@ -845,7 +845,50 @@ In general, the \(Y\)-axis denotes the response, or dependent, variable and the 
 
 \noindent The initial scatter plot is set up using the $ggplot$ function, specifying the x-axis as mpg and the y-axis as wt. The animation is introduced with the transition-states function, which animates the scatter plot by transitioning between different states based on the 'gear' variable. The enter-fade and exit-fade functions add a fading effect when entering or exiting a state.\\
 
-\noindent The animation is previewed using the animate function, specifying 100 frames for a smoother visual experience. This allows viewers to observe how the scatter plot changes dynamically with varying 'gear' categories, providing insights into the relationship between miles per gallon and weight over different car specifications.
+\noindent The animation is previewed using the animate function, specifying 100 frames for a smoother visual experience.  The $gganimate$ package in this case indeed generates 100 static images and then combines these images into a GIF animation. This allows viewers to observe how the scatter plot changes dynamically with varying 'gear' categories, providing insights into the relationship between miles per gallon and weight over different car specifications.\\
+
+\noindent
+\subsubsection{gganimate in Practice}\\
+
+\noindent
+The figure below depicts a static scatter plot illustrating the relationship between GDP per capita and life expectancy across various countries. GDP per capita is displayed on a logarithmic scale along the x-axis, and life expectancy is shown on the y-axis. The size of each point on the plot corresponds to the population size of the country it represents, and the color of each point distinguishes one country from another.\\
+
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-gapminder_static-1} 
+
+}
+
+\caption[staticl scatter plot deconstruction of the gapminder dataset]{staticl scatter plot deconstruction of the gapminder dataset}\label{fig:gapminder_static}
+\end{figure}
+
+\end{knitrout}
+\noindent
+In the graoh we can see that there appears to be a positive correlation between GDP per capita and life expectancy, as GDP per capita increases, life expectancy also tends to be higher. \\
+
+\noindent
+However, by using the animation function, we can see how life expectancy and GDP per capita change through the years for each country, so it helps to show how relationships between variables evolve over time or across different categories. \\
+\\
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{# create animated ggplot}
+\hlstd{gapplot}\hlkwb{<-}\hlkwd{ggplot}\hlstd{(gapminder,} \hlkwd{aes}\hlstd{(gdpPercap, lifeExp,} \hlkwc{size} \hlstd{= pop,} \hlkwc{colour} \hlstd{= country))} \hlopt{+}
+  \hlkwd{geom_point}\hlstd{(}\hlkwc{alpha} \hlstd{=} \hlnum{0.7}\hlstd{,} \hlkwc{show.legend} \hlstd{=} \hlnum{FALSE}\hlstd{)} \hlopt{+}
+  \hlkwd{scale_colour_manual}\hlstd{(}\hlkwc{values} \hlstd{= country_colors)} \hlopt{+}
+  \hlkwd{scale_size}\hlstd{(}\hlkwc{range} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{2}\hlstd{,} \hlnum{12}\hlstd{))} \hlopt{+}
+  \hlkwd{scale_x_log10}\hlstd{()} \hlopt{+}
+  \hlkwd{facet_wrap}\hlstd{(}\hlopt{~}\hlstd{continent)} \hlopt{+}
+  \hlcom{# Here comes the gganimate specific bits}
+  \hlkwd{labs}\hlstd{(}\hlkwc{title} \hlstd{=} \hlstr{'Year: \{frame_time\}'}\hlstd{,} \hlkwc{x} \hlstd{=} \hlstr{'GDP per capita'}\hlstd{,} \hlkwc{y} \hlstd{=} \hlstr{'life expectancy'}\hlstd{)} \hlopt{+}
+  \hlkwd{transition_time}\hlstd{(year)} \hlopt{+}
+  \hlkwd{ease_aes}\hlstd{(}\hlstr{'linear'}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
 
 
 \subsection{Bubble Charts}

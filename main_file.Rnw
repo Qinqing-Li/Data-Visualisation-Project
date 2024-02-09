@@ -44,6 +44,9 @@ library(palmerpenguins)
 library(Rtsne)
 library(pROC)
 library(gganimate)
+library(gapminder)
+library(lubridate)
+library(gifski)
 library(viridis)
 library(expm)
 data(ToothGrowth)
@@ -1091,7 +1094,47 @@ grid.arrange(plot1, plot2, plot3, ncol = 3)
 
 \noindent The initial scatter plot is set up using the $ggplot$ function, specifying the x-axis as mpg and the y-axis as wt. The animation is introduced with the transition-states function, which animates the scatter plot by transitioning between different states based on the 'gear' variable. The enter-fade and exit-fade functions add a fading effect when entering or exiting a state.\\
 
-\noindent The animation is previewed using the animate function, specifying 100 frames for a smoother visual experience. This allows viewers to observe how the scatter plot changes dynamically with varying 'gear' categories, providing insights into the relationship between miles per gallon and weight over different car specifications.
+\noindent The animation is previewed using the animate function, specifying 100 frames for a smoother visual experience.  The $gganimate$ package in this case indeed generates 100 static images and then combines these images into a GIF animation. This allows viewers to observe how the scatter plot changes dynamically with varying 'gear' categories, providing insights into the relationship between miles per gallon and weight over different car specifications.\\
+
+\noindent
+\subsubsection{gganimate in Practice}\\
+
+\noindent
+The figure below depicts a static scatter plot illustrating the relationship between GDP per capita and life expectancy across various countries. GDP per capita is displayed on a logarithmic scale along the x-axis, and life expectancy is shown on the y-axis. The size of each point on the plot corresponds to the population size of the country it represents, and the color of each point distinguishes one country from another.\\
+
+<<gapminder_static, echo=FALSE, fig.height=3, fig.width=4, fig.cap='staticl scatter plot deconstruction of the gapminder dataset', message=FALSE>>=
+p <- ggplot(
+  gapminder, 
+  aes(x = gdpPercap, y=lifeExp, size = pop, colour = country)
+  ) +
+  geom_point(show.legend = FALSE, alpha = 0.7) +
+  scale_color_viridis_d() +
+  scale_size(range = c(2, 12)) +
+  scale_x_log10() +
+  labs(x = "GDP per capita", y = "Life expectancy")
+p
+@
+\noindent
+In the graoh we can see that there appears to be a positive correlation between GDP per capita and life expectancy, as GDP per capita increases, life expectancy also tends to be higher. \\
+
+\noindent
+However, by using the animation function, we can see how life expectancy and GDP per capita change through the years for each country, so it helps to show how relationships between variables evolve over time or across different categories. \\
+\\
+<<gganimate, echo=TRUE, fig.show='hide', results='hide', message=FALSE, warning=FALSE, error=TRUE>>=
+# create animated ggplot
+gapplot<-ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, colour = country)) +
+  geom_point(alpha = 0.7, show.legend = FALSE) +
+  scale_colour_manual(values = country_colors) +
+  scale_size(range = c(2, 12)) +
+  scale_x_log10() +
+  facet_wrap(~continent) +
+  # Here comes the gganimate specific bits
+  labs(title = 'Year: {frame_time}', x = 'GDP per capita', y = 'life expectancy') +
+  transition_time(year) +
+  ease_aes('linear')
+@
+
+
 
 
 \subsection{Bubble Charts}
