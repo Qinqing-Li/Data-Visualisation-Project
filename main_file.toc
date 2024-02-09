@@ -28,29 +28,28 @@
 \contentsline {subsection}{\numberline {4.1}Heatmaps}{28}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Scatter Plots}{29}{subsection.4.2}%
 \contentsline {subsubsection}{\numberline {4.2.1}Animated Scatter Plots}{30}{subsubsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.3}Bubble Charts}{31}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Theory of Bubble Charts}{31}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}Bubble Charts in Practice}{31}{subsubsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.4}Simple Linear Regression}{32}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.1}Theory of Simple Linear Regression}{32}{subsubsection.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.2}Theory of Least Squares Estimation}{33}{subsubsection.4.4.2}%
-\contentsline {subsubsection}{\numberline {4.4.3}Case example: 1970s automobiles}{34}{subsubsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.5}LOESS Regression}{35}{subsection.4.5}%
-\contentsline {subsubsection}{\numberline {4.5.1}Theory of LOESS regression}{36}{subsubsection.4.5.1}%
-\contentsline {subsubsection}{\numberline {4.5.2}Case example: Taiwan Housing dataset}{37}{subsubsection.4.5.2}%
-\contentsline {section}{\numberline {5}Visualising Beyond Two Dimensions}{38}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Generalised Linear Models}{38}{subsection.5.1}%
-\contentsline {subsubsection}{\numberline {5.1.1}Theory of Generalised Linear Models}{38}{subsubsection.5.1.1}%
-\contentsline {subsubsection}{\numberline {5.1.2}Model fitting using MLE}{38}{subsubsection.5.1.2}%
-\contentsline {subsubsection}{\numberline {5.1.3}Model selection method AIC}{39}{subsubsection.5.1.3}%
-\contentsline {subsection}{\numberline {5.2}Principal Component Analysis}{39}{subsection.5.2}%
-\contentsline {subsubsection}{\numberline {5.2.1}Principal Curves}{40}{subsubsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.3}Biplots}{40}{subsection.5.3}%
-\contentsline {subsubsection}{\numberline {5.3.1}Construction of PCA Biplots}{41}{subsubsection.5.3.1}%
-\contentsline {subsubsection}{\numberline {5.3.2}Biplots in Practice: The mtcars Dataset}{42}{subsubsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.4}t-SNE}{44}{subsection.5.4}%
-\contentsline {section}{\numberline {6}State-Of-The-Art Modern Approaches}{47}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Box Plots}{47}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Functional Box Plots}{47}{subsection.6.2}%
-\contentsline {section}{\numberline {7}Index}{49}{section.7}%
-\contentsline {section}{\numberline {A}Appendix A}{52}{appendix.A}%
+\contentsline {subsubsection}{\numberline {4.2.2}gganimate in Practice}{31}{subsubsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.3}Bubble Charts}{32}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Theory of Bubble Charts}{32}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Bubble Charts in Practice}{32}{subsubsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.4}Simple Linear Regression}{33}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Theory of Simple Linear Regression}{33}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Theory of Least Squares Estimation}{34}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.3}Case example: 1970s automobiles}{35}{subsubsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.5}LOESS Regression}{36}{subsection.4.5}%
+\contentsline {subsubsection}{\numberline {4.5.1}Theory of LOESS regression}{37}{subsubsection.4.5.1}%
+\contentsline {subsubsection}{\numberline {4.5.2}Case example: Taiwan Housing dataset}{38}{subsubsection.4.5.2}%
+\contentsline {section}{\numberline {5}Visualising Beyond Two Dimensions}{39}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Principal Component Analysis (PCA)}{39}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Theory of PCA}{39}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}Derivation of PCA}{39}{subsubsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.3}Principal Curves}{41}{subsubsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.2}Biplots}{41}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Construction of PCA Biplots}{41}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Biplots in Practice: The mtcars Dataset}{43}{subsubsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.3}t-SNE}{45}{subsection.5.3}%
+\contentsline {section}{\numberline {6}State-Of-The-Art Modern Approaches}{48}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Box Plots}{48}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Functional Box Plots}{48}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Index}{50}{section.7}%
+\contentsline {section}{\numberline {A}Appendix A}{53}{appendix.A}%
