@@ -22,6 +22,8 @@
 \contentsline {subsubsection}{\numberline {3.4.1}Theory of Line Charts}{19}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.2}Time Series Analysis}{19}{subsubsection.3.4.2}%
 \contentsline {subsection}{\numberline {3.5}ROC Curve}{24}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Theory of ROC curve}{25}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}ROC analysis in COVID-19 test}{25}{subsubsection.3.5.2}%
 \contentsline {section}{\numberline {4}Bivariate Data Visualisation Methods}{28}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Heatmaps}{28}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Scatter Plots}{29}{subsection.4.2}%
