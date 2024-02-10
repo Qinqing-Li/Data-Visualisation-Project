@@ -43,14 +43,15 @@
 \contentsline {subsection}{\numberline {5.1}Principal Component Analysis (PCA)}{38}{subsection.5.1}%
 \contentsline {subsubsection}{\numberline {5.1.1}Theory of PCA}{38}{subsubsection.5.1.1}%
 \contentsline {subsubsection}{\numberline {5.1.2}Derivation of PCA}{38}{subsubsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.2}Principal Curves}{40}{subsection.5.2}%
-\contentsline {subsubsection}{\numberline {5.2.1}Construction of Principal Curves}{40}{subsubsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.3}Biplots}{41}{subsection.5.3}%
-\contentsline {subsubsection}{\numberline {5.3.1}Construction of PCA Biplots}{42}{subsubsection.5.3.1}%
-\contentsline {subsubsection}{\numberline {5.3.2}Biplots in Practice: The mtcars Dataset}{43}{subsubsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.4}t-SNE}{45}{subsection.5.4}%
-\contentsline {section}{\numberline {6}State-Of-The-Art Modern Approaches}{48}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Box Plots}{48}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Functional Box Plots}{48}{subsection.6.2}%
-\contentsline {section}{\numberline {7}Index}{50}{section.7}%
-\contentsline {section}{\numberline {A}Appendix A}{53}{appendix.A}%
+\contentsline {subsection}{\numberline {5.2}Biplots}{40}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Construction of PCA Biplots}{40}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Biplots in Practice: The mtcars Dataset}{42}{subsubsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.3}Principal Curves}{44}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Construction of Principal Curves}{45}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}Principal Cuves in Practice}{45}{subsubsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.4}t-SNE}{46}{subsection.5.4}%
+\contentsline {section}{\numberline {6}State-Of-The-Art Modern Approaches}{49}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Box Plots}{49}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Functional Box Plots}{49}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Index}{51}{section.7}%
+\contentsline {section}{\numberline {A}Appendix A}{54}{appendix.A}%

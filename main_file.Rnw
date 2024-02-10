@@ -1513,61 +1513,6 @@ Finally, project the standardized data $\mathbf{Z}$ onto the subspace defined by
     \[\mathbf{Y} = \mathbf{Z}\mathbf{W},\]
 where $\mathbf{Y} \in \mathbb{R}^{N \times k}$ is the transformed data matrix in the new subspace. Hence, in the reduced space, the variance along each principal component $\mathbf{v_i}$ is maximised, preserving the most significant variances in the data. PCA also attempts to preserve pairwise Euclidean distances between data points in the lower-dimensional representation. 
 
-\subsection{Principal Curves}
-
-\noindent Principal curves are a concept closely related to PCA but, they are more flexible and powerful in capturing the intrinsic structure of high-dimensional data. While PCA focuses on finding linear projections that maximise variance, principal curves seek to identify smooth, nonlinear trajectories that capture the most significant variations in the data. These curves are essentially one-dimensional paths embedded within the multidimensional space of the data points.\\
-
-\noindent PCA: if most data falls into a linear subspace, PCA finds directionin the subspace of the 2-dimensional space that passes through the middle of the scatter plot _ - ie. minimise the sum of square orthogonal deviations between the points and the projections onto the subspace.\\
-
-\noindent If the points don't fall in a linear subspace - ie. they fall in a non-linear subspace such as a curve in 2-dimension. An example of this is the scatter plot on the left side of Figure~\ref{fig:P-curves}. In this case, a straight line cant be placed in the middle, but one could fit a curve that passes through the centre of the points. This is what principal curves solve.
-
-\subsubsection{Construction of Principal Curves}
-
-\noindent As with PCA, take $(n \times p)$ data matrix $\mathbf{X}$, with row vectors $\mathbf{x}_i$. The goal is to extract a lower-dimensional set of "factors" or "scores" $\mathbf{y} = (y_1, \dots, y_n)^T$. These satisfy the following model:
-
-\[
-\mathbf{x}_i = f(y_i) + \epsilon_i, 
-\]
-
-\noindent where $\epsilon_i$ are errors with mean 0 and variance $\sigma^2 \mathbf{I}_p$ and $f: \mathbb{R}^1 \rightarrow \mathbb{R}^p$ is a continuous function called a curve.\\
-
-\noindent For curve $\mathbf{f}$, the projection index $y_f(\mathbf{x})$ maps observation $\mathbf{x} \in \mathbb{R}^p$ to the point of $\mathbf{f}$ that is closest, returning the score (index). If there are several such points, it returns the largest (this is arbitrary choice to ensure it is a well defined function). Hence, the projection index is: 
-\[
-y_f(\mathbf{x}) = \sup\limits_{y}\{y: ||\mathbf{x}-\mathbf{f}(y)||= \inf\limits_{\mu}||\mathbf{x}-\mathbf{f}(\mu)||\}.
-\]
-
-\noindent Like in PCA, principal curves estimates the following least-squares objective funtion
-\[
-\min\limits_{\mathbf{f}}\sum_{i=1}^{n} ||\mathbf{x_i - f(y_f(x_i))||^2
-\]
-
-
-<<P-curves, fig.height=4, fig.width=9, fig.cap='Principal curve fitting illustration on artifical dataset', message=FALSE>>=
-# Generate random values for t
-t <- runif(100, -1, 1)
-
-# Create the dataset x with two dimensions
-x <- cbind(t, t^3) + rnorm(200, sd = 0.05)
-
-# Rename the columns
-colnames(x) <- c("dim1", "dim2")
-
-# Set up a multi-paneled plotting window
-par(mfrow = c(1, 2))
-
-# Plot the first dataset
-plot(x, main = "Artificial Dataset 1", xlab = "Dimension 1", ylab = "Dimension 2", col = "#459395")
-
-# Fit principal curve to the dataset
-fit <- principal_curve(x)
-
-# Plot the principal curve along with the data points
-plot(fit, main = "Principal Curve", xlab = "Dimension 1", ylab = "Dimension 2")
-whiskers(x, fit$s, col = "#EB7C69") 
-@
-
-
-
 \subsection{Biplots}
 \noindent 
 A biplot is a graphical representation that succinctly captures the relationships between variables and observations in a reduced-dimensional space defined by the principal components. This visualisation method facilitates the exploration of complex multivariate data by providing a simultaneous display of both samples (observations) and variables in a single plot. They are commonly understood to be a generalisation of the simple two-variable scatterplot.\\
@@ -1690,7 +1635,7 @@ axis(3)
 axis(4)
 @
 
-XXX
+\noindent 
 
 <<PCAbiplot, fig.height=5, fig.width=8, fig.cap='PCA Biplot of mtcars Dataset: R In-built Function', message=FALSE>>=
 #GENERATION OF A BIPLOT
@@ -1705,10 +1650,75 @@ pca_result <- prcomp(scaled_data, scale. = TRUE)
 biplot(pca_result, cex = 0.7)
 @
 
-
-
-
 \noindent The biplot displays variable vectors and sample points in a two-dimensional space defined by the principal components. Each variable is represented as a vector, and each car model (observation) is represented as a point.
+
+
+\subsection{Principal Curves}
+
+\noindent Principal curves are a concept closely related to PCA but, they are more flexible and powerful in capturing the intrinsic structure of high-dimensional data. While PCA focuses on finding linear projections that maximise variance, principal curves seek to identify smooth, nonlinear trajectories that capture the most significant variations in the data. These curves are essentially one-dimensional paths embedded within the multidimensional space of the data points.\\
+
+\noindent If most data falls into a linear subspace, PCA finds direction in the subspace of the 2-dimensional space that passes through the middle of the scatter plot ie. minimise the sum of square orthogonal deviations between the points and the projections onto the subspace.\\
+
+\noindent If the points don't fall in a linear subspace - ie. they fall in a non-linear subspace such as a curve in 2-dimension, PCA is insufficient. An example of this is the scatter plot on the left side of Figure~\ref{fig:P-curves}. In this case, a straight line can't be placed in the middle of the plot, but one could fit a curve that passes through the centre of the points. This is essentially what principal curves do.
+
+\subsubsection{Construction of Principal Curves}
+
+\noindent As with PCA, take $(n \times p)$ data matrix $\mathbf{X}$, with row vectors $\mathbf{x}_i$. The goal is to extract a lower-dimensional set of "factors" or "scores" $\mathbf{y} = (y_1, \dots, y_n)^T$. These satisfy the following model:
+
+\[
+\mathbf{x}_i = f(y_i) + \epsilon_i, 
+\]
+
+\noindent where $\epsilon_i$ are errors with mean 0 and variance $\sigma^2 \mathbf{I}_p$ and $f: \mathbb{R}^1 \rightarrow \mathbb{R}^p$ is a continuous function called a curve.\\
+
+\noindent For curve $\mathbf{f}$, the projection index $y_f(\mathbf{x})$ maps observation $\mathbf{x} \in \mathbb{R}^p$ to the point of $\mathbf{f}$ that is closest, returning the score (index). If there are several such points, it returns the largest (this is arbitrary choice to ensure it is a well defined function). Hence, the projection index is: 
+\[
+y_f(\mathbf{x}) = \sup\limits_{y}\{y: ||\mathbf{x}-\mathbf{f}(y)||= \inf\limits_{\mu}||\mathbf{x}-\mathbf{f}(\mu)||\}.
+\]
+
+\noindent As seen in a similar form in PCA, principal curves estimates the following least-squares objective function
+\[
+\min\limits_{\mathbf{f}}\sum_{i=1}^{n} ||\mathbf{x}_i - \mathbf{f}(y_{\mathbf{f}}(\mathbf{x}_i))||^2.
+\]
+
+\noindent To construct the principal curve, an algorithm put to work. This iterates between finding a curve $\mathbf{f}$ and then projecting the points onto that. More explicitly, the algorithms has the following form: %https://www.youtube.com/watch?v=lnxz3QAA1po 
+
+\begin{enumerate}
+  \item Initialise: let iteration counter $h = 1$ and set $\mathbf{y}^{(0)} = \mathbf{Xu}$, where $\mathbf{u}$ is the first PC vector. 
+  \item Smoothing step: With $\mathbf{y}^{(h-1)}$ fixed, estimate $\mathbf{\hat{x}}_i^{(h)}$ with a smoother. 
+  \item Projection step: With $\mathbf{\hat{X}}^{(h)}$ fixed, use the projection index to update the scores $\mathbf{y}{(h)}$ so that they have unit speed. 
+  \item Loop: Increment $h$ and return to step 1 while the change in the objective function above some threshold.
+\end{enumerate}
+
+\subsubsection{Principal Cuves in Practice}
+
+\noindent In Figure~\ref{fig:P-curves}, we see an example of how a principal curve is fitted to the observations of an artificial dataset. The points in the plots are not grouped in a linear subspace, but rather follow a similar shape to that of cubic function.
+
+<<P-curves, echo=FALSE, fig.pos = 'H', fig.height=4, fig.width=9, fig.cap='Principal curve fitting illustration on artificial dataset', message=FALSE>>=
+# Generate random values for t
+t <- runif(100, -1, 1)
+
+# Create the dataset x with two dimensions
+x <- cbind(t, t^3) + rnorm(200, sd = 0.05)
+
+# Rename the columns
+colnames(x) <- c("dim1", "dim2")
+
+# Set up a multi-paneled plotting window
+par(mfrow = c(1, 2))
+
+# Plot the first dataset
+plot(x, main = "Artificial Dataset 1", xlab = "Dimension 1", ylab = "Dimension 2", col = "#459395")
+
+# Fit principal curve to the dataset
+fit <- principal_curve(x)
+
+# Plot the principal curve along with the data points
+plot(fit, main = "Principal Curve", xlab = "Dimension 1", ylab = "Dimension 2")
+whiskers(x, fit$s, col = "#EB7C69") 
+@
+
+\noindent The scatter plot displays a distribution characterised by non-linear relationships between the dimensions. The fitting of the principal curve reveals its ability to adapt to the form of the scatter plot, effectively capturing the underlying structure of the data. 
 
 \subsection{t-SNE}
 \href{https://jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf}
