@@ -66,20 +66,22 @@ opts_chunk$set(fig.path = 'figure/beamer-',
 \tableofcontents
 
 \newpage  % Start overview section on a new page
+
 \section*{Overview}
+
 \addcontentsline{toc}{section}{Overview} % Add section to the table of contents
 
 \noindent
-Graphical statistics is an indispensable tool in the arsenal of every contemporary data scientist. Primarily, it enables users to delve into data, explore its nuances, and effectively communicate empirical discoveries through visual means. This project aims to provide an overview of modern data visualisation methods, delve into their theoretical underpinnings, and demonstrate the potency of these methodologies using both synthetic and authentic datasets. Computational implementations via dashboards — using Python Dash or R Shiny — are used to showcase the methodologies in practice. Furthermore, the project is aware of the ongoing evolution of novel data visualisation techniques, recognising it as an active area of research (e.g. Rodu and Kafadar, 2022), and thus aims to cover both textbook methods as well as state-of-the-art approaches and open problems.\\
+Graphical statistics is an indispensable tool in the arsenal of every contemporary data scientist. Primarily, it enables one to delve into data, explore its nuances, and effectively communicate empirical discoveries through visual means. This project aims to provide an overview of modern data visualisation methods, delve into their theoretical underpinnings, and demonstrate the potency of these methodologies using both synthetic and authentic datasets. Computational implementations via dashboards — using Python Dash or R Shiny — are used to showcase the methodologies in practice. Furthermore, the project is aware of the ongoing evolution of novel data visualisation techniques, recognising it as an active area of research (e.g. Rodu and Kafadar, 2022), and thus aims to cover both textbook methods as well as state-of-the-art approaches and open problems.\\
 
 \noindent
-This thesis aims to explore the theoretical foundations that underlie various visualisation methodologies, study their mathematical construction, and illustrate their practical application. In particular, Chapters 3, 4, and 5 concentrate on standard implementations of Graphical Statistics for univariate, bivariate, and multivariate datasets respectively. Chapter 3 discusses the Kernel Density Estimate, ROC Curve, and Time Series Analysis, showcasing their use through the Tooth Growth and the Exchange Rate datasets. Chapter 4 is focused on the topic of regression, discussing the theory behind Simple Linear Regression followed by LOESS regression. Chapter 5 introduces the model selection method AIC and Multiple Linear Regression, followed by the theoretical foundation of biplots and t-SNE. Subsequent chapters cover active research areas in Graphical Statistics and implementation of dashboards. \\
+The thesis explores the theoretical foundations that underlie various visualisation methodologies, study their mathematical construction, and illustrate their practical application. In particular, while chapter 2 focuses on the theoretical framework of data visualisation, the main body is made up of Chapters 3, 4, and 5. These concentrate on standard implementations of Graphical Statistics for univariate, bivariate, and multivariate datasets respectively. Chapter 3 discusses the Kernel Density Estimate, ROC Curve, and Time Series Analysis. Chapter 4 is focused on the topic of regression, discussing the theory behind Simple Linear Regression followed by LOESS regression. Chapter 5 introduces the model selection method AIC and Multiple Linear Regression, followed by the theoretical foundation of biplots and t-SNE. The final chapter covers active research areas in Graphical Statistics. \\
 
 
 \noindent
-Throughout this thesis, R package names such as \textit{ggplot2} are italicised, while R commands like \texttt{faceting} are displayed in a teletype font.The R code chunks for each figure in the report can be found in a separate \href{https://github.com/Qinqing-Li/Data-Visualisation-Project/tree/main/code}{GitHub code folder}. \\
+Throughout the thesis, vocabulary referencing the programme R are used. The R package names such as \textit{ggplot2} are italicised, while R commands like \texttt{faceting} are displayed in a teletype font. The R code chunks for each figure in the report can be found in a separate \href{https://github.com/Qinqing-Li/Data-Visualisation-Project/tree/main/code}{GitHub code folder}. \\
 
-\noindent \textbf{Literature and Research}\\ %This section doesn´t seem to be too relevant here (the overview of our work)
+\noindent \textbf{Literature and Research}\\ 
 \noindent
 Data visualisation is an area of interest in numerous method-specific publications. One notable publication is the \href{https://www.tandfonline.com/journals/ucgs20}{Journal of Computational and Graphical Statistics}. This journal publishes ongoing research on the latest techniques in computational and graphical methods in statistics, encompassing data analysis and numerical graphical displays. \href{https://www.sciencedirect.com/journal/spatial-statistics}{Spatial Statistics} publishes articles on the theory and application of spatial and spatio-temporal statistics. \href{https://journal.r-project.org}{The R Journal} publishes research articles in statistical computing that are of interest to R users. These together reveal the vast potential for current and future research in this ever-evolving domain, particularly as our digital landscape and data sphere expand at an accelerated pace.\\
 
@@ -88,9 +90,11 @@ Data visualisation is an area of interest in numerous method-specific publicatio
 \section{Introduction}
 
 \noindent
-This chapter provides case examples demonstrating both the influential applications and potential misuses of data visualisations, with the aim of underscoring the enduring importance of data visualisation.These are sourced from BBC Ideas \cite{bbcdatavis}. Following this, an introduction to the R package \textit{ggplot2} is provided, along with a presentation of the datasets used in this thesis.
+This chapter underscores the enduring importance of data visualisation. Case examples both of the influential applications, but also dangerous misuses of data visualisations are showcased and analysed. These are sourced from BBC Ideas \cite{bbcdatavis}. Futhermore, an introduction to the R package \textit{ggplot2} is provided, along with a presentation of the datasets used throughout paper. 
 
 \subsection{Historical Background and Misuses of Data Visualisation}
+
+\noindent This section commences with an examination of two case studies delineating the efficacy and impact of data visualisation, succeeded by an exploration of two instances exemplifying problematic data misuse. The overarching objective is to underscore the significance of data visualisation while concurrently highlighting thenecessity of meticulous attention to detail, particularly in light of the potential for data visualisation to be exploited for malicious purposes.\\
  
 \\\textbf{Motivations for Using Data Visualisations — Case 1}
 
@@ -108,16 +112,16 @@ During the Crimean War, Nightingale recognised that unsanitary hospital conditio
 \end{figure}
 
 \noindent
-Nightingale leveraged the compelling visualisations in her advocacy efforts, presenting them to MPs and government officials who otherwise are unlikely to read or understand statistical reports. Nightingale successfully persuaded Queen Victoria, head of the British Army at the time, to allocate funding for the improvement of better conditions in military hospitals.\\
+Nightingale leveraged the compelling visualisations in her advocacy efforts, presenting them to MPs and government officials who otherwise are unlikely to read or understand statistical reports. She successfully persuaded Queen Victoria, head of the British Army at the time, to allocate funding for the improvement of better conditions in military hospitals.\\
 
 \noindent
 \textbf{Motivations for Using Data Visualisations — Case 2}
 \\
 \noindent
-Sometimes, one glance is enough to convey the most powerful idea. Edward Hawkins, a British climate scientist and Professor of climate science at the University of Reading, is renowned for his exceptional datavisualisations of climate change.\\
+Sometimes, one glance is enough to convey the most powerful idea. Edward Hawkins, a British climate scientist and Professor of climate science at the University of Reading, is renowned for his exceptional data visualisations of climate change.\\
 
 \noindent
-In 2018, Edward Hawkins was invited to deliver a lecture on climate change in Wales to an audience with diverse backgrounds. It was important to effectively convey the growing urgency surrounding global warming. To achieve this, he created a chart that used just colours, without any words, titles, or legends, as shown in Figure~\ref{fig:global}. This seemingly simple yet remarkably powerful chart visually illustrated the Earth's warming trend since 1850.
+In 2018, Edward Hawkins was invited to deliver a lecture on climate change in Wales to an audience with diverse backgrounds. It was important to effectively convey the growing urgency surrounding global warming. To achieve this, he created a chart that used only colours, without any words, titles, or legends, as shown in Figure~\ref{fig:global}. This seemingly simple yet remarkably powerful chart visually illustrated the Earth's warming trend since 1850.
 
 \begin{figure}[H]
     \centering
@@ -152,7 +156,7 @@ Inappropriate data visualisation can conceal trends rather than reveal them. Fig
 One striking example of data visualisation misuse is found in the Kallikak Family tree - one of the most prominent eugenic narratives of the 20th century.\\
 
 \noindent
-The visualisation (as shown in Figure~\ref{fig:familytree}) was created by the psychologist Henry Goddard and presented in his 1912 book, ``The Kallikak Family: A Study in the Heredity of Feeble-Mindedness." Goddard's narrative centered around Martin Kallikak, a soldier who, in addition to his marriage to a respected citizen, had a one-night stand with a ``feeble-minded" maid. Goddard believed that intellectual disabilities were inherited traits. In Goddard's account, the legitimate family was successful, while the children of the ``feeble-minded" maid were labeled as ``the lowest types of human beings." However, research has since revealed that the entire story was fictitious, as there was no record of the maid's existence \cite{fakedata}.\\
+The visualisation, shown in Figure~\ref{fig:familytree}, was created by the psychologist Henry Goddard and presented in his 1912 book, ``The Kallikak Family: A Study in the Heredity of Feeble-Mindedness." Goddard's narrative centered around Martin Kallikak, a soldier who, in addition to his marriage to a respected citizen, had a one-night stand with a ``feeble-minded" maid. Goddard believed that intellectual disabilities were inherited traits. In Goddard's account, the legitimate family was successful, while the children of the ``feeble-minded" maid were labeled as ``the lowest types of human beings." However, research has since revealed that the entire story was fictitious, as there was no record of the maid's existence \cite{fakedata}.\\
 
 \noindent
 Regrettably, the Kallikak family tree became a central element in the eugenics movement. Figure \ref{fig:familytree} was featured in the 1935 Nazi propaganda film ``Das Erbe" (The Inheritance), which was used to promote public acceptance of Nazi eugenics laws. This propaganda laid the groundwork for the forced sterilization of approximately 400,000 people under Nazi eugenics policies \cite{eugenics}.
@@ -226,29 +230,28 @@ This chapter, ``Theoretical Foundations of Data Visualisation," delves into the 
 Creating effective data visualisations requires a robust theoretical framework underlying every chart, graph, or plot. These theoretical underpinnings not only form the basis of data visualisation but also influence how we represent, perceive, understand, and interpret data.\\ 
 
 \noindent \textbf{Guiding Principles for Data Representation}\\
-The theoretical framework of data visualisation involves guiding principles dictating visual representation of data. These principles include accuracy, emphasising faithful reflection of underlying data to reduce distortion or misinterpretation; simplicity, advocating for streamlined visuals to convey information effectively; clarity, ensuring visuals are easily understood without unnecessary complexity; relevance, presenting information pertinent to the message or question addressed; and consistency, maintaining uniform use of visual elements like color coding and labeling throughout a visualisation.\\
+The theoretical framework of data visualisation involves guiding principles dictating visual representation of data. These principles include accuracy, emphasising faithful reflection of underlying data to reduce distortion or misinterpretation; simplicity, advocating for streamlined visuals to convey information effectively; clarity, ensuring visuals are easily understood without unnecessary complexity; relevance, presenting information pertinent to the message or question addressed; and consistency, maintaining uniform use of visual elements like colour coding and labeling throughout a visualisation.\\
 
 \noindent \textbf{Theoretical Framework and Visual Perception}\\
-Understanding how the human brain processes visual information is a fundamental aspect of data visualisation theory. This knowledge plays a crucial role in designing visualisations that effectively connect with viewers. It encompasses several key considerations which will be studied in order: the Gestalt Principles, which encompass proximity, similarity, and continuity, affecting how visual elements are grouped and interpreted; Color Theory, involving the strategic use of color contrasts and harmonies to improve clarity and impact; and the management of Cognitive Load, which emphasises the importance of reducing mental effort needed to process information.
+Understanding how the human brain processes visual information is a fundamental aspect of data visualisation theory. This knowledge plays a crucial role in designing visualisations that effectively connect with viewers. It encompasses several key considerations which will be studied in order: the Gestalt Principles, which encompass proximity, similarity, and continuity, affecting how visual elements are grouped and interpreted; Colour Theory, involving the strategic use of colour contrasts and harmonies to improve clarity and impact; and the management of Cognitive Load, which emphasises the importance of reducing mental effort needed to process information.
 
 \subsection{Data Types and Visualisation Techniques}
 To have a discussion about data representation, understanding the nature of the data is key. Data comes in various types, and selecting the appropriate visualisation technique is contingent upon recognising these distinctions. In this section, the data types are categorised and matched with their suitable visualisation techniques.
 
 \subsubsection{Categorisation of Data Types}
 Data types can be broadly categorised into four main types: 
-\begin{itemize}
+\begin{itemise}
     \item \textbf{Nominal data}: represents categories or labels without any inherent order. Examples include colours, gender categories, and city names. 
     \item \textbf{Ordinal data}: implies a meaningful order or ranking among categories but lacks equal intervals between them. Examples include survey responses (eg. “very satisfied”, “satisfied”, “neutral”, “dissatisfied”, “very dissatisfied”)
     \item \textbf{Interval data}: possesses ordered categories with equal intervals between them, but it lacks a true zero point. Temperature is measured in Celsius or Fahrenheit as an example. 
     \item \textbf{Ratio data}: includes ordered categories with equal intervals and a meaningful zero point. Examples are age, income, and weight. 
-\end{itemize}
+\end{itemise}
 
 \noindent \textbf{Matching Data Types with Appropriate Visualisation Techniques}\\
 \noindent Selecting appropriate visualisation techniques is essential for effective data communication. Various data types demand specific visualisation methods for optimal representation \cite{healy2018data}. For nominal data, bar charts and stacked bar charts are effective in displaying categorical information and relative proportions. Ordinal data benefits from ordered bar charts, dot plots, or stacked bar charts, maintaining the ranking and order of categories. Interval data is best visualised using line charts, histograms, and box plots, showcasing trends and distributions without assuming a true zero point. Finally, ratio data finds effective representation through scatter plots, histograms, and line charts, enabling precise comparisons and measurements due to the presence of a meaningful zero point. These are represented in Figure~\ref{fig:data-plots}, where artificial data from a class of 4th-year university students is visualised.
 
 <<data-plots, echo=FALSE, message=FALSE, fig.height=8, fig.width=11, fig.pos = 'H', fig.cap='Different types of visualisation techniques according to the data type'>>=
 
-# Define the colors
 my_palette <- c("#4B0082", "#459395", "#EB7C69", "#FDA638")
 
 # Generate nominal data (gender categories and tendencies)
@@ -322,7 +325,7 @@ Abstraction operates on multiple levels of granularity. Hierarchies of abstracti
 \end{enumerate}
 
 \noindent 
-These different levels of abstraction are represented in Figure~\ref{fig:abs-plots}. The first visualisations of the mtcars dataset is a scatter plot that provides detailed information about the relationship between car weight and miles per gallon, with points colored by the number of cylinders. The second is an abstract visualisation using a box-and-whisker plot to provide a high-level summary of the distribution of miles per gallon for different numbers of cylinders. Finally, the third visualisation is a bar plot presenting aggregated information about the average miles per gallon for different numbers of cylinders.
+These different levels of abstraction are represented in Figure~\ref{fig:abs-plots}. The first visualisations of the mtcars dataset is a scatter plot that provides detailed information about the relationship between car weight and miles per gallon, with points coloured by the number of cylinders. The second is an abstract visualisation using a box-and-whisker plot to provide a high-level summary of the distribution of miles per gallon for different numbers of cylinders. Finally, the third visualisation is a bar plot presenting aggregated information about the average miles per gallon for different numbers of cylinders.
 
 <<abs-plots, echo=FALSE, fig.height=4, fig.width=12, fig.pos = 'H', fig.cap='Mtcars dataset visualised on 3 different levels of abstraction'>>=
 
@@ -385,7 +388,7 @@ In this first section, human visual perception is explored, along with the appli
 Human visual perception profoundly influences our understanding of the surrounding world. When applied to data visualisation, it shapes the way that individuals engage with and derive meaning from visual data representations.\\
 
 \noindent 
-Significant aspects of human visual perception within data visualisation encompass pattern recognition, adept at identifying trends, outliers, and relationships in data representations. Additionally, perceptual grouping, where visually similar elements are grouped together, influences the interpretation of data clusters and shapes. Moreover, the =hierarchy of perception dictates that certain visual attributes are processed more swiftly and effectively than others, such as color being processed faster than text, influencing the viewer's attention hierarchy \cite{dastani2002role}.\\
+Significant aspects of human visual perception within data visualisation encompass pattern recognition, adept at identifying trends, outliers, and relationships in data representations. Additionally, perceptual grouping, where visually similar elements are grouped together, influences the interpretation of data clusters and shapes. Moreover, the =hierarchy of perception dictates that certain visual attributes are processed more swiftly and effectively than others, such as colour being processed faster than text, influencing the viewer's attention hierarchy \cite{dastani2002role}.\\
 
 \noindent \textbf{The Gestalt Principles \index{The Gestalt Principles}}\\
 Furthermore, the Gestalt Principles play an important role in the realm of visual perception and design \cite{rosli2015gestalt}. Key Gestalt principles crucial in shaping visual information perception include proximity, which groups related elements, similarity that links similar attributes, continuity aiding trend representation, closure for implying connections, and symmetry for balance and aesthetics in visualisations \cite{todorovic2008gestalt}. \\
@@ -397,10 +400,10 @@ Furthermore, the Gestalt Principles play an important role in the realm of visua
 In this section, the significance of colour in data visualisation, the principles of colour perception and encoding, and the importance of avoiding misleading visualisations through thoughtful colour choices are explored.\\
 
 \noindent \textbf{The Importance of Colour in Conveying Information}\\
-Colour significantly enhances the impact and comprehension of data visualisations. It serves multiple purposes: distinguishing data points, emphasising trends, and offering contextual information. It is utilised to encode categorical data, differentiating between various groups with distinct colours, and to represent quantitative data by using colour intensity or gradients to portray values or magnitudes. Additionally, color is instrumental in adding context to visualisations through background elements, labels, or annotations, imparting meaning to the data \cite{healy2018data}.\\
+Colour significantly enhances the impact and comprehension of data visualisations. It serves multiple purposes: distinguishing data points, emphasising trends, and offering contextual information. It is utilised to encode categorical data, differentiating between various groups with distinct colours, and to represent quantitative data by using colour intensity or gradients to portray values or magnitudes. Additionally, colour is instrumental in adding context to visualisations through background elements, labels, or annotations, imparting meaning to the data \cite{healy2018data}.\\
 
 \noindent \textbf{Colour Perception and Colour Encoding in Visualisations}\\
-Understanding color perception in data visualisation is crucial. Key principles involve considering color discrimination, ensuring accessibility for individuals with color vision deficiencies, as is illustrated by Figure~\ref{fig:colour-plot}. Careful selection of color schemes aligned with the intended message is essential — for instance, using warm colours like red and orange to indicate caution or warmth, and cool colours like blue and green to convey calmness or coldness. Additionally, attention should be paid to how colours interact when combined; certain combinations might create visual vibrations or impact text legibility.\\
+Understanding colour perception in data visualisation is crucial. Key principles involve considering colour discrimination, ensuring accessibility for individuals with colour vision deficiencies, as is illustrated by Figure~\ref{fig:colour-plot}. Careful selection of colour schemes aligned with the intended message is essential — for instance, using warm colours like red and orange to indicate caution or warmth, and cool colours like blue and green to convey calmness or coldness. Additionally, attention should be paid to how colours interact when combined; certain combinations might create visual vibrations or impact text legibility.\\
 
 <<colour-plot, echo=FALSE, fig.height=3, fig.width=10, fig.pos = 'H', fig.cap='Colour perception of a heatmap for by a colour blind person'>>=
 
@@ -450,7 +453,7 @@ Additionally, providing a clear and concise legend becomes imperative to explain
 In data visualisation, achieving a balance between complexity and cognitive load is crucial. Cognitive load significantly influences how viewers engage with and comprehend presented data. Finding a balance is crucial to effectively convey information without overwhelming the viewer's cognitive capacity. This section explores the concept of cognitive load in visualisations, strategies to reduce cognitive load while maintaining complexity, and techniques to combat information overload through simplification.
 
 \subsubsection{Strategies to Reduce Cognitive Load While Maintaining Complexity}
-To reduce cognitive load while maintaining complexity in data visualisation, several strategies can be employed. Firstly, establishing a clear visual hierarchy using size, color, and contrast helps direct attention to crucial elements. Additionally, simplifying labels and text by avoiding unnecessary complexity ensures information is clear and easily digestible.\\
+To reduce cognitive load while maintaining complexity in data visualisation, several strategies can be employed. Firstly, establishing a clear visual hierarchy using size, colour, and contrast helps direct attention to crucial elements. Additionally, simplifying labels and text by avoiding unnecessary complexity ensures information is clear and easily digestible.\\
 
 \noindent Furthermore, employing interactive features like tooltips and drill-down functionality assists in providing additional information when required, reducing the density of static visualisations. A final approach involves the use of progressive disclosure, presenting complex information gradually, beginning with an overview and allowing users to explore details as needed.\\
 
@@ -840,7 +843,7 @@ The larger the AUC, the better the classifier. An AUC of 0.5 suggests no discrim
 The COVID-19 pandemic underscores the need for accurate diagnostic tests to differentiate between positive and negative cases\cite{Garcia2021ROCAlly}. An effective mean for evaluating accuracy of various diagnostic tests is the ROC analysis. ROC analysis comprehensively examines test accuracy by integrating TPR, FPR, and AUC. These metrics are calculated by comparing test outcomes against a recognized gold standard, thereby determining the true disease status. This approach is vital for understanding the efficacy of COVID-19 diagnostic tools and guiding public health decisions.\\
 
 \noindent
-The TPR, or sensitivity, measures the proportion of actual positives correctly identified, reflecting the test's ability to detect COVID-19 cases. The FPR, conversely, indicates the rate of false alarms, where non-infected individuals are wrongly identified as infected. An ideal test minimizes FPR, avoiding unnecessary treatments or quarantine. The ROC curve visualizes the trade-off between TPR and FPR at various thresholds. A curve arching towards the upper left indicates high sensitivity and low FPR — the hallmarks of a reliable test. The AUC consolidates the ROC performance into a single value: 0.5 denotes no better accuracy than random chance, while 1.0 represents perfect accuracy. A higher AUC indicates a better overall ability of the test.\\
+The TPR, or sensitivity, measures the proportion of actual positives correctly identified, reflecting the test's ability to detect COVID-19 cases. The FPR, conversely, indicates the rate of false alarms, where non-infected individuals are wrongly identified as infected. An ideal test minimises FPR, avoiding unnecessary treatments or quarantine. The ROC curve visualizes the trade-off between TPR and FPR at various thresholds. A curve arching towards the upper left indicates high sensitivity and low FPR — the hallmarks of a reliable test. The AUC consolidates the ROC performance into a single value: 0.5 denotes no better accuracy than random chance, while 1.0 represents perfect accuracy. A higher AUC indicates a better overall ability of the test.\\
 
 \noindent
 Here, the simulated data will be used to demonstrate the ROC analysis in COVID-19 test. Score\_Test1 and Score\_Test2 are the simulated test scores from two different diagnostic tests for COVID-19. These scores are continuous variables that typically would represent the likelihood of a positive diagnosis. The scores might come from a lab test result, such as a PCR test or a rapid antigen test, where higher scores indicate a higher likelihood of infection. The Condition column indicates the true condition of the patient, with 1 representing a positive COVID-19 case and 0 representing a negative case.
@@ -1093,7 +1096,7 @@ grid.arrange(plot1, plot2, plot3, ncol = 3)
 \subsubsection{gganimate in Practice}\\
 
 \noindent
-The figure below depicts a static scatter plot illustrating the relationship between GDP per capita and life expectancy across various countries. GDP per capita is displayed on a logarithmic scale along the x-axis, and life expectancy is shown on the y-axis. The size of each point on the plot corresponds to the population size of the country it represents, and the color of each point distinguishes one country from another.\\
+The figure below depicts a static scatter plot illustrating the relationship between GDP per capita and life expectancy across various countries. GDP per capita is displayed on a logarithmic scale along the x-axis, and life expectancy is shown on the y-axis. The size of each point on the plot corresponds to the population size of the country it represents, and the colour of each point distinguishes one country from another.\\
 
 <<gapminder_static, echo=FALSE, fig.height=3, fig.width=4, fig.cap='staticl scatter plot deconstruction of the gapminder dataset', message=FALSE>>=
 p <- ggplot(
@@ -1155,7 +1158,7 @@ R = k \dot V,
 \noindent
 \subsubsection{Bubble Charts in Practice}\\
 
-\noindent The bubble chart shown in Figure~\ref{fig:bubble-plot}, as the scatter plots above, visualises data from the mtcars dataset. The single graph deplics the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and even color-coding the bubbles based on the number of cylinders (cyl).\\
+\noindent The bubble chart shown in Figure~\ref{fig:bubble-plot}, as the scatter plots above, visualises data from the mtcars dataset. The single graph deplics the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and even colour-coding the bubbles based on the number of cylinders (cyl).\\
 
 <<bubble-plot, echo=FALSE, fig.height=5, fig.width=11, fig.pos = 'H', fig.cap='Bubble plot illustrating trends in car types and performance', message=FALSE>>=
 ggplot(mtcars, aes(x = rownames(mtcars), y = mpg, size = hp, color = cyl)) +
@@ -1508,15 +1511,36 @@ where each eigenvector $\mathbf{v}$ and its corresponding eigenvalue $\lambda$ s
 \noindent
 Finally, project the standardized data $\mathbf{Z}$ onto the subspace defined by the principal components:
     \[\mathbf{Y} = \mathbf{Z}\mathbf{W},\]
-where $\mathbf{Y} \in \mathbb{R}^{N \times k}$ is the transformed data matrix in the new subspace. Hence, in the reduced space, the variance along each principal component $\mathbf{v_i}$ is maximized, preserving the most significant variances in the data. PCA also attempts to preserve pairwise Euclidean distances between data points in the lower-dimensional representation. 
+where $\mathbf{Y} \in \mathbb{R}^{N \times k}$ is the transformed data matrix in the new subspace. Hence, in the reduced space, the variance along each principal component $\mathbf{v_i}$ is maximised, preserving the most significant variances in the data. PCA also attempts to preserve pairwise Euclidean distances between data points in the lower-dimensional representation. 
 
 \subsection{Principal Curves}
 
-\noindent Principal curves are a concept closely related to PCA but, they are more flexible and powerful in capturing the intrinsic structure of high-dimensional data. While PCA focuses on finding linear projections that maximize variance, principal curves seek to identify smooth, nonlinear trajectories that capture the most significant variations in the data. These curves are essentially one-dimensional paths embedded within the multidimensional space of the data points.\\
+\noindent Principal curves are a concept closely related to PCA but, they are more flexible and powerful in capturing the intrinsic structure of high-dimensional data. While PCA focuses on finding linear projections that maximise variance, principal curves seek to identify smooth, nonlinear trajectories that capture the most significant variations in the data. These curves are essentially one-dimensional paths embedded within the multidimensional space of the data points.\\
 
-\noindent Principal curves find application in various domains, including dimensionality reduction, and exploratory data analysis. They can reveal the underlying structure and patterns in complex datasets, aiding in understanding the relationships between variables and identifying important features. Principal curves can be used for data preprocessing, clustering, classification, and regression tasks, offering insights into the data's intrinsic geometry and facilitating more accurate modeling and decision-making processes. 
+\noindent PCA: if most data falls into a linear subspace, PCA finds directionin the subspace of the 2-dimensional space that passes through the middle of the scatter plot _ - ie. minimise the sum of square orthogonal deviations between the points and the projections onto the subspace.\\
+
+\noindent If the points don't fall in a linear subspace - ie. they fall in a non-linear subspace such as a curve in 2-dimension. An example of this is the scatter plot on the left side of Figure~\ref{fig:P-curves}. In this case, a straight line cant be placed in the middle, but one could fit a curve that passes through the centre of the points. This is what principal curves solve.
 
 \subsubsection{Construction of Principal Curves}
+
+\noindent As with PCA, take $(n \times p)$ data matrix $\mathbf{X}$, with row vectors $\mathbf{x}_i$. The goal is to extract a lower-dimensional set of "factors" or "scores" $\mathbf{y} = (y_1, \dots, y_n)^T$. These satisfy the following model:
+
+\[
+\mathbf{x}_i = f(y_i) + \epsilon_i, 
+\]
+
+\noindent where $\epsilon_i$ are errors with mean 0 and variance $\sigma^2 \mathbf{I}_p$ and $f: \mathbb{R}^1 \rightarrow \mathbb{R}^p$ is a continuous function called a curve.\\
+
+\noindent For curve $\mathbf{f}$, the projection index $y_f(\mathbf{x})$ maps observation $\mathbf{x} \in \mathbb{R}^p$ to the point of $\mathbf{f}$ that is closest, returning the score (index). If there are several such points, it returns the largest (this is arbitrary choice to ensure it is a well defined function). Hence, the projection index is: 
+\[
+y_f(\mathbf{x}) = \sup\limits_{y}\{y: ||\mathbf{x}-\mathbf{f}(y)||= \inf\limits_{\mu}||\mathbf{x}-\mathbf{f}(\mu)||\}.
+\]
+
+\noindent Like in PCA, principal curves estimates the following least-squares objective funtion
+\[
+\min\limits_{\mathbf{f}}\sum_{i=1}^{n} ||\mathbf{x_i - f(y_f(x_i))||^2
+\]
+
 
 <<P-curves, fig.height=4, fig.width=9, fig.cap='Principal curve fitting illustration on artifical dataset', message=FALSE>>=
 # Generate random values for t
@@ -1690,7 +1714,7 @@ biplot(pca_result, cex = 0.7)
 \href{https://jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf}
 
 \noindent
-Since PCA is a linear method and may not perform well with non-linear data structures, often missing complex non-linear relationships. Although effective in capturing the global structure of data, PCA focuses on maintaining large pairwise distances to maximize variance and overlook important local patterns and structures. \\
+Since PCA is a linear method and may not perform well with non-linear data structures, often missing complex non-linear relationships. Although effective in capturing the global structure of data, PCA focuses on maintaining large pairwise distances to maximise variance and overlook important local patterns and structures. \\
 
 \noindent
 Unlike PCA, t-Distributed Stochastic Neighbor Embedding (t-SNE) is a nonlinear technique for embedding high-dimensional data for visualization in a low-dimensional space of two or three dimensions, focusing on preserving the small pairwise similarities between data points thus retain the local structure of the dataset in a lower-dimensional space. It starts by converting high-dimensional Euclidean distances into probabilities that reflect the similarity between points, then maps these points to a lower-dimensional space in a way that tries to preserve these similarities.\\
@@ -1716,7 +1740,7 @@ In the low-dimensional space, t-SNE alleviates the crowding problem, which is a 
     \] \\
     
 \noindent
-The objective is to minimize the Kullback-Leibler divergence between the joint probability distributions $P$ and $Q$:
+The objective is to minimise the Kullback-Leibler divergence between the joint probability distributions $P$ and $Q$:
     \[
         C = \text{KL}(P || Q) = \sum_{i \neq j} p_{ij} \log \frac{p_{ij}}{q_{ij}},
     \] \\
@@ -1772,7 +1796,7 @@ ggplot()+
 
 
 \noindent
-The provided plot in Figure~\ref{fig:t-SNE} is a t-SNE visualization of the Penguins dataset, rendered using the $ggplot2$ package in R. In this case, using the T-sne algorithm helps us to reduce the multidimensional numerical data of the penguin dataset to a $2$-dimensional space. We also use scatter plots and elliptical areas to visualize the distribution of different penguin species. The data points are color-coded to distinguish between three penguin species: Adelie in red, Chinstrap in green, and Gentoo in blue. This color coding aids in the visual differentiation of the species clusters.\\
+The provided plot in Figure~\ref{fig:t-SNE} is a t-SNE visualization of the Penguins dataset, rendered using the $ggplot2$ package in R. In this case, using the T-sne algorithm helps us to reduce the multidimensional numerical data of the penguin dataset to a $2$-dimensional space. We also use scatter plots and elliptical areas to visualize the distribution of different penguin species. The data points are colour-coded to distinguish between three penguin species: Adelie in red, Chinstrap in green, and Gentoo in blue. This colour coding aids in the visual differentiation of the species clusters.\\
 
 \noindent
 The axes are labeled $tSNE1$ and $tSNE2$, corresponding to the dimensions reduced by the t-SNE algorithm. Dashed ellipses overlaid on the scatter plot demarcate the clusters of each species, providing a visual guide to the density and separation of the species within the transformed feature space. The plot effectively uses the t-SNE technique to illustrate the grouping of species, highlighting the algorithm's utility in discerning inherent data patterns in a lower-dimensional representation.\\
@@ -1781,7 +1805,7 @@ The axes are labeled $tSNE1$ and $tSNE2$, corresponding to the dimensions reduce
 While t-SNE is an exceptionally potent tool for data visualization, it does come with its own set of constraints. Firstly, it has a significant memory footprint and can be time-consuming to run, which may pose challenges when dealing with large datasets.\\
 
 \noindent
-Secondly, t-SNE is tailored specifically for visualization, which constrains the embedding space to two or three dimensions. This limitation means that t-SNE is optimized for human interpretability rather than for capturing higher-dimensional relationships.\\
+Secondly, t-SNE is tailored specifically for visualization, which constrains the embedding space to two or three dimensions. This limitation means that t-SNE is optimised for human interpretability rather than for capturing higher-dimensional relationships.\\
 
 \noindent
 Additionally, it requires experimentation with different initializations to mitigate the risk of local suboptimal solutions affecting the results. Therefore, it's crucial to carefully consider and select the most suitable method based on the specific requirements and nature of the data at hand.\\
@@ -1801,7 +1825,7 @@ Data visualisation plays a pivotal role in modern mathematics, aiding researcher
 
 my_palette <- c("#459395", "#EB7C69", "#FDA638")
 
-# Create a box plot for sepal length by species with custom color palette
+# Create a box plot for sepal length by species with custom colour palette
 boxplot(iris$Sepal.Length ~ iris$Species,
         xlab = "Species",
         ylab = "Sepal Length",
@@ -1821,14 +1845,14 @@ boxplot(iris$Sepal.Length ~ iris$Species,
 
 \section{Index}  
 
-\begin{itemize}
+\begin{itemise}
     \item \textbf{Accuracy}: Emphasising faithful reflection of data to reduce distortion or misinterpretation.
     \item \textbf{Clarity}: Ensuring visuals are easily understood without unnecessary complexity.
     \item \textbf{Cognitive Load}: The mental effort required to process information presented visually.
     \item \textbf{Cognitive psychology}: Understanding how mental processes affect perception and understanding of visual data.
-    \item \textbf{Color Theory}: Principles guiding the strategic use of color in visualisations for clarity and impact.
-    \item \textbf{Colour encoding}: Utilising colors to represent data categories or values in visualisations.
-    \item \textbf{Colour perception}: Understanding how humans perceive and interpret colors in visualisations.
+    \item \textbf{Colour Theory}: Principles guiding the strategic use of colour in visualisations for clarity and impact.
+    \item \textbf{Colour encoding}: Utilising colours to represent data categories or values in visualisations.
+    \item \textbf{Colour perception}: Understanding how humans perceive and interpret colours in visualisations.
     \item \textbf{Consistency}: Maintaining uniform use of visual elements throughout a visualisation.
     \item \textbf{Data abstraction}: Simplifying and structuring raw data into comprehensible visual forms.
     \item \textbf{Gestalt Principles}: Rules affecting how visual elements are grouped and interpreted in perception.
@@ -1839,7 +1863,7 @@ boxplot(iris$Sepal.Length ~ iris$Species,
     \item \textbf{Ordinal data}: Implies a meaningful order among categories but lacks equal intervals.
     \item \textbf{Ratio data}: Includes ordered categories with equal intervals and a meaningful zero point.
     \item \textbf{Relevance}: Presenting information pertinent to the addressed message or question.
-\end{itemize}
+\end{itemise}
   
   
 
