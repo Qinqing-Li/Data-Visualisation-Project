@@ -1558,7 +1558,6 @@ A biplot is a graphical representation that succinctly captures the relationship
 
 %\noindent Reference: https://www.youtube.com/watch?v=vbGw7BTWYS4
 
-
 \noindent Now, the heuristic argument motivating PCA biplots is the following. Define $\mathbf{B}^{\alpha}$, for $0 \leq \alpha \leq 1$, as a diagonal matrix who's elements are $b_1^{\alpha}, \ldots, b_r^{\alpha}$, with a similar definition for $\mathbf{B}^{1-\alpha}.$ Then, with the decomposition of matrix $\mathbf{X}$ found through SVD, the data can be further rewritten as
 \[\mathbf{X} = \mathbf{U}\mathbf{B}^{\alpha}\mathbf{B}^{1-\alpha}\mathbf{S}^{T} = \mathbf{U}\mathbf{B}\mathbf{S}^{T} = \mathbf{G}\mathbf{H}^{T},\]
 
@@ -1635,7 +1634,7 @@ axis(3)
 axis(4)
 @
 
-\noindent 
+\noindent XXX
 
 <<PCAbiplot, fig.height=5, fig.width=8, fig.cap='PCA Biplot of mtcars Dataset: R In-built Function', message=FALSE>>=
 #GENERATION OF A BIPLOT
@@ -1693,6 +1692,17 @@ y_f(\mathbf{x}) = \sup\limits_{y}\{y: ||\mathbf{x}-\mathbf{f}(y)||= \inf\limits_
 \subsubsection{Principal Cuves in Practice}
 
 \noindent In Figure~\ref{fig:P-curves}, we see an example of how a principal curve is fitted to the observations of an artificial dataset. The points in the plots are not grouped in a linear subspace, but rather follow a similar shape to that of cubic function.
+
+<<P-curves-code, message=FALSE>>=
+#PRINCIPAL CURVE FUCNTION
+
+# Dataset x with two dimensions
+x <- cbind(t, t^3) + rnorm(200, sd = 0.05)
+
+# Fit principal curve to the dataset
+fit <- principal_curve(x)
+@
+
 
 <<P-curves, echo=FALSE, fig.pos = 'H', fig.height=4, fig.width=9, fig.cap='Principal curve fitting illustration on artificial dataset', message=FALSE>>=
 # Generate random values for t

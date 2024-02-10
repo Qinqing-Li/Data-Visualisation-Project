@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.13)  10 FEB 2024 17:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.13)  10 FEB 2024 17:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1614,38 +1614,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 1323--1324
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1358--1359
+Underfull \hbox (badness 10000) in paragraph at lines 1357--1358
 
  []
 
 [41]
-Overfull \hbox (23.79189pt too wide) in paragraph at lines 1376--1376
+Overfull \hbox (23.79189pt too wide) in paragraph at lines 1375--1375
 [][]\OT1/cmtt/m/n/7 preprocess[] []<-[] []scaled_data[] []-[] []matrix[][]([][]colMeans[][](scaled_data),[] []nrow[] []=[] []nrow[][](scaled_data),[] []ncol[] []=[] []ncol[][](scaled_data),[] []byrow[] []=[] []TRUE[][])[][] 
  []
 
 <figure/beamer-PCAbiplot-deconstruction-1.pdf, id=772, 578.16pt x 361.35pt>
 File: figure/beamer-PCAbiplot-deconstruction-1.pdf Graphic file (type pdf)
 <use figure/beamer-PCAbiplot-deconstruction-1.pdf>
-Package pdftex.def Info: figure/beamer-PCAbiplot-deconstruction-1.pdf  used on input line 1407.
+Package pdftex.def Info: figure/beamer-PCAbiplot-deconstruction-1.pdf  used on input line 1406.
 (pdftex.def)             Requested size: 433.62pt x 271.01184pt.
 [42]
 <figure/beamer-PCAbiplot-1.pdf, id=777, 578.16pt x 361.35pt>
 File: figure/beamer-PCAbiplot-1.pdf Graphic file (type pdf)
 <use figure/beamer-PCAbiplot-1.pdf>
-Package pdftex.def Info: figure/beamer-PCAbiplot-1.pdf  used on input line 1434.
+Package pdftex.def Info: figure/beamer-PCAbiplot-1.pdf  used on input line 1433.
 (pdftex.def)             Requested size: 433.62pt x 271.01184pt.
  [43
 pdfTeX warning (ext4): destination with the same identifier (name{figure.23}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1440 
+l.1439 
         <./figure/beamer-PCAbiplot-deconstruction-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 1448--1449
+Underfull \hbox (badness 10000) in paragraph at lines 1447--1448
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1450--1451
+Underfull \hbox (badness 10000) in paragraph at lines 1449--1450
 
  []
 
@@ -1653,45 +1653,45 @@ Underfull \hbox (badness 10000) in paragraph at lines 1450--1451
 pdfTeX warning (ext4): destination with the same identifier (name{figure.24}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1458 \[
+l.1457 \[
           <./figure/beamer-PCAbiplot-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 1462--1463
+Underfull \hbox (badness 10000) in paragraph at lines 1461--1462
 
  []
 
 <figure/beamer-P-curves-1.pdf, id=802, 650.43pt x 289.08pt>
 File: figure/beamer-P-curves-1.pdf Graphic file (type pdf)
 <use figure/beamer-P-curves-1.pdf>
-Package pdftex.def Info: figure/beamer-P-curves-1.pdf  used on input line 1490.
+Package pdftex.def Info: figure/beamer-P-curves-1.pdf  used on input line 1509.
 (pdftex.def)             Requested size: 433.62pt x 192.7254pt.
 [45]
 Runaway argument?
 ! Paragraph ended before \href@split was complete.
 <to be read again> 
                    \par 
-l.1503 
+l.1522 
        
 I suspect you've forgotten a `}', causing me to apply this
 control sequence to too much text. How can we recover?
 My plan is to forget the whole thing and hope for the best.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1504--1506
+Underfull \hbox (badness 10000) in paragraph at lines 1523--1525
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1507--1509
+Underfull \hbox (badness 10000) in paragraph at lines 1526--1528
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1514--1515
+Underfull \hbox (badness 10000) in paragraph at lines 1533--1534
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1520--1523
+Underfull \hbox (badness 10000) in paragraph at lines 1539--1542
 
  []
 
@@ -1699,69 +1699,69 @@ Underfull \hbox (badness 10000) in paragraph at lines 1520--1523
 pdfTeX warning (ext4): destination with the same identifier (name{figure.25}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1523 
+l.1542 
         <./figure/beamer-P-curves-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 1528--1529
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1534--1537
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1542--1543
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1544--1546
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 1547--1548
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1549--1552
+Underfull \hbox (badness 10000) in paragraph at lines 1553--1556
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1549--1552
+Underfull \hbox (badness 10000) in paragraph at lines 1561--1562
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1563--1565
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1566--1567
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1568--1571
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1568--1571
 
  []
 
 <figure/beamer-t-SNE-1.pdf, id=821, 361.35pt x 216.81pt>
 File: figure/beamer-t-SNE-1.pdf Graphic file (type pdf)
 <use figure/beamer-t-SNE-1.pdf>
-Package pdftex.def Info: figure/beamer-t-SNE-1.pdf  used on input line 1556.
+Package pdftex.def Info: figure/beamer-t-SNE-1.pdf  used on input line 1575.
 (pdftex.def)             Requested size: 361.34912pt x 216.80946pt.
 [47]
-Underfull \hbox (badness 10000) in paragraph at lines 1566--1568
+Underfull \hbox (badness 10000) in paragraph at lines 1585--1587
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1569--1571
+Underfull \hbox (badness 10000) in paragraph at lines 1588--1590
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1572--1574
+Underfull \hbox (badness 10000) in paragraph at lines 1591--1593
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1575--1577
+Underfull \hbox (badness 10000) in paragraph at lines 1594--1596
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1578--1580
+Underfull \hbox (badness 10000) in paragraph at lines 1597--1599
 
  []
 
@@ -1769,22 +1769,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 1578--1580
 pdfTeX warning (ext4): destination with the same identifier (name{figure.26}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1581 \newpage
+l.1600 \newpage
                 <./figure/beamer-t-SNE-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 1588--1589
+Underfull \hbox (badness 10000) in paragraph at lines 1607--1608
 
  []
 
 <figure/beamer-box-plot-1.pdf, id=841, 361.35pt x 216.81pt>
 File: figure/beamer-box-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-box-plot-1.pdf>
-Package pdftex.def Info: figure/beamer-box-plot-1.pdf  used on input line 1595.
+Package pdftex.def Info: figure/beamer-box-plot-1.pdf  used on input line 1614.
 (pdftex.def)             Requested size: 361.34912pt x 216.80946pt.
 [49
 pdfTeX warning (ext4): destination with the same identifier (name{figure.27}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1607 
+l.1626 
         <./figure/beamer-box-plot-1.pdf>] [50]
 
 ! LaTeX Error: Environment itemise undefined.
@@ -1793,7 +1793,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1615 \begin{itemise}
+l.1634 \begin{itemise}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -1806,13 +1806,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1616     \item \textbf
+l.1635     \item \textbf
                         {Accuracy}: Emphasising faithful reflection of data ...
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1616
+Underfull \hbox (badness 10000) detected at line 1635
 [][]
  []
 
@@ -1823,13 +1823,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1617     \item \textbf
+l.1636     \item \textbf
                         {Clarity}: Ensuring visuals are easily understood wi...
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1617
+Underfull \hbox (badness 10000) detected at line 1636
 [][]
  []
 
@@ -1840,13 +1840,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1618     \item \textbf
+l.1637     \item \textbf
                         {Cognitive Load}: The mental effort required to proc...
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1618
+Underfull \hbox (badness 10000) detected at line 1637
 [][]
  []
 
@@ -1857,13 +1857,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1619     \item \textbf
+l.1638     \item \textbf
                         {Cognitive psychology}: Understanding how mental pro...
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1619
+Underfull \hbox (badness 10000) detected at line 1638
 [][]
  []
 
@@ -1874,13 +1874,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1620     \item \textbf
+l.1639     \item \textbf
                         {Colour Theory}: Principles guiding the strategic us...
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1620
+Underfull \hbox (badness 10000) detected at line 1639
 [][]
  []
 
@@ -1891,13 +1891,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1621     \item \textbf
+l.1640     \item \textbf
                         {Colour encoding}: Utilising colours to represent da...
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1621
+Underfull \hbox (badness 10000) detected at line 1640
 [][]
  []
 
@@ -1908,13 +1908,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1622     \item \textbf
+l.1641     \item \textbf
                         {Colour perception}: Understanding how humans percei...
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1622
+Underfull \hbox (badness 10000) detected at line 1641
 [][]
  []
 
@@ -1925,13 +1925,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1623     \item \textbf
+l.1642     \item \textbf
                         {Consistency}: Maintaining uniform use of visual ele...
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1623
+Underfull \hbox (badness 10000) detected at line 1642
 [][]
  []
 
@@ -1942,13 +1942,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1624     \item \textbf
+l.1643     \item \textbf
                         {Data abstraction}: Simplifying and structuring raw ...
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1624
+Underfull \hbox (badness 10000) detected at line 1643
 [][]
  []
 
@@ -1959,13 +1959,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1625     \item \textbf
+l.1644     \item \textbf
                         {Gestalt Principles}: Rules affecting how visual ele...
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1625
+Underfull \hbox (badness 10000) detected at line 1644
 [][]
  []
 
@@ -1976,13 +1976,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1626     \item \textbf
+l.1645     \item \textbf
                         {Hierarchies of abstraction}: Representing data at v...
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1626
+Underfull \hbox (badness 10000) detected at line 1645
 [][]
  []
 
@@ -1993,13 +1993,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1627     \item \textbf
+l.1646     \item \textbf
                         {Information overload}: Occurs when excessive data o...
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1627
+Underfull \hbox (badness 10000) detected at line 1646
 [][]
  []
 
@@ -2010,13 +2010,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1628     \item \textbf
+l.1647     \item \textbf
                         {Interval data}: Ordered categories with equal inter...
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1628
+Underfull \hbox (badness 10000) detected at line 1647
 [][]
  []
 
@@ -2027,13 +2027,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1629     \item \textbf
+l.1648     \item \textbf
                         {Nominal data}: Represents categories or labels with...
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1629
+Underfull \hbox (badness 10000) detected at line 1648
 [][]
  []
 
@@ -2044,13 +2044,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1630     \item \textbf
+l.1649     \item \textbf
                         {Ordinal data}: Implies a meaningful order among cat...
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1630
+Underfull \hbox (badness 10000) detected at line 1649
 [][]
  []
 
@@ -2061,13 +2061,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1631     \item \textbf
+l.1650     \item \textbf
                         {Ratio data}: Includes ordered categories with equal...
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1631
+Underfull \hbox (badness 10000) detected at line 1650
 [][]
  []
 
@@ -2078,13 +2078,13 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1632     \item \textbf
+l.1651     \item \textbf
                         {Relevance}: Presenting information pertinent to the...
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1632
+Underfull \hbox (badness 10000) detected at line 1651
 [][]
  []
 
@@ -2095,7 +2095,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1633 \end{itemise}
+l.1652 \end{itemise}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2161,18 +2161,18 @@ Package rerunfilecheck Info: File `main_file.out' has not changed.
  )
 (\end occurred inside a group at level 1)
 
-### semi simple group (level 1) entered at line 1502 (\begingroup)
+### semi simple group (level 1) entered at line 1521 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 13148 strings out of 476463
- 207683 string characters out of 5799821
+ 13150 strings out of 476463
+ 207716 string characters out of 5799821
  1938043 words of memory out of 5000000
- 34502 multiletter control sequences out of 15000+600000
+ 34504 multiletter control sequences out of 15000+600000
  569566 words of font info for 80 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  75i,10n,79p,1201b,731s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main_file.pdf (56 pages, 7609053 bytes).
+Output written on main_file.pdf (56 pages, 7609589 bytes).
 PDF statistics:
  1038 PDF objects out of 1200 (max. 8388607)
  865 compressed objects within 9 object streams

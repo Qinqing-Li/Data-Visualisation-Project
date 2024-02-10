@@ -1324,7 +1324,6 @@ A biplot is a graphical representation that succinctly captures the relationship
 
 %\noindent Reference: https://www.youtube.com/watch?v=vbGw7BTWYS4
 
-
 \noindent Now, the heuristic argument motivating PCA biplots is the following. Define $\mathbf{B}^{\alpha}$, for $0 \leq \alpha \leq 1$, as a diagonal matrix who's elements are $b_1^{\alpha}, \ldots, b_r^{\alpha}$, with a similar definition for $\mathbf{B}^{1-\alpha}.$ Then, with the decomposition of matrix $\mathbf{X}$ found through SVD, the data can be further rewritten as
 \[\mathbf{X} = \mathbf{U}\mathbf{B}^{\alpha}\mathbf{B}^{1-\alpha}\mathbf{S}^{T} = \mathbf{U}\mathbf{B}\mathbf{S}^{T} = \mathbf{G}\mathbf{H}^{T},\]
 
@@ -1413,7 +1412,7 @@ _m\tilde{x}_{ij} = \sum_{k=1}^{m} \mathbf{g}_{ik}\mathbf{h}_{jk} = \mathbf{g}_{i
 
 \end{knitrout}
 
-\noindent 
+\noindent XXX
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -1483,6 +1482,26 @@ y_f(\mathbf{x}) = \sup\limits_{y}\{y: ||\mathbf{x}-\mathbf{f}(y)||= \inf\limits_
 \subsubsection{Principal Cuves in Practice}
 
 \noindent In Figure~\ref{fig:P-curves}, we see an example of how a principal curve is fitted to the observations of an artificial dataset. The points in the plots are not grouped in a linear subspace, but rather follow a similar shape to that of cubic function.
+
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{#PRINCIPAL CURVE FUCNTION}
+
+\hlcom{# Dataset x with two dimensions}
+\hlstd{x} \hlkwb{<-} \hlkwd{cbind}\hlstd{(t, t}\hlopt{^}\hlnum{3}\hlstd{)} \hlopt{+} \hlkwd{rnorm}\hlstd{(}\hlnum{200}\hlstd{,} \hlkwc{sd} \hlstd{=} \hlnum{0.05}\hlstd{)}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in t\textasciicircum{}3: non-numeric argument to binary operator}}\begin{alltt}
+\hlcom{# Fit principal curve to the dataset}
+\hlstd{fit} \hlkwb{<-} \hlkwd{principal_curve}\hlstd{(x)}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'x' not found}}\end{kframe}
+\end{knitrout}
+
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
