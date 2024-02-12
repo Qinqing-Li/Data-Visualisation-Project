@@ -811,7 +811,7 @@ The seasonal pattern of fire frequency is shown in Figure~\ref{fig:fire-by-month
 
 \subsection{Scatter Plots}
 
-A scatter plot is a graphical representation of a set of data points in a two-dimensional coordinate system. Each data point is represented by a dot, and the position of the dot is determined by the values of two variables. Some examples of this type of visualisation can be found in Figure~\ref{fig:abs-plots}, Figure~\ref{fig:cogload-plot}, and Figure~\ref{fig:bubble-plot-construction}.\\
+A scatter plot is a graphical representation of a set of data points in a two-dimensional coordinate system. Each data point is represented by a dot, and the position of the dot is determined by the values of two variables. Some examples of this type of visualisation can be found in Figures~\ref{fig:abs-plots}, ~\ref{fig:cogload-plot}, and ~\ref{fig:bubble-plot-construction}.\\
 
 \noindent
 In general, the \(Y\)-axis denotes the response, or dependent, variable and the \(X\)-axis denotes the explanatory, or independent,  variable. Each observation of a dataset is mapped to a dot in the 2-dimentional space. Let \((x_i, y_i)\) represent the coordinates of the \(i\)-th data point on the scatter plot produced by mapping a set of data. The scatter plot can be mathematically described as a set of points: \( \{(x_1, y_1), \ldots, (x_n, y_n)\}\) where \(n\) is the number of observations in the set.\\
@@ -895,7 +895,7 @@ However, by using the animation function, we can see how life expectancy and GDP
 
 \noindent Generally, the formula for calculating the bubble radius (\(R)\) involves applying the scaling function
 \[
-R = k \dot V,
+R = kV,
 \]
 \noindent where \(R\) represents the size of the bubble, \(V\) the value of the variable being represented, and \(k\) a scaling factor to control the bubble size. Selecting an appropriate scaling factor (\(k\)) is critical for maintaining the proportionality between the bubble size and the variable being represented.\\ 
 
@@ -1322,8 +1322,9 @@ A biplot is a graphical representation that succinctly captures the relationship
 
 \noindent where $\sigma_i$ are the singular values, and $\mathbf{s}_i$ are the columns of the matrix $\mathbf{S}$.\\
 
-%\noindent Reference: https://www.youtube.com/watch?v=vbGw7BTWYS4
+%Reference: https://www.youtube.com/watch?v=vbGw7BTWYS4
 
+\noindent \textbf{PCA Biplot Construction}\\
 \noindent Now, the heuristic argument motivating PCA biplots is the following. Define $\mathbf{B}^{\alpha}$, for $0 \leq \alpha \leq 1$, as a diagonal matrix who's elements are $b_1^{\alpha}, \ldots, b_r^{\alpha}$, with a similar definition for $\mathbf{B}^{1-\alpha}.$ Then, with the decomposition of matrix $\mathbf{X}$ found through SVD, the data can be further rewritten as
 \[\mathbf{X} = \mathbf{U}\mathbf{B}^{\alpha}\mathbf{B}^{1-\alpha}\mathbf{S}^{T} = \mathbf{U}\mathbf{B}\mathbf{S}^{T} = \mathbf{G}\mathbf{H}^{T},\]
 
@@ -1358,13 +1359,17 @@ _m\tilde{x}_{ij} = \sum_{k=1}^{m} \mathbf{g}_{ik}\mathbf{h}_{jk} = \mathbf{g}_{i
 
 \subsubsection{Biplots in Practice: The mtcars Dataset}
 
-\noindent This section will study the generation of biplots in R. The production of a biplot based on data from the mtcars dataset will be generated in two ways. The first will follow the mathematical construction of this object, while the other will make use of R's built-in function to produce the biplot. The comparison of these two should shed light on how these visualisations are produced. 
+\noindent This section presents a comparative analysis of PCA biplots generated through two distinct methodologies: manual mathematical construction and use of R's in-built functions. The focus lies on elucidating the mathematical intricacies, exploring relations, and highlighting differences between the two approaches. The mtcars dataset will serve as a benchmark.\\
+
+\noindent \textbf{Methodologies Discussion}\\
+\noindent Traditionally, biplots are constructed manually through mathematical operations based on SVD discussed previously. However, with computational tools like R, in-built functions such as \texttt{prcomp()} and \texttt{biplot()} streamline the process, removing tidious mathematical intricacies, which becomes particularly interesting when working with larger datasets.\\
+
+\noindent The manual construction, which results in the biplot shown in Figure~\ref{fig:PCAbiplot-deconstruction}, begins with data standardisation followed by SVD decomposition to obtain matrices representing row and column contributions to principal components. These matrices are then utilised to construct the biplot. Conversely, the in-built function approach employs R's \texttt{prcomp()} function for PCA and directly generates the biplot using \texttt{biplot()}, without the need for explicit mathematical operations. The product of this method is shown in Figure~\ref{fig:PCAbiplot}.
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlcom{#MATHEMATICAL CONSTRUCTION OF A BIPLOT USING THE MTCARS DATASET}
-
+\hlcom{#MANUAL CONSTRUCTION OF A BIPLOT IN R}
 \hlcom{# Standardise the data}
 \hlstd{scaled_data} \hlkwb{<-} \hlkwd{scale}\hlstd{(mtcars)}
 
@@ -1407,18 +1412,15 @@ _m\tilde{x}_{ij} = \sum_{k=1}^{m} \mathbf{g}_{ik}\mathbf{h}_{jk} = \mathbf{g}_{i
 
 }
 
-\caption[PCA Biplot of mtcars Dataset]{PCA Biplot of mtcars Dataset: Mathematical Construction}\label{fig:PCAbiplot-deconstruction}
+\caption[PCA biplot of mtcars dataset]{PCA biplot of mtcars dataset: mathematical construction}\label{fig:PCAbiplot-deconstruction}
 \end{figure}
 
 \end{knitrout}
 
-\noindent XXX
-
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlcom{#GENERATION OF A BIPLOT}
-
+\hlcom{#GENERATION OF A BIPLOT WITH R'S BUILT-IN FUNCTIONS}
 \hlcom{# Standardise the data}
 \hlstd{scaled_data} \hlkwb{<-} \hlkwd{scale}\hlstd{(mtcars)}
 
@@ -1434,21 +1436,18 @@ _m\tilde{x}_{ij} = \sum_{k=1}^{m} \mathbf{g}_{ik}\mathbf{h}_{jk} = \mathbf{g}_{i
 
 }
 
-\caption[PCA Biplot of mtcars Dataset]{PCA Biplot of mtcars Dataset: R In-built Function}\label{fig:PCAbiplot}
+\caption[PCA biplot of mtcars dataset]{PCA biplot of mtcars dataset: R built-in function}\label{fig:PCAbiplot}
 \end{figure}
 
 \end{knitrout}
 
-\noindent The biplot displays variable vectors and sample points in a two-dimensional space defined by the principal components. Each variable is represented as a vector, and each car model (observation) is represented as a point.
-
+\noindent Comparative analysis of these two plots reveals several key findings. The manual construction approach offers meticulous control over the biplot's customisation, allowing for fine-tuning of parameters and appearance. Conversely, the in-built function approach provides a user-friendly ideal for practitioners less inclined towards mathematical intricacies the visualisation. However, despite differences in implementation, both methodologies produce visually comparable biplots, showcasing identical patterns and relationships within the data.
 
 \subsection{Principal Curves}
 
-\noindent Principal curves are a concept closely related to PCA but, they are more flexible and powerful in capturing the intrinsic structure of high-dimensional data. While PCA focuses on finding linear projections that maximise variance, principal curves seek to identify smooth, nonlinear trajectories that capture the most significant variations in the data. These curves are essentially one-dimensional paths embedded within the multidimensional space of the data points.\\
+\noindent Principal curves stand as a vital tool in exploratory data analysis, providing a nonlinear analogue to PCA for capturing the underlying structure of multidimensional data. While PCA focuses on finding linear projections that maximise variance, principal curves seek to identify smooth, nonlinear trajectories that capture the most significant variations in the data. These curves are essentially one-dimensional paths embedded within the multidimensional space of the data points.\\
 
-\noindent If most data falls into a linear subspace, PCA finds direction in the subspace of the 2-dimensional space that passes through the middle of the scatter plot ie. minimise the sum of square orthogonal deviations between the points and the projections onto the subspace.\\
-
-\noindent If the points don't fall in a linear subspace - ie. they fall in a non-linear subspace such as a curve in 2-dimension, PCA is insufficient. An example of this is the scatter plot on the left side of Figure~\ref{fig:P-curves}. In this case, a straight line can't be placed in the middle of the plot, but one could fit a curve that passes through the centre of the points. This is essentially what principal curves do.
+\noindent Hence, if the points don't fall in a linear subspace, that is, they fall in a non-linear subspace such as a curve in 2-dimension, PCA is insufficient. An example of this is the scatter plot on the left side of Figure~\ref{fig:P-curves}. In this case, a straight line can't be placed in the middle of the plot, however, one could fit a curve that passes through the centre of the points. This is the purpose that principal curves serve
 
 \subsubsection{Construction of Principal Curves}
 
@@ -1481,27 +1480,9 @@ y_f(\mathbf{x}) = \sup\limits_{y}\{y: ||\mathbf{x}-\mathbf{f}(y)||= \inf\limits_
 
 \subsubsection{Principal Cuves in Practice}
 
-\noindent In Figure~\ref{fig:P-curves}, we see an example of how a principal curve is fitted to the observations of an artificial dataset. The points in the plots are not grouped in a linear subspace, but rather follow a similar shape to that of cubic function.
+\noindent In Figure~\ref{fig:P-curves}, we see an example of how a principal curve is fitted to the observations of an artificial dataset. The points in the plots are not grouped in a linear subspace, but rather follow a similar shape to that of cubic function.\\
 
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlcom{#PRINCIPAL CURVE FUCNTION}
-
-\hlcom{# Dataset x with two dimensions}
-\hlstd{x} \hlkwb{<-} \hlkwd{cbind}\hlstd{(t, t}\hlopt{^}\hlnum{3}\hlstd{)} \hlopt{+} \hlkwd{rnorm}\hlstd{(}\hlnum{200}\hlstd{,} \hlkwc{sd} \hlstd{=} \hlnum{0.05}\hlstd{)}
-\end{alltt}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in t\textasciicircum{}3: non-numeric argument to binary operator}}\begin{alltt}
-\hlcom{# Fit principal curve to the dataset}
-\hlstd{fit} \hlkwb{<-} \hlkwd{principal_curve}\hlstd{(x)}
-\end{alltt}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'x' not found}}\end{kframe}
-\end{knitrout}
-
+\noindent Using the built-in \texttt{principal-curve()} function, a principal curve can be fitted to the dataset. The principal curve traverses through the densest regions of the data distribution, capturing the underlying nonlinear structure. The panel on the left of Figure~\ref{fig:P-curves} depicts the principal curve overlaid on the dataset, providing insights into the central tendency and inherent curvature of the data. Additionally, whiskers are drawn to visualise the perpendicular distances between data points and the principal curve.
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
@@ -1515,7 +1496,8 @@ y_f(\mathbf{x}) = \sup\limits_{y}\{y: ||\mathbf{x}-\mathbf{f}(y)||= \inf\limits_
 
 \end{knitrout}
 
-\noindent The scatter plot displays a distribution characterised by non-linear relationships between the dimensions. The fitting of the principal curve reveals its ability to adapt to the form of the scatter plot, effectively capturing the underlying structure of the data. 
+\noindent The principal curve effectively captures the nonlinear relationship between the dimensions of the artificial dataset. By flexibly adapting to the curvature of the data distribution, the principal curve reveals intricate patterns and trends that may not be captured by linear methods like PCA. The visualisation aids in understanding the underlying structure of the dataset.
+
 
 \subsection{t-SNE}
 \href{https://jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf}
