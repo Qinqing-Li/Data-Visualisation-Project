@@ -500,9 +500,8 @@ A histogram is a graphical representation of the distribution of a dataset. It c
 
 \noindent On a Cartesian coordinate system, the x-axis shows the endpoints of each group, and the y-axis represents frequency. The height of each rectangle indicates the corresponding frequency, making it a frequency distribution histogram. In order to determine the quantity of each group in the histogram, a multiplication of the frequency by the group interval is necessary. Since every histogram has a fixed group interval, if we use the y-axis to directly show quantity and each rectangle's height indicates the number of data points, we can both retain the distribution and simultaneously see the number in each group at a glance. All examples in this text use the non-standard histogram depiction with the y-axis denoting quantity.\\
 
-\noindent
-\textbf{Histograms in Practice}\\
-\noindent The R language uses the \texttt{hist} function to create histograms. This function takes vectors as input, along with other parameters to plot a histogram.\\
+
+\subsubsection{Theory of Histogram}\\
 
 \noindent Let \(X_1, \ldots, X_n\) be independent and identically distributed random variables with finite mean \( \mu \) and variance \( \sigma^2 \). Then for any \( \epsilon > 0 \), 
 \[ P\left(\left|\frac{1}{n}\sum_{i=1}^n X_i - \mu\right| < \epsilon\right) \rightarrow 1 \] 
@@ -510,6 +509,13 @@ as \( n \rightarrow \infty \).\\
 
 \noindent Histograms can be also used to visualise the convergence of sample means to the population mean. Let \(X_1, \ldots, X_n\) be independent and identically distributed random variables with finite mean \( \mu \) and variance \( \sigma^2 \). Define the sample mean \( \bar{X} = \frac{1}{n}\sum_{i=1}^n X_i \). Then, as \( n \) becomes large, the variable 
 \[ Z = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \] approaches a standard normal distribution.\\
+
+\noindent It is very important to choose the number of bins, since they have a huge impact on how we interpret the data. Too few bins may hide the information in a dataset, and too many bins can cause a lot of noise in a dataset. Fortunately, we can determine the optimal number of bins to use in a histogram by using a method known as Sturges’ Rule:\\
+$$ k = 1 + \log_{2} n, $$
+where n is the total number of observations in the dataset.\\
+\subsubsection{Histogram in Practice}\\
+
+\noindent The R language uses the \texttt{hist} function to create histograms. This function takes vectors as input, along with other parameters to plot a histogram.\\
 
 \noindent By plotting histograms of a large number of sample means, one can observe the shape gradually resembling a normal distribution.\\
 
