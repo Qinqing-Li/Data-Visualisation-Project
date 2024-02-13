@@ -834,19 +834,8 @@ In general, the \(Y\)-axis denotes the response, or dependent, variable and the 
 \subsubsection{Animated Scatter Plots}
 \noindent While static scatter plots are effective in depicting relationships between two variables, animated scatter plot visualisations take this a step further by introducing, for example, a temporal dimension to the data visualisation. Unlike static plots, animated scatter plots enable the depiction of changes in relationships, clusters, or outliers over time. In R, the $gganimate$ package, building on the foundation of $ggplot2$ package, facilitates the creation of animated plots, including animated scatter plots. \\
 
-\noindent \textbf{Construction of Animated Scatter Plots}\\
-\noindent 
-
-
-\noindent This animated scatter plot effectively visualises the relationship between miles per gallon (mpg) and weight (wt) in the mtcars dataset across different gear categories. As the animation progresses, one can observe how the scatter plot evolves with changes in the 'gear' variable, providing insights into the dynamic nature of the relationship between the two variables.\\
-
-\noindent The initial scatter plot is set up using the $ggplot$ function, specifying the x-axis as mpg and the y-axis as wt. The animation is introduced with the transition-states function, which animates the scatter plot by transitioning between different states based on the 'gear' variable. The enter-fade and exit-fade functions add a fading effect when entering or exiting a state.\\
-
-\noindent The animation is previewed using the animate function, specifying 100 frames for a smoother visual experience.  The $gganimate$ package in this case indeed generates 100 static images and then combines these images into a GIF animation. This allows viewers to observe how the scatter plot changes dynamically with varying 'gear' categories, providing insights into the relationship between miles per gallon and weight over different car specifications.\\
-
 \noindent
-\subsubsection{gganimate in Practice}\\
-
+\subsubsection{\textt{gganimate} in Practice}\\
 \noindent
 The figure below depicts a static scatter plot illustrating the relationship between GDP per capita and life expectancy across various countries. GDP per capita is displayed on a logarithmic scale along the x-axis, and life expectancy is shown on the y-axis. The size of each point on the plot corresponds to the population size of the country it represents, and the colour of each point distinguishes one country from another.\\
 
@@ -861,6 +850,7 @@ The figure below depicts a static scatter plot illustrating the relationship bet
 \end{figure}
 
 \end{knitrout}
+
 \noindent
 In the graph we can see that there appears to be a positive correlation between GDP per capita and life expectancy, as GDP per capita increases, life expectancy also tends to be higher. \\
 
@@ -1603,31 +1593,62 @@ Additionally, it requires experimentation with different initializations to miti
 \newpage 
 
 \section{State-Of-The-Art Modern Approaches}
-Data visualisation plays a pivotal role in modern mathematics, aiding researchers and practitioners in gaining insights from complex datasets. Among the diverse range of visualisation techniques, box plots and functional box plots have emerged as powerful tools for summarising and understanding the distributional characteristics of numerical data. This section provides a brief overview of the state of the art in box plots and functional box plots, highlighting key developments and advancements in these visualization methods.
+Data visualisation plays a pivotal role in modern mathematics, aiding researchers and practitioners in gaining insights from complex datasets.  
 
 \subsection{Box Plots}
 
-\noindent Box plots, also known as box-and-whisker plots, were introduced by John W. Tukey in 1977 as a robust method for representing the distribution of a dataset. Over the years, box plots have become a staple in exploratory data analysis, offering a concise summary of the central tendency, spread, and skewness of a dataset. Traditional box plots display the median, quartiles, and any potential outliers, making them effective for comparing multiple datasets and identifying patterns within each.\\
+\noindent Box plots, also known as box-and-whisker plots, were introduced by John W. Tukey in 1977 as a robust method for representing the distribution of a dataset. Over the years, box plots have become a staple in exploratory data analysis, offering a concise summary of the central tendency, spread, and skewness of a dataset. Traditional box plots display the median, quartiles, and any potential outliers, making them effective for comparing multiple datasets and identifying patterns within each.
 
-\noindent Recent advancements in box plot techniques include variations such as notched box plots, violin plots, and modified box plots that incorporate additional statistical measures. These adaptations enhance the interpretability and utility of box plots across diverse applications, making them more versatile for researchers and data analysts.
 
 \begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[h]
 
-{\centering \includegraphics[width=\maxwidth]{figure/beamer-box-plot-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-box-plots-1} 
 
 }
 
-\caption[Box Plot of Sepal Length by Species]{Box Plot of Sepal Length by Species}\label{fig:box-plot}
+\caption[Comparison of Violin and Box Plots of Sepal Length by Species]{Comparison of Violin and Box Plots of Sepal Length by Species}\label{fig:box-plots}
 \end{figure}
 
 \end{knitrout}
+
+\noindent Recent advancements in box plot techniques include variations such as violin plots, found on the right side of Figure~\ref{fig:box-plots}, and modified box plots that incorporate additional statistical measures. These adaptations enhance the interpretability and utility of box plots across diverse applications, making them more versatile for researchers and data analysts.
 
 \subsection{Functional Box Plots}
 
 \noindent Functional data analysis (FDA) extends traditional statistical methods to handle functional data, where the observations are curves or functions rather than single values. Functional box plots were introduced as an extension of box plots to accommodate the unique challenges posed by functional data. Developed by Hadley Wickham and Dianne Cook in 2011, functional box plots offer a visual representation of the central tendency, spread, and shape of a distribution for functional datasets.
 
 \noindent Functional box plots have found applications in various fields, such as biology, finance, and signal processing, where researchers deal with data in the form of curves or functions. The incorporation of concepts such as depth functions and band depth in functional box plots has improved their robustness and made them suitable for analyzing complex functional datasets.
+
+\subsubsection{Functional Box Plot Example}
+XXXX
+
+\subsection{Quantile-Quantile Plots}
+
+\noindent Quantile-Quantile (QQ) plots represent a powerful and widely utilised approach in exploratory data analysis and statistical inference, offering insightful visualisations of the similarity between two probability distributions. In section, the essence of QQ plots, their generation, the information they convey, and their relevance in contemporary data visualisation methodologies are explored.\\
+
+\noindent QQ plots are constructed by plotting the quantiles of two datasets against each other. Typically, one dataset serves as the basis for theoretical quantiles, often assumed to follow a particular probability distribution, while the other dataset comprises observed values. This comparative depiction enables a direct assessment of how closely the observed data align with the theoretical distribution, facilitating the identification of deviations from expected patterns.
+
+\subsubsection{QQ-Plots in Practice}\\
+\noindent In this section, side-by-side QQ plots are displayed offering a visual comparison of the distributional properties of two variables from the mtcars and the iris datset. These plots serve as a means to assess normality assumptions and identify potential deviations from expected distributions. Through this visual exploration, we aim to gain insights into the underlying structure of the data and guide further investigation.
+
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[h]
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-QQplots-1} 
+
+}
+
+\caption[Q-Q plot of mpg in mtcars dataset]{Q-Q plot of mpg in mtcars dataset}\label{fig:QQplots}
+\end{figure}
+
+\end{knitrout}
+
+\noindent In the first plot in Figure~\ref{fig:QQplots}, which examines the mpg variable in the mtcars dataset, the points closely adhere to the theoretical quantiles line, indicating a relatively normal distribution. However, there are subtle deviations observed, particularly in the tails of the distribution, suggesting potential departures from normality. The deviations might indicate the presence of outliers or non-normal behavior in the data, which warrants further investigation.\\
+
+\noindent Conversely, the second plot explores the distribution of the Sepal.Length variable in the iris dataset. Here, the points exhibit a clearer departure from the theoretical quantiles line compared to the mpg plot. The deviation is more pronounced, particularly towards the upper quantiles, indicating a non-normal distribution. This departure could be attributed to the presence of distinct subgroups or underlying factors influencing the distribution of sepal lengths within the iris dataset.\\
+
+\noindent In general, the QQ plots provide a succinct and insightful representation of the distributional properties of the variables under examination. They offer a visual means to assess normality assumptions and identify potential outliers or deviations from expected distributions. As such, QQ plots serve as a valuable tool in exploratory data analysis and model diagnostics, aiding researchers in understanding the underlying structure of their data and guiding subsequent analyses.
 
 
 \newpage  
