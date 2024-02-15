@@ -1234,7 +1234,7 @@ $$
 
 \subsubsection{Derivation of PCA}
 
-In general, the vector $\mathbf{w}_i$ is given by the equation $\mathbf{\Sigma} \mathbf{w}_i = \lambda \mathbf{w}_i$, where $\mathbf{\Sigma}$ is the covariance matrix and $\lambda$ is the $i^{th}$ largest eigenvalue of $\mathbf{\Sigma}$, for $i = 1, \dots, N$.\\
+In general, the vector $\mathbf{w}_i$ is given by the equation $\mathbf{\Sigma} \mathbf{w}_i = \lambda \mathbf{w}_i$, where $\mathbf{\Sigma}$ is the covariance matrix and $\lambda$ is the $i^{th}$ largest eigenvalue of $\mathbf{\Sigma}$, for $i = 1, \dots, L$.\\
 
 \noindent
 Define the covariance matrix $\mathbf{\Sigma}$ as $\mathbf{\Sigma} = \frac{1}{N} \sum_{n=1}^N(\mathbf{x}_n-\bar{x})(\mathbf{x}_n-\bar{x})^T$. Without loss of generality, let's assume that the data matrix $\mathbf{X}$ is centred around $0$ mean denoted as $\bar{x} = 0$. Then, the covariance matrix can be written as:
@@ -1283,22 +1283,24 @@ Since $\mathbf{W}$ is a normalised matrix, it has the property $\mathbf{W}_i^T\m
 \hat{\mathcal{L}}(\mathbf{w}_1) = - \mathbf{w}_1^T\mathbf{\Sigma}\mathbf{w}_1 + \lambda(\mathbf{w}_1^T\mathbf{w}_1 -1),
 \end{equation}
 
+\noindent 
+Equating $\frac{\partial \hat{\mathcal{L}}(\mathbf{w}_1))}{\partial \mathbf{w}_1} = \mathbf{0}$, the weight vector $\mathbf{w}_1$ which minimise the loss function can be expressed as:
 
+\begin{equation}
+\frac{\partial \hat{\mathcal{L}}(\mathbf{w}_1))}{\partial \mathbf{w}_1} = 2\mathbf{\Sigma}\mathbf{w}_1+2\lambda \mathbf{w}_1 = \mathbf{0}.
+\end{equation}
 
+\noindent 
+Therefore $\mathbf{\Sigma}\mathbf{w}_1 = \lambda \mathbf{w}_1$ that is, $\mathbf{w}_1$ is the eigenvector of $\mathbf{\Sigma}$ with eigenvalue $\lambda$.\\
 
-\noindent
-Before applying PCA, it is crucial to standardize the dataset because it ensures that each feature contributes equally to the analysis. Without standardization, features with larger scales dominate the variance, potentially skewing the PCA results. For $1 \leq i \leq N$ and $1 \leq j \leq D$, the standardized value $Z_{ij}$ for each data point $X_{ij}$ is calculated as:
-    \[Z_{ij} = \frac{X_{ij} - \mu_j}{\sigma_j},\]
-where $X_{ij}$ is the original value, $\mu_j$ is the mean of feature $j$, and $\sigma_j$ is the standard deviation of feature $j$. The result is a standardized dataset $\mathbf{Z} = \{\mathbf{Z_1}, \dots, \mathbf{Z_N}\}$ with $N$ objects, each represented in a $D$-dimensional standardized space. Then, the covariance matrix is $\mathbf{\Sigma}$ for the standardized dataset $\mathbf{Z}$. The covariance matrix is a $D \times D$ matrix, calculated as:
-    \[\mathbf{\Sigma} = \frac{1}{N-1} \mathbf{Z}^T \mathbf{Z}.\]
-Since $\mathbf{Z}$ is standardized, this matrix reflects the covariance between each pair of features. Therefore, the eigen decomposition of the covariance matrix $\Sigma$ is given by:
-    \[\mathbf{\Sigma} \mathbf{v} = \lambda \mathbf{v},\]
-where each eigenvector $\mathbf{v}$ and its corresponding eigenvalue $\lambda$ satisfy this equation. The eigen decomposition of the covariance matrix $\mathbf{\Sigma}$ reveals the principal components of the data. Each eigenvector represents a direction in the feature space along which the data is variably distributed, and the corresponding eigenvalue indicates the variance of its eigenvector. Importantly, these eigenvectors are orthogonal to each other, underscoring the identification of uncorrelated principal components in the data. Then, order the eigenvectors by their corresponding eigenvalues in descending order and select the top $k$ eigenvectors $\{\mathbf{v_1}, \ldots, \mathbf{v_k}\}$, which correspond to the largest $k$ eigenvalues. These form the columns of the matrix $\mathbf{W} \in \mathbb{R}^{D \times k}$.\\
+\noindent 
+Premultiply by $\mathbf{w}_1^T$, $\mathbf{w}_1^T\mathbf{\Sigma}\mathbf{w}_1 = \lambda \mathbf{w}_1^T\mathbf{w}_1 = \lambda$. To minimise the loss $\mathcal{L}}(\mathbf{w}_1)$ we maximise $\mathbf{w}_1^T\mathbf{\Sigma}\mathbf{w}_1$. Thus the largest eigenvalue $\lambda$ would minimise the loss $\mathcal{L}}(\mathbf{w}_1)$.\\
 
-\noindent
-Finally, project the standardized data $\mathbf{Z}$ onto the subspace defined by the principal components:
-    \[\mathbf{Y} = \mathbf{Z}\mathbf{W},\]
-where $\mathbf{Y} \in \mathbb{R}^{N \times k}$ is the transformed data matrix in the new subspace. Hence, in the reduced space, the variance along each principal component $\mathbf{v_i}$ is maximised, preserving the most significant variances in the data. PCA also attempts to preserve pairwise Euclidean distances between data points in the lower-dimensional representation. 
+\noindent 
+Adopting the same methodology, the second largest eigenvalue $\lambda$_2$ would minimise the loss $\mathcal{L}}(\mathbf{w}_2)$.\\
+
+\noindent 
+Therefore, order the eigenvectors by their corresponding eigenvalues $\{\mathbf{w}_1, \dots, \mathbf{w}_L\}$. These form the columns of the weight matrix $\mathbf{W} \in \mathbb{R}^{D \times L}$.\\
 
 \subsection{Biplots}
 \noindent 
@@ -1660,131 +1662,5 @@ Data visualisation plays a pivotal role in modern mathematics, aiding researcher
 
 \bibliographystyle{plain} % Choose a style that suits your needs
 \bibliography{reference} % The filename of your .bib file
- 
-\newpage
 
-\appendix
-\section{Appendix A}
-
-\begin{verbatim}
-Start:  AIC=70.9
-mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb
-
-       Df Sum of Sq    RSS    AIC
-- cyl   1    0.0799 147.57 68.915
-- vs    1    0.1601 147.66 68.932
-- carb  1    0.4067 147.90 68.986
-- gear  1    1.3531 148.85 69.190
-- drat  1    1.6270 149.12 69.249
-- disp  1    3.9167 151.41 69.736
-- hp    1    6.8399 154.33 70.348
-- qsec  1    8.8641 156.36 70.765
-<none>              147.49 70.898
-- am    1   10.5467 158.04 71.108
-- wt    1   27.0144 174.51 74.280
-
-Step:  AIC=68.92
-mpg ~ disp + hp + drat + wt + qsec + vs + am + gear + carb
-
-       Df Sum of Sq    RSS    AIC
-- vs    1    0.2685 147.84 66.973
-- carb  1    0.5201 148.09 67.028
-- gear  1    1.8211 149.40 67.308
-- drat  1    1.9826 149.56 67.342
-- disp  1    3.9009 151.47 67.750
-- hp    1    7.3632 154.94 68.473
-<none>              147.57 68.915
-- qsec  1   10.0933 157.67 69.032
-- am    1   11.8359 159.41 69.384
-- wt    1   27.0280 174.60 72.297
-
-Step:  AIC=66.97
-mpg ~ disp + hp + drat + wt + qsec + am + gear + carb
-
-       Df Sum of Sq    RSS    AIC
-- carb  1    0.6855 148.53 65.121
-- gear  1    2.1437 149.99 65.434
-- drat  1    2.2139 150.06 65.449
-- disp  1    3.6467 151.49 65.753
-- hp    1    7.1060 154.95 66.475
-<none>              147.84 66.973
-- am    1   11.5694 159.41 67.384
-- qsec  1   15.6830 163.53 68.200
-- wt    1   27.3799 175.22 70.410
-
-Step:  AIC=65.12
-mpg ~ disp + hp + drat + wt + qsec + am + gear
-
-       Df Sum of Sq    RSS    AIC
-- gear  1     1.565 150.09 63.457
-- drat  1     1.932 150.46 63.535
-<none>              148.53 65.121
-- disp  1    10.110 158.64 65.229
-- am    1    12.323 160.85 65.672
-- hp    1    14.826 163.35 66.166
-- qsec  1    26.408 174.94 68.358
-- wt    1    69.127 217.66 75.350
-
-Step:  AIC=63.46
-mpg ~ disp + hp + drat + wt + qsec + am
-
-       Df Sum of Sq    RSS    AIC
-- drat  1     3.345 153.44 62.162
-- disp  1     8.545 158.64 63.229
-<none>              150.09 63.457
-- hp    1    13.285 163.38 64.171
-- am    1    20.036 170.13 65.466
-- qsec  1    25.574 175.67 66.491
-- wt    1    67.572 217.66 73.351
-
-Step:  AIC=62.16
-mpg ~ disp + hp + wt + qsec + am
-
-       Df Sum of Sq    RSS    AIC
-- disp  1     6.629 160.07 61.515
-<none>              153.44 62.162
-- hp    1    12.572 166.01 62.682
-- qsec  1    26.470 179.91 65.255
-- am    1    32.198 185.63 66.258
-- wt    1    69.043 222.48 72.051
-
-Step:  AIC=61.52
-mpg ~ hp + wt + qsec + am
-
-       Df Sum of Sq    RSS    AIC
-- hp    1     9.219 169.29 61.307
-<none>              160.07 61.515
-- qsec  1    20.225 180.29 63.323
-- am    1    25.993 186.06 64.331
-- wt    1    78.494 238.56 72.284
-
-Step:  AIC=61.31
-mpg ~ wt + qsec + am
-
-       Df Sum of Sq    RSS    AIC
-<none>              169.29 61.307
-- am    1    26.178 195.46 63.908
-- qsec  1   109.034 278.32 75.217
-- wt    1   183.347 352.63 82.790
-
-Call:
-lm(formula = mpg ~ wt + qsec + am, data = mtcars)
-
-Residuals:
-    Min      1Q  Median      3Q     Max 
--3.4811 -1.5555 -0.7257  1.4110  4.6610 
-
-Coefficients:
-            Estimate Std. Error t value Pr(>|t|)    
-(Intercept)   9.6178     6.9596   1.382 0.177915    
-wt           -3.9165     0.7112  -5.507 6.95e-06 ***
-qsec          1.2259     0.2887   4.247 0.000216 ***
-am            2.9358     1.4109   2.081 0.046716 *  
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-Residual standard error: 2.459 on 28 degrees of freedom
-Multiple R-squared:  0.8497,	Adjusted R-squared:  0.8336 
-F-statistic: 52.75 on 3 and 28 DF,  p-value: 1.21e-11
-\end{verbatim}
 \end{document}

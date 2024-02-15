@@ -44,7 +44,7 @@
 \contentsline {subsubsection}{\numberline {5.1.1}Theory of PCA}{38}{subsubsection.5.1.1}
 \contentsline {subsubsection}{\numberline {5.1.2}Derivation of PCA}{38}{subsubsection.5.1.2}
 \contentsline {subsection}{\numberline {5.2}Biplots}{40}{subsection.5.2}
-\contentsline {subsubsection}{\numberline {5.2.1}Construction of PCA Biplots}{41}{subsubsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.1}Construction of PCA Biplots}{40}{subsubsection.5.2.1}
 \contentsline {subsubsection}{\numberline {5.2.2}Biplots in Practice: The mtcars Dataset}{42}{subsubsection.5.2.2}
 \contentsline {subsection}{\numberline {5.3}Principal Curves}{44}{subsection.5.3}
 \contentsline {subsubsection}{\numberline {5.3.1}Construction of Principal Curves}{45}{subsubsection.5.3.1}
@@ -54,4 +54,3 @@
 \contentsline {subsection}{\numberline {6.1}Box Plots}{49}{subsection.6.1}
 \contentsline {subsection}{\numberline {6.2}Functional Box Plots}{49}{subsection.6.2}
 \contentsline {section}{\numberline {7}Index}{51}{section.7}
-\contentsline {section}{\numberline {A}Appendix A}{54}{appendix.A}
