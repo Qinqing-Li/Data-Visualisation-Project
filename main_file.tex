@@ -395,9 +395,38 @@ as \( n \rightarrow \infty \).\\
 \noindent Histograms can be also used to visualise the convergence of sample means to the population mean. Let \(X_1, \ldots, X_n\) be independent and identically distributed random variables with finite mean \( \mu \) and variance \( \sigma^2 \). Define the sample mean \( \bar{X} = \frac{1}{n}\sum_{i=1}^n X_i \). Then, as \( n \) becomes large, the variable 
 \[ Z = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \] approaches a standard normal distribution.\\
 
-\noindent It is very important to choose the number of bins, since they have a huge impact on how we interpret the data. Too few bins may hide the information in a dataset, and too many bins can cause a lot of noise in a dataset. Fortunately, we can determine the optimal number of bins to use in a histogram by using a method known as Sturges’ Rule:\\
+\noindent
+\textbf{Classical frequency histogram}\\
+
+\noindent The classical frequency histogram is constructed by dividing the data into a series of nonoverlapping intervals, called bins. The data points within each bin are then counted. The histogram can be fully described by two main factors: the bin width, and the bin origin, $t_{0}$.\\
+
+\noindent
+In classical frequency histogram, usually we assume the shape of the histogram to be normal distribution. It is very important to choose the number of bins, since they have a huge impact on how we interpret the data. Too few bins may hide the information in a dataset, and too many bins can cause a lot of noise in a dataset. Fortunately, we can determine the optimal number of bins to use in a histogram by using a method known as Sturges’ Rule:
 $$ k = 1 + \log_{2} n, $$
+
+\noindent
 where n is the total number of observations in the dataset.\\
+
+\noindent
+Technically, Sturges' Rule is method to find the number of bins rather than the width of bins. However, if the data are not normal, additional bins may be needed.\\
+
+\noindent
+\textbf{Density Histogram}\\
+
+\noindent
+The density histogram is normalized to integrate to 1. Unlike a frequency histogram which is constructed from blocks of height 1 and width $h$ (where $h$ is the fixed bin width), a density histogram is constructed from blocks of height $\frac{1}{nh}$, ensuring that each block has an area equal to $\frac{1}{n}$. The height of each bin  represents the probability distribution of the data, such that the total area of the histogram equals 1.\\
+
+\noindent
+\\The density histogram is mathematically defined by the formula:
+$$\hat{f}(x) = \frac{v_k}{nh} = \frac{1}{nh} \sum_{i=1}^{n} I_{[t_k,t_{k+1})}(x_i) \quad \text{for } x \in B_k,$$
+
+\noindent
+where $v_{k}$ represents the count of sample points falling into the $k$th bin, $B_{k}$. With this definition of a histogram, it is straightforward to check that $ \hat{f}(x) \geq 0 $ and that $ \int \hat{f}(x) \, dx = 1 $, so that $ \hat{f}(x) $ is a proper density function.\\
+
+\noindent
+The density histogram's bin counts ${v_{k}}$ can be considered as binomial random variables, where each bin count $v_{k}$ follows a binomial distribution $B(n,p_{k})$. The probability $p_{k}$ for each bin is the integral of the density function $f(t)$ over the bin interval $B_{k}$:
+$$p_{k} = \int_{B_k} f(t) \, dt. $$\\
+
 \subsubsection{Histogram in Practice}\\
 
 \noindent The R language uses the \texttt{hist} function to create histograms. This function takes vectors as input, along with other parameters to plot a histogram.\\
