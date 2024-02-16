@@ -480,68 +480,58 @@ The kernel function \( K(u) \) is a normalised non-negative function that satisf
 \subsection{Line Charts and Time Series}
 
 \noindent
-The previous subsections explored Histograms, Kernel Density Estimation, and Bar Charts, which are univariate methods used for analysing independent variables in isolation, revealing patterns and intrinsic properties within data. Now, the focus shifts to univariate methods of dependent variables, specifically Line Charts, which are crucial for visualising relationships between variables to understanding their interactions and dependencies over time.
+Previous subsections explored histograms, kernel density estimation, and bar charts, which are univariate methods used for analysing independent variables in isolation, revealing patterns and intrinsic properties within data. Now, the focus shifts to univariate methods of dependent variables, specifically line charts, which are crucial for visualising relationships between variables to understanding their interactions and dependencies over time.
 
 \subsubsection{Theory of Line Charts}
 
-\noindent
 Line charts are fundamental tools in data visualisation, particularly useful for displaying time series data. A line chart represents $n$ data points 
 $\{(x_i,y_i)\}_{1 \leq i \leq n}$ on a Cartesian coordinate system, with the x-axis often denoting time intervals or ordered categories and the y-axis representing the measured values.\\ 
 
 \noindent
 In a line chart, consecutive data points are typically connected by straight lines. The line segment between two points \((x_i,y_i)\) and \((x_{i+1},y_{i+1})\) can be described by the equation of a line in the slope-intercept form: \(y=mx+b\), where \(m\) is the slope and \(b\) is the y-intercept. Also, a series of linear interpolations between pairs of data points could be used. These interpolations assume that the change between two points is uniform or linear. This linear approach is mathematically represented as:
 \[
-y = y_i + \frac{y_{i+1} - y_i}{x_{i+1} - x_i} \cdot (x - x_i), \quad  x_i \leq x \leq x_{i+1}.
+y = y_i + \frac{y_{i+1} - y_i}{x_{i+1} - x_i} \times (x - x_i), \quad  x_i \leq x \leq x_{i+1}.
 \]
 \noindent
 This equation highlights that for any point \(x\) between \(x_i\) and \(x_{i+1}\), the corresponding value of \(y\) on the line chart is determined by a linear relation. This method effectively ``fills the gaps'' between actual observed data points and provides a continuous view of the data.
 
-\subsubsection{Time Series Analysis}\\
-\noindent
-Time series visualisation is particularly suited to line charts. A time series is a collection of observations $x_t$, where $t$ denotes the time point at which the observation is recorded. An index set $T_0$ which collects all the time points when observations are available. For instance, we often have $T_0 = \{0,\dots ,n\}$ for $n \in \mathbb{N}$. By plotting these data points over time, line charts help in identifying long-term trends, seasonal patterns, and anomalies.\\
+\subsubsection{Time Series Analysis}
+
+Time series visualisation is particularly suited to line charts. A time series\cite{Brockwell2016Introduction} is a collection of observations $x_t$, where $t$ denotes the time point at which the observation is recorded. An index set $T_0$ which collects all the time points when observations are available. For instance, $T_0 = \{0,\dots ,n\}$ for $n \in \mathbb{N}$. By plotting these data points over time, line charts help in identifying long-term trends, seasonal patterns, and anomalies.\\
 
 \noindent
-A time series can be viewed as a realisation of a stochastic process. A stochastic process \cite{Brockwell2016Introduction} $X = (X_t)_{t \in T_0}$ is a collection of random variables $X_t$, where $t$ denotes the time index and $T_0$ the index set. For a fixed event $\omega \in \Omega$ we obtain the realisation of the stochastic process (sometimes also called a sample path) which is given by $x_t = X_t(\omega)$, $t \in T_0$. In practice, line charts of time series data provide insights into the behavior of such stochastic processes over time.\\
+A time series can be viewed as a realisation of a stochastic process. A stochastic process\cite{Brockwell2016Introduction} $X = (X_t)_{t \in T_0}$ is a collection of random variables $X_t$, where $t$ denotes the time index and $T_0$ the index set. For a fixed event $\omega \in \Omega$ we obtain the realisation of the stochastic process (sometimes also called a sample path) which is given by $x_t = X_t(\omega)$, $t \in T_0$. In practice, line charts of time series data provide insights into the behavior of such stochastic processes over time.
 
-\noindent
-\textbf{Time Series Visualisation of Exchange rates}\\
-\noindent
+\subsubsection{Case Example: Time Series Visualisation of Exchange rates}
+
 Here, plot daily and 49-day moving average exchange rates of exchange rate data in one figure.
 
-\begin{figure}[H]
+
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# PLOT OF DAILY AND 49-DAY MOVING AVERAGE EXCHANGE RATES OF CAN, EUR, USD TO GBP}
-
-\hlstd{color_palette} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlstr{"#459395"}\hlstd{,} \hlstr{"#EB7C69"}\hlstd{,} \hlstr{"#FDA638"}\hlstd{)}
-
 \hlstd{p1} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(plot_dt,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= Date,} \hlkwc{y} \hlstd{= Rate,} \hlkwc{color} \hlstd{= Currency))} \hlopt{+} \hlkwd{geom_line}\hlstd{()} \hlopt{+}
-  \hlkwd{labs}\hlstd{(}\hlkwc{y} \hlstd{=} \hlstr{"Exchange Rate to GBP"}\hlstd{,} \hlkwc{x} \hlstd{=} \hlstr{""}\hlstd{,} \hlkwc{color} \hlstd{=} \hlstr{"Currency"}\hlstd{)} \hlopt{+}
-  \hlkwd{theme_minimal}\hlstd{()} \hlopt{+} \hlkwd{theme}\hlstd{(}\hlkwc{legend.position} \hlstd{=} \hlstr{"none"}\hlstd{)} \hlopt{+}
-  \hlkwd{scale_color_manual}\hlstd{(}\hlkwc{values} \hlstd{= color_palette)}
+  \hlkwd{labs}\hlstd{(}\hlkwc{y} \hlstd{=} \hlstr{"Exchange Rate to GBP"}\hlstd{,} \hlkwc{x} \hlstd{=} \hlstr{""}\hlstd{,} \hlkwc{color} \hlstd{=} \hlstr{"Currency"}\hlstd{)} \hlopt{+} \hlkwd{theme_minimal}\hlstd{()} \hlopt{+}
+  \hlkwd{theme}\hlstd{(}\hlkwc{legend.position} \hlstd{=} \hlstr{"none"}\hlstd{)} \hlopt{+} \hlkwd{scale_color_manual}\hlstd{(}\hlkwc{values} \hlstd{= color_palette)}
 \hlstd{p2} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(plot_data,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= Date,} \hlkwc{y} \hlstd{= Rate,} \hlkwc{color} \hlstd{= Currency))} \hlopt{+} \hlkwd{geom_line}\hlstd{()} \hlopt{+}
-  \hlkwd{labs}\hlstd{(}\hlkwc{y} \hlstd{=} \hlstr{"Exchange Rate to GBP"}\hlstd{,} \hlkwc{x} \hlstd{=} \hlstr{""}\hlstd{,} \hlkwc{color} \hlstd{=} \hlstr{"Currency"}\hlstd{)} \hlopt{+}
-  \hlkwd{theme_minimal}\hlstd{()} \hlopt{+} \hlkwd{theme}\hlstd{(}\hlkwc{legend.position} \hlstd{=} \hlstr{"none"}\hlstd{)} \hlopt{+}
-  \hlkwd{scale_color_manual}\hlstd{(}\hlkwc{values} \hlstd{= color_palette)}
-
+  \hlkwd{labs}\hlstd{(}\hlkwc{y} \hlstd{=} \hlstr{"Exchange Rate to GBP"}\hlstd{,} \hlkwc{x} \hlstd{=} \hlstr{""}\hlstd{,} \hlkwc{color} \hlstd{=} \hlstr{"Currency"}\hlstd{)} \hlopt{+} \hlkwd{theme_minimal}\hlstd{()} \hlopt{+}
+  \hlkwd{theme}\hlstd{(}\hlkwc{legend.position} \hlstd{=} \hlstr{"none"}\hlstd{)} \hlopt{+} \hlkwd{scale_color_manual}\hlstd{(}\hlkwc{values} \hlstd{= color_palette)}
 \hlcom{# Extract the legend and combine the plots }
 \hlstd{p2_legend} \hlkwb{<-} \hlstd{cowplot}\hlopt{::}\hlkwd{get_legend}\hlstd{(p2} \hlopt{+} \hlkwd{theme}\hlstd{(}\hlkwc{legend.position} \hlstd{=} \hlstr{"right"}\hlstd{))}
 \hlstd{combined_plot} \hlkwb{<-} \hlstd{cowplot}\hlopt{::}\hlkwd{plot_grid}\hlstd{(p1, p2,} \hlkwc{rel_widths} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{1}\hlstd{),} \hlkwc{nrow} \hlstd{=} \hlnum{2}\hlstd{)}
 \hlstd{cowplot}\hlopt{::}\hlkwd{plot_grid}\hlstd{(combined_plot, p2_legend,} \hlkwc{nrow} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{rel_widths} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{2}\hlstd{,} \hlnum{0.5}\hlstd{))}
 \end{alltt}
-\end{kframe}
+\end{kframe}\begin{figure}[H]
 
-{\centering \includegraphics[width=\maxwidth]{figure/beamer-unnamed-chunk-2-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-all_exchange_rates-1} 
 
 }
 
+\caption[Daily (top) and 49-day moving average (bottom) exchange rates of CAN, EUR, USD to GBP]{Daily (top) and 49-day moving average (bottom) exchange rates of CAN, EUR, USD to GBP}\label{fig:all exchange rates}
+\end{figure}
 
 \end{knitrout}
-\centering
-\caption{Daily (top) and 49-day moving average (bottom) exchange rates of CAN, EUR, USD to GBP}
-\label{fig:all exchange rates}
-\end{figure}
 
 \noindent
 The first plot in Figure~\ref{fig:all exchange rates} presents a comparative visualisation of daily exchange rates for CAD, EUR, and USD against GBP, offering an overview of their trends and relative performance. This plot enables the identification of overall trends and periods of volatility for each currency pair, allowing for an assessment of their stability and strength relative to GBP. Notice that, there was a simultaneous and significant drop in all three currencies relative to the GBP. The concurrent nature of these declines across diverse currency pairs suggests that the driving factor is a depreciation of the GBP, rather than independent appreciations of the USD, EUR, and CAN. This notable depreciation of the GBP occurred around 2016, which coincides with the commencement of BREXIT process. Usually, the long term trend attracts financial analyst most. Therefore, filtering fluctuations and anomalies is important. Then, a 49-day moving average (MA49) was employed, shown in the second plot of Figure~\ref{fig:all exchange rates}, to elucidate long-term trends while mitigating short-term fluctuations. This is mathematically represented as 
@@ -557,10 +547,7 @@ This method effectively filters out daily noise, allowing a clearer view of over
 One of the primary advantages of time series visualisation is the ease with which it allows analysts to identify long-term upward or downward trends in data and patterns that repeat over specific intervals. By decomposing the time series, it would be easy to see those features.\\
 
 \noindent
-Time series data, $X_t$, can often be described as a combination of several distinct components: Trend component $t_t$: The underlying progression in the series, Seasonal component $s_t$: Periodic fluctuations due to seasonal factor, Residual $r_t$: The irregular or error component.\\
-
-\noindent
-The decomposition of a time series can be described in two main models:
+Time series data, $X_t$, can often be described as a combination of several distinct components: Trend component $t_t$: The underlying progression in the series, Seasonal component $s_t$: Periodic fluctuations due to seasonal factor, Residual $r_t$: The irregular or error component. Hence, the decomposition of a time series can be described in two main models:
 \\
 
 \noindent \textbf{Additive Model} \cite{Brockwell2016Introduction}: In the additive model, the components are added together:
@@ -574,12 +561,10 @@ X_t = t_t \times s_t \times r_t \quad \text{or} \quad \log(X_t) = \log(t_t) + \l
 In practice, the choice between the additive and multiplicative models often depends on the nature of the time series. If the magnitude of the seasonal fluctuations or the variation around the trend does not vary with the level of the time series, then an additive model is appropriate. If the magnitude of the seasonal fluctuations or the variation around the trend increases or decreases as the time series level changes, then a multiplicative model may be more suitable.\\
 
 \noindent
-R function \texttt{decompose()} is able to decompose the time series by additive model or multiplicative model. And below is the demonstration of decomposition.
+R function \texttt{decompose()} is able to decompose the time series by additive model or multiplicative model. And ~\ref{fig:decomposition of time series} is the demonstration of decomposition.
 
 
 
-
-\begin{figure}[H]
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
@@ -587,18 +572,16 @@ R function \texttt{decompose()} is able to decompose the time series by additive
 \hlkwd{ggplot}\hlstd{(decomposed_df,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= time,} \hlkwc{y} \hlstd{= value))} \hlopt{+} \hlkwd{geom_line}\hlstd{()} \hlopt{+}
   \hlkwd{facet_wrap}\hlstd{(}\hlopt{~}\hlstd{component,} \hlkwc{scales} \hlstd{=} \hlstr{"free_y"}\hlstd{,} \hlkwc{ncol} \hlstd{=} \hlnum{1}\hlstd{)} \hlopt{+} \hlkwd{labs}\hlstd{(}\hlkwc{x} \hlstd{=} \hlstr{"Date"}\hlstd{,}\hlkwc{y} \hlstd{=} \hlstr{"Exchange Rate to GBP"}\hlstd{)} \hlopt{+} \hlkwd{theme_minimal}\hlstd{()}
 \end{alltt}
-\end{kframe}
+\end{kframe}\begin{figure}[H]
 
-{\centering \includegraphics[width=\maxwidth]{figure/beamer-unnamed-chunk-4-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-decomposition_of_time_series-1} 
 
 }
 
+\caption[Decomposition of addictive time series model of CNY to GBP exchange rates]{Decomposition of addictive time series model of CNY to GBP exchange rates}\label{fig:decomposition of time series}
+\end{figure}
 
 \end{knitrout}
-\centering
-\caption{Decomposition of addictive time series model of CNY to GBP exchange rates}
-\label{fig:decomposition of time series}
-\end{figure}
 
 \noindent
 From Figure~\ref{fig:decomposition of time series}, the CNY to GBP exchange rate time series was decomposed into its fundamental components: trend, seasonality, and residual noise by additive model. This additive model, represented mathematically as $X_t = t_t + s_t + r_t$.\\
@@ -619,17 +602,17 @@ Autocorrelation, also referred to as serial correlation, is a crucial concept in
 
 \noindent
 Suppose we have a time series with observations denoted by \( x_1, \ldots, x_n \). Then the sample mean is given by $\bar{x} = \frac{1}{n} \sum_{t=1}^{n} x_t.$
-And the sample autocovariance function at lag $h$ in days of our time series is
-\[\hat{\gamma}(h) := \frac{1}{n} \sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x}), \quad -n < h < n \cite{Brockwell2016Introduction}.\]
-Hence, the sample autocorrelation function at lag $h$ in days is given by
-\[\hat{\rho}(h) := \frac{\hat{\gamma}(h)}{\hat{\gamma}(0)} = \frac{\sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x})}{\sum_{t=1}^{n} (x_t - \bar{x})^{2}}, \quad -n < h < n \cite{Brockwell2016Introduction}.\]
+And the sample autocovariance function\cite{Brockwell2016Introduction} at lag $h$ in days of our time series is
+\[\hat{\gamma}(h) := \frac{1}{n} \sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x}), \quad -n < h < n.\]
+Hence, the sample autocorrelation function\cite{Brockwell2016Introduction} at lag $h$ in days is given by
+\[\hat{\rho}(h) := \frac{\hat{\gamma}(h)}{\hat{\gamma}(0)} = \frac{\sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x})}{\sum_{t=1}^{n} (x_t - \bar{x})^{2}}, \quad -n < h < n.\]
+
 \noindent
 The value of $\hat{\rho}(h)$ lies between -1 and +1. A value close to +1 indicates a strong positive correlation, while a value close to -1 indicates a strong negative correlation. A value near 0 suggests little to no linear correlation. A slow decay in the ACF plot indicates a strong relationship between past and present values, while spikes at specific lags may suggest seasonality. Autocorrelations outside the 95\% confidence interval are considered statistically significant.\\
 
 \noindent
 Next, visualise the ACF for the CNY to GBP exchange rate to understand its time-dependent structure better.
 
-\begin{figure}[H]
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
@@ -637,18 +620,16 @@ Next, visualise the ACF for the CNY to GBP exchange rate to understand its time-
 \hlstd{acf_data} \hlkwb{<-} \hlkwd{acf}\hlstd{(MyData}\hlopt{$}\hlstd{CNYtoGBP,} \hlkwc{plot} \hlstd{=} \hlnum{FALSE}\hlstd{)}
 \hlkwd{plot}\hlstd{(acf_data,} \hlkwc{main} \hlstd{=} \hlstr{""}\hlstd{,} \hlkwc{xlab} \hlstd{=} \hlstr{"Lag h"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"ACF"}\hlstd{)}
 \end{alltt}
-\end{kframe}
+\end{kframe}\begin{figure}[H]
 
-{\centering \includegraphics[width=\maxwidth]{figure/beamer-unnamed-chunk-5-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-ACF-1} 
 
 }
 
+\caption[Autocorrelation Function at lag h in days of CNY to GBP Exchange Rate]{Autocorrelation Function at lag h in days of CNY to GBP Exchange Rate}\label{fig:ACF}
+\end{figure}
 
 \end{knitrout}
-\centering
-\caption{Autocorrelation Function at lag h in days of CNY to GBP Exchange Rate}
-\label{fig:ACF}
-\end{figure}
 
 \noindent
 From Figure~\ref{fig:ACF}, the ACF plot for the CNY to GBP exchange rate series reveals that the ACF starts near 1 and decreases gradually. This pattern suggests a strong persistence in the time series, indicating that past values have a significant influence on future values. In time series analysis, such a slow decay in the ACF is indicative of a non-stationary series, where the mean, variance, and autocorrelation structure do not remain constant over time.\\
@@ -658,32 +639,32 @@ This persistent autocorrelation suggests that short-term movements in the CNY to
 
 \subsection{ROC Curve}
 
-The Receiver Operating Characteristic (ROC) anaysis is a technique for assessing the performance of classification models as its discrimination threshold is varied. Unlike univariate methods in previous subsections that are constructed from a single dataset representing one variable, ROC analysis divides a single dataset into two samples based on the actual condition of each observation, but focuses on evaluating the performance of a classification model on one variable, typically the predicted probability that a given observation belongs to a positive class. These two populations are defined as follows: the positive class (true condition positive), which includes observations that actually belong to the class of interest. The negative class (true condition negative), which includes observations that do not belong to the class of interest.\\
+The Receiver Operating Characteristic (ROC) anaysis is a technique for assessing the performance of classification models as its discrimination threshold is varied. Unlike univariate methods in previous subsections that are constructed from a single dataset representing one variable, ROC analysis divides a single dataset into two samples based on the actual condition of each observation, but focuses on evaluating the performance of a classification model on one variable, typically the predicted probability that a given observation belongs to a positive class. These two populations are defined as follows: the positive class (true condition positive), which includes observations that actually belong to the class of interest. The negative class (true condition negative), which includes observations that do not belong to the class of interest.
 
-\noindent
-\subsubsection{Theory of ROC curve}\\
+\subsubsection{Theory of ROC curve}
+
 Let $Y$ be a binary variable indicating the true class of an instance, with $Y = 1$ for positive instances and $Y = 0$ for negative instances. Let $X$ be a continuous variable representing the predicted score or probability of an instance being classified as positive by the classifier, with $X \geq c$ for positive and $X < c$ for negative given a threshold c.\\
 
 \noindent
 Since ROC curve plots two parameters\cite{rocAnalysis}: True Positive Rate (TPR, also known as Sensitivity, is the proportion of positive instances correctly identified) and False Positive Rate (FPR, 1 - Specificity, is the proportion of negative instances incorrectly identified as positive). Then define the TPR and the FPR using conditional probabilities as follows\cite{Pepe2003}:
 
-\[ \text{TPR}(c) = \mathbb{P}[X \geq c | Y = 1], \quad \text{FPR}(c) = \mathbb{P}[X \geq c | Y = 0].\cite{Pepe2003}\]
+\[ \text{TPR}(c) = \mathbb{P}[X \geq c | Y = 1], \quad \text{FPR}(c) = \mathbb{P}[X \geq c | Y = 0].\]
 
 \noindent
-The ROC curve is then the set of points $(\text{FPR}(c), \text{TPR}(c))$ for all possible values of threshold $c$. This curve plots the trade-off between sensitivity (or TPR) and specificity (1 - FPR) across different thresholds. Let $t=\text{FPR}(c)$, then $c = \text{FPR}^{-1}(t)$ and $\text{TPR}(c)= \text{TPR}(\text{FPR}^{-1}(t))$. Hence, let $\text{ROC}(t)= \text{TPR}(\text{FPR}^{-1}(t))$, the ROC curve can be represented as a parametric function of $t$, with $t$ varying from 0 to 1:
+The ROC curve is then the set of points $(\text{FPR}(c), \text{TPR}(c))$ for all possible values of threshold $c$. This curve plots the trade-off between sensitivity (or TPR) and specificity (1 - FPR) across different thresholds. Let $t=\text{FPR}(c)$, then $c = \text{FPR}^{-1}(t)$ and $\text{TPR}(c)= \text{TPR}(\text{FPR}^{-1}(t))$. Hence, let $\text{ROC}(t)= \text{TPR}(\text{FPR}^{-1}(t))$, the ROC curve can be represented as a parametric function of $t$\cite{Pepe2003} , with $t$ varying from 0 to 1:
 
-\[ \text{ROC} = \{ (t, \text{ROC}(t)) \,|\, t \in [0, 1] \}.\cite{Pepe2003} \]
-
-\noindent
-Also, the Area Under the Curve (AUC) provides a single measure of overall performance of a classifier. This definition represents the integral of $\text{ROC}(t)$ over the interval from 0 to 1. It can be defined as:
-
-\[ \text{AUC} = \int_{0}^{1} \text{ROC}(t) dt.\cite{Pepe2003} \]
+\[ \text{ROC} = \{ (t, \text{ROC}(t)) \,|\, t \in [0, 1] \}.\]
 
 \noindent
-The larger the AUC, the better the classifier. An AUC of 0.5 suggests no discriminative ability, while an AUC of 1.0 represents perfect classification.\\
+Also, the Area Under the Curve (AUC)\cite{Pepe2003}  provides a single measure of overall performance of a classifier. This definition represents the integral of $\text{ROC}(t)$ over the interval from 0 to 1. It can be defined as:
 
-\noindent 
-\subsubsection{ROC analysis in COVID-19 test}\\
+\[ \text{AUC} = \int_{0}^{1} \text{ROC}(t) dt.\]
+
+\noindent
+The larger the AUC, the better the classifier. An AUC of 0.5 suggests no discriminative ability, while an AUC of 1.0 represents perfect classification.
+
+\subsubsection{ROC analysis in COVID-19 test}
+
 The COVID-19 pandemic underscores the need for accurate diagnostic tests to differentiate between positive and negative cases\cite{Garcia2021ROCAlly}. An effective mean for evaluating accuracy of various diagnostic tests is the ROC analysis. ROC analysis comprehensively examines test accuracy by integrating TPR, FPR, and AUC. These metrics are calculated by comparing test outcomes against a recognized gold standard, thereby determining the true disease status. This approach is vital for understanding the efficacy of COVID-19 diagnostic tools and guiding public health decisions.\\
 
 \noindent
@@ -1518,57 +1499,72 @@ y_f(\mathbf{x}) = \sup\limits_{y}\{y: ||\mathbf{x}-\mathbf{f}(y)||= \inf\limits_
 \noindent The principal curve effectively captures the nonlinear relationship between the dimensions of the artificial dataset. By flexibly adapting to the curvature of the data distribution, the principal curve reveals intricate patterns and trends that may not be captured by linear methods like PCA. The visualisation aids in understanding the underlying structure of the dataset.
 
 
-\subsection{t-SNE}
-\href{https://jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf}
+\subsection{t-Distributed Stochastic Neighbor Embedding (t-SNE)}
+
+Since PCA is a linear method and may not perform well with non-linear data structures, often missing complex non-linear relationships. Although effective in capturing the global structure of data, PCA focuses on maintaining large pairwise distances to maximise variance and overlooks important local patterns and structures. \\
 
 \noindent
-Since PCA is a linear method and may not perform well with non-linear data structures, often missing complex non-linear relationships. Although effective in capturing the global structure of data, PCA focuses on maintaining large pairwise distances to maximise variance and overlook important local patterns and structures. \\
+Unlike PCA, t-SNE\cite{vanderMaaten2008tsne} is a nonlinear technique for embedding high-dimensional data for visualisation in a low-dimensional space of two or three dimensions, focusing on preserving the small pairwise similarities between data points thus retain the local structure of the dataset in a lower-dimensional space. It starts by converting high-dimensional Euclidean distances into probabilities that reflect the similarity between points, then maps these points to a lower-dimensional space in a way that tries to preserve these similarities.
+
+\subsubsection{Theory of t-SNE}
+
+For a given high-dimensional dataset $\{x_1,...,x_n\}$, the t-SNE algorithm quantifies the similarity between pairs of data points, $x_i$ and $x_j$, using conditional probabilities $p_{j|i}$. These probabilities are calculated under the assumption that if $x_i$ were to choose its neighbours, it would do so in proportion to their probability density under a Gaussian distribution centered at $x_i$. The conditional probability $p_{j|i}$\cite{vanderMaaten2008tsne} for $i \neq j$ is mathematically expressed as:
+
+\[p_{j|i} = \frac{\exp(-||\mathbf{x}_i - \mathbf{x}_j||^2 / 2\sigma_i^2)}{\sum_{k \neq i}\exp(-||\mathbf{x}_i - \mathbf{x}_k||^2 / 2\sigma_i^2)},\]
 
 \noindent
-Unlike PCA, t-Distributed Stochastic Neighbor Embedding (t-SNE) is a nonlinear technique for embedding high-dimensional data for visualization in a low-dimensional space of two or three dimensions, focusing on preserving the small pairwise similarities between data points thus retain the local structure of the dataset in a lower-dimensional space. It starts by converting high-dimensional Euclidean distances into probabilities that reflect the similarity between points, then maps these points to a lower-dimensional space in a way that tries to preserve these similarities.\\
+where $\sigma_i$ denotes the variance of the Gaussian that is centered on data point $x_i$. Also, set similarities of the same pair wise points $p_{i|i}=0$ and $\sum_{j} p_{j|i} = 1$ for all $i$.\\
 
 \noindent
-First, for each pair of high-dimensional points $x_i$ and $x_j$, the similarity between data points is quantified using conditional probabilities $p_{j|i}$, that $x_i$ would choose $x_j$ as its neighbor if neighbors were picked in proportion to thier probability density under a Gaussian centred at $x_i$. Mathematically, the conditional probability $p_{j|i}$ is given by:
+To create a symmetrical joint probability distribution in the high-dimensional space, t-SNE averages the conditional probabilities $p_{j|i}$ and $p_{i|j}$\cite{vanderMaaten2008tsne}, resulting in:
     \[
-        p_{j|i} = \frac{\exp(-||\mathbf{x}_i - \mathbf{x}_j||^2 / 2\sigma_i^2)}{\sum_{k \neq i}\exp(-||\mathbf{x}_i - \mathbf{x}_k||^2 / 2\sigma_i^2)}.
-    \] \\
+        p_{ij} = \frac{p_{j|i} + p_{i|j}}{2n},
+    \]
+    
+\noindent
+where $n$ is a number of data points. Also, $p_{ii}=0$ and \sum_{i,j} p_{ij}=1$.\\
 
 \noindent
-Then, the joint probability distribution $P$ in the high-dimensional space is symmetrized as follows:
-    \[
-        p_{ij} = \frac{p_{j|i} + p_{i|j}}{2N},
-    \] \\
-\noindent
-where $N$ is a number of dimensions.\\
+In the low-dimensional space (usually 2D or 3D), we have the corresponding dataset $\{y_1,...,y_n\}$. Since t-SNE aims to find mapped points 
+$y_i$ and $y_j$ in a low-dimensional space that reflects the similarities 
+$p_{ij}$ as well as possible. In the low-dimensional space, t-SNE computes similarities $q_{ij}$ using a similar formula but with a Student t-distribution (with one degree of freedom, equivalent to the Cauchy distribution) which has heavier tails than a Gaussian distribution to compute the joint probabilities\cite{vanderMaaten2008tsne} of the mapped points:
 
-\noindent
-In the low-dimensional space, t-SNE alleviates the crowding problem, which is a common issue in methods like PCA (Principal Component Analysis). It does so by using a t-distribution in the low-dimensional space, which has heavier tails than a Gaussian distribution. t-SNE calculates similar probabilities using a Student's t-distribution:
     \[
         q_{ij} = \frac{(1 + ||\mathbf{y}_i - \mathbf{y}_j||^2)^{-1}}{\sum_{k \neq l}(1 + ||\mathbf{y}_k - \mathbf{y}_l||^2)^{-1}}.
-    \] \\
-    
+    \]
+
 \noindent
-The objective is to minimise the Kullback-Leibler divergence between the joint probability distributions $P$ and $Q$:
+Similarly, set $q_{ii}=0$.\\
+
+\noindent
+The goal of t-SNE is to minimize the discrepancy between the probabilities 
+$p_ {ij}$ in the high-dimensional space and $q_{ij}$ in the low-dimensional space. Therefore, the objective is to minimise the Kullback-Leibler (KL) divergence\cite{vanderMaaten2008tsne} between the joint probability distributions $P$ and $Q$:
     \[
         C = \text{KL}(P || Q) = \sum_{i \neq j} p_{ij} \log \frac{p_{ij}}{q_{ij}},
-    \] \\
-\noindent
-where the $C$ means the cost function, and the Kullback-Leibler (KL) divergence is a measure of how one probability distribution diverges from a second, reference probability distribution. In addition, the lower the KL divergence value, the closer the two distributions are. A KL divergence of zero means that these two distributions are the same.\\
-
-\noindent
-This process is achieved through gradient descent. The gradient of symmetric SNE is fairly similar to that of asymmetric SNE, and is given 
-\[
-        \partial C = \text{KL}(P || Q) = \sum_{i \neq j} p_{ij} \log \frac{p_{ij}}{q_{ij}}.
-    \] \\
+    \]
     
 \noindent
-Perplexity influences the variance of the Gaussians in the high-dimensional space and is a crucial hyperparameter in t-SNE.\\
-
-\noindent \textbf{t-SNE in Practice}\\
+where the $C$ means the cost function that we wish to minimize, and the Kullback-Leibler (KL) divergence is a measure of how probability distribution $P$ differs from probability distribution $Q$. In addition, the lower the KL divergence value, the closer the two distributions are. A KL divergence of zero means that these two distributions are the same.\\
 
 \noindent
+To continue with the minimisation, compute the gradient of symmetric SNE\cite{vanderMaaten2008tsne} as follows:
+\[\frac{\partial C}{\partial y_i} = 4 \sum_j (p_{ij} - q_{ij})(y_i - y_j)(1 + ||y_i - y_j||^2)^{-1}
+.\]
+
+\noindent
+Once the gradient of the cost function with respect to the positions of the points in the low-dimensional space, $\frac{\partial C}{\partial y_i}$, is computed, t-SNE employs gradient descent to minimizes the Kullback-Leibler (KL) divergence between the high-dimensional probability distribution $P$ and the low-dimensional probability distribution $Q$. Gradient descent is an iterative optimization algorithm used to minimize the cost function by updating the parameters in the opposite direction of the gradient of the cost function. In the case of t-SNE, the parameters are the positions of the points in the low-dimensional space. The update rule\cite{vanderMaaten2008tsne} at each iteration $t$ for a point $y_i$ is given by:
+
+\[y_i^{(t+1)} = y_i^{(t)} - \eta \frac{\partial C}{\partial y_i},\]
+
+\noindent
+where $\eta$ is the learning rate, a positive scalar determining the step size.\\
+
+\noindent
+The process is repeated for a number of iterations or until the change in the cost function between iterations is below a predetermined threshold, indicating convergence. The gradient descent process in t-SNE is crucial for effectively reducing the dimensionality of high-dimensional data while preserving the local structure of the data. By iteratively updating the positions of the points in the low-dimensional space, t-SNE minimizes the KL divergence, resulting in a meaningful representation of the data in lower dimensions.
+
+\subsubsection{Case Example: t-SNE in Practice}
+
 R provides us with a dedicated package for t-SNE analysis, \textit{Rtsne}, which allows us to conduct the analysis conveniently using the \textit{Rtsne} function. In the graph presented below, we observe a t-SNE visualization of the penguin dataset.\\
-\\
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
@@ -1581,7 +1577,6 @@ R provides us with a dedicated package for t-SNE analysis, \textit{Rtsne}, which
 \end{figure}
 
 \end{knitrout}
-
 
 \noindent
 The provided plot in Figure~\ref{fig:t-SNE} is a t-SNE visualization of the Penguins dataset, rendered using the $ggplot2$ package in R. In this case, using the T-sne algorithm helps us to reduce the multidimensional numerical data of the penguin dataset to a $2$-dimensional space. We also use scatter plots and elliptical areas to visualize the distribution of different penguin species. The data points are colour-coded to distinguish between three penguin species: Adelie in red, Chinstrap in green, and Gentoo in blue. This colour coding aids in the visual differentiation of the species clusters.\\
@@ -1596,7 +1591,7 @@ While t-SNE is an exceptionally potent tool for data visualization, it does come
 Secondly, t-SNE is tailored specifically for visualization, which constrains the embedding space to two or three dimensions. This limitation means that t-SNE is optimised for human interpretability rather than for capturing higher-dimensional relationships.\\
 
 \noindent
-Additionally, it requires experimentation with different initializations to mitigate the risk of local suboptimal solutions affecting the results. Therefore, it's crucial to carefully consider and select the most suitable method based on the specific requirements and nature of the data at hand.\\
+Additionally, it requires experimentation with different initialisation to mitigate the risk of local suboptimal solutions affecting the results. Therefore, it's crucial to carefully consider and select the most suitable method based on the specific requirements and nature of the data at hand.
 
 \newpage 
 
