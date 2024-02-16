@@ -381,7 +381,7 @@ This chapter, initiates the discussion about data visualisation methods. This ch
 
 \subsection{Histograms}
 
-A histogram is a graphical representation of the distribution of a dataset. It consists of bars, each representing a range of data values, and whose height corresponds to the frequency or count of data points within that range.In this way, histograms facilitate the visualisation of differences in frequency or quantity among groups.\\
+A histogram is a graphical representation of the distribution of a dataset. It consists of bars, each representing a range of data values, and whose height corresponds to the frequency or count of data points within that range. In this way, histograms facilitate the visualisation of differences in frequency or quantity among groups.\\
 
 \noindent On a Cartesian coordinate system, the x-axis shows the endpoints of each group, and the y-axis represents frequency. The height of each rectangle indicates the corresponding frequency, making it a frequency distribution histogram. In order to determine the quantity of each group in the histogram, a multiplication of the frequency by the group interval is necessary. Since every histogram has a fixed group interval, if we use the y-axis to directly show quantity and each rectangle's height indicates the number of data points, we can both retain the distribution and simultaneously see the number in each group at a glance. All examples in this text use the non-standard histogram depiction with the y-axis denoting quantity.\\
 
@@ -392,13 +392,13 @@ A histogram is a graphical representation of the distribution of a dataset. It c
 \[ P\left(\left|\frac{1}{n}\sum_{i=1}^n X_i - \mu\right| < \epsilon\right) \rightarrow 1 \] 
 as \( n \rightarrow \infty \).\\
 
-\noindent Histograms can be also used to visualise the convergence of sample means to the population mean. Let \(X_1, \ldots, X_n\) be independent and identically distributed random variables with finite mean \( \mu \) and variance \( \sigma^2 \). Define the sample mean \( \bar{X} = \frac{1}{n}\sum_{i=1}^n X_i \). Then, as \( n \) becomes large, the variable 
+\noindent Histograms can be also used to visualise the convergence of sample means to the population mean. Define the sample mean \( \bar{X} = \frac{1}{n}\sum_{i=1}^n X_i \). Then, as \( n \) becomes large, the variable 
 \[ Z = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \] approaches a standard normal distribution.\\
 
 \noindent
 \textbf{Classical frequency histogram}\\
 
-\noindent The classical frequency histogram is constructed by dividing the data into a series of nonoverlapping intervals, called bins. The data points within each bin are then counted. The histogram can be fully described by two main factors: the bin width, and the bin origin, $t_{0}$.\\
+\noindent The classical frequency histogram is constructed by dividing the data into a series of nonoverlapping intervals, called bins. The data points within each bin are then counted. The histogram can be fully described by two main factors: the bin width, $h$, and the bin origin, $t_{0}$.\\
 
 \noindent
 In classical frequency histogram, usually we assume the shape of the histogram to be normal distribution. It is very important to choose the number of bins, since they have a huge impact on how we interpret the data. Too few bins may hide the information in a dataset, and too many bins can cause a lot of noise in a dataset. Fortunately, we can determine the optimal number of bins to use in a histogram by using a method known as Sturges’ Rule:
