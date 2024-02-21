@@ -90,13 +90,13 @@ Data visualisation is an area of interest in numerous method-specific publicatio
 \section{Introduction}
 
 \noindent
-This chapter underscores the enduring importance of data visualisation. Case examples both of the influential applications, but also dangerous misuses of data visualisations are showcased and analysed. These are sourced from BBC Ideas \cite{bbcdatavis}. Futhermore, an introduction to the R package \textit{ggplot2} is provided, along with a presentation of the datasets used throughout paper. 
+This chapter underscores the enduring importance of data visualisation. Case examples both of the influential applications, but also dangerous misuses of data visualisations are showcased and analysed. These are sourced from BBC Ideas \cite{bbcdatavis}. Futhermore, an introduction to the R package \textit{ggplot2} is provided, along with a presentation of the datasets used throughout paper.\\
 
 \subsection{Historical Background and Misuses of Data Visualisation}
 
 \noindent This section commences with an examination of two case studies delineating the efficacy and impact of data visualisation, succeeded by an exploration of two instances exemplifying problematic data misuse. The overarching objective is to underscore the significance of data visualisation while concurrently highlighting thenecessity of meticulous attention to detail, particularly in light of the potential for data visualisation to be exploited for malicious purposes.\\
- 
-\\\textbf{Motivations for Using Data Visualisations — Case 1}
+\noindent
+\\\textbf{Motivations for Using Data Visualisations — Case 1}\\
 
 \noindent
 Florence Nightingale was not only a social reformer and the founder of modern nursing but also a pioneering statistician. It was her application of data visualisation during the Crimean War that transformed the field of healthcare and pushed for social reform.\\  
@@ -140,7 +140,7 @@ Known as the ``warming stripes," this chart cleverly employs blues to indicate c
 Having observed the remarkable effectiveness of data visualisations, the significance of employing them correctly becomes apparent. The improper use of data visualisations holds the potential to significantly influence the public in misleading ways, resulting in undesired consequences.\\
 
 \noindent
-Inappropriate data visualisation can conceal trends rather than reveal them. Figure~\ref{fig:misuse1} illustrates an instance of this issue. On the left-hand side, an inappropriate scale is used - the y-scale ranging from 0 to 30 million dollars, obscuring the fluctuations in payroll spending. Conversely, on the right-hand side, observe that there's a significant increase of over 500,000 dollars in just two months. This revelation is substantial; considering inflation, 500,000 dollars in 1937 is worth well over 10 million dollars today \cite{worth}.
+Inappropriate data visualisation can conceal trends rather than reveal them. Figure~\ref{fig:misuse1} illustrates an instance of this issue. On the left-hand side, an inappropriate scale is used — the y-scale ranging from 0 to 30 million dollars, obscuring the fluctuations in payroll spending. Conversely, on the right-hand side, observe that there's a significant increase of over 500,000 dollars in just two months. This revelation is substantial; considering inflation, 500,000 dollars in 1937 is worth well over 10 million dollars today \cite{worth}.
 
 \begin{figure}[H]
     \centering
@@ -153,7 +153,7 @@ Inappropriate data visualisation can conceal trends rather than reveal them. Fig
 \textbf{Misuses of Data Visualisation — Case 2}
 
 \noindent
-One striking example of data visualisation misuse is found in the Kallikak Family tree - one of the most prominent eugenic narratives of the 20th century.\\
+One striking example of data visualisation misuse is found in the Kallikak Family tree — one of the most prominent eugenic narratives of the 20th century.\\
 
 \noindent
 The visualisation, shown in Figure~\ref{fig:familytree}, was created by the psychologist Henry Goddard and presented in his 1912 book, ``The Kallikak Family: A Study in the Heredity of Feeble-Mindedness." Goddard's narrative centered around Martin Kallikak, a soldier who, in addition to his marriage to a respected citizen, had a one-night stand with a ``feeble-minded" maid. Goddard believed that intellectual disabilities were inherited traits. In Goddard's account, the legitimate family was successful, while the children of the ``feeble-minded" maid were labeled as ``the lowest types of human beings." However, research has since revealed that the entire story was fictitious, as there was no record of the maid's existence \cite{fakedata}.\\
@@ -1868,13 +1868,15 @@ Additionally, it requires experimentation with different initialisation to mitig
 \newpage 
 
 \section{State-Of-The-Art Modern Approaches}
-Data visualisation plays a pivotal role in modern mathematics, aiding researchers and practitioners in gaining insights from complex datasets.  
+\noindent
+In this chapter, we will introduce some state-of-the-art graphical statistical methods published in recent research. In Chapter 6.1, we will introduce the foundational visualisation methods box plots and Q-Q plots. Building on this, we will discuss the theory and implementation of functional box plots and Q-Q Box plots, as published in the \textit{Journal of Computational and Graphical Statistics}.\\
 
-\subsection{Box Plots}
+\subsection{Introduction}
+\noindent 
+Box plots, also known as box-and-whisker plots, were introduced by John W. Tukey in 1977. Since then, they have become essential in exploratory data analysis, offering a summary of a dataset's central tendency, skewness, and outliers. These plots typically showcase the median, quartiles, and range, making them valuable for comparing and discerning patterns across different variables.\\
 
-\noindent Box plots, also known as box-and-whisker plots, were introduced by John W. Tukey in 1977 as a robust method for representing the distribution of a dataset. Over the years, box plots have become a staple in exploratory data analysis, offering a concise summary of the central tendency, spread, and skewness of a dataset. Traditional box plots display the median, quartiles, and any potential outliers, making them effective for comparing multiple datasets and identifying patterns within each.
-
-
+\noindent
+An example of box plots using the iris dataset is displayed in Figure~\ref{fig:box-plots}. Specifically, the right graph showcases a violin plot — which is a recent advancement in box plot techniques. The violin plot combines a box plot with a kernel density function, providing a mirrored density plot displayed in the same way as a box plot.\\
 <<box-plots, echo=FALSE, fig.height=5, fig.width=10, fig.pos='h', fig.cap='Comparison of Violin and Box Plots of Sepal Length by Species', message=FALSE>>=
 
 # Define custom color palette
@@ -1899,7 +1901,7 @@ violin_plot <- ggplot(iris, aes(x = Species, y = Sepal.Length, fill = Species)) 
 grid.arrange(boxplot, violin_plot, ncol = 2)
 @
 
-\noindent Recent advancements in box plot techniques include variations such as violin plots, found on the right side of Figure~\ref{fig:box-plots}, and modified box plots that incorporate additional statistical measures. These adaptations enhance the interpretability and utility of box plots across diverse applications, making them more versatile for researchers and data analysts.
+
 
 \subsection{Functional Box Plots}
 
