@@ -1551,7 +1551,7 @@ A biplot is a graphical representation that succinctly captures the relationship
 
 \noindent At their core, biplots offer a graphical representation of a standardised data matrix, whose rows \(n\) are the samples, and whose columns \(p\) are the variables, by projecting these onto a two-dimensional plane. To do this, mathematical computations derived from techniques like Singular Value Decomposition (SVD) and Principal Component Analysis (PCA) are required.\\
 
-\noindent In recent years, there have been substantial developments in biplots (REFRENCE Gower and Hand in 1996). The technique has expanded far beyond what is now referred to as the "classical biplots" or "PCA biplots". The concept now finds broad application in conjunction with various other techniques of multivariate analysis. Nevertheless, this section studies the foundations of this visualisation technique, and thus, the emphasis is on biplots within the framework of PCA.
+\noindent In recent years, there have been substantial developments in biplots \cite{gower1995biplots}. The technique has expanded far beyond what is now referred to as the "classical biplots" or "PCA biplots". The concept now finds broad application in conjunction with various other techniques of multivariate analysis. Nevertheless, this section studies the foundations of this visualisation technique, and thus, the emphasis is on biplots within the framework of PCA.
 
 \subsubsection{Construction of PCA Biplots}
 
@@ -1560,7 +1560,7 @@ A biplot is a graphical representation that succinctly captures the relationship
 
 \[\mathbf{X} = \mathbf{U}\mathbf{B}\mathbf{S}^{T}, \]
 
-\noindent where $\mathbf{U}$ is an $(n \times r)$ orthogonal matrix, and $\mathbf{S}$ is an $(p \times r)$ orthogonal matrix. The columns of $\mathbf{U}$ and $\mathbf{S}$ are the left and right singular vectors. $\mathbf{B}$ is a $(r \times r)$ diagonal matrix with entries $b_1, \ldots, b_r$ such that $b_1 \geq \dots b_r \geq 0$. These entries the singular values discussed later on. %Reference Miguel lecture\\
+\noindent where $\mathbf{U}$ is an $(n \times r)$ orthogonal matrix, and $\mathbf{S}$ is an $(p \times r)$ orthogonal matrix. The columns of $\mathbf{U}$ and $\mathbf{S}$ are the left and right singular vectors. $\mathbf{B}$ is a $(r \times r)$ diagonal matrix with entries $b_1, \ldots, b_r$ such that $b_1 \geq \dots b_r \geq 0$ \cite{jolliffe2003principal}. These entries the singular values discussed later on.\\
 
 \noindent In order to find this singular value decomposition, firstly we require the computation of the orthogonal diagonalisation  
 
@@ -1586,12 +1586,10 @@ A biplot is a graphical representation that succinctly captures the relationship
 \mathbf{u}_i = \frac{1}{\sigma_1}\mathbf{X}\mathbf{s}_i,
 \]
 
-\noindent where $\sigma_i$ are the singular values, and $\mathbf{s}_i$ are the columns of the matrix $\mathbf{S}$.\\
-
-%Reference: https://www.youtube.com/watch?v=vbGw7BTWYS4
+\noindent where $\sigma_i$ are the singular values, and $\mathbf{s}_i$ are the columns of the matrix $\mathbf{S}$ \cite{baker2005singular}.\\
 
 \noindent \textbf{PCA Biplot Construction}\\
-\noindent Now, the heuristic argument motivating PCA biplots is the following. Define $\mathbf{B}^{\alpha}$, for $0 \leq \alpha \leq 1$, as a diagonal matrix who's elements are $b_1^{\alpha}, \ldots, b_r^{\alpha}$, with a similar definition for $\mathbf{B}^{1-\alpha}.$ Then, with the decomposition of matrix $\mathbf{X}$ found through SVD, the data can be further rewritten as
+\noindent Now, the heuristic argument motivating PCA biplots is the following. Define $\mathbf{B}^{\alpha}$, for $0 \leq \alpha \leq 1$, as a diagonal matrix who's elements are $b_1^{\alpha}, \ldots, b_r^{\alpha}$, with a similar definition for $\mathbf{B}^{1-\alpha}$ \cite{biplotsnotes}. Then, with the decomposition of matrix $\mathbf{X}$ found through SVD, the data can be further rewritten as
 \[\mathbf{X} = \mathbf{U}\mathbf{B}^{\alpha}\mathbf{B}^{1-\alpha}\mathbf{S}^{T} = \mathbf{U}\mathbf{B}\mathbf{S}^{T} = \mathbf{G}\mathbf{H}^{T},\]
 
 \noindent where \[\mathbf{G} = [\mathbf{g}_1, \dots , \mathbf{g}_n] = \mathbf{U}\mathbf{B}^\alpha, \quad \mathbf{H}^T = [\mathbf{h}_1, \dots , \mathbf{h}_p]^T = \mathbf{B}^{1-\alpha}\mathbf{S}^T. \]
@@ -1600,7 +1598,7 @@ A biplot is a graphical representation that succinctly captures the relationship
 
 \[ x_{ij} = \mathbf{g}_i^T \mathbf{h}_j. \]
 
-\noindent Both the $\mathbf{g}_i$ and $\mathbf{h}_j$ have $r$ elements, and hence, if $\mathbf{X}$ has rank 2, all could be plotted as points in two-dimensional space. Note that for the more general case, where $r > 2$, $x_{ij}$ can be written as
+\noindent Both the $\mathbf{g}_i$ and $\mathbf{h}_j$ have $r$ elements, and hence, if $\mathbf{X}$ has rank 2, all could be plotted as points in two-dimensional space \cite{biplotsnotes}. Note that for the more general case, where $r > 2$, $x_{ij}$ can be written as
 
 \[
 x_{ij} = \sum_{k=1}^{r} u_{ik}b_{k}s_{jk}
@@ -1621,7 +1619,7 @@ _m\tilde{x}_{ij} = \sum_{k=1}^{m} \mathbf{g}_{ik}\mathbf{h}_{jk} = \mathbf{g}_{i
 
 \[ x_{ij} \approx \mathbf{g}_{i}^{*T}\mathbf{h}_{j}^{*}.\]
 
-\noindent Thus, $\mathbf{g}_i$ and $\mathbf{h}_j$ should provide a reasonable two-dimensional approximation of the $n$ observations and the $p$ variables.\\
+\noindent Thus, $\mathbf{g}_i$ and $\mathbf{h}_j$ should provide a reasonable two-dimensional approximation of the $n$ observations and the $p$ variables \cite{jolliffe2003principal}.\\
 
 \subsubsection{Biplots in Practice: The mtcars Dataset}
 
@@ -1632,7 +1630,8 @@ _m\tilde{x}_{ij} = \sum_{k=1}^{m} \mathbf{g}_{ik}\mathbf{h}_{jk} = \mathbf{g}_{i
 
 \noindent The manual construction, which results in the biplot shown in Figure~\ref{fig:PCAbiplot-deconstruction}, begins with data standardisation followed by SVD decomposition to obtain matrices representing row and column contributions to principal components. These matrices are then utilised to construct the biplot. Conversely, the in-built function approach employs R's \texttt{prcomp()} function for PCA and directly generates the biplot using \texttt{biplot()}, without the need for explicit mathematical operations. The product of this method is shown in Figure~\ref{fig:PCAbiplot}.
 
-<<PCAbiplot-deconstruction, fig.height=5, fig.width=8, fig.cap='PCA biplot of mtcars dataset: mathematical construction', message=FALSE>>=
+<<PCAbiplot-comparison, fig.height=6, fig.width=12, fig.cap='PCA biplots of mtcars dataset', message=FALSE>>=
+
 #MANUAL CONSTRUCTION OF A BIPLOT IN R
 # Standardise the data
 scaled_data <- scale(mtcars)
@@ -1655,23 +1654,21 @@ H <- t((L%^% (1-alpha)) %*% t(A))
 G2 <- G[, 1:2]
 H2 <- H[, 1:2]
 
-# Create a biplot-like plot
-par(mfrow = c(1, 2), pty = "s")
-plot(G2, xlim = c(-0.25, 0.4), xlab = "PC1", ylab = "PC2")
+# Set up a side-by-side layout
+par(mfrow = c(1, 2))
+
+# Create a biplot-like plot for manual construction with title
+plot(G2, xlim = c(-0.25, 0.4), xlab = "PC1", ylab = "PC2", main = "Manual Mathematical Construction")
+
 par(new = TRUE)
 plot(H2, xlim = c(-4.5, 8), ylim = c(-4.5, 8), col = "#EB7C69",
      xaxt = "n", yaxt = "n", xlab = "", ylab = "")
-
-# Draw pseudo-axis
 for (i in 1:ncol(scaled_data)) {
   lines(c(0, H2[i, 1]), c(0, H2[i, 2]), col = "#EB7C69", lwd = 1.5)
 }
 
 axis(3)
 axis(4)
-@
-
-<<PCAbiplot, fig.height=5, fig.width=8, fig.cap='PCA biplot of mtcars dataset: R built-in function', message=FALSE>>=
 
 #GENERATION OF A BIPLOT WITH R'S BUILT-IN FUNCTIONS
 # Standardise the data
@@ -1680,8 +1677,8 @@ scaled_data <- scale(mtcars)
 # Perform Principal Component Analysis (PCA)
 pca_result <- prcomp(scaled_data, scale. = TRUE)
 
-# Create a biplot
-biplot(pca_result, cex = 0.7)
+# Create a biplot with title
+biplot(pca_result, cex = 0.7, main = "R's Built-in Function")
 @
 
 \noindent Comparative analysis of these two plots reveals several key findings. The manual construction approach offers meticulous control over the biplot's customisation, allowing for fine-tuning of parameters and appearance. Conversely, the in-built function approach provides a user-friendly ideal for practitioners less inclined towards mathematical intricacies the visualisation. However, despite differences in implementation, both methodologies produce visually comparable biplots, showcasing identical patterns and relationships within the data.
@@ -1700,9 +1697,9 @@ biplot(pca_result, cex = 0.7)
 \mathbf{x}_i = f(y_i) + \epsilon_i, 
 \]
 
-\noindent where $\epsilon_i$ are errors with mean 0 and variance $\sigma^2 \mathbf{I}_p$ and $f: \mathbb{R}^1 \rightarrow \mathbb{R}^p$ is a continuous function called a curve.\\
+\noindent where $\epsilon_i$ are errors with mean 0 and variance $\sigma^2 \mathbf{I}_p$ and $f: \mathbb{R}^1 \rightarrow \mathbb{R}^p$ is a continuous function called a curve \cite{jolliffe2003principal}.\\
 
-\noindent For curve $\mathbf{f}$, the projection index $y_f(\mathbf{x})$ maps observation $\mathbf{x} \in \mathbb{R}^p$ to the point of $\mathbf{f}$ that is closest, returning the score (index). If there are several such points, it returns the largest (this is arbitrary choice to ensure it is a well defined function). Hence, the projection index is: 
+\noindent For curve $\mathbf{f}$, the projection index $y_f(\mathbf{x})$ maps observation $\mathbf{x} \in \mathbb{R}^p$ to the point of $\mathbf{f}$ that is closest, returning the score (index). If there are several such points, it returns the largest (this is arbitrary choice to ensure it is a well defined function). Hence, the projection index is \cite{jolliffe2003principal}: 
 \[
 y_f(\mathbf{x}) = \sup\limits_{y}\{y: ||\mathbf{x}-\mathbf{f}(y)||= \inf\limits_{\mu}||\mathbf{x}-\mathbf{f}(\mu)||\}.
 \]
@@ -1712,7 +1709,7 @@ y_f(\mathbf{x}) = \sup\limits_{y}\{y: ||\mathbf{x}-\mathbf{f}(y)||= \inf\limits_
 \min\limits_{\mathbf{f}}\sum_{i=1}^{n} ||\mathbf{x}_i - \mathbf{f}(y_{\mathbf{f}}(\mathbf{x}_i))||^2.
 \]
 
-\noindent To construct the principal curve, an algorithm put to work. This iterates between finding a curve $\mathbf{f}$ and then projecting the points onto that. More explicitly, the algorithms has the following form: %https://www.youtube.com/watch?v=lnxz3QAA1po 
+\noindent To construct the principal curve, an algorithm put to work. This iterates between finding a curve $\mathbf{f}$ and then projecting the points onto that. More explicitly, the algorithms has the following form \cite{jolliffe2003principal}: 
 
 \begin{enumerate}
   \item Initialise: let iteration counter $h = 1$ and set $\mathbf{y}^{(0)} = \mathbf{Xu}$, where $\mathbf{u}$ is the first PC vector. 
