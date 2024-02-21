@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.13)  21 FEB 2024 10:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.13)  21 FEB 2024 10:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1736,22 +1736,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 1399--1401
  []
 
 
-LaTeX Warning: Reference `fig:PCAbiplot-deconstruction' on page 44 undefined on input line 1402.
-
-
-LaTeX Warning: Reference `fig:PCAbiplot' on page 44 undefined on input line 1402.
-
-
 Overfull \hbox (23.79189pt too wide) in paragraph at lines 1415--1415
 [][]\OT1/cmtt/m/n/7 preprocess[] []<-[] []scaled_data[] []-[] []matrix[][]([][]colMeans[][](scaled_data),[] []nrow[] []=[] []nrow[][](scaled_data),[] []ncol[] []=[] []ncol[][](scaled_data),[] []byrow[] []=[] []TRUE[][])[][] 
  []
 
 [44]
-<figure/beamer-PCAbiplot-comparison-1.pdf, id=848, 867.24pt x 433.62pt>
-File: figure/beamer-PCAbiplot-comparison-1.pdf Graphic file (type pdf)
-<use figure/beamer-PCAbiplot-comparison-1.pdf>
-Package pdftex.def Info: figure/beamer-PCAbiplot-comparison-1.pdf  used on input line 1457.
-(pdftex.def)             Requested size: 433.62pt x 216.80946pt.
+<figure/beamer-PCAbiplot-1.pdf, id=851, 867.24pt x 397.485pt>
+File: figure/beamer-PCAbiplot-1.pdf Graphic file (type pdf)
+<use figure/beamer-PCAbiplot-1.pdf>
+Package pdftex.def Info: figure/beamer-PCAbiplot-1.pdf  used on input line 1457.
+(pdftex.def)             Requested size: 433.62pt x 198.742pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 1470--1471
 
@@ -1762,7 +1756,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.23}) ha
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
 l.1478 \[
-          <./figure/beamer-PCAbiplot-comparison-1.pdf>]
+          <./figure/beamer-PCAbiplot-1.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 1482--1483
 
  []
@@ -1772,7 +1766,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1505--1506
 
  []
 
-<figure/beamer-P-curves-1.pdf, id=867, 650.43pt x 289.08pt>
+<figure/beamer-P-curves-1.pdf, id=869, 650.43pt x 289.08pt>
 File: figure/beamer-P-curves-1.pdf Graphic file (type pdf)
 <use figure/beamer-P-curves-1.pdf>
 Package pdftex.def Info: figure/beamer-P-curves-1.pdf  used on input line 1512.
@@ -1831,7 +1825,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1589--1590
 
  []
 
-<figure/beamer-t-SNE-1.pdf, id=898, 361.35pt x 216.81pt>
+<figure/beamer-t-SNE-1.pdf, id=900, 361.35pt x 216.81pt>
 File: figure/beamer-t-SNE-1.pdf Graphic file (type pdf)
 <use figure/beamer-t-SNE-1.pdf>
 Package pdftex.def Info: figure/beamer-t-SNE-1.pdf  used on input line 1594.
@@ -1862,7 +1856,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1612--1614
  []
 
 [50]
-<figure/beamer-box-plots-1.pdf, id=918, 722.7pt x 361.35pt>
+<figure/beamer-box-plots-1.pdf, id=920, 722.7pt x 361.35pt>
 File: figure/beamer-box-plots-1.pdf Graphic file (type pdf)
 <use figure/beamer-box-plots-1.pdf>
 Package pdftex.def Info: figure/beamer-box-plots-1.pdf  used on input line 1631.
@@ -1890,7 +1884,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<figure/beamer-QQplots-1.pdf, id=930, 578.16pt x 289.08pt>
+<figure/beamer-QQplots-1.pdf, id=932, 578.16pt x 289.08pt>
 File: figure/beamer-QQplots-1.pdf Graphic file (type pdf)
 <use figure/beamer-QQplots-1.pdf>
 Package pdftex.def Info: figure/beamer-QQplots-1.pdf  used on input line 1663.
@@ -2281,26 +2275,22 @@ Underfull \hbox (badness 6284) in paragraph at lines 117--121
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-10-10>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `main_file.out' has not changed.
 (rerunfilecheck)             Checksum: A54A6CA655EE4C4932503560690EA8FB;13363.
  ) 
 Here is how much of TeX's memory you used:
- 13195 strings out of 476463
- 208645 string characters out of 5799821
+ 13193 strings out of 476463
+ 208490 string characters out of 5799821
  1938043 words of memory out of 5000000
- 34531 multiletter control sequences out of 15000+600000
+ 34529 multiletter control sequences out of 15000+600000
  569566 words of font info for 80 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  75i,10n,79p,1201b,635s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main_file.pdf (56 pages, 7644008 bytes).
+Output written on main_file.pdf (56 pages, 7644036 bytes).
 PDF statistics:
- 1119 PDF objects out of 1200 (max. 8388607)
- 945 compressed objects within 10 object streams
+ 1121 PDF objects out of 1200 (max. 8388607)
+ 947 compressed objects within 10 object streams
  204 named destinations out of 1000 (max. 500000)
  674 words of extra memory for PDF output out of 10000 (max. 10000000)
 

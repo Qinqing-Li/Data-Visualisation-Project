@@ -1628,9 +1628,9 @@ _m\tilde{x}_{ij} = \sum_{k=1}^{m} \mathbf{g}_{ik}\mathbf{h}_{jk} = \mathbf{g}_{i
 \noindent \textbf{Methodologies Discussion}\\
 \noindent Traditionally, biplots are constructed manually through mathematical operations based on SVD discussed previously. However, with computational tools like R, in-built functions such as \texttt{prcomp()} and \texttt{biplot()} streamline the process, removing tidious mathematical intricacies, which becomes particularly interesting when working with larger datasets.\\
 
-\noindent The manual construction, which results in the biplot shown in Figure~\ref{fig:PCAbiplot-deconstruction}, begins with data standardisation followed by SVD decomposition to obtain matrices representing row and column contributions to principal components. These matrices are then utilised to construct the biplot. Conversely, the in-built function approach employs R's \texttt{prcomp()} function for PCA and directly generates the biplot using \texttt{biplot()}, without the need for explicit mathematical operations. The product of this method is shown in Figure~\ref{fig:PCAbiplot}.
+\noindent The manual construction, which results in the biplot shown in Figure~\ref{fig:PCAbiplot}, begins with data standardisation followed by SVD decomposition to obtain matrices representing row and column contributions to principal components. These matrices are then utilised to construct the biplot. Conversely, the in-built function approach employs R's \texttt{prcomp()} function for PCA and directly generates the biplot using \texttt{biplot()}, without the need for explicit mathematical operations. The product of this method is shown in Figure~\ref{fig:PCAbiplot}.
 
-<<PCAbiplot-comparison, fig.height=6, fig.width=12, fig.cap='PCA biplots of mtcars dataset', message=FALSE>>=
+<<PCAbiplot, fig.height=5.5, fig.width=12, fig.cap='PCA biplots of mtcars dataset', message=FALSE>>=
 
 #MANUAL CONSTRUCTION OF A BIPLOT IN R
 # Standardise the data
