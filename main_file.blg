@@ -4,45 +4,45 @@ The top-level auxiliary file: main_file.aux
 The style file: plain.bst
 Database file #1: reference.bib
 Warning--to sort, need author or key in worth
-You've used 25 entries,
+You've used 26 entries,
             2118 wiz_defined-function locations,
-            650 strings with 7575 characters,
-and the built_in function-call counts, 6223 in all, are:
-= -- 608
-> -- 210
+            658 strings with 7745 characters,
+and the built_in function-call counts, 6546 in all, are:
+= -- 640
+> -- 223
 < -- 2
-+ -- 91
-- -- 62
-* -- 320
-:= -- 1061
-add.period$ -- 85
-call.type$ -- 25
-change.case$ -- 99
++ -- 96
+- -- 66
+* -- 345
+:= -- 1115
+add.period$ -- 88
+call.type$ -- 26
+change.case$ -- 104
 chr.to.int$ -- 0
-cite$ -- 26
-duplicate$ -- 242
-empty$ -- 587
-format.name$ -- 62
-if$ -- 1324
+cite$ -- 27
+duplicate$ -- 253
+empty$ -- 614
+format.name$ -- 66
+if$ -- 1392
 int.to.chr$ -- 0
-int.to.str$ -- 25
-missing$ -- 22
-newline$ -- 138
-num.names$ -- 48
-pop$ -- 154
+int.to.str$ -- 26
+missing$ -- 23
+newline$ -- 143
+num.names$ -- 50
+pop$ -- 157
 preamble$ -- 1
-purify$ -- 81
+purify$ -- 85
 quote$ -- 0
-skip$ -- 165
+skip$ -- 173
 stack$ -- 0
-substring$ -- 300
-swap$ -- 27
+substring$ -- 326
+swap$ -- 28
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 86
+type$ -- 90
 warning$ -- 1
-while$ -- 59
-width$ -- 27
-write$ -- 283
+while$ -- 62
+width$ -- 28
+write$ -- 294
 (There was 1 warning)

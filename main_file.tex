@@ -1654,11 +1654,51 @@ Data visualisation plays a pivotal role in modern mathematics, aiding researcher
 
 \noindent Recent advancements in box plot techniques include variations such as violin plots, found on the right side of Figure~\ref{fig:box-plots}, and modified box plots that incorporate additional statistical measures. These adaptations enhance the interpretability and utility of box plots across diverse applications, making them more versatile for researchers and data analysts.
 
-\subsection{Functional Box Plots}
+\subsection{Functional Box Plot}
 
-\noindent Functional data analysis (FDA) extends traditional statistical methods to handle functional data, where the observations are curves or functions rather than single values. Functional box plots were introduced as an extension of box plots to accommodate the unique challenges posed by functional data. Developed by Hadley Wickham and Dianne Cook in 2011, functional box plots offer a visual representation of the central tendency, spread, and shape of a distribution for functional datasets.
+\noindent
+Building upon the traditional box plot, which is designed to summarize scalar data by depicting their quantiles and outliers, functional box plot focuses on datasets where each observation is a function over a certain domain, such as time or space. Thus, functional box plot is a powerful visualisation technique that offers a visual representation of the central tendency, spread, and shape of a distribution for functional datasets. By employing concepts such as Band Depth (BD), functional box plots allow for the assessment of centrality, variability, and the detection of outliers within a dataset of functions. These plots provide insights into the median function, the spread of the data, and functional outliers that deviate significantly from the overall data structure.\\
 
-\noindent Functional box plots have found applications in various fields, such as biology, finance, and signal processing, where researchers deal with data in the form of curves or functions. The incorporation of concepts such as depth functions and band depth in functional box plots has improved their robustness and made them suitable for analyzing complex functional datasets.
+\noindent
+Therefore, functional box plot connects the intuitive visual appeal of box plots with the complex, multidimensional nature of functional data. This subsection aims to unravel the methodology behind functional box plots, elucidating their construction, interpretation, and application in real-world datasets, which enables a deeper understanding of the patterns and anomalies inherent in functional data.
+
+\subsubsection{Theory of Funtional Box Plot}
+
+The foundation of constructing a boxplot is the organisation of data. This process is straightforward for univariate data, where observations are ordered from the smallest to the largest value. However, for multivariate data, this task becomes significantly more complex, necessitating advanced methodologies to establish a meaningful order. In the context of multivariate data, various metrics known as data depth have been developed to assess the centrality (or depth) of an observation or its deviation (outlyingness) from the central tendency.\\
+
+\noindent
+In the functional data analysis, BD offers a systematic framework to rank a set of curves, facilitating the identification of observations that are central. This concept is instrumental in defining functional quantiles and in assessing the centrality or the extent of deviation of specific curves. BD aims to quantify the order among sample curves by computing their BD values and ranking them accordingly. Specifically, the BD for any given function $y(t)$ within the set $\{y_1(t),\dots,y_n(t)\}$ is calculated by examining all possible combinations of $j$ functions from the set, forming a band for each combination, and determining the proportion of these bands that completely encompass $y(t)$.\\
+
+\noindent
+Hence, consider a set of observed functions $\{y_1(t),\dots,y_n(t)\}$ defined over an interval $I$ in $\mathbb{R}$. The graph of a function $y(t)$ is represented as $G(y) = \{(t,y(t)) : t \in I\}$. Define $B(y_{i_1},\dots,y_{i_k}) = \{(t,x(t)): t \in I, \min_{r=1,\dots,k} y_{i_r}(t) \leq x(t) \leq \max_{r=1,\dots,k} y_{i_r}(t)\}$ as the band of curves $y_{i_1},\dots,y_{i_k}$ \cite{SunGenton2011FunctionalBoxplots}. Let $J$ denote the number of curves that define a band, which is chosen to be any value from 2 to $n$, inclusive.\\
+
+\noindent
+Then, for a stochastic process $Y(t)$ generating the observations $y_1(t),\dots,y_n(t)$, the population version of BD for a curve $y(t)$ relative to a probability measure $P$ is determined by the formula\cite{SunGenton2011FunctionalBoxplots}:
+
+\[BD_{J}(y, P) = \sum_{j=2}^{J} BD^{(j)}(y,P)=\sum_{j=2}^{J} P\{G(y) \subset B(Y_1,\dots,Y_j\}, \]
+
+\noindent
+where $B(Y_1,\dots,Y_j)$ is a band delimited by $j$ random curves. Here, $BD^{(j)}(y,P)$ calculates the probability that the graph of $y(t)$ lies entirely within a band formed by any selection of $j$ functions. These bands are delineated by the minimum and maximum values at each point $t$ among the selected $j$ functions. This formulation of BD facilitates a nuanced understanding of curve centrality and variability within functional data, laying the groundwork for the construction of functional boxplots. Then we can define the sample version of $BD(j)(y,P)$, which is the fraction of the bands determined by $j$ different sample curves containing the whole graph of the curve $y(t)$ \cite{SunGenton2011FunctionalBoxplots}:
+
+\[BD_{n}^{(j)}(y) = {\binom{n}{j}}^{-1} \sum_{1 \leq i_1 < i_2 < \cdots < i_j \leq n} I\{G(y) \subseteq B(y_{i_1}, \ldots, y_{i_j})\}, \]
+
+\noindent
+where $I\{·\}$ denotes the indicator function. Hence, by computing the fraction of the bands containing the curve $y(t)$, the bigger the value of band depth, the more central position the curve has. Then, the sample band depth of a curve $y(t)$ is \cite{SunGenton2011FunctionalBoxplots}
+
+\[BD_{n,J}(y) = \sum_{j=2}^{J} BD^{(j)}_n (y).\]
+
+\noindent
+A sample median function is a curve from the sample with largest depth value, defined by \cite{SunGenton2011FunctionalBoxplots} 
+
+\[\text{argmax}_{y \in {y_1,\dots,y_n}} BD_{n,J}(y).\]
+
+\noindent
+In a traditional boxplot, the box represents the central 50\% of the data.  In functional box plot, estimate the central region of data using a band defined by the $\alpha$ proportion (where $0 < \alpha < 1$) of the deepest curves in the sample. Specifically, the central region for 50\% of the sample, denoted as $C_{0.5}$, is calculated using the formula \cite{SunGenton2011FunctionalBoxplots}:
+
+\[C_{0.5} = \{(t, y(t)) : \min_{r=1, \ldots, \lceil n/2 \rceil} y[r](t) \leq y(t) \leq \max_{r=1, \ldots, \lceil n/2 \rceil} y[r](t)\},\]
+
+\noindent
+where $\lceil n/2 \rceil$ is the smallest integer not less than half of the sample size. This 50\% central region functions similarly to the inter-quartile range (IQR) in a boxplot, providing a measure of the spread of the central 50\% of the curves. This method is robust, less affected by outliers or extreme values, and offers a clearer visualization of the distribution's central spread. Within this central region, the curve that represents the median, denoted as $y_{[1]}(t)$, signifies the most centrally located curve with the highest band depth, serving as a robust measure of central tendency.
 
 \subsubsection{Functional Box Plot Example}
 XXXX
