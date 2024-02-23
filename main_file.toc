@@ -62,8 +62,8 @@
 \contentsline {subsubsection}{\numberline {6.1.1}Box Plots in Practice}{52}{subsubsection.6.1.1}%
 \contentsline {subsubsection}{\numberline {6.1.2}Q–Q Plots in Practice}{52}{subsubsection.6.1.2}%
 \contentsline {subsection}{\numberline {6.2}Functional Box Plots}{54}{subsection.6.2}%
-\contentsline {subsubsection}{\numberline {6.2.1}Functional Box Plot Example}{54}{subsubsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.3}Q–Q Boxplots}{54}{subsection.6.3}%
-\contentsline {subsubsection}{\numberline {6.3.1}Construction of QQ Boxplots}{54}{subsubsection.6.3.1}%
-\contentsline {subsubsection}{\numberline {6.3.2}QQ Boxplots in Practice}{55}{subsubsection.6.3.2}%
-\contentsline {section}{\numberline {7}Index}{57}{section.7}%
+\contentsline {subsubsection}{\numberline {6.2.1}Theory of Funtional Box Plot}{54}{subsubsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.3}Q–Q Boxplots}{55}{subsection.6.3}%
+\contentsline {subsubsection}{\numberline {6.3.1}Construction of QQ Boxplots}{56}{subsubsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.2}QQ Boxplots in Practice}{56}{subsubsection.6.3.2}%
+\contentsline {section}{\numberline {7}Index}{58}{section.7}%
