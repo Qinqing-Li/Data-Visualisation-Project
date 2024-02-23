@@ -50,6 +50,7 @@ library(gifski)
 library(viridis)
 library(expm)
 library(princurve)
+library(qqboxplot)
 data(ToothGrowth)
 data(mtcars)
 data(trees)
@@ -1953,7 +1954,42 @@ par(mfrow = c(1, 1))
 XXXX
 
 \subsection{Q–Q box plots}
+In this section, we will introduce the QQ boxplot, which combines the advantages from the boxplot and the QQ plot. The QQ boxplot integrates the box plot's ability to summarize data through its quartiles and the q-q plot's capability to compare data distributions to a theoretical distribution (often the normal distribution).\\
 
+\noindent 
+Although QQ plots and box plots are very effiective in data visualization, they have there limitations as well. QQ plot is less effective than box plot in highlighting summary quantitles, and it also suffers the readability when we place multiple samples together. Box plot usually has unreliable tail information when $n<100$, therefor may not suitable for some research questions that need more accurate estimates of extreme quantiles.\\
+
+\noindent
+In this section, we will introduce the QQ boxplot, which combines the advantages from the boxplot and the QQ plot. The QQ boxplot integrates the box plot's ability to summarize data through its quartiles and the q-q plot's capability to compare data distributions to a theoretical distribution (often the normal distribution).\\
+
+\noindent 
+The QQ boxplot are constructed in three steps. First, constructing the box. Second, drwaing the whiskers and confidence bands. Third, drawing the outside values. The first and third steps are as same as in box plots.
+
+\subsubsection{QQ Boxplot in Practice}
+The resulting Q-Q boxplot shows the distribution of sepal length values within each iris species, allowing comparison whether they come from a normal distribution. Outliers are also indicated in the plot.\\
+
+<<QQboxplots, echo=FALSE, fig.height=4, fig.width=8, fig.pos='h', fig.cap='Q-Q  boxplot of iris dataset', message=FALSE,warning=FALSE>>=
+my_palette <- c("#459395", "#EB7C69", "#FDA638")
+qqplot <- iris %>%  
+  ggplot(aes(Species, Sepal.Length, fill = Species)) + 
+  geom_qqboxplot(varwidth = TRUE, notch = TRUE) +
+  scale_fill_manual(values = my_palette) + # This line sets the color palette
+  ylab("Sepal Length") + 
+  ggtitle("Sepal Length Q-Q Boxplot") +
+  theme(
+    plot.title = element_text(size=14, face="plain", hjust=0.5),
+    axis.title.x = element_text(size=12),
+    axis.title.y = element_text(size=12),
+    legend.position = "none"  # This line removes the legend, if desired
+  ) 
+
+print(qqplot)
+
+@
+
+\noindent
+From the above Figure~\ref{fig:QQboxplots}, we can find out easily that the middle of our QQ boxplot is same as in the boxplot as we seen in Figure~\ref{fig:box-plots}. In addition, there are more details in tails behavior simultaneously. We can see that the right-tail deviations and left-tail deviations all lie inside of the confidence bands calculated with the bootstrap method, which means the sample distribution of our dataset is consistent with the theoretical distribution being compared to, that is a normal distribution.
+\noindent
 
 
 

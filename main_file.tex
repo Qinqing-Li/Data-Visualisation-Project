@@ -1619,7 +1619,7 @@ Additionally, it requires experimentation with different initialisation to mitig
 
 \section{State-Of-The-Art Modern Approaches}
 \noindent
-In this chapter, we will introduce some state-of-the-art graphical statistical methods published in recent research. In Chapter 6.1, we will introduce the foundational visualisation methods box plots and Q–Q plots. Building on this, we will discuss the theory and implementation of functional box plots and Q–Q Box plots, as published in recent articles in the \textit{Journal of Computational and Graphical Statistics}.\\
+In this chapter, we will introduce some state-of-the-art graphical statistical methods published in recent research. In Chapter 6.1, we will introduce the foundational visualisation methods box plots and Q–Q plots. Building on this, we will discuss the theory and implementation of functional box plots and Q–Q Box plots, as published in recent articles in the \textit{Journal of Computational and Graphical Statistics}.
 
 \subsection{Introduction}
 
@@ -1678,7 +1678,35 @@ An example of box plots using the iris dataset is displayed in Figure~\ref{fig:b
 XXXX
 
 \subsection{Q–Q box plots}
+In this section, we will introduce the QQ boxplot, which combines the advantages from the boxplot and the QQ plot. The QQ boxplot integrates the box plot's ability to summarize data through its quartiles and the q-q plot's capability to compare data distributions to a theoretical distribution (often the normal distribution).\\
 
+\noindent 
+Although QQ plots and box plots are very effiective in data visualization, they have there limitations as well. QQ plot is less effective than box plot in highlighting summary quantitles, and it also suffers the readability when we place multiple samples together. Box plot usually has unreliable tail information when $n<100$, therefor may not suitable for some research questions that need more accurate estimates of extreme quantiles.\\
+
+\noindent
+In this section, we will introduce the QQ boxplot, which combines the advantages from the boxplot and the QQ plot. The QQ boxplot integrates the box plot's ability to summarize data through its quartiles and the q-q plot's capability to compare data distributions to a theoretical distribution (often the normal distribution).\\
+
+\noindent 
+The QQ boxplot are constructed in three steps. First, constructing the box. Second, drwaing the whiskers and confidence bands. Third, drawing the outside values. The first and third steps are as same as in box plots.
+
+\subsubsection{QQ Boxplot in Practice}
+The resulting Q-Q boxplot shows the distribution of sepal length values within each iris species, allowing comparison whether they come from a normal distribution. Outliers are also indicated in the plot.\\
+
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[h]
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-QQboxplots-1} 
+
+}
+
+\caption[Q-Q  boxplot of iris dataset]{Q-Q  boxplot of iris dataset}\label{fig:QQboxplots}
+\end{figure}
+
+\end{knitrout}
+
+\noindent
+From the above Figure~\ref{fig:QQboxplots}, we can find out easily that the middle of our QQ boxplot is same as in the boxplot as we seen in Figure~\ref{fig:box-plots}. In addition, there are more details in tails behavior simultaneously. We can see that the right-tail deviations and left-tail deviations all lie inside of the confidence bands calculated with the bootstrap method, which means the sample distribution of our dataset is consistent with the theoretical distribution being compared to, that is a normal distribution.
+\noindent
 
 
 
