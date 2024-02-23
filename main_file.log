@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.27)  23 FEB 2024 02:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.27)  23 FEB 2024 13:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -546,7 +546,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 111--113
 
  []
 
-<image_reference/Nightingale-mortality.jpg, id=376, 7022.235pt x 3840.3475pt>
+<image_reference/Nightingale-mortality.jpg, id=381, 7022.235pt x 3840.3475pt>
 File: image_reference/Nightingale-mortality.jpg Graphic file (type jpg)
 <use image_reference/Nightingale-mortality.jpg>
 Package pdftex.def Info: image_reference/Nightingale-mortality.jpg  used on inp
@@ -568,7 +568,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 127--132
 
  []
 
-<image_reference/global.png, id=387, 910.48155pt x 455.301pt>
+<image_reference/global.png, id=392, 910.48155pt x 455.301pt>
 File: image_reference/global.png Graphic file (type png)
 <use image_reference/global.png>
 Package pdftex.def Info: image_reference/global.png  used on input line 138.
@@ -583,7 +583,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 149--151
 
  []
 
-<image_reference/misuse1.png, id=391, 681.54625pt x 511.9125pt>
+<image_reference/misuse1.png, id=396, 681.54625pt x 511.9125pt>
 File: image_reference/misuse1.png Graphic file (type png)
 <use image_reference/misuse1.png>
 Package pdftex.def Info: image_reference/misuse1.png  used on input line 157.
@@ -604,7 +604,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 168--170
 
  []
 
-<image_reference/familytree.jpg, id=406, 955.57pt x 497.86pt>
+<image_reference/familytree.jpg, id=411, 955.57pt x 497.86pt>
 File: image_reference/familytree.jpg Graphic file (type jpg)
 <use image_reference/familytree.jpg>
 Package pdftex.def Info: image_reference/familytree.jpg  used on input line 176
@@ -811,7 +811,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 [10]
-<figure/beamer-data-plots-1.pdf, id=446, 794.97pt x 578.16pt>
+<figure/beamer-data-plots-1.pdf, id=451, 794.97pt x 578.16pt>
 File: figure/beamer-data-plots-1.pdf Graphic file (type pdf)
 <use figure/beamer-data-plots-1.pdf>
 Package pdftex.def Info: figure/beamer-data-plots-1.pdf  used on input line 266
@@ -829,7 +829,7 @@ s been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.276 
        <./figure/beamer-data-plots-1.pdf>]
-<figure/beamer-abs-plots-1.pdf, id=463, 867.24pt x 289.08pt>
+<figure/beamer-abs-plots-1.pdf, id=468, 867.24pt x 289.08pt>
 File: figure/beamer-abs-plots-1.pdf Graphic file (type pdf)
 <use figure/beamer-abs-plots-1.pdf>
 Package pdftex.def Info: figure/beamer-abs-plots-1.pdf  used on input line 294.
@@ -908,7 +908,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 331--333
 
  []
 
-<figure/beamer-colour-plot-1.pdf, id=496, 722.7pt x 216.81pt>
+<figure/beamer-colour-plot-1.pdf, id=501, 722.7pt x 216.81pt>
 File: figure/beamer-colour-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-colour-plot-1.pdf>
 Package pdftex.def Info: figure/beamer-colour-plot-1.pdf  used on input line 33
@@ -941,7 +941,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 359--360
 
  []
 
-<figure/beamer-cogload-plot-1.pdf, id=509, 722.7pt x 216.81pt>
+<figure/beamer-cogload-plot-1.pdf, id=514, 722.7pt x 216.81pt>
 File: figure/beamer-cogload-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-cogload-plot-1.pdf>
 Package pdftex.def Info: figure/beamer-cogload-plot-1.pdf  used on input line 3
@@ -1049,12 +1049,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 434--435
 
  []
 
-<figure/beamer-hist2-1.pdf, id=529, 361.35pt x 289.08pt>
+<figure/beamer-hist2-1.pdf, id=534, 361.35pt x 289.08pt>
 File: figure/beamer-hist2-1.pdf Graphic file (type pdf)
 <use figure/beamer-hist2-1.pdf>
 Package pdftex.def Info: figure/beamer-hist2-1.pdf  used on input line 445.
 (pdftex.def)             Requested size: 208.13574pt x 166.51082pt.
-<figure/beamer-kde3-1.pdf, id=530, 361.35pt x 289.08pt>
+<figure/beamer-kde3-1.pdf, id=535, 361.35pt x 289.08pt>
 File: figure/beamer-kde3-1.pdf Graphic file (type pdf)
 <use figure/beamer-kde3-1.pdf>
 Package pdftex.def Info: figure/beamer-kde3-1.pdf  used on input line 457.
@@ -1129,7 +1129,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<figure/beamer-barcharts-1.pdf, id=557, 722.7pt x 216.81pt>
+<figure/beamer-barcharts-1.pdf, id=562, 722.7pt x 216.81pt>
 File: figure/beamer-barcharts-1.pdf Graphic file (type pdf)
 <use figure/beamer-barcharts-1.pdf>
 Package pdftex.def Info: figure/beamer-barcharts-1.pdf  used on input line 506.
@@ -1154,7 +1154,7 @@ l.538
        <./figure/beamer-barcharts-1.pdf>]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <7> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 551.
-<figure/beamer-all_exchange_rates-1.pdf, id=579, 418.56375pt x 252.945pt>
+<figure/beamer-all_exchange_rates-1.pdf, id=584, 418.56375pt x 252.945pt>
 File: figure/beamer-all_exchange_rates-1.pdf Graphic file (type pdf)
 <use figure/beamer-all_exchange_rates-1.pdf>
 Package pdftex.def Info: figure/beamer-all_exchange_rates-1.pdf  used on input 
@@ -1199,7 +1199,7 @@ free_y"[][],[] []ncol[] []=[] []1[][])[] []+[] []labs[][]([][]x[] []=[] []"Date
 [][] 
  []
 
-<figure/beamer-decomposition_of_time_series-1.pdf, id=604, 361.35pt x 216.81pt>
+<figure/beamer-decomposition_of_time_series-1.pdf, id=609, 361.35pt x 216.81pt>
 
 File: figure/beamer-decomposition_of_time_series-1.pdf Graphic file (type pdf)
 <use figure/beamer-decomposition_of_time_series-1.pdf>
@@ -1242,7 +1242,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 647--649
 
  []
 
-<figure/beamer-ACF-1.pdf, id=619, 289.08pt x 216.81pt>
+<figure/beamer-ACF-1.pdf, id=624, 289.08pt x 216.81pt>
 File: figure/beamer-ACF-1.pdf Graphic file (type pdf)
 <use figure/beamer-ACF-1.pdf>
 Package pdftex.def Info: figure/beamer-ACF-1.pdf  used on input line 662.
@@ -1280,7 +1280,7 @@ Overfull \hbox (3.35919pt too wide) in paragraph at lines 710--712
  []
 
 [26]
-<figure/beamer-roc-1.pdf, id=648, 252.945pt x 252.945pt>
+<figure/beamer-roc-1.pdf, id=653, 252.945pt x 252.945pt>
 File: figure/beamer-roc-1.pdf Graphic file (type pdf)
 <use figure/beamer-roc-1.pdf>
 Package pdftex.def Info: figure/beamer-roc-1.pdf  used on input line 729.
@@ -1311,18 +1311,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 770--772
 
  []
 
-<figure/beamer-spacetime-fy22-1.pdf, id=667, 505.89pt x 433.62pt>
+<figure/beamer-spacetime-fy22-1.pdf, id=672, 505.89pt x 433.62pt>
 File: figure/beamer-spacetime-fy22-1.pdf Graphic file (type pdf)
 <use figure/beamer-spacetime-fy22-1.pdf>
 Package pdftex.def Info: figure/beamer-spacetime-fy22-1.pdf  used on input line
  790.
 (pdftex.def)             Requested size: 208.13574pt x 178.40068pt.
-<image_reference/mapshoot.png, id=668, 795.97375pt x 710.655pt>
+<image_reference/mapshoot.png, id=673, 795.97375pt x 710.655pt>
 File: image_reference/mapshoot.png Graphic file (type png)
 <use image_reference/mapshoot.png>
 Package pdftex.def Info: image_reference/mapshoot.png  used on input line 801.
 (pdftex.def)             Requested size: 208.13574pt x 185.81778pt.
-<figure/beamer-fire-by-months-fy13-22-1.pdf, id=669, 361.35pt x 187.70125pt>
+<figure/beamer-fire-by-months-fy13-22-1.pdf, id=674, 361.35pt x 187.70125pt>
 File: figure/beamer-fire-by-months-fy13-22-1.pdf Graphic file (type pdf)
 <use figure/beamer-fire-by-months-fy13-22-1.pdf>
 Package pdftex.def Info: figure/beamer-fire-by-months-fy13-22-1.pdf  used on in
@@ -1352,7 +1352,7 @@ as been already used, duplicate ignored
 l.843 
        <./figure/beamer-spacetime-fy22-1.pdf> <./image_reference/mapshoot.png> 
 <./figure/beamer-fire-by-months-fy13-22-1.pdf>]
-<figure/beamer-bubble-plot-construction-1.pdf, id=699, 794.97pt x 252.945pt>
+<figure/beamer-bubble-plot-construction-1.pdf, id=704, 794.97pt x 252.945pt>
 File: figure/beamer-bubble-plot-construction-1.pdf Graphic file (type pdf)
 <use figure/beamer-bubble-plot-construction-1.pdf>
 Package pdftex.def Info: figure/beamer-bubble-plot-construction-1.pdf  used on 
@@ -1414,7 +1414,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 863--865
 
  []
 
-<figure/beamer-gapminder_static-1.pdf, id=700, 289.08pt x 216.81pt>
+<figure/beamer-gapminder_static-1.pdf, id=705, 289.08pt x 216.81pt>
 File: figure/beamer-gapminder_static-1.pdf Graphic file (type pdf)
 <use figure/beamer-gapminder_static-1.pdf>
 Package pdftex.def Info: figure/beamer-gapminder_static-1.pdf  used on input li
@@ -1498,7 +1498,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 930--931
 
  []
 
-<figure/beamer-bubble-plot-1.pdf, id=727, 794.97pt x 361.35pt>
+<figure/beamer-bubble-plot-1.pdf, id=732, 794.97pt x 361.35pt>
 File: figure/beamer-bubble-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-bubble-plot-1.pdf>
 Package pdftex.def Info: figure/beamer-bubble-plot-1.pdf  used on input line 93
@@ -1603,7 +1603,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1038--1040
 
  []
 
-<figure/beamer-cor-matrix-mtcars2-1.pdf, id=761, 361.35pt x 208.78pt>
+<figure/beamer-cor-matrix-mtcars2-1.pdf, id=766, 361.35pt x 208.78pt>
 File: figure/beamer-cor-matrix-mtcars2-1.pdf Graphic file (type pdf)
 <use figure/beamer-cor-matrix-mtcars2-1.pdf>
 Package pdftex.def Info: figure/beamer-cor-matrix-mtcars2-1.pdf  used on input 
@@ -1621,7 +1621,7 @@ as been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.1088 \end{kframe}
                     <./figure/beamer-cor-matrix-mtcars2-1.pdf>]
-<figure/beamer-scatter-plot-1.pdf, id=775, 289.08pt x 187.70125pt>
+<figure/beamer-scatter-plot-1.pdf, id=780, 289.08pt x 187.70125pt>
 File: figure/beamer-scatter-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-scatter-plot-1.pdf>
 Package pdftex.def Info: figure/beamer-scatter-plot-1.pdf  used on input line 1
@@ -1746,7 +1746,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1182--1184
 
  []
 
-<figure/beamer-estate-data-plot-1.pdf, id=804, 252.945pt x 180.675pt>
+<figure/beamer-estate-data-plot-1.pdf, id=809, 252.945pt x 180.675pt>
 File: figure/beamer-estate-data-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-estate-data-plot-1.pdf>
 Package pdftex.def Info: figure/beamer-estate-data-plot-1.pdf  used on input li
@@ -1891,7 +1891,7 @@ colMeans[][](scaled_data),[] []nrow[] []=[] []nrow[][](scaled_data),[] []ncol[]
  []
 
 [44]
-<figure/beamer-PCAbiplot-1.pdf, id=860, 867.24pt x 397.485pt>
+<figure/beamer-PCAbiplot-1.pdf, id=865, 867.24pt x 397.485pt>
 File: figure/beamer-PCAbiplot-1.pdf Graphic file (type pdf)
 <use figure/beamer-PCAbiplot-1.pdf>
 Package pdftex.def Info: figure/beamer-PCAbiplot-1.pdf  used on input line 1457
@@ -1918,7 +1918,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1505--1506
 
  []
 
-<figure/beamer-P-curves-1.pdf, id=878, 650.43pt x 289.08pt>
+<figure/beamer-P-curves-1.pdf, id=883, 650.43pt x 289.08pt>
 File: figure/beamer-P-curves-1.pdf Graphic file (type pdf)
 <use figure/beamer-P-curves-1.pdf>
 Package pdftex.def Info: figure/beamer-P-curves-1.pdf  used on input line 1512.
@@ -1981,7 +1981,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1589--1590
 
  []
 
-<figure/beamer-t-SNE-1.pdf, id=909, 361.35pt x 216.81pt>
+<figure/beamer-t-SNE-1.pdf, id=914, 361.35pt x 216.81pt>
 File: figure/beamer-t-SNE-1.pdf Graphic file (type pdf)
 <use figure/beamer-t-SNE-1.pdf>
 Package pdftex.def Info: figure/beamer-t-SNE-1.pdf  used on input line 1594.
@@ -2031,7 +2031,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1628--1630
 
  []
 
-<figure/beamer-box-plots-1.pdf, id=930, 722.7pt x 361.35pt>
+<figure/beamer-box-plots-1.pdf, id=935, 722.7pt x 361.35pt>
 File: figure/beamer-box-plots-1.pdf Graphic file (type pdf)
 <use figure/beamer-box-plots-1.pdf>
 Package pdftex.def Info: figure/beamer-box-plots-1.pdf  used on input line 1636
@@ -2067,7 +2067,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1649--1650
 
  []
 
-<figure/beamer-QQplots-1.pdf, id=941, 578.16pt x 289.08pt>
+<figure/beamer-QQplots-1.pdf, id=946, 578.16pt x 289.08pt>
 File: figure/beamer-QQplots-1.pdf Graphic file (type pdf)
 <use figure/beamer-QQplots-1.pdf>
 Package pdftex.def Info: figure/beamer-QQplots-1.pdf  used on input line 1656.
@@ -2089,41 +2089,48 @@ as been already used, duplicate ignored
                                                   \__shipout_drop_firstpage_...
 l.1670 
         <./figure/beamer-QQplots-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 1681--1682
+Underfull \hbox (badness 10000) in paragraph at lines 1682--1684
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1683--1685
+Underfull \hbox (badness 10000) in paragraph at lines 1685--1687
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1686--1688
+Underfull \hbox (badness 10000) in paragraph at lines 1688--1690
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1693--1694
+Underfull \hbox (badness 10000) in paragraph at lines 1693--1695
 
  []
 
-<figure/beamer-QQboxplots-1.pdf, id=953, 578.16pt x 289.08pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 1696--1698
+
+ []
+
+[53]
+Underfull \hbox (badness 10000) in paragraph at lines 1706--1708
+
+ []
+
+<figure/beamer-QQboxplots-1.pdf, id=963, 578.16pt x 289.08pt>
 File: figure/beamer-QQboxplots-1.pdf Graphic file (type pdf)
 <use figure/beamer-QQboxplots-1.pdf>
-Package pdftex.def Info: figure/beamer-QQboxplots-1.pdf  used on input line 169
-8.
+Package pdftex.def Info: figure/beamer-QQboxplots-1.pdf  used on input line 171
+2.
 (pdftex.def)             Requested size: 433.62pt x 216.80946pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[53] [54
+[54
 pdfTeX warning (ext4): destination with the same identifier (name{figure.28}) h
 as been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1713 \newpage
-                <./figure/beamer-QQboxplots-1.pdf>]
+l.1724 
+        <./figure/beamer-QQboxplots-1.pdf>] [55]
 
 ! LaTeX Error: Environment itemise undefined.
 
@@ -2131,7 +2138,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1717 \begin{itemise}
+l.1731 \begin{itemise}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2144,260 +2151,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1718     \item \textbf
-                        {Accuracy}: Emphasising faithful reflection of data ...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Underfull \hbox (badness 10000) detected at line 1718
-[][]
- []
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1719     \item \textbf
-                        {Clarity}: Ensuring visuals are easily understood wi...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Underfull \hbox (badness 10000) detected at line 1719
-[][]
- []
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1720     \item \textbf
-                        {Cognitive Load}: The mental effort required to proc...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Underfull \hbox (badness 10000) detected at line 1720
-[][]
- []
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1721     \item \textbf
-                        {Cognitive psychology}: Understanding how mental pro...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Underfull \hbox (badness 10000) detected at line 1721
-[][]
- []
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1722     \item \textbf
-                        {Colour Theory}: Principles guiding the strategic us...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Underfull \hbox (badness 10000) detected at line 1722
-[][]
- []
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1723     \item \textbf
-                        {Colour encoding}: Utilising colours to represent da...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Underfull \hbox (badness 10000) detected at line 1723
-[][]
- []
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1724     \item \textbf
-                        {Colour perception}: Understanding how humans percei...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Underfull \hbox (badness 10000) detected at line 1724
-[][]
- []
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1725     \item \textbf
-                        {Consistency}: Maintaining uniform use of visual ele...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Underfull \hbox (badness 10000) detected at line 1725
-[][]
- []
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1726     \item \textbf
-                        {Data abstraction}: Simplifying and structuring raw ...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Underfull \hbox (badness 10000) detected at line 1726
-[][]
- []
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1727     \item \textbf
-                        {Gestalt Principles}: Rules affecting how visual ele...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Underfull \hbox (badness 10000) detected at line 1727
-[][]
- []
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1728     \item \textbf
-                        {Hierarchies of abstraction}: Representing data at v...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Underfull \hbox (badness 10000) detected at line 1728
-[][]
- []
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1729     \item \textbf
-                        {Information overload}: Occurs when excessive data o...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Underfull \hbox (badness 10000) detected at line 1729
-[][]
- []
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1730     \item \textbf
-                        {Interval data}: Ordered categories with equal inter...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Underfull \hbox (badness 10000) detected at line 1730
-[][]
- []
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1731     \item \textbf
-                        {Nominal data}: Represents categories or labels with...
-
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Underfull \hbox (badness 10000) detected at line 1731
-[][]
- []
-
-
-! LaTeX Error: Lonely \item--perhaps a missing list environment.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
 l.1732     \item \textbf
-                        {Ordinal data}: Implies a meaningful order among cat...
+                        {Accuracy}: Emphasising faithful reflection of data ...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2415,7 +2170,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.1733     \item \textbf
-                        {Ratio data}: Includes ordered categories with equal...
+                        {Clarity}: Ensuring visuals are easily understood wi...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2433,7 +2188,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.1734     \item \textbf
-                        {Relevance}: Presenting information pertinent to the...
+                        {Cognitive Load}: The mental effort required to proc...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -2444,19 +2199,271 @@ Underfull \hbox (badness 10000) detected at line 1734
  []
 
 
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1735     \item \textbf
+                        {Cognitive psychology}: Understanding how mental pro...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) detected at line 1735
+[][]
+ []
+
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1736     \item \textbf
+                        {Colour Theory}: Principles guiding the strategic us...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) detected at line 1736
+[][]
+ []
+
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1737     \item \textbf
+                        {Colour encoding}: Utilising colours to represent da...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) detected at line 1737
+[][]
+ []
+
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1738     \item \textbf
+                        {Colour perception}: Understanding how humans percei...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) detected at line 1738
+[][]
+ []
+
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1739     \item \textbf
+                        {Consistency}: Maintaining uniform use of visual ele...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) detected at line 1739
+[][]
+ []
+
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1740     \item \textbf
+                        {Data abstraction}: Simplifying and structuring raw ...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) detected at line 1740
+[][]
+ []
+
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1741     \item \textbf
+                        {Gestalt Principles}: Rules affecting how visual ele...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) detected at line 1741
+[][]
+ []
+
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1742     \item \textbf
+                        {Hierarchies of abstraction}: Representing data at v...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) detected at line 1742
+[][]
+ []
+
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1743     \item \textbf
+                        {Information overload}: Occurs when excessive data o...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) detected at line 1743
+[][]
+ []
+
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1744     \item \textbf
+                        {Interval data}: Ordered categories with equal inter...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) detected at line 1744
+[][]
+ []
+
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1745     \item \textbf
+                        {Nominal data}: Represents categories or labels with...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) detected at line 1745
+[][]
+ []
+
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1746     \item \textbf
+                        {Ordinal data}: Implies a meaningful order among cat...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) detected at line 1746
+[][]
+ []
+
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1747     \item \textbf
+                        {Ratio data}: Includes ordered categories with equal...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) detected at line 1747
+[][]
+ []
+
+
+! LaTeX Error: Lonely \item--perhaps a missing list environment.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1748     \item \textbf
+                        {Relevance}: Presenting information pertinent to the...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Underfull \hbox (badness 10000) detected at line 1748
+[][]
+ []
+
+
 ! LaTeX Error: \begin{document} ended by \end{itemise}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1735 \end{itemise}
+l.1749 \end{itemise}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[55] (./main_file.bbl
+[56] (./main_file.bbl
 Underfull \hbox (badness 1472) in paragraph at lines 4--9
 []\TS1/cmr/m/n/10 $\OT1/cmr/m/n/10 500,000 in 1937 is how much to-day?  []$\OT1
 /cmtt/m/n/10 https : / / www . calculateme . com / inflation /
@@ -2496,7 +2503,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 93--99
 hor % 3D % 22Nightingale % 2C %
  []
 
-[56{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.en
+[57{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.en
 c}]
 Underfull \hbox (badness 10000) in paragraph at lines 129--135
 []\OT1/cmr/m/n/10 A. Ruther-ford.  Where sci-ence meets fic-tion: the dark his-
@@ -2515,15 +2522,15 @@ Underfull \hbox (badness 6284) in paragraph at lines 129--135
 []eugenics$[]\OT1/cmr/m/n/10 , 2022.  Ac-cessed 9
  []
 
-) [57] (./main_file.aux)
+) [58] (./main_file.aux)
 Package rerunfilecheck Info: File `main_file.out' has not changed.
-(rerunfilecheck)             Checksum: 08AE1589ED8E5C28E5CE50498A95BC73;13711.
+(rerunfilecheck)             Checksum: 695F16C8EDBDE40713CECCC0B36A4B66;13915.
  ) 
 Here is how much of TeX's memory you used:
- 13350 strings out of 476025
- 210935 string characters out of 5790016
+ 13353 strings out of 476025
+ 210982 string characters out of 5790016
  1867388 words of memory out of 5000000
- 33367 multiletter control sequences out of 15000+600000
+ 33368 multiletter control sequences out of 15000+600000
  523784 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,10n,76p,1201b,630s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2549,10 +2556,10 @@ ve/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive
 023/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/202
 3/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive
 /2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main_file.pdf (57 pages, 7662673 bytes).
+Output written on main_file.pdf (58 pages, 7666303 bytes).
 PDF statistics:
- 1150 PDF objects out of 1200 (max. 8388607)
- 972 compressed objects within 10 object streams
- 208 named destinations out of 1000 (max. 500000)
- 695 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1159 PDF objects out of 1200 (max. 8388607)
+ 980 compressed objects within 10 object streams
+ 210 named destinations out of 1000 (max. 500000)
+ 703 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1953,7 +1953,9 @@ par(mfrow = c(1, 1))
 \subsubsection{Functional Box Plot Example}
 XXXX
 
-\subsection{Q–Q box plots}
+\subsection{Q–Q Boxplots}
+
+\noindent 
 In this section, we will introduce the QQ boxplot, which combines the advantages from the boxplot and the QQ plot. The QQ boxplot integrates the box plot's ability to summarize data through its quartiles and the q-q plot's capability to compare data distributions to a theoretical distribution (often the normal distribution).\\
 
 \noindent 
@@ -1962,10 +1964,22 @@ Although QQ plots and box plots are very effiective in data visualization, they 
 \noindent
 In this section, we will introduce the QQ boxplot, which combines the advantages from the boxplot and the QQ plot. The QQ boxplot integrates the box plot's ability to summarize data through its quartiles and the q-q plot's capability to compare data distributions to a theoretical distribution (often the normal distribution).\\
 
+\subsubsection{Construction of QQ Boxplots}
+
 \noindent 
-The QQ boxplot are constructed in three steps. First, constructing the box. Second, drwaing the whiskers and confidence bands. Third, drawing the outside values. The first and third steps are as same as in box plots.
+The construction of a QQ boxplot involves a three-step process. The first step is to construct the box, which is similar to the standard boxplot and represents the interquartile range of the data. The second step is to draw the whiskers and confidence bands. The third step is to draw the outside values. The first and third steps are as same as in box plots.\\
+
+\noindent
+The unique aspect of the QQ boxplot comes in the second step. In ordor to draw the whiskers and confidence bands, we have to standardize both the comparison distribution and the reference distribution. This standardization process involves matching the quantiles from the reference distribution to those in the comparison distribution, either by subsampling or interpolation. Once this is done, the deviations of the comparison distribution from the reference distribution are calculated relative to each data point. Alongside this, the point-wise confidence bands are also determined, which provides a visual indication of how closely the data follows the expected theoretical distribution. To integrate the relative deviations and confidence bands into the QQ boxplot, we include both the x and y coordinates in the plot. The y-axis coordinates correspond to the quantile values from the comparison dataset, while the x-axis coordinates represent the deviations relative to the reference distribution.\\
+
+\noindent
+To calculate the x-coordinate for a QQ boxplot, we set a scale for the plot and determin the maximum x-coordinate, $x_{max}=(\frac{b_w}{2})$ where $b_w$ is the box width. Let $dev_{max}$ be the maximum of the absolute values of the whisker deviations and confidence band values. The value of a relative devaition $d$ is computed by either taking the difference between the standardized values from the comparison distribution and those from the reference distribution, or by using a value from the confidence band associated with the reference distribution. Then we can set:
+$$x^{*}=\frac{d*x_{max}}{dev_{max}}.$$
+The $x$ coordinate is then $x_b+x*$, where $x_b$ marks the center of the boxplot.
 
 \subsubsection{QQ Boxplot in Practice}
+
+\noindent 
 The resulting Q-Q boxplot shows the distribution of sepal length values within each iris species, allowing comparison whether they come from a normal distribution. Outliers are also indicated in the plot.\\
 
 <<QQboxplots, echo=FALSE, fig.height=4, fig.width=8, fig.pos='h', fig.cap='Q-Q  boxplot of iris dataset', message=FALSE,warning=FALSE>>=
