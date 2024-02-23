@@ -59,8 +59,9 @@
 \contentsline {subsubsection}{\numberline {5.4.2}Case Example: t-SNE in Practice}{49}{subsubsection.5.4.2}
 \contentsline {section}{\numberline {6}State-Of-The-Art Modern Approaches}{51}{section.6}
 \contentsline {subsection}{\numberline {6.1}Introduction}{51}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2}Functional Box Plots}{51}{subsection.6.2}
-\contentsline {subsubsection}{\numberline {6.2.1}Functional Box Plot Example}{52}{subsubsection.6.2.1}
-\contentsline {subsection}{\numberline {6.3}Quantile-Quantile Plots}{52}{subsection.6.3}
-\contentsline {subsubsection}{\numberline {6.3.1}QQ-Plots in Practice}{52}{subsubsection.6.3.1}
-\contentsline {section}{\numberline {7}Index}{53}{section.7}
+\contentsline {subsubsection}{\numberline {6.1.1}Box Plots in Practice}{51}{subsubsection.6.1.1}
+\contentsline {subsubsection}{\numberline {6.1.2}Q\IeC {\textendash }Q Plots in Practice}{51}{subsubsection.6.1.2}
+\contentsline {subsection}{\numberline {6.2}Functional Box Plots}{53}{subsection.6.2}
+\contentsline {subsubsection}{\numberline {6.2.1}Functional Box Plot Example}{53}{subsubsection.6.2.1}
+\contentsline {subsection}{\numberline {6.3}Q\IeC {\textendash }Q box plots}{53}{subsection.6.3}
+\contentsline {section}{\numberline {7}Index}{54}{section.7}

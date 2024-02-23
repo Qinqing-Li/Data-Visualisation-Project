@@ -83,14 +83,14 @@ Throughout the thesis, vocabulary referencing the programme R are used. The R pa
 
 \noindent \textbf{Literature and Research}\\ 
 \noindent
-Data visualisation is an area of interest in numerous method-specific publications. One notable publication is the \href{https://www.tandfonline.com/journals/ucgs20}{Journal of Computational and Graphical Statistics}. This journal publishes ongoing research on the latest techniques in computational and graphical methods in statistics, encompassing data analysis and numerical graphical displays. \href{https://www.sciencedirect.com/journal/spatial-statistics}{Spatial Statistics} publishes articles on the theory and application of spatial and spatio-temporal statistics. \href{https://journal.r-project.org}{The R Journal} publishes research articles in statistical computing that are of interest to R users. These together reveal the vast potential for current and future research in this ever-evolving domain, particularly as our digital landscape and data sphere expand at an accelerated pace.\\
+Data visualisation is an area of interest in numerous method-specific publications. One notable publication is the \href{https://www.tandfonline.com/journals/ucgs20}{Journal of Computational and Graphical Statistics}. This journal publishes ongoing research on the latest techniques in computational and graphical methods in statistics, encompassing data analysis and numerical graphical displays. \href{https://www.jstatsoft.org/index}{Journal of statistical software} publishes peer-reviewed articles about statistical software, together with the source code. These publications together reveal the vast potential for current and future research in this ever-evolving domain, particularly as our digital landscape and data sphere expand at an accelerated pace.\\
 
 \newpage 
 
 \section{Introduction}
 
 \noindent
-This chapter underscores the enduring importance of data visualisation. Case examples both of the influential applications, but also dangerous misuses of data visualisations are showcased and analysed. These are sourced from BBC Ideas \cite{bbcdatavis}. Futhermore, an introduction to the R package \textit{ggplot2} is provided, along with a presentation of the datasets used throughout paper.\\
+Chapter 1 underscores the enduring importance of data visualisation. Case examples both of the influential applications, but also dangerous misuses of data visualisations are showcased and analysed. These are sourced from BBC Ideas \cite{bbcdatavis}. Futhermore, an introduction of essential R packages including \textit{ggplot2} is provided, along with a presentation of the datasets used throughout paper.\\
 
 \subsection{Historical Background and Misuses of Data Visualisation}
 
@@ -1869,9 +1869,12 @@ Additionally, it requires experimentation with different initialisation to mitig
 
 \section{State-Of-The-Art Modern Approaches}
 \noindent
-In this chapter, we will introduce some state-of-the-art graphical statistical methods published in recent research. In Chapter 6.1, we will introduce the foundational visualisation methods box plots and Q-Q plots. Building on this, we will discuss the theory and implementation of functional box plots and Q-Q Box plots, as published in the \textit{Journal of Computational and Graphical Statistics}.\\
+In this chapter, we will introduce some state-of-the-art graphical statistical methods published in recent research. In Chapter 6.1, we will introduce the foundational visualisation methods box plots and Q–Q plots. Building on this, we will discuss the theory and implementation of functional box plots and Q–Q Box plots, as published in recent articles in the \textit{Journal of Computational and Graphical Statistics}.
 
 \subsection{Introduction}
+
+\subsubsection{Box Plots in Practice}\\
+
 \noindent 
 Box plots, also known as box-and-whisker plots, were introduced by John W. Tukey in 1977. Since then, they have become essential in exploratory data analysis, offering a summary of a dataset's central tendency, skewness, and outliers. These plots typically showcase the median, quartiles, and range, making them valuable for comparing and discerning patterns across different variables.\\
 
@@ -1901,27 +1904,15 @@ violin_plot <- ggplot(iris, aes(x = Species, y = Sepal.Length, fill = Species)) 
 grid.arrange(boxplot, violin_plot, ncol = 2)
 @
 
+\subsubsection{Q–Q Plots in Practice}\\
 
+\noindent Quantile-Quantile (Q–Q) plots represent a powerful and widely utilised approach in exploratory data analysis and statistical inference, offering insightful visualisations of the similarity between two probability distributions. In section, the essence of Q–Q plots, their generation, the information they convey, and their relevance in contemporary data visualisation methodologies are explored.\\
 
-\subsection{Functional Box Plots}
+\noindent Q–Q plots are constructed by plotting the quantiles of two datasets against each other. Typically, one dataset serves as the basis for theoretical quantiles, often assumed to follow a particular probability distribution, while the other dataset comprises observed values. This comparative depiction enables a direct assessment of how closely the observed data align with the theoretical distribution, facilitating the identification of deviations from expected patterns.\\
 
-\noindent Functional data analysis (FDA) extends traditional statistical methods to handle functional data, where the observations are curves or functions rather than single values. Functional box plots were introduced as an extension of box plots to accommodate the unique challenges posed by functional data. Developed by Hadley Wickham and Dianne Cook in 2011, functional box plots offer a visual representation of the central tendency, spread, and shape of a distribution for functional datasets.
-
-\noindent Functional box plots have found applications in various fields, such as biology, finance, and signal processing, where researchers deal with data in the form of curves or functions. The incorporation of concepts such as depth functions and band depth in functional box plots has improved their robustness and made them suitable for analyzing complex functional datasets.
-
-\subsubsection{Functional Box Plot Example}
-XXXX
-
-\subsection{Quantile-Quantile Plots}
-
-\noindent Quantile-Quantile (QQ) plots represent a powerful and widely utilised approach in exploratory data analysis and statistical inference, offering insightful visualisations of the similarity between two probability distributions. In section, the essence of QQ plots, their generation, the information they convey, and their relevance in contemporary data visualisation methodologies are explored.\\
-
-\noindent QQ plots are constructed by plotting the quantiles of two datasets against each other. Typically, one dataset serves as the basis for theoretical quantiles, often assumed to follow a particular probability distribution, while the other dataset comprises observed values. This comparative depiction enables a direct assessment of how closely the observed data align with the theoretical distribution, facilitating the identification of deviations from expected patterns.
-
-\subsubsection{QQ-Plots in Practice}\\
 \noindent In this section, side-by-side QQ plots are displayed offering a visual comparison of the distributional properties of two variables from the mtcars and the iris datset. These plots serve as a means to assess normality assumptions and identify potential deviations from expected distributions. Through this visual exploration, we aim to gain insights into the underlying structure of the data and guide further investigation.
 
-<<QQplots, echo=FALSE, fig.height=4, fig.width=8, fig.pos='h', fig.cap='Q-Q plot of mpg in mtcars dataset', message=FALSE>>=
+<<QQplots, echo=FALSE, fig.height=4, fig.width=8, fig.pos='h', fig.cap='Q–Q plot of mpg in mtcars dataset', message=FALSE>>=
 # Load the required dataset
 data(mtcars)
 data(iris)
@@ -1946,11 +1937,24 @@ qqline(iris$Sepal.Length, col = my_palette[2])
 par(mfrow = c(1, 1))
 @
 
-\noindent In the first plot in Figure~\ref{fig:QQplots}, which examines the mpg variable in the mtcars dataset, the points closely adhere to the theoretical quantiles line, indicating a relatively normal distribution. However, there are subtle deviations observed, particularly in the tails of the distribution, suggesting potential departures from normality. The deviations might indicate the presence of outliers or non-normal behavior in the data, which warrants further investigation.\\
+\noindent In the first plot in Figure~\ref{fig:QQplots}, which examines the mpg variable in the mtcars dataset, deviations, particularly in the tails of the distribution, are noticeable. These deviations suggest potential departures from normality, possibly indicating the presence of outliers or non-normal behaviour in the data.\\
 
-\noindent Conversely, the second plot explores the distribution of the Sepal.Length variable in the iris dataset. Here, the points exhibit a clearer departure from the theoretical quantiles line compared to the mpg plot. The deviation is more pronounced, particularly towards the upper quantiles, indicating a non-normal distribution. This departure could be attributed to the presence of distinct subgroups or underlying factors influencing the distribution of sepal lengths within the iris dataset.\\
+\noindent The second plot examines the distribution of the Sepal.Length variable in the iris dataset. Here, the points exhibit a slight departure from the theoretical quantiles line. The deviation is less pronounced compared to the previous plot. The distribution of sepal lengths within the iris dataset appears to be approximately normal.\\
 
-\noindent In general, the QQ plots provide a succinct and insightful representation of the distributional properties of the variables under examination. They offer a visual means to assess normality assumptions and identify potential outliers or deviations from expected distributions. As such, QQ plots serve as a valuable tool in exploratory data analysis and model diagnostics, aiding researchers in understanding the underlying structure of their data and guiding subsequent analyses.
+\noindent In general, the Q–Q plots provide a succinct and insightful representation of the distributional properties of the variables under examination. They offer a visual means to assess normality assumptions and identify potential outliers or deviations from expected distributions. As such, Q–Q plots serve as a valuable tool in exploratory data analysis and model diagnostics, aiding researchers in understanding the underlying structure of their data and guiding subsequent analyses.
+
+\subsection{Functional Box Plots}
+
+\noindent Functional data analysis (FDA) extends traditional statistical methods to handle functional data, where the observations are curves or functions rather than single values. Functional box plots were introduced as an extension of box plots to accommodate the unique challenges posed by functional data. Developed by Hadley Wickham and Dianne Cook in 2011, functional box plots offer a visual representation of the central tendency, spread, and shape of a distribution for functional datasets.
+
+\noindent Functional box plots have found applications in various fields, such as biology, finance, and signal processing, where researchers deal with data in the form of curves or functions. The incorporation of concepts such as depth functions and band depth in functional box plots has improved their robustness and made them suitable for analyzing complex functional datasets.
+
+\subsubsection{Functional Box Plot Example}
+XXXX
+
+\subsection{Q–Q box plots}
+
+
 
 
 \newpage  
