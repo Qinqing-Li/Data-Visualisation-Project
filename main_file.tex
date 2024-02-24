@@ -93,19 +93,19 @@ Throughout the thesis, vocabulary referencing the programme R are used. The R pa
 
 \noindent \textbf{Literature and Research}\\ 
 \noindent
-Data visualisation is an area of interest in numerous method-specific publications. One notable publication is the \href{https://www.tandfonline.com/journals/ucgs20}{Journal of Computational and Graphical Statistics}. This journal publishes ongoing research on the latest techniques in computational and graphical methods in statistics, encompassing data analysis and numerical graphical displays. \href{https://www.sciencedirect.com/journal/spatial-statistics}{Spatial Statistics} publishes articles on the theory and application of spatial and spatio-temporal statistics. \href{https://journal.r-project.org}{The R Journal} publishes research articles in statistical computing that are of interest to R users. These together reveal the vast potential for current and future research in this ever-evolving domain, particularly as our digital landscape and data sphere expand at an accelerated pace.\\
+Data visualisation is an area of interest in numerous method-specific publications. One notable publication is the \href{https://www.tandfonline.com/journals/ucgs20}{Journal of Computational and Graphical Statistics}. This journal publishes ongoing research on the latest techniques in computational and graphical methods in statistics, encompassing data analysis and numerical graphical displays. \href{https://www.jstatsoft.org/index}{Journal of statistical software} publishes peer-reviewed articles about statistical software, together with the source code. These publications together reveal the vast potential for current and future research in this ever-evolving domain, particularly as our digital landscape and data sphere expand at an accelerated pace.\\
 
 \newpage 
 
 \section{Introduction}
 
 \noindent
-This chapter underscores the enduring importance of data visualisation. Case examples both of the influential applications, but also dangerous misuses of data visualisations are showcased and analysed. These are sourced from BBC Ideas \cite{bbcdatavis}. Futhermore, an introduction to the R package \textit{ggplot2} is provided, along with a presentation of the datasets used throughout paper. 
+Chapter 1 underscores the enduring importance of data visualisation. Case examples both of the influential applications, but also dangerous misuses of data visualisations are showcased and analysed. These are sourced from BBC Ideas \cite{bbcdatavis}. Futhermore, an introduction of essential R packages including \textit{ggplot2} is provided, along with a presentation of the datasets used throughout paper.\\
 
 \subsection{Historical Background and Misuses of Data Visualisation}
 
-\noindent This section commences with an examination of two case studies delineating the efficacy and impact of data visualisation, succeeded by an exploration of two instances exemplifying problematic data misuse. The overarching objective is to underscore the significance of data visualisation while concurrently highlighting thenecessity of meticulous attention to detail, particularly in light of the potential for data visualisation to be exploited for malicious purposes.\\
- 
+\noindent This section commences with an examination of two case studies delineating the efficacy and impact of data visualisation, succeeded by an exploration of two instances exemplifying problematic data misuse. The overarching objective is to underscore the significance of data visualisation while concurrently highlighting thenecessity of meticulous attention to detail, particularly in light of the potential for data visualisation to be exploited for malicious purposes.
+\noindent
 \\\textbf{Motivations for Using Data Visualisations — Case 1}
 
 \noindent
@@ -150,7 +150,7 @@ Known as the ``warming stripes," this chart cleverly employs blues to indicate c
 Having observed the remarkable effectiveness of data visualisations, the significance of employing them correctly becomes apparent. The improper use of data visualisations holds the potential to significantly influence the public in misleading ways, resulting in undesired consequences.\\
 
 \noindent
-Inappropriate data visualisation can conceal trends rather than reveal them. Figure~\ref{fig:misuse1} illustrates an instance of this issue. On the left-hand side, an inappropriate scale is used - the y-scale ranging from 0 to 30 million dollars, obscuring the fluctuations in payroll spending. Conversely, on the right-hand side, observe that there's a significant increase of over 500,000 dollars in just two months. This revelation is substantial; considering inflation, 500,000 dollars in 1937 is worth well over 10 million dollars today \cite{worth}.
+Inappropriate data visualisation can conceal trends rather than reveal them. Figure~\ref{fig:misuse1} illustrates an instance of this issue. On the left-hand side, an inappropriate scale is used — the y-scale ranging from 0 to 30 million dollars, obscuring the fluctuations in payroll spending. Conversely, on the right-hand side, observe that there's a significant increase of over 500,000 dollars in just two months. This revelation is substantial; considering inflation, 500,000 dollars in 1937 is worth well over 10 million dollars today \cite{worth}.
 
 \begin{figure}[H]
     \centering
@@ -163,7 +163,7 @@ Inappropriate data visualisation can conceal trends rather than reveal them. Fig
 \textbf{Misuses of Data Visualisation — Case 2}
 
 \noindent
-One striking example of data visualisation misuse is found in the Kallikak Family tree - one of the most prominent eugenic narratives of the 20th century.\\
+One striking example of data visualisation misuse is found in the Kallikak Family tree — one of the most prominent eugenic narratives of the 20th century.\\
 
 \noindent
 The visualisation, shown in Figure~\ref{fig:familytree}, was created by the psychologist Henry Goddard and presented in his 1912 book, ``The Kallikak Family: A Study in the Heredity of Feeble-Mindedness." Goddard's narrative centered around Martin Kallikak, a soldier who, in addition to his marriage to a respected citizen, had a one-night stand with a ``feeble-minded" maid. Goddard believed that intellectual disabilities were inherited traits. In Goddard's account, the legitimate family was successful, while the children of the ``feeble-minded" maid were labeled as ``the lowest types of human beings." However, research has since revealed that the entire story was fictitious, as there was no record of the maid's existence \cite{fakedata}.\\
@@ -542,7 +542,16 @@ A time series can be viewed as a realisation of a stochastic process. A stochast
 \subsubsection{Case Example: Time Series Visualisation of Exchange rates}
 
 Here, plot daily and 49-day moving average exchange rates of exchange rate data in one figure.
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in select(., Date, CANtoGBP, EURtoGBP, USDtoGBP): unused arguments (Date, CANtoGBP, EURtoGBP, USDtoGBP)}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in select(., Date, CANtoGBP\_MA49, EURtoGBP\_MA49, USDtoGBP\_MA49): unused arguments (Date, CANtoGBP\_MA49, EURtoGBP\_MA49, USDtoGBP\_MA49)}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in is.factor(x): object 'plot\_data' not found}}\end{kframe}
+\end{knitrout}
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -551,23 +560,33 @@ Here, plot daily and 49-day moving average exchange rates of exchange rate data 
 \hlstd{p1} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(plot_dt,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= Date,} \hlkwc{y} \hlstd{= Rate,} \hlkwc{color} \hlstd{= Currency))} \hlopt{+} \hlkwd{geom_line}\hlstd{()} \hlopt{+}
   \hlkwd{labs}\hlstd{(}\hlkwc{y} \hlstd{=} \hlstr{"Exchange Rate to GBP"}\hlstd{,} \hlkwc{x} \hlstd{=} \hlstr{""}\hlstd{,} \hlkwc{color} \hlstd{=} \hlstr{"Currency"}\hlstd{)} \hlopt{+} \hlkwd{theme_minimal}\hlstd{()} \hlopt{+}
   \hlkwd{theme}\hlstd{(}\hlkwc{legend.position} \hlstd{=} \hlstr{"none"}\hlstd{)} \hlopt{+} \hlkwd{scale_color_manual}\hlstd{(}\hlkwc{values} \hlstd{= color_palette)}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in ggplot(plot\_dt, aes(x = Date, y = Rate, color = Currency)): object 'plot\_dt' not found}}\begin{alltt}
 \hlstd{p2} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(plot_data,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= Date,} \hlkwc{y} \hlstd{= Rate,} \hlkwc{color} \hlstd{= Currency))} \hlopt{+} \hlkwd{geom_line}\hlstd{()} \hlopt{+}
   \hlkwd{labs}\hlstd{(}\hlkwc{y} \hlstd{=} \hlstr{"Exchange Rate to GBP"}\hlstd{,} \hlkwc{x} \hlstd{=} \hlstr{""}\hlstd{,} \hlkwc{color} \hlstd{=} \hlstr{"Currency"}\hlstd{)} \hlopt{+} \hlkwd{theme_minimal}\hlstd{()} \hlopt{+}
   \hlkwd{theme}\hlstd{(}\hlkwc{legend.position} \hlstd{=} \hlstr{"none"}\hlstd{)} \hlopt{+} \hlkwd{scale_color_manual}\hlstd{(}\hlkwc{values} \hlstd{= color_palette)}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in ggplot(plot\_data, aes(x = Date, y = Rate, color = Currency)): object 'plot\_data' not found}}\begin{alltt}
 \hlcom{# Extract the legend and combine the plots }
 \hlstd{p2_legend} \hlkwb{<-} \hlstd{cowplot}\hlopt{::}\hlkwd{get_legend}\hlstd{(p2} \hlopt{+} \hlkwd{theme}\hlstd{(}\hlkwc{legend.position} \hlstd{=} \hlstr{"right"}\hlstd{))}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in as\_gtable(plot): object 'p2' not found}}\begin{alltt}
 \hlstd{combined_plot} \hlkwb{<-} \hlstd{cowplot}\hlopt{::}\hlkwd{plot_grid}\hlstd{(p1, p2,} \hlkwc{rel_widths} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{1}\hlstd{),} \hlkwc{nrow} \hlstd{=} \hlnum{2}\hlstd{)}
+\end{alltt}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in cowplot::plot\_grid(p1, p2, rel\_widths = c(1, 1), nrow = 2): object 'p1' not found}}\begin{alltt}
 \hlstd{cowplot}\hlopt{::}\hlkwd{plot_grid}\hlstd{(combined_plot, p2_legend,} \hlkwc{nrow} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{rel_widths} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{2}\hlstd{,} \hlnum{0.5}\hlstd{))}
 \end{alltt}
-\end{kframe}\begin{figure}[H]
 
-{\centering \includegraphics[width=\maxwidth]{figure/beamer-all_exchange_rates-1} 
 
-}
-
-\caption[Daily (top) and 49-day moving average (bottom) exchange rates of CAN, EUR, USD to GBP]{Daily (top) and 49-day moving average (bottom) exchange rates of CAN, EUR, USD to GBP}\label{fig:all exchange rates}
-\end{figure}
-
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in cowplot::plot\_grid(combined\_plot, p2\_legend, nrow = 1, rel\_widths = c(2, : object 'combined\_plot' not found}}\end{kframe}
 \end{knitrout}
 
 \noindent
@@ -1604,15 +1623,16 @@ The process is repeated for a number of iterations or until the change in the co
 R provides us with a dedicated package for t-SNE analysis, \textit{Rtsne}, which allows us to conduct the analysis conveniently using the \textit{Rtsne} function. In the graph presented below, we observe a t-SNE visualization of the penguin dataset.\\
 
 \begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
-{\centering \includegraphics[width=\maxwidth]{figure/beamer-t-SNE-1} 
 
-}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in select(., where(is.numeric), -year, species): unused arguments (where(is.numeric), -year, species)}}
 
-\caption[t-SNE of Penguins Dataset]{t-SNE of Penguins Dataset}\label{fig:t-SNE}
-\end{figure}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in select(., -species): unused argument (-species)}}
 
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in as.data.frame(.): object 'tSNE\_fit' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in fortify(data): object 'tSNE.plot' not found}}\end{kframe}
 \end{knitrout}
 
 \noindent
@@ -1633,13 +1653,17 @@ Additionally, it requires experimentation with different initialisation to mitig
 \newpage 
 
 \section{State-Of-The-Art Modern Approaches}
-Data visualisation plays a pivotal role in modern mathematics, aiding researchers and practitioners in gaining insights from complex datasets.  
+In this chapter, we will introduce some state-of-the-art graphical statistical methods published in recent research. In Chapter 6.1, we will introduce the foundational visualisation methods box plots and Q–Q plots. Building on this, we will discuss the theory and implementation of functional box plots and Q–Q Box plots, as published in recent articles in the \textit{Journal of Computational and Graphical Statistics}. 
 
-\subsection{Box Plots}
+\subsection{Introduction}
 
-\noindent Box plots, also known as box-and-whisker plots, were introduced by John W. Tukey in 1977 as a robust method for representing the distribution of a dataset. Over the years, box plots have become a staple in exploratory data analysis, offering a concise summary of the central tendency, spread, and skewness of a dataset. Traditional box plots display the median, quartiles, and any potential outliers, making them effective for comparing multiple datasets and identifying patterns within each.
+\subsubsection{Box Plots in Practice}\\
 
+\noindent 
+Box plots, also known as box-and-whisker plots, were introduced by John W. Tukey in 1977. Since then, they have become essential in exploratory data analysis, offering a summary of a dataset's central tendency, skewness, and outliers. These plots typically showcase the median, quartiles, and range, making them valuable for comparing and discerning patterns across different variables.\\
 
+\noindent
+An example of box plots using the iris dataset is displayed in Figure~\ref{fig:box-plots}. Specifically, the right graph showcases a violin plot — which is a recent advancement in box plot techniques. The violin plot combines a box plot with a kernel density function, providing a mirrored density plot displayed in the same way as a box plot.\\
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[h]
 
@@ -1652,33 +1676,59 @@ Data visualisation plays a pivotal role in modern mathematics, aiding researcher
 
 \end{knitrout}
 
-\noindent Recent advancements in box plot techniques include variations such as violin plots, found on the right side of Figure~\ref{fig:box-plots}, and modified box plots that incorporate additional statistical measures. These adaptations enhance the interpretability and utility of box plots across diverse applications, making them more versatile for researchers and data analysts.
+\subsubsection{Q–Q Plots in Practice}\\
 
-\subsection{Functional Box Plot}
+\noindent Quantile-Quantile (Q–Q) plots represent a powerful and widely utilised approach in exploratory data analysis and statistical inference, offering insightful visualisations of the similarity between two probability distributions. In section, the essence of Q–Q plots, their generation, the information they convey, and their relevance in contemporary data visualisation methodologies are explored.\\
+
+\noindent Q–Q plots are constructed by plotting the quantiles of two datasets against each other. Typically, one dataset serves as the basis for theoretical quantiles, often assumed to follow a particular probability distribution, while the other dataset comprises observed values. This comparative depiction enables a direct assessment of how closely the observed data align with the theoretical distribution, facilitating the identification of deviations from expected patterns.\\
+
+\noindent In this section, side-by-side QQ plots are displayed offering a visual comparison of the distributional properties of two variables from the mtcars and the iris datset. These plots serve as a means to assess normality assumptions and identify potential deviations from expected distributions. Through this visual exploration, we aim to gain insights into the underlying structure of the data and guide further investigation.
+
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[h]
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-QQplots-1} 
+
+}
+
+\caption[Q–Q plot of mpg in mtcars dataset]{Q–Q plot of mpg in mtcars dataset}\label{fig:QQplots}
+\end{figure}
+
+\end{knitrout}
+
+\noindent In the first plot in Figure~\ref{fig:QQplots}, which examines the mpg variable in the mtcars dataset, deviations, particularly in the tails of the distribution, are noticeable. These deviations suggest potential departures from normality, possibly indicating the presence of outliers or non-normal behaviour in the data.\\
+
+\noindent The second plot examines the distribution of the Sepal.Length variable in the iris dataset. Here, the points exhibit a slight departure from the theoretical quantiles line. The deviation is less pronounced compared to the previous plot. The distribution of sepal lengths within the iris dataset appears to be approximately normal.\\
+
+\noindent In general, the Q–Q plots provide a succinct and insightful representation of the distributional properties of the variables under examination. They offer a visual means to assess normality assumptions and identify potential outliers or deviations from expected distributions. As such, Q–Q plots serve as a valuable tool in exploratory data analysis and model diagnostics, aiding researchers in understanding the underlying structure of their data and guiding subsequent analyses.
+
+\subsection{Functional Boxplot}
 
 \noindent
-Building upon the traditional box plot, which is designed to summarize scalar data by depicting their quantiles and outliers, functional box plot focuses on datasets where each observation is a function over a certain domain, such as time or space. Thus, functional box plot is a powerful visualisation technique that offers a visual representation of the central tendency, spread, and shape of a distribution for functional datasets. By employing concepts such as Band Depth (BD), functional box plots allow for the assessment of centrality, variability, and the detection of outliers within a dataset of functions. These plots provide insights into the median function, the spread of the data, and functional outliers that deviate significantly from the overall data structure.\\
+Building upon the traditional box plot, the functional boxplot is an innovative extension that provides a comprehensive visual representation of functional data. The $i^{th}$ observation of the population is represented as a real function $y_i(t)$, where $i = 1, \dots , n, t \in \mathcal{I}$, where $\mathcal{I}$ is an interval on the real line.\\
 
 \noindent
-Therefore, functional box plot connects the intuitive visual appeal of box plots with the complex, multidimensional nature of functional data. This subsection aims to unravel the methodology behind functional box plots, elucidating their construction, interpretation, and application in real-world datasets, which enables a deeper understanding of the patterns and anomalies inherent in functional data.
+This section aims to unravel the methodology behind functional boxplots, elucidating their construction, interpretation, and application in real-world datasets, which enables a deeper understanding of the patterns and anomalies inherent in functional data.
 
-\subsubsection{Theory of Funtional Box Plot}
+\subsubsection{Theory of Funtional Boxplot}
 
-The foundation of constructing a boxplot is the organisation of data. This process is straightforward for univariate data, where observations are ordered from the smallest to the largest value. However, for multivariate data, this task becomes significantly more complex, necessitating advanced methodologies to establish a meaningful order. In the context of multivariate data, various metrics known as data depth have been developed to assess the centrality (or depth) of an observation or its deviation (outlyingness) from the central tendency.\\
-
-\noindent
-In the functional data analysis, BD offers a systematic framework to rank a set of curves, facilitating the identification of observations that are central. This concept is instrumental in defining functional quantiles and in assessing the centrality or the extent of deviation of specific curves. BD aims to quantify the order among sample curves by computing their BD values and ranking them accordingly. Specifically, the BD for any given function $y(t)$ within the set $\{y_1(t),\dots,y_n(t)\}$ is calculated by examining all possible combinations of $j$ functions from the set, forming a band for each combination, and determining the proportion of these bands that completely encompass $y(t)$.\\
+The construction of a box plot relies on data ordering, where you simply arrange univariate observations from smallest to largest. However, with multivariate data, this process becomes significantly more complex, necessitating advanced methodologies to establish a meaningful order. Various versions of data depth have been developed to assess the centrality (or depth) of an observation or its deviation (outlyingness), from a population distribution with density P.\\
 
 \noindent
-Hence, consider a set of observed functions $\{y_1(t),\dots,y_n(t)\}$ defined over an interval $I$ in $\mathbb{R}$. The graph of a function $y(t)$ is represented as $G(y) = \{(t,y(t)) : t \in I\}$. Define $B(y_{i_1},\dots,y_{i_k}) = \{(t,x(t)): t \in I, \min_{r=1,\dots,k} y_{i_r}(t) \leq x(t) \leq \max_{r=1,\dots,k} y_{i_r}(t)\}$ as the band of curves $y_{i_1},\dots,y_{i_k}$ \cite{SunGenton2011FunctionalBoxplots}. Let $J$ denote the number of curves that define a band, which is chosen to be any value from 2 to $n$, inclusive.\\
+Consider a set of observations ${y_1(t),\dots,y_n(t)}$ defined over an interval $\mathcal{I} \in \mathbb{R}$. The graph of a function $y(t)$ is defined as $G(y) = {(t,y(t)) : t \in I}$. Applying the concept of range from univariate data to two dimensions, we derive a band in $\mathbb{R}^2$ bounded (also known as delimited) by curves $y_{i_1},\dots, y_{i_k}$ for time (or states) $1, \dots, k$. Band is defined as $B(y_{i_1},\dots,y_{i_k}) = \{(t,x(t)): t \in \mathcal{I}, \min_{r=1,\dots,k} y_{i_r}(t) \leq x(t) \leq \max_{r=1,\dots,k} y_{i_r}(t)\}$. Let $J$ denote the number of curves that determines the band, where J is a fixed integer $2 \le J \le n$.\\
 
 \noindent
-Then, for a stochastic process $Y(t)$ generating the observations $y_1(t),\dots,y_n(t)$, the population version of BD for a curve $y(t)$ relative to a probability measure $P$ is determined by the formula\cite{SunGenton2011FunctionalBoxplots}:
-
-\[BD_{J}(y, P) = \sum_{j=2}^{J} BD^{(j)}(y,P)=\sum_{j=2}^{J} P\{G(y) \subset B(Y_1,\dots,Y_j\}, \]
+Band depth is a measure of how deeply a curve lies within a population of curves, indicating its centrality or outlyingness relative to others. This measure is valuable for understanding the distributional characteristics of functional data across a population, offering insights into patterns and variability within the dataset.\\
 
 \noindent
-where $B(Y_1,\dots,Y_j)$ is a band delimited by $j$ random curves. Here, $BD^{(j)}(y,P)$ calculates the probability that the graph of $y(t)$ lies entirely within a band formed by any selection of $j$ functions. These bands are delineated by the minimum and maximum values at each point $t$ among the selected $j$ functions. This formulation of BD facilitates a nuanced understanding of curve centrality and variability within functional data, laying the groundwork for the construction of functional boxplots. Then we can define the sample version of $BD(j)(y,P)$, which is the fraction of the bands determined by $j$ different sample curves containing the whole graph of the curve $y(t)$ \cite{SunGenton2011FunctionalBoxplots}:
+For a stochastic process $Y(t)$ generating the observations $y_1(t), \dots, y_n(t)$, the population version of the band depth for a curve $y(t)$ with respect to the probability measure P is defined as:
+
+\begin{equation}
+BD_{J}(y, P) = \sum_{j=2}^{J} BD^{(j)}(y,P)=\sum_{j=2}^{J} P\{G(y) \subset B(Y_1,\dots,Y_j)\}, 
+\end{equation}
+
+\noindent
+where $B(Y_1,\dots,Y_j)$ is a band delimited by $j$ random curves \cite{SunGenton2011FunctionalBoxplots}. Here, $BD^{(j)}(y,P)$ calculates the probability that the graph of $y(t)$ lies entirely within a band formed by any selection of $j$ functions. These bands are delineated by the minimum and maximum values at each point $t$ among the selected $j$ functions. This formulation of BD facilitates a nuanced understanding of curve centrality and variability within functional data, laying the groundwork for the construction of functional boxplots. Then we can define the sample version of $BD(j)(y,P)$, which is the fraction of the bands determined by $j$ different sample curves containing the whole graph of the curve $y(t)$ \cite{SunGenton2011FunctionalBoxplots}:
 
 \[BD_{n}^{(j)}(y) = {\binom{n}{j}}^{-1} \sum_{1 \leq i_1 < i_2 < \cdots < i_j \leq n} I\{G(y) \subseteq B(y_{i_1}, \ldots, y_{i_j})\}, \]
 
@@ -1701,34 +1751,15 @@ In a traditional boxplot, the box represents the central 50\% of the data.  In f
 where $\lceil n/2 \rceil$ is the smallest integer not less than half of the sample size. This 50\% central region functions similarly to the inter-quartile range (IQR) in a boxplot, providing a measure of the spread of the central 50\% of the curves. This method is robust, less affected by outliers or extreme values, and offers a clearer visualization of the distribution's central spread. Within this central region, the curve that represents the median, denoted as $y_{[1]}(t)$, signifies the most centrally located curve with the highest band depth, serving as a robust measure of central tendency.
 
 \subsubsection{Functional Box Plot Example}
-XXXX
 
-\subsection{Quantile-Quantile Plots}
-
-\noindent Quantile-Quantile (QQ) plots represent a powerful and widely utilised approach in exploratory data analysis and statistical inference, offering insightful visualisations of the similarity between two probability distributions. In section, the essence of QQ plots, their generation, the information they convey, and their relevance in contemporary data visualisation methodologies are explored.\\
-
-\noindent QQ plots are constructed by plotting the quantiles of two datasets against each other. Typically, one dataset serves as the basis for theoretical quantiles, often assumed to follow a particular probability distribution, while the other dataset comprises observed values. This comparative depiction enables a direct assessment of how closely the observed data align with the theoretical distribution, facilitating the identification of deviations from expected patterns.
-
-\subsubsection{QQ-Plots in Practice}\\
-\noindent In this section, side-by-side QQ plots are displayed offering a visual comparison of the distributional properties of two variables from the mtcars and the iris datset. These plots serve as a means to assess normality assumptions and identify potential deviations from expected distributions. Through this visual exploration, we aim to gain insights into the underlying structure of the data and guide further investigation.
-
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[h]
-
-{\centering \includegraphics[width=\maxwidth]{figure/beamer-QQplots-1} 
-
-}
-
-\caption[Q-Q plot of mpg in mtcars dataset]{Q-Q plot of mpg in mtcars dataset}\label{fig:QQplots}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{image_reference/fbplot.png}
+    \caption{Left graph demostrates curves of arterial oxygen saturation (\%) for 80 women without metabolic syndrome and right graph demostrates curves of arterial oxygen saturation (\%) for 35 women with metabolic syndrome. Outliers from the population are highlighted in red.}
+    \label{fig:fbplot}
 \end{figure}
 
-\end{knitrout}
-
-\noindent In the first plot in Figure~\ref{fig:QQplots}, which examines the mpg variable in the mtcars dataset, the points closely adhere to the theoretical quantiles line, indicating a relatively normal distribution. However, there are subtle deviations observed, particularly in the tails of the distribution, suggesting potential departures from normality. The deviations might indicate the presence of outliers or non-normal behavior in the data, which warrants further investigation.\\
-
-\noindent Conversely, the second plot explores the distribution of the Sepal.Length variable in the iris dataset. Here, the points exhibit a clearer departure from the theoretical quantiles line compared to the mpg plot. The deviation is more pronounced, particularly towards the upper quantiles, indicating a non-normal distribution. This departure could be attributed to the presence of distinct subgroups or underlying factors influencing the distribution of sepal lengths within the iris dataset.\\
-
-\noindent In general, the QQ plots provide a succinct and insightful representation of the distributional properties of the variables under examination. They offer a visual means to assess normality assumptions and identify potential outliers or deviations from expected distributions. As such, QQ plots serve as a valuable tool in exploratory data analysis and model diagnostics, aiding researchers in understanding the underlying structure of their data and guiding subsequent analyses.
+\subsection{Q–Q box plots}
 
 
 \newpage  
