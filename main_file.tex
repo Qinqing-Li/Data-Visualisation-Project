@@ -104,9 +104,10 @@ Chapter 1 underscores the enduring importance of data visualisation. Case exampl
 
 \subsection{Historical Background and Misuses of Data Visualisation}
 
-\noindent This section commences with an examination of two case studies delineating the efficacy and impact of data visualisation, succeeded by an exploration of two instances exemplifying problematic data misuse. The overarching objective is to underscore the significance of data visualisation while concurrently highlighting thenecessity of meticulous attention to detail, particularly in light of the potential for data visualisation to be exploited for malicious purposes.
+\noindent This section commences with an examination of two case studies delineating the efficacy and impact of data visualisation, succeeded by an exploration of two instances exemplifying problematic data misuse. The overarching objective is to underscore the significance of data visualisation while concurrently highlighting thenecessity of meticulous attention to detail, particularly in light of the potential for data visualisation to be exploited for malicious purposes.\\
+
 \noindent
-\\\textbf{Motivations for Using Data Visualisations — Case 1}
+\\\textbf{Motivations for Using Data Visualisations — Case 1}\\
 
 \noindent
 Florence Nightingale was not only a social reformer and the founder of modern nursing but also a pioneering statistician. It was her application of data visualisation during the Crimean War that transformed the field of healthcare and pushed for social reform.\\  
@@ -179,32 +180,41 @@ Regrettably, the Kallikak family tree became a central element in the eugenics m
 \end{figure}
 
 \subsection{Computing and Data Visualisation}
+\noindent
+As a powerful tool for statistical analysis and graphic creation, R offers a wide array of functionalities to cater to a range of data visualisation needs. We will first introduce the commonly used R package \textit{ggplot2}, then we will present key packages for state-of-the-art data visualisation.\\
 
-As a powerful tool for statistical analysis and graphic creation, R offers a wide array of functionalities to cater to a range of data visualisation needs. In data visualisation, \textit{ggplot2} is the main tool used to create plots capable of representing various types of datasets. The foundation of \textit{ggplot2} lies in the Grammar of Graphics, allowing the sequential construction of individual elements composing a graph, which are subsequently combined to create a unified graphical representation.\\
+\noindent
+In data visualisation, \textit{ggplot2} is the main tool used to create plots capable of representing various types of datasets. The foundation of \textit{ggplot2} lies in the Grammar of Graphics, allowing the sequential construction of individual elements composing a graph, which are subsequently combined to create a unified graphical representation.\\
 
-\noindent\textbf{Key R Commands}\\
+\noindent
+The \textit{ggplot2} is an R package for creating statistical graphics, which stands out due to its underlying Grammar of Graphics. It is flexible and powerful, allowing for the creation of tailored graphics rather than being confined to pre-set options. Although there's a learning curve, ggplot2 is designed to be user-friendly with sensible defaults and an iterative approach to building plots. It emphasizes revealing the message within the data. Additionally, ggplot2 is structured to facilitate layered and annotated graphics that enhance data analysis, which is particularly beneficial for beginners and those new to data analysis.\\
+
+\noindent\textbf{Key ggplot2 Commands}\\
 \noindent 
-As shown in subsequent sections, it is possible to produce visualisations rather effortlessly by utilising internal data from R, or even external data, together with \textit{ggplot2}. When using \textit{ggplot2}, certain key tools are used repeatedly to create visual plots from datasets. Some of these include: \texttt{geom}, \texttt{scale}, \texttt{coord}, \texttt{theme}, and more.\\
+As shown in subsequent sections, it is possible to produce visualisations rather effortlessly by utilising internal data from R, or even external data, together with \textit{ggplot2}. When using \textit{ggplot2}, certain key tools are used repeatedly to create visual plots from datasets. The tools below mentioned are integral functions within the ggplot2 package in R for creating sophisticated visualizations \cite{ggplot2}:\\
 
-
-\noindent 
-These particular tools serve the following functions \cite{ggplot2}: %This section needs to be revised
 \noindent
 \texttt{geom} refers to geometric objects, pivotal components within \textit{ggplot2} used to define the visual representation of data in a plot. Each \texttt{geom} function corresponds to a specific graphical representation type in a chart. Additionally, in \textit{ggplot2}, \texttt{scales} functions enable the adjustment of various mapping details, including colour choices, label formatting, legend arrangement, and more.\\
 
 \noindent \texttt{coord} provides the axes and gridlines which aid in interpreting the graph. Various coordinate systems such as cartesian, polar, and map projections are available. Furthermore, \texttt{faceting} is a robust feature enabling the partitioning of a single plot into multiple plots based on factors present in the dataset. This functionality proves particularly beneficial for exploring and presenting data with multiple groups or categories.\\
 
 \noindent The \texttt{theme} function holds significance in customising the non-data elements of plots. The theme system within \textit{ggplot2} allows precise adjustment of aesthetic aspects such as fonts, labels, legends, and background colours. This tool is essential for enhancing plot readability and creating visually captivating graphics tailored to specific audiences or publication requirements.\\
-\\
-\\
 
-\noindent\textbf{Key R Packages}\\
+\noindent\textbf{Key ggplot2 Packages}\\
 \noindent
-The R language is a powerful data analysis tool, and its power lies in the wide variety of R packages that help it achieve a wide variety of functions. Through out this project, different packages, such as $maps$, $dplyr$, $tidyverse$, and $gridExtra$ will be used. These packages significantly enhances the analysis and presentation of data. \\
+The R language is a powerful data analysis tool, and its power lies in the wide variety of R packages that help it achieve a wide variety of functions. Through out this project, we will use mant different packages. These packages significantly enhances the analysis and presentation of data. \\
 
 \noindent
-The \textit{dplyr} packages plays a crucial role in data manipulation and transformation. It helps us filter, sort, summarise, and transform datasets, making data analysis more efficient and manageable. The \textit{maps} package is used for providing map data and tools, allowing one to easily draw and display maps in geospatial analyses. The \textit{tidyverse} package is indeed a collection of R packages designed to provide a cohesive and comprehensive set of tools for data science. It includes several widely used packages such as \textit{ggplot2} and \textit{dplyr}. The \textit{gridExtra} packages offers the capability to combine several graphical objects into a cohesive display.\\
+The \textit{dplyr} packages plays a crucial role in data manipulation and transformation. It helps us filter, sort, summarise, and transform datasets, making data analysis more efficient and manageable.\\
 
+\noindent
+The \textit{tidyverse} package is indeed a collection of R packages designed to provide a cohesive and comprehensive set of tools for data science. It includes several widely used packages such as \textit{ggplot2} and \textit{dplyr}.\\
+
+\noindent
+The \textit{Rtsne} package allows us to conduct the analysis conveniently using the \textit{Rtsne} function,  which is particularly useful for visualizing high-dimensional data.\\
+
+\noindent
+The \textit{qqboxplot} package helps us to build Q—Q boxplot which combines both Q—Q plot and boxplot, offering a more comprehensive visual assessment tool. It  enhances traditional boxplot and Q—Q plot by integrating their advantages together.
 
 \subsection{Datasets}
 \noindent
@@ -534,7 +544,7 @@ This equation highlights that for any point \(x\) between \(x_i\) and \(x_{i+1}\
 
 \subsubsection{Time Series Analysis}
 
-Time series visualisation is particularly suited to line charts. A time series\cite{Brockwell2016Introduction} is a collection of observations $x_t$, where $t$ denotes the time point at which the observation is recorded. An index set $T_0$ which collects all the time points when observations are available. For instance, $T_0 = \{0,\dots ,n\}$ for $n \in \mathbb{N}$. By plotting these data points over time, line charts help in identifying long-term trends, seasonal patterns, and anomalies.\\
+Time series visualisation is particularly suited to line charts because they effectively display changes and trends over time, allowing for easy visualization of relationships between time points. A time series\cite{Brockwell2016Introduction} is a collection of observations ${x_t}$, where $t=0,\dots,n$ denotes the time point at which the observation is recorded. An index set $T_0$ which collects all the time points when observations are available. For instance, $T_0 = \{0,\dots,n\}$ for $n \in \mathbb{N}$. By plotting these data points over time, line charts help in identifying long-term trends, seasonal patterns, and anomalies.\\
 
 \noindent
 A time series can be viewed as a realisation of a stochastic process. A stochastic process\cite{Brockwell2016Introduction} $X = (X_t)_{t \in T_0}$ is a collection of random variables $X_t$, where $t$ denotes the time index and $T_0$ the index set. For a fixed event $\omega \in \Omega$ we obtain the realisation of the stochastic process (sometimes also called a sample path) which is given by $x_t = X_t(\omega)$, $t \in T_0$. In practice, line charts of time series data provide insights into the behavior of such stochastic processes over time.
@@ -1341,7 +1351,7 @@ A biplot is a graphical representation that succinctly captures the relationship
 
 \noindent At their core, biplots offer a graphical representation of a standardised data matrix, whose rows \(n\) are the samples, and whose columns \(p\) are the variables, by projecting these onto a two-dimensional plane. To do this, mathematical computations derived from techniques like Singular Value Decomposition (SVD) and Principal Component Analysis (PCA) are required.\\
 
-\noindent In recent years, there have been substantial developments in biplots (REFRENCE Gower and Hand in 1996). The technique has expanded far beyond what is now referred to as the "classical biplots" or "PCA biplots". The concept now finds broad application in conjunction with various other techniques of multivariate analysis. Nevertheless, this section studies the foundations of this visualisation technique, and thus, the emphasis is on biplots within the framework of PCA.
+\noindent In recent years, there have been substantial developments in biplots \cite{gower1995biplots}. The technique has expanded far beyond what is now referred to as the "classical biplots" or "PCA biplots". The concept now finds broad application in conjunction with various other techniques of multivariate analysis. Nevertheless, this section studies the foundations of this visualisation technique, and thus, the emphasis is on biplots within the framework of PCA.
 
 \subsubsection{Construction of PCA Biplots}
 
@@ -1350,7 +1360,7 @@ A biplot is a graphical representation that succinctly captures the relationship
 
 \[\mathbf{X} = \mathbf{U}\mathbf{B}\mathbf{S}^{T}, \]
 
-\noindent where $\mathbf{U}$ is an $(n \times r)$ orthogonal matrix, and $\mathbf{S}$ is an $(p \times r)$ orthogonal matrix. The columns of $\mathbf{U}$ and $\mathbf{S}$ are the left and right singular vectors. $\mathbf{B}$ is a $(r \times r)$ diagonal matrix with entries $b_1, \ldots, b_r$ such that $b_1 \geq \dots b_r \geq 0$. These entries the singular values discussed later on. %Reference Miguel lecture\\
+\noindent where $\mathbf{U}$ is an $(n \times r)$ orthogonal matrix, and $\mathbf{S}$ is an $(p \times r)$ orthogonal matrix. The columns of $\mathbf{U}$ and $\mathbf{S}$ are the left and right singular vectors. $\mathbf{B}$ is a $(r \times r)$ diagonal matrix with entries $b_1, \ldots, b_r$ such that $b_1 \geq \dots b_r \geq 0$ \cite{jolliffe2003principal}. These entries the singular values discussed later on.\\
 
 \noindent In order to find this singular value decomposition, firstly we require the computation of the orthogonal diagonalisation  
 
@@ -1376,12 +1386,10 @@ A biplot is a graphical representation that succinctly captures the relationship
 \mathbf{u}_i = \frac{1}{\sigma_1}\mathbf{X}\mathbf{s}_i,
 \]
 
-\noindent where $\sigma_i$ are the singular values, and $\mathbf{s}_i$ are the columns of the matrix $\mathbf{S}$.\\
-
-%Reference: https://www.youtube.com/watch?v=vbGw7BTWYS4
+\noindent where $\sigma_i$ are the singular values, and $\mathbf{s}_i$ are the columns of the matrix $\mathbf{S}$ \cite{baker2005singular}.\\
 
 \noindent \textbf{PCA Biplot Construction}\\
-\noindent Now, the heuristic argument motivating PCA biplots is the following. Define $\mathbf{B}^{\alpha}$, for $0 \leq \alpha \leq 1$, as a diagonal matrix who's elements are $b_1^{\alpha}, \ldots, b_r^{\alpha}$, with a similar definition for $\mathbf{B}^{1-\alpha}.$ Then, with the decomposition of matrix $\mathbf{X}$ found through SVD, the data can be further rewritten as
+\noindent Now, the heuristic argument motivating PCA biplots is the following. Define $\mathbf{B}^{\alpha}$, for $0 \leq \alpha \leq 1$, as a diagonal matrix who's elements are $b_1^{\alpha}, \ldots, b_r^{\alpha}$, with a similar definition for $\mathbf{B}^{1-\alpha}$ \cite{biplotsnotes}. Then, with the decomposition of matrix $\mathbf{X}$ found through SVD, the data can be further rewritten as
 \[\mathbf{X} = \mathbf{U}\mathbf{B}^{\alpha}\mathbf{B}^{1-\alpha}\mathbf{S}^{T} = \mathbf{U}\mathbf{B}\mathbf{S}^{T} = \mathbf{G}\mathbf{H}^{T},\]
 
 \noindent where \[\mathbf{G} = [\mathbf{g}_1, \dots , \mathbf{g}_n] = \mathbf{U}\mathbf{B}^\alpha, \quad \mathbf{H}^T = [\mathbf{h}_1, \dots , \mathbf{h}_p]^T = \mathbf{B}^{1-\alpha}\mathbf{S}^T. \]
@@ -1390,7 +1398,7 @@ A biplot is a graphical representation that succinctly captures the relationship
 
 \[ x_{ij} = \mathbf{g}_i^T \mathbf{h}_j. \]
 
-\noindent Both the $\mathbf{g}_i$ and $\mathbf{h}_j$ have $r$ elements, and hence, if $\mathbf{X}$ has rank 2, all could be plotted as points in two-dimensional space. Note that for the more general case, where $r > 2$, $x_{ij}$ can be written as
+\noindent Both the $\mathbf{g}_i$ and $\mathbf{h}_j$ have $r$ elements, and hence, if $\mathbf{X}$ has rank 2, all could be plotted as points in two-dimensional space \cite{biplotsnotes}. Note that for the more general case, where $r > 2$, $x_{ij}$ can be written as
 
 \[
 x_{ij} = \sum_{k=1}^{r} u_{ik}b_{k}s_{jk}
@@ -1411,7 +1419,7 @@ _m\tilde{x}_{ij} = \sum_{k=1}^{m} \mathbf{g}_{ik}\mathbf{h}_{jk} = \mathbf{g}_{i
 
 \[ x_{ij} \approx \mathbf{g}_{i}^{*T}\mathbf{h}_{j}^{*}.\]
 
-\noindent Thus, $\mathbf{g}_i$ and $\mathbf{h}_j$ should provide a reasonable two-dimensional approximation of the $n$ observations and the $p$ variables.\\
+\noindent Thus, $\mathbf{g}_i$ and $\mathbf{h}_j$ should provide a reasonable two-dimensional approximation of the $n$ observations and the $p$ variables \cite{jolliffe2003principal}.\\
 
 \subsubsection{Biplots in Practice: The mtcars Dataset}
 
@@ -1420,7 +1428,7 @@ _m\tilde{x}_{ij} = \sum_{k=1}^{m} \mathbf{g}_{ik}\mathbf{h}_{jk} = \mathbf{g}_{i
 \noindent \textbf{Methodologies Discussion}\\
 \noindent Traditionally, biplots are constructed manually through mathematical operations based on SVD discussed previously. However, with computational tools like R, in-built functions such as \texttt{prcomp()} and \texttt{biplot()} streamline the process, removing tidious mathematical intricacies, which becomes particularly interesting when working with larger datasets.\\
 
-\noindent The manual construction, which results in the biplot shown in Figure~\ref{fig:PCAbiplot-deconstruction}, begins with data standardisation followed by SVD decomposition to obtain matrices representing row and column contributions to principal components. These matrices are then utilised to construct the biplot. Conversely, the in-built function approach employs R's \texttt{prcomp()} function for PCA and directly generates the biplot using \texttt{biplot()}, without the need for explicit mathematical operations. The product of this method is shown in Figure~\ref{fig:PCAbiplot}.
+\noindent The manual construction, which results in the biplot shown in Figure~\ref{fig:PCAbiplot}, begins with data standardisation followed by SVD decomposition to obtain matrices representing row and column contributions to principal components. These matrices are then utilised to construct the biplot. Conversely, the in-built function approach employs R's \texttt{prcomp()} function for PCA and directly generates the biplot using \texttt{biplot()}, without the need for explicit mathematical operations. The product of this method is shown in Figure~\ref{fig:PCAbiplot}.
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -1447,35 +1455,22 @@ _m\tilde{x}_{ij} = \sum_{k=1}^{m} \mathbf{g}_{ik}\mathbf{h}_{jk} = \mathbf{g}_{i
 \hlstd{G2} \hlkwb{<-} \hlstd{G[,} \hlnum{1}\hlopt{:}\hlnum{2}\hlstd{]}
 \hlstd{H2} \hlkwb{<-} \hlstd{H[,} \hlnum{1}\hlopt{:}\hlnum{2}\hlstd{]}
 
-\hlcom{# Create a biplot-like plot}
-\hlkwd{par}\hlstd{(}\hlkwc{mfrow} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{2}\hlstd{),} \hlkwc{pty} \hlstd{=} \hlstr{"s"}\hlstd{)}
-\hlkwd{plot}\hlstd{(G2,} \hlkwc{xlim} \hlstd{=} \hlkwd{c}\hlstd{(}\hlopt{-}\hlnum{0.25}\hlstd{,} \hlnum{0.4}\hlstd{),} \hlkwc{xlab} \hlstd{=} \hlstr{"PC1"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"PC2"}\hlstd{)}
+\hlcom{# Set up a side-by-side layout}
+\hlkwd{par}\hlstd{(}\hlkwc{mfrow} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{2}\hlstd{))}
+
+\hlcom{# Create a biplot-like plot for manual construction with title}
+\hlkwd{plot}\hlstd{(G2,} \hlkwc{xlim} \hlstd{=} \hlkwd{c}\hlstd{(}\hlopt{-}\hlnum{0.25}\hlstd{,} \hlnum{0.4}\hlstd{),} \hlkwc{xlab} \hlstd{=} \hlstr{"PC1"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"PC2"}\hlstd{,} \hlkwc{main} \hlstd{=} \hlstr{"Manual Mathematical Construction"}\hlstd{)}
+
 \hlkwd{par}\hlstd{(}\hlkwc{new} \hlstd{=} \hlnum{TRUE}\hlstd{)}
 \hlkwd{plot}\hlstd{(H2,} \hlkwc{xlim} \hlstd{=} \hlkwd{c}\hlstd{(}\hlopt{-}\hlnum{4.5}\hlstd{,} \hlnum{8}\hlstd{),} \hlkwc{ylim} \hlstd{=} \hlkwd{c}\hlstd{(}\hlopt{-}\hlnum{4.5}\hlstd{,} \hlnum{8}\hlstd{),} \hlkwc{col} \hlstd{=} \hlstr{"#EB7C69"}\hlstd{,}
      \hlkwc{xaxt} \hlstd{=} \hlstr{"n"}\hlstd{,} \hlkwc{yaxt} \hlstd{=} \hlstr{"n"}\hlstd{,} \hlkwc{xlab} \hlstd{=} \hlstr{""}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{""}\hlstd{)}
-
-\hlcom{# Draw pseudo-axis}
 \hlkwa{for} \hlstd{(i} \hlkwa{in} \hlnum{1}\hlopt{:}\hlkwd{ncol}\hlstd{(scaled_data)) \{}
   \hlkwd{lines}\hlstd{(}\hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{, H2[i,} \hlnum{1}\hlstd{]),} \hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{, H2[i,} \hlnum{2}\hlstd{]),} \hlkwc{col} \hlstd{=} \hlstr{"#EB7C69"}\hlstd{,} \hlkwc{lwd} \hlstd{=} \hlnum{1.5}\hlstd{)}
 \hlstd{\}}
 
 \hlkwd{axis}\hlstd{(}\hlnum{3}\hlstd{)}
 \hlkwd{axis}\hlstd{(}\hlnum{4}\hlstd{)}
-\end{alltt}
-\end{kframe}\begin{figure}[H]
 
-{\centering \includegraphics[width=\maxwidth]{figure/beamer-PCAbiplot-deconstruction-1} 
-
-}
-
-\caption[PCA biplot of mtcars dataset]{PCA biplot of mtcars dataset: mathematical construction}\label{fig:PCAbiplot-deconstruction}
-\end{figure}
-
-\end{knitrout}
-
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
 \hlcom{#GENERATION OF A BIPLOT WITH R'S BUILT-IN FUNCTIONS}
 \hlcom{# Standardise the data}
 \hlstd{scaled_data} \hlkwb{<-} \hlkwd{scale}\hlstd{(mtcars)}
@@ -1483,8 +1478,8 @@ _m\tilde{x}_{ij} = \sum_{k=1}^{m} \mathbf{g}_{ik}\mathbf{h}_{jk} = \mathbf{g}_{i
 \hlcom{# Perform Principal Component Analysis (PCA)}
 \hlstd{pca_result} \hlkwb{<-} \hlkwd{prcomp}\hlstd{(scaled_data,} \hlkwc{scale.} \hlstd{=} \hlnum{TRUE}\hlstd{)}
 
-\hlcom{# Create a biplot}
-\hlkwd{biplot}\hlstd{(pca_result,} \hlkwc{cex} \hlstd{=} \hlnum{0.7}\hlstd{)}
+\hlcom{# Create a biplot with title}
+\hlkwd{biplot}\hlstd{(pca_result,} \hlkwc{cex} \hlstd{=} \hlnum{0.7}\hlstd{,} \hlkwc{main} \hlstd{=} \hlstr{"R's Built-in Function"}\hlstd{)}
 \end{alltt}
 \end{kframe}\begin{figure}[H]
 
@@ -1492,7 +1487,7 @@ _m\tilde{x}_{ij} = \sum_{k=1}^{m} \mathbf{g}_{ik}\mathbf{h}_{jk} = \mathbf{g}_{i
 
 }
 
-\caption[PCA biplot of mtcars dataset]{PCA biplot of mtcars dataset: R built-in function}\label{fig:PCAbiplot}
+\caption[PCA biplots of mtcars dataset]{PCA biplots of mtcars dataset}\label{fig:PCAbiplot}
 \end{figure}
 
 \end{knitrout}
@@ -1513,9 +1508,9 @@ _m\tilde{x}_{ij} = \sum_{k=1}^{m} \mathbf{g}_{ik}\mathbf{h}_{jk} = \mathbf{g}_{i
 \mathbf{x}_i = f(y_i) + \epsilon_i, 
 \]
 
-\noindent where $\epsilon_i$ are errors with mean 0 and variance $\sigma^2 \mathbf{I}_p$ and $f: \mathbb{R}^1 \rightarrow \mathbb{R}^p$ is a continuous function called a curve.\\
+\noindent where $\epsilon_i$ are errors with mean 0 and variance $\sigma^2 \mathbf{I}_p$ and $f: \mathbb{R}^1 \rightarrow \mathbb{R}^p$ is a continuous function called a curve \cite{jolliffe2003principal}.\\
 
-\noindent For curve $\mathbf{f}$, the projection index $y_f(\mathbf{x})$ maps observation $\mathbf{x} \in \mathbb{R}^p$ to the point of $\mathbf{f}$ that is closest, returning the score (index). If there are several such points, it returns the largest (this is arbitrary choice to ensure it is a well defined function). Hence, the projection index is: 
+\noindent For curve $\mathbf{f}$, the projection index $y_f(\mathbf{x})$ maps observation $\mathbf{x} \in \mathbb{R}^p$ to the point of $\mathbf{f}$ that is closest, returning the score (index). If there are several such points, it returns the largest (this is arbitrary choice to ensure it is a well defined function). Hence, the projection index is \cite{jolliffe2003principal}: 
 \[
 y_f(\mathbf{x}) = \sup\limits_{y}\{y: ||\mathbf{x}-\mathbf{f}(y)||= \inf\limits_{\mu}||\mathbf{x}-\mathbf{f}(\mu)||\}.
 \]
@@ -1525,7 +1520,7 @@ y_f(\mathbf{x}) = \sup\limits_{y}\{y: ||\mathbf{x}-\mathbf{f}(y)||= \inf\limits_
 \min\limits_{\mathbf{f}}\sum_{i=1}^{n} ||\mathbf{x}_i - \mathbf{f}(y_{\mathbf{f}}(\mathbf{x}_i))||^2.
 \]
 
-\noindent To construct the principal curve, an algorithm put to work. This iterates between finding a curve $\mathbf{f}$ and then projecting the points onto that. More explicitly, the algorithms has the following form: %https://www.youtube.com/watch?v=lnxz3QAA1po 
+\noindent To construct the principal curve, an algorithm put to work. This iterates between finding a curve $\mathbf{f}$ and then projecting the points onto that. More explicitly, the algorithms has the following form \cite{jolliffe2003principal}: 
 
 \begin{enumerate}
   \item Initialise: let iteration counter $h = 1$ and set $\mathbf{y}^{(0)} = \mathbf{Xu}$, where $\mathbf{u}$ is the first PC vector. 
@@ -1653,7 +1648,8 @@ Additionally, it requires experimentation with different initialisation to mitig
 \newpage 
 
 \section{State-Of-The-Art Modern Approaches}
-In this chapter, we will introduce some state-of-the-art graphical statistical methods published in recent research. In Chapter 6.1, we will introduce the foundational visualisation methods box plots and Q–Q plots. Building on this, we will discuss the theory and implementation of functional box plots and Q–Q Box plots, as published in recent articles in the \textit{Journal of Computational and Graphical Statistics}. 
+
+In this chapter, we will introduce some state-of-the-art graphical statistical methods published in recent research. In Chapter 6.1, we will introduce the foundational visualisation methods box plots and Q–Q plots. Building on this, we will discuss the theory and implementation of functional boxplots and Q–Q Box plots, as published in recent articles in the \textit{Journal of Computational and Graphical Statistics}. 
 
 \subsection{Introduction}
 
@@ -1678,11 +1674,9 @@ An example of box plots using the iris dataset is displayed in Figure~\ref{fig:b
 
 \subsubsection{Q–Q Plots in Practice}\\
 
-\noindent Quantile-Quantile (Q–Q) plots represent a powerful and widely utilised approach in exploratory data analysis and statistical inference, offering insightful visualisations of the similarity between two probability distributions. In section, the essence of Q–Q plots, their generation, the information they convey, and their relevance in contemporary data visualisation methodologies are explored.\\
-
 \noindent Q–Q plots are constructed by plotting the quantiles of two datasets against each other. Typically, one dataset serves as the basis for theoretical quantiles, often assumed to follow a particular probability distribution, while the other dataset comprises observed values. This comparative depiction enables a direct assessment of how closely the observed data align with the theoretical distribution, facilitating the identification of deviations from expected patterns.\\
 
-\noindent In this section, side-by-side QQ plots are displayed offering a visual comparison of the distributional properties of two variables from the mtcars and the iris datset. These plots serve as a means to assess normality assumptions and identify potential deviations from expected distributions. Through this visual exploration, we aim to gain insights into the underlying structure of the data and guide further investigation.
+\noindent In this section, side-by-side QQ plots are displayed offering a visual comparison of the distributional properties of two variables from the mtcars and the iris datset. These plots serve as a means to assess normality assumptions and identify potential deviations from expected distributions. Through this visual exploration, we aim to gain insights into the underlying structure of the data and guide further investigation.\\
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[h]
@@ -1759,7 +1753,42 @@ where $\lceil n/2 \rceil$ is the smallest integer not less than half of the samp
     \label{fig:fbplot}
 \end{figure}
 
-\subsection{Q–Q box plots}
+\subsection{Q–Q Boxplots}
+In this section, we will introduce the Q–Q boxplot, which combines the advantages from the boxplot and the Q–Q plot. The Q–Q boxplot integrates the box plot's ability to summarize data through its quartiles and the Q–Q plot's capability to compare data distributions to a theoretical distribution (often the normal distribution).\\
+
+\noindent 
+Although Q–Q plots and box plots are very effiective in data visualization, they have there limitations as well. Q–Q plot is less effective than box plot in highlighting summary quantitles, and it also suffers the readability when we place multiple samples together. Box plot usually has unreliable tail information when $n<100$, therefor may not suitable for some research questions that need more accurate estimates of extreme quantiles.\\
+
+\noindent
+In this section, we will introduce the Q–Q boxplot, which combines the advantages from the boxplot and the Q–Q plot. The Q–Q boxplot integrates the box plot's ability to summarize data through its quartiles and the Q–Q plot's capability to compare data distributions to a theoretical distribution (often the normal distribution).\\
+
+\subsubsection{Construction of Q–Q Boxplots}
+The construction of a Q–Q boxplot involves a three-step process. The first setp is to construct the box, which is similar to the standard boxplot and represents the interquartile range of the data. The second step is to draw the whiskers and confidence bands. The third step is to draw the outside values. The first and third steps are as same as in box plots.\\
+
+\noindent
+The unique aspect of the Q–Q boxplot comes in the second step. In ordor to draw the whiskers and confidence bands, we have to standardize both the comparison distribution and the reference distribution. This standardization process involves matching the quantiles from the reference distribution to those in the comparison distribution, either by subsampling or interpolation. Once this is done, the deviations of the comparison distribution from the reference distribution are calculated relative to each data point. Alongside this, the point-wise confidence bands are also determined, which provides a visual indication of how closely the data follows the expected theoretical distribution. To integrate the relative deviations and confidence bands into the Q–Q boxplot, we include both the x and y coordinates in the plot. The y-axis coordinates correspond to the quantile values from the comparison dataset, while the x-axis coordinates represent the deviations relative to the reference distribution.\\
+
+\noindent
+To calculate the x-coordinate for a Q–Q boxplot, we set a scale for the plot and determin the maximum x-coordinate, $x_{\text{max}}=(\frac{b_w}{2})$ where $b_w$ is the box width. Let $dev_{max}$ be the maximum of the absolute values of the whisker deviations and confidence band values. The value of a relative deviaition $d$ is computed by either taking the difference between the standardized values from the comparison distribution and those from the reference distribution, or by using a value from the confidence band associated with the reference distribution. We can then set:
+$$x^* = \frac{d \cdot x_{\text{max}}}{\text{dev}_{\text{max}}}.$$
+The $x$ coordinate is then $x_b+x*$, where $x_b$ marks the center of the boxplot.
+
+
+\subsubsection{Q–Q Boxplots in Practice}
+The resulting Q–Q boxplot shows the distribution of sepal length values within each iris species, allowing comparison whether they come from a normal distribution. Outliers are also indicated in the plot.\\
+
+\begin{knitrout}\scriptsize
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[h]
+
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-QQboxplots-1} 
+
+}
+
+\caption[Q–Q boxplot of iris dataset]{Q–Q boxplot of iris dataset}\label{fig:QQboxplots}
+\end{figure}
+
+\end{knitrout}
+
 
 
 \newpage  

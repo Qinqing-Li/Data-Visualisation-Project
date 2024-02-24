@@ -7,6 +7,11 @@
   n.d.
 \newblock Accessed 9 Nov. 2023.
 
+\bibitem{baker2005singular}
+Kirk Baker.
+\newblock Singular value decomposition tutorial.
+\newblock {\em The Ohio State University}, 24:22, 2005.
+
 \bibitem{Brockwell2016Introduction}
 Peter~J. Brockwell and Richard~A. Davis.
 \newblock {\em Introduction to Time Series and Forecasting}.
@@ -58,6 +63,11 @@ JP~Garc{\'i}a, JC~Ferreira, and CM~Patino.
 \newblock Receiver operating characteristic analysis: an ally in the pandemic.
 \newblock {\em J Bras Pneumol}, 47(2):e20210139, Apr 30 2021.
 
+\bibitem{gower1995biplots}
+John~C Gower and David~J Hand.
+\newblock {\em Biplots}, volume~54.
+\newblock CRC Press, 1995.
+
 \bibitem{blog}
 E.~Hawkins.
 \newblock Warming stripes | climate lab book.
@@ -68,6 +78,16 @@ E.~Hawkins.
 Kieran Healy.
 \newblock {\em Data visualization: a practical introduction}.
 \newblock Princeton University Press, 2018.
+
+\bibitem{biplotsnotes}
+M.~J.~Blanchet, de~Carvalho.
+\newblock Applied statistics.
+\newblock Ecole Polytechnique Federale De Lausanne, Lecture 6, 2011.
+
+\bibitem{jolliffe2003principal}
+Ian~T Jolliffe.
+\newblock Principal component analysis.
+\newblock {\em Technometrics}, 45(3):276, 2003.
 
 \bibitem{graphFN}
 F.~Nightingale.

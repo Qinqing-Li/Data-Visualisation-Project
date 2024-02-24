@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.9.29)  24 FEB 2024 04:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.9.29)  24 FEB 2024 04:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -655,18 +655,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 102--104
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--113
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
 
  []
 
-<image_reference/Nightingale-mortality.jpg, id=376, 7022.235pt x 3840.3475pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 109--111
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--114
+
+ []
+
+<image_reference/Nightingale-mortality.jpg, id=386, 7022.235pt x 3840.3475pt>
 File: image_reference/Nightingale-mortality.jpg Graphic file (type jpg)
 <use image_reference/Nightingale-mortality.jpg>
 Package pdftex.def Info: image_reference/Nightingale-mortality.jpg  used on inp
-ut line 119.
+ut line 120.
 (pdftex.def)             Requested size: 260.17464pt x 142.27815pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 124--126
+Underfull \hbox (badness 10000) in paragraph at lines 125--127
 
  []
 
@@ -675,52 +685,52 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.127 \noindent
-                <./image_reference/Nightingale-mortality.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 127--132
+l.127 
+       <./image_reference/Nightingale-mortality.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 128--133
 
  []
 
-<image_reference/global.png, id=387, 910.48155pt x 455.301pt>
+<image_reference/global.png, id=397, 910.48155pt x 455.301pt>
 File: image_reference/global.png Graphic file (type png)
 <use image_reference/global.png>
-Package pdftex.def Info: image_reference/global.png  used on input line 138.
+Package pdftex.def Info: image_reference/global.png  used on input line 139.
 (pdftex.def)             Requested size: 260.17464pt x 130.10254pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--145
+Underfull \hbox (badness 10000) in paragraph at lines 144--146
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--151
+Underfull \hbox (badness 10000) in paragraph at lines 150--152
 
  []
 
-<image_reference/misuse1.png, id=391, 681.54625pt x 511.9125pt>
+<image_reference/misuse1.png, id=401, 681.54625pt x 511.9125pt>
 File: image_reference/misuse1.png Graphic file (type png)
 <use image_reference/misuse1.png>
-Package pdftex.def Info: image_reference/misuse1.png  used on input line 157.
+Package pdftex.def Info: image_reference/misuse1.png  used on input line 158.
 (pdftex.def)             Requested size: 260.17464pt x 195.41924pt.
 [6pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.161 
+l.162 
        <./image_reference/global.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 165--167
+Underfull \hbox (badness 10000) in paragraph at lines 166--168
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 168--170
+Underfull \hbox (badness 10000) in paragraph at lines 169--171
 
  []
 
-<image_reference/familytree.jpg, id=406, 955.57pt x 497.86pt>
+<image_reference/familytree.jpg, id=416, 955.57pt x 497.86pt>
 File: image_reference/familytree.jpg Graphic file (type jpg)
 <use image_reference/familytree.jpg>
-Package pdftex.def Info: image_reference/familytree.jpg  used on input line 176
+Package pdftex.def Info: image_reference/familytree.jpg  used on input line 177
 .
 (pdftex.def)             Requested size: 303.53267pt x 158.14096pt.
 [7pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) 
@@ -728,39 +738,34 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.180 
+l.181 
        <./image_reference/misuse1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 183--184
+Underfull \hbox (badness 10000) in paragraph at lines 183--185
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--188
+Underfull \hbox (badness 10000) in paragraph at lines 186--188
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 190--194
+Underfull \hbox (badness 10000) in paragraph at lines 189--191
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
+Underfull \hbox (badness 10000) in paragraph at lines 192--195
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 197--200
+Underfull \hbox (badness 10000) in paragraph at lines 196--198
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 197--200
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 197--200
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
 
  []
 
@@ -769,14 +774,19 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.201 \noindent
-               \textbf{Key R Packages}\\ <./image_reference/familytree.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 201--204
+l.200 
+       <./image_reference/familytree.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 201--202
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 205--207
+Underfull \hbox (badness 10000) in paragraph at lines 203--206
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--209
 
  []
 
@@ -786,22 +796,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 210--212
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 213--214
+Underfull \hbox (badness 10000) in paragraph at lines 213--215
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--217
+Underfull \hbox (badness 10000) in paragraph at lines 220--222
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--221
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 222--224
+Underfull \hbox (badness 10000) in paragraph at lines 223--224
 
  []
 
@@ -811,17 +816,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 225--227
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 228--230
+Underfull \hbox (badness 10000) in paragraph at lines 229--231
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--234
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--237
 
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 240--241
+Underfull \hbox (badness 10000) in paragraph at lines 238--240
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 250--251
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 242--244
+Underfull \hbox (badness 10000) in paragraph at lines 252--254
 
  []
 
@@ -832,7 +852,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.253 \begin{itemise}
+l.263 \begin{itemise}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -845,14 +865,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.254     \item \textbf
+l.264     \item \textbf
                        {Nominal data}: represents categories or labels witho...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 254
+Underfull \hbox (badness 10000) detected at line 264
 [][]
  []
 
@@ -863,14 +883,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.255     \item \textbf
+l.265     \item \textbf
                        {Ordinal data}: implies a meaningful order or ranking...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 255
+Underfull \hbox (badness 10000) detected at line 265
 [][]
  []
 
@@ -881,14 +901,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.256     \item \textbf
+l.266     \item \textbf
                        {Interval data}: possesses ordered categories with eq...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 256
+Underfull \hbox (badness 10000) detected at line 266
 [][]
  []
 
@@ -899,14 +919,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.257     \item \textbf
+l.267     \item \textbf
                        {Ratio data}: includes ordered categories with equal ...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 257
+Underfull \hbox (badness 10000) detected at line 267
 [][]
  []
 
@@ -917,35 +937,35 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.258 \end{itemise}
+l.268 \end{itemise}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[10]
-<figure/beamer-data-plots-1.pdf, id=446, 794.97pt x 578.16pt>
+[11]
+<figure/beamer-data-plots-1.pdf, id=459, 794.97pt x 578.16pt>
 File: figure/beamer-data-plots-1.pdf Graphic file (type pdf)
 <use figure/beamer-data-plots-1.pdf>
-Package pdftex.def Info: figure/beamer-data-plots-1.pdf  used on input line 266
+Package pdftex.def Info: figure/beamer-data-plots-1.pdf  used on input line 276
 .
 (pdftex.def)             Requested size: 433.62pt x 315.36885pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 275--276
+Underfull \hbox (badness 10000) in paragraph at lines 285--286
 
  []
 
-[11pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
+[12pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.276 
+l.286 
        <./figure/beamer-data-plots-1.pdf>]
-<figure/beamer-abs-plots-1.pdf, id=463, 867.24pt x 289.08pt>
+<figure/beamer-abs-plots-1.pdf, id=476, 867.24pt x 289.08pt>
 File: figure/beamer-abs-plots-1.pdf Graphic file (type pdf)
 <use figure/beamer-abs-plots-1.pdf>
-Package pdftex.def Info: figure/beamer-abs-plots-1.pdf  used on input line 294.
+Package pdftex.def Info: figure/beamer-abs-plots-1.pdf  used on input line 304.
 
 (pdftex.def)             Requested size: 433.62pt x 144.53964pt.
 
@@ -956,7 +976,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.303 \\
+l.313 \\
         
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -969,128 +989,105 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.304 \noindent
+l.314 \noindent
                 \textbf{Trade-offs Between Abstraction and Information Loss}\\
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--306
+Underfull \hbox (badness 10000) in paragraph at lines 314--316
 
  []
 
-[12pdfTeX warning (ext4): destination with the same identifier (name{figure.6})
+[13pdfTeX warning (ext4): destination with the same identifier (name{figure.6})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.306 
+l.316 
        <./figure/beamer-abs-plots-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 311--312
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 313--315
+Underfull \hbox (badness 10000) in paragraph at lines 323--325
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 316--318
+Underfull \hbox (badness 10000) in paragraph at lines 326--328
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 319--321
+Underfull \hbox (badness 10000) in paragraph at lines 329--331
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 326--327
+Underfull \hbox (badness 10000) in paragraph at lines 336--337
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 328--330
+Underfull \hbox (badness 10000) in paragraph at lines 338--340
 
  []
 
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 331--333
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 341--343
 
  []
 
-<figure/beamer-colour-plot-1.pdf, id=496, 722.7pt x 216.81pt>
+<figure/beamer-colour-plot-1.pdf, id=509, 722.7pt x 216.81pt>
 File: figure/beamer-colour-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-colour-plot-1.pdf>
-Package pdftex.def Info: figure/beamer-colour-plot-1.pdf  used on input line 33
+Package pdftex.def Info: figure/beamer-colour-plot-1.pdf  used on input line 34
 7.
 (pdftex.def)             Requested size: 433.62pt x 130.08699pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 346--348
+Underfull \hbox (badness 10000) in paragraph at lines 356--358
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--351
+Underfull \hbox (badness 10000) in paragraph at lines 359--361
 
  []
 
-[14pdfTeX warning (ext4): destination with the same identifier (name{figure.7})
+[15pdfTeX warning (ext4): destination with the same identifier (name{figure.7})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.356 \subsubsection
+l.366 \subsubsection
                     {Strategies to Reduce Cognitive Load While Maintaining C...
  <./figure/beamer-colour-plot-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 357--358
+Underfull \hbox (badness 10000) in paragraph at lines 367--368
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 359--360
+Underfull \hbox (badness 10000) in paragraph at lines 369--370
 
  []
 
-<figure/beamer-cogload-plot-1.pdf, id=509, 722.7pt x 216.81pt>
+<figure/beamer-cogload-plot-1.pdf, id=522, 722.7pt x 216.81pt>
 File: figure/beamer-cogload-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-cogload-plot-1.pdf>
 Package pdftex.def Info: figure/beamer-cogload-plot-1.pdf  used on input line 3
-64.
+74.
 (pdftex.def)             Requested size: 433.62pt x 130.08699pt.
-[15pdfTeX warning (ext4): destination with the same identifier (name{figure.8})
+[16pdfTeX warning (ext4): destination with the same identifier (name{figure.8})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.376 \newpage
+l.386 \newpage
                <./figure/beamer-cogload-plot-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 384--385
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 386--387
-
- []
-
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.390 
-      
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 392--394
+Underfull \hbox (badness 10000) in paragraph at lines 394--395
 
  []
 
@@ -1100,32 +1097,45 @@ Underfull \hbox (badness 10000) in paragraph at lines 396--397
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 398--400
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.400 
+      
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 402--404
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 401--402
-
- []
-
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 407--409
+Underfull \hbox (badness 10000) in paragraph at lines 406--407
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--412
+Underfull \hbox (badness 10000) in paragraph at lines 408--410
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 413--415
+Underfull \hbox (badness 10000) in paragraph at lines 411--412
+
+ []
+
+[17]
+Underfull \hbox (badness 10000) in paragraph at lines 417--419
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 416--418
+Underfull \hbox (badness 10000) in paragraph at lines 420--422
 
  []
 
@@ -1135,7 +1145,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 423--425
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 428--429
+Underfull \hbox (badness 10000) in paragraph at lines 426--428
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 433--435
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 438--439
 
  []
 
@@ -1146,39 +1166,39 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.431 
+l.441 
       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 432--433
+Underfull \hbox (badness 10000) in paragraph at lines 442--443
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 434--435
+Underfull \hbox (badness 10000) in paragraph at lines 444--445
 
  []
 
-<figure/beamer-hist2-1.pdf, id=529, 361.35pt x 289.08pt>
+<figure/beamer-hist2-1.pdf, id=543, 361.35pt x 289.08pt>
 File: figure/beamer-hist2-1.pdf Graphic file (type pdf)
 <use figure/beamer-hist2-1.pdf>
-Package pdftex.def Info: figure/beamer-hist2-1.pdf  used on input line 445.
+Package pdftex.def Info: figure/beamer-hist2-1.pdf  used on input line 455.
 (pdftex.def)             Requested size: 208.13574pt x 166.51082pt.
-<figure/beamer-kde3-1.pdf, id=530, 361.35pt x 289.08pt>
+<figure/beamer-kde3-1.pdf, id=544, 361.35pt x 289.08pt>
 File: figure/beamer-kde3-1.pdf Graphic file (type pdf)
 <use figure/beamer-kde3-1.pdf>
-Package pdftex.def Info: figure/beamer-kde3-1.pdf  used on input line 457.
+Package pdftex.def Info: figure/beamer-kde3-1.pdf  used on input line 467.
 (pdftex.def)             Requested size: 208.13574pt x 166.51082pt.
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 472--473
+[18]
+Underfull \hbox (badness 10000) in paragraph at lines 482--483
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 474--477
+Underfull \hbox (badness 10000) in paragraph at lines 484--487
 
  []
 
@@ -1189,31 +1209,31 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.479 
+l.489 
       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[18pdfTeX warning (ext4): destination with the same identifier (name{figure.9})
+[19pdfTeX warning (ext4): destination with the same identifier (name{figure.9})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.484 ...^{n} K\left(\frac{x - X_i}{h}\right),$$\\
+l.494 ...^{n} K\left(\frac{x - X_i}{h}\right),$$\\
                                                    <./figure/beamer-hist2-1.pdf
 > <./figure/beamer-kde3-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 490--491
+Underfull \hbox (badness 10000) in paragraph at lines 500--501
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 495--496
+Underfull \hbox (badness 10000) in paragraph at lines 505--506
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 497--498
+Underfull \hbox (badness 10000) in paragraph at lines 507--508
 
  []
 
@@ -1224,7 +1244,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.500 \noident
+l.510 \noident
                The two bar charts on in Figure~\ref{fig:barcharts} illustrat...
 
 Your command was ignored.
@@ -1234,7 +1254,7 @@ or  <return>  to continue without it.
 ! Undefined control sequence.
 <recently read> \noident 
                          
-l.500 \noident
+l.510 \noident
                The two bar charts on in Figure~\ref{fig:barcharts} illustrat...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1242,252 +1262,252 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<figure/beamer-barcharts-1.pdf, id=557, 722.7pt x 216.81pt>
+<figure/beamer-barcharts-1.pdf, id=572, 722.7pt x 216.81pt>
 File: figure/beamer-barcharts-1.pdf Graphic file (type pdf)
 <use figure/beamer-barcharts-1.pdf>
-Package pdftex.def Info: figure/beamer-barcharts-1.pdf  used on input line 506.
+Package pdftex.def Info: figure/beamer-barcharts-1.pdf  used on input line 516.
 
 (pdftex.def)             Requested size: 433.62pt x 130.08699pt.
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 524--526
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 534--536
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 537--538
+Underfull \hbox (badness 10000) in paragraph at lines 547--548
 
  []
 
-[20pdfTeX warning (ext4): destination with the same identifier (name{figure.10}
+[21pdfTeX warning (ext4): destination with the same identifier (name{figure.10}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.538 
+l.548 
        <./figure/beamer-barcharts-1.pdf>]
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <7> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 549.
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 559.
 
-Overfull \hbox (37.17949pt too wide) in paragraph at lines 551--552
+Overfull \hbox (37.17949pt too wide) in paragraph at lines 561--562
 []\OT1/cmtt/m/n/7 ## Error in select(., Date, CANtoGBP[]MA49, EURtoGBP[]MA49, U
 SDtoGBP[]MA49): unused arguments (Date, CANtoGBP[]MA49, EURtoGBP[]MA49,
  []
 
 
-Overfull \hbox (7.42912pt too wide) in paragraph at lines 589--589
+Overfull \hbox (7.42912pt too wide) in paragraph at lines 599--599
 []\OT1/cmtt/m/n/7 ## Error in cowplot::plot[]grid(combined[]plot, p2[]legend, n
 row = 1, rel[]widths = c(2, : object 'combined[]plot' not found[] 
  []
 
 
-LaTeX Warning: Reference `fig:all exchange rates' on page 21 undefined on input
- line 593.
+LaTeX Warning: Reference `fig:all exchange rates' on page 22 undefined on input
+ line 603.
 
 
-LaTeX Warning: Reference `fig:all exchange rates' on page 21 undefined on input
- line 593.
+LaTeX Warning: Reference `fig:all exchange rates' on page 22 undefined on input
+ line 603.
 
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 594--596
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 597--599
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 604--606
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 600--604
+Underfull \hbox (badness 10000) in paragraph at lines 607--609
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 605--608
+Underfull \hbox (badness 10000) in paragraph at lines 610--614
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 616--618
+Underfull \hbox (badness 10000) in paragraph at lines 615--618
 
  []
 
 
-Overfull \hbox (1.47911pt too wide) in paragraph at lines 629--629
+Underfull \hbox (badness 10000) in paragraph at lines 626--628
+
+ []
+
+
+Overfull \hbox (1.47911pt too wide) in paragraph at lines 639--639
 []  []\OT1/cmtt/m/n/7 facet_wrap[][]([][]~[][]component,[] []scales[] []=[] []"
 free_y"[][],[] []ncol[] []=[] []1[][])[] []+[] []labs[][]([][]x[] []=[] []"Date
 "[][],[][]y[] []=[] []"Exchange Rate to GBP"[][])[] []+[] []theme_minimal[][]()
 [][] 
  []
 
-<figure/beamer-decomposition_of_time_series-1.pdf, id=590, 361.35pt x 216.81pt>
+<figure/beamer-decomposition_of_time_series-1.pdf, id=604, 361.35pt x 216.81pt>
 
 File: figure/beamer-decomposition_of_time_series-1.pdf Graphic file (type pdf)
 <use figure/beamer-decomposition_of_time_series-1.pdf>
 Package pdftex.def Info: figure/beamer-decomposition_of_time_series-1.pdf  used
- on input line 633.
+ on input line 643.
 (pdftex.def)             Requested size: 361.34912pt x 216.80946pt.
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 642--644
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 652--654
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 645--647
+Underfull \hbox (badness 10000) in paragraph at lines 655--657
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 648--650
+Underfull \hbox (badness 10000) in paragraph at lines 658--660
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 651--653
+Underfull \hbox (badness 10000) in paragraph at lines 661--663
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 654--658
+Underfull \hbox (badness 10000) in paragraph at lines 664--668
 
  []
 
-[23pdfTeX warning (ext4): destination with the same identifier (name{figure.11}
+[24pdfTeX warning (ext4): destination with the same identifier (name{figure.11}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.662 \[
+l.672 \[
         \hat{\gamma}(h) := \frac{1}{n} \sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{...
  <./figure/beamer-decomposition_of_time_series-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 666--668
+Underfull \hbox (badness 10000) in paragraph at lines 676--678
 
  []
 
-<figure/beamer-ACF-1.pdf, id=610, 289.08pt x 216.81pt>
+<figure/beamer-ACF-1.pdf, id=624, 289.08pt x 216.81pt>
 File: figure/beamer-ACF-1.pdf Graphic file (type pdf)
 <use figure/beamer-ACF-1.pdf>
-Package pdftex.def Info: figure/beamer-ACF-1.pdf  used on input line 681.
+Package pdftex.def Info: figure/beamer-ACF-1.pdf  used on input line 691.
 (pdftex.def)             Requested size: 289.07928pt x 216.81938pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 690--692
+Underfull \hbox (badness 10000) in paragraph at lines 700--702
 
  []
 
-[24pdfTeX warning (ext4): destination with the same identifier (name{figure.12}
+[25pdfTeX warning (ext4): destination with the same identifier (name{figure.12}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.693 \noindent
+l.703 \noindent
                 <./figure/beamer-ACF-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 702--703
+Underfull \hbox (badness 10000) in paragraph at lines 712--713
 
  []
 
-[25]
-Underfull \hbox (badness 10000) in paragraph at lines 724--725
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 726--728
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 734--735
 
  []
 
 
-Overfull \hbox (3.35919pt too wide) in paragraph at lines 729--731
+Underfull \hbox (badness 10000) in paragraph at lines 736--738
+
+ []
+
+
+Overfull \hbox (3.35919pt too wide) in paragraph at lines 739--741
 \OT1/cmr/m/n/10 Here, the sim-u-lated data will be used to demon-strate the ROC
  anal-y-sis in COVID-19 test. Score[]Test1
  []
 
-<figure/beamer-roc-1.pdf, id=634, 252.945pt x 252.945pt>
+<figure/beamer-roc-1.pdf, id=648, 252.945pt x 252.945pt>
 File: figure/beamer-roc-1.pdf Graphic file (type pdf)
 <use figure/beamer-roc-1.pdf>
-Package pdftex.def Info: figure/beamer-roc-1.pdf  used on input line 748.
+Package pdftex.def Info: figure/beamer-roc-1.pdf  used on input line 758.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
-[26]
-Underfull \hbox (badness 10000) in paragraph at lines 757--759
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 767--769
 
  []
 
-[27pdfTeX warning (ext4): destination with the same identifier (name{figure.13}
+[28pdfTeX warning (ext4): destination with the same identifier (name{figure.13}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.763 \newpage
+l.773 \newpage
                <./figure/beamer-roc-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 783--785
+Underfull \hbox (badness 10000) in paragraph at lines 793--795
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 786--788
+Underfull \hbox (badness 10000) in paragraph at lines 796--798
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 789--791
+Underfull \hbox (badness 10000) in paragraph at lines 799--801
 
  []
 
-<figure/beamer-spacetime-fy22-1.pdf, id=654, 505.89pt x 433.62pt>
+<figure/beamer-spacetime-fy22-1.pdf, id=668, 505.89pt x 433.62pt>
 File: figure/beamer-spacetime-fy22-1.pdf Graphic file (type pdf)
 <use figure/beamer-spacetime-fy22-1.pdf>
 Package pdftex.def Info: figure/beamer-spacetime-fy22-1.pdf  used on input line
- 809.
+ 819.
 (pdftex.def)             Requested size: 208.13574pt x 178.40068pt.
-<image_reference/mapshoot.png, id=655, 795.97375pt x 710.655pt>
+<image_reference/mapshoot.png, id=669, 795.97375pt x 710.655pt>
 File: image_reference/mapshoot.png Graphic file (type png)
 <use image_reference/mapshoot.png>
-Package pdftex.def Info: image_reference/mapshoot.png  used on input line 820.
+Package pdftex.def Info: image_reference/mapshoot.png  used on input line 830.
 (pdftex.def)             Requested size: 208.13574pt x 185.81778pt.
-<figure/beamer-fire-by-months-fy13-22-1.pdf, id=656, 361.35pt x 187.70125pt>
+<figure/beamer-fire-by-months-fy13-22-1.pdf, id=670, 361.35pt x 187.70125pt>
 File: figure/beamer-fire-by-months-fy13-22-1.pdf Graphic file (type pdf)
 <use figure/beamer-fire-by-months-fy13-22-1.pdf>
 Package pdftex.def Info: figure/beamer-fire-by-months-fy13-22-1.pdf  used on in
-put line 846.
+put line 856.
 (pdftex.def)             Requested size: 361.34912pt x 187.70079pt.
-[28]
-Underfull \hbox (badness 10000) in paragraph at lines 858--859
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 868--869
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 860--862
+Underfull \hbox (badness 10000) in paragraph at lines 870--872
 
  []
 
-[29pdfTeX warning (ext4): destination with the same identifier (name{figure.14}
+[30pdfTeX warning (ext4): destination with the same identifier (name{figure.14}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.862 
+l.872 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 15}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.862 
+l.872 
        <./figure/beamer-spacetime-fy22-1.pdf> <./image_reference/mapshoot.png> 
 <./figure/beamer-fire-by-months-fy13-22-1.pdf>]
-<figure/beamer-bubble-plot-construction-1.pdf, id=686, 794.97pt x 252.945pt>
+<figure/beamer-bubble-plot-construction-1.pdf, id=700, 794.97pt x 252.945pt>
 File: figure/beamer-bubble-plot-construction-1.pdf Graphic file (type pdf)
 <use figure/beamer-bubble-plot-construction-1.pdf>
 Package pdftex.def Info: figure/beamer-bubble-plot-construction-1.pdf  used on 
-input line 868.
+input line 878.
 (pdftex.def)             Requested size: 433.62pt x 137.97386pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 878--879
+Underfull \hbox (badness 10000) in paragraph at lines 888--889
 
  []
 
 ! Undefined control sequence.
 <argument> \textt 
                   {gganimate} in Practice
-l.881 ...subsection{\textt{gganimate} in Practice}
+l.891 ...subsection{\textt{gganimate} in Practice}
                                                   \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1498,7 +1518,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...subsubsection\endcsname }\fi \textt 
                                                   {gganimate} in Practice
-l.881 ...subsection{\textt{gganimate} in Practice}
+l.891 ...subsection{\textt{gganimate} in Practice}
                                                   \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1509,7 +1529,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> ...subsubsection\endcsname }\fi \textt 
                                                   {gganimate} in Practice}{\...
-l.881 ...subsection{\textt{gganimate} in Practice}
+l.891 ...subsection{\textt{gganimate} in Practice}
                                                   \\
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1524,80 +1544,80 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.882 \noindent
+l.892 \noindent
                
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 882--884
+Underfull \hbox (badness 10000) in paragraph at lines 892--894
 
  []
 
-<figure/beamer-gapminder_static-1.pdf, id=687, 289.08pt x 216.81pt>
+<figure/beamer-gapminder_static-1.pdf, id=701, 289.08pt x 216.81pt>
 File: figure/beamer-gapminder_static-1.pdf Graphic file (type pdf)
 <use figure/beamer-gapminder_static-1.pdf>
 Package pdftex.def Info: figure/beamer-gapminder_static-1.pdf  used on input li
-ne 888.
+ne 898.
 (pdftex.def)             Requested size: 289.07928pt x 216.81938pt.
-[30pdfTeX warning (ext4): destination with the same identifier (name{figure.16}
+[31pdfTeX warning (ext4): destination with the same identifier (name{figure.16}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.894 
+l.904 
        <./figure/beamer-bubble-plot-construction-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 897--899
+Underfull \hbox (badness 10000) in paragraph at lines 907--909
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 900--904
+Underfull \hbox (badness 10000) in paragraph at lines 910--914
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 914
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 924
 .
 (/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/omscmtt.fd
 File: omscmtt.fd 
 )
 LaTeX Font Info:    Font shape `OMS/cmtt/m/n' in size <7> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 914.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 924.
 
-Overfull \hbox (7.1309pt too wide) in paragraph at lines 926--927
+Overfull \hbox (7.1309pt too wide) in paragraph at lines 936--937
 \OT1/cmr/m/n/10 Bubble charts are a cap-ti-vat-ing data vi-su-al-i-sa-tion tool
  that ex-tends be-yond the typ-i-cal two-dimensional
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 926--927
+Underfull \hbox (badness 10000) in paragraph at lines 936--937
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 928--929
+Underfull \hbox (badness 10000) in paragraph at lines 938--939
 
  []
 
-[31pdfTeX warning (ext4): destination with the same identifier (name{figure.17}
+[32pdfTeX warning (ext4): destination with the same identifier (name{figure.17}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.929 
+l.939 
        <./figure/beamer-gapminder_static-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 933--935
+Underfull \hbox (badness 10000) in paragraph at lines 943--945
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 942--943
+Underfull \hbox (badness 10000) in paragraph at lines 952--953
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 944--945
+Underfull \hbox (badness 10000) in paragraph at lines 954--955
 
  []
 
@@ -1608,24 +1628,24 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.948 
+l.958 
       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 949--950
+Underfull \hbox (badness 10000) in paragraph at lines 959--960
 
  []
 
-<figure/beamer-bubble-plot-1.pdf, id=713, 794.97pt x 361.35pt>
+<figure/beamer-bubble-plot-1.pdf, id=727, 794.97pt x 361.35pt>
 File: figure/beamer-bubble-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-bubble-plot-1.pdf>
-Package pdftex.def Info: figure/beamer-bubble-plot-1.pdf  used on input line 95
+Package pdftex.def Info: figure/beamer-bubble-plot-1.pdf  used on input line 96
 4.
 (pdftex.def)             Requested size: 433.62pt x 197.10553pt.
-[32]
+[33]
 
 ! LaTeX Error: There's no line here to end.
 
@@ -1633,7 +1653,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.963 \\\noindent
+l.973 \\\noindent
                   In Figure~\ref{fig:bubble-plot} a strong correlation betwe...
 
 Your command was ignored.
@@ -1641,7 +1661,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 963--964
+Underfull \hbox (badness 10000) in paragraph at lines 973--974
 
  []
 
@@ -1652,7 +1672,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.970 \\R
+l.980 \\R
          egression models are statistical tools that provide functions to es...
 
 Your command was ignored.
@@ -1666,7 +1686,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.974 \\L
+l.984 \\L
          et $\mathbf{x} = (x_1, \dots, x_n)^T$ denote $n$ explanatory variab...
 
 Your command was ignored.
@@ -1674,25 +1694,25 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 974--977
+Underfull \hbox (badness 10000) in paragraph at lines 984--987
 
  []
 
-[33pdfTeX warning (ext4): destination with the same identifier (name{figure.18}
+[34pdfTeX warning (ext4): destination with the same identifier (name{figure.18}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.977 
+l.987 
        <./figure/beamer-bubble-plot-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 996--1002
+Underfull \hbox (badness 10000) in paragraph at lines 1006--1012
 
  []
 
 ! Undefined control sequence.
 <recently read> \noident 
                          
-l.1053 \noident
+l.1063 \noident
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -1701,7 +1721,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1051--1054
+Underfull \hbox (badness 10000) in paragraph at lines 1061--1064
 
  []
 
@@ -1712,44 +1732,44 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1055 \noindent
+l.1065 \noindent
                  In this section, we will study the performance of 1970s aut...
 
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[34]
-Underfull \hbox (badness 10000) in paragraph at lines 1057--1059
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 1067--1069
 
  []
 
-<figure/beamer-cor-matrix-mtcars2-1.pdf, id=748, 361.35pt x 208.78pt>
+<figure/beamer-cor-matrix-mtcars2-1.pdf, id=762, 361.35pt x 208.78pt>
 File: figure/beamer-cor-matrix-mtcars2-1.pdf Graphic file (type pdf)
 <use figure/beamer-cor-matrix-mtcars2-1.pdf>
 Package pdftex.def Info: figure/beamer-cor-matrix-mtcars2-1.pdf  used on input 
-line 1065.
+line 1075.
 (pdftex.def)             Requested size: 361.34912pt x 208.77946pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1074--1076
+Underfull \hbox (badness 10000) in paragraph at lines 1084--1086
 
  []
 
-[35pdfTeX warning (ext4): destination with the same identifier (name{figure.19}
+[36pdfTeX warning (ext4): destination with the same identifier (name{figure.19}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1107 \end{kframe}
+l.1117 \end{kframe}
                     <./figure/beamer-cor-matrix-mtcars2-1.pdf>]
-<figure/beamer-scatter-plot-1.pdf, id=762, 289.08pt x 187.70125pt>
+<figure/beamer-scatter-plot-1.pdf, id=776, 289.08pt x 187.70125pt>
 File: figure/beamer-scatter-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-scatter-plot-1.pdf>
 Package pdftex.def Info: figure/beamer-scatter-plot-1.pdf  used on input line 1
-113.
+123.
 (pdftex.def)             Requested size: 289.07928pt x 187.70938pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1123--1125
+Underfull \hbox (badness 10000) in paragraph at lines 1133--1135
 
  []
 
@@ -1760,33 +1780,33 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1128 
+l.1138 
        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[36pdfTeX warning (ext4): destination with the same identifier (name{figure.20}
+[37pdfTeX warning (ext4): destination with the same identifier (name{figure.20}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1132 $
+l.1142 $
         $y_i = g(x_i) +  \varepsilon_i,$$ <./figure/beamer-scatter-plot-1.pdf>]
 
-Underfull \hbox (badness 10000) in paragraph at lines 1132--1135
+Underfull \hbox (badness 10000) in paragraph at lines 1142--1145
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1136--1138
+Underfull \hbox (badness 10000) in paragraph at lines 1146--1148
 
  []
 
 ! Missing delimiter (. inserted).
 <to be read again> 
                    ,
-l.1154 \right,
+l.1164 \right,
               
 I was expecting to see something like `(' or `\{' or
 `\}' here. If you typed, e.g., `{' instead of `\{', you
@@ -1796,19 +1816,19 @@ Acceptable delimiters are characters whose \delcode is
 nonnegative, or you can use `\delimiter <delimiter code>'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1157--1159
+Underfull \hbox (badness 10000) in paragraph at lines 1167--1169
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1167--1169
+Underfull \hbox (badness 10000) in paragraph at lines 1177--1179
 
  []
 
 ! Missing delimiter (. inserted).
 <to be read again> 
                    \gdef 
-l.1184 \end{equation}
+l.1194 \end{equation}
                      
 I was expecting to see something like `(' or `\{' or
 `\}' here. If you typed, e.g., `{' instead of `\{', you
@@ -1818,20 +1838,20 @@ Acceptable delimiters are characters whose \delcode is
 nonnegative, or you can use `\delimiter <delimiter code>'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1186--1188
+Underfull \hbox (badness 10000) in paragraph at lines 1196--1198
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1189--1191
+Underfull \hbox (badness 10000) in paragraph at lines 1199--1201
 
  []
 
-[37]
+[38]
 ! Missing } inserted.
 <inserted text> 
                 }
-l.1193 ... with the neighborhood weights $w_i{(x)$
+l.1203 ... with the neighborhood weights $w_i{(x)$
                                                    replaced by $r_i w_i(x)$ ...
 I've inserted something that you may have forgotten.
 (See the <inserted text> above.)
@@ -1840,7 +1860,7 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1192--1194
+Underfull \hbox (badness 10000) in paragraph at lines 1202--1204
 
  []
 
@@ -1851,71 +1871,71 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1197 
+l.1207 
        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1198--1200
+Underfull \hbox (badness 10000) in paragraph at lines 1208--1210
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1201--1203
+Underfull \hbox (badness 10000) in paragraph at lines 1211--1213
 
  []
 
-<figure/beamer-estate-data-plot-1.pdf, id=791, 252.945pt x 180.675pt>
+<figure/beamer-estate-data-plot-1.pdf, id=805, 252.945pt x 180.675pt>
 File: figure/beamer-estate-data-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-estate-data-plot-1.pdf>
 Package pdftex.def Info: figure/beamer-estate-data-plot-1.pdf  used on input li
-ne 1224.
+ne 1234.
 (pdftex.def)             Requested size: 252.94438pt x 180.67729pt.
-[38pdfTeX warning (ext4): destination with the same identifier (name{figure.21}
+[39pdfTeX warning (ext4): destination with the same identifier (name{figure.21}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1233 \newpage
+l.1243 \newpage
                 <./figure/beamer-estate-data-plot-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 1243--1245
+Underfull \hbox (badness 10000) in paragraph at lines 1253--1255
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1256--1259
+Underfull \hbox (badness 10000) in paragraph at lines 1266--1269
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1260--1262
+Underfull \hbox (badness 10000) in paragraph at lines 1270--1272
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1270--1271
+Underfull \hbox (badness 10000) in paragraph at lines 1280--1281
 
  []
 
-[39]
-Underfull \hbox (badness 10000) in paragraph at lines 1295--1297
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1298--1300
+[40]
+Underfull \hbox (badness 10000) in paragraph at lines 1305--1307
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1326--1328
+Underfull \hbox (badness 10000) in paragraph at lines 1308--1310
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1336--1338
 
  []
 
 ! Extra }, or forgotten $.
-l.1330 ...bda$. To minimise the loss $\mathcal{L}}
+l.1340 ...bda$. To minimise the loss $\mathcal{L}}
                                                   (\mathbf{w}_1)$ we maximis...
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1924,7 +1944,7 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 ! Extra }, or forgotten $.
-l.1330 ...a$ would minimise the loss $\mathcal{L}}
+l.1340 ...a$ would minimise the loss $\mathcal{L}}
                                                   (\mathbf{w}_1)$.\\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1933,20 +1953,20 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1329--1331
+Underfull \hbox (badness 10000) in paragraph at lines 1339--1341
 
  []
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.1333 ...the second largest eigenvalue $\lambda$_
+l.1343 ...the second largest eigenvalue $\lambda$_
                                                   2$ would minimise the loss...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 ! Extra }, or forgotten $.
-l.1333 ...2$ would minimise the loss $\mathcal{L}}
+l.1343 ...2$ would minimise the loss $\mathcal{L}}
                                                   (\mathbf{w}_2)$.\\
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -1955,180 +1975,173 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1332--1334
-
- []
-
-[40]
-Underfull \hbox (badness 10000) in paragraph at lines 1335--1337
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1339--1341
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1342--1343
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1361--1362
+Underfull \hbox (badness 10000) in paragraph at lines 1342--1344
 
  []
 
 [41]
-Underfull \hbox (badness 10000) in paragraph at lines 1379--1380
+Underfull \hbox (badness 10000) in paragraph at lines 1345--1347
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1414--1415
+Underfull \hbox (badness 10000) in paragraph at lines 1349--1351
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1418--1419
+Underfull \hbox (badness 10000) in paragraph at lines 1352--1353
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1363--1364
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1371--1372
 
  []
 
 [42]
-Underfull \hbox (badness 10000) in paragraph at lines 1420--1422
+Underfull \hbox (badness 10000) in paragraph at lines 1389--1390
 
  []
 
 
-Overfull \hbox (23.79189pt too wide) in paragraph at lines 1436--1436
+Underfull \hbox (badness 10000) in paragraph at lines 1422--1423
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1426--1427
+
+ []
+
+[43]
+Underfull \hbox (badness 10000) in paragraph at lines 1428--1430
+
+ []
+
+
+Overfull \hbox (23.79189pt too wide) in paragraph at lines 1444--1444
 [][]\OT1/cmtt/m/n/7 preprocess[] []<-[] []scaled_data[] []-[] []matrix[][]([][]
 colMeans[][](scaled_data),[] []nrow[] []=[] []nrow[][](scaled_data),[] []ncol[]
  []=[] []ncol[][](scaled_data),[] []byrow[] []=[] []TRUE[][])[][] 
  []
 
-<figure/beamer-PCAbiplot-deconstruction-1.pdf, id=830, 578.16pt x 361.35pt>
-File: figure/beamer-PCAbiplot-deconstruction-1.pdf Graphic file (type pdf)
-<use figure/beamer-PCAbiplot-deconstruction-1.pdf>
-Package pdftex.def Info: figure/beamer-PCAbiplot-deconstruction-1.pdf  used on 
-input line 1467.
-(pdftex.def)             Requested size: 433.62pt x 271.01184pt.
-[43]
-<figure/beamer-PCAbiplot-1.pdf, id=838, 578.16pt x 361.35pt>
+[44]
+<figure/beamer-PCAbiplot-1.pdf, id=861, 867.24pt x 397.485pt>
 File: figure/beamer-PCAbiplot-1.pdf Graphic file (type pdf)
 <use figure/beamer-PCAbiplot-1.pdf>
-Package pdftex.def Info: figure/beamer-PCAbiplot-1.pdf  used on input line 1491
+Package pdftex.def Info: figure/beamer-PCAbiplot-1.pdf  used on input line 1486
 .
-(pdftex.def)             Requested size: 433.62pt x 271.01184pt.
- [44pdfTeX warning (ext4): destination with the same identifier (name{figure.22
-}) has been already used, duplicate ignored
+(pdftex.def)             Requested size: 433.62pt x 198.742pt.
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1497 
-        <./figure/beamer-PCAbiplot-deconstruction-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 1504--1505
+Underfull \hbox (badness 10000) in paragraph at lines 1499--1500
 
  []
 
-[45pdfTeX warning (ext4): destination with the same identifier (name{figure.23}
+[45pdfTeX warning (ext4): destination with the same identifier (name{figure.22}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1512 \[
+l.1507 \[
           <./figure/beamer-PCAbiplot-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 1516--1517
+Underfull \hbox (badness 10000) in paragraph at lines 1511--1512
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1539--1540
+Underfull \hbox (badness 10000) in paragraph at lines 1534--1535
 
  []
 
-<figure/beamer-P-curves-1.pdf, id=862, 650.43pt x 289.08pt>
+<figure/beamer-P-curves-1.pdf, id=879, 650.43pt x 289.08pt>
 File: figure/beamer-P-curves-1.pdf Graphic file (type pdf)
 <use figure/beamer-P-curves-1.pdf>
-Package pdftex.def Info: figure/beamer-P-curves-1.pdf  used on input line 1546.
+Package pdftex.def Info: figure/beamer-P-curves-1.pdf  used on input line 1541.
 
 (pdftex.def)             Requested size: 433.62pt x 192.7254pt.
 [46]
-Underfull \hbox (badness 10000) in paragraph at lines 1560--1561
+Underfull \hbox (badness 10000) in paragraph at lines 1555--1556
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1571--1573
+Underfull \hbox (badness 10000) in paragraph at lines 1566--1568
 
  []
 
-[47pdfTeX warning (ext4): destination with the same identifier (name{figure.24}
+[47pdfTeX warning (ext4): destination with the same identifier (name{figure.23}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1573 
+l.1568 
         <./figure/beamer-P-curves-1.pdf>]
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.1581 ...f data points. Also, $p_{ii}=0$ and \sum
+l.1576 ...f data points. Also, $p_{ii}=0$ and \sum
                                                   _{i,j} p_{ij}=1$.\\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1580--1582
+Underfull \hbox (badness 10000) in paragraph at lines 1575--1577
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1592--1594
+Underfull \hbox (badness 10000) in paragraph at lines 1587--1589
 
  []
 
 
-Overfull \hbox (1.0926pt too wide) in paragraph at lines 1595--1598
+Overfull \hbox (1.0926pt too wide) in paragraph at lines 1590--1593
 \OT1/cmr/m/n/10 The goal of t-SNE is to min-i-mize the dis-crep-ancy be-tween t
 he prob-a-bil-i-ties $\OML/cmm/m/it/10 p[]$ \OT1/cmr/m/n/10 in the high-dimensi
 onal
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1602--1604
+Underfull \hbox (badness 10000) in paragraph at lines 1597--1599
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1615--1617
+Underfull \hbox (badness 10000) in paragraph at lines 1610--1612
 
  []
 
 [48]
-Underfull \hbox (badness 10000) in paragraph at lines 1623--1624
+Underfull \hbox (badness 10000) in paragraph at lines 1618--1619
 
  []
 
 
-LaTeX Warning: Reference `fig:t-SNE' on page 49 undefined on input line 1639.
+LaTeX Warning: Reference `fig:t-SNE' on page 49 undefined on input line 1634.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1638--1640
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1641--1643
+Underfull \hbox (badness 10000) in paragraph at lines 1633--1635
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1644--1646
+Underfull \hbox (badness 10000) in paragraph at lines 1636--1638
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1647--1649
+Underfull \hbox (badness 10000) in paragraph at lines 1639--1641
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1642--1644
 
  []
 
@@ -2140,21 +2153,21 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1661 
+l.1657 
        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1662--1664
+Underfull \hbox (badness 10000) in paragraph at lines 1658--1660
 
  []
 
-<figure/beamer-box-plots-1.pdf, id=899, 722.7pt x 361.35pt>
+<figure/beamer-box-plots-1.pdf, id=916, 722.7pt x 361.35pt>
 File: figure/beamer-box-plots-1.pdf Graphic file (type pdf)
 <use figure/beamer-box-plots-1.pdf>
-Package pdftex.def Info: figure/beamer-box-plots-1.pdf  used on input line 1670
+Package pdftex.def Info: figure/beamer-box-plots-1.pdf  used on input line 1666
 .
 (pdftex.def)             Requested size: 433.62pt x 216.81168pt.
 
@@ -2164,97 +2177,139 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1680 
+l.1676 
        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1681--1682
+Underfull \hbox (badness 10000) in paragraph at lines 1677--1678
 
  []
 
-[50pdfTeX warning (ext4): destination with the same identifier (name{figure.25}
+[50pdfTeX warning (ext4): destination with the same identifier (name{figure.24}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1683 \noindent
-                 Qâ€“Q plots are constructed by plotting the quantiles of tw...
- <./figure/beamer-box-plots-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 1683--1684
+l.1678 
+        <./figure/beamer-box-plots-1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 1679--1680
 
  []
 
-<figure/beamer-QQplots-1.pdf, id=910, 578.16pt x 289.08pt>
+<figure/beamer-QQplots-1.pdf, id=927, 578.16pt x 289.08pt>
 File: figure/beamer-QQplots-1.pdf Graphic file (type pdf)
 <use figure/beamer-QQplots-1.pdf>
-Package pdftex.def Info: figure/beamer-QQplots-1.pdf  used on input line 1690.
+Package pdftex.def Info: figure/beamer-QQplots-1.pdf  used on input line 1684.
 (pdftex.def)             Requested size: 433.62pt x 216.80946pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1699--1700
+Underfull \hbox (badness 10000) in paragraph at lines 1693--1694
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1701--1702
+Underfull \hbox (badness 10000) in paragraph at lines 1695--1696
 
  []
 
-[51pdfTeX warning (ext4): destination with the same identifier (name{figure.26}
+
+Underfull \hbox (badness 10000) in paragraph at lines 1701--1703
+
+ []
+
+[51pdfTeX warning (ext4): destination with the same identifier (name{figure.25}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1704 
+l.1703 
         <./figure/beamer-QQplots-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 1707--1709
+Underfull \hbox (badness 10000) in paragraph at lines 1709--1710
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1715--1716
+Underfull \hbox (badness 10000) in paragraph at lines 1711--1713
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1717--1719
+Underfull \hbox (badness 10000) in paragraph at lines 1714--1716
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 1720--1722
-
- []
-
-[52]
 
 LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 1
-736.
+730.
 
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 1736
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 1730
 .
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 
 LaTeX Warning: Command \textperiodcentered invalid in math mode on input line 1
-736.
+730.
 
 Missing character: There is no · in font cmr10!
-<image_reference/fbplot.png, id=933, 847.165pt x 419.5675pt>
+[52]
+<image_reference/fbplot.png, id=950, 847.165pt x 419.5675pt>
 File: image_reference/fbplot.png Graphic file (type png)
 <use image_reference/fbplot.png>
-Package pdftex.def Info: image_reference/fbplot.png  used on input line 1757.
+Package pdftex.def Info: image_reference/fbplot.png  used on input line 1751.
 (pdftex.def)             Requested size: 433.62pt x 214.75124pt.
-[53] [54pdfTeX warning (ext4): destination with the same identifier (name{figur
-e.27}) has been already used, duplicate ignored
+
+Underfull \hbox (badness 10000) in paragraph at lines 1757--1758
+
+ []
+
+[53pdfTeX warning (ext4): destination with the same identifier (name{figure.26}
+) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.1765 \newpage
-                <./image_reference/fbplot.png>]
+l.1758 
+        <./image_reference/fbplot.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 1759--1761
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1762--1764
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1766--1767
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1768--1770
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1778--1779
+
+ []
+
+[54]
+<figure/beamer-QQboxplots-1.pdf, id=962, 578.16pt x 289.08pt>
+File: figure/beamer-QQboxplots-1.pdf Graphic file (type pdf)
+<use figure/beamer-QQboxplots-1.pdf>
+Package pdftex.def Info: figure/beamer-QQboxplots-1.pdf  used on input line 178
+3.
+(pdftex.def)             Requested size: 433.62pt x 216.80946pt.
+ [55pdfTeX warning (ext4): destination with the same identifier (name{figure.27
+}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1794 \newpage
+                <./figure/beamer-QQboxplots-1.pdf>]
 
 ! LaTeX Error: Environment itemise undefined.
 
@@ -2262,7 +2317,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1769 \begin{itemise}
+l.1798 \begin{itemise}
                       
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -2275,14 +2330,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1770     \item \textbf
+l.1799     \item \textbf
                         {Accuracy}: Emphasising faithful reflection of data ...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1770
+Underfull \hbox (badness 10000) detected at line 1799
 [][]
  []
 
@@ -2293,14 +2348,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1771     \item \textbf
+l.1800     \item \textbf
                         {Clarity}: Ensuring visuals are easily understood wi...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1771
+Underfull \hbox (badness 10000) detected at line 1800
 [][]
  []
 
@@ -2311,14 +2366,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1772     \item \textbf
+l.1801     \item \textbf
                         {Cognitive Load}: The mental effort required to proc...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1772
+Underfull \hbox (badness 10000) detected at line 1801
 [][]
  []
 
@@ -2329,14 +2384,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1773     \item \textbf
+l.1802     \item \textbf
                         {Cognitive psychology}: Understanding how mental pro...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1773
+Underfull \hbox (badness 10000) detected at line 1802
 [][]
  []
 
@@ -2347,14 +2402,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1774     \item \textbf
+l.1803     \item \textbf
                         {Colour Theory}: Principles guiding the strategic us...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1774
+Underfull \hbox (badness 10000) detected at line 1803
 [][]
  []
 
@@ -2365,14 +2420,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1775     \item \textbf
+l.1804     \item \textbf
                         {Colour encoding}: Utilising colours to represent da...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1775
+Underfull \hbox (badness 10000) detected at line 1804
 [][]
  []
 
@@ -2383,14 +2438,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1776     \item \textbf
+l.1805     \item \textbf
                         {Colour perception}: Understanding how humans percei...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1776
+Underfull \hbox (badness 10000) detected at line 1805
 [][]
  []
 
@@ -2401,14 +2456,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1777     \item \textbf
+l.1806     \item \textbf
                         {Consistency}: Maintaining uniform use of visual ele...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1777
+Underfull \hbox (badness 10000) detected at line 1806
 [][]
  []
 
@@ -2419,14 +2474,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1778     \item \textbf
+l.1807     \item \textbf
                         {Data abstraction}: Simplifying and structuring raw ...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1778
+Underfull \hbox (badness 10000) detected at line 1807
 [][]
  []
 
@@ -2437,14 +2492,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1779     \item \textbf
+l.1808     \item \textbf
                         {Gestalt Principles}: Rules affecting how visual ele...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1779
+Underfull \hbox (badness 10000) detected at line 1808
 [][]
  []
 
@@ -2455,14 +2510,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1780     \item \textbf
+l.1809     \item \textbf
                         {Hierarchies of abstraction}: Representing data at v...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1780
+Underfull \hbox (badness 10000) detected at line 1809
 [][]
  []
 
@@ -2473,14 +2528,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1781     \item \textbf
+l.1810     \item \textbf
                         {Information overload}: Occurs when excessive data o...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1781
+Underfull \hbox (badness 10000) detected at line 1810
 [][]
  []
 
@@ -2491,14 +2546,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1782     \item \textbf
+l.1811     \item \textbf
                         {Interval data}: Ordered categories with equal inter...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1782
+Underfull \hbox (badness 10000) detected at line 1811
 [][]
  []
 
@@ -2509,14 +2564,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1783     \item \textbf
+l.1812     \item \textbf
                         {Nominal data}: Represents categories or labels with...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1783
+Underfull \hbox (badness 10000) detected at line 1812
 [][]
  []
 
@@ -2527,14 +2582,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1784     \item \textbf
+l.1813     \item \textbf
                         {Ordinal data}: Implies a meaningful order among cat...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1784
+Underfull \hbox (badness 10000) detected at line 1813
 [][]
  []
 
@@ -2545,14 +2600,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1785     \item \textbf
+l.1814     \item \textbf
                         {Ratio data}: Includes ordered categories with equal...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1785
+Underfull \hbox (badness 10000) detected at line 1814
 [][]
  []
 
@@ -2563,14 +2618,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1786     \item \textbf
+l.1815     \item \textbf
                         {Relevance}: Presenting information pertinent to the...
 
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Underfull \hbox (badness 10000) detected at line 1786
+Underfull \hbox (badness 10000) detected at line 1815
 [][]
  []
 
@@ -2581,20 +2636,20 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1787 \end{itemise}
+l.1816 \end{itemise}
                     
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-[55] (./main_file.bbl
+[56] (./main_file.bbl
 Underfull \hbox (badness 1472) in paragraph at lines 4--9
 []\TS1/cmr/m/n/10 $\OT1/cmr/m/n/10 500,000 in 1937 is how much to-day?  []$\OT1
 /cmtt/m/n/10 https : / / www . calculateme . com / inflation /
  []
 
 ! Misplaced alignment tab character &.
-l.49 \newblock Wadsworth &
+l.54 \newblock Wadsworth &
                            Brooks/Cole, 1992.
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -2604,71 +2659,71 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--79
+Underfull \hbox (badness 10000) in paragraph at lines 93--99
 []\OT1/cmr/m/n/10 F. Nightin-gale.  Di-a-gram of the causes of mor-tal-ity in t
 he army
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--79
+Underfull \hbox (badness 10000) in paragraph at lines 93--99
 \OT1/cmr/m/n/10 in the east.  []$\OT1/cmtt/m/n/10 https : / / www . davidrumsey
  . com / luna / servlet / detail /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--79
+Underfull \hbox (badness 10000) in paragraph at lines 93--99
 \OT1/cmtt/m/n/10 RUMSEY[]8[]1[]327826[]90096398 : Diagram-[]of-[]the-[]Causes-[
 ]of-[]Mortality-[] ; JSESSIONID =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--79
+Underfull \hbox (badness 10000) in paragraph at lines 93--99
 \OT1/cmtt/m/n/10 802dd785-[]32fc-[]4b43-[]a53d-[]72ed57e15cc8 ? qvq = q % 3Aaut
 hor % 3D % 22Nightingale % 2C %
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 109--115
+[57]
+Underfull \hbox (badness 10000) in paragraph at lines 129--135
 []\OT1/cmr/m/n/10 A. Ruther-ford.  Where sci-ence meets fic-tion: the dark his-
 tory
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 109--115
+Underfull \hbox (badness 10000) in paragraph at lines 129--135
 \OT1/cmr/m/n/10 of eu-gen-ics.  []$\OT1/cmtt/m/n/10 https : / / www . theguardi
 an . com / science / 2022 / jun / 19 /
  []
 
 
-Underfull \hbox (badness 6284) in paragraph at lines 109--115
+Underfull \hbox (badness 6284) in paragraph at lines 129--135
 \OT1/cmtt/m/n/10 where-[]science-[]meets-[]fiction-[]the-[]dark-[]history-[]of-
 []eugenics$[]\OT1/cmr/m/n/10 , 2022.  Ac-cessed 9
  []
 
-[56])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1796.
- [57]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1796.
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1825.
+ [58]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1825.
  (./main_file.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1796.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1796.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1825.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1825.
 
 Package rerunfilecheck Info: File `main_file.out' has not changed.
-(rerunfilecheck)             Checksum: 13506F64EE546AD20C7BE361E5761046;5429.
+(rerunfilecheck)             Checksum: 2209A89F547D88A0D65C37A965362934;5606.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1796.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1825.
  ) 
 Here is how much of TeX's memory you used:
- 9935 strings out of 492649
- 144869 string characters out of 6129622
- 244211 words of memory out of 5000000
- 13446 multiletter control sequences out of 15000+600000
+ 9956 strings out of 492649
+ 145252 string characters out of 6129622
+ 244280 words of memory out of 5000000
+ 13460 multiletter control sequences out of 15000+600000
  15137 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,10n,35p,1201b,498s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,10n,35p,1201b,506s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 }</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
@@ -2692,10 +2747,10 @@ e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/
 18/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2018
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/
 2018/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on main_file.pdf (57 pages, 7690778 bytes).
+Output written on main_file.pdf (58 pages, 7708438 bytes).
 PDF statistics:
- 1097 PDF objects out of 1200 (max. 8388607)
- 943 compressed objects within 10 object streams
- 205 named destinations out of 1000 (max. 500000)
- 690 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1131 PDF objects out of 1200 (max. 8388607)
+ 976 compressed objects within 10 object streams
+ 212 named destinations out of 1000 (max. 500000)
+ 706 words of extra memory for PDF output out of 10000 (max. 10000000)
 
