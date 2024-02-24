@@ -16,7 +16,7 @@
 \contentsline {subsubsection}{\numberline {2.6.2}Information Overload and Simplification Techniques}{16}{subsubsection.2.6.2}%
 \contentsline {section}{\numberline {3}Univariate Data Visualisation Methods}{17}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Histograms}{17}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Theory of Histogram}{17}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Theory of Histogram Bin-Width Selection}{17}{subsubsection.3.1.1}%
 \contentsline {subsubsection}{\numberline {3.1.2}Histogram in Practice}{18}{subsubsection.3.1.2}%
 \contentsline {subsection}{\numberline {3.2}Kernel Density Estimation}{19}{subsection.3.2}%
 \contentsline {subsubsection}{\numberline {3.2.1}Theory of Kernel Density Estimation}{19}{subsubsection.3.2.1}%
