@@ -82,29 +82,36 @@
 \addcontentsline{toc}{section}{Overview} % Add section to the table of contents
 
 \noindent
-Graphical statistics is an indispensable tool in the arsenal of every contemporary data scientist. Primarily, it enables one to delve into data, explore its nuances, and effectively communicate empirical discoveries through visual means. This project aims to provide an overview of modern data visualisation methods, delve into their theoretical underpinnings, and demonstrate the potency of these methodologies using both synthetic and authentic datasets. Computational implementations via dashboards — using Python Dash or R Shiny — are used to showcase the methodologies in practice. Furthermore, the project is aware of the ongoing evolution of novel data visualisation techniques, recognising it as an active area of research (e.g. Rodu and Kafadar, 2022), and thus aims to cover both textbook methods as well as state-of-the-art approaches and open problems.\\
+Graphical statistics is an indispensable tool in the arsenal of every contemporary data project. Primarily, it enables one to delve into the data, explore its nuances, and effectively communicate empirical discoveries through visual means. This project aims to provide an overview of modern data visualisation methods, delve into their theoretical underpinnings, and demonstrate the potency of these methodologies using both synthetic and authentic datasets.\\
+
+\noindent 
+Furthermore, the project is aware of the ongoing evolution of novel data visualisation techniques, recognising it as an active area of research (e.g. Rodu and Kafadar, 2022). Thus, it aims to cover both textbook methods as well as state-of-the-art approaches and open problems.\\
 
 \noindent
-The thesis explores the theoretical foundations that underlie various visualisation methodologies, study their mathematical construction, and illustrate their practical application. In particular, while chapter 2 focuses on the theoretical framework of data visualisation, the main body is made up of Chapters 3, 4, and 5. These concentrate on standard implementations of Graphical Statistics for univariate, bivariate, and multivariate datasets respectively. Chapter 3 discusses the Kernel Density Estimate, ROC Curve, and Time Series Analysis. Chapter 4 is focused on the topic of regression, discussing the theory behind Simple Linear Regression followed by LOESS regression. Chapter 5 introduces the model selection method AIC and Multiple Linear Regression, followed by the theoretical foundation of biplots and t-SNE. The final chapter covers active research areas in Graphical Statistics. \\
+The paper explores the theoretical foundations that underlie various visualisation methodologies, studies their mathematical construction, and illustrates their practical application. In particular, while chapter 2 focuses on the theoretical framework of data visualisation, the main body is made up of Chapters 3, 4, and 5. These chapters concentrate on standard implementations of graphical statistics for univariate, bivariate, and multivariate datasets, respectively.\\
 
+\noindent 
+Chapter 3 discusses Histograms, the Kernel Density Estimate, Bar Charts, Time Series Analysis, and the ROC Curve. In Chapter 4, the focus shifts to bivariate data, covering Heatmaps, Scatter and Bubble Plots, as well as regression, including Simple Linear Regression and LOESS Regression theory. Chapter 5 introduces multivariate data visualisation methods, presenting Principal Component Analysis, along with the theoretical foundation and practical applications of Biplots, Principal Curves and t-SNE. The final chapter, Chapter 6, examines active research areas in graphical statistics, with a particular emphasis on Box Plots.\\
 
 \noindent
-Throughout the thesis, vocabulary referencing the programme R are used. The R package names such as \textit{ggplot2} are italicised, while R commands like \texttt{faceting} are displayed in a teletype font. The R code chunks for each figure in the report can be found in a separate \href{https://github.com/Qinqing-Li/Data-Visualisation-Project/tree/main/code}{GitHub code folder}. \\
+Throughout the thesis, vocabulary referencing the programme R is used. The R package names such as \textit{ggplot2} are italicised, while R commands like \texttt{faceting} are displayed in a teletype font. The R code chunks for each figure in the report can be found in a separate \href{https://github.com/Qinqing-Li/Data-Visualisation-Project/tree/main/code}{GitHub code folder}. \\
 
-\noindent \textbf{Literature and Research}\\ 
-\noindent
-Data visualisation is an area of interest in numerous method-specific publications. One notable publication is the \href{https://www.tandfonline.com/journals/ucgs20}{Journal of Computational and Graphical Statistics}. This journal publishes ongoing research on the latest techniques in computational and graphical methods in statistics, encompassing data analysis and numerical graphical displays. \href{https://www.jstatsoft.org/index}{Journal of statistical software} publishes peer-reviewed articles about statistical software, together with the source code. These publications together reveal the vast potential for current and future research in this ever-evolving domain, particularly as our digital landscape and data sphere expand at an accelerated pace.\\
 
 \newpage 
 
 \section{Introduction}
 
 \noindent
-Chapter 1 underscores the enduring importance of data visualisation. Case examples both of the influential applications, but also dangerous misuses of data visualisations are showcased and analysed. These are sourced from BBC Ideas \cite{bbcdatavis}. Futhermore, an introduction of essential R packages including \textit{ggplot2} is provided, along with a presentation of the datasets used throughout paper.\\
+The introductory chapter serves to elucidate the motivation for this study, and to contextualise the paper. It underscores the enduring importance of data visualisation. Case examples both of the influential applications, but also dangerous misuses of data visualisations are showcased and analysed. These are sourced from BBC Ideas \cite{bbcdatavis}. Futhermore, an introduction of essential R packages including \textit{ggplot2} is provided, along with a presentation of the datasets used throughout paper.\\
+
+\noindent \textbf{Literature and Research}\\ 
+
+\noindent
+To appreciate the significance and impact of data visualisation, it is imperative to recognise its prominence within various method-specific publications. Notably, the \href{https://www.tandfonline.com/journals/ucgs20}{Journal of Computational and Graphical Statistics} stands out as a significant source of ongoing research in the realm of computational and graphical methods within statistics. This prestigious journal publishes ongoing research on the latest techniques in computational and graphical methods in statistics, encompassing data analysis and numerical graphical displays. Additionally, the \href{https://www.jstatsoft.org/index}{Journal of statistical software} publishes peer-reviewed articles about statistical software, together with the source code. Collectively, these publications reveal the vast potential for current and future research in this ever-evolving domain, particularly as our digital landscape and data sphere expand at an accelerated pace.\\
 
 \subsection{Historical Background and Misuses of Data Visualisation}
 
-\noindent This section commences with an examination of two case studies delineating the efficacy and impact of data visualisation, succeeded by an exploration of two instances exemplifying problematic data misuse. The overarching objective is to underscore the significance of data visualisation while concurrently highlighting thenecessity of meticulous attention to detail, particularly in light of the potential for data visualisation to be exploited for malicious purposes.\\
+\noindent This section begins with an analysis of two case studies demonstrating the effectiveness and influence of data visualisation, followed by an exploration of two instances illustrating problematic data misuse. The primary aim is to emphasise the importance of data visualisation while also stressing the need for careful attention to detail, especially considering the potential for malicious exploitation of visualised data.\\
 
 \noindent
 \\\textbf{Motivations for Using Data Visualisations — Case 1}\\
@@ -181,17 +188,17 @@ Regrettably, the Kallikak family tree became a central element in the eugenics m
 
 \subsection{Computing and Data Visualisation}
 \noindent
-As a powerful tool for statistical analysis and graphic creation, R offers a wide array of functionalities to cater to a range of data visualisation needs. We will first introduce the commonly used R package \textit{ggplot2}, then we will present key packages for state-of-the-art data visualisation.\\
+As a powerful tool for statistical analysis and graphic creation, the programme R offers a wide array of functionalities to cater to a range of data visualisation needs. We will first introduce the commonly used R package \textit{ggplot2}, then we will present key packages mobilised to produce clear and compelling graphs.\\
 
 \noindent
-In data visualisation, \textit{ggplot2} is the main tool used to create plots capable of representing various types of datasets. The foundation of \textit{ggplot2} lies in the Grammar of Graphics, allowing the sequential construction of individual elements composing a graph, which are subsequently combined to create a unified graphical representation.\\
+\textit{ggplot2} is the main tool used to create plots representing various types of datasets. The foundation of \textit{ggplot2} lies in the Grammar of Graphics, allowing the sequential construction of individual elements composing a graph. These elements are then combined to create a unified graphical representation.\\
 
 \noindent
-The \textit{ggplot2} is an R package for creating statistical graphics, which stands out due to its underlying Grammar of Graphics. It is flexible and powerful, allowing for the creation of tailored graphics rather than being confined to pre-set options. Although there's a learning curve, ggplot2 is designed to be user-friendly with sensible defaults and an iterative approach to building plots. It emphasizes revealing the message within the data. Additionally, ggplot2 is structured to facilitate layered and annotated graphics that enhance data analysis, which is particularly beneficial for beginners and those new to data analysis.\\
+The R package \textit{ggplot2} is notable for its robustness and flexibility, enabling the creation of customised graphics rather than adhering strictly to pre-set options. Despite the initial learning curve, \textit{ggplot2} is crafted to be user-friendly, offering sensible defaults and an iterative method for constructing plots. Its focus lies in uncovering the underlying message within the data. Furthermore, \textit{ggplot2} is structured to support layered and annotated graphics that enhance data analysis, especially for beginners and those new to data exploration.\\
 
 \noindent\textbf{Key ggplot2 Commands}\\
 \noindent 
-As shown in subsequent sections, it is possible to produce visualisations rather effortlessly by utilising internal data from R, or even external data, together with \textit{ggplot2}. When using \textit{ggplot2}, certain key tools are used repeatedly to create visual plots from datasets. The tools below mentioned are integral functions within the ggplot2 package in R for creating sophisticated visualizations \cite{ggplot2}:\\
+As shown in subsequent sections, it is possible to produce visualisations rather effortlessly by using internal data from R, or even external data, together with \textit{ggplot2}. When using this package, certain key tools are used repeatedly to create visual plots from datasets. The tools below mentioned are integral functions within the ggplot2 package in R for creating sophisticated visualizations \cite{ggplot2}:\\
 
 \noindent
 \texttt{geom} refers to geometric objects, pivotal components within \textit{ggplot2} used to define the visual representation of data in a plot. Each \texttt{geom} function corresponds to a specific graphical representation type in a chart. Additionally, in \textit{ggplot2}, \texttt{scales} functions enable the adjustment of various mapping details, including colour choices, label formatting, legend arrangement, and more.\\
@@ -200,21 +207,12 @@ As shown in subsequent sections, it is possible to produce visualisations rather
 
 \noindent The \texttt{theme} function holds significance in customising the non-data elements of plots. The theme system within \textit{ggplot2} allows precise adjustment of aesthetic aspects such as fonts, labels, legends, and background colours. This tool is essential for enhancing plot readability and creating visually captivating graphics tailored to specific audiences or publication requirements.\\
 
-\noindent\textbf{Key ggplot2 Packages}\\
-\noindent
-The R language is a powerful data analysis tool, and its power lies in the wide variety of R packages that help it achieve a wide variety of functions. Through out this project, we will use mant different packages. These packages significantly enhances the analysis and presentation of data. \\
+\noindent \textbf{Key \textit{ggplot2} Packages}\\
+\noindent The R language is a powerful tool for data analysis, owing to the wide array of R packages that facilitate diverse functions. Throughout this project, we will use many different packages, each enhancing the analysis and presentation of data.\\
 
-\noindent
-The \textit{dplyr} packages plays a crucial role in data manipulation and transformation. It helps us filter, sort, summarise, and transform datasets, making data analysis more efficient and manageable.\\
+\noindent The \textit{tidyverse} package serves as a comprehensive collection of R packages tailored to provide a cohesive set of tools for data science. This collection includes several widely used packages such as \textit{ggplot2} and \textit{dplyr}. Particularly, the \textit{dplyr} package plays a pivotal role in data manipulation and transformation. It enables us to filter, sort, summarise, and transform datasets, thereby streamlining data analysis and management.\\
 
-\noindent
-The \textit{tidyverse} package is indeed a collection of R packages designed to provide a cohesive and comprehensive set of tools for data science. It includes several widely used packages such as \textit{ggplot2} and \textit{dplyr}.\\
-
-\noindent
-The \textit{Rtsne} package allows us to conduct the analysis conveniently using the \textit{Rtsne} function,  which is particularly useful for visualizing high-dimensional data.\\
-
-\noindent
-The \textit{qqboxplot} package helps us to build Q—Q boxplot which combines both Q—Q plot and boxplot, offering a more comprehensive visual assessment tool. It  enhances traditional boxplot and Q—Q plot by integrating their advantages together.
+\noindent Furthermore, the \textit{Rtsne} package facilitates convenient analysis using the \textit{Rtsne} function, particularly useful for visualising high-dimensional data. Lastly, the \textit{qqboxplot} package aids in constructing Q–Q boxplots, which integrate both Q–Q plots and boxplots, offering a more comprehensive visual assessment tool.\\ 
 
 \subsection{Datasets}
 \noindent
@@ -224,7 +222,6 @@ This section introduces the different datasets analysed and visualised in the su
 
 \noindent
 \textbf{iris}: The built-in R dataset \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/iris}{iris} was collected by Edgar Anderson. This dataset was famously used by British statistician Ronald Fisher to demonstrate linear discriminant analysis in 1936. It encompasses 5 flower characteristics for 3 types of iris, each with 50 samples. \\
-
 
 \noindent
 \textbf{palmerpenguins}: The built-in R dataset \href{https://www.rdocumentation.org/packages/palmerpenguins/versions/0.1.1}{palmerpenguins} was provided by the Palmer Station Long Term Ecological Research. This dataset contains biometric measurements from three distinct penguin species inhabiting the Palmer Archipelago in Antarctica, namely the Adélie, Chinstrap, and Gentoo penguins.\\
@@ -560,7 +557,7 @@ Here, plot daily and 49-day moving average exchange rates of exchange rate data 
 
 {\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in select(., Date, CANtoGBP\_MA49, EURtoGBP\_MA49, USDtoGBP\_MA49): unused arguments (Date, CANtoGBP\_MA49, EURtoGBP\_MA49, USDtoGBP\_MA49)}}
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in is.factor(x): object 'plot\_data' not found}}\end{kframe}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'plot\_data' not found}}\end{kframe}
 \end{knitrout}
 
 \begin{knitrout}\scriptsize
@@ -573,30 +570,30 @@ Here, plot daily and 49-day moving average exchange rates of exchange rate data 
 \end{alltt}
 
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in ggplot(plot\_dt, aes(x = Date, y = Rate, color = Currency)): object 'plot\_dt' not found}}\begin{alltt}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'plot\_dt' not found}}\begin{alltt}
 \hlstd{p2} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(plot_data,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= Date,} \hlkwc{y} \hlstd{= Rate,} \hlkwc{color} \hlstd{= Currency))} \hlopt{+} \hlkwd{geom_line}\hlstd{()} \hlopt{+}
   \hlkwd{labs}\hlstd{(}\hlkwc{y} \hlstd{=} \hlstr{"Exchange Rate to GBP"}\hlstd{,} \hlkwc{x} \hlstd{=} \hlstr{""}\hlstd{,} \hlkwc{color} \hlstd{=} \hlstr{"Currency"}\hlstd{)} \hlopt{+} \hlkwd{theme_minimal}\hlstd{()} \hlopt{+}
   \hlkwd{theme}\hlstd{(}\hlkwc{legend.position} \hlstd{=} \hlstr{"none"}\hlstd{)} \hlopt{+} \hlkwd{scale_color_manual}\hlstd{(}\hlkwc{values} \hlstd{= color_palette)}
 \end{alltt}
 
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in ggplot(plot\_data, aes(x = Date, y = Rate, color = Currency)): object 'plot\_data' not found}}\begin{alltt}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'plot\_data' not found}}\begin{alltt}
 \hlcom{# Extract the legend and combine the plots }
 \hlstd{p2_legend} \hlkwb{<-} \hlstd{cowplot}\hlopt{::}\hlkwd{get_legend}\hlstd{(p2} \hlopt{+} \hlkwd{theme}\hlstd{(}\hlkwc{legend.position} \hlstd{=} \hlstr{"right"}\hlstd{))}
 \end{alltt}
 
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in as\_gtable(plot): object 'p2' not found}}\begin{alltt}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'p2' not found}}\begin{alltt}
 \hlstd{combined_plot} \hlkwb{<-} \hlstd{cowplot}\hlopt{::}\hlkwd{plot_grid}\hlstd{(p1, p2,} \hlkwc{rel_widths} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{1}\hlstd{),} \hlkwc{nrow} \hlstd{=} \hlnum{2}\hlstd{)}
 \end{alltt}
 
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in cowplot::plot\_grid(p1, p2, rel\_widths = c(1, 1), nrow = 2): object 'p1' not found}}\begin{alltt}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'p1' not found}}\begin{alltt}
 \hlstd{cowplot}\hlopt{::}\hlkwd{plot_grid}\hlstd{(combined_plot, p2_legend,} \hlkwc{nrow} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{rel_widths} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{2}\hlstd{,} \hlnum{0.5}\hlstd{))}
 \end{alltt}
 
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in cowplot::plot\_grid(combined\_plot, p2\_legend, nrow = 1, rel\_widths = c(2, : object 'combined\_plot' not found}}\end{kframe}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'combined\_plot' not found}}\end{kframe}
 \end{knitrout}
 
 \noindent
@@ -1625,9 +1622,9 @@ R provides us with a dedicated package for t-SNE analysis, \textit{Rtsne}, which
 
 {\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in select(., -species): unused argument (-species)}}
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in as.data.frame(.): object 'tSNE\_fit' not found}}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'tSNE\_fit' not found}}
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in fortify(data): object 'tSNE.plot' not found}}\end{kframe}
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'tSNE.plot' not found}}\end{kframe}
 \end{knitrout}
 
 \noindent
