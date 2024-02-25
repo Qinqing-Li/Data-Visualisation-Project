@@ -1139,7 +1139,9 @@ gapplot<-ggplot(gapminder, aes(gdpPercap, lifeExp, colour = country)) +
   scale_colour_manual(values = country_colors) +
   scale_x_log10() +
   facet_wrap(~continent) +
-  # Here comes the gganimate specific bits
+  theme_minimal()
+
+  # gganimate specific code
   labs(title = 'Year: {frame_time}', x = 'GDP per capita', y = 'life expectancy') +
   transition_time(year) +
   ease_aes('linear')
@@ -1160,11 +1162,11 @@ gapplot<-ggplot(gapminder, aes(gdpPercap, lifeExp, colour = country)) +
         \includegraphics[width=0.3\textwidth]{image_reference/gganimate3.png}
         \label{fig:gganimate3}
     \end{subfigure}
-    \caption{Screenshots of animated scatterplot at different years}
+    \caption{Screenshots of animated scatterplot at different time stamps}
     \label{fig:overall}
 \end{figure}
 
-\noindent The animated scatter plots provide a dynamic visualisation of the relationship between GDP per capita and life expectancy in each country over time. This animation helps in understanding temporal trends and patterns in the data that may not be apparent in static plots.\\
+\noindent The animated scatter plots provide a dynamic visualisation of the relationship between GDP per capita and life expectancy in each country over time. The animation is displayed across 5 separate animated scatter plot, each grouping the data from countries from a specific continent to reduce clutter and cognitive load. This animation helps in understanding temporal trends and patterns in the data that may not be apparent in static plots.\\
 
 \noindent The conclusions drawn from the animated plots might differ from those of the static plot. For instance, while the static plot may suggest a general positive correlation between GDP per capita and life expectancy, the animated plots reveals nuances such as the pace of improvement in life expectancy over time, variations in the relationship between different countries and continents, and the impact of historical events or economic changes on life expectancy trends. IN general, the animated plots offer a richer and more dynamic exploration of the data, leading to potentially deeper insights and understanding.
 
