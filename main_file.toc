@@ -38,35 +38,35 @@
 \contentsline {subsubsection}{\numberline {4.2.3}{gganimate} in Practice}{33}{subsubsection.4.2.3}%
 \contentsline {subsection}{\numberline {4.3}Bubble Charts}{34}{subsection.4.3}%
 \contentsline {subsubsection}{\numberline {4.3.1}Theory of Bubble Charts}{34}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}Bubble Charts in Practice}{34}{subsubsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.4}Simple Linear Regression}{35}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.1}Theory of Simple Linear Regression}{35}{subsubsection.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.2}Theory of Least Squares Estimation}{36}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.3.2}Bubble Charts in Practice}{35}{subsubsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.4}Simple Linear Regression}{36}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Theory of Simple Linear Regression}{36}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Theory of Least Squares Estimation}{37}{subsubsection.4.4.2}%
 \contentsline {subsubsection}{\numberline {4.4.3}Case example: 1970s automobiles}{37}{subsubsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.5}LOESS Regression}{38}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.5}LOESS Regression}{39}{subsection.4.5}%
 \contentsline {subsubsection}{\numberline {4.5.1}Theory of LOESS regression}{39}{subsubsection.4.5.1}%
 \contentsline {subsubsection}{\numberline {4.5.2}Case example: Taiwan Housing dataset}{40}{subsubsection.4.5.2}%
-\contentsline {section}{\numberline {5}Visualising Beyond Two Dimensions}{41}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Principal Component Analysis (PCA)}{41}{subsection.5.1}%
-\contentsline {subsubsection}{\numberline {5.1.1}Theory of PCA}{41}{subsubsection.5.1.1}%
-\contentsline {subsubsection}{\numberline {5.1.2}Derivation of PCA}{41}{subsubsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.2}Biplots}{43}{subsection.5.2}%
-\contentsline {subsubsection}{\numberline {5.2.1}Construction of PCA Biplots}{43}{subsubsection.5.2.1}%
-\contentsline {subsubsection}{\numberline {5.2.2}Biplots in Practice: The mtcars Dataset}{45}{subsubsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.3}Principal Curves}{46}{subsection.5.3}%
-\contentsline {subsubsection}{\numberline {5.3.1}Construction of Principal Curves}{47}{subsubsection.5.3.1}%
-\contentsline {subsubsection}{\numberline {5.3.2}Principal Cuves in Practice}{47}{subsubsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.4}t-Distributed Stochastic Neighbor Embedding (t-SNE)}{48}{subsection.5.4}%
-\contentsline {subsubsection}{\numberline {5.4.1}Theory of t-SNE}{48}{subsubsection.5.4.1}%
-\contentsline {subsubsection}{\numberline {5.4.2}Case Example: t-SNE in Practice}{50}{subsubsection.5.4.2}%
-\contentsline {section}{\numberline {6}State-Of-The-Art Modern Approaches}{52}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Introduction}{52}{subsection.6.1}%
-\contentsline {subsubsection}{\numberline {6.1.1}Box Plots in Practice}{52}{subsubsection.6.1.1}%
-\contentsline {subsubsection}{\numberline {6.1.2}Q–Q Plots in Practice}{52}{subsubsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.2}Functional Boxplot}{54}{subsection.6.2}%
-\contentsline {subsubsection}{\numberline {6.2.1}Theory of Funtional Boxplot}{54}{subsubsection.6.2.1}%
-\contentsline {subsubsection}{\numberline {6.2.2}Functional Box Plot Example}{55}{subsubsection.6.2.2}%
-\contentsline {subsection}{\numberline {6.3}Q–Q Boxplots}{56}{subsection.6.3}%
-\contentsline {subsubsection}{\numberline {6.3.1}Construction of Q–Q Boxplots}{56}{subsubsection.6.3.1}%
-\contentsline {subsubsection}{\numberline {6.3.2}Q–Q Boxplots in Practice}{57}{subsubsection.6.3.2}%
-\contentsline {section}{\numberline {7}Index}{58}{section.7}%
+\contentsline {section}{\numberline {5}Visualising Beyond Two Dimensions}{42}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Principal Component Analysis (PCA)}{42}{subsection.5.1}%
+\contentsline {subsubsection}{\numberline {5.1.1}Theory of PCA}{42}{subsubsection.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.1.2}Derivation of PCA}{42}{subsubsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.2}Biplots}{44}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Construction of PCA Biplots}{44}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Biplots in Practice: The mtcars Dataset}{46}{subsubsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.3}Principal Curves}{47}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Construction of Principal Curves}{48}{subsubsection.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.2}Principal Cuves in Practice}{48}{subsubsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.4}t-Distributed Stochastic Neighbor Embedding (t-SNE)}{49}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}Theory of t-SNE}{49}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.2}Case Example: t-SNE in Practice}{51}{subsubsection.5.4.2}%
+\contentsline {section}{\numberline {6}State-Of-The-Art Modern Approaches}{53}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Introduction}{53}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}Box Plots in Practice}{53}{subsubsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.2}Q–Q Plots in Practice}{53}{subsubsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.2}Functional Boxplot}{55}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}Theory of Funtional Boxplot}{55}{subsubsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2}Functional Box Plot Example}{56}{subsubsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.3}Q–Q Boxplots}{57}{subsection.6.3}%
+\contentsline {subsubsection}{\numberline {6.3.1}Construction of Q–Q Boxplots}{57}{subsubsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.2}Q–Q Boxplots in Practice}{58}{subsubsection.6.3.2}%
+\contentsline {section}{\numberline {7}Index}{59}{section.7}%
