@@ -207,7 +207,7 @@ As shown in subsequent sections, it is possible to produce visualisations rather
 
 \noindent The \texttt{theme} function holds significance in customising the non-data elements of plots. The theme system within \textit{ggplot2} allows precise adjustment of aesthetic aspects such as fonts, labels, legends, and background colours. This tool is essential for enhancing plot readability and creating visually captivating graphics tailored to specific audiences or publication requirements.\\
 
-\noindent \textbf{Key ggplot2 Packages}\\
+\noindent \textbf{Key \textit{ggplot2} Packages}\\
 \noindent The R language is a powerful tool for data analysis, owing to the wide array of R packages that facilitate diverse functions. Throughout this project, we will use many different packages, each enhancing the analysis and presentation of data.\\
 
 \noindent The \textit{tidyverse} package serves as a comprehensive collection of R packages tailored to provide a cohesive set of tools for data science. This collection includes several widely used packages such as \textit{ggplot2} and \textit{dplyr}. Particularly, the \textit{dplyr} package plays a pivotal role in data manipulation and transformation. It enables us to filter, sort, summarise, and transform datasets, thereby streamlining data analysis and management.\\
@@ -223,6 +223,10 @@ This section introduces the different datasets analysed and visualised in the su
 \noindent
 \textbf{iris}: The built-in R dataset \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/iris}{iris} was collected by Edgar Anderson. This dataset was famously used by British statistician Ronald Fisher to demonstrate linear discriminant analysis in 1936. It encompasses 5 flower characteristics for 3 types of iris, each with 50 samples. \\
 
+\noindent 
+\textbf{gapminder}: The built-in R dataset, gapminder, was provided by Gapminder Foundation. It encapsulates key demographic statistics like life expectancy, GDP per capita, and population across
+various countries spanning multiple years, illustrating global development trends.\\
+
 \noindent
 \textbf{palmerpenguins}: The built-in R dataset \href{https://www.rdocumentation.org/packages/palmerpenguins/versions/0.1.1}{palmerpenguins} was provided by the Palmer Station Long Term Ecological Research. This dataset contains biometric measurements from three distinct penguin species inhabiting the Palmer Archipelago in Antarctica, namely the Adélie, Chinstrap, and Gentoo penguins.\\
 
@@ -230,11 +234,7 @@ This section introduces the different datasets analysed and visualised in the su
 \textbf{ToothGrowth}: The built-in R dataset, \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/ToothGrowth}{ToothGrowth}, measures the tooth growth of 60 guinea pigs. Each animal was either administered with vitamin C or orange juice.\\
 
 \noindent
-\textbf{gapminder}: The built-in R dataset, \href{https://www.rdocumentation.org/packages/gapminder/versions/1.0.0}{gapminder}, was provided by Gapminder Foundation. It encapsulates key demographic statistics like life expectancy, GDP per capita, and population across various countries spanning multiple years, illustrating global development trends.\\
-
-\noindent
 \textbf{Fire in Brazil}: Open-source fire observation data is provided by \href{https://firms.modaps.eosdis.nasa.gov/}{NASA}. The analysis focuses on Brazil (2013-2022). Note that the dataset contains the variable ``confidence", ranging from 0\% to 100\%. The dataset was filtered with a confidence level of $\ge$ 95\%  to ensure an accurate account of fire occurrences \cite{nasa_confidence}.\\
-
 
 \noindent
 \textbf{Exchange Rate}: The exchange rate data, available at the \href{https://www.bankofengland.co.uk/boeapps/database/index.asp?first=yes&SectionRequired=I&HideNums=-1&ExtraInfo=true&Travel=NIx}{Bank of England}, provides daily spot exchange rates against the pound Sterling (2005-present). This report examines the daily spot rates of the Canadian Dollar, Euro, and US Dollar against the pound Sterling.\\
@@ -858,15 +858,14 @@ In general, the \(Y\)-axis denotes the response, or dependent, variable and the 
 
 \noindent The first plot in Figure~\ref{fig:bubble-plot-construction} illustrates the relationship between car models and miles per gallon (MPG), showing potential differences in fuel efficiency among different models. Similarly, the second plot explores the association between car models and horsepower. Finally, the third plot examines the correlation between MPG and horsepower. \\
 
-\noindent As expected, discerning a pattern or clear relationship between variables proves challenging in the first and second scatter plots. This challenge arises from the fact that the variable depicted along the x-axis in these plots is the car model, which lacks any relevant ordering that would relate on the technical details of the cars. Conversely, in the third scatter plot, a negative correlation between horsepower and miles per gallon is evident. This relation highlights potential trade-offs between fuel efficiency and engine performance. 
+\noindent As expected, discerning a pattern or clear relationship between variables proves challenging in the first and second scatter plots. This challenge arises from the fact that the variable depicted along the $X$-axis in these plots is the car model, which lacks any relevant ordering that would relate on the technical details of the cars. Conversely, in the third scatter plot, a negative correlation between horsepower and miles per gallon is evident. This relation highlights potential trade-offs between fuel efficiency and engine performance. 
 
 \subsubsection{Animated Scatter Plots}
-\noindent While static scatter plots are effective in depicting relationships between two variables, animated scatter plot visualisations take this a step further by introducing, for example, a temporal dimension to the data visualisation. Unlike static plots, animated scatter plots enable the depiction of changes in relationships, clusters, or outliers over time. In R, the $gganimate$ package, building on the foundation of $ggplot2$ package, facilitates the creation of animated plots, including animated scatter plots. \\
+\noindent While static scatter plots are effective in depicting relationships between two variables, animated scatter plot visualisations take this a step further by introducing, for example, a temporal dimension to the data visualisation. Unlike static plots, animated scatter plots enable the depiction of changes in relationships, clusters, or outliers over time. In R, the $gganimate$ package, building on the foundation of $ggplot2$ package, facilitates the creation of animated plots, including animated scatter plots. 
 
-\noindent
-\subsubsection{\textt{gganimate} in Practice}\\
-\noindent
-Figure~\ref{fig:gapminder_static} portrays a static scatter plot demonstrating the relationship between gross domestic product (GDP) per capita and life expectancy across various countries. GDP per capita is depicted on a logarithmic scale along the x-axis to accommodate a wide range of values, while life expectancy is represented on the y-axis. Moreover, the color each of the dots indicate the country they represent data of.\\
+\subsubsection{\textt{gganimate} in Practice}
+
+\noindent Figure~\ref{fig:gapminder_static} portrays a static scatter plot demonstrating the relationship between gross domestic product (GDP) per capita and life expectancy across various countries. GDP per capita is depicted on a logarithmic scale along the $X$-axis to accommodate a wide range of values, while life expectancy is represented on the $Y$-axis. Moreover, the colour each of the dots indicate the country they represent data of.\\
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
@@ -881,10 +880,10 @@ Figure~\ref{fig:gapminder_static} portrays a static scatter plot demonstrating t
 \end{knitrout}
 
 \noindent
-In this static scatter plot there appears to be a positive correlation between GDP per capita and life expectancy. That is, as GDP per capita increases, life expectancy behaves in a similar way. \\
+In the static scatter plot displayed in Figure~\ref{fig:gapminder_static}, there appears to be a positive correlation between GDP per capita and life expectancy: as GDP per capita increases, the life expectancy behaves in a similar manner. However, the spread of points and variability in life expectancy at similar GDP levels make it difficult to draw precise conclusions. Furthermore, the complexity and clutter in the plot demand an extremely high cognitive load, making it difficult for the viewer to understand the details of the data visualised. 
 
 \noindent
-However, by using the animation function, we can see how life expectancy and GDP per capita change through the years for each country, so it helps to show how relationships between variables evolve over time or across different categories. \\
+However, using the animation function, we can see how life expectancy and GDP per capita change through the years for each country, so it helps to show how relationships between variables evolve over time or across different categories. \\
 \\
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -899,12 +898,17 @@ However, by using the animation function, we can see how life expectancy and GDP
   \hlkwd{labs}\hlstd{(}\hlkwc{title} \hlstd{=} \hlstr{'Year: \{frame_time\}'}\hlstd{,} \hlkwc{x} \hlstd{=} \hlstr{'GDP per capita'}\hlstd{,} \hlkwc{y} \hlstd{=} \hlstr{'life expectancy'}\hlstd{)} \hlopt{+}
   \hlkwd{transition_time}\hlstd{(year)} \hlopt{+}
   \hlkwd{ease_aes}\hlstd{(}\hlstr{'linear'}\hlstd{)}
+\hlstd{gapplot}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
 
 
-
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{image_reference/gganimate.png}
+    \label{fig:gganimate1}
+\end{figure}
 
 \subsection{Bubble Charts}
 \subsubsection{Theory of Bubble Charts}
