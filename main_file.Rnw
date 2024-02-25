@@ -680,7 +680,7 @@ This equation highlights that for any point \(x\) between \(x_i\) and \(x_{i+1}\
 
 \subsubsection{Time Series Analysis}
 
-Time series visualisation is particularly suited to line charts because they effectively display changes and trends over time, allowing for easy visualization of relationships between time points. A time series\cite{Brockwell2016Introduction} is a collection of observations ${x_t}$, where $t=0,\dots,n$ denotes the time point at which the observation is recorded. An index set $T_0$ which collects all the time points when observations are available. For instance, $T_0 = \{0,\dots,n\}$ for $n \in \mathbb{N}$. By plotting these data points over time, line charts help in identifying long-term trends, seasonal patterns, and anomalies.\\
+Time series visualisation is particularly suited to line charts because they effectively display changes and trends over time, allowing for easy visualization of relationships between time points. A time series\cite{Brockwell2016Introduction} is a collection of observations $\{x_t\}$, where $t=0,\dots,n$ denotes the time point at which the observation is recorded. An index set $T_0$ which collects all the time points when observations are available. For instance, $T_0 = \{0,\dots,n\}$ for $n \in \mathbb{N}$. By plotting these data points over time, line charts help in identifying long-term trends, seasonal patterns, and anomalies.\\
 
 \noindent
 A time series can be viewed as a realisation of a stochastic process. A stochastic process\cite{Brockwell2016Introduction} $X = (X_t)_{t \in T_0}$ is a collection of random variables $X_t$, where $t$ denotes the time index and $T_0$ the index set. For a fixed event $\omega \in \Omega$ we obtain the realisation of the stochastic process (sometimes also called a sample path) which is given by $x_t = X_t(\omega)$, $t \in T_0$. In practice, line charts of time series data provide insights into the behavior of such stochastic processes over time.
@@ -701,14 +701,9 @@ MyData <- data.frame(MyData)
 # Convert Date to a Date object
 MyData$Date <- as.Date(MyData$Date, format="%d-%b-%y")
 
-
 # Order the data by Date
 MyData <- MyData[order(MyData$Date), ]
 
-
-#ts_data <- zoo(MyData[-1], order.by = MyData$Date)
-# Set an approximate frequency
-#frequency(ts_data) <- 260
 # Convert columns to time series
 ts_data <- lapply(MyData[-1], ts,
                   start=c(as.numeric(format(min(MyData$Date), "%Y")),
@@ -717,7 +712,7 @@ ts_data <- lapply(MyData[-1], ts,
                           as.numeric(format(max(MyData$Date), "%j"))),
                   frequency=260)
 
-plot_dt <- MyData %>% select(Date, CANtoGBP, EURtoGBP, USDtoGBP) %>% gather(key="Currency", value="Rate", -Date) 
+plot_dt <- MyData %>% dplyr::select(Date, CANtoGBP, EURtoGBP, USDtoGBP) %>% gather(key="Currency", value="Rate", -Date) 
 
 # 49-day moving average calculations and plot
 columns <- names(MyData)[!names(MyData) %in% "Date"]
@@ -728,7 +723,7 @@ for (col in columns) {
                                            fill=NA, align='right')
 }
 
-plot_data <- MyData %>% select(Date, CANtoGBP_MA49, EURtoGBP_MA49, USDtoGBP_MA49) %>% gather(key="Currency", value="Rate", -Date) %>%
+plot_data <- MyData %>% dplyr::select(Date, CANtoGBP_MA49, EURtoGBP_MA49, USDtoGBP_MA49) %>% gather(key="Currency", value="Rate", -Date) %>%
   filter(grepl("MA49", Currency)) 
 
 # Remove "_MA49" from the Currency column for the legend
