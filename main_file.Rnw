@@ -51,7 +51,6 @@ library(viridis)
 library(expm)
 library(princurve)
 library(DATAstudio)
-library(fda)
 library(qqboxplot)
 data(ToothGrowth)
 data(mtcars)
@@ -97,17 +96,17 @@ Throughout the thesis, vocabulary referencing the programme R is used. The R pac
 \noindent
 The introductory chapter serves to elucidate the motivation for this study, and to contextualise the paper. It underscores the enduring importance of data visualisation. Case examples both of the influential applications, but also dangerous misuses of data visualisations are showcased and analysed. These are sourced from BBC Ideas \cite{bbcdatavis}. Futhermore, an introduction of essential R packages including \textit{ggplot2} is provided, along with a presentation of the datasets used throughout paper.\\
 
-\noindent \textbf{Literature and Research}\\ 
+\noindent \textbf{Literature and Research} 
 
 \noindent
-To appreciate the significance and impact of data visualisation, it is imperative to recognise its prominence within various method-specific publications. Notably, the \href{https://www.tandfonline.com/journals/ucgs20}{Journal of Computational and Graphical Statistics} stands out as a significant source of ongoing research in the realm of computational and graphical methods within statistics. This prestigious journal publishes ongoing research on the latest techniques in computational and graphical methods in statistics, encompassing data analysis and numerical graphical displays. Additionally, the \href{https://www.jstatsoft.org/index}{Journal of statistical software} publishes peer-reviewed articles about statistical software, together with the source code. Collectively, these publications reveal the vast potential for current and future research in this ever-evolving domain, particularly as our digital landscape and data sphere expand at an accelerated pace.\\
+To appreciate the significance and impact of data visualisation, it is imperative to recognise its prominence within various method-specific publications. Notably, the \href{https://www.tandfonline.com/journals/ucgs20}{Journal of Computational and Graphical Statistics} stands out as a significant source of ongoing research in the realm of computational and graphical methods within statistics. This prestigious journal publishes ongoing research on the latest techniques in computational and graphical methods in statistics, encompassing data analysis and numerical graphical displays. Additionally, the \href{https://www.jstatsoft.org/index}{Journal of statistical software} publishes peer-reviewed articles about statistical software, together with the source code. Collectively, these publications reveal the vast potential for current and future research in this ever-evolving domain, particularly as our digital landscape and data sphere expand rapidly.
 
 \subsection{Historical Background and Misuses of Data Visualisation}
 
-\noindent This section begins with an analysis of two case studies demonstrating the effectiveness and influence of data visualisation, followed by an exploration of two instances illustrating problematic data misuse. The primary aim is to emphasise the importance of data visualisation while also stressing the need for careful attention to detail, especially considering the potential for malicious exploitation of visualised data.\\
+\noindent This section begins with an analysis of two case studies demonstrating the effectiveness and influence of data visualisation, followed by an exploration of two instances illustrating problematic data misuse. The primary aim is to emphasise the importance of data visualisation while also stressing the need for careful attention to detail, especially considering the potential for malicious exploitation of visualised data.
 
 \noindent
-\\\textbf{Motivations for Using Data Visualisations — Case 1}\\
+\\\textbf{Motivations for Using Data Visualisations — Case 1}
 
 \noindent
 Florence Nightingale was not only a social reformer and the founder of modern nursing but also a pioneering statistician. It was her application of data visualisation during the Crimean War that transformed the field of healthcare and pushed for social reform.\\  
@@ -127,7 +126,7 @@ Nightingale leveraged the compelling visualisations in her advocacy efforts, pre
 
 \noindent
 \textbf{Motivations for Using Data Visualisations — Case 2}
-\\
+
 \noindent
 Sometimes, one glance is enough to convey the most powerful idea. Edward Hawkins, a British climate scientist and Professor of climate science at the University of Reading, is renowned for his exceptional data visualisations of climate change.\\
 
@@ -200,7 +199,7 @@ As shown in subsequent sections, it is possible to produce visualisations rather
 
 \noindent The \texttt{theme} function holds significance in customising the non-data elements of plots. The theme system within \textit{ggplot2} allows precise adjustment of aesthetic aspects such as fonts, labels, legends, and background colours. This tool is essential for enhancing plot readability and creating visually captivating graphics tailored to specific audiences or publication requirements.\\
 
-\noindent \textbf{Key \textit{ggplot2} Packages}\\
+\noindent \textbf{Key ggplot2 Packages}\\
 \noindent The R language is a powerful tool for data analysis, owing to the wide array of R packages that facilitate diverse functions. Throughout this project, we will use many different packages, each enhancing the analysis and presentation of data.\\
 
 \noindent The \textit{tidyverse} package serves as a comprehensive collection of R packages tailored to provide a cohesive set of tools for data science. This collection includes several widely used packages such as \textit{ggplot2} and \textit{dplyr}. Particularly, the \textit{dplyr} package plays a pivotal role in data manipulation and transformation. It enables us to filter, sort, summarise, and transform datasets, thereby streamlining data analysis and management.\\
@@ -223,7 +222,11 @@ This section introduces the different datasets analysed and visualised in the su
 \textbf{ToothGrowth}: The built-in R dataset, \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/ToothGrowth}{ToothGrowth}, measures the tooth growth of 60 guinea pigs. Each animal was either administered with vitamin C or orange juice.\\
 
 \noindent
+\textbf{gapminder}: The built-in R dataset, \href{https://www.rdocumentation.org/packages/gapminder/versions/1.0.0}{gapminder}, was provided by Gapminder Foundation. It encapsulates key demographic statistics like life expectancy, GDP per capita, and population across various countries spanning multiple years, illustrating global development trends.\\
+
+\noindent
 \textbf{Fire in Brazil}: Open-source fire observation data is provided by \href{https://firms.modaps.eosdis.nasa.gov/}{NASA}. The analysis focuses on Brazil (2013-2022). Note that the dataset contains the variable ``confidence", ranging from 0\% to 100\%. The dataset was filtered with a confidence level of $\ge$ 95\%  to ensure an accurate account of fire occurrences \cite{nasa_confidence}.\\
+
 
 \noindent
 \textbf{Exchange Rate}: The exchange rate data, available at the \href{https://www.bankofengland.co.uk/boeapps/database/index.asp?first=yes&SectionRequired=I&HideNums=-1&ExtraInfo=true&Travel=NIx}{Bank of England}, provides daily spot exchange rates against the pound Sterling (2005-present). This report examines the daily spot rates of the Canadian Dollar, Euro, and US Dollar against the pound Sterling.\\
@@ -405,7 +408,6 @@ Furthermore, the Gestalt Principles play an important role in the realm of visua
 
 \noindent By harnessing the principles of human visual perception, applying insights from cognitive psychology, and leveraging pre-attentive attributes, data visualisation designers can create visualisations that are not only aesthetically pleasing but also cognitively efficient.	
 
-
 \subsection{Colour Theory in Data Visualisation}
 In this section, the significance of colour in data visualisation, the principles of colour perception and encoding, and the importance of avoiding misleading visualisations through thoughtful colour choices are explored.\\
 
@@ -502,64 +504,50 @@ Addressing information overload in visualisations necessitates the strategic app
 
 \section{Univariate Data Visualisation Methods}
 
-This chapter, initiates the discussion about data visualisation methods. This chapter particularly introduces techniques for graphically representing for datasets of the simplest nature - that is, single-variable datasets. It focuses on histograms, bar charts, Kernel Density Estimate, ROC Curves, and Time Series Analysis. 
+This chapter, initiates the discussion regarding data visualisation methods. This chapter particularly introduces techniques for graphically representing for datasets of the simplest nature — that is, single-variable datasets. It focuses on histograms, bar charts, Kernel Density Estimate, ROC Curves, and Time Series Analysis. 
 
 \subsection{Histograms}
 
-A histogram is a graphical representation of the distribution of a dataset. It consists of bars, each representing a range of data values, and whose height corresponds to the frequency or count of data points within that range. In this way, histograms facilitate the visualisation of differences in frequency or quantity among groups.\\
+\noindent Histograms are essential tools in univariate data visualisation. They provide a concise yet comprehensive overview of the frequency or density distribution of a single variable. This chapter delves into the construction of two types of histograms, as well as an example of their application in practice.
 
-\noindent On a Cartesian coordinate system, the x-axis shows the endpoints of each group, and the y-axis represents frequency. The height of each rectangle indicates the corresponding frequency, making it a frequency distribution histogram. In order to determine the quantity of each group in the histogram, a multiplication of the frequency by the group interval is necessary. Since every histogram has a fixed group interval, if we use the y-axis to directly show quantity and each rectangle's height indicates the number of data points, we can both retain the distribution and simultaneously see the number in each group at a glance. All examples in this text use the non-standard histogram depiction with the y-axis denoting quantity.\\
+\subsubsection{Classic Frequency Histograms}
 
+\noindent A classic histogram is a visual representation of the distribution of a (numerical) dataset. It is composed by a series of contiguous rectangles, also known as ``bins", each representing a range of data values. The height of each of these corresponds to the frequency or count of data points within that range, depending on the type of histogram. On a cartesian coordinate system, typically, the x-axis shows the endpoints of each bin, and the y-axis represents count or frequency. Hence, histograms facilitate, among other thing, the visualisation of the distribution, spread, and central tendancy of datasets.\\
 
-\subsubsection{Theory of Histogram}\\
+\noindent \textbf{Mathematical Defintion}\\
+\noindent Suppose the data points within a datset are partitioned into $k$ non-overlapping bins, denoted as $B_1, \dots, B_k$ such that $B_i = [t_i, t_{i+1})$ for $i = 1, \dots, k$. Here, $t_i$ and $t_{i+1}$ represent the lower and upper boundaries of the $i$-th bin, respectively.\\
 
-\noindent Let \(X_1, \ldots, X_n\) be independent and identically distributed random variables with finite mean \( \mu \) and variance \( \sigma^2 \). Then for any \( \epsilon > 0 \), 
-\[ P\left(\left|\frac{1}{n}\sum_{i=1}^n X_i - \mu\right| < \epsilon\right) \rightarrow 1 \] 
-as \( n \rightarrow \infty \).\\
+\noindent Then, the classical frequency histogram of the data can be represented as a set of $k$ bars, where the height of the $i$-th bar corresponds to the frequency or count of data points falling within the interval $B_i$.\\
 
-\noindent Histograms can be also used to visualise the convergence of sample means to the population mean. Define the sample mean \( \bar{X} = \frac{1}{n}\sum_{i=1}^n X_i \). Then, as \( n \) becomes large, the variable 
-\[ Z = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \] approaches a standard normal distribution.\\
+\noindent \textbf{Theory of Bin Number and Bin Width}\\
+\noindent The classical frequency histogram can be fully described by two main factors: the bin width $h$, and the bin origin $t_{0}$. However, in order for the bin counts to be comparable, the bins should all have the same width. Furthermoree, it is essential to correctly choose the number of bins, since these have a huge impact on how the data is displayed and interpreted. Too few bins may hide the information in a dataset, and too many bins can cause a lot of noise in a dataset.\\
 
-\noindent
-\textbf{Classical frequency histogram}\\
+\noindent Sturges' Rule, established by Herbert Sturges in 1926, offers a systematic approach to determining the optimal number of bins constructing a frequency histogram \cite{scott2015multivariate}. This rule is based on the concept of normality, with the binomial distribution, $B(n,p = 0.5)$, serving as a model for an optimally constructed histogram. It links the binomial distribution with normally distributed data, providing a basis for selecting the number of bins to achieve a histogram resembling a normal density curve.\\
 
-\noindent The classical frequency histogram is constructed by dividing the data into a series of nonoverlapping intervals, called bins. The data points within each bin are then counted. The histogram can be fully described by two main factors: the bin width, $h$, and the bin origin, $t_{0}$.\\
+\noindent It suggests setting the number of bins, denoted as $k$, to \[ k = 1 + \log_{2} n, \] where $n$ represents the sample size. This formula stems from constructing a frequency histogram with $k$ bins, each of width 1 and centered on the points $i = 0,1,\dots, k - 1$. The bin count of the $i$-th bin is chosen to be the binomial coefficient $\binom{k-1}{i}$. As $k$ increases, this ideal frequency histogram assumes the shape of a normal density with mean $(k - 1)/2$ and variance $(k - 1)/4$. The total sample size is
+\[ n = \sum_{i=0}^{k-1} \binom{k-1}{i} = (1+1)^{k-1} = 2^{k-1} \]
+by the binomial expansion. Hence, Sturges’ rule follows immediately: $k = 1 + \log_2 n$ \cite{scott2015multivariate}.\\
 
-\noindent
-In classical frequency histogram, usually we assume the shape of the histogram to be normal distribution. It is very important to choose the number of bins, since they have a huge impact on how we interpret the data. Too few bins may hide the information in a dataset, and too many bins can cause a lot of noise in a dataset. Fortunately, we can determine the optimal number of bins to use in a histogram by using a method known as Sturges’ Rule:
-$$ k = 1 + \log_{2} n, $$
+\noindent Note that Sturges’ rule functions as a number-of-bins rule rather than a bin-width rule. Assuming all bins are of equal width, to find the bin-width, Sturges’ rule is implemented by partitioning the sample range of the data into the recommended number bins \cite{scott2015multivariate}.
 
-\noindent
-where n is the total number of observations in the dataset.\\
+\subsubsection{Density Histograms}
 
-\noindent
-Technically, Sturges' Rule is method to find the number of bins rather than the width of bins. However, if the data are not normal, additional bins may be needed.\\
+\noindent A frequency histogram differs from a density histogram by its normalisation, which integrates to 1. That is, let $B_i = [t_i,t_{i+1})$ represents the $i$-th bin, as defined previously. If $t_{i+1} − t_i = h$ for all $i$, the histogram has a fixed bin width of $h$. In a frequency histogram, blocks of height $1$ and width $h$ are stacked in the appropriate bins, resulting in an integral equal to $nh$. Conversely, a density histogram uses blocks of height $1/(nh)$ to ensure each block has an area of $1/n$ \cite{scott2015multivariate}. In this way, the height of each bin represents the probability distribution of the data, such that the total area of the histogram equals 1.\\
 
-\noindent
-\textbf{Density Histogram}\\
+\noindent Let $v_i$ denote the bin count of the $i$-th bin, representing the number of sample points falling in bin $B_i$. The density histogram is mathematically defined as:
+\[ \hat{f}(x) = \frac{v_k}{nh} = \frac{1}{nh} \sum_{i=1}^{n} I_{[t_i,t_{i+1})}(x_i) \quad \text{for } x \in B_i.\]
 
-\noindent
-The density histogram is normalized to integrate to 1. Unlike a frequency histogram which is constructed from blocks of height 1 and width $h$ (where $h$ is the fixed bin width), a density histogram is constructed from blocks of height $\frac{1}{nh}$, ensuring that each block has an area equal to $\frac{1}{n}$. The height of each bin  represents the probability distribution of the data, such that the total area of the histogram equals 1.\\
+\noindent With this definition, it is straightforward to verify that $ \hat{f}(x) \geq 0 $ and that $ \int \hat{f}(x) \, dx = 1 $, ensuring that $ \hat{f}(x) $ is a proper density function.\\
 
 \noindent
-\\The density histogram is mathematically defined by the formula:
-$$\hat{f}(x) = \frac{v_k}{nh} = \frac{1}{nh} \sum_{i=1}^{n} I_{[t_k,t_{k+1})}(x_i) \quad \text{for } x \in B_k,$$
-
-\noindent
-where $v_{k}$ represents the count of sample points falling into the $k$th bin, $B_{k}$. With this definition of a histogram, it is straightforward to check that $ \hat{f}(x) \geq 0 $ and that $ \int \hat{f}(x) \, dx = 1 $, so that $ \hat{f}(x) $ is a proper density function.\\
-
-\noindent
-The density histogram's bin counts ${v_{k}}$ can be considered as binomial random variables, where each bin count $v_{k}$ follows a binomial distribution $B(n,p_{k})$. The probability $p_{k}$ for each bin is the integral of the density function $f(t)$ over the bin interval $B_{k}$:
-$$p_{k} = \int_{B_k} f(t) \, dt. $$\\
+The density histogram's bin counts ${v_{i}}$ can be considered as binomial random variables, where each bin count $v_{i}$ follows a binomial distribution $B(n,p_{i})$. The probability $p_{i}$ for each bin is the integral of the density function $f(t)$ over the bin interval $B_{i}$ \cite{scott2015multivariate}:
+$$p_{i} = \int_{B_i} f(t) \, dt. $$
 
 \subsubsection{Histogram in Practice}\\
 
-\noindent The R language uses the \texttt{hist} function to create histograms. This function takes vectors as input, along with other parameters to plot a histogram.\\
+\noindent In R programming, one can call upon the \texttt{geom\_histogram()} function, beloging to the \textit{ggplot} to easily generate histograms from suitable datasets. This function takes vectors as input, along with additional parameters, to construct a histogram.\\
 
-\noindent By plotting histograms of a large number of sample means, one can observe the shape gradually resembling a normal distribution.\\
-
-\noindent
-Consider Figure~\ref{fig:iris-plots} which was created on \textit{ggplot2} with the use of to the \texttt{geom\_histogram} function and iris dataset.
+\noindent As the number of sample means used to plot a histogram increases, one can usually observe the shape of the histogram gradually resembling that of the normal distribution. Consider the histogram found on the left side of Figure~\ref{fig:iris-plots} This plot was created with the use of to the \texttt{geom\_histogram} function and iris dataset.\\
 
 \begin{figure}[htbp]
   \centering
@@ -568,7 +556,7 @@ Consider Figure~\ref{fig:iris-plots} which was created on \textit{ggplot2} with 
  # Create a histogram using ggplot2 for Sepal Length in the Iris dataset
 bar_diagram <- ggplot(iris, aes(x = Sepal.Length)) +
   geom_histogram(
-    binwidth = 0.2,  # Adjust the box width to 0.2 for smaller datasets
+    binwidth = 0.3,  
     fill = "#459395"
   ) +
   labs(
@@ -602,15 +590,17 @@ print(kde_diagram)
   \label{fig:iris-plots}
 \end{figure}
 
+\noindent The frequency histogram displayed in Figure~\ref{fig:iris-plots} exhibits variable bin lengths, with a constant bin width set to 0.3. The shape of the histogram is slightly shifted to the left, deviating from the symmetric bell shape of a normal distribution. This deviation may indicate some level of asymmetry or non-normality in the Sepal Length data. 
+
 \subsection{Kernel Density Estimation}
 
-Kernel Density Estimation(KDE) evolves from the concept of histogram, offering a method for estimating the the probability density function of a dataset.
+Kernel Density Estimation(KDE) evolves from the concept of histogram, offering a method for estimating the the probability density function of a dataset.\\
 
+\noindent 
 Kernel Density Estimation (KDE) is an very useful tool in statistics. Instead of discrete histograms, it helps create a smooth curve from values in a dataset. KDE is used to infer the distribution of a population based on a limited sample. Thus, the result of the kernel density estimation is an estimate of the sample's probability density function. Based on this estimated probability density function, one can ascertain certain characteristics of the data distribution, such as the regions where data is concentrated.\\
 
 \noindent
-The KDE algorithm takes a parameter called bandwidth, that affects how smooth the resulting curve is. Changing the bandwidth changes the shape of the kernel: a lower bandwidth implies only points very close to the chosen position are given any weight, which leads to the estimate looking squiggly. In contrast, a higher bandwidth means having a shallow kernel, where distant points can contribute. Thus, leading to a smoother curve. %REVISE THIS TEXT.
-\\
+The KDE algorithm takes a parameter called bandwidth, that affects how smooth the resulting curve is. Changing the bandwidth changes the shape of the kernel: a lower bandwidth implies only points very close to the chosen position are given any weight, which leads to the estimate looking squiggly. In contrast, a higher bandwidth means having a shallow kernel, where distant points can contribute. Thus, leading to a smoother curve.
 
 \subsubsection{Theory of Kernel Density Estimation}\\
 
@@ -624,20 +614,20 @@ $$ \int K(u) \, du = 1. $$
 
 \noindent
 By introducing the rescaling notation $K_h(u) = h^{-1}K(\frac{u}{h})$, we can write the formula in a more compact way:
-$$\hat{f}(x; h) = n^{-1} \sum_{i=1}^{n} K_h(x - X_i).$$\\
+$$\hat{f}(x; h) = n^{-1} \sum_{i=1}^{n} K_h(x - X_i).$$
 
 \noindent In Figure~\ref{fig:iris-plots}, the kernel density estimation of the dataset is presented. The distribution of sepal lengths is depicted by the kernel density curve. The peaks observed in the curve correspond to the primary concentration trends of sepal length within the data. A unimodal curve signifies a concentration of sepal lengths for most irises in that specific region. Conversely, a bimodal or multimodal curve suggests the existence of multiple concentration areas.
 
 \subsection{Bar Charts}
 \noindent Bar charts are a crucial tool in data presentation, arranging data into vertical or horizontal bars. The varying lengths of these bars directly correspond to the magnitude of the information they represent. Bar charts excel in comparing classified data, especially when values are closely aligned. This stems from the nature of human perception, as our visual acuity for height surpasses that of other visual elements like area or angle.\\
 
-\noindent Bar charts represent a versatile tool for data visualisation, frequently employed to compare distinct categories. The vertical bar chart, commonly recognised, exhibits categories along the X-axis and their frequencies or counts along the Y-axis. Horizontal bar charts, rotated 90 degrees, prove beneficial for extended category names or numerous categories, displaying categories on the Y-axis and frequencies on the X-axis. Multi-set or grouped bar charts facilitate side-by-side comparisons of sub- groups within categories, available in both vertical and horizontal orientations. Stacked bar charts illustrate classes of values subdivided into sub-classes, often differentiated by colour, where each segment's size signifies its frequency or count, and the total bar length reflects the cumulative total.\\
+\noindent Bar charts represent a versatile tool for data visualisation, frequently employed to compare distinct categories. The vertical bar chart, commonly recognised, exhibits categories along the X-axis and their frequencies or counts along the Y-axis. Horizontal bar charts, rotated 90 degrees, prove beneficial for extended category names or numerous categories, displaying categories on the Y-axis and frequencies on the X-axis. Multi-set or grouped bar charts facilitate side-by-side comparisons of sub- groups within categories, available in both vertical and horizontal orientations. Stacked bar charts illustrate classes of values subdivided into sub-classes, often differentiated by colour, where each segment's size signifies its frequency or count, and the total bar length reflects the cumulative total.
 
 \subsubsection{Bar Charts in Practice}\\
 \noident The two bar charts on in Figure~\ref{fig:barcharts} illustrate the impact of varying vitamin dosages on tooth growth, further categorised by supplement type. On the X-axis, three distinct levels of vitamin dosage are presented, while the Y-axis indicates the average lenth of tooth for each dosage.
 
 
-<<barcharts, echo=FALSE, warning=FALSE, message=FALSE, fig.height=3, fig.width=10, fig.pos = 'H', fig.cap='Visualising tooth growth by dosage: A comparison of grouped and stacked bar chart techniques' >>=
+<<barcharts, echo=FALSE, warning=FALSE, message=FALSE, fig.height=4, fig.width=10, fig.pos = 'H', fig.cap='Visualising tooth growth by dosage: A comparison of grouped and stacked bar chart techniques' >>=
 # average length
 average_lengths <- ToothGrowth %>%
   group_by(dose, supp) %>%
@@ -683,7 +673,14 @@ This equation highlights that for any point \(x\) between \(x_i\) and \(x_{i+1}\
 Time series visualisation is particularly suited to line charts because they effectively display changes and trends over time, allowing for easy visualization of relationships between time points. A time series\cite{Brockwell2016Introduction} is a collection of observations $\{x_t\}$, where $t=0,\dots,n$ denotes the time point at which the observation is recorded. An index set $T_0$ which collects all the time points when observations are available. For instance, $T_0 = \{0,\dots,n\}$ for $n \in \mathbb{N}$. By plotting these data points over time, line charts help in identifying long-term trends, seasonal patterns, and anomalies.\\
 
 \noindent
-A time series can be viewed as a realisation of a stochastic process. A stochastic process\cite{Brockwell2016Introduction} $X = (X_t)_{t \in T_0}$ is a collection of random variables $X_t$, where $t$ denotes the time index and $T_0$ the index set. For a fixed event $\omega \in \Omega$ we obtain the realisation of the stochastic process (sometimes also called a sample path) which is given by $x_t = X_t(\omega)$, $t \in T_0$. In practice, line charts of time series data provide insights into the behavior of such stochastic processes over time.
+A time series can be viewed as a realisation of a stochastic process. A stochastic process\cite{Brockwell2016Introduction} $X = (X_t)_{t \in T_0}$ is a collection of random variables $X_t$, where $t$ denotes the time index and $T_0$ the index set. For a fixed event $\omega \in \Omega$ we obtain the realisation of the stochastic process (sometimes also called a sample path) which is given by $x_t = X_t(\omega)$, $t \in T_0$.\\
+
+\noindent
+Also, a time series $\{X_t\}$ is a moving average process of order $q$(MA(q)) if it can be expressed as:
+\[x_t = \omega_t + \theta_1 \omega_{t-1}+\dots+ \theta_q \omega_{t-q},\]
+
+\noindent
+where $\{\omega_t\} \sim \text{N}(0, \sigma^2)$ are i.i.d. white noise error terms and $\theta_1,\dots,\theta_q$ are real valued coefficients. Then, the MA process assumes the mean of $X_t$ is $\mathbb{E}(X_t)=0$.
 
 \subsubsection{Case Example: Time Series Visualisation of Exchange rates}
 
@@ -746,20 +743,17 @@ cowplot::plot_grid(combined_plot, p2_legend, nrow = 1, rel_widths = c(2, 0.5))
 @
 
 \noindent
-The first plot in Figure~\ref{fig:all exchange rates} presents a comparative visualisation of daily exchange rates for CAD, EUR, and USD against GBP, offering an overview of their trends and relative performance. This plot enables the identification of overall trends and periods of volatility for each currency pair, allowing for an assessment of their stability and strength relative to GBP. Notice that, there was a simultaneous and significant drop in all three currencies relative to the GBP. The concurrent nature of these declines across diverse currency pairs suggests that the driving factor is a depreciation of the GBP, rather than independent appreciations of the USD, EUR, and CAN. This notable depreciation of the GBP occurred around 2016, which coincides with the commencement of BREXIT process. Usually, the long term trend attracts financial analyst most. Therefore, filtering fluctuations and anomalies is important. Then, a 49-day moving average (MA49) was employed, shown in the second plot of Figure~\ref{fig:all exchange rates}, to elucidate long-term trends while mitigating short-term fluctuations. This is mathematically represented as 
+The first plot in Figure~\ref{fig:all exchange rates} presents a comparative visualisation of daily exchange rates for CAD, EUR, and USD against GBP, offering an overview of their trends and relative performance. This plot enables the identification of overall trends and periods of volatility for each currency pair, allowing for an assessment of their stability and strength relative to GBP. Notice that, there was a simultaneous and significant drop in all three currencies relative to the GBP. The concurrent nature of these declines across diverse currency pairs suggests that the driving factor is a depreciation of the GBP, rather than independent appreciations of the USD, EUR, and CAN. This notable depreciation of the GBP occurred around 2016, which coincides with the commencement of the BREXIT process. Usually, the long term trend attracts financial analyst most. Therefore, filtering fluctuations and anomalies is important. Then, a 49-day moving average (MA49) was employed, shown in the second plot of Figure~\ref{fig:all exchange rates}, to elucidate long-term trends while mitigating short-term fluctuations. This is the smoothing method of simple average of past observations, expressed as:
 \[\text{MA}_{49}(t) = \frac{1}{49} \sum_{k=t-48}^{t} x_k,\] 
 where \( x_k \) denotes the exchange rate on day $k$.\\
 
 \noindent
-This method effectively filters out daily noise, allowing a clearer view of overarching trends in currency movements against the GBP. The overlay of these moving averages on the daily exchange rates in visualisations provides both a clear comparative and a quantitative perspective.\\
+This method allows a clearer view of overarching trends in currency movements against the GBP. The overlay of these moving averages on the daily exchange rates in visualisations provides both a clear comparative and a quantitative perspective.\\
 
 \noindent
 \textbf{Decomposition of Time Series}\\
 \noindent
-One of the primary advantages of time series visualisation is the ease with which it allows analysts to identify long-term upward or downward trends in data and patterns that repeat over specific intervals. By decomposing the time series, it would be easy to see those features.\\
-
-\noindent
-Time series data, $X_t$, can often be described as a combination of several distinct components: Trend component $t_t$: The underlying progression in the series, Seasonal component $s_t$: Periodic fluctuations due to seasonal factor, Residual $r_t$: The irregular or error component. Hence, the decomposition of a time series can be described in two main models:
+One of the primary advantages of time series visualisation is the ease with which it allows analysts to identify long-term upward or downward trends in data and patterns that repeat over specific intervals. By decomposing the time series, it would be easy to see those features. Non-stationary time series data, $X_t$, can often be described as a combination of several distinct components: Trend component $t_t$: The underlying progression in the series, Seasonal component $s_t$: Periodic fluctuations due to seasonal factor, Residual $r_t$: The irregular or error component. Hence, the decomposition of a time series can be described in two main models:
 \\
 
 \noindent \textbf{Additive Model} \cite{Brockwell2016Introduction}: In the additive model, the components are added together:
@@ -773,7 +767,7 @@ X_t = t_t \times s_t \times r_t \quad \text{or} \quad \log(X_t) = \log(t_t) + \l
 In practice, the choice between the additive and multiplicative models often depends on the nature of the time series. If the magnitude of the seasonal fluctuations or the variation around the trend does not vary with the level of the time series, then an additive model is appropriate. If the magnitude of the seasonal fluctuations or the variation around the trend increases or decreases as the time series level changes, then a multiplicative model may be more suitable.\\
 
 \noindent
-R function \texttt{decompose()} is able to decompose the time series by additive model or multiplicative model. And ~\ref{fig:decomposition of time series} is the demonstration of decomposition.
+R function \href{https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/decompose}{\texttt{decompose()}} is able to decompose the time series by additive model or multiplicative model. And as shown in Figure~\ref{fig:decomposition of time series} is the demonstration of decomposition.
 
 <<message=FALSE,warning=FALSE,echo=FALSE>>=
 # Decomposition of addictive time series model
@@ -804,12 +798,12 @@ As illustrated in Figure~\ref{fig:decomposition of time series}, the trend compo
 Moreover, the seasonal component $s_t$ of the decomposition highlights cyclical fluctuations, indicative of recurrent patterns within the year. These could be attributed to seasonal economic activities, policy changes, or other cyclical factors influencing the currency market. The clear demarcation of these cyclical trends in the seasonal component helps in isolating such effects from the overarching trend.\\
 
 \noindent
-Lastly, the residual component $r_t$ encompasses the random, unexplained variations after accounting for the trend and seasonal factors. analysing these residuals is crucial for understanding the unpredictability in the exchange rate and can be pivotal in risk management and forecasting.\\
+Lastly, the residual component $r_t$ encompasses the random, unexplained variations after accounting for the trend and seasonal factors. Analysing these residuals is crucial for understanding the unpredictability in the exchange rate and can be pivotal in risk management and forecasting.\\
 
 \noindent
 \textbf{Autocorrelation Analysis of CNY to GBP Exchange Rate}\\
 \noindent
-Autocorrelation, also referred to as serial correlation, is a crucial concept in time series analysis. It describes the correlation of a time series with its own past and future values. The autocorrelation function (ACF) measures the linear predictability of the series at lag h, which is the time $t$ with its values at a previous time $t-h$. The mathematical fomulation of ACF of time series will be given in the following paragraph.\\
+Autocorrelation, also referred to as serial correlation, is a crucial concept in time series analysis. It describes the correlation of a time series with its own previous and proceeding values. The autocorrelation function (ACF) measures the linear predictability of the series at lag h, which is the time $t$ with its values at a previous time $t-h$. The mathematical formulation of ACF of time series will be given in the following paragraph.\\
 
 \noindent
 Suppose we have a time series with observations denoted by \( x_1, \ldots, x_n \). Then the sample mean is given by $\bar{x} = \frac{1}{n} \sum_{t=1}^{n} x_t.$
@@ -1065,15 +1059,18 @@ heatmap_plot <- ggplot(pivot_table,
 print(heatmap_plot)
 @
 
-
 \subsection{Scatter Plots}
 
-A scatter plot is a graphical representation of a set of data points in a two-dimensional coordinate system. Each data point is represented by a dot, and the position of the dot is determined by the values of two variables. Some examples of this type of visualisation can be found in Figures~\ref{fig:abs-plots}, ~\ref{fig:cogload-plot}, and ~\ref{fig:bubble-plot-construction}.\\
+A scatter plot is a graphical representation of a set of data points in a two-dimensional coordinate system. Each data point is represented by a dot, and the position of the dot is determined by the values of two variables in the system. Some examples of this type of visualisation can be found in Figures~\ref{fig:abs-plots}, ~\ref{fig:cogload-plot}, and ~\ref{fig:bubble-plot-construction}.\\
 
 \noindent
-In general, the \(Y\)-axis denotes the response, or dependent, variable and the \(X\)-axis denotes the explanatory, or independent,  variable. Each observation of a dataset is mapped to a dot in the 2-dimentional space. Let \((x_i, y_i)\) represent the coordinates of the \(i\)-th data point on the scatter plot produced by mapping a set of data. The scatter plot can be mathematically described as a set of points: \( \{(x_1, y_1), \ldots, (x_n, y_n)\}\) where \(n\) is the number of observations in the set.\\
+In general, the \(Y\)-axis denotes the response, or dependent, variable and the \(X\)-axis denotes the explanatory, or independent, variable. Each observation of a dataset is mapped to a dot in the 2-dimentional space. Let \((x_i, y_i)\) represent the coordinates of the \(i\)-th data point on the scatter plot produced by mapping a set of data. The scatter plot can be mathematically described as a set of points: \( \{(x_1, y_1), \ldots, (x_n, y_n)\}\) where \(n\) is the number of observations in the set.
 
-\noindent The scatter plots in Figure~\ref{fig:bubble-plot-construction} visualise data from the mtcars dataset. Each of these three graphs represents different information drawn from the dataset. The first plot displays the various car models and their corresponding miles per gallon. The middle plot, once again, shows the car models, but this time their horsepower is represented. Finally, the last scatter plot visualises the relationship between the cars' miles per gallon and their horsepower.
+\subsubsection{Scatter Plots in Practice}
+
+\noindent The \textit{ggplot2} package in R offers a versatile built-in function for generating scatter plots called \texttt{geom\_point()}. This function works by mapping variables in a dataset to aesthetic attributes of points in a scatter plot, such as position (x and y coordinates), size, color, shape, and transparency.\\
+
+\noindent Illustrations of plots generated in this manner are depicted in Figure~\ref{fig:bubble-plot-construction}. The scatter plots in this figure visually depict relationships between variables in the mtcars dataset.\\
 
 <<bubble-plot-construction, echo=FALSE, fig.height=3.5, fig.width=11, fig.cap='Partial scatter plot deconstruction of the mtcars dataset', message=FALSE>>= 
 
@@ -1104,39 +1101,42 @@ plot3 <- ggplot(mtcars, aes(x = mpg, y = hp)) +
 grid.arrange(plot1, plot2, plot3, ncol = 3)
 @
 
+\noindent The first plot in Figure~\ref{fig:bubble-plot-construction} illustrates the relationship between car models and miles per gallon (MPG), showing potential differences in fuel efficiency among different models. Similarly, the second plot explores the association between car models and horsepower. Finally, the third plot examines the correlation between MPG and horsepower. \\
+
+\noindent As expected, discerning a pattern or clear relationship between variables proves challenging in the first and second scatter plots. This challenge arises from the fact that the variable depicted along the x-axis in these plots is the car model, which lacks any relevant ordering that would relate on the technical details of the cars. Conversely, in the third scatter plot, a negative correlation between horsepower and miles per gallon is evident. This relation highlights potential trade-offs between fuel efficiency and engine performance. 
+
 \subsubsection{Animated Scatter Plots}
 \noindent While static scatter plots are effective in depicting relationships between two variables, animated scatter plot visualisations take this a step further by introducing, for example, a temporal dimension to the data visualisation. Unlike static plots, animated scatter plots enable the depiction of changes in relationships, clusters, or outliers over time. In R, the $gganimate$ package, building on the foundation of $ggplot2$ package, facilitates the creation of animated plots, including animated scatter plots. \\
 
 \noindent
 \subsubsection{\textt{gganimate} in Practice}\\
 \noindent
-The figure below depicts a static scatter plot illustrating the relationship between GDP per capita and life expectancy across various countries. GDP per capita is displayed on a logarithmic scale along the x-axis, and life expectancy is shown on the y-axis. The size of each point on the plot corresponds to the population size of the country it represents, and the colour of each point distinguishes one country from another.\\
+Figure~\ref{fig:gapminder_static} portrays a static scatter plot demonstrating the relationship between gross domestic product (GDP) per capita and life expectancy across various countries. GDP per capita is depicted on a logarithmic scale along the x-axis to accommodate a wide range of values, while life expectancy is represented on the y-axis. Moreover, the color each of the dots indicate the country they represent data of.\\
 
-<<gapminder_static, echo=FALSE, fig.height=3, fig.width=4, fig.cap='staticl scatter plot deconstruction of the gapminder dataset', message=FALSE>>=
+<<gapminder_static, echo=FALSE, fig.height=3, fig.width=4, fig.cap='Static scatter plot deconstruction of the gapminder dataset', message=FALSE>>=
 p <- ggplot(
   gapminder, 
-  aes(x = gdpPercap, y=lifeExp, size = pop, colour = country)
+  aes(x = gdpPercap, y=lifeExp, colour = country)
   ) +
   geom_point(show.legend = FALSE, alpha = 0.7) +
   scale_color_viridis_d() +
-  scale_size(range = c(2, 12)) +
   scale_x_log10() +
-  labs(x = "GDP per capita", y = "Life expectancy")
+  labs(x = "GDP per capita", y = "Life expectancy") +
+  theme_minimal()
 p
 @
 
 \noindent
-In the graph we can see that there appears to be a positive correlation between GDP per capita and life expectancy, as GDP per capita increases, life expectancy also tends to be higher. \\
+In this static scatter plot there appears to be a positive correlation between GDP per capita and life expectancy. That is, as GDP per capita increases, life expectancy behaves in a similar way. \\
 
 \noindent
 However, by using the animation function, we can see how life expectancy and GDP per capita change through the years for each country, so it helps to show how relationships between variables evolve over time or across different categories. \\
 \\
 <<gganimate, echo=TRUE, fig.show='hide', results='hide', message=FALSE, warning=FALSE, error=TRUE>>=
 # create animated ggplot
-gapplot<-ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, colour = country)) +
+gapplot<-ggplot(gapminder, aes(gdpPercap, lifeExp, colour = country)) +
   geom_point(alpha = 0.7, show.legend = FALSE) +
   scale_colour_manual(values = country_colors) +
-  scale_size(range = c(2, 12)) +
   scale_x_log10() +
   facet_wrap(~continent) +
   # Here comes the gganimate specific bits
@@ -1823,7 +1823,7 @@ The process is repeated for a number of iterations or until the change in the co
 
 R provides us with a dedicated package for t-SNE analysis, \textit{Rtsne}, which allows us to conduct the analysis conveniently using the \textit{Rtsne} function. In the graph presented below, we observe a t-SNE visualization of the penguin dataset.\\
 
-<<t-SNE, echo=FALSE, fig.height=3, fig.pos = 'H', fig.width=5, fig.cap='t-SNE of Penguins Dataset', message=FALSE>>=
+<<t-SNE, echo=FALSE, fig.height=3, fig.pos = 'H', fig.width=5, fig.cap='t-SNE of Penguins Dataset', message=FALSE, warning=FALSE>>=
 penguins %>% 
   select(where(is.numeric),-year,species) %>%
   mutate(ID=row_number()) %>% 
@@ -1886,7 +1886,6 @@ Box plots, also known as box-and-whisker plots, were introduced by John W. Tukey
 \noindent
 An example of box plots using the iris dataset is displayed in Figure~\ref{fig:box-plots}. Specifically, the right graph showcases a violin plot — which is a recent advancement in box plot techniques. The violin plot combines a box plot with a kernel density function, providing a mirrored density plot displayed in the same way as a box plot.\\
 <<box-plots, echo=FALSE, fig.height=5, fig.width=10, fig.pos='h', fig.cap='Comparison of Violin and Box Plots of Sepal Length by Species', message=FALSE>>=
-
 # Define custom color palette
 my_palette <- c("#459395", "#EB7C69", "#FDA638")
 
@@ -1916,6 +1915,8 @@ grid.arrange(boxplot, violin_plot, ncol = 2)
 \noindent In this section, side-by-side QQ plots are displayed offering a visual comparison of the distributional properties of two variables from the mtcars and the iris datset. These plots serve as a means to assess normality assumptions and identify potential deviations from expected distributions. Through this visual exploration, we aim to gain insights into the underlying structure of the data and guide further investigation.\\
 
 <<QQplots, echo=FALSE, fig.height=4, fig.width=8, fig.pos='h', fig.cap='Q–Q plot of mpg in mtcars dataset', message=FALSE>>=
+
+
 # Load the required dataset
 data(mtcars)
 data(iris)
@@ -2045,6 +2046,10 @@ qqplot <- iris %>%
 print(qqplot)
 
 @
+
+\noindent
+From the above Figure~\ref{fig:QQboxplots}, we can find out easily that the middle of our Q-Q boxplot is same as in the boxplot as we seen in Figure~\ref{fig:box-plots}. In addition, there are more details in tails behavior simultaneously. We can see that the right-tail deviations and left-tail deviations all lie inside of the confidence bands calculated with the bootstrap method, which means the sample distribution of our dataset is consistent with the theoretical distribution being compared to, that is a normal distribution.
+\noindent
 
 
 
