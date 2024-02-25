@@ -51,7 +51,6 @@ library(viridis)
 library(expm)
 library(princurve)
 library(DATAstudio)
-library(fda)
 library(qqboxplot)
 data(ToothGrowth)
 data(mtcars)
@@ -1824,7 +1823,7 @@ The process is repeated for a number of iterations or until the change in the co
 
 R provides us with a dedicated package for t-SNE analysis, \textit{Rtsne}, which allows us to conduct the analysis conveniently using the \textit{Rtsne} function. In the graph presented below, we observe a t-SNE visualization of the penguin dataset.\\
 
-<<t-SNE, echo=FALSE, fig.height=3, fig.pos = 'H', fig.width=5, fig.cap='t-SNE of Penguins Dataset', message=FALSE>>=
+<<t-SNE, echo=FALSE, fig.height=3, fig.pos = 'H', fig.width=5, fig.cap='t-SNE of Penguins Dataset', message=FALSE, warning=FALSE>>=
 penguins %>% 
   select(where(is.numeric),-year,species) %>%
   mutate(ID=row_number()) %>% 
@@ -1887,7 +1886,6 @@ Box plots, also known as box-and-whisker plots, were introduced by John W. Tukey
 \noindent
 An example of box plots using the iris dataset is displayed in Figure~\ref{fig:box-plots}. Specifically, the right graph showcases a violin plot — which is a recent advancement in box plot techniques. The violin plot combines a box plot with a kernel density function, providing a mirrored density plot displayed in the same way as a box plot.\\
 <<box-plots, echo=FALSE, fig.height=5, fig.width=10, fig.pos='h', fig.cap='Comparison of Violin and Box Plots of Sepal Length by Species', message=FALSE>>=
-
 # Define custom color palette
 my_palette <- c("#459395", "#EB7C69", "#FDA638")
 
@@ -1917,6 +1915,8 @@ grid.arrange(boxplot, violin_plot, ncol = 2)
 \noindent In this section, side-by-side QQ plots are displayed offering a visual comparison of the distributional properties of two variables from the mtcars and the iris datset. These plots serve as a means to assess normality assumptions and identify potential deviations from expected distributions. Through this visual exploration, we aim to gain insights into the underlying structure of the data and guide further investigation.\\
 
 <<QQplots, echo=FALSE, fig.height=4, fig.width=8, fig.pos='h', fig.cap='Q–Q plot of mpg in mtcars dataset', message=FALSE>>=
+
+
 # Load the required dataset
 data(mtcars)
 data(iris)
@@ -2046,6 +2046,10 @@ qqplot <- iris %>%
 print(qqplot)
 
 @
+
+\noindent
+From the above Figure~\ref{fig:QQboxplots}, we can find out easily that the middle of our Q-Q boxplot is same as in the boxplot as we seen in Figure~\ref{fig:box-plots}. In addition, there are more details in tails behavior simultaneously. We can see that the right-tail deviations and left-tail deviations all lie inside of the confidence bands calculated with the bootstrap method, which means the sample distribution of our dataset is consistent with the theoretical distribution being compared to, that is a normal distribution.
+\noindent
 
 
 

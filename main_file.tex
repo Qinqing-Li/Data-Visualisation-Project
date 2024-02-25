@@ -545,16 +545,7 @@ A time series can be viewed as a realisation of a stochastic process. A stochast
 \subsubsection{Case Example: Time Series Visualisation of Exchange rates}
 
 Here, plot daily and 49-day moving average exchange rates of exchange rate data in one figure.
-\begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in select(., Date, CANtoGBP, EURtoGBP, USDtoGBP): unused arguments (Date, CANtoGBP, EURtoGBP, USDtoGBP)}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in select(., Date, CANtoGBP\_MA49, EURtoGBP\_MA49, USDtoGBP\_MA49): unused arguments (Date, CANtoGBP\_MA49, EURtoGBP\_MA49, USDtoGBP\_MA49)}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'plot\_data' not found}}\end{kframe}
-\end{knitrout}
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -563,33 +554,23 @@ Here, plot daily and 49-day moving average exchange rates of exchange rate data 
 \hlstd{p1} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(plot_dt,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= Date,} \hlkwc{y} \hlstd{= Rate,} \hlkwc{color} \hlstd{= Currency))} \hlopt{+} \hlkwd{geom_line}\hlstd{()} \hlopt{+}
   \hlkwd{labs}\hlstd{(}\hlkwc{y} \hlstd{=} \hlstr{"Exchange Rate to GBP"}\hlstd{,} \hlkwc{x} \hlstd{=} \hlstr{""}\hlstd{,} \hlkwc{color} \hlstd{=} \hlstr{"Currency"}\hlstd{)} \hlopt{+} \hlkwd{theme_minimal}\hlstd{()} \hlopt{+}
   \hlkwd{theme}\hlstd{(}\hlkwc{legend.position} \hlstd{=} \hlstr{"none"}\hlstd{)} \hlopt{+} \hlkwd{scale_color_manual}\hlstd{(}\hlkwc{values} \hlstd{= color_palette)}
-\end{alltt}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'plot\_dt' not found}}\begin{alltt}
 \hlstd{p2} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(plot_data,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= Date,} \hlkwc{y} \hlstd{= Rate,} \hlkwc{color} \hlstd{= Currency))} \hlopt{+} \hlkwd{geom_line}\hlstd{()} \hlopt{+}
   \hlkwd{labs}\hlstd{(}\hlkwc{y} \hlstd{=} \hlstr{"Exchange Rate to GBP"}\hlstd{,} \hlkwc{x} \hlstd{=} \hlstr{""}\hlstd{,} \hlkwc{color} \hlstd{=} \hlstr{"Currency"}\hlstd{)} \hlopt{+} \hlkwd{theme_minimal}\hlstd{()} \hlopt{+}
   \hlkwd{theme}\hlstd{(}\hlkwc{legend.position} \hlstd{=} \hlstr{"none"}\hlstd{)} \hlopt{+} \hlkwd{scale_color_manual}\hlstd{(}\hlkwc{values} \hlstd{= color_palette)}
-\end{alltt}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'plot\_data' not found}}\begin{alltt}
 \hlcom{# Extract the legend and combine the plots }
 \hlstd{p2_legend} \hlkwb{<-} \hlstd{cowplot}\hlopt{::}\hlkwd{get_legend}\hlstd{(p2} \hlopt{+} \hlkwd{theme}\hlstd{(}\hlkwc{legend.position} \hlstd{=} \hlstr{"right"}\hlstd{))}
-\end{alltt}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'p2' not found}}\begin{alltt}
 \hlstd{combined_plot} \hlkwb{<-} \hlstd{cowplot}\hlopt{::}\hlkwd{plot_grid}\hlstd{(p1, p2,} \hlkwc{rel_widths} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{1}\hlstd{),} \hlkwc{nrow} \hlstd{=} \hlnum{2}\hlstd{)}
-\end{alltt}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'p1' not found}}\begin{alltt}
 \hlstd{cowplot}\hlopt{::}\hlkwd{plot_grid}\hlstd{(combined_plot, p2_legend,} \hlkwc{nrow} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{rel_widths} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{2}\hlstd{,} \hlnum{0.5}\hlstd{))}
 \end{alltt}
+\end{kframe}\begin{figure}[H]
 
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-all_exchange_rates-1} 
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'combined\_plot' not found}}\end{kframe}
+}
+
+\caption[Daily (top) and 49-day moving average (bottom) exchange rates of CAN, EUR, USD to GBP]{Daily (top) and 49-day moving average (bottom) exchange rates of CAN, EUR, USD to GBP}\label{fig:all exchange rates}
+\end{figure}
+
 \end{knitrout}
 
 \noindent
@@ -1611,16 +1592,15 @@ The process is repeated for a number of iterations or until the change in the co
 R provides us with a dedicated package for t-SNE analysis, \textit{Rtsne}, which allows us to conduct the analysis conveniently using the \textit{Rtsne} function. In the graph presented below, we observe a t-SNE visualization of the penguin dataset.\\
 
 \begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
 
+{\centering \includegraphics[width=\maxwidth]{figure/beamer-t-SNE-1} 
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in select(., where(is.numeric), -year, species): unused arguments (where(is.numeric), -year, species)}}
+}
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in select(., -species): unused argument (-species)}}
+\caption[t-SNE of Penguins Dataset]{t-SNE of Penguins Dataset}\label{fig:t-SNE}
+\end{figure}
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'tSNE\_fit' not found}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'tSNE.plot' not found}}\end{kframe}
 \end{knitrout}
 
 \noindent
@@ -1781,6 +1761,10 @@ The resulting Q–Q boxplot shows the distribution of sepal length values within
 \end{figure}
 
 \end{knitrout}
+
+\noindent
+From the above Figure~\ref{fig:QQboxplots}, we can find out easily that the middle of our Q-Q boxplot is same as in the boxplot as we seen in Figure~\ref{fig:box-plots}. In addition, there are more details in tails behavior simultaneously. We can see that the right-tail deviations and left-tail deviations all lie inside of the confidence bands calculated with the bootstrap method, which means the sample distribution of our dataset is consistent with the theoretical distribution being compared to, that is a normal distribution.
+\noindent
 
 
 
