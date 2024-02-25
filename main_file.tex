@@ -328,7 +328,6 @@ Furthermore, the Gestalt Principles play an important role in the realm of visua
 
 \noindent By harnessing the principles of human visual perception, applying insights from cognitive psychology, and leveraging pre-attentive attributes, data visualisation designers can create visualisations that are not only aesthetically pleasing but also cognitively efficient.	
 
-
 \subsection{Colour Theory in Data Visualisation}
 In this section, the significance of colour in data visualisation, the principles of colour perception and encoding, and the importance of avoiding misleading visualisations through thoughtful colour choices are explored.\\
 
@@ -388,43 +387,34 @@ This chapter, initiates the discussion regarding data visualisation methods. Thi
 
 \subsection{Histograms}
 
-A histogram is a visual representation of the distribution of a (numerical) dataset. It is composed by a series of contiguous rectangles, also known as ``bins", each representing a range of data values. The height of each of these corresponds to the frequency or count of data points within that range, depending on the type of histogram. On a cartesian coordinate system, typically, the x-axis shows the endpoints of each bin, and the y-axis represents count or frequency. Hence, histograms facilitate the visualisation the distribution, spread, and central tendency of datasets.
+A classical histogram is a visual representation of the distribution of a (numerical) dataset. It is composed by a series of contiguous rectangles, also known as ``bins", each representing a range of data values. The height of each of these corresponds to the frequency or count of data points within that range, depending on the type of histogram. On a cartesian coordinate system, typically, the x-axis shows the endpoints of each bin, and the y-axis represents count or frequency. 
 
-\subsubsection{Theory of Histogram Bin-Width Selection}
+\subsubsection{Classic Frequency Histograms}
 
-\noindent The classical frequency histogram is constructed by dividing the data into a series of nonoverlapping bins. The data points within each bin are then counted. Hence, the histogram can be fully described by two main factors: the bin width $h$, and the bin origin $t_{0}$. However, in order for the bin counts to be comparable, the bins should all have the same width.\\
+\noindent \textbf{Mathematical Defintion}\\
+\noindent Suppose the data points within a datset are partitioned into $k$ non-overlapping bins, denoted as $B_1, \dots, B_k$ such that $B_i = [t_i, t_{i+1})$ for $i = 1, \dots, k$. Here, $t_i$ and $t_{i+1}$ represent the lower and upper boundaries of the $i$-th bin, respectively.\\
 
-\noindent Sturges' Rule, established by Herbert Sturges in 1926, offers a systematic approach to determining the optimal number of bins for constructing a frequency histogram \cite{scott2015multivariate}. It suggests setting the number of bins, denoted as $K$, to \[ k = 1 + \log_{2} n, \] where $n$ represents the sample size.\\
+\noindent Then, the classical frequency histogram of the data can be represented as a set of $k$ bars, where the height of the $i$-th bar corresponds to the frequency or count of data points falling within the interval $B_i$.\\
 
-\noindent This rule is based on the concept of normality, with the binomial distribution serving as a model for an optimally constructed histogram. Sturges' observation links the binomial distribution with normally distributed data, providing a basis for selecting the number of bins to achieve a histogram resembling a normal density curve.\\
+\noindent \textbf{Theory of Bin Number and Bin Width}\\
+\noindent The classical frequency histogram can be fully described by two main factors: the bin width $h$, and the bin origin $t_{0}$. However, in order for the bin counts to be comparable, the bins should all have the same width. Furthermoree, it is essential to correctly choose the number of bins, since these have a huge impact on how the data is displayed and interpreted. Too few bins may hide the information in a dataset, and too many bins can cause a lot of noise in a dataset.\\
 
-In classical frequency histogram, usually we assume the shape of the histogram to be normal distribution. It is very important to choose the number of bins, since they have a huge impact on how we interpret the data. Too few bins may hide the information in a dataset, and too many bins can cause a lot of noise in a dataset. 
+\noindent Sturges' Rule, established by Herbert Sturges in 1926, offers a systematic approach to determining the optimal number of bins constructing a frequency histogram \cite{scott2015multivariate}. This rule is based on the concept of normality, with the binomial distribution, $B(n,p = 0.5)$, serving as a model for an optimally constructed histogram. It links the binomial distribution with normally distributed data, providing a basis for selecting the number of bins to achieve a histogram resembling a normal density curve.\\
 
-\textbf{REVISE}\\
-\noindent Let \(X_1, \ldots, X_n\) be independent and identically distributed random variables with finite mean \( \mu \) and variance \( \sigma^2 \). Then for any \( \epsilon > 0 \), 
-\[ P\left(\left|\frac{1}{n}\sum_{i=1}^n X_i - \mu\right| < \epsilon\right) \rightarrow 1 \] 
-as \( n \rightarrow \infty \).\\
+\noindent It suggests setting the number of bins, denoted as $k$, to \[ k = 1 + \log_{2} n, \] where $n$ represents the sample size. This formula stems from constructing a frequency histogram with $k$ bins, each of width 1 and centered on the points $i = 0,1,\dots, k - 1$. The bin count of the $i$-th bin is chosen to be the binomial coefficient $\binom{k-1}{i}$. As $k$ increases, this ideal frequency histogram assumes the shape of a normal density with mean $(k - 1)/2$ and variance $(k - 1)/4$. The total sample size is
+\[ n = \sum_{i=0}^{k-1} \binom{k-1}{i} = (1+1)^{k-1} = 2^{k-1} \]
+by the binomial expansion. Hence, Sturges’ rule follows immediately: $k = 1 + \log_2 n$ \cite{scott2015multivariate}.\\
 
-\noindent Histograms can be also used to visualise the convergence of sample means to the population mean. Define the sample mean \[ \bar{X} = \frac{1}{n}\sum_{i=1}^n X_i \]. 
-\noindent Then, as \( n \) becomes large, the variable \[ Z = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \] approaches a standard normal distribution.\\
+\noindent Note that Sturges’ rule functions as a number-of-bins rule rather than a bin-width rule. Assuming all bins are of equal width, to find the bin-width, Sturges’ rule is implemented by partitioning the sample range of the data into the recommended number bins \cite{scott2015multivariate}.
 
-\noindent
-\textbf{Classical frequency histogram}\
+\subsubsection{Density Histograms}
 
-\noindent
-Technically, Sturges' Rule is method to find the number of bins rather than the width of bins. However, if the data are not normal, additional bins may be needed.\\
+\noindent A frequency histogram differs from a density histogram by its normalisation, which integrates to 1. That is, let $B_i = [t_i,t_{i+1})$ represents the $i$-th bin, as defined previously. If $t_{i+1} − t_i = h$ for all $i$, the histogram has a fixed bin width of $h$. In a frequency histogram, blocks of height $1$ and width $h$ are stacked in the appropriate bins, resulting in an integral equal to $nh$. Conversely, a density histogram uses blocks of height $1/(nh)$ to ensure each block has an area of $1/n$. In this way, the height of each bin represents the probability distribution of the data, such that the total area of the histogram equals 1.\\
 
-\noindent
-\textbf{Density Histogram}\\
-\noindent
-The density histogram is normalized to integrate to 1. Unlike a frequency histogram which is constructed from blocks of height 1 and width $h$ (where $h$ is the fixed bin width), a density histogram is constructed from blocks of height $\frac{1}{nh}$, ensuring that each block has an area equal to $\frac{1}{n}$. The height of each bin  represents the probability distribution of the data, such that the total area of the histogram equals 1.\\
+\noindent Let $v_i$ denote the bin count of the $i$-th bin, representing the number of sample points falling in bin $B_i$. Thus, the density histogram is mathematically defined as:
+\[ \hat{f}(x) = \frac{v_k}{nh} = \frac{1}{nh} \sum_{i=1}^{n} I_{[t_i,t_{i+1})}(x_i) \quad \text{for } x \in B_k.\]
 
-\noindent
-\\The density histogram is mathematically defined by the formula:
-$$\hat{f}(x) = \frac{v_k}{nh} = \frac{1}{nh} \sum_{i=1}^{n} I_{[t_k,t_{k+1})}(x_i) \quad \text{for } x \in B_k,$$
-
-\noindent
-where $v_{k}$ represents the count of sample points falling into the $k$th bin, $B_{k}$. With this definition of a histogram, it is straightforward to check that $ \hat{f}(x) \geq 0 $ and that $ \int \hat{f}(x) \, dx = 1 $, so that $ \hat{f}(x) $ is a proper density function.\\
+\noindent With this definition of a histogram, it is straightforward to check that $ \hat{f}(x) \geq 0 $ and that $ \int \hat{f}(x) \, dx = 1 $, so that $ \hat{f}(x) $ is a proper density function.\\
 
 \noindent
 The density histogram's bin counts ${v_{k}}$ can be considered as binomial random variables, where each bin count $v_{k}$ follows a binomial distribution $B(n,p_{k})$. The probability $p_{k}$ for each bin is the integral of the density function $f(t)$ over the bin interval $B_{k}$:
