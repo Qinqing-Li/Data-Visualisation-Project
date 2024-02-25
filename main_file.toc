@@ -22,7 +22,7 @@
 \contentsline {subsection}{\numberline {3.2}Kernel Density Estimation}{19}{subsection.3.2}%
 \contentsline {subsubsection}{\numberline {3.2.1}Theory of Kernel Density Estimation}{19}{subsubsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.3}Bar Charts}{20}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Bar Charts in Practice}{21}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.1}Bar Charts in Practice}{20}{subsubsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.4}Line Charts and Time Series}{21}{subsection.3.4}%
 \contentsline {subsubsection}{\numberline {3.4.1}Theory of Line Charts}{21}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.2}Time Series Analysis}{22}{subsubsection.3.4.2}%
@@ -33,10 +33,11 @@
 \contentsline {section}{\numberline {4}Bivariate Data Visualisation Methods}{30}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Heatmaps}{30}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Scatter Plots}{31}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Animated Scatter Plots}{32}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}{gganimate} in Practice}{32}{subsubsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.3}Bubble Charts}{33}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Theory of Bubble Charts}{33}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.2.1}Scatter Plots in Practice}{32}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Animated Scatter Plots}{32}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}{gganimate} in Practice}{33}{subsubsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.3}Bubble Charts}{34}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Theory of Bubble Charts}{34}{subsubsection.4.3.1}%
 \contentsline {subsubsection}{\numberline {4.3.2}Bubble Charts in Practice}{34}{subsubsection.4.3.2}%
 \contentsline {subsection}{\numberline {4.4}Simple Linear Regression}{35}{subsection.4.4}%
 \contentsline {subsubsection}{\numberline {4.4.1}Theory of Simple Linear Regression}{35}{subsubsection.4.4.1}%

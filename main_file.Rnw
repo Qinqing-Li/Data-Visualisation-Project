@@ -500,11 +500,11 @@ Addressing information overload in visualisations necessitates the strategic app
 
 \section{Univariate Data Visualisation Methods}
 
-This chapter, initiates the discussion regarding data visualisation methods. This chapter particularly introduces techniques for graphically representing for datasets of the simplest nature - that is, single-variable datasets. It focuses on histograms, bar charts, Kernel Density Estimate, ROC Curves, and Time Series Analysis. 
+This chapter, initiates the discussion regarding data visualisation methods. This chapter particularly introduces techniques for graphically representing for datasets of the simplest nature — that is, single-variable datasets. It focuses on histograms, bar charts, Kernel Density Estimate, ROC Curves, and Time Series Analysis. 
 
 \subsection{Histograms}
 
-\noindent Histograms are essential tools in the realm of univariate data visualisation. They provide a concise yet comprehensive overview of the frequency or density distribution of a single variable.This chapter delves into the construction of two types of histograms, as well as an example of their application in practice.
+\noindent Histograms are essential tools in univariate data visualisation. They provide a concise yet comprehensive overview of the frequency or density distribution of a single variable. This chapter delves into the construction of two types of histograms, as well as an example of their application in practice.
 
 \subsubsection{Classic Frequency Histograms}
 
@@ -610,7 +610,7 @@ $$ \int K(u) \, du = 1. $$
 
 \noindent
 By introducing the rescaling notation $K_h(u) = h^{-1}K(\frac{u}{h})$, we can write the formula in a more compact way:
-$$\hat{f}(x; h) = n^{-1} \sum_{i=1}^{n} K_h(x - X_i).$$\\
+$$\hat{f}(x; h) = n^{-1} \sum_{i=1}^{n} K_h(x - X_i).$$
 
 \noindent In Figure~\ref{fig:iris-plots}, the kernel density estimation of the dataset is presented. The distribution of sepal lengths is depicted by the kernel density curve. The peaks observed in the curve correspond to the primary concentration trends of sepal length within the data. A unimodal curve signifies a concentration of sepal lengths for most irises in that specific region. Conversely, a bimodal or multimodal curve suggests the existence of multiple concentration areas.
 
@@ -623,7 +623,7 @@ $$\hat{f}(x; h) = n^{-1} \sum_{i=1}^{n} K_h(x - X_i).$$\\
 \noident The two bar charts on in Figure~\ref{fig:barcharts} illustrate the impact of varying vitamin dosages on tooth growth, further categorised by supplement type. On the X-axis, three distinct levels of vitamin dosage are presented, while the Y-axis indicates the average lenth of tooth for each dosage.
 
 
-<<barcharts, echo=FALSE, warning=FALSE, message=FALSE, fig.height=3, fig.width=10, fig.pos = 'H', fig.cap='Visualising tooth growth by dosage: A comparison of grouped and stacked bar chart techniques' >>=
+<<barcharts, echo=FALSE, warning=FALSE, message=FALSE, fig.height=4, fig.width=10, fig.pos = 'H', fig.cap='Visualising tooth growth by dosage: A comparison of grouped and stacked bar chart techniques' >>=
 # average length
 average_lengths <- ToothGrowth %>%
   group_by(dose, supp) %>%
@@ -1056,15 +1056,18 @@ heatmap_plot <- ggplot(pivot_table,
 print(heatmap_plot)
 @
 
-
 \subsection{Scatter Plots}
 
-A scatter plot is a graphical representation of a set of data points in a two-dimensional coordinate system. Each data point is represented by a dot, and the position of the dot is determined by the values of two variables. Some examples of this type of visualisation can be found in Figures~\ref{fig:abs-plots}, ~\ref{fig:cogload-plot}, and ~\ref{fig:bubble-plot-construction}.\\
+A scatter plot is a graphical representation of a set of data points in a two-dimensional coordinate system. Each data point is represented by a dot, and the position of the dot is determined by the values of two variables in the system. Some examples of this type of visualisation can be found in Figures~\ref{fig:abs-plots}, ~\ref{fig:cogload-plot}, and ~\ref{fig:bubble-plot-construction}.\\
 
 \noindent
-In general, the \(Y\)-axis denotes the response, or dependent, variable and the \(X\)-axis denotes the explanatory, or independent,  variable. Each observation of a dataset is mapped to a dot in the 2-dimentional space. Let \((x_i, y_i)\) represent the coordinates of the \(i\)-th data point on the scatter plot produced by mapping a set of data. The scatter plot can be mathematically described as a set of points: \( \{(x_1, y_1), \ldots, (x_n, y_n)\}\) where \(n\) is the number of observations in the set.\\
+In general, the \(Y\)-axis denotes the response, or dependent, variable and the \(X\)-axis denotes the explanatory, or independent, variable. Each observation of a dataset is mapped to a dot in the 2-dimentional space. Let \((x_i, y_i)\) represent the coordinates of the \(i\)-th data point on the scatter plot produced by mapping a set of data. The scatter plot can be mathematically described as a set of points: \( \{(x_1, y_1), \ldots, (x_n, y_n)\}\) where \(n\) is the number of observations in the set.
 
-\noindent The scatter plots in Figure~\ref{fig:bubble-plot-construction} visualise data from the mtcars dataset. Each of these three graphs represents different information drawn from the dataset. The first plot displays the various car models and their corresponding miles per gallon. The middle plot, once again, shows the car models, but this time their horsepower is represented. Finally, the last scatter plot visualises the relationship between the cars' miles per gallon and their horsepower.
+\subsubsection{Scatter Plots in Practice}
+
+\noindent The \textit{ggplot2} package in R offers a versatile built-in function for generating scatter plots called \texttt{geom\_point()}. This function works by mapping variables in a dataset to aesthetic attributes of points in a scatter plot, such as position (x and y coordinates), size, color, shape, and transparency.\\
+
+\noindent Illustrations of plots generated in this manner are depicted in Figure~\ref{fig:bubble-plot-construction}. The scatter plots in this figure visually depict relationships between variables in the mtcars dataset.\\
 
 <<bubble-plot-construction, echo=FALSE, fig.height=3.5, fig.width=11, fig.cap='Partial scatter plot deconstruction of the mtcars dataset', message=FALSE>>= 
 
@@ -1095,39 +1098,42 @@ plot3 <- ggplot(mtcars, aes(x = mpg, y = hp)) +
 grid.arrange(plot1, plot2, plot3, ncol = 3)
 @
 
+\noindent The first plot in Figure~\ref{fig:bubble-plot-construction} illustrates the relationship between car models and miles per gallon (MPG), showing potential differences in fuel efficiency among different models. Similarly, the second plot explores the association between car models and horsepower. Finally, the third plot examines the correlation between MPG and horsepower. \\
+
+\noindent As expected, discerning a pattern or clear relationship between variables proves challenging in the first and second scatter plots. This challenge arises from the fact that the variable depicted along the x-axis in these plots is the car model, which lacks any relevant ordering that would relate on the technical details of the cars. Conversely, in the third scatter plot, a negative correlation between horsepower and miles per gallon is evident. This relation highlights potential trade-offs between fuel efficiency and engine performance. 
+
 \subsubsection{Animated Scatter Plots}
 \noindent While static scatter plots are effective in depicting relationships between two variables, animated scatter plot visualisations take this a step further by introducing, for example, a temporal dimension to the data visualisation. Unlike static plots, animated scatter plots enable the depiction of changes in relationships, clusters, or outliers over time. In R, the $gganimate$ package, building on the foundation of $ggplot2$ package, facilitates the creation of animated plots, including animated scatter plots. \\
 
 \noindent
 \subsubsection{\textt{gganimate} in Practice}\\
 \noindent
-The figure below depicts a static scatter plot illustrating the relationship between GDP per capita and life expectancy across various countries. GDP per capita is displayed on a logarithmic scale along the x-axis, and life expectancy is shown on the y-axis. The size of each point on the plot corresponds to the population size of the country it represents, and the colour of each point distinguishes one country from another.\\
+Figure~\ref{fig:gapminder_static} portrays a static scatter plot demonstrating the relationship between gross domestic product (GDP) per capita and life expectancy across various countries. GDP per capita is depicted on a logarithmic scale along the x-axis to accommodate a wide range of values, while life expectancy is represented on the y-axis. Moreover, the color each of the dots indicate the country they represent data of.\\
 
-<<gapminder_static, echo=FALSE, fig.height=3, fig.width=4, fig.cap='staticl scatter plot deconstruction of the gapminder dataset', message=FALSE>>=
+<<gapminder_static, echo=FALSE, fig.height=3, fig.width=4, fig.cap='Static scatter plot deconstruction of the gapminder dataset', message=FALSE>>=
 p <- ggplot(
   gapminder, 
-  aes(x = gdpPercap, y=lifeExp, size = pop, colour = country)
+  aes(x = gdpPercap, y=lifeExp, colour = country)
   ) +
   geom_point(show.legend = FALSE, alpha = 0.7) +
   scale_color_viridis_d() +
-  scale_size(range = c(2, 12)) +
   scale_x_log10() +
-  labs(x = "GDP per capita", y = "Life expectancy")
+  labs(x = "GDP per capita", y = "Life expectancy") +
+  theme_minimal()
 p
 @
 
 \noindent
-In the graph we can see that there appears to be a positive correlation between GDP per capita and life expectancy, as GDP per capita increases, life expectancy also tends to be higher. \\
+In this static scatter plot there appears to be a positive correlation between GDP per capita and life expectancy. That is, as GDP per capita increases, life expectancy behaves in a similar way. \\
 
 \noindent
 However, by using the animation function, we can see how life expectancy and GDP per capita change through the years for each country, so it helps to show how relationships between variables evolve over time or across different categories. \\
 \\
 <<gganimate, echo=TRUE, fig.show='hide', results='hide', message=FALSE, warning=FALSE, error=TRUE>>=
 # create animated ggplot
-gapplot<-ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, colour = country)) +
+gapplot<-ggplot(gapminder, aes(gdpPercap, lifeExp, colour = country)) +
   geom_point(alpha = 0.7, show.legend = FALSE) +
   scale_colour_manual(values = country_colors) +
-  scale_size(range = c(2, 12)) +
   scale_x_log10() +
   facet_wrap(~continent) +
   # Here comes the gganimate specific bits
