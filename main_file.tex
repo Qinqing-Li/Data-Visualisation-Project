@@ -865,7 +865,7 @@ In general, the \(Y\)-axis denotes the response, or dependent, variable and the 
 
 \subsubsection{\textt{gganimate} in Practice}
 
-\noindent Figure~\ref{fig:gapminder_static} portrays a static scatter plot demonstrating the relationship between gross domestic product (GDP) per capita and life expectancy across various countries. GDP per capita is depicted on a logarithmic scale along the $X$-axis to accommodate a wide range of values, while life expectancy is represented on the $Y$-axis. Moreover, the colour each of the dots indicate the country they represent data of.\\
+\noindent Figure~\ref{fig:gapminder_static} represents the gapminder dataset in a static scatter plot demonstrating the relationship between gross domestic product (GDP) per capita and life expectancy across various countries. GDP per capita is depicted on a logarithmic scale along the $X$-axis to accommodate a wide range of values, while life expectancy is represented on the $Y$-axis. Moreover, the colour each of the dots indicate the country they represent data of.\\
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
@@ -880,11 +880,11 @@ In general, the \(Y\)-axis denotes the response, or dependent, variable and the 
 \end{knitrout}
 
 \noindent
-In the static scatter plot displayed in Figure~\ref{fig:gapminder_static}, there appears to be a positive correlation between GDP per capita and life expectancy: as GDP per capita increases, the life expectancy behaves in a similar manner. However, the spread of points and variability in life expectancy at similar GDP levels make it difficult to draw precise conclusions. Furthermore, the complexity and clutter in the plot demand an extremely high cognitive load, making it difficult for the viewer to understand the details of the data visualised. 
+In the static scatter plot displayed in Figure~\ref{fig:gapminder_static}, there appears to be a positive correlation between GDP per capita and life expectancy: as GDP per capita increases, the life expectancy behaves in a similar manner. However, the spread of points and variability in life expectancy at similar GDP levels make it difficult to draw precise conclusions. Furthermore, the complexity and clutter in the plot demand an extremely high cognitive load, making it difficult for the viewer to understand the details of the data visualised.\\ 
 
 \noindent
-However, using the animation function, we can see how life expectancy and GDP per capita change through the years for each country, so it helps to show how relationships between variables evolve over time or across different categories. \\
-\\
+However, one can refer to the animated version of the scatter plot to solve many of these issues and discover details in the data that the static plot is unable to illustrate. While here the code chunk and screenshots are provided, the set animated plots of the gapminder dataset, produced using \textit{gganimate}, can be found in the \href{https://github.com/Qinqing-Li/Data-Visualisation-Project/tree/main/code}{GitHub code folder}. \\
+
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
@@ -898,7 +898,6 @@ However, using the animation function, we can see how life expectancy and GDP pe
   \hlkwd{labs}\hlstd{(}\hlkwc{title} \hlstd{=} \hlstr{'Year: \{frame_time\}'}\hlstd{,} \hlkwc{x} \hlstd{=} \hlstr{'GDP per capita'}\hlstd{,} \hlkwc{y} \hlstd{=} \hlstr{'life expectancy'}\hlstd{)} \hlopt{+}
   \hlkwd{transition_time}\hlstd{(year)} \hlopt{+}
   \hlkwd{ease_aes}\hlstd{(}\hlstr{'linear'}\hlstd{)}
-\hlstd{gapplot}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -906,9 +905,25 @@ However, using the animation function, we can see how life expectancy and GDP pe
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.6\textwidth]{image_reference/gganimate.png}
-    \label{fig:gganimate1}
+    \begin{subfigure}
+        \includegraphics[width=0.3\textwidth]{image_reference/gganimate1.png}
+        \label{fig:gganimate1}
+    \end{subfigure}
+    \begin{subfigure}
+        \includegraphics[width=0.3\textwidth]{image_reference/gganimate2.png}
+        \label{fig:gganimate2}
+    \end{subfigure}
+    \begin{subfigure}
+        \includegraphics[width=0.3\textwidth]{image_reference/gganimate3.png}
+        \label{fig:gganimate3}
+    \end{subfigure}
+    \caption{Screenshots of animated scatterplot at different years}
+    \label{fig:overall}
 \end{figure}
+
+\noindent The animated scatter plots provide a dynamic visualisation of the relationship between GDP per capita and life expectancy in each country over time. This animation helps in understanding temporal trends and patterns in the data that may not be apparent in static plots.\\
+
+\noindent The conclusions drawn from the animated plots might differ from those of the static plot. For instance, while the static plot may suggest a general positive correlation between GDP per capita and life expectancy, the animated plots reveals nuances such as the pace of improvement in life expectancy over time, variations in the relationship between different countries and continents, and the impact of historical events or economic changes on life expectancy trends. IN general, the animated plots offer a richer and more dynamic exploration of the data, leading to potentially deeper insights and understanding.
 
 \subsection{Bubble Charts}
 \subsubsection{Theory of Bubble Charts}
