@@ -504,9 +504,11 @@ This chapter, initiates the discussion regarding data visualisation methods. Thi
 
 \subsection{Histograms}
 
-A classical histogram is a visual representation of the distribution of a (numerical) dataset. It is composed by a series of contiguous rectangles, also known as ``bins", each representing a range of data values. The height of each of these corresponds to the frequency or count of data points within that range, depending on the type of histogram. On a cartesian coordinate system, typically, the x-axis shows the endpoints of each bin, and the y-axis represents count or frequency. Hence, histograms facilitate, among other thing, the visualisation of the distribution, spread, and central tendancy of datasets. 
+\noindent Histograms are essential tools in the realm of univariate data visualisation. They provide a concise yet comprehensive overview of the frequency or density distribution of a single variable.This chapter delves into the construction of two types of histograms, as well as an example of their application in practice.
 
 \subsubsection{Classic Frequency Histograms}
+
+\noindent A classic histogram is a visual representation of the distribution of a (numerical) dataset. It is composed by a series of contiguous rectangles, also known as ``bins", each representing a range of data values. The height of each of these corresponds to the frequency or count of data points within that range, depending on the type of histogram. On a cartesian coordinate system, typically, the x-axis shows the endpoints of each bin, and the y-axis represents count or frequency. Hence, histograms facilitate, among other thing, the visualisation of the distribution, spread, and central tendancy of datasets.\\
 
 \noindent \textbf{Mathematical Defintion}\\
 \noindent Suppose the data points within a datset are partitioned into $k$ non-overlapping bins, denoted as $B_1, \dots, B_k$ such that $B_i = [t_i, t_{i+1})$ for $i = 1, \dots, k$. Here, $t_i$ and $t_{i+1}$ represent the lower and upper boundaries of the $i$-th bin, respectively.\\
@@ -541,7 +543,7 @@ $$p_{i} = \int_{B_i} f(t) \, dt. $$
 
 \noindent In R programming, one can call upon the \texttt{geom\_histogram()} function, beloging to the \textit{ggplot} to easily generate histograms from suitable datasets. This function takes vectors as input, along with additional parameters, to construct a histogram.\\
 
-\noindent As the number of sample means used to plot a histogram increases, one can usually observe the shape of the histogram gradually resembling that of the normal distribution. Consider the histogram found on the left side of Figure~\ref{fig:iris-plots} This plot was created with the use of to the \texttt{geom\_histogram} function and iris dataset.
+\noindent As the number of sample means used to plot a histogram increases, one can usually observe the shape of the histogram gradually resembling that of the normal distribution. Consider the histogram found on the left side of Figure~\ref{fig:iris-plots} This plot was created with the use of to the \texttt{geom\_histogram} function and iris dataset.\\
 
 \begin{figure}[htbp]
   \centering
@@ -584,7 +586,7 @@ print(kde_diagram)
   \label{fig:iris-plots}
 \end{figure}
 
-\noindent The histogram displayed in Figure~\ref{fig:iris-plots} exhibits variable bin lengths, with a constant bin width set to 0.3. The shape of the histogram is slightly shifted to the left, deviating from the symmetric bell shape of a normal distribution. This deviation may indicate some level of asymmetry or non-normality in the Sepal Length data. 
+\noindent The frequency histogram displayed in Figure~\ref{fig:iris-plots} exhibits variable bin lengths, with a constant bin width set to 0.3. The shape of the histogram is slightly shifted to the left, deviating from the symmetric bell shape of a normal distribution. This deviation may indicate some level of asymmetry or non-normality in the Sepal Length data. 
 
 \subsection{Kernel Density Estimation}
 

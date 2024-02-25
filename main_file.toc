@@ -22,7 +22,7 @@
 \contentsline {subsection}{\numberline {3.2}Kernel Density Estimation}{19}{subsection.3.2}%
 \contentsline {subsubsection}{\numberline {3.2.1}Theory of Kernel Density Estimation}{19}{subsubsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.3}Bar Charts}{20}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}Bar Charts in Practice}{20}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.1}Bar Charts in Practice}{21}{subsubsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.4}Line Charts and Time Series}{21}{subsection.3.4}%
 \contentsline {subsubsection}{\numberline {3.4.1}Theory of Line Charts}{21}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.2}Time Series Analysis}{22}{subsubsection.3.4.2}%
