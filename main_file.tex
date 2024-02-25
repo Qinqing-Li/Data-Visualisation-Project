@@ -387,7 +387,7 @@ This chapter, initiates the discussion regarding data visualisation methods. Thi
 
 \subsection{Histograms}
 
-A classical histogram is a visual representation of the distribution of a (numerical) dataset. It is composed by a series of contiguous rectangles, also known as ``bins", each representing a range of data values. The height of each of these corresponds to the frequency or count of data points within that range, depending on the type of histogram. On a cartesian coordinate system, typically, the x-axis shows the endpoints of each bin, and the y-axis represents count or frequency. 
+A classical histogram is a visual representation of the distribution of a (numerical) dataset. It is composed by a series of contiguous rectangles, also known as ``bins", each representing a range of data values. The height of each of these corresponds to the frequency or count of data points within that range, depending on the type of histogram. On a cartesian coordinate system, typically, the x-axis shows the endpoints of each bin, and the y-axis represents count or frequency. Hence, histograms facilitate, among other thing, the visualisation of the distribution, spread, and central tendancy of datasets. 
 
 \subsubsection{Classic Frequency Histograms}
 
@@ -409,25 +409,22 @@ by the binomial expansion. Hence, Sturges’ rule follows immediately: $k = 1 + 
 
 \subsubsection{Density Histograms}
 
-\noindent A frequency histogram differs from a density histogram by its normalisation, which integrates to 1. That is, let $B_i = [t_i,t_{i+1})$ represents the $i$-th bin, as defined previously. If $t_{i+1} − t_i = h$ for all $i$, the histogram has a fixed bin width of $h$. In a frequency histogram, blocks of height $1$ and width $h$ are stacked in the appropriate bins, resulting in an integral equal to $nh$. Conversely, a density histogram uses blocks of height $1/(nh)$ to ensure each block has an area of $1/n$. In this way, the height of each bin represents the probability distribution of the data, such that the total area of the histogram equals 1.\\
+\noindent A frequency histogram differs from a density histogram by its normalisation, which integrates to 1. That is, let $B_i = [t_i,t_{i+1})$ represents the $i$-th bin, as defined previously. If $t_{i+1} − t_i = h$ for all $i$, the histogram has a fixed bin width of $h$. In a frequency histogram, blocks of height $1$ and width $h$ are stacked in the appropriate bins, resulting in an integral equal to $nh$. Conversely, a density histogram uses blocks of height $1/(nh)$ to ensure each block has an area of $1/n$ \cite{scott2015multivariate}. In this way, the height of each bin represents the probability distribution of the data, such that the total area of the histogram equals 1.\\
 
-\noindent Let $v_i$ denote the bin count of the $i$-th bin, representing the number of sample points falling in bin $B_i$. Thus, the density histogram is mathematically defined as:
-\[ \hat{f}(x) = \frac{v_k}{nh} = \frac{1}{nh} \sum_{i=1}^{n} I_{[t_i,t_{i+1})}(x_i) \quad \text{for } x \in B_k.\]
+\noindent Let $v_i$ denote the bin count of the $i$-th bin, representing the number of sample points falling in bin $B_i$. The density histogram is mathematically defined as:
+\[ \hat{f}(x) = \frac{v_k}{nh} = \frac{1}{nh} \sum_{i=1}^{n} I_{[t_i,t_{i+1})}(x_i) \quad \text{for } x \in B_i.\]
 
-\noindent With this definition of a histogram, it is straightforward to check that $ \hat{f}(x) \geq 0 $ and that $ \int \hat{f}(x) \, dx = 1 $, so that $ \hat{f}(x) $ is a proper density function.\\
+\noindent With this definition, it is straightforward to verify that $ \hat{f}(x) \geq 0 $ and that $ \int \hat{f}(x) \, dx = 1 $, ensuring that $ \hat{f}(x) $ is a proper density function.\\
 
 \noindent
-The density histogram's bin counts ${v_{k}}$ can be considered as binomial random variables, where each bin count $v_{k}$ follows a binomial distribution $B(n,p_{k})$. The probability $p_{k}$ for each bin is the integral of the density function $f(t)$ over the bin interval $B_{k}$:
-$$p_{k} = \int_{B_k} f(t) \, dt. $$\\
+The density histogram's bin counts ${v_{i}}$ can be considered as binomial random variables, where each bin count $v_{i}$ follows a binomial distribution $B(n,p_{i})$. The probability $p_{i}$ for each bin is the integral of the density function $f(t)$ over the bin interval $B_{i}$ \cite{scott2015multivariate}:
+$$p_{i} = \int_{B_i} f(t) \, dt. $$
 
 \subsubsection{Histogram in Practice}\\
 
-\noindent The R language uses the \texttt{hist} function to create histograms. This function takes vectors as input, along with other parameters to plot a histogram.\\
+\noindent In R programming, one can call upon the \texttt{geom\_histogram()} function, beloging to the \textit{ggplot} to easily generate histograms from suitable datasets. This function takes vectors as input, along with additional parameters, to construct a histogram.\\
 
-\noindent By plotting histograms of a large number of sample means, one can observe the shape gradually resembling a normal distribution.\\
-
-\noindent
-Consider Figure~\ref{fig:iris-plots} which was created on \textit{ggplot2} with the use of to the \texttt{geom\_histogram} function and iris dataset.
+\noindent As the number of sample means used to plot a histogram increases, one can usually observe the shape of the histogram gradually resembling that of the normal distribution. Consider the histogram found on the left side of Figure~\ref{fig:iris-plots} This plot was created with the use of to the \texttt{geom\_histogram} function and iris dataset.
 
 \begin{figure}[htbp]
   \centering
@@ -457,6 +454,8 @@ Consider Figure~\ref{fig:iris-plots} which was created on \textit{ggplot2} with 
   \caption{Histogram and Kernel Density Estimation of Sepal Length in Iris Dataset}
   \label{fig:iris-plots}
 \end{figure}
+
+\noindent The histogram displayed in Figure~\ref{fig:iris-plots} exhibits variable bin lengths, with a constant bin width set to 0.3. The shape of the histogram is slightly shifted to the left, deviating from the symmetric bell shape of a normal distribution. This deviation may indicate some level of asymmetry or non-normality in the Sepal Length data. 
 
 \subsection{Kernel Density Estimation}
 
