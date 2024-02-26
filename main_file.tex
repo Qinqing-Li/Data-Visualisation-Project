@@ -177,7 +177,7 @@ One striking example of data visualisation misuse is found in the Kallikak Famil
 The visualisation, shown in Figure~\ref{fig:familytree}, was created by the psychologist Henry Goddard and presented in his 1912 book, ``The Kallikak Family: A Study in the Heredity of Feeble-Mindedness." Goddard's narrative centered around Martin Kallikak, a soldier who, in addition to his marriage to a respected citizen, had a one-night stand with a ``feeble-minded" maid. Goddard believed that intellectual disabilities were inherited traits. In Goddard's account, the legitimate family was successful, while the children of the ``feeble-minded" maid were labeled as ``the lowest types of human beings." However, research has since revealed that the entire story was fictitious, as there was no record of the maid's existence \cite{fakedata}.\\
 
 \noindent
-Regrettably, the Kallikak family tree became a central element in the eugenics movement. Figure \ref{fig:familytree} was featured in the 1935 Nazi propaganda film ``Das Erbe" (The Inheritance), which was used to promote public acceptance of Nazi eugenics laws. This propaganda laid the groundwork for the forced sterilization of approximately 400,000 people under Nazi eugenics policies \cite{eugenics}.
+Regrettably, the Kallikak family tree became a central element in the eugenics movement. Figure \ref{fig:familytree} was featured in the 1935 Nazi propaganda film ``Das Erbe" (The Inheritance), which was used to promote public acceptance of Nazi eugenics laws. This propaganda laid the groundwork for the forced sterilisation of approximately 400,000 people under Nazi eugenics policies \cite{eugenics}.
 
 \begin{figure}[H]
     \centering
@@ -198,7 +198,7 @@ The R package \textit{ggplot2} is notable for its robustness and flexibility, en
 
 \noindent\textbf{Key ggplot2 Commands}\\
 \noindent 
-As shown in subsequent sections, it is possible to produce visualisations rather effortlessly by using internal data from R, or even external data, together with \textit{ggplot2}. When using this package, certain key tools are used repeatedly to create visual plots from datasets. The tools below mentioned are integral functions within the ggplot2 package in R for creating sophisticated visualizations \cite{ggplot2}:\\
+As shown in subsequent sections, it is possible to produce visualisations rather effortlessly by using internal data from R, or even external data, together with \textit{ggplot2}. When using this package, certain key tools are used repeatedly to create visual plots from datasets. The tools below mentioned are integral functions within the ggplot2 package in R for creating sophisticated visualisations \cite{ggplot2}:\\
 
 \noindent
 \texttt{geom} refers to geometric objects, pivotal components within \textit{ggplot2} used to define the visual representation of data in a plot. Each \texttt{geom} function corresponds to a specific graphical representation type in a chart. Additionally, in \textit{ggplot2}, \texttt{scales} functions enable the adjustment of various mapping details, including colour choices, label formatting, legend arrangement, and more.\\
@@ -238,6 +238,9 @@ various countries spanning multiple years, illustrating global development trend
 
 \noindent
 \textbf{Exchange Rate}: The exchange rate data, available at the \href{https://www.bankofengland.co.uk/boeapps/database/index.asp?first=yes&SectionRequired=I&HideNums=-1&ExtraInfo=true&Travel=NIx}{Bank of England}, provides daily spot exchange rates against the pound Sterling (2005-present). This report examines the daily spot rates of the Canadian Dollar, Euro, and US Dollar against the pound Sterling.\\
+
+\noindent
+\textbf{Metabolic Syndrome Data}: The oxygen saturation in blood, for a healthy population of 80 women and a diseased population of 35 women. These data were collected through a survey conducted in North-West Spain. The dataset is accessible via \href{https://cloud.r-project.org/web/packages/DATAstudio/DATAstudio.pdf}{DATAstudio}, a collection of datasets from research articles by Miguel de Carvalho.\\
 
 \noindent
 \textbf{Taipei Housing}: The historical real estate valuation from Sindian Dist., New Taipei City, Taiwan,  available at \href{https://archive.ics.uci.edu/dataset/477/real+estate+valuation+data+set}{UC Irvine Machine Learning Repository}.
@@ -532,17 +535,17 @@ This equation highlights that for any point \(x\) between \(x_i\) and \(x_{i+1}\
 
 \subsubsection{Time Series Analysis}
 
-Time series visualisation is particularly suited to line charts because they effectively display changes and trends over time, allowing for easy visualization of relationships between time points. A time series\cite{Brockwell2016Introduction} is a collection of observations $\{x_t\}$, where $t=0,\dots,n$ denotes the time point at which the observation is recorded. An index set $T_0$ which collects all the time points when observations are available. For instance, $T_0 = \{0,\dots,n\}$ for $n \in \mathbb{N}$. By plotting these data points over time, line charts help in identifying long-term trends, seasonal patterns, and anomalies.\\
+Time series visualisation is particularly suited to line charts because they effectively display changes and trends over time, allowing for easy visualisation of relationships between time points. A time series\cite{Brockwell2016Introduction} is a collection of observations $\{x_t\}$, where $t=0,\dots,n$ denotes the time point at which the observation is recorded. An index set $T_0$ which collects all the time points when observations are available. For instance, $T_0 = \{0,\dots,n\}$ for $n \in \mathbb{N}$. By plotting these data points over time, line charts help in identifying long-term trends, seasonal patterns, and anomalies.\\
 
 \noindent
-A time series can be viewed as a realisation of a stochastic process. A stochastic process\cite{Brockwell2016Introduction} $X = (X_t)_{t \in T_0}$ is a collection of random variables $X_t$, where $t$ denotes the time index and $T_0$ the index set. For a fixed event $\omega \in \Omega$ we obtain the realisation of the stochastic process (sometimes also called a sample path) which is given by $x_t = X_t(\omega)$, $t \in T_0$.\\
+A time series can be viewed as a realisation of a stochastic process. A stochastic process \cite{Brockwell2016Introduction} $X = (X_t)_{t \in T_0}$ is a collection of random variables $X_t$, where $t$ denotes the time index and $T_0$ the index set. For a fixed event $\omega \in \Omega$ we obtain the realisation of the stochastic process (sometimes also called a sample path) which is given by $x_t = X_t(\omega)$, $t \in T_0$.\\
 
 \noindent
-Also, a time series $\{X_t\}$ is a moving average process of order $q$(MA(q)) if it can be expressed as:
+A time series $\{X_t\}$ is a moving average process of order $q$(MA(q)) if it can be expressed as:
 \[x_t = \omega_t + \theta_1 \omega_{t-1}+\dots+ \theta_q \omega_{t-q},\]
 
 \noindent
-where $\{\omega_t\} \sim \text{N}(0, \sigma^2)$ are i.i.d. white noise error terms and $\theta_1,\dots,\theta_q$ are real valued coefficients. Then, the MA process assumes the mean of $X_t$ is $\mathbb{E}(X_t)=0$.
+where $\{\omega_t\} \sim \text{N}(0, \sigma^2)$ are i.i.d. white noise events and $\theta_1,\dots,\theta_q$ are real valued coefficients.
 
 \subsubsection{Case Example: Time Series Visualisation of Exchange rates}
 
@@ -576,7 +579,7 @@ Here, plot daily and 49-day moving average exchange rates of exchange rate data 
 \end{knitrout}
 
 \noindent
-The first plot in Figure~\ref{fig:all exchange rates} presents a comparative visualisation of daily exchange rates for CAD, EUR, and USD against GBP, offering an overview of their trends and relative performance. This plot enables the identification of overall trends and periods of volatility for each currency pair, allowing for an assessment of their stability and strength relative to GBP. Notice that, there was a simultaneous and significant drop in all three currencies relative to the GBP. The concurrent nature of these declines across diverse currency pairs suggests that the driving factor is a depreciation of the GBP, rather than independent appreciations of the USD, EUR, and CAN. This notable depreciation of the GBP occurred around 2016, which coincides with the commencement of the BREXIT process. Usually, the long term trend attracts financial analyst most. Therefore, filtering fluctuations and anomalies is important. Then, a 49-day moving average (MA49) was employed, shown in the second plot of Figure~\ref{fig:all exchange rates}, to elucidate long-term trends while mitigating short-term fluctuations. This is the smoothing method of simple average of past observations, expressed as:
+The first plot in Figure~\ref{fig:all exchange rates} presents a comparative visualisation of daily exchange rates for CAD, EUR, and USD against GBP, offering an overview of their trends and relative performance. This plot enables the identification of overall trends and periods of volatility for each currency pair, allowing for an assessment of their stability and strength relative to GBP. Notice that, there was a simultaneous and significant drop in all three currencies relative to the GBP. The concurrent nature of these declines across diverse currency pairs suggests that the driving factor is a depreciation of the GBP, rather than independent appreciations of the USD, EUR, and CAN. This notable depreciation of the GBP occurred around 2016, which coincides with the commencement of the BREXIT process. Usually, the long term trend attracts financial analyst most. Therefore, filtering fluctuations and anomalies is important. Then, a 49-day moving average MA(49) was employed, shown in the second plot of Figure~\ref{fig:all exchange rates}, to elucidate long-term trends while mitigating short-term fluctuations. This is the smoothing method of simple average of past observations, expressed as:
 \[\text{MA}_{49}(t) = \frac{1}{49} \sum_{k=t-48}^{t} x_k,\] 
 where \( x_k \) denotes the exchange rate on day $k$.\\
 
@@ -1343,7 +1346,7 @@ Premultiply by $\mathbf{w}_1^T$, $\mathbf{w}_1^T\mathbf{\Sigma}\mathbf{w}_1 = \l
 Adopting the same methodology, the second largest eigenvalue $\lambda$_2$ would minimise the loss $\mathcal{L}}(\mathbf{w}_2)$.\\
 
 \noindent 
-Therefore, order the eigenvectors by their corresponding eigenvalues $\{\mathbf{w}_1, \dots, \mathbf{w}_L\}$. These form the columns of the weight matrix $\mathbf{W} \in \mathbb{R}^{D \times L}$.\\
+Therefore, order the eigenvectors by their corresponding eigenvalues $\{\mathbf{w}_1, \dots, \mathbf{w}_L\}$. These form the columns of the weight matrix $\mathbf{W} \in \mathbb{R}^{D \times L}$ \cite{ml}.\\
 
 \subsection{Biplots}
 \noindent 
@@ -1603,7 +1606,7 @@ To continue with the minimisation, compute the gradient of symmetric SNE\cite{va
 .\]
 
 \noindent
-Once the gradient of the cost function with respect to the positions of the points in the low-dimensional space, $\frac{\partial C}{\partial y_i}$, is computed, t-SNE employs gradient descent to minimizes the Kullback-Leibler (KL) divergence between the high-dimensional probability distribution $P$ and the low-dimensional probability distribution $Q$. Gradient descent is an iterative optimization algorithm used to minimize the cost function by updating the parameters in the opposite direction of the gradient of the cost function. In the case of t-SNE, the parameters are the positions of the points in the low-dimensional space. The update rule\cite{vanderMaaten2008tsne} at each iteration $t$ for a point $y_i$ is given by:
+Once the gradient of the cost function with respect to the positions of the points in the low-dimensional space, $\frac{\partial C}{\partial y_i}$, is computed, t-SNE employs gradient descent to minimizes the Kullback-Leibler (KL) divergence between the high-dimensional probability distribution $P$ and the low-dimensional probability distribution $Q$. Gradient descent is an iterative optimisation algorithm used to minimize the cost function by updating the parameters in the opposite direction of the gradient of the cost function. In the case of t-SNE, the parameters are the positions of the points in the low-dimensional space. The update rule\cite{vanderMaaten2008tsne} at each iteration $t$ for a point $y_i$ is given by:
 
 \[y_i^{(t+1)} = y_i^{(t)} - \eta \frac{\partial C}{\partial y_i},\]
 
@@ -1615,7 +1618,7 @@ The process is repeated for a number of iterations or until the change in the co
 
 \subsubsection{Case Example: t-SNE in Practice}
 
-R provides us with a dedicated package for t-SNE analysis, \textit{Rtsne}, which allows us to conduct the analysis conveniently using the \textit{Rtsne} function. In the graph presented below, we observe a t-SNE visualization of the penguin dataset.\\
+R provides us with a dedicated package for t-SNE analysis, \textit{Rtsne}, which allows us to conduct the analysis conveniently using the \textit{Rtsne} function. In the graph presented below, we observe a t-SNE visualisation of the penguin dataset.\\
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
@@ -1630,16 +1633,16 @@ R provides us with a dedicated package for t-SNE analysis, \textit{Rtsne}, which
 \end{knitrout}
 
 \noindent
-The provided plot in Figure~\ref{fig:t-SNE} is a t-SNE visualization of the Penguins dataset, rendered using the $ggplot2$ package in R. In this case, using the T-sne algorithm helps us to reduce the multidimensional numerical data of the penguin dataset to a $2$-dimensional space. We also use scatter plots and elliptical areas to visualize the distribution of different penguin species. The data points are colour-coded to distinguish between three penguin species: Adelie in red, Chinstrap in green, and Gentoo in blue. This colour coding aids in the visual differentiation of the species clusters.\\
+The provided plot in Figure~\ref{fig:t-SNE} is a t-SNE visualisation of the Penguins dataset, rendered using the $ggplot2$ package in R. In this case, using the T-sne algorithm helps us to reduce the multidimensional numerical data of the penguin dataset to a $2$-dimensional space. We also use scatter plots and elliptical areas to visualize the distribution of different penguin species. The data points are colour-coded to distinguish between three penguin species: Adelie in red, Chinstrap in green, and Gentoo in blue. This colour coding aids in the visual differentiation of the species clusters.\\
 
 \noindent
 The axes are labeled $tSNE1$ and $tSNE2$, corresponding to the dimensions reduced by the t-SNE algorithm. Dashed ellipses overlaid on the scatter plot demarcate the clusters of each species, providing a visual guide to the density and separation of the species within the transformed feature space. The plot effectively uses the t-SNE technique to illustrate the grouping of species, highlighting the algorithm's utility in discerning inherent data patterns in a lower-dimensional representation.\\
 
 \noindent
-While t-SNE is an exceptionally potent tool for data visualization, it does come with its own set of constraints. Firstly, it has a significant memory footprint and can be time-consuming to run, which may pose challenges when dealing with large datasets.\\
+While t-SNE is an exceptionally potent tool for data visualisation, it does come with its own set of constraints. Firstly, it has a significant memory footprint and can be time-consuming to run, which may pose challenges when dealing with large datasets.\\
 
 \noindent
-Secondly, t-SNE is tailored specifically for visualization, which constrains the embedding space to two or three dimensions. This limitation means that t-SNE is optimised for human interpretability rather than for capturing higher-dimensional relationships.\\
+Secondly, t-SNE is tailored specifically for visualisation, which constrains the embedding space to two or three dimensions. This limitation means that t-SNE is optimised for human interpretability rather than for capturing higher-dimensional relationships.\\
 
 \noindent
 Additionally, it requires experimentation with different initialisation to mitigate the risk of local suboptimal solutions affecting the results. Therefore, it's crucial to carefully consider and select the most suitable method based on the specific requirements and nature of the data at hand.
@@ -1705,13 +1708,10 @@ This section aims to unravel the methodology behind functional boxplots, elucida
 
 \subsubsection{Theory of Funtional Boxplot}
 
-The construction of a box plot relies on data ordering, where you simply arrange univariate observations from smallest to largest. However, with multivariate data, this process becomes significantly more complex, necessitating advanced methodologies to establish a meaningful order. Various versions of data depth have been developed to assess the centrality (or depth) of an observation or its deviation (outlyingness), from a population distribution with density P.\\
+The construction of a box plot relies on data ordering, where you simply arrange univariate observations from smallest to largest. However, with multivariate data, this process becomes significantly more complex, necessitating advanced methodologies to establish a meaningful order. Various versions of data depth have been developed to assess the centrality (or depth) of an observation or its deviation (outlyingness), where observations have a population distribution of density P.\\
 
 \noindent
-Consider a set of observations ${y_1(t),\dots,y_n(t)}$ defined over an interval $\mathcal{I} \in \mathbb{R}$. The graph of a function $y(t)$ is defined as $G(y) = {(t,y(t)) : t \in I}$. Applying the concept of range from univariate data to two dimensions, we derive a band in $\mathbb{R}^2$ bounded (also known as delimited) by curves $y_{i_1},\dots, y_{i_k}$ for time (or states) $1, \dots, k$. Band is defined as $B(y_{i_1},\dots,y_{i_k}) = \{(t,x(t)): t \in \mathcal{I}, \min_{r=1,\dots,k} y_{i_r}(t) \leq x(t) \leq \max_{r=1,\dots,k} y_{i_r}(t)\}$. Let $J$ denote the number of curves that determines the band, where J is a fixed integer $2 \le J \le n$.\\
-
-\noindent
-Band depth is a measure of how deeply a curve lies within a population of curves, indicating its centrality or outlyingness relative to others. This measure is valuable for understanding the distributional characteristics of functional data across a population, offering insights into patterns and variability within the dataset.\\
+Consider a set of observations $\{y_1(t),\dots,y_n(t)\}$ defined over an interval $\mathcal{I} \in \mathbb{R}$. The graph of a function $y(t)$ is defined as $G(y) = {(t,y(t)) : t \in I}$. Applying the concept of range from univariate data to two dimensions, we derive a band in $\mathbb{R}^2$ bounded (also known as delimited) by curves $y_{i_1},\dots, y_{i_k}$ for time (or states) $1, \dots, k$. Band is defined as $B(y_{i_1},\dots,y_{i_k}) = \{(t,x(t)): t \in \mathcal{I}, \min_{r=1,\dots,k} y_{i_r}(t) \leq x(t) \leq \max_{r=1,\dots,k} y_{i_r}(t)\}$. Let $J$ denote the number of curves that determines the band, where J is a fixed integer $2 \le J \le n$.\\
 
 \noindent
 For a stochastic process $Y(t)$ generating the observations $y_1(t), \dots, y_n(t)$, the population version of the band depth for a curve $y(t)$ with respect to the probability measure P is defined as:
@@ -1723,28 +1723,37 @@ BD_{J}(y, P) = \sum_{j=2}^{J} BD^{(j)}(y,P)=\sum_{j=2}^{J} P\{G(y) \subset B(Y_1
 \noindent
 where $B(Y_1,\dots,Y_j)$ is a band delimited by $j$ random curves \cite{SunGenton2011FunctionalBoxplots}. Here, $BD^{(j)}(y,P)$ calculates the probability that the graph of $y(t)$ lies entirely within a band formed by any selection of $j$ functions. These bands are delineated by the minimum and maximum values at each point $t$ among the selected $j$ functions. This formulation of BD facilitates a nuanced understanding of curve centrality and variability within functional data, laying the groundwork for the construction of functional boxplots. Then we can define the sample version of $BD(j)(y,P)$, which is the fraction of the bands determined by $j$ different sample curves containing the whole graph of the curve $y(t)$ \cite{SunGenton2011FunctionalBoxplots}:
 
-\[BD_{n}^{(j)}(y) = {\binom{n}{j}}^{-1} \sum_{1 \leq i_1 < i_2 < \cdots < i_j \leq n} I\{G(y) \subseteq B(y_{i_1}, \ldots, y_{i_j})\}, \]
+\begin{equation}
+BD_{n}^{(j)}(y) = {\binom{n}{j}}^{-1} \sum_{1 \leq i_1 < i_2 < \cdots < i_j \leq n} I\{G(y) \subseteq B(y_{i_1}, \ldots, y_{i_j})\}, 
+\end{equation}
 
 \noindent
 where $I\{·\}$ denotes the indicator function. Hence, by computing the fraction of the bands containing the curve $y(t)$, the bigger the value of band depth, the more central position the curve has. Then, the sample band depth of a curve $y(t)$ is \cite{SunGenton2011FunctionalBoxplots}
 
-\[BD_{n,J}(y) = \sum_{j=2}^{J} BD^{(j)}_n (y).\]
+\begin{equation}
+BD_{n,J}(y) = \sum_{j=2}^{J} BD^{(j)}_n (y).
+\end{equation}
 
 \noindent
 A sample median function is a curve from the sample with largest depth value, defined by \cite{SunGenton2011FunctionalBoxplots} 
 
-\[\text{argmax}_{y \in {y_1,\dots,y_n}} BD_{n,J}(y).\]
+\begin{equation}
+\text{argmax}_{y \in {y_1,\dots,y_n}} BD_{n,J}(y).
+\end{equation}
 
 \noindent
 In a traditional boxplot, the box represents the central 50\% of the data.  In functional box plot, estimate the central region of data using a band defined by the $\alpha$ proportion (where $0 < \alpha < 1$) of the deepest curves in the sample. Specifically, the central region for 50\% of the sample, denoted as $C_{0.5}$, is calculated using the formula \cite{SunGenton2011FunctionalBoxplots}:
 
-\[C_{0.5} = \{(t, y(t)) : \min_{r=1, \ldots, \lceil n/2 \rceil} y[r](t) \leq y(t) \leq \max_{r=1, \ldots, \lceil n/2 \rceil} y[r](t)\},\]
+\begin{equation}
+C_{0.5} = \{(t, y(t)) : \min_{r=1, \ldots, \lceil n/2 \rceil} y[r](t) \leq y(t) \leq \max_{r=1, \ldots, \lceil n/2 \rceil} y[r](t)\},
+\end{equation}
 
 \noindent
-where $\lceil n/2 \rceil$ is the smallest integer not less than half of the sample size. This 50\% central region functions similarly to the inter-quartile range (IQR) in a boxplot, providing a measure of the spread of the central 50\% of the curves. This method is robust, less affected by outliers or extreme values, and offers a clearer visualization of the distribution's central spread. Within this central region, the curve that represents the median, denoted as $y_{[1]}(t)$, signifies the most centrally located curve with the highest band depth, serving as a robust measure of central tendency.
+where $\lceil n/2 \rceil$ is the smallest integer not less than half of the sample size. This 50\% central region functions similarly to the inter-quartile range (IQR) in a boxplot, providing a measure of the spread of the central 50\% of the curves. This method is robust, less affected by outliers or extreme values, and offers a clearer visualisation of the distribution's central spread. Within this central region, the curve that represents the median, denoted as $y_{[1]}(t)$, signifies the most centrally located curve with the highest band depth, serving as a robust measure of central tendency.
 
 \subsubsection{Functional Box Plot Example}
-
+\noindent
+The functional boxplot shown in Figure \ref{fig:fbplot} illustrates the metabolism rates between healthy and diseased populations. The outer blue line highlights a wider range for the diseased group, accompanied by a broader grey band. The range indicates greater variability and the band indicates lower oxygen saturation for most patients in the blood of the diseased group.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{image_reference/fbplot.png}
@@ -1756,7 +1765,7 @@ where $\lceil n/2 \rceil$ is the smallest integer not less than half of the samp
 In this section, we will introduce the Q–Q boxplot, which combines the advantages from the boxplot and the Q–Q plot. The Q–Q boxplot integrates the box plot's ability to summarize data through its quartiles and the Q–Q plot's capability to compare data distributions to a theoretical distribution (often the normal distribution).\\
 
 \noindent 
-Although Q–Q plots and box plots are very effiective in data visualization, they have there limitations as well. Q–Q plot is less effective than box plot in highlighting summary quantitles, and it also suffers the readability when we place multiple samples together. Box plot usually has unreliable tail information when $n<100$, therefor may not suitable for some research questions that need more accurate estimates of extreme quantiles.\\
+Although Q–Q plots and box plots are very effiective in data visualisation, they have there limitations as well. Q–Q plot is less effective than box plot in highlighting summary quantitles, and it also suffers the readability when we place multiple samples together. Box plot usually has unreliable tail information when $n<100$, therefor may not suitable for some research questions that need more accurate estimates of extreme quantiles.\\
 
 \noindent
 In this section, we will introduce the Q–Q boxplot, which combines the advantages from the boxplot and the Q–Q plot. The Q–Q boxplot integrates the box plot's ability to summarize data through its quartiles and the Q–Q plot's capability to compare data distributions to a theoretical distribution (often the normal distribution).\\
@@ -1765,7 +1774,7 @@ In this section, we will introduce the Q–Q boxplot, which combines the advanta
 The construction of a Q–Q boxplot involves a three-step process\cite{rodu2022q}. The first setp is to construct the box, which is similar to the standard boxplot and represents the interquartile range of the data. The second step is to draw the whiskers and confidence bands. The third step is to draw the outside values. The first and third steps are as same as in box plots.\\
 
 \noindent
-The unique aspect of the Q–Q boxplot comes in the second step. In ordor to draw the whiskers and confidence bands, we have to standardize both the comparison distribution and the reference distribution. This standardization process involves matching the quantiles from the reference distribution to those in the comparison distribution, either by subsampling or interpolation. Once this is done, the deviations of the comparison distribution from the reference distribution are calculated relative to each data point. Alongside this, the point-wise confidence bands are also determined, which provides a visual indication of how closely the data follows the expected theoretical distribution. To integrate the relative deviations and confidence bands into the Q–Q boxplot, we include both the x and y coordinates in the plot. The y-axis coordinates correspond to the quantile values from the comparison dataset, while the x-axis coordinates represent the deviations relative to the reference distribution.\\
+The unique aspect of the Q–Q boxplot comes in the second step. In ordor to draw the whiskers and confidence bands, we have to standardize both the comparison distribution and the reference distribution. This standardisation process involves matching the quantiles from the reference distribution to those in the comparison distribution, either by subsampling or interpolation. Once this is done, the deviations of the comparison distribution from the reference distribution are calculated relative to each data point. Alongside this, the point-wise confidence bands are also determined, which provides a visual indication of how closely the data follows the expected theoretical distribution. To integrate the relative deviations and confidence bands into the Q–Q boxplot, we include both the x and y coordinates in the plot. The y-axis coordinates correspond to the quantile values from the comparison dataset, while the x-axis coordinates represent the deviations relative to the reference distribution.\\
 
 \noindent
 To calculate the x-coordinate for a Q–Q boxplot, we set a scale for the plot and determin the maximum x-coordinate, $x_{\text{max}}=(\frac{b_w}{2})$ where $b_w$ is the box width. Let $dev_{max}$ be the maximum of the absolute values of the whisker deviations and confidence band values. The value of a relative deviaition $d$ is computed by either taking the difference between the standardized values from the comparison distribution and those from the reference distribution, or by using a value from the confidence band associated with the reference distribution. We can then set:
@@ -1789,7 +1798,7 @@ The resulting Q–Q boxplot shows the distribution of sepal length values within
 \end{knitrout}
 
 \noindent
-From the above Figure~\ref{fig:QQboxplots}, we can find out easily that the middle of our Q-Q boxplot is same as in the boxplot as we seen in Figure~\ref{fig:box-plots}. In addition, there are more details in tails behavior simultaneously. We can see that the right-tail deviations and left-tail deviations all lie inside of the confidence bands calculated with the bootstrap method, which means the sample distribution of our dataset is consistent with the theoretical distribution being compared to, that is a normal distribution.
+From the above Figure~\ref{fig:QQboxplots}, we can find out easily that the middle of our Q–Q boxplot is same as in the boxplot as we seen in Figure~\ref{fig:box-plots}. In addition, there are more details in tails behavior simultaneously. We can see that the right-tail deviations and left-tail deviations all lie inside of the confidence bands calculated with the bootstrap method, which means the sample distribution of our dataset is consistent with the theoretical distribution being compared to, that is a normal distribution.
 \noindent
 
 
