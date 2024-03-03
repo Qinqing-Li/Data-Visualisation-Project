@@ -54,7 +54,7 @@
 \contentsline {subsubsection}{\numberline {5.2.1}Construction of PCA Biplots}{44}{subsubsection.5.2.1}
 \contentsline {subsubsection}{\numberline {5.2.2}Biplots in Practice: The mtcars Dataset}{46}{subsubsection.5.2.2}
 \contentsline {subsection}{\numberline {5.3}Principal Curves}{47}{subsection.5.3}
-\contentsline {subsubsection}{\numberline {5.3.1}Construction of Principal Curves}{48}{subsubsection.5.3.1}
+\contentsline {subsubsection}{\numberline {5.3.1}Construction of Principal Curves}{47}{subsubsection.5.3.1}
 \contentsline {subsubsection}{\numberline {5.3.2}Principal Cuves in Practice}{48}{subsubsection.5.3.2}
 \contentsline {subsection}{\numberline {5.4}t-Distributed Stochastic Neighbor Embedding (t-SNE)}{49}{subsection.5.4}
 \contentsline {subsubsection}{\numberline {5.4.1}Theory of t-SNE}{49}{subsubsection.5.4.1}
@@ -68,5 +68,4 @@
 \contentsline {subsubsection}{\numberline {6.2.2}Functional Box Plot Example}{56}{subsubsection.6.2.2}
 \contentsline {subsection}{\numberline {6.3}Q\IeC {\textendash }Q Boxplots}{57}{subsection.6.3}
 \contentsline {subsubsection}{\numberline {6.3.1}Construction of Q\IeC {\textendash }Q Boxplots}{57}{subsubsection.6.3.1}
-\contentsline {subsubsection}{\numberline {6.3.2}Q\IeC {\textendash }Q Boxplots in Practice}{58}{subsubsection.6.3.2}
-\contentsline {section}{\numberline {7}Index}{59}{section.7}
+\contentsline {subsubsection}{\numberline {6.3.2}Q\IeC {\textendash }Q Boxplots in Practice}{57}{subsubsection.6.3.2}
