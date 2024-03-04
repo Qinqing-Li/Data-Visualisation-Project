@@ -555,7 +555,7 @@ A time series $\{X_t\}$ is a moving average process \index{Time series!moving av
 \noindent
 where $\{\omega_t\} \sim \text{N}(0, \sigma^2)$ are i.i.d. white noise events and $\theta_1,\dots,\theta_q$ are real valued coefficients.
 
-\subsubsection{Case Example: Time Series Visualisation of Exchange rates}
+\subsubsection{Case Example: Time Series Visualisation of Exchange Rates}
 
 Here, plot daily and 49-day moving average exchange rates of exchange rate data in one figure.
 
@@ -878,7 +878,7 @@ In general, the \(Y\)-axis denotes the response, or dependent, variable and the 
 \subsubsection{Animated Scatter Plots}
 \noindent While static scatter plots are effective in depicting relationships between two variables, animated scatter plot visualisations take this a step further by introducing, for example, a temporal dimension to the data visualisation. Unlike static plots, animated scatter plots enable the depiction of changes in relationships, clusters, or outliers over time. In R, the $gganimate$ package, building on the foundation of $ggplot2$ package, facilitates the creation of animated plots, including animated scatter plots. 
 
-\subsubsection{\textt{gganimate} in Practice}
+\subsubsection{\texttt{gganimate} in Practice}
 
 \noindent Figure~\ref{fig:gapminder_static} represents the gapminder dataset in a static scatter plot demonstrating the relationship between gross domestic product (GDP) per capita and life expectancy across various countries. GDP per capita is depicted on a logarithmic scale along the $X$-axis to accommodate a wide range of values, while life expectancy is represented on the $Y$-axis. Moreover, the colour each of the dots indicate the country they represent data of.\\
 
@@ -1072,7 +1072,7 @@ The least squares estimate of $\boldsymbol{\beta}$ is given by:
 \end{equation}
 \\ 
 \noident 
-\subsubsection{Case example: 1970s automobiles}\\
+\subsubsection{Case Example: 1970s Automobiles}\\
 \noindent In this section, we will study the performance of 1970s automobiles using the mtcars dataset, employing the method of linear regression. Performance is measured in Miles per Gallon (mpg); the higher the mileage, the more efficient the automobile. We will start with the visualisation of a simple linear regression model, followed by the discussion of linear regression models and the model selection method.
 
 \noindent
@@ -1145,7 +1145,7 @@ Observe that the t-test yields a p-value of $1.29 \times 10^{-10}$, which is les
 Locally weighted scatterplot smoothing (LOWESS) is a local regression method for a response variable $Y$ on a single predictor $X$. LOWESS was proposed by William S. Cleveland in 1979, it is the special case to higher dimention locally estimated scatterplot smoothing (LOESS) regression method. They are non-parametric regression methods that fits a linear regression model for each neighbourhood of data. Unlike GLM, the LOESS model does not provide a global function to fit the data; rather, it fits neighborhoods of the data.\\
 
 \noindent
-\subsubsection{Theory of LOESS regression}\\
+\subsubsection{Theory of LOESS Regression}\\
 
 \noindent
 Suppose we have $n$ ordered observations $\{(x_1,y_1), \dots, (x_n,y_n)\}$ with predictors $x_i$ and response variables $y_i$. Assume a model of the form
@@ -1214,7 +1214,7 @@ Note the process of weight adjustment using previous estimation is iterated seve
 The updated model estimate $\hat{g}(x)$, is computed using the local fitting method, but with the neighborhood weights $w_i{(x)$ replaced by $r_i w_i(x)$ \cite{loess}.\\
 
 \noindent
-\subsubsection{Case example: Taiwan Housing dataset}\\
+\subsubsection{Case Example: Taiwan Housing Dataset}\\
 
 \noindent
 Property valuation can be modelled as a regression problem, in this analysis, we delve into the pricing of properties based on their age. Using the Taipei Housing dataset, we investigate the relationship between the age of houses (measured in years) and their prices (measured in New Taiwan dollars per unit area). Linear regression model and the LOESS regression model are used, as shown in Figure~\ref{fig:estate-data-plot}.\\
