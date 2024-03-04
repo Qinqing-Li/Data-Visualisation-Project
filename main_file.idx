@@ -29,7 +29,7 @@
 \indexentry{Principal component analysis!optimal encoding|hyperpage}{43}
 \indexentry{Principal component analysis!loss function|hyperpage}{43}
 \indexentry{Biplots!singular value decomposition|hyperpage}{44}
-\indexentry{Biplot!singular values|hyperpage}{45}
+\indexentry{Biplot!singular values|hyperpage}{44}
 \indexentry{Principal curves!curve|hyperpage}{48}
 \indexentry{Principal curves!projection index|hyperpage}{48}
 \indexentry{Principal curves!least-squares objective function|hyperpage}{48}
@@ -40,4 +40,4 @@
 \indexentry{t-SNE!gradient descent|hyperpage}{50}
 \indexentry{Funtional boxplot!band|hyperpage}{55}
 \indexentry{Funtional boxplot!band depth|hyperpage}{55}
-\indexentry{Quantile\IeC {\textendash }Quantile boxplot!whiskers|hyperpage}{57}
+\indexentry{Quantile–Quantile boxplot!whiskers|hyperpage}{57}

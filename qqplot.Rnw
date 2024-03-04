@@ -1,0 +1,26 @@
+\documentclass{article}
+
+\begin{document}
+
+<<QQplot, echo=FALSE, fig.height=3, fig.width=5, fig.pos='h', fig.cap='Q–Q plot of mpg in mtcars dataset', message=FALSE>>=
+
+# Define color palette
+my_palette <- c("#459395", "#EB7C69", "#FDA638")
+
+# Create QQ plot
+qqplot <- iris %>%  
+  ggplot(aes(sample = Sepal.Length, colour = Species)) + 
+  geom_qq(alpha = 0.7) + 
+  stat_qq_line(color = "grey") +
+  scale_colour_manual(values = my_palette) + # Set color palette
+  ylab("Theoretical Quantiles") + 
+  xlab("Sample Quantiles") +
+  ggtitle("QQ Plot of Sepal Length") +
+  theme_minimal()
+print(qqplot)
+@
+
+
+
+
+\end{document}

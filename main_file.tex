@@ -81,11 +81,11 @@
 \newpage
 \tableofcontents
 
-\newpage  % Start overview section on a new page
+\newpage
 
 \section*{Overview}
 
-\addcontentsline{toc}{section}{Overview} % Add section to the table of contents
+\addcontentsline{toc}{section}{Overview} 
 
 \noindent
 Graphical statistics is an indispensable tool in the arsenal of every contemporary data project. Primarily, it enables one to delve into the data, explore its nuances, and effectively communicate empirical discoveries through visual means. This project aims to provide an overview of modern data visualisation methods, delve into their theoretical underpinnings, and demonstrate the potency of these methodologies using both synthetic and authentic datasets.\\
@@ -406,7 +406,7 @@ This chapter, initiates the discussion regarding data visualisation methods. Thi
 
 \subsubsection{Classic Frequency Histograms}
 
-\noindent A classic histogram is a visual representation of the distribution of a (numerical) dataset. It is composed by a series of contiguous rectangles, also known as ``bins", each representing a range of data values. The height of each of these corresponds to the frequency or count of data points within that range, depending on the type of histogram. On a cartesian coordinate system, typically, the x-axis shows the endpoints of each bin, and the y-axis represents count or frequency. Hence, histograms facilitate, among other thing, the visualisation of the distribution, spread, and central tendancy of datasets.\\
+\noindent A classic histogram is a visual representation of the distribution of a (numerical) dataset. It is composed by a series of contiguous rectangles, also known as ``bins", each representing a range of data values. The height of each of these corresponds to the frequency or count of data points within that range, depending on the type of histogram. On a cartesian coordinate system, typically, the x-axis shows the endpoints of each bin, and the y-axis represents count or frequency. Hence, histograms facilitate, among other thing, the visualisation of the distribution, spread, and central tendency of datasets.\\
 
 \noindent \textbf{Mathematical Defintion}\\
 \noindent Suppose the data points within a datset are partitioned into $k$ non-overlapping bins, denoted as $B_1, \dots, B_k$ such that $B_i = [t_i, t_{i+1})$ for $i = 1, \dots, k$. Here, $t_i$ and $t_{i+1}$ represent the lower and upper boundaries of the $i$-th bin, respectively.\\
@@ -414,7 +414,7 @@ This chapter, initiates the discussion regarding data visualisation methods. Thi
 \noindent Then, the classical frequency histogram of the data can be represented as a set of $k$ bars, where the height of the $i$-th bar corresponds to the frequency or count of data points falling within the interval $B_i$.\\
 
 \noindent \textbf{Theory of Bin Number and Bin Width\index{Histograms!bin}}\\
-\noindent The classical frequency histogram can be fully described by two main factors: the bin width $h$, and the bin origin $t_{0}$. However, in order for the bin counts to be comparable, the bins should all have the same width. Furthermoree, it is essential to correctly choose the number of bins, since these have a huge impact on how the data is displayed and interpreted. Too few bins may hide the information in a dataset, and too many bins can cause a lot of noise in a dataset.\\
+\noindent The classical frequency histogram can be fully described by two main factors: the bin width $h$, and the bin origin $t_{0}$. However, in order for the bin counts to be comparable, the bins should all have the same width. Furthermore, it is essential to correctly choose the number of bins, since these have a huge impact on how the data is displayed and interpreted. Too few bins may hide the information in a dataset, and too many bins can cause a lot of noise in a dataset.\\
 
 \noindent Sturges' Rule\index{Histograms!Sturges' Rule}, established by Herbert Sturges in 1926, offers a systematic approach to determining the optimal number of bins constructing a frequency histogram \cite{scott2015multivariate}. This rule is based on the concept of normality, with the binomial distribution, $B(n,p = 0.5)$, serving as a model for an optimally constructed histogram. It links the binomial distribution with normally distributed data, providing a basis for selecting the number of bins to achieve a histogram resembling a normal density curve.\\
 
@@ -495,7 +495,7 @@ Here, the kernel function \( K(u) \) \index{Kernel density estimation!kernel fun
 $$ \int K(u) \, du = 1. $$
 
 \noindent
-By introducing the rescaling notation $K_h(u) = h^{-1}K(\frac{u}{h})$, we can write the formula in a more compact way:
+By introducing the re-scaling notation $K_h(u) = h^{-1}K(\frac{u}{h})$, we can write the formula in a more compact way:
 $$\hat{f}(x; h) = n^{-1} \sum_{i=1}^{n} K_h(x - X_i).$$
 
 \noindent In Figure~\ref{fig:iris-plots}, the kernel density estimation of the dataset is presented. The distribution of sepal lengths is depicted by the kernel density curve. The peaks observed in the curve correspond to the primary concentration trends of sepal length within the data. A unimodal curve signifies a concentration of sepal lengths for most irises in that specific region. Conversely, a bimodal or multimodal curve suggests the existence of multiple concentration areas.
@@ -506,7 +506,7 @@ $$\hat{f}(x; h) = n^{-1} \sum_{i=1}^{n} K_h(x - X_i).$$
 \noindent Bar charts represent a versatile tool for data visualisation, frequently employed to compare distinct categories. The vertical bar chart, commonly recognised, exhibits categories along the x-axis and their frequencies or counts along the y-axis. Horizontal bar charts, rotated 90 degrees, prove beneficial for extended category names or numerous categories, displaying categories on the y-axis and frequencies on the x-axis. Multi-set or grouped bar charts facilitate side-by-side comparisons of sub- groups within categories, available in both vertical and horizontal orientations. Stacked bar charts illustrate classes of values subdivided into sub-classes, often differentiated by colour, where each segment's size signifies its frequency or count, and the total bar length reflects the cumulative total.
 
 \subsubsection{Bar Charts in Practice}\\
-\noident The two bar charts on in Figure~\ref{fig:barcharts} illustrate the impact of varying vitamin dosages on tooth growth, further categorised by supplement type. On the x-axis, three distinct levels of vitamin dosage are presented, while the y-axis indicates the average lenth of tooth for each dosage.
+\noident The two bar charts on in Figure~\ref{fig:barcharts} illustrate the impact of varying vitamin dosages on tooth growth, further categorised by supplement type. On the x-axis, three distinct levels of vitamin dosage are presented, while the y-axis indicates the average length of tooth for each dosage.
 
 
 \begin{knitrout}\scriptsize
@@ -1540,7 +1540,7 @@ y_f(\mathbf{x}) = \sup\limits_{y}\{y: ||\mathbf{x}-\mathbf{f}(y)||= \inf\limits_
   \item Loop: Increment $h$ and return to step 1 while the change in the objective function above some threshold.
 \end{enumerate}
 
-\subsubsection{Principal Cuves in Practice}
+\subsubsection{Principal Curves in Practice}
 
 \noindent In Figure~\ref{fig:P-curves}, we see an example of how a principal curve is fitted to the observations of an artificial dataset. The points in the plots are not grouped in a linear subspace, but rather follow a similar shape to that of cubic function.\\
 
