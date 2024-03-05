@@ -94,6 +94,7 @@
 \vspace {1.5cm}
 
 The School of Mathematics \\
+Undergraduate Mathematics Project
 \vspace {0.25cm}
 
 \vspace{1.5cm}
@@ -110,7 +111,7 @@ Dr. Miguel De Carvalho \\
 
 \newpage
 
-\section*{Overview}
+\section*{Abstract}
 
 \noindent
 This project aims to provide the theory of graphical statistics methods and their visual implementations using R, utilising open-source datasets from different sectors. The authors recognise that graphical statistics is an active area of research, therefore textbook methods and state-of-the-art methods will be covered. Chapters 3 to 5 concentrate on standard implementations of graphical statistics methods for univariate, bivariate, and multivariate data, respectively. Chapter 6 focuses on functional boxplots and Q–Q boxplots, which were published in the \textit{Journal of Computational and Graphical Statistics} in 2011 and 2022, respectively. The R package names such as \textit{ggplot2} are italicised, while R commands like \texttt{faceting} are displayed in a teletype font.\\
@@ -560,13 +561,13 @@ This equation highlights that for any point \(x\) between \(x_i\) and \(x_{i+1}\
 
 \subsubsection{Time Series Analysis}
 
-Time series visualisation is particularly suited to line charts because they effectively display changes and trends over time, allowing for easy visualisation of relationships between time points. A time series\cite{Brockwell2016Introduction} is a collection of observations $\{x_t\}$, where $t=0,\dots,n$ denotes the time point at which the observation is recorded. An index set $T_0$ which collects all the time points when observations are available. For instance, $T_0 = \{0,\dots,n\}$ for $n \in \mathbb{N}$. By plotting these data points over time, line charts help in identifying long-term trends, seasonal patterns, and anomalies.\\
+Time series visualisation is particularly suited to line charts because they effectively display changes and trends over time, allowing for easy visualisation of relationships between time points. A time series \cite{Brockwell2016Introduction} is a collection of observations $\{x_t\}$, where $t=0,\dots,n$ denotes the time point at which the observation is recorded. An index set $T_0$ which collects all the time points when observations are available. For instance, $T_0 = \{0,\dots,n\}$ for $n \in \mathbb{N}$. By plotting these data points over time, line charts help in identifying long-term trends, seasonal patterns, and anomalies.\\
 
 \noindent
 A time series can be viewed as a realisation of a stochastic process\index{Time series!stochastic process}. A stochastic process \cite{Brockwell2016Introduction} $X = (X_t)_{t \in T_0}$ is a collection of random variables $X_t$, where $t$ denotes the time index and $T_0$ the index set. For a fixed event $\omega \in \Omega$ we obtain the realisation of the stochastic process (sometimes also called a sample path) which is given by $x_t = X_t(\omega)$, $t \in T_0$.\\
 
 \noindent
-A time series $\{X_t\}$ is a moving average process \index{Time series!moving average process}of order $q$(MA(q)) if it can be expressed as:
+A time series $\{X_t\}$ is a moving average process \cite{Brockwell2016Introduction} \index{Time series!moving average process}of order $q$(MA(q)) if it can be expressed as:
 \[x_t = \omega_t + \theta_1 \omega_{t-1}+\dots+ \theta_q \omega_{t-q},\]
 
 \noindent
@@ -669,9 +670,9 @@ Autocorrelation \index{Time series!autocorrelation}describes the correlation of 
 
 \noindent
 Suppose we have a time series with observations denoted by \( x_1, \ldots, x_n \). Then the sample mean is given by $\bar{x} = \frac{1}{n} \sum_{t=1}^{n} x_t.$
-And the sample autocovariance function\cite{Brockwell2016Introduction} at lag $h$ in days of our time series is
+And the sample autocovariance function \cite{Brockwell2016Introduction} at lag $h$ in days of our time series is
 \[\hat{\gamma}(h) := \frac{1}{n} \sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x}), \quad -n < h < n.\]
-Hence, the sample autocorrelation function\cite{Brockwell2016Introduction} at lag $h$ in days is given by
+Hence, the sample autocorrelation function \cite{Brockwell2016Introduction} at lag $h$ in days is given by
 \[\hat{\rho}(h) := \frac{\hat{\gamma}(h)}{\hat{\gamma}(0)} = \frac{\sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x})}{\sum_{t=1}^{n} (x_t - \bar{x})^{2}}, \quad -n < h < n.\]
 
 \noindent
@@ -713,17 +714,17 @@ The Receiver Operating Characteristic (ROC) anaysis is a technique for assessing
 Let $Y$ be a binary variable indicating the true class of an instance, with $Y = 1$ for positive instances and $Y = 0$ for negative instances. Let $X$ be a continuous variable representing the predicted score or probability of an instance being classified as positive by the classifier, with $X \geq c$ for positive and $X < c$ for negative given a threshold c.\\
 
 \noindent
-Since ROC curve plots two parameters\cite{rocAnalysis}: True Positive Rate (TPR, also known as Sensitivity, is the proportion of positive instances correctly identified) and False Positive Rate (FPR, 1 - Specificity, is the proportion of negative instances incorrectly identified as positive). Then define the TPR and the FPR using conditional probabilities as follows\cite{Pepe2003}:
+Since ROC curve plots two parameters \cite{rocAnalysis}: True Positive Rate (TPR, also known as Sensitivity, is the proportion of positive instances correctly identified) and False Positive Rate (FPR, 1 - Specificity, is the proportion of negative instances incorrectly identified as positive). Then define the TPR and the FPR using conditional probabilities as follows \cite{Pepe2003}:
 
 \[ \text{TPR}(c) = \mathbb{P}[X \geq c | Y = 1], \quad \text{FPR}(c) = \mathbb{P}[X \geq c | Y = 0].\]
 
 \noindent
-The ROC curve is then the set of points $(\text{FPR}(c), \text{TPR}(c))$ for all possible values of threshold $c$. This curve plots the trade-off between sensitivity (or TPR) and specificity (1 - FPR) across different thresholds. Let $t=\text{FPR}(c)$, then $c = \text{FPR}^{-1}(t)$ and $\text{TPR}(c)= \text{TPR}(\text{FPR}^{-1}(t))$. Hence, let $\text{ROC}(t)= \text{TPR}(\text{FPR}^{-1}(t))$, the ROC curve can be represented as a parametric function of $t$\cite{Pepe2003} , with $t$ varying from 0 to 1:
+The ROC curve is then the set of points $(\text{FPR}(c), \text{TPR}(c))$ for all possible values of threshold $c$. This curve plots the trade-off between sensitivity (or TPR) and specificity (1 - FPR) across different thresholds. Let $t=\text{FPR}(c)$, then $c = \text{FPR}^{-1}(t)$ and $\text{TPR}(c)= \text{TPR}(\text{FPR}^{-1}(t))$. Hence, let $\text{ROC}(t)= \text{TPR}(\text{FPR}^{-1}(t))$, the ROC curve can be represented as a parametric function of $t$ \cite{Pepe2003} , with $t$ varying from 0 to 1:
 
 \[ \text{ROC} = \{ (t, \text{ROC}(t)) \,|\, t \in [0, 1] \}.\]
 
 \noindent
-Also, the Area Under the Curve (AUC)\cite{Pepe2003}  provides a single measure of overall performance of a classifier. This definition represents the integral of $\text{ROC}(t)$ over the interval from 0 to 1. It can be defined as:
+Also, the Area Under the Curve (AUC) \cite{Pepe2003}  provides a single measure of overall performance of a classifier. This definition represents the integral of $\text{ROC}(t)$ over the interval from 0 to 1. It can be defined as:
 
 \[ \text{AUC} = \int_{0}^{1} \text{ROC}(t) dt.\]
 
@@ -732,7 +733,7 @@ The larger the AUC\index{Receiver operating characteristic!AUC}, the better the 
 
 \subsubsection{ROC analysis in COVID-19 test}
 
-The COVID-19 pandemic underscores the need for accurate diagnostic tests to differentiate between positive and negative cases\cite{Garcia2021ROCAlly}. An effective mean for evaluating accuracy of various diagnostic tests is the ROC analysis. ROC analysis comprehensively examines test accuracy by integrating TPR, FPR, and AUC. These metrics are calculated by comparing test outcomes against a recognized gold standard, thereby determining the true disease status. This approach is vital for understanding the efficacy of COVID-19 diagnostic tools and guiding public health decisions.\\
+The COVID-19 pandemic underscores the need for accurate diagnostic tests to differentiate between positive and negative cases \cite{Garcia2021ROCAlly}. An effective mean for evaluating accuracy of various diagnostic tests is the ROC analysis. ROC analysis comprehensively examines test accuracy by integrating TPR, FPR, and AUC. These metrics are calculated by comparing test outcomes against a recognized gold standard, thereby determining the true disease status. This approach is vital for understanding the efficacy of COVID-19 diagnostic tools and guiding public health decisions.\\
 
 \noindent
 The TPR, or sensitivity, measures the proportion of actual positives correctly identified, reflecting the test's ability to detect COVID-19 cases. The FPR, conversely, indicates the rate of false alarms, where non-infected individuals are wrongly identified as infected. An ideal test minimises FPR, avoiding unnecessary treatments or quarantine. The ROC curve visualises the trade-off between TPR and FPR at various thresholds. A curve arching towards the upper left indicates high sensitivity and low FPR — the hallmarks of a reliable test. The AUC consolidates the ROC performance into a single value: 0.5 denotes no better accuracy than random chance, while 1.0 represents perfect accuracy. A higher AUC indicates a better overall ability of the test.\\
@@ -840,7 +841,7 @@ The seasonal pattern of fire frequency is shown in Figure~\ref{fig:fire-by-month
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlcom{# Heatmap plot}
+\hlcom{# HEATMAP PLOT}
 \hlstd{heatmap_plot} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(pivot_table,}
                        \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{factor}\hlstd{(abb_month,} \hlkwc{levels} \hlstd{= custom_order),}
                            \hlkwc{y} \hlstd{=} \hlkwd{as.character}\hlstd{(year),} \hlkwc{fill} \hlstd{= count))} \hlopt{+}
@@ -920,7 +921,7 @@ However, one can refer to the animated version of the scatter plot to solve many
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlcom{# create animated ggplot}
+\hlcom{# CREATE ANIMATED GGPLOT}
 \hlstd{gapplot}\hlkwb{<-}\hlkwd{ggplot}\hlstd{(gapminder,} \hlkwd{aes}\hlstd{(gdpPercap, lifeExp,} \hlkwc{colour} \hlstd{= country))} \hlopt{+}
   \hlkwd{geom_point}\hlstd{(}\hlkwc{alpha} \hlstd{=} \hlnum{0.7}\hlstd{,} \hlkwc{show.legend} \hlstd{=} \hlnum{FALSE}\hlstd{)} \hlopt{+}
   \hlkwd{scale_colour_manual}\hlstd{(}\hlkwc{values} \hlstd{= country_colors)} \hlopt{+}
@@ -1123,7 +1124,7 @@ Observe that the t-test yields a p-value of $1.29 \times 10^{-10}$, which is les
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlcom{# Summary for simple linear regression, with response variable Miles per Gallon}
+\hlcom{# SUMMARY FOR SIMPLE LINEAR REGRESSION, WITH RESPONSE VARIABLE MILES PER GALLON}
 \hlstd{Modelwt} \hlkwb{<-} \hlkwd{lm}\hlstd{(}\hlkwc{formula} \hlstd{= mpg} \hlopt{~} \hlstd{wt,} \hlkwc{data} \hlstd{= mtcars)}
 \hlkwd{summary}\hlstd{(Modelwt)}
 \end{alltt}
@@ -1249,7 +1250,7 @@ The linear model has a residual standard error of 13.32, while the LOESS model h
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlcom{# linear regression vs. LOESS model}
+\hlcom{# LINEAR REGRESSION VS. LOESS MODEL}
 \hlkwd{ggplot}\hlstd{(}\hlkwc{data} \hlstd{= estate,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= house_age,} \hlkwc{y} \hlstd{= price_per_area))} \hlopt{+}
   \hlkwd{geom_point}\hlstd{(}\hlkwc{size} \hlstd{=}\hlnum{0.5}\hlstd{)} \hlopt{+}
   \hlkwd{theme_minimal}\hlstd{()}\hlopt{+}
