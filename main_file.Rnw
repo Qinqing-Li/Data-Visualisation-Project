@@ -714,13 +714,13 @@ This equation highlights that for any point \(x\) between \(x_i\) and \(x_{i+1}\
 
 \subsubsection{Time Series Analysis}
 
-Time series visualisation is particularly suited to line charts because they effectively display changes and trends over time, allowing for easy visualisation of relationships between time points. A time series\cite{Brockwell2016Introduction} is a collection of observations $\{x_t\}$, where $t=0,\dots,n$ denotes the time point at which the observation is recorded. An index set $T_0$ which collects all the time points when observations are available. For instance, $T_0 = \{0,\dots,n\}$ for $n \in \mathbb{N}$. By plotting these data points over time, line charts help in identifying long-term trends, seasonal patterns, and anomalies.\\
+Time series visualisation is particularly suited to line charts because they effectively display changes and trends over time, allowing for easy visualisation of relationships between time points. A time series \cite{Brockwell2016Introduction} is a collection of observations $\{x_t\}$, where $t=0,\dots,n$ denotes the time point at which the observation is recorded. An index set $T_0$ which collects all the time points when observations are available. For instance, $T_0 = \{0,\dots,n\}$ for $n \in \mathbb{N}$. By plotting these data points over time, line charts help in identifying long-term trends, seasonal patterns, and anomalies.\\
 
 \noindent
 A time series can be viewed as a realisation of a stochastic process\index{Time series!stochastic process}. A stochastic process \cite{Brockwell2016Introduction} $X = (X_t)_{t \in T_0}$ is a collection of random variables $X_t$, where $t$ denotes the time index and $T_0$ the index set. For a fixed event $\omega \in \Omega$ we obtain the realisation of the stochastic process (sometimes also called a sample path) which is given by $x_t = X_t(\omega)$, $t \in T_0$.\\
 
 \noindent
-A time series $\{X_t\}$ is a moving average process \index{Time series!moving average process}of order $q$(MA(q)) if it can be expressed as:
+A time series $\{X_t\}$ is a moving average process \cite{Brockwell2016Introduction} \index{Time series!moving average process}of order $q$(MA(q)) if it can be expressed as:
 \[x_t = \omega_t + \theta_1 \omega_{t-1}+\dots+ \theta_q \omega_{t-q},\]
 
 \noindent
@@ -740,31 +740,31 @@ MyData <- read.csv("exchangeRate.csv",
 MyData <- data.frame(MyData)
 
 # Convert Date to a Date object
-MyData$Date <- as.Date(MyData$Date, format="%d-%b-%y")
+MyData$Date <- as.Date(MyData$Date, format = "%d-%b-%y")
 
 # Order the data by Date
 MyData <- MyData[order(MyData$Date), ]
 
 # Convert columns to time series
 ts_data <- lapply(MyData[-1], ts,
-                  start=c(as.numeric(format(min(MyData$Date), "%Y")),
+                  start = c(as.numeric(format(min(MyData$Date), "%Y")),
                           as.numeric(format(min(MyData$Date), "%j"))),
-                  end=c(as.numeric(format(max(MyData$Date), "%Y")),
+                  end = c(as.numeric(format(max(MyData$Date), "%Y")),
                           as.numeric(format(max(MyData$Date), "%j"))),
                   frequency=260)
 
-plot_dt <- MyData %>% dplyr::select(Date, CANtoGBP, EURtoGBP, USDtoGBP) %>% gather(key="Currency", value="Rate", -Date) 
+plot_dt <- MyData %>% dplyr::select(Date, CANtoGBP, EURtoGBP, USDtoGBP) %>% gather(key = "Currency", value = "Rate", -Date) 
 
 # 49-day moving average calculations and plot
 columns <- names(MyData)[!names(MyData) %in% "Date"]
 for (col in columns) {
   new_col_name <- paste0(col, "_MA49")
   MyData[[new_col_name]] <- zoo::rollapply(MyData[[col]],
-                                           width=49, FUN=mean,
-                                           fill=NA, align='right')
+                                           width = 49, FUN = mean,
+                                           fill = NA, align = 'right')
 }
 
-plot_data <- MyData %>% dplyr::select(Date, CANtoGBP_MA49, EURtoGBP_MA49, USDtoGBP_MA49) %>% gather(key="Currency", value="Rate", -Date) %>%
+plot_data <- MyData %>% dplyr::select(Date, CANtoGBP_MA49, EURtoGBP_MA49, USDtoGBP_MA49) %>% gather(key = "Currency", value = "Rate", -Date) %>%
   filter(grepl("MA49", Currency)) 
 
 # Remove "_MA49" from the Currency column for the legend
@@ -851,9 +851,9 @@ Autocorrelation \index{Time series!autocorrelation}describes the correlation of 
 
 \noindent
 Suppose we have a time series with observations denoted by \( x_1, \ldots, x_n \). Then the sample mean is given by $\bar{x} = \frac{1}{n} \sum_{t=1}^{n} x_t.$
-And the sample autocovariance function\cite{Brockwell2016Introduction} at lag $h$ in days of our time series is
+And the sample autocovariance function \cite{Brockwell2016Introduction} at lag $h$ in days of our time series is
 \[\hat{\gamma}(h) := \frac{1}{n} \sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x}), \quad -n < h < n.\]
-Hence, the sample autocorrelation function\cite{Brockwell2016Introduction} at lag $h$ in days is given by
+Hence, the sample autocorrelation function \cite{Brockwell2016Introduction} at lag $h$ in days is given by
 \[\hat{\rho}(h) := \frac{\hat{\gamma}(h)}{\hat{\gamma}(0)} = \frac{\sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x})}{\sum_{t=1}^{n} (x_t - \bar{x})^{2}}, \quad -n < h < n.\]
 
 \noindent
@@ -883,17 +883,17 @@ The Receiver Operating Characteristic (ROC) anaysis is a technique for assessing
 Let $Y$ be a binary variable indicating the true class of an instance, with $Y = 1$ for positive instances and $Y = 0$ for negative instances. Let $X$ be a continuous variable representing the predicted score or probability of an instance being classified as positive by the classifier, with $X \geq c$ for positive and $X < c$ for negative given a threshold c.\\
 
 \noindent
-Since ROC curve plots two parameters\cite{rocAnalysis}: True Positive Rate (TPR, also known as Sensitivity, is the proportion of positive instances correctly identified) and False Positive Rate (FPR, 1 - Specificity, is the proportion of negative instances incorrectly identified as positive). Then define the TPR and the FPR using conditional probabilities as follows\cite{Pepe2003}:
+Since ROC curve plots two parameters \cite{rocAnalysis}: True Positive Rate (TPR, also known as Sensitivity, is the proportion of positive instances correctly identified) and False Positive Rate (FPR, 1 - Specificity, is the proportion of negative instances incorrectly identified as positive). Then define the TPR and the FPR using conditional probabilities as follows \cite{Pepe2003}:
 
 \[ \text{TPR}(c) = \mathbb{P}[X \geq c | Y = 1], \quad \text{FPR}(c) = \mathbb{P}[X \geq c | Y = 0].\]
 
 \noindent
-The ROC curve is then the set of points $(\text{FPR}(c), \text{TPR}(c))$ for all possible values of threshold $c$. This curve plots the trade-off between sensitivity (or TPR) and specificity (1 - FPR) across different thresholds. Let $t=\text{FPR}(c)$, then $c = \text{FPR}^{-1}(t)$ and $\text{TPR}(c)= \text{TPR}(\text{FPR}^{-1}(t))$. Hence, let $\text{ROC}(t)= \text{TPR}(\text{FPR}^{-1}(t))$, the ROC curve can be represented as a parametric function of $t$\cite{Pepe2003} , with $t$ varying from 0 to 1:
+The ROC curve is then the set of points $(\text{FPR}(c), \text{TPR}(c))$ for all possible values of threshold $c$. This curve plots the trade-off between sensitivity (or TPR) and specificity (1 - FPR) across different thresholds. Let $t=\text{FPR}(c)$, then $c = \text{FPR}^{-1}(t)$ and $\text{TPR}(c)= \text{TPR}(\text{FPR}^{-1}(t))$. Hence, let $\text{ROC}(t)= \text{TPR}(\text{FPR}^{-1}(t))$, the ROC curve can be represented as a parametric function of $t$ \cite{Pepe2003} , with $t$ varying from 0 to 1:
 
 \[ \text{ROC} = \{ (t, \text{ROC}(t)) \,|\, t \in [0, 1] \}.\]
 
 \noindent
-Also, the Area Under the Curve (AUC)\cite{Pepe2003}  provides a single measure of overall performance of a classifier. This definition represents the integral of $\text{ROC}(t)$ over the interval from 0 to 1. It can be defined as:
+Also, the Area Under the Curve (AUC) \cite{Pepe2003}  provides a single measure of overall performance of a classifier. This definition represents the integral of $\text{ROC}(t)$ over the interval from 0 to 1. It can be defined as:
 
 \[ \text{AUC} = \int_{0}^{1} \text{ROC}(t) dt.\]
 
@@ -902,7 +902,7 @@ The larger the AUC\index{Receiver operating characteristic!AUC}, the better the 
 
 \subsubsection{ROC analysis in COVID-19 test}
 
-The COVID-19 pandemic underscores the need for accurate diagnostic tests to differentiate between positive and negative cases\cite{Garcia2021ROCAlly}. An effective mean for evaluating accuracy of various diagnostic tests is the ROC analysis. ROC analysis comprehensively examines test accuracy by integrating TPR, FPR, and AUC. These metrics are calculated by comparing test outcomes against a recognized gold standard, thereby determining the true disease status. This approach is vital for understanding the efficacy of COVID-19 diagnostic tools and guiding public health decisions.\\
+The COVID-19 pandemic underscores the need for accurate diagnostic tests to differentiate between positive and negative cases \cite{Garcia2021ROCAlly}. An effective mean for evaluating accuracy of various diagnostic tests is the ROC analysis. ROC analysis comprehensively examines test accuracy by integrating TPR, FPR, and AUC. These metrics are calculated by comparing test outcomes against a recognized gold standard, thereby determining the true disease status. This approach is vital for understanding the efficacy of COVID-19 diagnostic tools and guiding public health decisions.\\
 
 \noindent
 The TPR, or sensitivity, measures the proportion of actual positives correctly identified, reflecting the test's ability to detect COVID-19 cases. The FPR, conversely, indicates the rate of false alarms, where non-infected individuals are wrongly identified as infected. An ideal test minimises FPR, avoiding unnecessary treatments or quarantine. The ROC curve visualises the trade-off between TPR and FPR at various thresholds. A curve arching towards the upper left indicates high sensitivity and low FPR — the hallmarks of a reliable test. The AUC consolidates the ROC performance into a single value: 0.5 denotes no better accuracy than random chance, while 1.0 represents perfect accuracy. A higher AUC indicates a better overall ability of the test.\\
@@ -1090,7 +1090,7 @@ pivot_table <- pivot_table %>%
 @
 
 <<fire-by-months-fy13-22,fig.height=2.6,fig.width=5,fig.cap='Frequency of fire in Brazil (2013-2022)',fig.show='hold', message=FALSE,warning=FALSE>>=
-# Heatmap plot
+# HEATMAP PLOT
 heatmap_plot <- ggplot(pivot_table, 
                        aes(x = factor(abb_month, levels = custom_order), 
                            y = as.character(year), fill = count)) +
@@ -1176,7 +1176,7 @@ In the static scatter plot displayed in Figure~\ref{fig:gapminder_static}, there
 However, one can refer to the animated version of the scatter plot to solve many of these issues and discover details in the data that the static plot is unable to illustrate. While here the code chunk and screenshots are provided, the set animated plots of the gapminder dataset, produced using \textit{gganimate}, can be found in the \href{https://github.com/Qinqing-Li/Data-Visualisation-Project/tree/main/code}{GitHub code folder}. \\
 
 <<gganimate, echo=TRUE, fig.show='hide', results='hide', message=FALSE, warning=FALSE, error=TRUE>>=
-# create animated ggplot
+# CREATE ANIMATED GGPLOT
 gapplot<-ggplot(gapminder, aes(gdpPercap, lifeExp, colour = country)) +
   geom_point(alpha = 0.7, show.legend = FALSE) +
   scale_colour_manual(values = country_colors) +
@@ -1380,7 +1380,7 @@ For the simple linear regression model, the response variable is Miles per Gallo
 Observe that the t-test yields a p-value of $1.29 \times 10^{-10}$, which is less than $0.001$. This indicates that the variable wt holds high statistical significance in this model. For the fitted model, the slope is $\beta_1 = -5.3445$, meaning that for every increase of 1000 lbs, the car efficiency decreases by 5 miles per gallon. The RSS is 3.046. The simple linear regression line is displayed in Figure~\ref{fig:scatter-plot}.
 
 <<modelwt, echo=TRUE,message=FALSE,warning=FALSE>>=
-# Summary for simple linear regression, with response variable Miles per Gallon
+# SUMMARY FOR SIMPLE LINEAR REGRESSION, WITH RESPONSE VARIABLE MILES PER GALLON
 Modelwt <- lm(formula = mpg ~ wt, data = mtcars)
 summary(Modelwt)
 @
@@ -1496,7 +1496,7 @@ estate$price_per_area <- as.numeric(estate$price_per_area)
 @
 
 <<estate-data-plot,fig.height=2.5,fig.width=3.5,fig.pos='H', fig.cap='Estate valuation using house age, linear regression and smooth regression methods', message=FALSE,warning=FALSE>>=
-# linear regression vs. LOESS model
+# LINEAR REGRESSION VS. LOESS MODEL
 ggplot(data = estate, aes(x = house_age, y = price_per_area)) +
   geom_point(size =0.5) +
   theme_minimal()+

@@ -1,52 +1,52 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.13)  5 MAR 2024 18:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.4)  5 MAR 2024 19:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **main_file.tex
 (./main_file.tex
-LaTeX2e <2023-06-01> patch level 1
-L3 programming layer <2023-10-10>
-(c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-02-20>
+(c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
-(c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size10.clo
+(c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count185
-\c@section=\count186
-\c@subsection=\count187
-\c@subsubsection=\count188
-\c@paragraph=\count189
-\c@subparagraph=\count190
-\c@figure=\count191
-\c@table=\count192
+\c@part=\count188
+\c@section=\count189
+\c@subsection=\count190
+\c@subsubsection=\count191
+\c@paragraph=\count192
+\c@subparagraph=\count193
+\c@figure=\count194
+\c@table=\count195
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
+) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
+) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen141
 \Gin@req@width=\dimen142
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
+) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 274.
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
 Package xcolor Info: Model `RGB' extended on input line 1366.
@@ -56,206 +56,207 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/framed/framed.sty
+) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip50
 \fb@frw=\dimen143
 \fb@frh=\dimen144
 \FrameRule=\dimen145
 \FrameSep=\dimen146
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/alltt.sty
+) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/alltt.sty
 Package: alltt 2021/01/29 v2.0g defines alltt environment
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2023-11-26 v7.01g Hypertext links for LaTeX
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty
-Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-)) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
+)) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
-Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/auxhook/auxhook.sty
+) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
+) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count193
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+\c@section@level=\count196
+) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count194
+\etb@tempcnta=\count197
 )
 \@linkdim=\dimen147
-\Hy@linkcounter=\count195
-\Hy@pagecounter=\count196
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2023-11-26 v7.01g Hyperref: PDFDocEncoding definition (HO)
+\Hy@linkcounter=\count198
+\Hy@pagecounter=\count199
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
+) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-\Hy@SavedSpaceFactor=\count197
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2023-11-26 v7.01g Hyperref: PDF Unicode definition (HO)
+\Hy@SavedSpaceFactor=\count266
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Hyper figures OFF on input line 4181.
-Package hyperref Info: Link nesting OFF on input line 4186.
-Package hyperref Info: Hyper index ON on input line 4189.
-Package hyperref Info: Plain pages OFF on input line 4196.
-Package hyperref Info: Backreferencing OFF on input line 4201.
+Package hyperref Info: Hyper figures OFF on input line 4179.
+Package hyperref Info: Link nesting OFF on input line 4184.
+Package hyperref Info: Hyper index ON on input line 4187.
+Package hyperref Info: Plain pages OFF on input line 4194.
+Package hyperref Info: Backreferencing OFF on input line 4199.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4448.
-\c@Hy@tempcnt=\count198
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.sty
+Package hyperref Info: Bookmarks ON on input line 4446.
+\c@Hy@tempcnt=\count267
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4786.
+LaTeX Info: Redefining \url on input line 4784.
 \XeTeXLinkMargin=\dimen148
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
-\Fld@menulength=\count199
+\Fld@menulength=\count268
 \Field@Width=\dimen149
 \Fld@charsize=\dimen150
-Package hyperref Info: Hyper figures OFF on input line 6065.
-Package hyperref Info: Link nesting OFF on input line 6070.
-Package hyperref Info: Hyper index ON on input line 6073.
-Package hyperref Info: backreferencing OFF on input line 6080.
-Package hyperref Info: Link coloring OFF on input line 6085.
-Package hyperref Info: Link coloring with OCG OFF on input line 6090.
-Package hyperref Info: PDF/A mode OFF on input line 6095.
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+Package hyperref Info: Hyper figures OFF on input line 6063.
+Package hyperref Info: Link nesting OFF on input line 6068.
+Package hyperref Info: Hyper index ON on input line 6071.
+Package hyperref Info: backreferencing OFF on input line 6078.
+Package hyperref Info: Link coloring OFF on input line 6083.
+Package hyperref Info: Link coloring with OCG OFF on input line 6088.
+Package hyperref Info: PDF/A mode OFF on input line 6093.
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-\Hy@abspage=\count266
-\c@Item=\count267
-\c@Hfootnote=\count268
+\Hy@abspage=\count269
+\c@Item=\count270
+\c@Hfootnote=\count271
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2023-11-26 v7.01g Hyperref driver for pdfTeX
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2024-01-20 v7.01h Hyperref driver for pdfTeX
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
 )
-\Fld@listcount=\count269
-\c@bookmark@seq@number=\count270
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+\Fld@listcount=\count272
+\c@bookmark@seq@number=\count273
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 285.
 )
 \Hy@SectionHShift=\skip51
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/blindtext/blindtext.sty
+) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/blindtext/blindtext.sty
 Package: blindtext 2012/01/06 V2.0 blindtext-Package
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/xspace.sty
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-\c@blindtext=\count271
-\c@Blindtext=\count272
-\c@blind@countparstart=\count273
-\blind@countxx=\count274
-\blindtext@numBlindtext=\count275
-\blind@countyy=\count276
-\c@blindlist=\count277
-\c@blindlistlevel=\count278
-\c@blindlist@level=\count279
-\blind@listitem=\count280
-\c@blind@listcount=\count281
-\c@blind@levelcount=\count282
-\blind@mathformula=\count283
-\blind@Mathformula=\count284
-\c@blind@randomcount=\count285
-\c@blind@randommax=\count286
-\c@blind@pangramcount=\count287
-\c@blind@pangrammax=\count288
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/float/float.sty
+\c@blindtext=\count274
+\c@Blindtext=\count275
+\c@blind@countparstart=\count276
+\blind@countxx=\count277
+\blindtext@numBlindtext=\count278
+\blind@countyy=\count279
+\c@blindlist=\count280
+\c@blindlistlevel=\count281
+\c@blindlist@level=\count282
+\blind@listitem=\count283
+\c@blind@listcount=\count284
+\c@blind@levelcount=\count285
+\blind@mathformula=\count286
+\blind@Mathformula=\count287
+\c@blind@randomcount=\count288
+\c@blind@randommax=\count289
+\c@blind@pangramcount=\count290
+\c@blind@pangrammax=\count291
+) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count289
+\c@float@type=\count292
 \float@exts=\toks18
 \float@box=\box51
 \@float@everytoks=\toks19
 \@floatcapt=\box52
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count290
+) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count293
 \lst@gtempboxa=\box53
 \lst@token=\toks20
-\lst@length=\count291
+\lst@length=\count294
 \lst@currlwidth=\dimen151
-\lst@column=\count292
-\lst@pos=\count293
+\lst@column=\count295
+\lst@pos=\count296
 \lst@lostspace=\dimen152
 \lst@width=\dimen153
-\lst@newlines=\count294
-\lst@lineno=\count295
+\lst@newlines=\count297
+\lst@lineno=\count298
 \lst@maxwidth=\dimen154
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-\c@lstnumber=\count296
-\lst@skipnumbers=\count297
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/listings/lstpatch.sty
+File: lstpatch.sty 2024/02/21 1.10 (Carsten Heinz)
+) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
+\c@lstnumber=\count299
+\lst@skipnumbers=\count300
 \lst@framebox=\box54
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/listings/listings.cfg
-File: listings.cfg 2023/02/27 1.9 listings configuration
+) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2024/02/21 1.10 listings configuration
 ))
-Package: listings 2023/02/27 1.9 (Carsten Heinz)
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/appendix/appendix.sty
+Package: listings 2024/02/21 1.10 (Carsten Heinz)
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2020/02/08 v1.2c extra appendix facilities
-\c@@pps=\count298
-\c@@ppsavesec=\count299
-\c@@ppsaveapp=\count300
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+\c@@pps=\count301
+\c@@ppsavesec=\count302
+\c@@ppsaveapp=\count303
+) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2023/05/13 v2.17o AMS math features
 \@mathmargin=\skip52
 
 For additional information on amsmath, use the `?' option.
-(c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+(c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks21
 \ex@=\dimen155
-)) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+)) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen156
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count301
+\inf@bad=\count304
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count302
-\leftroot@=\count303
+\uproot@=\count305
+\leftroot@=\count306
 LaTeX Info: Redefining \overline on input line 399.
 LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count304
-\DOTSCASE@=\count305
+\classnum@=\count307
+\DOTSCASE@=\count308
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
@@ -268,20 +269,20 @@ LaTeX Info: Redefining \Bigg on input line 725.
 \big@size=\dimen157
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count306
+\macc@depth=\count309
 LaTeX Info: Redefining \bmod on input line 905.
 LaTeX Info: Redefining \pmod on input line 910.
 LaTeX Info: Redefining \smash on input line 940.
 LaTeX Info: Redefining \relbar on input line 970.
 LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count307
+\c@MaxMatrixCols=\count310
 \dotsspace@=\muskip17
-\c@parentequation=\count308
-\dspbrk@lvl=\count309
+\c@parentequation=\count311
+\dspbrk@lvl=\count312
 \tag@help=\toks22
-\row@=\count310
-\column@=\count311
-\maxfields@=\count312
+\row@=\count313
+\column@=\count314
+\maxfields@=\count315
 \andhelp@=\toks23
 \eqnshift@=\dimen158
 \alignsep@=\dimen159
@@ -295,33 +296,33 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \mathdisplay@stack=\toks25
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
+) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/comment/comment.sty
+)) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/comment/comment.sty
 \CommentStream=\write3
- Excluding comment 'comment') (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty
+ Excluding comment 'comment') (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip55
 \bibsep=\skip56
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count313
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/makeidx.sty
+\c@NAT@ctr=\count316
+) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/base/makeidx.sty
 Package: makeidx 2021/10/04 v1.0m Standard LaTeX package
-) (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty
+) (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count314
-\Gm@cntv=\count315
-\c@Gm@tempcnt=\count316
+\Gm@cnth=\count317
+\Gm@cntv=\count318
+\c@Gm@tempcnt=\count319
 \Gm@bindingoffset=\dimen164
 \Gm@wd@mp=\dimen165
 \Gm@odd@mp=\dimen166
@@ -337,9 +338,9 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 
 
 Writing index file main_file.idx
-(c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2023-11-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count317
+(c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count320
 \l__pdf_internal_box=\box57
 ) (./main_file.aux)
 \openout1 = `main_file.aux'.
@@ -362,10 +363,10 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 75.
 LaTeX Font Info:    ... okay on input line 75.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 75.
 LaTeX Font Info:    ... okay on input line 75.
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package hyperref Info: Link coloring OFF on input line 75.
@@ -373,7 +374,7 @@ Package hyperref Info: Link coloring OFF on input line 75.
 \@outlinefile=\write5
 \openout5 = `main_file.out'.
 
-\c@lstlisting=\count318
+\c@lstlisting=\count321
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -416,7 +417,7 @@ Package pdftex.def Info: image_reference/UniversityLogo.png  used on input line 
 (pdftex.def)             Requested size: 260.17464pt x 207.81516pt.
 [1
 
-{c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./image_reference/UniversityLogo.png>] [2]
+{c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./image_reference/UniversityLogo.png>] [2]
 Underfull \hbox (badness 10000) in paragraph at lines 116--118
 
  []
@@ -443,11 +444,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 128--130
 
 [3] (./main_file.toc
 LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
- (c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
+ (c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [4])
 \tf@toc=\write6
@@ -1058,7 +1059,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 581--583
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <7> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 600.
-<figure/beamer-all_exchange_rates-1.pdf, id=620, 418.56375pt x 252.945pt>
+<figure/beamer-all_exchange_rates-1.pdf, id=621, 418.56375pt x 252.945pt>
 File: figure/beamer-all_exchange_rates-1.pdf Graphic file (type pdf)
 <use figure/beamer-all_exchange_rates-1.pdf>
 Package pdftex.def Info: figure/beamer-all_exchange_rates-1.pdf  used on input line 613.
@@ -1093,7 +1094,7 @@ Overfull \hbox (1.47911pt too wide) in paragraph at lines 656--656
 []  []\OT1/cmtt/m/n/7 facet_wrap[][]([][]~[][]component,[] []scales[] []=[] []"free_y"[][],[] []ncol[] []=[] []1[][])[] []+[] []labs[][]([][]x[] []=[] []"Date"[][],[][]y[] []=[] []"Exchange Rate to GBP"[][])[] []+[] []theme_minimal[][]()[][] 
  []
 
-<figure/beamer-decomposition_of_time_series-1.pdf, id=645, 361.35pt x 216.81pt>
+<figure/beamer-decomposition_of_time_series-1.pdf, id=646, 361.35pt x 216.81pt>
 File: figure/beamer-decomposition_of_time_series-1.pdf Graphic file (type pdf)
 <use figure/beamer-decomposition_of_time_series-1.pdf>
 Package pdftex.def Info: figure/beamer-decomposition_of_time_series-1.pdf  used on input line 660.
@@ -1133,7 +1134,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 693--695
 
  []
 
-<figure/beamer-ACF-1.pdf, id=661, 289.08pt x 216.81pt>
+<figure/beamer-ACF-1.pdf, id=662, 289.08pt x 216.81pt>
 File: figure/beamer-ACF-1.pdf Graphic file (type pdf)
 <use figure/beamer-ACF-1.pdf>
 Package pdftex.def Info: figure/beamer-ACF-1.pdf  used on input line 708.
@@ -1169,7 +1170,7 @@ Overfull \hbox (3.35919pt too wide) in paragraph at lines 756--758
  []
 
 [28]
-<figure/beamer-roc-1.pdf, id=689, 252.945pt x 252.945pt>
+<figure/beamer-roc-1.pdf, id=690, 252.945pt x 252.945pt>
 File: figure/beamer-roc-1.pdf Graphic file (type pdf)
 <use figure/beamer-roc-1.pdf>
 Package pdftex.def Info: figure/beamer-roc-1.pdf  used on input line 775.
@@ -1199,17 +1200,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 816--818
 
  []
 
-<figure/beamer-spacetime-fy22-1.pdf, id=708, 505.89pt x 433.62pt>
+<figure/beamer-spacetime-fy22-1.pdf, id=709, 505.89pt x 433.62pt>
 File: figure/beamer-spacetime-fy22-1.pdf Graphic file (type pdf)
 <use figure/beamer-spacetime-fy22-1.pdf>
 Package pdftex.def Info: figure/beamer-spacetime-fy22-1.pdf  used on input line 836.
 (pdftex.def)             Requested size: 208.13574pt x 178.40068pt.
-<image_reference/mapshoot.png, id=709, 795.97375pt x 710.655pt>
+<image_reference/mapshoot.png, id=710, 795.97375pt x 710.655pt>
 File: image_reference/mapshoot.png Graphic file (type png)
 <use image_reference/mapshoot.png>
 Package pdftex.def Info: image_reference/mapshoot.png  used on input line 847.
 (pdftex.def)             Requested size: 208.13574pt x 185.81778pt.
-<figure/beamer-fire-by-months-fy13-22-1.pdf, id=710, 361.35pt x 187.70125pt>
+<figure/beamer-fire-by-months-fy13-22-1.pdf, id=711, 361.35pt x 187.70125pt>
 File: figure/beamer-fire-by-months-fy13-22-1.pdf Graphic file (type pdf)
 <use figure/beamer-fire-by-months-fy13-22-1.pdf>
 Package pdftex.def Info: figure/beamer-fire-by-months-fy13-22-1.pdf  used on input line 873.
@@ -1239,7 +1240,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 893--894
 
  []
 
-<figure/beamer-bubble-plot-construction-1.pdf, id=742, 794.97pt x 252.945pt>
+<figure/beamer-bubble-plot-construction-1.pdf, id=743, 794.97pt x 252.945pt>
 File: figure/beamer-bubble-plot-construction-1.pdf Graphic file (type pdf)
 <use figure/beamer-bubble-plot-construction-1.pdf>
 Package pdftex.def Info: figure/beamer-bubble-plot-construction-1.pdf  used on input line 898.
@@ -1259,7 +1260,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 916--917
 
  []
 
-<figure/beamer-gapminder_static-1.pdf, id=754, 289.08pt x 216.81pt>
+<figure/beamer-gapminder_static-1.pdf, id=755, 289.08pt x 216.81pt>
 File: figure/beamer-gapminder_static-1.pdf Graphic file (type pdf)
 <use figure/beamer-gapminder_static-1.pdf>
 Package pdftex.def Info: figure/beamer-gapminder_static-1.pdf  used on input line 921.
@@ -1275,7 +1276,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 933--935
  []
 
 LaTeX Font Info:    Trying to load font information for OMS+cmtt on input line 948.
-(c:/Program Files/R/R-4.3.2/share/texmf/tex/latex/omscmtt.fd
+(d:/RStudio/R-4.3.1/share/texmf/tex/latex/omscmtt.fd
 File: omscmtt.fd 
 )
 LaTeX Font Info:    Font shape `OMS/cmtt/m/n' in size <7> not available
@@ -1299,7 +1300,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<image_reference/gganimate1.png, id=770, 284.86424pt x 284.86424pt>
+<image_reference/gganimate1.png, id=771, 284.86424pt x 284.86424pt>
 File: image_reference/gganimate1.png Graphic file (type png)
 <use image_reference/gganimate1.png>
 Package pdftex.def Info: image_reference/gganimate1.png  used on input line 959.
@@ -1330,7 +1331,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<image_reference/gganimate2.png, id=771, 286.06876pt x 287.27325pt>
+<image_reference/gganimate2.png, id=772, 286.06876pt x 287.27325pt>
 File: image_reference/gganimate2.png Graphic file (type png)
 <use image_reference/gganimate2.png>
 Package pdftex.def Info: image_reference/gganimate2.png  used on input line 963.
@@ -1361,7 +1362,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<image_reference/gganimate3.png, id=772, 286.06876pt x 286.671pt>
+<image_reference/gganimate3.png, id=773, 286.06876pt x 286.671pt>
 File: image_reference/gganimate3.png Graphic file (type png)
 <use image_reference/gganimate3.png>
 Package pdftex.def Info: image_reference/gganimate3.png  used on input line 967.
@@ -1437,7 +1438,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1003--1004
 
  []
 
-<figure/beamer-bubble-plot-1.pdf, id=782, 794.97pt x 361.35pt>
+<figure/beamer-bubble-plot-1.pdf, id=783, 794.97pt x 361.35pt>
 File: figure/beamer-bubble-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-bubble-plot-1.pdf>
 Package pdftex.def Info: figure/beamer-bubble-plot-1.pdf  used on input line 1008.
@@ -1537,7 +1538,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1111--1113
 
  []
 
-<figure/beamer-cor-matrix-mtcars2-1.pdf, id=808, 361.35pt x 208.78pt>
+<figure/beamer-cor-matrix-mtcars2-1.pdf, id=809, 361.35pt x 208.78pt>
 File: figure/beamer-cor-matrix-mtcars2-1.pdf Graphic file (type pdf)
 <use figure/beamer-cor-matrix-mtcars2-1.pdf>
 Package pdftex.def Info: figure/beamer-cor-matrix-mtcars2-1.pdf  used on input line 1119.
@@ -1547,7 +1548,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1128--1130
 
  []
 
-<figure/beamer-scatter-plot-1.pdf, id=820, 289.08pt x 187.70125pt>
+<figure/beamer-scatter-plot-1.pdf, id=821, 289.08pt x 187.70125pt>
 File: figure/beamer-scatter-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-scatter-plot-1.pdf>
 Package pdftex.def Info: figure/beamer-scatter-plot-1.pdf  used on input line 1167.
@@ -1675,7 +1676,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1255--1257
  []
 
 [41]
-<figure/beamer-estate-data-plot-1.pdf, id=862, 252.945pt x 180.675pt>
+<figure/beamer-estate-data-plot-1.pdf, id=863, 252.945pt x 180.675pt>
 File: figure/beamer-estate-data-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-estate-data-plot-1.pdf>
 Package pdftex.def Info: figure/beamer-estate-data-plot-1.pdf  used on input line 1278.
@@ -1816,7 +1817,7 @@ Overfull \hbox (23.79189pt too wide) in paragraph at lines 1488--1488
  []
 
 [47]
-<figure/beamer-PCAbiplot-1.pdf, id=917, 867.24pt x 397.485pt>
+<figure/beamer-PCAbiplot-1.pdf, id=918, 867.24pt x 397.485pt>
 File: figure/beamer-PCAbiplot-1.pdf Graphic file (type pdf)
 <use figure/beamer-PCAbiplot-1.pdf>
 Package pdftex.def Info: figure/beamer-PCAbiplot-1.pdf  used on input line 1530.
@@ -1846,7 +1847,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1578--1579
 
  []
 
-<figure/beamer-P-curves-1.pdf, id=935, 650.43pt x 289.08pt>
+<figure/beamer-P-curves-1.pdf, id=936, 650.43pt x 289.08pt>
 File: figure/beamer-P-curves-1.pdf Graphic file (type pdf)
 <use figure/beamer-P-curves-1.pdf>
 Package pdftex.def Info: figure/beamer-P-curves-1.pdf  used on input line 1585.
@@ -1905,7 +1906,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1662--1663
 
  []
 
-<figure/beamer-t-SNE-1.pdf, id=969, 361.35pt x 216.81pt>
+<figure/beamer-t-SNE-1.pdf, id=970, 361.35pt x 216.81pt>
 File: figure/beamer-t-SNE-1.pdf Graphic file (type pdf)
 <use figure/beamer-t-SNE-1.pdf>
 Package pdftex.def Info: figure/beamer-t-SNE-1.pdf  used on input line 1667.
@@ -1949,7 +1950,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1698--1700
 
  []
 
-<figure/beamer-box-plots-1.pdf, id=988, 722.7pt x 361.35pt>
+<figure/beamer-box-plots-1.pdf, id=989, 722.7pt x 361.35pt>
 File: figure/beamer-box-plots-1.pdf Graphic file (type pdf)
 <use figure/beamer-box-plots-1.pdf>
 Package pdftex.def Info: figure/beamer-box-plots-1.pdf  used on input line 1706.
@@ -1982,7 +1983,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1719--1720
 
  []
 
-<figure/beamer-QQplots-1.pdf, id=999, 578.16pt x 289.08pt>
+<figure/beamer-QQplots-1.pdf, id=1000, 578.16pt x 289.08pt>
 File: figure/beamer-QQplots-1.pdf Graphic file (type pdf)
 <use figure/beamer-QQplots-1.pdf>
 Package pdftex.def Info: figure/beamer-QQplots-1.pdf  used on input line 1724.
@@ -2018,7 +2019,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1751--1753
  []
 
 [56]
-<image_reference/fbplot.png, id=1026, 847.165pt x 419.5675pt>
+<image_reference/fbplot.png, id=1027, 847.165pt x 419.5675pt>
 File: image_reference/fbplot.png Graphic file (type png)
 <use image_reference/fbplot.png>
 Package pdftex.def Info: image_reference/fbplot.png  used on input line 1797.
@@ -2053,7 +2054,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1821--1822
 
  []
 
-<figure/beamer-QQboxplots-1.pdf, id=1036, 578.16pt x 289.08pt>
+<figure/beamer-QQboxplots-1.pdf, id=1037, 578.16pt x 289.08pt>
 File: figure/beamer-QQboxplots-1.pdf Graphic file (type pdf)
 <use figure/beamer-QQboxplots-1.pdf>
 Package pdftex.def Info: figure/beamer-QQboxplots-1.pdf  used on input line 1826.
@@ -2122,25 +2123,25 @@ Underfull \hbox (badness 6284) in paragraph at lines 128--132
 
 ) [62] (./main_file.aux)
  ***********
-LaTeX2e <2023-06-01> patch level 1
-L3 programming layer <2023-10-10>
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `main_file.out' has not changed.
 (rerunfilecheck)             Checksum: 5B5FBABCAC2996248403C873A15C2579;14719.
  ) 
 Here is how much of TeX's memory you used:
- 13296 strings out of 476463
- 211475 string characters out of 5799821
- 1939043 words of memory out of 5000000
- 34606 multiletter control sequences out of 15000+600000
+ 13275 strings out of 476076
+ 211067 string characters out of 5791351
+ 1944190 words of memory out of 5000000
+ 34974 multiletter control sequences out of 15000+600000
  566192 words of font info for 66 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  75i,10n,79p,1250b,635s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main_file.pdf (62 pages, 7905888 bytes).
+ <c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk><c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb><c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb><c:/Users/chuyu/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main_file.pdf (62 pages, 7905811 bytes).
 PDF statistics:
- 1286 PDF objects out of 1440 (max. 8388607)
- 1094 compressed objects within 11 object streams
+ 1287 PDF objects out of 1440 (max. 8388607)
+ 1095 compressed objects within 11 object streams
  230 named destinations out of 1000 (max. 500000)
  752 words of extra memory for PDF output out of 10000 (max. 10000000)
 
