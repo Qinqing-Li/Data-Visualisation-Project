@@ -137,12 +137,12 @@ Throughout the thesis, vocabulary referencing the programme R is used. The R pac
 \section{Introduction}
 
 \noindent
-This paper is motivated by the enduring significance and power of data visualisation throughout history. This chapter contextualises the importance of the field by showcasing its influential applications, as well as its potentially dangerous misuses. Drawing from BBC Ideas \cite{bbcdatavis}, we analyse case examples to underscore both the power and pitfalls of data visualisations. Additionally, essential R packages including \textit{ggplot2} are introduced, along with a presentation of the datasets used throughout paper.\\
+This paper is motivated by the enduring significance and power of data visualisation throughout history. This chapter contextualises the importance of the field by showcasing some of its influential applications, as well as its potentially dangerous misuses. Drawing from BBC Ideas \cite{bbcdatavis}, we analyse case examples to underscore both the power and pitfalls of data visualisations. Additionally, essential R packages including \textit{ggplot2} are introduced, along with the datasets used throughout paper.\\
 
 \noindent \textbf{Literature and Research} 
 
 \noindent
-To appreciate the significance and impact of data visualisation, it is imperative to recognise its prominence within various method-specific publications. Notably, the \href{https://www.tandfonline.com/journals/ucgs20}{\textit{Journal of Computational and Graphical Statistics} stands out as a significant source of ongoing research in the realm of computational and graphical methods within statistics. This prestigious journal publishes ongoing research on the latest techniques in computational and graphical methods in statistics, encompassing data analysis and numerical graphical displays. Additionally, the \href{https://www.jstatsoft.org/index}{\textit{Journal of Statistical Software}} publishes peer-reviewed articles about statistical software, together with the source code. Collectively, these publications reveal the vast potential for current and future research in this ever-evolving domain, particularly as our digital landscape and data sphere rapidly expand.
+To appreciate the significance and impact of data visualisation, it is imperative to recognise its prominence within various method-specific publications. Notably, the \href{https://www.tandfonline.com/journals/ucgs20}{\textit{Journal of Computational and Graphical Statistics}} stands out as a significant source of ongoing research in the realm of computational and graphical methods within statistics. This prestigious journal publishes ongoing research on the latest techniques in computational and graphical methods in statistics, encompassing data analysis and numerical graphical displays. Additionally, the \href{https://www.jstatsoft.org/index}{\textit{Journal of Statistical Software}} publishes peer-reviewed articles about statistical software, together with the source code. Collectively, these publications reveal the vast potential for current and future research in this ever-evolving domain, particularly as our digital landscape and data sphere rapidly expand.
 
 \subsection{Historical Background and Misuses of Data Visualisation}
 
@@ -156,22 +156,22 @@ Florence Nightingale was not only a social reformer and the founder of modern nu
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{image_reference/Nightingale-mortality.jpg}
-    \caption{``Diagram of the causes of mortality in the army in the East" (1858) by Florence Nightingale \cite{graphFN}}
+    \caption{``Diagram of the causes of mortality in the army in the East" (1858) by Florence Nightingale}
     \label{fig:coxcomb}
 \end{figure}
 
 
 \noindent
-During the Crimean War, Nightingale recognised that unsanitary hospital conditions were claiming more lives than the battlefield itself. With the help of William Farr, Nightingale created the coxcomb aimed to illustrate the toll of preventable mortality on soldiers, as shown in Figure~\ref{fig:coxcomb}. The coxcomb, resembling an unconventional pie chart, partitioned mortality by causes. Blue indicates preventable deaths, red indicates deaths by wounds, and black indicates other causes. The blue areas outweighed the red and black sections combined, highlighting the disproportionate impact of unsanitary hospital conditions on the mortality rate.\\
+During the Crimean War, Nightingale recognised that unsanitary hospital conditions were claiming more lives than the battlefield itself. With the help of William Farr, Nightingale created the coxcomb aimed to illustrate the toll of preventable mortality on soldiers, as shown in Figure~\ref{fig:coxcomb} \cite{graphFN}. The coxcomb, resembling an unconventional pie chart, partitioned mortality by causes. Blue indicates preventable deaths, red indicates deaths by wounds, and black indicates other causes. The blue areas outweighed the red and black sections combined, highlighting the disproportionate impact of unsanitary hospital conditions on the mortality rate.\\
 
 \noindent
-Nightingale leveraged the compelling visualisations in her advocacy efforts, presenting them to MPs and government officials who otherwise are unlikely to read or understand statistical reports. She successfully persuaded Queen Victoria, head of the British Army at the time, to allocate funding for the improvement of better conditions in military hospitals.\\
+Nightingale leveraged the compelling visualisations in her advocacy efforts, presenting them to members of Parliament and government officials who otherwise were unlikely to read or understand statistical reports. She successfully persuaded Queen Victoria, head of the British Army at the time, to allocate funding for the improvement of military hospitals.\\
 
 \noindent
 \textbf{Motivations for Using Data Visualisations — Case 2}
 
 \noindent
-Sometimes, one glance is enough to convey the most powerful idea. Edward Hawkins, a British climate scientist and Professor of climate science at the University of Reading, is renowned for his exceptional data visualisations of climate change.\\
+Sometimes, one glance is enough to convey a powerful idea. Edward Hawkins, a British climate scientist and Professor of climate science at the University of Reading, is renowned for his exceptional data visualisations of climate change.\\
 
 \noindent
 In 2018, Edward Hawkins was invited to deliver a lecture on climate change in Wales to an audience with diverse backgrounds. It was important to effectively convey the growing urgency surrounding global warming. To achieve this, he created a chart that used only colours, without any words, titles, or legends, as shown in Figure~\ref{fig:global} \cite{blog}. This seemingly simple, yet remarkably powerful chart visually illustrated the Earth's warming trend since 1850.
@@ -193,14 +193,17 @@ Known as the ``warming stripes," this chart cleverly employs blues to indicate c
 Having observed the remarkable effectiveness of data visualisations, the significance of employing them correctly becomes apparent. The improper use of data visualisations holds the potential to significantly influence the public in misleading ways, resulting in undesired consequences.\\
 
 \noindent
-Inappropriate data visualisation can conceal trends rather than reveal them. Figure~\ref{fig:misuse1} illustrates an instance of this issue. On the left-hand side, an inappropriate scale is used — the y-scale ranging from 0 to 30 million dollars, obscuring the fluctuations in payroll spending. Conversely, on the right-hand side, observe that there's a significant increase of over 500,000 dollars in just two months. This revelation is substantial; considering inflation, 500,000 dollars in 1937 is worth well over 10 million dollars today \cite{worth}.
+In fact, inappropriate data visualisation can conceal trends rather than reveal them. Figure~\ref{fig:misuse1} \cite{lie} illustrates an instance of this issue. On the left-hand side of the figure, an inappropriate scale is used — the y-scale ranges from 0 to 30 million dollars. In this way, the fluctuations in payroll spending are obscured. Conversely, on the right-hand side, a significant increase of over 500,000 dollars in just two months can be observed due to the use of a different scale. This revelation is substantial; considering inflation, 500,000 dollars in 1937 is worth well over 10 million dollars today \cite{worth}.\\
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{image_reference/misuse1.png}
-    \caption{Incomplete Data Analysis, ``How to lie with statistics" by Miguel de Carvalho \cite{lie}}
+    \caption{Incomplete Data Analysis, ``How to lie with statistics" by Miguel de Carvalho}
     \label{fig:misuse1}
 \end{figure}
+
+\noindent 
+Thus, the scale used in graphs serves as a critical tool, enabling the clear representation of data. However, it also holds the potential to mislead if not employed appropriately. The manipulation of scales can distort the interpretation of data, leading to misrepresentations of reality.\\
 
 \noindent 
 \textbf{Misuses of Data Visualisation — Case 2}
@@ -209,65 +212,70 @@ Inappropriate data visualisation can conceal trends rather than reveal them. Fig
 One striking example of data visualisation misuse is found in the Kallikak Family tree — one of the most prominent eugenic narratives of the 20th century.\\
 
 \noindent
-The visualisation, shown in Figure~\ref{fig:familytree}, was created by the psychologist Henry Goddard and presented in his 1912 book, ``The Kallikak Family: A Study in the Heredity of Feeble-Mindedness." Goddard's narrative centered around Martin Kallikak, a soldier who, in addition to his marriage to a respected citizen, had a one-night stand with a ``feeble-minded" maid. Goddard believed that intellectual disabilities were inherited traits. In Goddard's account, the legitimate family was successful, while the children of the ``feeble-minded" maid were labeled as ``the lowest types of human beings." However, research has since revealed that the entire story was fictitious, as there was no record of the maid's existence \cite{fakedata}.\\
-
-\noindent
-Regrettably, the Kallikak family tree became a central element in the eugenics movement. Figure \ref{fig:familytree} was featured in the 1935 Nazi propaganda film ``Das Erbe" (The Inheritance), which was used to promote public acceptance of Nazi eugenics laws. This propaganda laid the groundwork for the forced sterilisation of approximately 400,000 people under Nazi eugenics policies \cite{eugenics}.
+The visualisation, shown in Figure~\ref{fig:familytree} \cite{ktree}, was created by the psychologist Henry Goddard and presented in his 1912 book, ``The Kallikak Family: A Study in the Heredity of Feeble-Mindedness." Goddard's narrative centered around Martin Kallikak, a soldier who, in addition to his marriage to a respected citizen, had a one-night stand with a ``feeble-minded" maid. Goddard believed that intellectual disabilities were inherited traits. In Goddard's account, the legitimate family was successful, while the children of the ``feeble-minded" maid were labeled as ``the lowest types of human beings." However, research has since revealed that the entire story was fictitious, as there was no record of the maid's existence \cite{fakedata}.\\
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{image_reference/familytree.jpg}
-    \caption{The Kallikak Family tree (1912) by Henry Goddard \cite{ktree}}
+    \caption{The Kallikak Family tree (1912) by Henry Goddard}
     \label{fig:familytree}
 \end{figure}
 
+\noindent
+Regrettably, the Kallikak family tree became a central element in the eugenics movement. Figure \ref{fig:familytree} was featured in the 1935 Nazi propaganda film ``Das Erbe" (The Inheritance), which was used to promote public acceptance of Nazi eugenics laws. This propaganda laid the groundwork for the forced sterilisation of approximately 400,000 people under Nazi eugenics policies \cite{eugenics}.
+
 \subsection{Computing and Data Visualisation}
 \noindent
-As a powerful tool for statistical analysis and graphic creation, the programme R offers a wide array of functionalities to cater to a range of data visualisation needs. We will first introduce the commonly used R package \textit{ggplot2}\index{R package!ggplot2}, then we will present key packages mobilised to produce clear and compelling graphs.\\
+Over the years, numerous tools have been developed to facilitate the generation of data visualisation. The programme R stands out as a powerful tool for statistical analysis and graphic creation, offering a wide array of functionalities to cater to various data visualisation needs. We will first introduce the commonly used R package \textit{ggplot2}\index{R package!ggplot2}. Then, other key packages used to produce clear and compelling graphs in R will be presented.\\
+
+\noindent \textbf{The \textit{ggplot} Package}\\
+\noindent
+The \textit{ggplot2} package is the main tool in R used to create plots representing datasets of various natures. The foundation of \textit{ggplot2} lies in Leland Wilkinson's \href{https://link.springer.com/chapter/10.1007/978-3-642-21551-3_13}{\textit{The Grammar of Graphics}}, allowing the sequential construction of the individual elements composing a graph. These individual elements are combined to create a unified graphical representation.\\
 
 \noindent
-\textit{ggplot2} is the main tool used to create plots representing various types of datasets. The foundation of \textit{ggplot2} lies in the Grammar of Graphics, allowing the sequential construction of individual elements composing a graph. These elements are then combined to create a unified graphical representation.\\
+This R package, \textit{ggplot2}, is notable for its robustness and flexibility, enabling the creation of customised graphics rather than adhering strictly to pre-set options. Despite the initial learning curve, \textit{ggplot2} is crafted to be user-friendly, offering sensible defaults and an iterative method for constructing plots. Its focus lies in uncovering the underlying message within the data. Furthermore, \textit{ggplot2} is structured to support layered and annotated graphics that enhance data analysis, especially for beginners and those new to data exploration.\\
 
-\noindent
-The R package \textit{ggplot2} is notable for its robustness and flexibility, enabling the creation of customised graphics rather than adhering strictly to pre-set options. Despite the initial learning curve, \textit{ggplot2} is crafted to be user-friendly, offering sensible defaults and an iterative method for constructing plots. Its focus lies in uncovering the underlying message within the data. Furthermore, \textit{ggplot2} is structured to support layered and annotated graphics that enhance data analysis, especially for beginners and those new to data exploration.\\
-
-\noindent\textbf{Key ggplot2 Commands}\\
+\noindent\textbf{Key \textit{ggplot2} Commands}\\
 \noindent 
-As shown in subsequent sections, it is possible to produce visualisations rather effortlessly by using internal data from R, or even external data, together with \textit{ggplot2}. When using this package, certain key tools are used repeatedly to create visual plots from datasets. The tools below mentioned are integral functions within the ggplot2 package in R for creating sophisticated visualisations \cite{ggplot2}:\\
+As shown in subsequent sections, it is possible to produce visualisations rather effortlessly by using internal data from R, or even external data, together with \textit{ggplot2}. When using this package, certain key tools are used repeatedly to create visual plots from datasets. Some of these integrals tools for creating sophisticated visualisations are presented subsequently \cite{ggplot2}:\\
 
 \noindent
-\texttt{geom} refers to geometric objects, pivotal components within \textit{ggplot2} used to define the visual representation of data in a plot. Each \texttt{geom} function corresponds to a specific graphical representation type in a chart. Additionally, in \textit{ggplot2}, \texttt{scales} functions enable the adjustment of various mapping details, including colour choices, label formatting, legend arrangement, and more.\\
+Firstly, the \texttt{geom} function refers to "geometric objects". It is pivotal took in \textit{ggplot2} used to specify the type of geometric objects or shapes to be drawn on a plot. Additionally, the \texttt{scales} function enables the adjustment of various mapping details, including colour choices, label formatting, legend arrangement, and more.\\
 
-\noindent \texttt{coord} provides the axes and gridlines which aid in interpreting the graph. Various coordinate systems such as cartesian, polar, and map projections are available. Furthermore, \texttt{faceting} is a robust feature enabling the partitioning of a single plot into multiple plots based on factors present in the dataset. This functionality proves particularly beneficial for exploring and presenting data with multiple groups or categories.\\
+\noindent Furthermore, the \texttt{coord} function provides the axes and gridlines which aid in structuring and interpreting the graph. Various coordinate systems such as cartesian, polar, and map projections are available. Moreover, \texttt{faceting} is a robust feature enabling the partitioning of a single plot into multiple plots based on factors present in the dataset. This functionality proves particularly beneficial for exploring and presenting data with multiple groups or categories.\\
 
 \noindent The \texttt{theme} function holds significance in customising the non-data elements of plots. The theme system within \textit{ggplot2} allows precise adjustment of aesthetic aspects such as fonts, labels, legends, and background colours. This tool is essential for enhancing plot readability and creating visually captivating graphics tailored to specific audiences or publication requirements.\\
 
-\noindent \textbf{Key \textit{ggplot2} Packages}\\
-\noindent The R language is a powerful tool for data analysis, owing to the wide array of R packages that facilitate diverse functions. Throughout this project, we will use many different packages, each enhancing the analysis and presentation of data.\\
+\noindent \textbf{key Additional Packages}\\
 
-\noindent The \textit{tidyverse}\index{R package!tidyverse} package serves as a comprehensive collection of R packages tailored to provide a cohesive set of tools for data science. This collection includes several widely used packages such as \textit{ggplot2} and \textit{dplyr}\index{R package!dplyr}. Particularly, the \textit{dplyr} package plays a pivotal role in data manipulation and transformation. It enables us to filter, sort, summarise, and transform datasets, thereby streamlining data analysis and management.\\
+\noindent The R language, on top of the \textit{ggplot2}, has a wide array of packages facilitating diverse functions. Throughout this project, various packages will be used, each enhancing the analysis and presentation of data.\\
 
-\noindent Recent research developments in graphical methods, as discussed in the \textit{Journal of Computational Statistics}, include techniques such as t-SNE and Q–Q boxplots. We have implemented these methods into the analysis using the \textit{Rtsne}\index{R package!Rtsne} and \textit{qqboxplot}\index{R package!qqboxplot} packages.\\ 
+\noindent The \textit{tidyverse}\index{R package!tidyverse} is  collection of R packages designed for data science and manipulation. It includes several packages that work seamlessly together, providing a consistent approach to data processing, visualisation, and analysis.\\
+
+\noindent Some of the key packages included in the collection are widely used packages such as \textit{ggplot2} and \textit{dplyr}\index{R package!dplyr}. Particularly, the \textit{dplyr} package plays a pivotal role in data manipulation and transformation. It enables the filtering, sorting, summarising, and transforming of datasets, thereby streamlining data analysis and management.\\
+
+\noindent Moreover, recent research developments in graphical methods, as discussed in the \textit{Journal of Computational Statistics}, include techniques such as t-SNE and Q–Q boxplots. The \textit{Rtsne}\index{R package!Rtsne} and \textit{qqboxplot}\index{R package!qqboxplot} packages have allowed us to implement these methods in the report.\\ 
 
 \subsection{Datasets}
 \noindent
-This section introduces the different datasets analysed and visualised in the subsequent chapters.\\
+This section provides an overview of the different datasets analysed and visualised in the subsequent chapters.\\
 
-\noindent \textbf{mtcars}: The built-in R dataset, \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars}{mtcars} was extracted from the 1974 Motor Trend US magazine. It includes the fuel consumption and 10 aspects of automobile design for 32 automobiles (1973–74 models). \\
+\noindent \textbf{Built-in R Datasets}\\
+\noindent \textbf{mtcars}: The \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars}{mtcars} dataset was extracted from the 1974 Motor Trend US magazine. It includes the fuel consumption and 10 aspects of automobile design for 32 automobiles (1973–74 models). \\
 
 \noindent
-\textbf{iris}: The built-in R dataset \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/iris}{iris} was collected by Edgar Anderson. This dataset was famously used by British statistician Ronald Fisher to demonstrate linear discriminant analysis in 1936. It encompasses 5 flower characteristics for 3 types of iris, each with 50 samples. \\
+\textbf{iris}: The \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/iris}{iris} dataset was collected by Edgar Anderson. This dataset was famously used by British statistician Ronald Fisher to demonstrate linear discriminant analysis in 1936. It encompasses 5 flower characteristics for 3 types of iris, each with 50 samples. \\
 
 \noindent 
-\textbf{gapminder}: The built-in R dataset, gapminder, was provided by Gapminder Foundation. It encapsulates key demographic statistics like life expectancy, GDP per capita, and population across
-various countries spanning multiple years, illustrating global development trends.\\
+\textbf{gapminder}: The gapminder dataset was provided by the Gapminder Foundation. It encapsulates key demographic statistics like life expectancy, GDP per capita, and population across various countries spanning multiple years, illustrating global development trends.\\
 
 \noindent
-\textbf{palmerpenguins}: The built-in R dataset \href{https://www.rdocumentation.org/packages/palmerpenguins/versions/0.1.1}{palmerpenguins} was provided by the Palmer Station Long Term Ecological Research. This dataset contains biometric measurements from three distinct penguin species inhabiting the Palmer Archipelago in Antarctica, namely the Adélie, Chinstrap, and Gentoo penguins.\\
+\textbf{palmerpenguins}: The \href{https://www.rdocumentation.org/packages/palmerpenguins/versions/0.1.1}{palmerpenguins} dataset was provided by the Palmer Station Long Term Ecological Research. This dataset contains biometric measurements from three distinct penguin species inhabiting the Palmer Archipelago in Antarctica, namely the Adélie, Chinstrap, and Gentoo penguins.\\
 
 \noindent
-\textbf{ToothGrowth}: The built-in R dataset, \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/ToothGrowth}{ToothGrowth}, measures the tooth growth of 60 guinea pigs. Each animal was either administered with vitamin C or orange juice.\\
+\textbf{ToothGrowth}: The \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/ToothGrowth}{ToothGrowth} dataset measures the tooth growth of 60 guinea pigs. Each animal was either administered with vitamin C or orange juice.\\
 
+\noindent \textbf{External Datasets}
 \noindent
 \textbf{Fire in Brazil}: Open-source fire observation data is provided by \href{https://firms.modaps.eosdis.nasa.gov/}{NASA}. The analysis focuses on Brazil (2013-2022). Note that the dataset contains the variable ``confidence", ranging from 0\% to 100\%. The dataset was filtered with a confidence level of $\ge$ 95\%  to ensure an accurate account of fire occurrences \cite{nasa_confidence}.\\
 
