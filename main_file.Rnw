@@ -80,14 +80,13 @@ opts_chunk$set(fig.path = 'figure/beamer-',
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{image_reference/UniversityLogo.png}
+    \includegraphics[width=0.35\textwidth]{image_reference/UniversityLogo.png}
 \end{figure}
 
 \vspace {1.5cm}
 
-\textbf{\LARGE The School of Mathematics} \\
+The School of Mathematics \\
 \vspace {0.25cm}
-\LARGE Undergraduate Mathematics Project \\ 
 
 \vspace{1.5cm}
 
@@ -103,22 +102,10 @@ Dr. Miguel De Carvalho \\
 
 \newpage
 
-\section*{Overview}
+\section*{Abstract}
 
 \noindent
-Graphical statistics is an indispensable tool in the arsenal of every contemporary data project. Primarily, it enables one to delve into the data, explore its nuances, and effectively communicate empirical discoveries through visual means. This project aims to provide an overview of modern data visualisation methods, delve into their theoretical underpinnings, and demonstrate the potency of these methodologies using both synthetic and authentic datasets.\\
-
-\noindent 
-Furthermore, the project is aware of the ongoing evolution of novel data visualisation techniques, recognising it as an active area of research (e.g. Rodu and Kafadar, 2022). Thus, it aims to cover both textbook methods as well as state-of-the-art approaches and open problems.\\
-
-\noindent
-The paper explores the theoretical foundations that underlie various visualisation methodologies, studies their mathematical construction, and illustrates their practical application. In particular, while Chapter 2 focuses on the theoretical framework of data visualisation, the main body is made up of Chapters 3, 4, and 5. These chapters concentrate on standard implementations of graphical statistics for univariate, bivariate, and multivariate datasets, respectively.\\
-
-\noindent 
-Chapter 3 discusses Histograms, the Kernel Density Estimate, Bar Charts, Time Series Analysis, and the ROC Curve. In Chapter 4, the focus shifts to bivariate data, covering Heatmaps, Scatter and Bubble Plots, as well as regression, including Simple Linear Regression and LOESS Regression theory. Chapter 5 introduces multivariate data visualisation methods, presenting Principal Component Analysis, along with the theoretical foundation and practical applications of Biplots, Principal Curves, and t-SNE. The final chapter, Chapter 6, examines active research areas in graphical statistics, with a particular emphasis on Box Plots.\\
-
-\noindent
-Throughout the thesis, vocabulary referencing the programme R is used. The R package names such as \textit{ggplot2} are italicised, while R commands like \texttt{faceting} are displayed in a teletype font. The R code chunks for each figure in the report can be found in a separate \href{https://github.com/Qinqing-Li/Data-Visualisation-Project/tree/main/code}{GitHub code folder}. \\
+This project aims to provide the theory of graphical statistics methods and their visual implementations using R, utilising open-source datasets from different sectors. The authors recognise that graphical statistics is an active area of research, therefore textbook methods and state-of-the-art methods will be covered. Chapters 3 to 5 concentrate on standard implementations of graphical statistics methods for univariate, bivariate, and multivariate data, respectively. Chapter 6 focuses on functional boxplots and Q–Q boxplots, which were published in the \textit{Journal of Computational and Graphical Statistics} in 2011 and 2022, respectively. The R package names such as \textit{ggplot2} are italicised, while R commands like \texttt{faceting} are displayed in a teletype font.\\
 
 \newpage 
 
@@ -190,7 +177,7 @@ In fact, inappropriate data visualisation can conceal trends rather than reveal 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{image_reference/misuse1.png}
-    \caption{Incomplete Data Analysis, ``How to lie with statistics" by Miguel de Carvalho}
+    \caption{Incomplete Data Analysis by Miguel de Carvalho, ``How to lie with statistics" \cite{liestats}}
     \label{fig:misuse1}
 \end{figure}
 
@@ -247,40 +234,37 @@ Firstly, the \texttt{geom} function refers to "geometric objects". It is pivotal
 \noindent Some of the key packages included in the collection are widely used packages such as \textit{ggplot2} and \textit{dplyr}\index{R package!dplyr}. Particularly, the \textit{dplyr} package plays a pivotal role in data manipulation and transformation. It enables the filtering, sorting, summarising, and transforming of datasets, thereby streamlining data analysis and management.\\
 
 \noindent Moreover, recent research developments in graphical methods, as discussed in the \textit{Journal of Computational Statistics}, include techniques such as t-SNE and Q–Q boxplots. The \textit{Rtsne}\index{R package!Rtsne} and \textit{qqboxplot}\index{R package!qqboxplot} packages have allowed us to implement these methods in the report.\\ 
-
+\newpage
 \subsection{Datasets}
 \noindent
-This section provides an overview of the different datasets analysed and visualised in the subsequent chapters.
-
-\subsubsection{Built-in R Datasets}
-
-\noindent \textbf{mtcars}: The \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars}{mtcars} dataset was extracted from the 1974 Motor Trend US magazine. It includes the fuel consumption and 10 aspects of automobile design for 32 automobiles (1973–74 models). \\
+This section provides an overview of the different datasets analysed and visualised in the subsequent chapters.\\
 
 \noindent
-\textbf{iris}: The \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/iris}{iris} dataset was collected by Edgar Anderson. This dataset was famously used by British statistician Ronald Fisher to demonstrate linear discriminant analysis in 1936. It encompasses 5 flower characteristics for 3 types of iris, each with 50 samples. \\
+\href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars}{\textbf{mtcars}}: The dataset was extracted from the 1974 Motor Trend US magazine. It includes the fuel consumption and 10 aspects of automobile design for 32 automobiles (1973–74 models). \hfill (built-in R) \\
+
+\noindent
+\href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/iris}{\textbf{iris}}: The dataset was collected by Edgar Anderson. This dataset was famously used by British statistician Ronald Fisher to demonstrate linear discriminant analysis in 1936. It encompasses 5 flower characteristics for 3 types of iris, each with 50 samples. \hfill (built-in R)\\
 
 \noindent 
-\textbf{gapminder}: The gapminder dataset was provided by the Gapminder Foundation. It encapsulates key demographic statistics like life expectancy, GDP per capita, and population across various countries spanning multiple years, illustrating global development trends.\\
+\href{https://www.gapminder.org/data/documentation/gd001/}{\textbf{gapminder}}: The dataset was provided by the Gapminder Foundation. It encapsulates key demographic statistics like life expectancy, GDP per capita, and population across various countries spanning multiple years, illustrating global development trends.\\
 
 \noindent
-\textbf{palmerpenguins}: The \href{https://www.rdocumentation.org/packages/palmerpenguins/versions/0.1.1}{palmerpenguins} dataset was provided by the Palmer Station Long Term Ecological Research. This dataset contains biometric measurements from three distinct penguin species inhabiting the Palmer Archipelago in Antarctica, namely the Adélie, Chinstrap, and Gentoo penguins.\\
+\href{https://www.rdocumentation.org/packages/palmerpenguins/versions/0.1.1}{\textbf{palmerpenguins}}: This dataset contains biometric measurements from three distinct penguin species inhabiting the Palmer Archipelago in Antarctica, namely the Adélie, Chinstrap, and Gentoo penguins. \hfill (built-in R)\\
 
 \noindent
-\textbf{ToothGrowth}: The \href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/ToothGrowth}{ToothGrowth} dataset measures the tooth growth of 60 guinea pigs. Each animal was either administered with vitamin C or orange juice.
-
-\subsubsection{External Datasets}
+\href{https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/ToothGrowth}{\textbf{ToothGrowth}}: The dataset measures the tooth growth of 60 guinea pigs. Each animal was either administered with vitamin C or orange juice.  \hfill (built-in R)\\
 
 \noindent
-\textbf{Fire in Brazil}: Open-source fire observation data is provided by \href{https://firms.modaps.eosdis.nasa.gov/}{NASA}. The analysis focuses on Brazil (2013-2022). Note that the dataset contains the variable ``confidence", ranging from 0\% to 100\%. The dataset was filtered with a confidence level of $\ge$ 95\%  to ensure an accurate account of fire occurrences \cite{nasa_confidence}.\\
+\href{https://firms.modaps.eosdis.nasa.gov/}{\textbf{Fire in Brazil}}: Open-source fire observation data is provided by NASA. The analysis focuses on Brazil (2013-2022). Note that the dataset contains the variable ``confidence", ranging from 0\% to 100\%. The dataset was filtered with a confidence level of $\ge$ 95\%  to ensure an accurate account of fire occurrences \cite{nasa_confidence}.\\
 
 \noindent
-\textbf{Exchange Rate}: The exchange rate data, available at the \href{https://www.bankofengland.co.uk/boeapps/database/index.asp?first=yes&SectionRequired=I&HideNums=-1&ExtraInfo=true&Travel=NIx}{Bank of England}, provides daily spot exchange rates against the pound Sterling (2005-present). This report examines the daily spot rates of the Canadian Dollar, Euro, and US Dollar against the pound Sterling.\\
+\href{https://www.bankofengland.co.uk/boeapps/database/index.asp?first=yes&SectionRequired=I&HideNums=-1&ExtraInfo=true&Travel=NIx}{\textbf{Exchange Rate}}: The exchange rate data from the Bank of England provides daily spot exchange rates against the pound Sterling from 2005 to the present. This report examines the daily spot rates of the Canadian Dollar, Euro, and US Dollar against the pound Sterling.\\
 
 \noindent
-\textbf{Metabolic Syndrome Data}: The oxygen saturation in blood, for a healthy population of 80 women and a diseased population of 35 women. These data were collected through a survey conducted in North-West Spain. The dataset is accessible via \href{https://cloud.r-project.org/web/packages/DATAstudio/DATAstudio.pdf}{DATAstudio}, a collection of datasets from research articles by Miguel de Carvalho.\\
+\href{https://cloud.r-project.org/web/packages/DATAstudio/DATAstudio.pdf}{\textbf{Metabolic Syndrome Data}}: The oxygen saturation in blood, for a healthy population of 80 women and a diseased population of 35 women. These data were collected through a survey conducted in North-West Spain. The dataset is accessible via DATAstudio, a collection of datasets from research articles by Miguel de Carvalho.\\
 
 \noindent
-\textbf{Taipei Housing}: The historical real estate valuation from Sindian Dist., New Taipei City, Taiwan,  available at \href{https://archive.ics.uci.edu/dataset/477/real+estate+valuation+data+set}{UC Irvine Machine Learning Repository}.
+\href{https://archive.ics.uci.edu/dataset/477/real+estate+valuation+data+set}{\textbf{Taipei Housing}}: The historical real estate valuation from Sindian Dist., New Taipei City, Taiwan,  available at UC Irvine Machine Learning Repository.
 
 \newpage 
 
@@ -1345,6 +1329,11 @@ The least squares estimate of $\boldsymbol{\beta}$ is given by:
 \hat{\boldsymbol{\beta}} = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}.
 \end{equation}
 \\ 
+\noindent 
+The least squares estimate $\hat{\boldsymbol{\beta}}$ is an unbiased estimator:
+
+$$ \mathrm{E}(\hat{\boldsymbol{\beta}}) = \mathrm{E}((\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{y}) = (\mathbf{X}^T\mathbf{X})^{-1}\mathbf{X}^T\mathbf{X}\boldsymbol{\beta} = \boldsymbol{\beta}.
+$$
 \noident 
 \subsubsection{Case Example: 1970s Automobiles}\\
 \noindent In this section, we will study the performance of 1970s automobiles using the mtcars dataset, employing the method of linear regression. Performance is measured in Miles per Gallon (mpg); the higher the mileage, the more efficient the automobile. We will start with the visualisation of a simple linear regression model, followed by the discussion of linear regression models and the model selection method.
@@ -1550,7 +1539,7 @@ $$
 In general, the vector $\mathbf{w}_i$ is given by the equation $\mathbf{\Sigma} \mathbf{w}_i = \lambda \mathbf{w}_i$, where $\mathbf{\Sigma}$ is the covariance matrix and $\lambda$ is the $i^{th}$ largest eigenvalue of $\mathbf{\Sigma}$, for $i = 1, \dots, L$.\\
 
 \noindent
-Define the covariance matrix \index{Principal component analysis!covariance matrix}$\mathbf{\Sigma}$ as $\mathbf{\Sigma} = \frac{1}{N} \sum_{n=1}^N(\mathbf{x}_n-\bar{x})(\mathbf{x}_n-\bar{x})^T$. Without loss of generality, let's assume that the data matrix $\mathbf{X}$ is centred around $0$ mean denoted as $\bar{x} = 0$. Then, the covariance matrix can be written as:
+Define the covariance matrix \index{Principal component analysis!covariance matrix}$\mathbf{\Sigma}$ as $\mathbf{\Sigma} = \frac{1}{N} \sum_{n=1}^N(\mathbf{x}_n-\bar{\mathbf{x}})(\mathbf{x}_n-\bar{\mathbf{x}})^T$. Without loss of generality, let's assume that the data matrix $\mathbf{X}$ is centred around $0$ mean denoted as $\bar{x} = 0$. Then, the covariance matrix can be written as:
 
 \begin{equation}
 \mathbf{\Sigma} = \frac{1}{N} \sum_{n=1}^N\mathbf{x}_n\mathbf{x}_n^T = \frac{1}{N} \mathbf{X}\mathbf{X}^T. \label{eq:cov}

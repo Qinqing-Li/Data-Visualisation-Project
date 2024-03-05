@@ -1,99 +1,99 @@
 \begin{theindex}
 
   \item Biplot
-    \subitem singular values, \hyperpage{45}
+    \subitem singular values, \hyperpage{46}
   \item Biplots
-    \subitem singular value decomposition, \hyperpage{44}
+    \subitem singular value decomposition, \hyperpage{45}
 
   \indexspace
 
   \item Colour theory
-    \subitem colour discrimination, \hyperpage{15}
+    \subitem colour discrimination, \hyperpage{16}
 
   \indexspace
 
   \item Funtional boxplot
-    \subitem band, \hyperpage{55}
-    \subitem band depth, \hyperpage{55}
+    \subitem band, \hyperpage{56}
+    \subitem band depth, \hyperpage{56}
 
   \indexspace
 
-  \item Gestalt Principles, \hyperpage{14}
+  \item Gestalt Principles, \hyperpage{15}
 
   \indexspace
 
   \item Histograms
-    \subitem bin, \hyperpage{17}
-    \subitem density histograms, \hyperpage{18}
-    \subitem Sturges' Rule, \hyperpage{17}
+    \subitem bin, \hyperpage{18}
+    \subitem density histograms, \hyperpage{19}
+    \subitem Sturges' Rule, \hyperpage{18}
 
   \indexspace
 
   \item Kernel density estimation
-    \subitem bandwidth, \hyperpage{19}
-    \subitem kernel density estimator, \hyperpage{20}
-    \subitem kernel function, \hyperpage{20}
+    \subitem bandwidth, \hyperpage{20}
+    \subitem kernel density estimator, \hyperpage{21}
+    \subitem kernel function, \hyperpage{21}
 
   \indexspace
 
   \item LOESS
-    \subitem penalty, \hyperpage{40}
-    \subitem preliminary estimation, \hyperpage{40}
-    \subitem robustness weight, \hyperpage{40}
-    \subitem weight, \hyperpage{39}
+    \subitem penalty, \hyperpage{41}
+    \subitem preliminary estimation, \hyperpage{41}
+    \subitem robustness weight, \hyperpage{41}
+    \subitem weight, \hyperpage{40}
 
   \indexspace
 
   \item Principal component analysis
-    \subitem covariance matrix, \hyperpage{42}
-    \subitem loss function, \hyperpage{43}
-    \subitem optimal encoding, \hyperpage{43}
-    \subitem reconstruction error, \hyperpage{42}
+    \subitem covariance matrix, \hyperpage{43}
+    \subitem loss function, \hyperpage{44}
+    \subitem optimal encoding, \hyperpage{44}
+    \subitem reconstruction error, \hyperpage{43}
   \item Principal curves
-    \subitem curve, \hyperpage{48}
-    \subitem least-squares objective function, \hyperpage{48}
-    \subitem projection index, \hyperpage{48}
+    \subitem curve, \hyperpage{49}
+    \subitem least-squares objective function, \hyperpage{49}
+    \subitem projection index, \hyperpage{49}
 
   \indexspace
 
   \item Quantile\IeC {\textendash }Quantile boxplot
-    \subitem whiskers, \hyperpage{57}
+    \subitem whiskers, \hyperpage{58}
 
   \indexspace
 
   \item R package
-    \subitem dplyr, \hyperpage{9}
-    \subitem ggplot2, \hyperpage{8}
-    \subitem qqboxplot, \hyperpage{9}
-    \subitem Rtsne, \hyperpage{9}
-    \subitem tidyverse, \hyperpage{9}
+    \subitem dplyr, \hyperpage{10}
+    \subitem ggplot2, \hyperpage{9}
+    \subitem qqboxplot, \hyperpage{10}
+    \subitem Rtsne, \hyperpage{10}
+    \subitem tidyverse, \hyperpage{10}
   \item Receiver operating characteristic
-    \subitem AUC, \hyperpage{27}
+    \subitem AUC, \hyperpage{28}
 
   \indexspace
 
   \item Simple linear regression
-    \subitem expectations, \hyperpage{36}
-    \subitem least squares estimation, \hyperpage{37}
+    \subitem expectations, \hyperpage{37}
+    \subitem least squares estimation, \hyperpage{38}
 
   \indexspace
 
   \item t-SNE
-    \subitem conditional probabilities, \hyperpage{49}
-    \subitem cost function, \hyperpage{50}
-    \subitem gradient descent, \hyperpage{50}
-    \subitem joint probability, \hyperpage{50}
-    \subitem Kullback-Leibler divergence, \hyperpage{50}
+    \subitem conditional probabilities, \hyperpage{50}
+    \subitem cost function, \hyperpage{51}
+    \subitem gradient descent, \hyperpage{51}
+    \subitem joint probability, \hyperpage{51}
+    \subitem Kullback-Leibler divergence, \hyperpage{51}
   \item Time series
-    \subitem ACF, \hyperpage{25}
-    \subitem autocorrelation, \hyperpage{25}
-    \subitem moving average process, \hyperpage{22}
-    \subitem stochastic process, \hyperpage{22}
+    \subitem ACF, \hyperpage{26}
+    \subitem autocorrelation, \hyperpage{26}
+    \subitem moving average process, \hyperpage{23}
+    \subitem stochastic process, \hyperpage{23}
 
   \indexspace
 
   \item Visual complexity
-    \subitem drill-down functionality, \hyperpage{16}
-    \subitem tooltips, \hyperpage{16}
+    \subitem drill-down functionality, \hyperpage{17}
+    \subitem tooltips, \hyperpage{17}
 
 \end{theindex}
