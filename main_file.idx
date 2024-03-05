@@ -1,43 +1,43 @@
-\indexentry{R package!ggplot2|hyperpage}{8}
-\indexentry{R package!tidyverse|hyperpage}{9}
-\indexentry{R package!dplyr|hyperpage}{9}
-\indexentry{R package!Rtsne|hyperpage}{9}
-\indexentry{R package!qqboxplot|hyperpage}{9}
-\indexentry{Gestalt Principles|hyperpage}{14}
-\indexentry{Colour theory!colour discrimination|hyperpage}{15}
-\indexentry{Visual complexity!tooltips|hyperpage}{16}
-\indexentry{Visual complexity!drill-down functionality|hyperpage}{16}
-\indexentry{Histograms!bin|hyperpage}{17}
-\indexentry{Histograms!Sturges' Rule|hyperpage}{17}
-\indexentry{Histograms!density histograms|hyperpage}{18}
-\indexentry{Kernel density estimation!bandwidth|hyperpage}{19}
-\indexentry{Kernel density estimation!kernel density estimator|hyperpage}{20}
-\indexentry{Kernel density estimation!kernel function|hyperpage}{20}
-\indexentry{Time series!stochastic process|hyperpage}{22}
-\indexentry{Time series!moving average process|hyperpage}{22}
-\indexentry{Time series!autocorrelation|hyperpage}{25}
-\indexentry{Time series!ACF|hyperpage}{25}
-\indexentry{Receiver operating characteristic!AUC|hyperpage}{27}
-\indexentry{Simple linear regression!expectations|hyperpage}{36}
-\indexentry{Simple linear regression!least squares estimation|hyperpage}{37}
-\indexentry{LOESS!weight|hyperpage}{39}
-\indexentry{LOESS!preliminary estimation|hyperpage}{40}
-\indexentry{LOESS!penalty|hyperpage}{40}
-\indexentry{LOESS!robustness weight|hyperpage}{40}
-\indexentry{Principal component analysis!reconstruction error|hyperpage}{42}
-\indexentry{Principal component analysis!covariance matrix|hyperpage}{42}
-\indexentry{Principal component analysis!optimal encoding|hyperpage}{43}
-\indexentry{Principal component analysis!loss function|hyperpage}{43}
-\indexentry{Biplots!singular value decomposition|hyperpage}{44}
-\indexentry{Biplot!singular values|hyperpage}{44}
-\indexentry{Principal curves!curve|hyperpage}{48}
-\indexentry{Principal curves!projection index|hyperpage}{48}
-\indexentry{Principal curves!least-squares objective function|hyperpage}{48}
-\indexentry{t-SNE!conditional probabilities|hyperpage}{49}
-\indexentry{t-SNE!joint probability|hyperpage}{50}
-\indexentry{t-SNE!cost function|hyperpage}{50}
-\indexentry{t-SNE!Kullback-Leibler divergence|hyperpage}{50}
-\indexentry{t-SNE!gradient descent|hyperpage}{50}
-\indexentry{Funtional boxplot!band|hyperpage}{55}
-\indexentry{Funtional boxplot!band depth|hyperpage}{55}
-\indexentry{Quantile–Quantile boxplot!whiskers|hyperpage}{57}
+\indexentry{R package!ggplot2|hyperpage}{9}
+\indexentry{R package!tidyverse|hyperpage}{10}
+\indexentry{R package!dplyr|hyperpage}{10}
+\indexentry{R package!Rtsne|hyperpage}{10}
+\indexentry{R package!qqboxplot|hyperpage}{10}
+\indexentry{Gestalt Principles|hyperpage}{15}
+\indexentry{Colour theory!colour discrimination|hyperpage}{16}
+\indexentry{Visual complexity!tooltips|hyperpage}{17}
+\indexentry{Visual complexity!drill-down functionality|hyperpage}{17}
+\indexentry{Histograms!bin|hyperpage}{18}
+\indexentry{Histograms!Sturges' Rule|hyperpage}{18}
+\indexentry{Histograms!density histograms|hyperpage}{19}
+\indexentry{Kernel density estimation!bandwidth|hyperpage}{20}
+\indexentry{Kernel density estimation!kernel density estimator|hyperpage}{21}
+\indexentry{Kernel density estimation!kernel function|hyperpage}{21}
+\indexentry{Time series!stochastic process|hyperpage}{23}
+\indexentry{Time series!moving average process|hyperpage}{23}
+\indexentry{Time series!autocorrelation|hyperpage}{26}
+\indexentry{Time series!ACF|hyperpage}{26}
+\indexentry{Receiver operating characteristic!AUC|hyperpage}{28}
+\indexentry{Simple linear regression!expectations|hyperpage}{37}
+\indexentry{Simple linear regression!least squares estimation|hyperpage}{38}
+\indexentry{LOESS!weight|hyperpage}{40}
+\indexentry{LOESS!preliminary estimation|hyperpage}{41}
+\indexentry{LOESS!penalty|hyperpage}{41}
+\indexentry{LOESS!robustness weight|hyperpage}{41}
+\indexentry{Principal component analysis!reconstruction error|hyperpage}{43}
+\indexentry{Principal component analysis!covariance matrix|hyperpage}{43}
+\indexentry{Principal component analysis!optimal encoding|hyperpage}{44}
+\indexentry{Principal component analysis!loss function|hyperpage}{44}
+\indexentry{Biplots!singular value decomposition|hyperpage}{45}
+\indexentry{Biplot!singular values|hyperpage}{45}
+\indexentry{Principal curves!curve|hyperpage}{49}
+\indexentry{Principal curves!projection index|hyperpage}{49}
+\indexentry{Principal curves!least-squares objective function|hyperpage}{49}
+\indexentry{t-SNE!conditional probabilities|hyperpage}{50}
+\indexentry{t-SNE!joint probability|hyperpage}{51}
+\indexentry{t-SNE!cost function|hyperpage}{51}
+\indexentry{t-SNE!Kullback-Leibler divergence|hyperpage}{51}
+\indexentry{t-SNE!gradient descent|hyperpage}{51}
+\indexentry{Funtional boxplot!band|hyperpage}{56}
+\indexentry{Funtional boxplot!band depth|hyperpage}{56}
+\indexentry{Quantile–Quantile boxplot!whiskers|hyperpage}{58}

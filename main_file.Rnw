@@ -21,7 +21,9 @@
 \title{Data Visualisation: Theory and Practice}
 \author{Yujie Chu, Pia Fullaondo, Qinqing Li, Jacko Zhou}
 \makeindex
+
 \begin{document}
+
 
 <<setup, echo=FALSE, message=FALSE, warning=FALSE, include = FALSE>>=
 library(knitr)
@@ -67,16 +69,44 @@ opts_chunk$set(fig.path = 'figure/beamer-',
 
 @
 
-\maketitle 
+\begin{center}
+\textbf{\huge Data Visualisation: Theory and Practice} \\
+\vspace{0.5cm}
+
+\LARGE by 
+\vspace{0.25cm}
+\LARGE Yujie Chu, Pia Fullaondo, Qinqing Li, Jacko Zhou \\
+\vspace {1.5cm}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{image_reference/UniversityLogo.png}
+\end{figure}
+
+\vspace {1.5cm}
+
+\textbf{\LARGE The School of Mathematics} \\
+\vspace {0.25cm}
+\LARGE Undergraduate Mathematics Project \\ 
+
+\vspace{1.5cm}
+
+Supervised by \\
+Dr. Miguel De Carvalho \\
+\end{center}
+
+\newpage
+
+\section*{Own Work Declaration}
+
+\noindent We declare that this paper was composed by ourselves, that the work contained herein is our own except where explicitly stated otherwise, and that this work has not been submitted for any other degree or professional qualification except as specified.
 
 \newpage
 \tableofcontents
 
 \newpage
 
-\section*{Overview}
-
-\addcontentsline{toc}{section}{Overview} 
+\section{Overview}
 
 \noindent
 Graphical statistics is an indispensable tool in the arsenal of every contemporary data project. Primarily, it enables one to delve into the data, explore its nuances, and effectively communicate empirical discoveries through visual means. This project aims to provide an overview of modern data visualisation methods, delve into their theoretical underpinnings, and demonstrate the potency of these methodologies using both synthetic and authentic datasets.\\
@@ -1118,7 +1148,7 @@ grid.arrange(plot1, plot2, plot3, ncol = 3)
 \subsubsection{Animated Scatter Plots}
 \noindent While static scatter plots are effective in depicting relationships between two variables, animated scatter plot visualisations take this a step further by introducing, for example, a temporal dimension to the data visualisation. Unlike static plots, animated scatter plots enable the depiction of changes in relationships, clusters, or outliers over time. In R, the $gganimate$ package, building on the foundation of $ggplot2$ package, facilitates the creation of animated plots, including animated scatter plots. 
 
-\subsubsection{\texttt{gganimate} in Practice}
+\subsubsection{\textit{gganimate} in Practice}
 
 \noindent Figure~\ref{fig:gapminder_static} represents the gapminder dataset in a static scatter plot demonstrating the relationship between gross domestic product (GDP) per capita and life expectancy across various countries. GDP per capita is depicted on a logarithmic scale along the $X$-axis to accommodate a wide range of values, while life expectancy is represented on the $Y$-axis. Moreover, the colour each of the dots indicate the country they represent data of.\\
 
