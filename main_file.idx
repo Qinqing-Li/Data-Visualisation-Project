@@ -10,13 +10,13 @@
 \indexentry{Histograms!bin|hyperpage}{18}
 \indexentry{Histograms!Sturges' Rule|hyperpage}{18}
 \indexentry{Histograms!density histograms|hyperpage}{19}
-\indexentry{Kernel density estimation!bandwidth|hyperpage}{20}
+\indexentry{Kernel density estimation!bandwidth|hyperpage}{21}
 \indexentry{Kernel density estimation!kernel density estimator|hyperpage}{21}
 \indexentry{Kernel density estimation!kernel function|hyperpage}{21}
 \indexentry{Time series!stochastic process|hyperpage}{23}
-\indexentry{Time series!moving average process|hyperpage}{23}
+\indexentry{Time series!moving average process|hyperpage}{24}
 \indexentry{Time series!autocorrelation|hyperpage}{26}
-\indexentry{Time series!ACF|hyperpage}{26}
+\indexentry{Time series!ACF|hyperpage}{27}
 \indexentry{Receiver operating characteristic!AUC|hyperpage}{28}
 \indexentry{Simple linear regression!expectations|hyperpage}{37}
 \indexentry{Simple linear regression!least squares estimation|hyperpage}{38}

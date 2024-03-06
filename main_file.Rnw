@@ -208,7 +208,7 @@ Regrettably, the Kallikak family tree became a central element in the eugenics m
 \noindent
 Over the years, numerous tools have been developed to facilitate the generation of data visualisation. The programme R stands out as a powerful tool for statistical analysis and graphic creation, offering a wide array of functionalities to cater to various data visualisation needs. We will first introduce the commonly used R package \textit{ggplot2}\index{R package!ggplot2}. Then, other key packages used to produce clear and compelling graphs in R will be presented.\\
 
-\noindent \textbf{The \textit{ggplot} Package}\\
+\noindent \textbf{The \textit{ggplot2} Package}\\
 \noindent
 The \textit{ggplot2} package is the main tool in R used to create plots representing datasets of various natures. The foundation of \textit{ggplot2} lies in Leland Wilkinson's \href{https://link.springer.com/chapter/10.1007/978-3-642-21551-3_13}{\textit{The Grammar of Graphics}}, allowing the sequential construction of the individual elements composing a graph \cite{wilkinson2012grammar}. These individual elements are combined to create a unified graphical representation.\\
 
@@ -542,34 +542,36 @@ This chapter initiates the discussion regarding data visualisation methods. Part
 
 \subsection{Histograms}
 
-\noindent Histograms are essential tools in univariate data visualisation. They provide a concise yet comprehensive overview of the frequency or density distribution of a single variable in a dataset. This chapter explores the construction of two primary types of histograms: classic frequency histograms and density histograms. Additionally, it illustrates their utility through the exploration of a practical application using the iria dataset.
+\noindent Histograms are essential tools in univariate data visualisation. They provide a concise yet comprehensive overview of the frequency or density distribution of a single variable. This chapter delves into the construction of two types of histograms, as well as an example of their application in practice.
 
 \subsubsection{Classic Frequency Histograms}
 
 \noindent A classic histogram is a visual representation of the distribution of a (numerical) dataset. It is composed by a series of contiguous rectangles, also known as ``bins", each representing a range of data values. The height of each of these corresponds to the frequency or count of data points within that range, depending on the type of histogram. On a cartesian coordinate system, typically, the x-axis shows the endpoints of each bin, and the y-axis represents count or frequency. Hence, histograms facilitate, among other thing, the visualisation of the distribution, spread, and central tendency of datasets.\\
 
-\noindent \textbf{Mathematical Defintion}\\
+\noindent \textbf{Mathematical Notation}\\
 \noindent Suppose the data points within a datset are partitioned into $k$ non-overlapping bins, denoted as $B_1, \dots, B_k$ such that $B_i = [t_i, t_{i+1})$ for $i = 1, \dots, k$. Here, $t_i$ and $t_{i+1}$ represent the lower and upper boundaries of the $i$-th bin, respectively.\\
 
 \noindent Then, the classical frequency histogram of the data can be represented as a set of $k$ bars, where the height of the $i$-th bar corresponds to the frequency or count of data points falling within the interval $B_i$.\\
 
 \noindent \textbf{Theory of Bin Number and Bin Width\index{Histograms!bin}}\\
-\noindent The classical frequency histogram can be fully described by two main factors: the bin width $h$, and the bin origin $t_{0}$. However, in order for the bin counts to be comparable, the bins should all have the same width. Furthermore, it is essential to correctly choose the number of bins, since these have a huge impact on how the data is displayed and interpreted. Too few bins may hide the information in a dataset, and too many bins can cause a lot of noise in a dataset.\\
+\noindent The classical frequency histogram can be fully described by two main factors: the bin width $b$, and the bin origin $t_{0}$. However, in order for the bin counts to be comparable, the bins should all have the same width. Furthermore, it is essential to correctly choose the number of bins, since these have a huge impact on how the data is displayed and interpreted. Too few bins may hide the information in a dataset, and too many bins can cause a lot of noise in a dataset.\\
 
 \noindent Sturges' Rule\index{Histograms!Sturges' Rule}, established by Herbert Sturges in 1926, offers a systematic approach to determining the optimal number of bins constructing a frequency histogram \cite{scott2015multivariate}. This rule is based on the concept of normality, with the binomial distribution, $B(n,p = 0.5)$, serving as a model for an optimally constructed histogram. It links the binomial distribution with normally distributed data, providing a basis for selecting the number of bins to achieve a histogram resembling a normal density curve.\\
 
-\noindent The rule suggests setting the number of bins, denoted as $k$, to \[ k = 1 + \log_{2} n, \] where $n$ represents the sample size. This formula stems from constructing a frequency histogram with $k$ bins, each of width 1 and centered on the points $i = 0,1,\dots, k - 1$. The bin count of the $i$-th bin is chosen to be the binomial coefficient $\binom{k-1}{i}$. As $k$ increases, this ideal frequency histogram assumes the shape of a normal density with mean $(k - 1)/2$ and variance $(k - 1)/4$. The total sample size is
-\[ n = \sum_{i=0}^{k-1} \binom{k-1}{i} = (1+1)^{k-1} = 2^{k-1} \]
-by the binomial expansion. Hence, Sturges’ rule follows immediately: $k = 1 + \log_2 n$ \cite{scott2015multivariate}.\\
+\noindent It suggests setting the number of bins, denoted as $k$, it can be expressed as:$$ k = 1 + \log_{2} n, $$ where $n$ represents the sample size. This formula stems from constructing a frequency histogram with $k$ bins, each of width 1 and centered on the points $i = 0,1,\dots, k - 1$. The bin count of the $i$-th bin is chosen to be the binomial coefficient $\binom{k-1}{i}$. As $k$ increases, this ideal frequency histogram assumes the shape of a normal density with mean $(k - 1)/2$ and variance $(k - 1)/4$. The total sample size is:
+\[ n = \sum_{i=0}^{k-1} \binom{k-1}{i} = (1+1)^{k-1} = 2^{k-1}, \]
+by the binomial expansion. Hence, Sturges’ rule follows immediately. \cite{scott2015multivariate}.\\
 
 \noindent Note that Sturges’ rule functions as a number-of-bins rule rather than a bin-width rule. Assuming all bins are of equal width, to find the bin-width, Sturges’ rule is implemented by partitioning the sample range of the data into the recommended number bins \cite{scott2015multivariate}.
 
 \subsubsection{Density Histograms\index{Histograms!density histograms}}
 
-\noindent A frequency histogram differs from a density histogram by its normalisation, which integrates to 1. That is, let $B_i = [t_i,t_{i+1})$ represents the $i$-th bin, as defined previously. If $t_{i+1} − t_i = h$ for all $i$, the histogram has a fixed bin width of $h$. In a frequency histogram, blocks of height $1$ and width $h$ are stacked in the appropriate bins, resulting in an integral equal to $nh$. Conversely, a density histogram uses blocks of height $1/(nh)$ to ensure each block has an area of $1/n$ \cite{scott2015multivariate}. In this way, the height of each bin represents the probability distribution of the data, such that the total area of the histogram equals 1.\\
+\noindent A frequency histogram differs from a density histogram by its normalisation, which integrates to 1. That is, let $B_k = [t_k,t_{k+1})$ represents the $k$-th bin, as defined previously. If $t_{k+1} - t_k = b$ for all $k$, the histogram has a fixed bin width of $b$. In a frequency histogram, blocks of height $1$ and width $b$ are stacked in the appropriate bins, resulting in an integral equal to $nb$. Conversely, a density histogram uses blocks of height $1/(nb)$ to ensure each block has an area of $1/n$ \cite{scott2015multivariate}. In this way, the height of each bin represents the probability distribution of the data, such that the total area of the histogram equals 1.\\
+
+\noindent \textbf{Theory of Density Histograms}
 
 \noindent Let $v_i$ denote the bin count of the $i$-th bin, representing the number of sample points falling in bin $B_i$. The density histogram is mathematically defined as:
-\[ \hat{f}(x) = \frac{v_k}{nh} = \frac{1}{nh} \sum_{i=1}^{n} I_{[t_i,t_{i+1})}(x_i) \quad \text{for } x \in B_i.\]
+\[ \hat{f}(x) = \frac{v_k}{nb} = \frac{1}{nb} \sum_{i=1}^{n} I_{[t_i,t_{i+1})}(x_i) \quad \text{for } x \in B_i.\]
 
 \noindent With this definition, it is straightforward to verify that $ \hat{f}(x) \geq 0 $ and that $ \int \hat{f}(x) \, dx = 1 $, ensuring that $ \hat{f}(x) $ is a proper density function.\\
 
@@ -577,11 +579,21 @@ by the binomial expansion. Hence, Sturges’ rule follows immediately: $k = 1 + 
 The density histogram's bin counts ${v_{i}}$ can be considered as binomial random variables, where each bin count $v_{i}$ follows a binomial distribution $B(n,p_{i})$. The probability $p_{i}$ for each bin is the integral of the density function $f(t)$ over the bin interval $B_{i}$ \cite{scott2015multivariate}:
 $$p_{i} = \int_{B_i} f(t) \, dt. $$
 
+\noindent
+Consider the Mean Squared Error (MSE) of the estimator $\hat{f}(x)$ for $x \in B_k$. In this case, we have $\text{E}[v_k] = np_k$ and $\text{Var}[v_k] = np_k(1-p_k)$. Consequently, we can derive expressions for the variance and bias of $\hat{f}(x)$ as follows:
+$$\text{Var} \hat{f}(x) &= \frac{\tezt{Var} v_{k}}{(nb)^2} = \frac{p_k(1-p_k)}{nb^2},$$
+$$\text{Bias} \hat{f}(x) &= \text{E}\hat{f}(x) - f(x) = \frac{1}{nb} \text{E}v_k - f(x) = \frac{p_k}{b} - f(x).$$
+
+\noindent
+The Mean Squared Error (MSE) of an estimator $\hat{f}(x)$ can be bounded using Lipschitz continuity and the Mean Value Theorem (MVT). Assuming $f(x)$ is Lipschitz continuous over a bin $B_k$, with a Lipschitz constant $\gamma_k$, the MSE at $x$ can be expressed as the sum of the variance and the square of the bias. This is denoted by the inequality
+\begin{equation*}
+\operatorname{MSE}\hat{f}(x) \leq \frac{f(\xi_k)}{nb} + \gamma_k^2b^2,
+\end{equation*}
+where $\xi_k$ is a point in the bin $B_k$, $n$ is the number of observations, and $b$ is the bin width, reflecting the combined effects of variability and estimation error.
+
 \subsubsection{Histogram in Practice}\\
 
-\noindent In R programming, one can use \texttt{geom\_histogram()} from \textit{ggplot2} to implement histograms. This function takes vectors as input, along with additional parameters, to construct a histogram.\\
-
-\noindent As the number of sample means used to plot a histogram increases, one can usually observe the shape of the histogram gradually resembling that of the normal distribution. Consider the histogram found on the left side of Figure~\ref{fig:iris-plots} This plot was created with the use of to the \texttt{geom\_histogram} function and iris dataset.\\
+\noindent As the number of sample means used to plot a histogram increases, one can usually observe the shape of the histogram gradually resembling that of the normal distribution. Consider the histogram found on the left side of Figure~\ref{fig:iris-plots} 
 
 \begin{figure}[htbp]
   \centering
@@ -634,21 +646,37 @@ Kernel Density Estimation(KDE) evolves from the concept of histogram, offering a
 Kernel Density Estimation (KDE) is an very useful tool in statistics. Instead of discrete histograms, it helps create a smooth curve from values in a dataset. KDE is used to infer the distribution of a population based on a limited sample. Thus, the result of the kernel density estimation is an estimate of the sample's probability density function. Based on this estimated probability density function, one can ascertain certain characteristics of the data distribution, such as the regions where data is concentrated.\\
 
 \noindent
-The KDE algorithm takes a parameter called bandwidth\index{Kernel density estimation!bandwidth}, that affects how smooth the resulting curve is. Changing the bandwidth changes the shape of the kernel: a lower bandwidth implies only points very close to the chosen position are given any weight, which leads to the estimate looking squiggly. In contrast, a higher bandwidth means having a shallow kernel, where distant points can contribute. Thus, leading to a smoother curve.
+The KDE algorithm takes a parameter called bandwidth\index{Kernel density estimation!bandwidth}, h, that affects how smooth the resulting curve is. Changing the bandwidth changes the shape of the kernel: a lower bandwidth implies only points very close to the chosen position are given any weight, which leads to the estimate looking squiggly. In contrast, a higher bandwidth means having a shallow kernel, where distant points can contribute. Thus, leading to a smoother curve.
 
 \subsubsection{Theory of Kernel Density Estimation}\\
 
 \noindent
-We can express KDE as follows, where the K represent the kernel function:
-$$\hat{f}(x) = \sum_{\text{observations}} K\left(\frac{x - \text{observation}}{\text{bandwidth}}\right).$$
-In KDE, the variable $x$ represents the point of density estimation. The total number of data points, denoted as $n$, constitutes the sample size, and all these points are used for estimating the dataset's probability density function. The bandwidth $(h)$ is a crucial parameter that controls the smoothness of the estimation, with smaller bandwidths leading to closer fits to data and larger ones smoothing out details. The kernel function $(K)$, such as the Gaussian or triangular kernel, assigns mass around each data point, influencing the density estimate, while $X_i$ represents the individual sample points that collectively contribute to the estimated density function, guided by the kernel function and the bandwidth \cite{wand1994kernel}. Here is the formula for the kernel density estimator\index{Kernel density estimation!kernel density estimator}:
-$$\hat{f}(x; h) = \frac{1}{nh} \sum_{i=1}^{n} K\left(\frac{x - X_i}{h}\right),$$\\
-Here, the kernel function \( K(u) \) \index{Kernel density estimation!kernel function}is a normalized non-negative function that satisfies:
-$$ \int K(u) \, du = 1. $$
+Let us begin with the formula for the kernel density estimator\index{Kernel density estimation!kernel density estimator}:
+$$\hat{f}(x; h) = \frac{1}{nh} \sum_{i=1}^{n} K\left(\frac{x - X_i}{h}\right).$$
 
 \noindent
-By introducing the re-scaling notation $K_h(u) = h^{-1}K(\frac{u}{h})$, we can write the formula in a more compact way:
+In KDE, the variable $x$ represents the point of density estimation. The total number of data points, denoted as $n$, constitutes the sample size, and all these points are used for estimating the dataset's probability density function. The bandwidth $(h)$ is a crucial parameter that controls the smoothness of the estimation, with smaller bandwidths leading to closer fits to data and larger ones smoothing out details. The kernel function $(K)$, such as the Gaussian or triangular kernel, assigns mass around each data point, influencing the density estimate, while $X_i$ represents the individual sample points that collectively contribute to the estimated density function, guided by the kernel function and the bandwidth\cite{wand1994kernel}.
+\noindent
+By introducing the re-scaling notation $K_h(u) = h^{-1}K(\frac{u}{h})$, we can also write the formula in a more compact way:
 $$\hat{f}(x; h) = n^{-1} \sum_{i=1}^{n} K_h(x - X_i).$$
+
+\noindent
+Here, the kernel function \( K(u) \) \index{Kernel density estimation!kernel function}is a normalized non-negative function that satisfies $\int K(u) du = 1.$
+
+\noindent
+The mean squared error, $\text{MSE}{\hat{f}(x;h)}$, can be used to quantify the difference for a given $x$ between the "true" density function $f(x)$ and its estimator $\hat{f}(x)$, and with some simple transformation, it can be presented as follows:
+$$\text{MSE}{\hat{f}(x;h)}=E[(\hat{f}(x)-f(x))^2]=[\text{bias}\hat{f}(x)]^2+\text{var}\hat{f}(x).$$
+
+\noindent
+We can see that in order to compute $\text{MSE}{\hat{f}(x;h)}$, we will require expression for the mean and variance value of $\hat{f}(x;h)$. This can be derived from the equation of KDE, and by using the convolution notation, we can get the value of the bias. The bias is the difference between a smoothing of $f$ and $f$ itself. Using similar calculations, we can get the variance, and the MSE by combining the variance and bias. So the MSE is expressed as: 
+$$\text{MSE}{\hat{f}(x;h)}=n^{-1}{(K_h^2 \ast f)(x)-(K_h \ast f)^2(x)}+{(K_h \ast f)(x)-f(x)}^2.$$
+
+\noindent
+Now, move our attention to the integration of MSE over all $x$, and it gives a global measure of conformity of $\hat{f}(x)$ with $f(x)$, called the mean integrated quare error, MISE, and it is one of measures used to estimate the smoothing parameter:
+\begin{align*}
+\text{MISE}(\hat{f}) &= \int \text{MSE} \hat{f}(x; h) \, dx \\
+&= n^{-1} \int (K_h^2 * f)(x) - (K_h * f)^2(x) \, dx + \int ((K_h * f)(x) - f(x))^2 \, dx.
+\end{align*}
 
 \noindent In Figure~\ref{fig:iris-plots}, the kernel density estimation of the dataset is presented. The distribution of sepal lengths is depicted by the kernel density curve. The peaks observed in the curve correspond to the primary concentration trends of sepal length within the data. A unimodal curve signifies a concentration of sepal lengths for most irises in that specific region. Conversely, a bimodal or multimodal curve suggests the existence of multiple concentration areas.
 
