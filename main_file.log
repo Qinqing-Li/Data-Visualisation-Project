@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.13)  6 MAR 2024 13:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.13)  6 MAR 2024 14:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -943,17 +943,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 467--468
 
  []
 
-<figure/beamer-hist2-1.pdf, id=573, 361.35pt x 289.08pt>
+[19]
+<figure/beamer-hist2-1.pdf, id=582, 361.35pt x 289.08pt>
 File: figure/beamer-hist2-1.pdf Graphic file (type pdf)
 <use figure/beamer-hist2-1.pdf>
 Package pdftex.def Info: figure/beamer-hist2-1.pdf  used on input line 475.
 (pdftex.def)             Requested size: 208.13574pt x 166.51082pt.
-<figure/beamer-kde3-1.pdf, id=574, 361.35pt x 289.08pt>
+<figure/beamer-kde3-1.pdf, id=583, 361.35pt x 289.08pt>
 File: figure/beamer-kde3-1.pdf Graphic file (type pdf)
 <use figure/beamer-kde3-1.pdf>
 Package pdftex.def Info: figure/beamer-kde3-1.pdf  used on input line 487.
 (pdftex.def)             Requested size: 208.13574pt x 166.51082pt.
-[19]
+
 Underfull \hbox (badness 10000) in paragraph at lines 502--503
 
  []
@@ -980,8 +981,8 @@ or  <return>  to continue without it.
 pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.516 $$
-        \hat{f}(x; h) = \frac{1}{nh} \sum_{i=1}^{n} K\left(\frac{x - X_i}{h}... <./figure/beamer-hist2-1.pdf> <./figure/beamer-kde3-1.pdf>]
+l.514 ...observation}}{\text{bandwidth}}\right).$$
+                                                   <./figure/beamer-hist2-1.pdf> <./figure/beamer-kde3-1.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 527--528
 
  []
@@ -1010,12 +1011,13 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-<figure/beamer-barcharts-1.pdf, id=605, 722.7pt x 289.08pt>
+[21]
+<figure/beamer-barcharts-1.pdf, id=611, 722.7pt x 289.08pt>
 File: figure/beamer-barcharts-1.pdf Graphic file (type pdf)
 <use figure/beamer-barcharts-1.pdf>
 Package pdftex.def Info: figure/beamer-barcharts-1.pdf  used on input line 538.
 (pdftex.def)             Requested size: 433.62pt x 173.44933pt.
-[21]
+
 Underfull \hbox (badness 10000) in paragraph at lines 556--558
 
  []
@@ -1024,8 +1026,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 556--558
 pdfTeX warning (ext4): destination with the same identifier (name{figure.10}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.566 
-       <./figure/beamer-barcharts-1.pdf>]
+l.561 \[
+         <./figure/beamer-barcharts-1.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 569--570
 
  []
@@ -2095,7 +2097,7 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  75i,10n,79p,1250b,637s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main_file.pdf (62 pages, 7911821 bytes).
+Output written on main_file.pdf (62 pages, 7911891 bytes).
 PDF statistics:
  1314 PDF objects out of 1440 (max. 8388607)
  1121 compressed objects within 12 object streams

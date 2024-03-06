@@ -421,11 +421,11 @@ Addressing information overload in visualisations requires the strategic applica
 
 \section{Univariate Data Visualisation Methods}
 
-This chapter, initiates the discussion regarding data visualisation methods. This chapter particularly introduces techniques for graphically representing for datasets of the simplest nature — that is, single-variable datasets. It focuses on histograms, bar charts, Kernel Density Estimate, ROC Curves, and Time Series Analysis. 
+This chapter initiates the discussion regarding data visualisation methods. Particularly, it introduces techniques for graphically representing for datasets of the simplest nature — that is, single-variable datasets. It focuses on histograms, bar charts, the kernel density estimate, time series analysis, and ROC Curves. 
 
 \subsection{Histograms}
 
-\noindent Histograms are essential tools in univariate data visualisation. They provide a concise yet comprehensive overview of the frequency or density distribution of a single variable. This chapter delves into the construction of two types of histograms, as well as an example of their application in practice.
+\noindent Histograms are essential tools in univariate data visualisation. They provide a concise yet comprehensive overview of the frequency or density distribution of a single variable in a dataset. This chapter explores the construction of two primary types of histograms: classic frequency histograms and density histograms. Additionally, it illustrates their utility through the exploration of a practical application using the iria dataset.
 
 \subsubsection{Classic Frequency Histograms}
 
@@ -441,7 +441,7 @@ This chapter, initiates the discussion regarding data visualisation methods. Thi
 
 \noindent Sturges' Rule\index{Histograms!Sturges' Rule}, established by Herbert Sturges in 1926, offers a systematic approach to determining the optimal number of bins constructing a frequency histogram \cite{scott2015multivariate}. This rule is based on the concept of normality, with the binomial distribution, $B(n,p = 0.5)$, serving as a model for an optimally constructed histogram. It links the binomial distribution with normally distributed data, providing a basis for selecting the number of bins to achieve a histogram resembling a normal density curve.\\
 
-\noindent It suggests setting the number of bins, denoted as $k$, to \[ k = 1 + \log_{2} n, \] where $n$ represents the sample size. This formula stems from constructing a frequency histogram with $k$ bins, each of width 1 and centered on the points $i = 0,1,\dots, k - 1$. The bin count of the $i$-th bin is chosen to be the binomial coefficient $\binom{k-1}{i}$. As $k$ increases, this ideal frequency histogram assumes the shape of a normal density with mean $(k - 1)/2$ and variance $(k - 1)/4$. The total sample size is
+\noindent The rule suggests setting the number of bins, denoted as $k$, to \[ k = 1 + \log_{2} n, \] where $n$ represents the sample size. This formula stems from constructing a frequency histogram with $k$ bins, each of width 1 and centered on the points $i = 0,1,\dots, k - 1$. The bin count of the $i$-th bin is chosen to be the binomial coefficient $\binom{k-1}{i}$. As $k$ increases, this ideal frequency histogram assumes the shape of a normal density with mean $(k - 1)/2$ and variance $(k - 1)/4$. The total sample size is
 \[ n = \sum_{i=0}^{k-1} \binom{k-1}{i} = (1+1)^{k-1} = 2^{k-1} \]
 by the binomial expansion. Hence, Sturges’ rule follows immediately: $k = 1 + \log_2 n$ \cite{scott2015multivariate}.\\
 
@@ -1283,7 +1283,7 @@ The linear model has a residual standard error of 13.32, while the LOESS model h
 
 \subsubsection*{Chapter Overview and Further Reading References}
 
-\noindent This chapter delves into the theory of scatter plots, and bubble charts, as well as simple linear regression and LOESS regression. These concepts are firmly established the existing statistical literature. Further insights into scatter plots and bubble charts can be found in Leland Wilkinson's \href{https://link.springer.com/chapter/10.1007/978-3-642-21551-3_13}{\textit{The Grammar of Graphics}} (2005), while comprehensive details on simple linear regression theory are available in \href{https://karger.com/ajn/article/54/7-8/329/843948/Risk-Factors-for-Common-Kidney-Stones-Are}{\textit{Introduction to Linear Regression Analysis}} (2021) by Douglas C. Montgomery, Elizabeth A. Peck, and G. Geoffrey Vining. Additionally, \href{https://www.taylorfrancis.com/books/edit/10.1201/9780203738535/statistical-models-hastie}{\textit{Local Regression Models}} (1992) by William S. Cleveland, Eric Grosse, and William M. Shyu offers an in-depth exploration of LOESS regression theory.
+\noindent This chapter delves into the theory of scatter plots, and bubble charts, as well as simple linear regression and LOESS regression. These concepts are firmly established the existing statistical literature. Further insights into scatter plots and bubble charts can be found in Leland Wilkinson's \href{https://link.springer.com/chapter/10.1007/978-3-642-21551-3_13}{\textit{The Grammar of Graphics}} (2005), while comprehensive details on simple linear regression theory are available in \href{https://blackwells.co.uk/bookshop/product/Introduction-to-Linear-Regression-Analysis-by-Douglas-C-Montgomery-Elizabeth-A-Peck-G-Geoffrey-Vining/9781119578727}{\textit{Introduction to Linear Regression Analysis}} (2021) by Douglas C. Montgomery, Elizabeth A. Peck, and G. Geoffrey Vining. Additionally, \href{https://www.taylorfrancis.com/books/edit/10.1201/9780203738535/statistical-models-hastie}{\textit{Local Regression Models}} (1992) by William S. Cleveland, Eric Grosse, and William M. Shyu offers an in-depth exploration of LOESS regression theory.
 
 \newpage
 
