@@ -80,7 +80,7 @@ opts_chunk$set(fig.path = 'figure/beamer-',
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.35\textwidth]{image_reference/UniversityLogo.png}
+    \includegraphics[width=0.55\textwidth]{image_reference/UniversityLogo.png}
 \end{figure}
 
 \vspace {1.5cm}
@@ -89,7 +89,7 @@ The School of Mathematics \\
 Undergraduate Mathematics Project
 \vspace {0.25cm}
 
-\vspace{1.5cm}
+\vspace{2cm}
 
 Supervised by \\
 Dr. Miguel De Carvalho \\
@@ -192,7 +192,7 @@ Thus, the scale used in graphs serves as a critical tool, enabling the clear rep
 One striking example of data visualisation misuse is found in the Kallikak Family tree — one of the most prominent eugenic narratives of the 20th century.\\
 
 \noindent
-The visualisation, shown in Figure~\ref{fig:familytree} \cite{ktree}, was created by the psychologist Henry Goddard and presented in his 1912 book, ``The Kallikak Family: A Study in the Heredity of Feeble-Mindedness." Goddard's narrative centered around Martin Kallikak, a soldier who, in addition to his marriage to a respected citizen, had a one-night stand with a ``feeble-minded" maid. Goddard believed that intellectual disabilities were inherited traits. In Goddard's account, the legitimate family was successful, while the children of the ``feeble-minded" maid were labeled as ``the lowest types of human beings." However, research has since revealed that the entire story was fictitious, as there was no record of the maid's existence \cite{fakedata}.\\
+The visualisation shown in Figure~\ref{fig:familytree} \cite{ktree}, was created by the psychologist Henry Goddard and presented in his 1912 book, ``The Kallikak Family: A Study in the Heredity of Feeble-Mindedness." Goddard's narrative centered around Martin Kallikak, a soldier who, in addition to his marriage to a respected citizen, had a one-night stand with a ``feeble-minded" maid. Goddard believed that intellectual disabilities were inherited traits. In Goddard's account, the legitimate family was successful, while the children of the ``feeble-minded" maid were labeled as ``the lowest types of human beings." However, research has since revealed that the entire story was fictitious, as there was no record of the maid's existence \cite{fakedata}.\\
 
 \begin{figure}[H]
     \centering
@@ -210,7 +210,7 @@ Over the years, numerous tools have been developed to facilitate the generation 
 
 \noindent \textbf{The \textit{ggplot} Package}\\
 \noindent
-The \textit{ggplot2} package is the main tool in R used to create plots representing datasets of various natures. The foundation of \textit{ggplot2} lies in Leland Wilkinson's \href{https://link.springer.com/chapter/10.1007/978-3-642-21551-3_13}{\textit{The Grammar of Graphics}}, allowing the sequential construction of the individual elements composing a graph. These individual elements are combined to create a unified graphical representation.\\
+The \textit{ggplot2} package is the main tool in R used to create plots representing datasets of various natures. The foundation of \textit{ggplot2} lies in Leland Wilkinson's \href{https://link.springer.com/chapter/10.1007/978-3-642-21551-3_13}{\textit{The Grammar of Graphics}}, allowing the sequential construction of the individual elements composing a graph \cite{wilkinson2012grammar}. These individual elements are combined to create a unified graphical representation.\\
 
 \noindent
 This R package, \textit{ggplot2}, is notable for its robustness and flexibility, enabling the creation of customised graphics rather than adhering strictly to pre-set options. Despite the initial learning curve, \textit{ggplot2} is crafted to be user-friendly, offering sensible defaults and an iterative method for constructing plots. Its focus lies in uncovering the underlying message within the data. Furthermore, \textit{ggplot2} is structured to support layered and annotated graphics that enhance data analysis, especially for beginners and those new to data exploration.\\
@@ -234,7 +234,8 @@ Firstly, the \texttt{geom} function refers to ``geometric objects". It is pivota
 
 \noindent Some of the key packages included in the collection are widely used packages such as \textit{ggplot2} and \textit{dplyr}\index{R package!dplyr}. Particularly, the \textit{dplyr} package plays a pivotal role in data manipulation and transformation. It enables the filtering, sorting, summarising, and transforming of datasets, thereby streamlining data analysis and management.\\
 
-\noindent Moreover, recent research developments in graphical methods, as discussed in the \textit{Journal of Computational Statistics}, include techniques such as t-SNE and Q–Q boxplots. The \textit{Rtsne}\index{R package!Rtsne} and \textit{qqboxplot}\index{R package!qqboxplot} packages have allowed us to implement these methods in the report.\\ 
+\noindent Moreover, recent research developments in graphical methods, as discussed in the \href{https://www.tandfonline.com/journals/ucgs20}{\textit{Journal of Computational and Graphical Statistics}} such as t-SNE and Q–Q boxplots. The \textit{Rtsne}\index{R package!Rtsne} and \textit{qqboxplot}\index{R package!qqboxplot} packages have allowed us to implement these methods in the report.
+
 \newpage
 \subsection{Datasets}
 \noindent
@@ -276,7 +277,7 @@ This chapter delves into the core principles and concepts that serve as the base
 Creating effective data visualisations requires familiarity with the robust theoretical framework underlying every chart, graph, or plot. These theoretical underpinnings not only form the basis of data visualisation, but also shape the way in which we represent, perceive, understand, and interpret data.\\ 
 
 \noindent \textbf{Guiding Principles for Data Visualisation}\\
-The theoretical framework of data visualisation involves guiding principles dictating the visual representation of data. These principles include accuracy, emphasising faithful reflection of underlying data to reduce distortion or misinterpretation; simplicity, advocating for streamlined visuals to convey information effectively; clarity, ensuring visuals are easily understood without unnecessary complexity; relevance, presenting information pertinent to the message or question addressed; and consistency, maintaining uniform use of visual elements like colour coding and labeling throughout a visualisation.\\
+The theoretical framework of data visualisation involves guiding principles dictating the visual representation of data. These principles include accuracy, emphasising faithful reflection of underlying data to reduce distortion or misinterpretation; simplicity, advocating for streamlined visuals to convey information effectively; clarity, ensuring visuals are easily understood without unnecessary complexity; relevance, presenting information pertinent to the message or question addressed; and consistency, maintaining uniform use of visual elements like colour coding and labeling throughout a visualisation \cite{grant2018data}.\\
 
 \noindent \textbf{Theoretical Framework and Visual Perception}\\
 Furthermore, understanding how the human brain processes visual information is a fundamental aspect of data visualisation theory. This knowledge plays a crucial role in designing visualisations that effectively connect with viewers. It encompasses several key considerations which will be studied subsequently: the Gestalt Principles, concerned with how visual elements are grouped and interpreted; Colour Theory, involving the strategic use of colour contrasts and harmonies to improve clarity; and the management of Cognitive Load, which emphasises the importance of reducing mental effort needed to process information.
@@ -285,7 +286,7 @@ Furthermore, understanding how the human brain processes visual information is a
 Understanding the nature of the data is a key prerequisite before delving into discussions about data representation. Data comes in various types, and selecting the appropriate visualisation technique hinges on recognising these distinctions. In this section, the key data types are categorised and matched with their most suitable visualisation techniques.
 
 \subsubsection{Categorisation of Data Types}
-Data can be broadly categorised into four main types: 
+Data can be broadly categorised into four main types \cite{wilkinson2012grammar}: 
 \begin{itemise}
     \item \textbf{Nominal data}: represents categories or labels without any inherent order. Examples include colours and gender categories.
     \item \textbf{Ordinal data}: implies a meaningful order or ranking among categories but lacks equal intervals between them. Examples include survey responses (eg. “very satisfied”, “satisfied”, “neutral”, “dissatisfied”, “very dissatisfied”).
@@ -295,7 +296,7 @@ Data can be broadly categorised into four main types:
 \\
 
 \noindent \textbf{Matching Data Types with Appropriate Visualisation Techniques}\\
-\noindent Various data types demand specific visualisation methods for optimal representation \cite{healy2018data}. For nominal data, bar charts and stacked bar charts are effective in displaying categorical information and relative proportions. Ordinal data benefits from ordered bar charts, dot plots, or even stacked bar charts, maintaining the ranking and order of categories. Moreover, interval data is best visualised using line charts, histograms, and box plots, showcasing trends and distributions without assuming a true zero point. Finally, ratio data is effectively represented through scatter plots, histograms, and line charts, enabling precise comparisons and measurements due to the presence of a meaningful zero point. An example of each of these is represented in Figure~\ref{fig:data-plots}, where artificial data from a class of 4th-year university students is visualised.
+\noindent Various data types demand specific visualisation methods for optimal representation. For nominal data, bar charts and stacked bar charts are effective in displaying categorical information and relative proportions. Ordinal data benefits from ordered bar charts, dot plots, or even stacked bar charts, maintaining the ranking and order of categories. Moreover, interval data is best visualised using line charts, histograms, and box plots, showcasing trends and distributions without assuming a true zero point. Finally, ratio data is effectively represented through scatter plots, histograms, and line charts, enabling precise comparisons and measurements due to the presence of a meaningful zero point \cite{healy2018data}. An example of each of these is represented in Figure~\ref{fig:data-plots}, where artificial data from a class of 4th-year university students is visualised.
 
 <<data-plots, echo=FALSE, message=FALSE, fig.height=8, fig.width=11, fig.pos = 'H', fig.cap='Different types of visualisation techniques according to the data type'>>=
 
@@ -359,7 +360,7 @@ grid.arrange(plot1, plot2, plot3, plot4, ncol = 2)
 @
 
 \subsection{Data Abstraction and Representation}
-The transformation of complex, raw data into simplified and comprehensible formats by focusing on its essential characteristics and hiding unnecessary details is a pivotal step in data representation. This process, known as data abstraction, involves distilling complex datasets into visual forms that convey insights. In this section, we explore the hierarchies and levels of abstraction in data visualisation, and the critical trade-offs between abstraction and the potential loss of information.\\
+The transformation of complex, raw data into simplified and comprehensible formats by focusing on its essential characteristics and hiding unnecessary details is a pivotal step in data representation \cite{ward2010interactive}. This process, known as data abstraction, involves distilling complex datasets into visual forms that convey insights. In this section, we explore the hierarchies and levels of abstraction in data visualisation, and the critical trade-offs between abstraction and the potential loss of information.
 
 \subsubsection{Hierarchies and Levels of Abstraction}
 Hierarchies of abstraction enable the representation data at varying levels of detail: 
@@ -433,7 +434,7 @@ In this section, human visual perception is explored, along with the application
 Visual perception profoundly influences our understanding of the world. When applied to data visualisation, it shapes the way that individuals engage with and derive meaning from visual data representations.\\
 
 \noindent 
-The most significant aspects of human visual perception within the realm of data visualisation include, firstly, pattern recognition, enabling the identification of trends, outliers, and relationships in data representations. Additionally, perceptual grouping, which causes visually similar elements to be grouped together, and thus, influences the interpretation of data clusters and shapes. Moreover, the hierarchy of perception dictates that certain visual attributes are processed more swiftly and effectively than others, such as colour being processed faster than text, influencing the viewer's attention hierarchy \cite{dastani2002role}.\\
+The most significant aspects of human visual perception within the realm of data visualisation include, firstly, pattern recognition, enabling the identification of trends, outliers, and relationships in data representations. Additionally, perceptual grouping, which causes visually similar elements to be grouped together, and thus, influences the interpretation of data clusters and shapes. Moreover, the hierarchy of perception dictates that certain visual attributes are processed more swiftly and effectively than others, such as colour being processed faster than text, influencing the viewer's attention hierarchy \cite{dastani2002role}, \cite{ward2010interactive}.\\
 
 \noindent \textbf{The Gestalt Principles \index{Gestalt Principles}}\\
 Furthermore, the Gestalt Principles play an important role in the realm of visual perception and thus, data visualisation design \cite{rosli2015gestalt}. Key Gestalt principles include proximity, which groups related elements; similarity, that links similar attributes; continuity, aiding trend representation; closure, for implying connections; and symmetry, for balance and aesthetics in visualisations \cite{todorovic2008gestalt}. \\
@@ -491,7 +492,7 @@ Misleading visualisations often stem from inappropriate or deceptive use of colo
 
 \subsection{Cognitive Load and Visual Complexity}
 %\setsbsecprefix{Cognitive Load and Visual Complexity}
-In data visualisation, achieving a balance between complexity and cognitive load is essential. Cognitive load significantly influences how viewers engage with and comprehend presented data, and finding a balance is crucial to effectively convey information without overwhelming the viewer's cognitive capacity. This section explores the concept of cognitive load in visualisations, strategies to reduce cognitive load while maintaining complexity, and techniques to combat information overload through simplification.
+In data visualisation, achieving a balance between complexity and cognitive load is essential. Cognitive load significantly influences how viewers engage with and comprehend presented data, and finding a balance is crucial to effectively convey information without overwhelming the viewer's cognitive capacity \cite{tufte2001visual}. This section explores the concept of cognitive load in visualisations, strategies to reduce cognitive load while maintaining complexity, and techniques to combat information overload through simplification.
 
 \subsubsection{Strategies to Reduce Cognitive Load While Maintaining Complexity}
 Several strategies can be employed to mitigate cognitive load while preserving complexity. Firstly, establishing a clear visual hierarchy using size, colour, and contrast helps direct attention to crucial elements. This strategy is used to simplify the graph on the left side of Figure~\ref{fig:cogload-plot}, to the one on the right side. Secondly, simplifying labels and text by avoiding unnecessary complexity ensures information is clear and easily digestible.\\
@@ -527,7 +528,7 @@ grid.arrange(cluttered_plot, clear_plot, ncol = 2)
 @
 
 \subsubsection{Information Overload and Simplification Techniques}
-Addressing information overload in visualisations requires the strategic application of simplification techniques. The filtering technique enables focused data selection, while data reduction aggregates information to highlight overarching trends. Furthermore, storyboarding structures data presentation, aiding in contextual comprehension, and prioritisation ensures critical information is prominently displayed, elevating the visualisation's clarity and impact. These strategies collectively combat overwhelming data or excessive visual elements, enhancing comprehension and the effective communication of insights to viewers.\\
+Addressing information overload in visualisations requires the strategic application of simplification techniques. The filtering technique enables focused data selection, while data reduction aggregates information to highlight overarching trends. Furthermore, storyboarding structures data presentation, aiding in contextual comprehension, and prioritisation ensures critical information is prominently displayed, elevating the visualisation's clarity and impact. These strategies collectively combat overwhelming data or excessive visual elements, enhancing comprehension and the effective communication of insights to viewers.
 
 \subsubsection*{Chapter Overview and Further Reading References}
 
@@ -1512,9 +1513,9 @@ ggplot(data = estate, aes(x = house_age, y = price_per_area)) +
 
 \newpage
 
-\section{Visualising Beyond Two Dimensions}
+\section{Visualising Beyond Two Dimensions} 
 
-\noindent This  chapter extends beyond the realm of two dimensional data visualisations. Within this chapter, advanced techniques are explored to unravel complex relationships involving multiple variables. The Principal Component Analysis (PCA) is introduced as a powerful method for dimensionality reduction, enabling a concise representation of high-dimensional datasets. Multiple innovative approaches facilitating the visualisation of high-dimensional data in lower-dimensional biplots and t-distributed Stochastic Neighbor Embedding (t-SNE) are studied. 
+\noindent This  chapter extends beyond the realm of two dimensional data visualisations. Within this chapter, advanced techniques are explored to unravel complex relationships involving multiple variables \cite{ward2010interactive}. The Principal Component Analysis (PCA) is introduced as a powerful method for dimensionality reduction, enabling a concise representation of high-dimensional datasets. Multiple innovative approaches facilitating the visualisation of high-dimensional data in lower-dimensional biplots and t-distributed Stochastic Neighbor Embedding (t-SNE) are studied. 
 
 \subsection{Principal Component Analysis (PCA)}
 

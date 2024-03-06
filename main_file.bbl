@@ -69,6 +69,11 @@ John~C Gower and David~J Hand.
 \newblock {\em Biplots}, volume~54.
 \newblock CRC Press, 1995.
 
+\bibitem{grant2018data}
+Robert Grant.
+\newblock {\em Data visualization: Charts, maps, and interactive graphics}.
+\newblock Crc Press, 2018.
+
 \bibitem{blog}
 E.~Hawkins.
 \newblock Warming stripes | climate lab book.
@@ -166,6 +171,11 @@ Dejan Todorovic.
 \newblock Gestalt principles.
 \newblock {\em Scholarpedia}, 3(12):5345, 2008.
 
+\bibitem{tufte2001visual}
+Edward~R Tufte.
+\newblock {\em The visual display of quantitative information}, volume~2.
+\newblock Graphics press Cheshire, CT, 2001.
+
 \bibitem{vanderMaaten2008tsne}
 Laurens van~der Maaten and Geoffrey Hinton.
 \newblock Visualizing data using t-sne.
@@ -176,9 +186,19 @@ Matt~P Wand and M~Chris Jones.
 \newblock {\em Kernel smoothing}.
 \newblock CRC press, 1994.
 
+\bibitem{ward2010interactive}
+Matthew~O Ward, Georges Grinstein, and Daniel Keim.
+\newblock {\em Interactive data visualization: foundations, techniques, and applications}.
+\newblock CRC press, 2010.
+
 \bibitem{ggplot2}
 Hadley Wickham.
 \newblock {\em ggplot2: Elegant Graphics for Data Analysis}.
 \newblock Springer-Verlag New York, 2016.
+
+\bibitem{wilkinson2012grammar}
+Leland Wilkinson.
+\newblock {\em The grammar of graphics}.
+\newblock Springer, 2012.
 
 \end{thebibliography}
