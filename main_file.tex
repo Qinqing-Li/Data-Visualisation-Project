@@ -512,7 +512,7 @@ The KDE algorithm takes a parameter called bandwidth\index{Kernel density estima
 \noindent
 We can express KDE as follows, where the K represent the kernel function:
 $$\hat{f}(x) = \sum_{\text{observations}} K\left(\frac{x - \text{observation}}{\text{bandwidth}}\right).$$
-In KDE, the variable $x$ represents the point of density estimation. The total number of data points, denoted as $n$, constitutes the sample size, and all these points are used for estimating the dataset's probability density function. The bandwidth $(h)$ is a crucial parameter that controls the smoothness of the estimation, with smaller bandwidths leading to closer fits to data and larger ones smoothing out details. The kernel function $(K)$, such as the Gaussian or triangular kernel, assigns mass around each data point, influencing the density estimate, while $X_i$ represents the individual sample points that collectively contribute to the estimated density function, guided by the kernel function and the bandwidth\cite{wand1994kernel}. Here is the formula for the kernel density estimator\index{Kernel density estimation!kernel density estimator}:
+In KDE, the variable $x$ represents the point of density estimation. The total number of data points, denoted as $n$, constitutes the sample size, and all these points are used for estimating the dataset's probability density function. The bandwidth $(h)$ is a crucial parameter that controls the smoothness of the estimation, with smaller bandwidths leading to closer fits to data and larger ones smoothing out details. The kernel function $(K)$, such as the Gaussian or triangular kernel, assigns mass around each data point, influencing the density estimate, while $X_i$ represents the individual sample points that collectively contribute to the estimated density function, guided by the kernel function and the bandwidth \cite{wand1994kernel}. Here is the formula for the kernel density estimator\index{Kernel density estimation!kernel density estimator}:
 $$\hat{f}(x; h) = \frac{1}{nh} \sum_{i=1}^{n} K\left(\frac{x - X_i}{h}\right),$$\\
 Here, the kernel function \( K(u) \) \index{Kernel density estimation!kernel function}is a normalized non-negative function that satisfies:
 $$ \int K(u) \, du = 1. $$
@@ -584,21 +584,7 @@ Here, plot daily and 49-day moving average exchange rates of exchange rate data 
 
 
 \begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlcom{# PLOT OF DAILY AND 49-DAY MOVING AVERAGE EXCHANGE RATES OF CAN, EUR, USD TO GBP}
-\hlstd{p1} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(plot_dt,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= Date,} \hlkwc{y} \hlstd{= Rate,} \hlkwc{color} \hlstd{= Currency))} \hlopt{+} \hlkwd{geom_line}\hlstd{()} \hlopt{+}
-  \hlkwd{labs}\hlstd{(}\hlkwc{y} \hlstd{=} \hlstr{"Exchange Rate to GBP"}\hlstd{,} \hlkwc{x} \hlstd{=} \hlstr{""}\hlstd{,} \hlkwc{color} \hlstd{=} \hlstr{"Currency"}\hlstd{)} \hlopt{+} \hlkwd{theme_minimal}\hlstd{()} \hlopt{+}
-  \hlkwd{theme}\hlstd{(}\hlkwc{legend.position} \hlstd{=} \hlstr{"none"}\hlstd{)} \hlopt{+} \hlkwd{scale_color_manual}\hlstd{(}\hlkwc{values} \hlstd{= color_palette)}
-\hlstd{p2} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(plot_data,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= Date,} \hlkwc{y} \hlstd{= Rate,} \hlkwc{color} \hlstd{= Currency))} \hlopt{+} \hlkwd{geom_line}\hlstd{()} \hlopt{+}
-  \hlkwd{labs}\hlstd{(}\hlkwc{y} \hlstd{=} \hlstr{"Exchange Rate to GBP"}\hlstd{,} \hlkwc{x} \hlstd{=} \hlstr{""}\hlstd{,} \hlkwc{color} \hlstd{=} \hlstr{"Currency"}\hlstd{)} \hlopt{+} \hlkwd{theme_minimal}\hlstd{()} \hlopt{+}
-  \hlkwd{theme}\hlstd{(}\hlkwc{legend.position} \hlstd{=} \hlstr{"none"}\hlstd{)} \hlopt{+} \hlkwd{scale_color_manual}\hlstd{(}\hlkwc{values} \hlstd{= color_palette)}
-\hlcom{# Extract the legend and combine the plots }
-\hlstd{p2_legend} \hlkwb{<-} \hlstd{cowplot}\hlopt{::}\hlkwd{get_legend}\hlstd{(p2} \hlopt{+} \hlkwd{theme}\hlstd{(}\hlkwc{legend.position} \hlstd{=} \hlstr{"right"}\hlstd{))}
-\hlstd{combined_plot} \hlkwb{<-} \hlstd{cowplot}\hlopt{::}\hlkwd{plot_grid}\hlstd{(p1, p2,} \hlkwc{rel_widths} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{1}\hlstd{),} \hlkwc{nrow} \hlstd{=} \hlnum{2}\hlstd{)}
-\hlstd{cowplot}\hlopt{::}\hlkwd{plot_grid}\hlstd{(combined_plot, p2_legend,} \hlkwc{nrow} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{rel_widths} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{2}\hlstd{,} \hlnum{0.5}\hlstd{))}
-\end{alltt}
-\end{kframe}\begin{figure}[H]
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
 
 {\centering \includegraphics[width=\maxwidth]{figure/beamer-all_exchange_rates-1} 
 
@@ -642,8 +628,11 @@ R function \href{https://www.rdocumentation.org/packages/stats/versions/3.6.2/to
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# PLOT OF DECOMPOSITION OF ADDICTIVE TIME SERIES MODEL}
-\hlkwd{ggplot}\hlstd{(decomposed_df,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= time,} \hlkwc{y} \hlstd{= value))} \hlopt{+} \hlkwd{geom_line}\hlstd{()} \hlopt{+}
-  \hlkwd{facet_wrap}\hlstd{(}\hlopt{~}\hlstd{component,} \hlkwc{scales} \hlstd{=} \hlstr{"free_y"}\hlstd{,} \hlkwc{ncol} \hlstd{=} \hlnum{1}\hlstd{)} \hlopt{+} \hlkwd{labs}\hlstd{(}\hlkwc{x} \hlstd{=} \hlstr{"Date"}\hlstd{,}\hlkwc{y} \hlstd{=} \hlstr{"Exchange Rate to GBP"}\hlstd{)} \hlopt{+} \hlkwd{theme_minimal}\hlstd{()}
+\hlkwd{ggplot}\hlstd{(decomposed_df,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= time,} \hlkwc{y} \hlstd{= value))} \hlopt{+}
+  \hlkwd{geom_line}\hlstd{()} \hlopt{+}
+  \hlkwd{facet_wrap}\hlstd{(}\hlopt{~}\hlstd{component,} \hlkwc{scales} \hlstd{=} \hlstr{"free_y"}\hlstd{,} \hlkwc{ncol} \hlstd{=} \hlnum{1}\hlstd{)} \hlopt{+}
+  \hlkwd{labs}\hlstd{(}\hlkwc{x} \hlstd{=} \hlstr{"Date"}\hlstd{,}\hlkwc{y} \hlstd{=} \hlstr{"Exchange Rate to GBP"}\hlstd{)} \hlopt{+}
+  \hlkwd{theme_minimal}\hlstd{()}
 \end{alltt}
 \end{kframe}\begin{figure}[H]
 
@@ -674,7 +663,7 @@ Lastly, the residual component $r_t$ encompasses the random, unexplained variati
 Autocorrelation \index{Time series!autocorrelation}describes the correlation of a time series with its own previous and proceeding values. The autocorrelation function (ACF) measures the linear predictability of the series at lag h, which is the time $t$ with its values at a previous time $t-h$. The mathematical formulation of ACF of time series will be given in the following paragraph.\\
 
 \noindent
-Suppose we have a time series with observations denoted by \( x_1, \ldots, x_n \). Then the sample mean is given by $\bar{x} = \frac{1}{n} \sum_{t=1}^{n} x_t.$
+Suppose we have a time series with observations denoted by \( x_1, \ldots, x_n \). Then the sample mean is given by $\bar{x} = 1 \div n \sum_{t=1}^{n} x_t.$
 And the sample autocovariance function \cite{Brockwell2016Introduction} at lag $h$ in days of our time series is
 \[\hat{\gamma}(h) := \frac{1}{n} \sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x}), \quad -n < h < n.\]
 Hence, the sample autocorrelation function \cite{Brockwell2016Introduction} at lag $h$ in days is given by
@@ -749,18 +738,7 @@ Here, the simulated data will be used to demonstrate the ROC analysis in COVID-1
 
 
 \begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlcom{# PLOT OF ROC CURVES}
-\hlkwd{plot}\hlstd{(roc_test1,} \hlkwc{col}\hlstd{=}\hlstr{"#459395"}\hlstd{,} \hlkwc{lwd}\hlstd{=}\hlnum{2}\hlstd{)}
-\hlkwd{lines}\hlstd{(roc_test2,} \hlkwc{col}\hlstd{=}\hlstr{"#FDA638"}\hlstd{,} \hlkwc{lwd}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{)}
-\hlkwd{legend}\hlstd{(}\hlstr{"bottomright"}\hlstd{,} \hlkwc{legend}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"Diagnostic Test 1"}\hlstd{,} \hlstr{"Diagnostic Test 2"}\hlstd{),}
-       \hlkwc{col}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"#459395"}\hlstd{,} \hlstr{"#FDA638"}\hlstd{),} \hlkwc{lwd}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{2}\hlstd{),} \hlkwc{cex}\hlstd{=}\hlnum{0.5}\hlstd{)}
-\hlcom{# Add the perfect lines}
-\hlkwd{abline}\hlstd{(}\hlkwc{h}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{col}\hlstd{=}\hlstr{"red"}\hlstd{)}
-\hlkwd{abline}\hlstd{(}\hlkwc{v}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{lty}\hlstd{=}\hlnum{2}\hlstd{,} \hlkwc{col}\hlstd{=}\hlstr{"red"}\hlstd{)}
-\end{alltt}
-\end{kframe}\begin{figure}[H]
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
 
 {\centering \includegraphics[width=\maxwidth]{figure/beamer-roc-1} 
 
@@ -1189,7 +1167,7 @@ where $\mathrm{g}$ is an unknown smooth function and $\varepsilon_i$ is i.i.d.Ga
 Let $\Delta_i(x) = |x - x_i|$ represent the horizontal distance between $x$ and $x_i$. Let $\Delta_{(i)}(x)$ denote the ordered distances to $x$, arranged from smallest to largest.\\
 
 \noindent
-For each point $(x,y)$ consider the neighbourhood to fit a line segment around it. The size of the neighbourhood indicates the number of data points used to fit the line segments and is determined by the smoothing parameter $\alpha$. For $\alpha \leq 1$, each  neighbourhood consists of $\frac{n}{\alpha}$ number of points \cite{rloess}. Each point $(x_i, y_i)$ in the neighbourhood of point $(x,y)$ is assigned with a weight\index{LOESS!weight}, ``importance" of the data point to the line segment \cite{ytloess}. The weight of $(x_i,y_i)$ is denoted as $w_i(x)$, which is defined as:
+For each point $(x,y)$ consider the neighbourhood to fit a line segment around it. The size of the neighbourhood indicates the number of data points used to fit the line segments and is determined by the smoothing parameter $\alpha$. For $\alpha \leq 1$, each  neighbourhood consists of $n \div \alpha$ number of points \cite{rloess}. Each point $(x_i, y_i)$ in the neighbourhood of point $(x,y)$ is assigned with a weight\index{LOESS!weight}, ``importance" of the data point to the line segment \cite{ytloess}. The weight of $(x_i,y_i)$ is denoted as $w_i(x)$, which is defined as:
 
 \begin{equation}\label{eq:4-7}
 w_i(x) = T(\Delta_i (x); \Delta _{(q)}(x)).
@@ -1599,11 +1577,11 @@ y_f(\mathbf{x}) = \sup\limits_{y}\{y: ||\mathbf{x}-\mathbf{f}(y)||= \inf\limits_
 Since PCA is a linear method and may not perform well with non-linear data structures, often missing complex non-linear relationships. Although effective in capturing the global structure of data, PCA focuses on maintaining large pairwise distances to maximise variance and overlooks important local patterns and structures. \\
 
 \noindent
-Unlike PCA, t-SNE\cite{vanderMaaten2008tsne} is a nonlinear technique for embedding high-dimensional data for visualisation in a low-dimensional space of two or three dimensions, focusing on preserving the small pairwise similarities between data points thus retain the local structure of the dataset in a lower-dimensional space. It starts by converting high-dimensional Euclidean distances into probabilities that reflect the similarity between points, then maps these points to a lower-dimensional space in a way that tries to preserve these similarities.
+Unlike PCA, t-SNE \cite{vanderMaaten2008tsne} is a nonlinear technique for embedding high-dimensional data for visualisation in a low-dimensional space of two or three dimensions, focusing on preserving the small pairwise similarities between data points thus retain the local structure of the dataset in a lower-dimensional space. It starts by converting high-dimensional Euclidean distances into probabilities that reflect the similarity between points, then maps these points to a lower-dimensional space in a way that tries to preserve these similarities.
 
 \subsubsection{Theory of t-SNE}
 
-For a given high-dimensional dataset $\{x_1,...,x_n\}$, the t-SNE algorithm quantifies the similarity between pairs of data points, $x_i$ and $x_j$, using conditional probabilities \index{t-SNE!conditional probabilities}$p_{j|i}$. These probabilities are calculated under the assumption that if $x_i$ were to choose its neighbours, it would do so in proportion to their probability density under a Gaussian distribution centered at $x_i$. The conditional probability $p_{j|i}$\cite{vanderMaaten2008tsne} for $i \neq j$ is mathematically expressed as:
+For a given high-dimensional dataset $\{x_1,...,x_n\}$, the t-SNE algorithm quantifies the similarity between pairs of data points, $x_i$ and $x_j$, using conditional probabilities \index{t-SNE!conditional probabilities}$p_{j|i}$. These probabilities are calculated under the assumption that if $x_i$ were to choose its neighbours, it would do so in proportion to their probability density under a Gaussian distribution centered at $x_i$. The conditional probability $p_{j|i}$ \cite{vanderMaaten2008tsne} for $i \neq j$ is mathematically expressed as:
 
 \[p_{j|i} = \frac{\exp(-||\mathbf{x}_i - \mathbf{x}_j||^2 / 2\sigma_i^2)}{\sum_{k \neq i}\exp(-||\mathbf{x}_i - \mathbf{x}_k||^2 / 2\sigma_i^2)},\]
 
@@ -1611,7 +1589,7 @@ For a given high-dimensional dataset $\{x_1,...,x_n\}$, the t-SNE algorithm quan
 where $\sigma_i$ denotes the variance of the Gaussian that is centered on data point $x_i$. Also, set similarities of the same pair wise points $p_{i|i}=0$ and $\sum_{j} p_{j|i} = 1$ for all $i$.\\
 
 \noindent
-To create a symmetrical joint probability \index{t-SNE!joint probability}distribution in the high-dimensional space, t-SNE averages the conditional probabilities $p_{j|i}$ and $p_{i|j}$\cite{vanderMaaten2008tsne}, resulting in:
+To create a symmetrical joint probability \index{t-SNE!joint probability}distribution in the high-dimensional space, t-SNE averages the conditional probabilities $p_{j|i}$ and $p_{i|j}$ \cite{vanderMaaten2008tsne}, resulting in:
     \[
         p_{ij} = \frac{p_{j|i} + p_{i|j}}{2n},
     \]
@@ -1622,7 +1600,7 @@ where $n$ is a number of data points. Also, $p_{ii}=0$ and \sum_{i,j} p_{ij}=1$.
 \noindent
 In the low-dimensional space (usually 2D or 3D), we have the corresponding dataset $\{y_1,...,y_n\}$. Since t-SNE aims to find mapped points 
 $y_i$ and $y_j$ in a low-dimensional space that reflects the similarities 
-$p_{ij}$ as well as possible. In the low-dimensional space, t-SNE computes similarities $q_{ij}$ using a similar formula but with a Student t-distribution (with one degree of freedom, equivalent to the Cauchy distribution) which has heavier tails than a Gaussian distribution to compute the joint probabilities\cite{vanderMaaten2008tsne} of the mapped points:
+$p_{ij}$ as well as possible. In the low-dimensional space, t-SNE computes similarities $q_{ij}$ using a similar formula but with a Student t-distribution (with one degree of freedom, equivalent to the Cauchy distribution) which has heavier tails than a Gaussian distribution to compute the joint probabilities \cite{vanderMaaten2008tsne} of the mapped points:
 
     \[
         q_{ij} = \frac{(1 + ||\mathbf{y}_i - \mathbf{y}_j||^2)^{-1}}{\sum_{k \neq l}(1 + ||\mathbf{y}_k - \mathbf{y}_l||^2)^{-1}}.
@@ -1633,7 +1611,7 @@ Similarly, set $q_{ii}=0$.\\
 
 \noindent
 The goal of t-SNE is to minimize the discrepancy between the probabilities 
-$p_ {ij}$ in the high-dimensional space and $q_{ij}$ in the low-dimensional space. Therefore, the objective is to minimise the Kullback-Leibler (KL) divergence\cite{vanderMaaten2008tsne} between the joint probability distributions $P$ and $Q$:
+$p_ {ij}$ in the high-dimensional space and $q_{ij}$ in the low-dimensional space. Therefore, the objective is to minimise the Kullback-Leibler (KL) divergence \cite{vanderMaaten2008tsne} between the joint probability distributions $P$ and $Q$:
     \[
         C = \text{KL}(P || Q) = \sum_{i \neq j} p_{ij} \log \frac{p_{ij}}{q_{ij}},
     \]
@@ -1642,12 +1620,12 @@ $p_ {ij}$ in the high-dimensional space and $q_{ij}$ in the low-dimensional spac
 where the $C$ means the cost function \index{t-SNE!cost function}that we wish to minimize, and the Kullback-Leibler (KL) divergence \index{t-SNE!Kullback-Leibler divergence}is a measure of how probability distribution $P$ differs from probability distribution $Q$. In addition, the lower the KL divergence value, the closer the two distributions are. A KL divergence of zero means that these two distributions are the same.\\
 
 \noindent
-To continue with the minimisation, compute the gradient of symmetric SNE\cite{vanderMaaten2008tsne} as follows:
+To continue with the minimisation, compute the gradient of symmetric SNE \cite{vanderMaaten2008tsne} as follows:
 \[\frac{\partial C}{\partial y_i} = 4 \sum_j (p_{ij} - q_{ij})(y_i - y_j)(1 + ||y_i - y_j||^2)^{-1}
 .\]
 
 \noindent
-Once the gradient of the cost function with respect to the positions of the points in the low-dimensional space, $\frac{\partial C}{\partial y_i}$, is computed, t-SNE employs gradient descent to minimizes the Kullback-Leibler (KL) divergence between the high-dimensional probability distribution $P$ and the low-dimensional probability distribution $Q$. Gradient descent \index{t-SNE!gradient descent}is an iterative optimisation algorithm used to minimize the cost function by updating the parameters in the opposite direction of the gradient of the cost function. In the case of t-SNE, the parameters are the positions of the points in the low-dimensional space. The update rule\cite{vanderMaaten2008tsne} at each iteration $t$ for a point $y_i$ is given by:
+Once the gradient of the cost function with respect to the positions of the points in the low-dimensional space, $\frac{\partial C}{\partial y_i}$, is computed, t-SNE employs gradient descent to minimizes the Kullback-Leibler (KL) divergence between the high-dimensional probability distribution $P$ and the low-dimensional probability distribution $Q$. Gradient descent \index{t-SNE!gradient descent}is an iterative optimisation algorithm used to minimize the cost function by updating the parameters in the opposite direction of the gradient of the cost function. In the case of t-SNE, the parameters are the positions of the points in the low-dimensional space. The update rule \cite{vanderMaaten2008tsne} at each iteration $t$ for a point $y_i$ is given by:
 
 \[y_i^{(t+1)} = y_i^{(t)} - \eta \frac{\partial C}{\partial y_i},\]
 
@@ -1662,7 +1640,35 @@ The process is repeated for a number of iterations or until the change in the co
 In Figure~\ref{fig:t-SNE} we observe a t-SNE visualisation of the penguin dataset. In this case, using the t-SNE algorithm helps us to reduce the multidimensional numerical data of the penguin dataset to a $2$-dimensional space. We also use scatter plots and elliptical areas to visualise the distribution of different penguin species. The data points are colour-coded to distinguish between three penguin species: Adelie in red, Chinstrap in green, and Gentoo in blue. This colour coding aids in the visual differentiation of the species clusters.\\
 
 \begin{knitrout}\scriptsize
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[H]
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{# PLOT OF T-SNE OF PENGUINS DATASET}
+\hlstd{penguins} \hlopt{%>%}
+  \hlkwd{select}\hlstd{(}\hlkwd{where}\hlstd{(is.numeric),}\hlopt{-}\hlstd{year,species)} \hlopt{%>%}
+  \hlkwd{mutate}\hlstd{(}\hlkwc{ID}\hlstd{=}\hlkwd{row_number}\hlstd{())} \hlopt{%>%}
+  \hlkwd{column_to_rownames}\hlstd{(}\hlstr{"ID"}\hlstd{)} \hlopt{%>%}
+  \hlkwd{na.omit}\hlstd{()}\hlkwb{->} \hlstd{df}
+
+\hlstd{tSNE_fit}\hlkwb{<-}\hlstd{df} \hlopt{%>%} \hlkwd{select}\hlstd{(}\hlopt{-}\hlstd{species)} \hlopt{%>%} \hlkwd{scale}\hlstd{()} \hlopt{%>%} \hlkwd{Rtsne}\hlstd{()}
+\hlstd{tSNE_fit}\hlopt{$}\hlstd{Y} \hlopt{%>%}
+  \hlkwd{as.data.frame}\hlstd{()} \hlopt{%>%}
+  \hlkwd{rename}\hlstd{(}\hlkwc{tSNE1} \hlstd{=} \hlstr{"V1"}\hlstd{,}\hlkwc{tSNE2} \hlstd{=} \hlstr{"V2"}\hlstd{)} \hlopt{%>%}
+  \hlkwd{mutate}\hlstd{(}\hlkwc{Species} \hlstd{= df}\hlopt{$}\hlstd{species)} \hlkwb{->} \hlstd{tSNE.plot}
+
+\hlkwd{ggplot}\hlstd{()}\hlopt{+}
+  \hlkwd{geom_point}\hlstd{(}\hlkwc{data} \hlstd{= tSNE.plot,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= tSNE1,}\hlkwc{y} \hlstd{= tSNE2,}\hlkwc{color} \hlstd{= Species))} \hlopt{+}
+  \hlkwd{stat_ellipse}\hlstd{(}\hlkwc{data} \hlstd{= tSNE.plot,}
+               \hlkwc{geom} \hlstd{=} \hlstr{"polygon"}\hlstd{,}
+               \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= tSNE1,}\hlkwc{y} \hlstd{= tSNE2,}
+                   \hlkwc{group} \hlstd{= Species,}
+                   \hlkwc{fill} \hlstd{= Species),}
+               \hlkwc{alpha} \hlstd{=} \hlnum{0.5}\hlstd{,}
+               \hlkwc{lty} \hlstd{=} \hlstr{"dashed"}\hlstd{,}
+               \hlkwc{color} \hlstd{=} \hlstr{"black"}\hlstd{,}
+               \hlkwc{key_glyph} \hlstd{=} \hlstr{"blank"}\hlstd{)} \hlopt{+}
+  \hlkwd{theme_bw}\hlstd{()}
+\end{alltt}
+\end{kframe}\begin{figure}[H]
 
 {\centering \includegraphics[width=\maxwidth]{figure/beamer-t-SNE-1} 
 
