@@ -27,8 +27,8 @@
 \contentsline {subsubsection}{\numberline {3.4.2}Time Series Analysis}{24}{subsubsection.3.4.2}%
 \contentsline {subsubsection}{\numberline {3.4.3}Case Example: Visualisation of Exchange Rates}{24}{subsubsection.3.4.3}%
 \contentsline {subsection}{\numberline {3.5}ROC Curve}{28}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}Theory of ROC curve}{29}{subsubsection.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.5.2}ROC analysis in COVID-19 test}{30}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.1}Theory of ROC Curve}{29}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}ROC Analysis in COVID-19 Test}{30}{subsubsection.3.5.2}%
 \contentsline {section}{\numberline {4}Bivariate Data Visualisation Methods}{32}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Heatmaps}{32}{subsection.4.1}%
 \contentsline {subsubsection}{\numberline {4.1.1}Heatmaps in Practice}{32}{subsubsection.4.1.1}%

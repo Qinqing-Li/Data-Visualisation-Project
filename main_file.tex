@@ -112,9 +112,9 @@ Dr. Miguel de Carvalho \\
 \section*{Abstract}
 
 \noindent
-This project aims to provide the theory of graphical statistics methods and their visual implementations using R, utilising open-source datasets from different sectors. The authors recognise that graphical statistics is an active area of research, therefore textbook methods and state-of-the-art methods will be covered. Chapters 3 to 5 concentrate on standard implementations of graphical statistics methods for univariate, bivariate, and multivariate data, respectively. Chapter 6 focuses on functional boxplots and Q–Q boxplots, which were published in the \textit{Journal of Computational and Graphical Statistics} in 2011 and 2022, respectively.\\
+This project aims to provide the theory of graphical statistics methods and their visual implementations using R, utilising open-source datasets from different sectors. The authors recognise that graphical statistics is an active area of research, therefore textbook methods and state-of-the-art methods are covered. While Chapter 2 focuses on the theoretical framework of data visualisation, Chapters 3 to 5 concentrate on standard implementations of graphical statistics methods for univariate, bivariate, and multivariate data, respectively. Chapter 6 focuses on functional boxplots and Q–Q boxplots, which were published in the \textit{Journal of Computational and Graphical Statistics} in 2011 and 2022, respectively.
 
-\newpage 
+\newpage
 
 \tableofcontents
 
@@ -212,7 +212,7 @@ Regrettably, the Kallikak family tree became a central element in the eugenics m
 
 \subsection{Computing and Data Visualisation}
 \noindent
-Over the years, numerous tools have been developed to facilitate the generation of data visualisation. The programme R stands out as a powerful tool for statistical analysis and graphic creation, offering a wide array of functionalities to cater to various data visualisation needs. We will first introduce the commonly used R package \textit{ggplot2}\index{R package!ggplot2}. Then, other key packages used to produce clear and compelling graphs in R will be presented. In this project, R package names such as \textit{ggplot2} are italicised, while R commands like \texttt{faceting} are displayed in a teletype font.\\
+Over the years, numerous tools have been developed to facilitate the generation of data visualisation. The programme R stands out as a powerful tool for statistical analysis and graphic creation, offering a wide array of functionalities to cater to various data visualisation needs. We will first introduce the commonly used R package \textit{ggplot2}\index{R package!ggplot2}. Then, other key packages used to produce clear and compelling graphs in R will be presented. In this project, R package names such as \textit{ggplot2} are italicised, while R commands like \texttt{faceting} are displayed in a teletype font. Moreover, for further detail on the code behind the figures in this paper, the R code chunks can be found in a separate \href{https://github.com/Qinqing-Li/Data-Visualisation-Project/tree/main/code}{GitHub code folder}.\\
 
 \noindent \textbf{The \textit{ggplot2} Package}\\
 \noindent
@@ -751,7 +751,7 @@ Lastly, the residual component $r_t$ encompasses the random, unexplained variati
 
 The Receiver Operating Characteristic (ROC) analysis is a technique used to evaluate the performance of binary classification models at different threshold values. The ROC curve, which plots the true positive rate (TPR) against the false positive rate (FPR), serves as a graphical representation of this evaluation process. Theory and implementation of the ROC curve will be provided below. The ROC curve was first used during World War II for the analysis of radar signals. Following the attack on Pearl Harbor in 1941, the United States military conducted research to enhance the ability to accurately detect Japanese aircraft using radar signals. This research involved measuring the radar receiver operator's proficiency in distinguishing between critical signals, a concept referred to as the Receiver Operating Characteristic (ROC) \cite{rocwiki}.
 
-\subsubsection{Theory of ROC curve}
+\subsubsection{Theory of ROC Curve}
 \noindent
 Let's simplify by first consider binary observations. Consider a polulation of size $N$, with diagnosis $\{y_1,\dots,y_N\}$, such that $y = 1$ is positive and $y = 0$ is negative, and the actual diseased condition $\{d_1,\dots,d_N\}$ where $d = 1$ are diseased and $y = 0$ are non-diseased. Given a predictive model, a True positive (TP) is a diseased individual $d_n = 1$ correctly identified as positive $y_n =1$. A False positive (FP) is a non-diseased individual $d_n = 0$ incorrectly identified as positive $y_n =1$. The concept of True negative (TN) and False nagative (FN) are similar. Then, the total number of TP, FP, TN and FN given a predictive model can be expressed as:
 
@@ -797,7 +797,7 @@ The Area Under the Curve (AUC) provides a single measure of model performance. T
 \noindent
 The larger the AUC\index{Receiver operating characteristic!AUC}, the better the classifier.
 
-\subsubsection{ROC analysis in COVID-19 test}
+\subsubsection{ROC Analysis in COVID-19 Test}
 
 The COVID-19 pandemic underscores the need for accurate diagnostic tests to differentiate between positive and negative cases \cite{Garcia2021ROCAlly}. An effective mean for evaluating accuracy of various diagnostic tests is the ROC analysis.\\
 
@@ -1898,7 +1898,7 @@ The functional boxplot shown in Figure \ref{fig:fbplot} illustrates the metaboli
 In this section, we will introduce the Q–Q boxplot, which combines the advantages from the boxplot and the Q–Q plot. The Q–Q boxplot integrates the box plot's ability to summarise data through its quartiles and the Q–Q plot's capability to compare data distributions to a theoretical distribution.\\
 
 \noindent 
-Nevertheless, although Q–Q plots and box plots are very effiective in data visualisation, they have certain limitations. Q–Q plots are less effective than box plots in highlighting summary quantitles, and their readability also suffers when multiple samples together are represented together in one plot. Furthermore, box plots usually have unreliable tail information when $n<100$, therefor they may not suitable for research questions that need accurate estimates of extreme quantiles.\\
+Nevertheless, although Q–Q plots and box plots are very effiective in data visualisation, they have certain limitations. Q–Q plots are less effective than box plots in highlighting summary quantitles, and their readability also suffers when multiple samples together are represented together in one plot. Furthermore, box plots usually have unreliable tail information when $n<100$, therefor they may not suitable for research questions that need accurate estimates of extreme quantiles.
 
 \subsubsection{Construction of Q–Q Boxplots}
 The construction of a Q–Q boxplot involves a three-step process \cite{rodu2022q}. The first setp is to construct the box, similar to that of the standard boxplot, and which represents the interquartile range of the data. The second step is to draw the whiskers and confidence bands. Finally, the third step involves drawing the outside values. The first and third steps of the process mirror exactly those involved in the creation of classic box plots.\\
