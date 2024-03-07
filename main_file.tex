@@ -748,36 +748,48 @@ Lastly, the residual component $r_t$ encompasses the random, unexplained variati
 
 \subsection{ROC Curve}
 
-The Receiver Operating Characteristic (ROC) analysis is a technique for assessing the performance of classification models as its discrimination threshold is varied. Unlike univariate methods in previous subsections that are constructed from a single dataset representing one variable, ROC analysis divides a single dataset into two samples based on the actual condition of each observation, but focuses on evaluating the performance of a model on one variable, typically the predicted probability that a given observation belongs to a positive class.
+The Receiver Operating Characteristic (ROC) analysis is a technique used to evaluate the performance of binary classification models at different threshold values. The ROC curve, which plots the true positive rate (TPR) against the false positive rate (FPR), serves as a graphical representation of this evaluation process. Theory and implementation of the ROC curve will be provided below. The ROC curve was first used during World War II for the analysis of radar signals. Following the attack on Pearl Harbor in 1941, the United States military conducted research to enhance the ability to accurately detect Japanese aircraft using radar signals. This research involved measuring the radar receiver operator's proficiency in distinguishing between critical signals, a concept referred to as the Receiver Operating Characteristic (ROC) \cite{rocwiki}.
 
 \subsubsection{Theory of ROC curve}
+\noindent
+Let's simplify by first consider binary observations. Consider a polulation of size $N$, with diagnosis $\{y_1,\dots,y_N\}$, such that $y = 1$ is positive and $y = 0$ is negative, and the actual diseased condition $\{d_1,\dots,d_N\}$ where $d = 1$ are diseased and $y = 0$ are non-diseased. Given a predictive model, a True positive (TP) is a diseased individual $d_n = 1$ correctly identified as positive $y_n =1$. A False positive (FP) is a non-diseased individual $d_n = 0$ incorrectly identified as positive $y_n =1$. The concept of True negative (TN) and False nagative (FN) are similar. Then, the total number of TP, FP, TN and FN given a predictive model can be expressed as:
 
-Suppose we have $N$ observations $\{y_1,\dots,y_N\}$, the ROC curve can be used to access the model performance of binary predictions, such as diseased and non-diseased or default and non-default. For binary predictions, we define the True positive (TP) as the sum of instances where model's prediction $\hat{y}_n$ is positive when real observation $y_n$ is positive. Similarly, we can also define false positive (FP), false negative (FN), true negative (TN) \cite{ml} and they can be expressed mathematically as follows:
+\[\text{TP} = \sum^{N}_{n=1} \mathbb{I}(d_n = 1) \mathbb{I}(y_n = 1), \quad \text{FP} = \sum^{N}_{n=1} \mathbb{I}(d_n = 0) \mathbb{I}(y_n = 1),\]
 
-\[\text{TP} = \sum^{N}_{n=1} \mathbb{I}(y_n = 1) \mathbb{I}(\hat{y}_n = 1), \quad \text{FP} = \sum^{N}_{n=1} \mathbb{I}(y_n = 0) \mathbb{I}(\hat{y}_n = 1),\]
-
-\[\text{FN} = \sum^{N}_{n=1} \mathbb{I}(y_n = 1) \mathbb{I}(\hat{y}_n = 0), \quad \text{TN} = \sum^{N}_{n=1} \mathbb{I}(y_n = 0) \mathbb{I}(\hat{y}_n = 0).\]
+\[\text{FN} = \sum^{N}_{n=1} \mathbb{I}(d_n = 1) \mathbb{I}(y_n = 0), \quad \text{TN} = \sum^{N}_{n=1} \mathbb{I}(d_n = 0) \mathbb{I}(y_n = 0),\]
 
 \noindent
-Let $Y$ be a binary variable indicating the true class of an instance, with $Y = 1$ for positive instances and $Y = 0$ for negative instances. Let $X$ be a continuous variable representing the predicted score or probability of an instance being classified as positive by the classifier, with $X \geq c$ for positive and $X < c$ for negative given a threshold c.\\
+where $\mathbb{I}$ is the indicator function.\\
 
 \noindent
-ROC curve plots True Positive Rate (TPR is the proportion of positive instances correctly identified) and False Positive Rate (FPR is the proportion of negative instances incorrectly identified as positive) \cite{rocAnalysis}, which are defined as follows:
+Then, TPR and FPR can be defined as follows:
 
 \[\text{TPR} = \frac{TP}{TP+FN}, \quad \text{FPR} = \frac{FP}{FP+TN}.\]
+\\
+\noindent
+Now let's consider the cases where diagonisis $\{y_1,\dots,y_N\}$ are continuous.\\
 
 \noindent
-Alternatively, the TPR and the FPR can be defined using conditional probabilities as follows \cite{Pepe2003}:
-
-\[\text{TPR}(c) = \mathbb{P}[X \geq c | Y = 1], \quad \text{FPR}(c) = \mathbb{P}[X \geq c | Y = 0].\]
+Suppose we have a threshold c (variable), which we use as the classification criterion defined as follows: \\
 
 \noindent
-The ROC curve is then the set of points $(\text{FPR}(c), \text{TPR}(c))$ for all possible values of threshold $c$. This curve plots the trade-off between sensitivity (or TPR) and specificity (1 - FPR) across different thresholds. Let $t=\text{FPR}(c)$, then $c = \text{FPR}^{-1}(t)$ and $\text{TPR}(c)= \text{TPR}(\text{FPR}^{-1}(t))$. Hence, let $\text{ROC}(t)= \text{TPR}(\text{FPR}^{-1}(t))$, the ROC curve can be represented as a parametric function of $t$ (classification threshold corresponding to $t=\text{FPR}(c)$) \cite{Pepe2003} , with $t$ varying from 0 to 1:
+classify as a positive case $y_n = 1$ if observation $y_n \geq c$,\\
+\noindent
+classify as a negative case $y_n = 0$ if observation $y_n < c$.\\
+
+\noindent
+Then, the True Positive Rate (TPR) and the False Positive Rate (FPR) in the continuous case can be defined as follows \cite{Pepe2003}:
+
+
+\[\text{TPR}(c) = \mathbb{P}[\hat{y}_n \geq c | d_n = 1], \quad \text{FPR}(c) = \mathbb{P}[\hat{y}_n \geq c | d_n = 0].\]
+
+\noindent
+The ROC curve is then the set of points $(\text{FPR}(c), \text{TPR}(c))$ for all possible values of threshold $c$. This curve plots the trade-off between sensitivity (or TPR) and specificity (1 - FPR) across different thresholds. Let $t=\text{FPR}(c)$, then $c = \text{FPR}^{-1}(t)$ and $\text{TPR}(c)= \text{TPR}(\text{FPR}^{-1}(t))$. Hence, let $\text{ROC}(t)= \text{TPR}(\text{FPR}^{-1}(t))$, the ROC curve can be represented as a parametric function of $t$ (classification threshold corresponding to $t=\text{FPR}(c)$), with $t$ varying from 0 to 1:
 
 \[ \text{ROC} = \{ (t, \text{ROC}(t)) \,|\, t \in [0, 1] \}.\]
 
 \noindent
-The Area Under the Curve (AUC) \cite{Pepe2003}  provides a single measure of model performance. This definition represents the integral of $\text{ROC}(t)$ over the interval from 0 to 1. It can be defined as:
+The Area Under the Curve (AUC) provides a single measure of model performance. This definition represents the integral of $\text{ROC}(t)$ over the interval from 0 to 1. It can be defined as:
 
 \[ \text{AUC} = \int_{0}^{1} \text{ROC}(t) dt.\]
 

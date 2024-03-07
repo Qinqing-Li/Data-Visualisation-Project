@@ -1,9 +1,9 @@
 \begin{theindex}
 
   \item Biplot
-    \subitem singular values, \hyperpage{46}
+    \subitem singular values, \hyperpage{48}
   \item Biplots
-    \subitem singular value decomposition, \hyperpage{45}
+    \subitem singular value decomposition, \hyperpage{47}
 
   \indexspace
 
@@ -13,8 +13,8 @@
   \indexspace
 
   \item Funtional boxplot
-    \subitem band, \hyperpage{56}
-    \subitem band depth, \hyperpage{56}
+    \subitem band, \hyperpage{58}
+    \subitem band depth, \hyperpage{58}
 
   \indexspace
 
@@ -37,27 +37,28 @@
   \indexspace
 
   \item LOESS
-    \subitem penalty, \hyperpage{41}
-    \subitem preliminary estimation, \hyperpage{41}
-    \subitem robustness weight, \hyperpage{41}
-    \subitem weight, \hyperpage{40}
+    \subitem penalty, \hyperpage{42}
+    \subitem preliminary estimation, \hyperpage{42}
+    \subitem robustness weight, \hyperpage{42}
+    \subitem weight, \hyperpage{42}
 
   \indexspace
 
   \item Principal component analysis
-    \subitem covariance matrix, \hyperpage{43}
-    \subitem loss function, \hyperpage{43, 44}
-    \subitem optimal encoding, \hyperpage{44}
-    \subitem reconstruction error, \hyperpage{43}
+    \subitem covariance matrix, \hyperpage{45}
+    \subitem loss function, \hyperpage{45, 46}
+    \subitem optimal encoding, \hyperpage{46}
+    \subitem reconstruction error, \hyperpage{45}
   \item Principal curves
-    \subitem curve, \hyperpage{49}
-    \subitem least-squares objective function, \hyperpage{49}
-    \subitem projection index, \hyperpage{49}
+    \subitem algorithm, \hyperpage{51}
+    \subitem curve, \hyperpage{51}
+    \subitem least-squares objective function, \hyperpage{51}
+    \subitem projection index, \hyperpage{51}
 
   \indexspace
 
   \item Quantile\IeC {\textendash }Quantile boxplot
-    \subitem whiskers, \hyperpage{58}
+    \subitem whiskers, \hyperpage{60}
 
   \indexspace
 
@@ -68,27 +69,27 @@
     \subitem Rtsne, \hyperpage{10}
     \subitem tidyverse, \hyperpage{10}
   \item Receiver operating characteristic
-    \subitem AUC, \hyperpage{28}
+    \subitem AUC, \hyperpage{29}
 
   \indexspace
 
   \item Simple linear regression
-    \subitem expectations, \hyperpage{37}
-    \subitem least squares estimation, \hyperpage{38}
+    \subitem expectations, \hyperpage{39}
+    \subitem least squares estimation, \hyperpage{39}
 
   \indexspace
 
   \item t-SNE
-    \subitem conditional probabilities, \hyperpage{50}
-    \subitem cost function, \hyperpage{51}
-    \subitem gradient descent, \hyperpage{51}
-    \subitem joint probability, \hyperpage{51}
-    \subitem Kullback-Leibler divergence, \hyperpage{51}
+    \subitem conditional probabilities, \hyperpage{52}
+    \subitem cost function, \hyperpage{53}
+    \subitem gradient descent, \hyperpage{53}
+    \subitem joint probability, \hyperpage{53}
+    \subitem Kullback-Leibler divergence, \hyperpage{53}
   \item Time series
-    \subitem ACF, \hyperpage{27}
-    \subitem autocorrelation, \hyperpage{26}
+    \subitem ACF, \hyperpage{26}
+    \subitem autocorrelation, \hyperpage{25}
     \subitem moving average process, \hyperpage{24}
-    \subitem stochastic process, \hyperpage{23}
+    \subitem stochastic process, \hyperpage{24}
 
   \indexspace
 
