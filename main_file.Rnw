@@ -562,12 +562,12 @@ Addressing information overload in visualisations requires the strategic applica
 \noindent A classic histogram is a visual representation of the distribution of a (numerical) dataset. It is composed by a series of contiguous rectangles, also known as ``bins", each representing a range of data values. The height of each of these corresponds to the frequency or count of data points within that range, depending on the type of histogram. On a cartesian coordinate system, typically, the x-axis shows the endpoints of each bin, and the y-axis represents count or frequency. Hence, histograms facilitate, among other thing, the visualisation of the distribution, spread, and central tendency of datasets.\\
 
 \noindent \textbf{Mathematical Notation}\\
-\noindent Suppose the data points within a datset are partitioned into $k$ non-overlapping bins, denoted as $B_1, \dots, B_k$ such that $B_i = [t_i, t_{i+1})$ for $i = 1, \dots, k$. Here, $t_i$ and $t_{i+1}$ represent the lower and upper boundaries of the $i$-th bin, respectively.\\
+\noindent Suppose the data points within a datset are partitioned into $k$ non-overlapping bins, denoted as $B_1, \dots, B_k$ such that $B_i = [t_i, t_{i+1})$ for $i = 1, \dots, k-1$. Here, $t_i$ and $t_{i+1}$ represent the lower and upper boundaries of the $i$-th bin, respectively.\\
 
 \noindent Then, the classical frequency histogram of the data can be represented as a set of $k$ bars, where the height of the $i$-th bar corresponds to the frequency or count of data points falling within the interval $B_i$.\\
 
 \noindent \textbf{Theory of Bin Number and Bin Width\index{Histograms!bin}}\\
-\noindent The classical frequency histogram can be fully described by two main factors: the bin width $h$, and the bin origin $t_{0}$. However, in order for the bin counts to be comparable, the bins should all have the same width. Furthermore, it is essential to correctly choose the number of bins, since these have a huge impact on how the data is displayed and interpreted. Too few bins may hide the information in a dataset, and too many bins can cause a lot of noise in a dataset.\\
+\noindent The classical frequency histogram can be fully described by two main factors: the bin width $b$, and the bin origin $t_{0}$. However, in order for the bin counts to be comparable, the bins should all have the same width. Furthermore, it is essential to correctly choose the number of bins, since these have a huge impact on how the data is displayed and interpreted. Too few bins may hide the information in a dataset, and too many bins can cause a lot of noise in a dataset.\\
 
 \noindent Sturges' Rule\index{Histograms!Sturges' Rule}, established by Herbert Sturges in 1926, offers a systematic approach to determining the optimal number of bins constructing a frequency histogram \cite{scott2015multivariate}. This rule is based on the concept of normality, with the binomial distribution, $B(n,p = 0.5)$, serving as a model for an optimally constructed histogram. It links the binomial distribution with normally distributed data, providing a basis for selecting the number of bins to achieve a histogram resembling a normal density curve.\\
 
@@ -583,19 +583,19 @@ by the binomial expansion. Hence, Sturges’ rule follows immediately. \cite{sco
 
 \noindent \textbf{Theory of Density Histograms}
 
-\noindent Let $v_i$ denote the bin count of the $i$-th bin, representing the number of sample points falling in bin $B_i$. The density histogram is mathematically defined as:
-\[ \hat{f}(x) = \frac{v_k}{nb} = \frac{1}{nb} \sum_{i=1}^{n} I_{[t_i,t_{i+1})}(x_i) \quad \text{for } x \in B_i.\]
+\noindent Let $v_k$ denote the bin count of the $k$-th bin, representing the number of sample points falling in bin $B_k$. The density histogram is mathematically defined as:
+\[ \hat{f}(x) = \frac{v_k}{nb} = \frac{1}{nb} \sum_{i=1}^{n} I_{[t_k,t_{k+1})}(x_i) \quad \text{for } x \in B_k.\]
 
 \noindent With this definition, it is straightforward to verify that $ \hat{f}(x) \geq 0 $ and that $ \int \hat{f}(x) \, dx = 1 $, ensuring that $ \hat{f}(x) $ is a proper density function.\\
 
 \noindent
-The density histogram's bin counts ${v_{i}}$ can be considered as binomial random variables, where each bin count $v_{i}$ follows a binomial distribution $B(n,p_{i})$. The probability $p_{i}$ for each bin is the integral of the density function $f(t)$ over the bin interval $B_{i}$:
+The density histogram's bin counts ${v_{k}}$ can be considered as binomial random variables, where each bin count $v_{i}$ follows a binomial distribution $B(n,p_{k})$. The probability $p_{k}$ for each bin is the integral of the density function $f(t)$ over the bin interval $B_{k}$:
 
-$$p_{i} = \int_{B_i} f(t) \, dt. $$
+$$p_{k} = \int_{B_k} f(t) \, dt. $$
 
 \noindent
 Consider the Mean Squared Error (MSE) of the estimator $\hat{f}(x)$ for $x \in B_k$. In this case, we have $\text{E}[v_k] = np_k$ and $\text{Var}[v_k] = np_k(1-p_k)$. Consequently, we can derive expressions for the variance and bias of $\hat{f}(x)$ as follows:
-$$\text{Var} \hat{f}(x) &= \frac{\tezt{Var} v_{k}}{(nb)^2} = \frac{p_k(1-p_k)}{nb^2},$$
+$$\text{Var} \hat{f}(x) &= \frac{\text{Var} \ v_{k}}{(nb)^2} = \frac{p_k(1-p_k)}{nb^2},$$
 $$\text{Bias} \hat{f}(x) &= \text{E}\hat{f}(x) - f(x) = \frac{1}{nb} \text{E}v_k - f(x) = \frac{p_k}{b} - f(x).$$
 
 \noindent
@@ -678,24 +678,25 @@ By introducing the re-scaling notation $K_h(u) = h^{-1}K(\frac{u}{h})$, we can a
 $$\hat{f}(x; h) = n^{-1} \sum_{i=1}^{n} K_h(x - X_i).$$
 
 \noindent
-Here, the kernel function \( K(u) \) \index{Kernel density estimation!kernel function}is a normalised non-negative function that satisfies $\int K(u) du = 1.$
+Here, the kernel function \( K(x) \) \index{Kernel density estimation!kernel function}is a normalised non-negative function that satisfies $\int K(x) dx = 1.$
 
 \noindent
 The mean squared error, $\text{MSE}{\hat{f}(x;h)}$, can be used to quantify the difference for a given $x$ between the "true" density function $f(x)$ and its estimator $\hat{f}(x)$, and with some simple transformation, it can be presented as follows:
-$$\text{MSE}{\hat{f}(x;h)}=E[(\hat{f}(x)-f(x))^2]=[\text{bias}\hat{f}(x)]^2+\text{var}\hat{f}(x).$$
+$$\text{MSE}{\hat{f}(x;h)}=E[(\hat{f}(x)-f(x))^2]=[\text{Bias}\hat{f}(x)]^2+\text{Var}\hat{f}(x).$$
 
 \noindent
 We can see that in order to compute $\text{MSE}{\hat{f}(x;h)}$, we will require expression for the mean and variance value of $\hat{f}(x;h)$. This can be derived from the equation of KDE, and by using the convolution notation, we can get the value of the bias. The bias is the difference between a smoothing of $f$ and $f$ itself. Using similar calculations, we can get the variance, and the MSE by combining the variance and bias. So the MSE is expressed as: 
-$$\text{MSE}{\hat{f}(x;h)}=n^{-1}{(K_h^2 \ast f)(x)-(K_h \ast f)^2(x)}+{(K_h \ast f)(x)-f(x)}^2.$$
+$$\text{MSE}{\hat{f}(x;h)}=n^{-1}\{(K_h^2 \ast f)(x)-(K_h \ast f)^2(x)\}+\{(K_h \ast f)(x)-f(x)\}^2.$$
 
 \noindent
-Now, move our attention to the integration of MSE over all $x$, and it gives a global measure of conformity of $\hat{f}(x)$ with $f(x)$, called the mean integrated quare error, MISE, and it is one of measures used to estimate the smoothing parameter:
+Now, move our attention to the integration of MSE over all $x$, and it gives a global measure of conformity of $\hat{f}(\cdot;h)$ with $f$, called the mean integrated quare error, MISE, and it is one of measures used to estimate the smoothing parameter:
 \begin{align*}
-\text{MISE}(\hat{f}) &= \int \text{MSE} \hat{f}(x; h) \, dx \\
-&= n^{-1} \int (K_h^2 * f)(x) - (K_h * f)^2(x) \, dx + \int ((K_h * f)(x) - f(x))^2 \, dx.
+\text{MISE}{\hat{f}(\cdot;h)} &= \int \text{MSE}{ \hat{f}(x; h)} \, dx \\
+&= n^{-1} \int \{(K_h^2 * f)(x) - (K_h * f)^2(x)\} \, dx + \int \{(K_h * f)(x) - f(x)\} ^2 \, dx.
 \end{align*}
 
-\noindent In Figure~\ref{fig:iris-plots}, the kernel density estimation of the iris dataset is represented. The kernel density curve illustrates the distribution of sepal lengths. Peaks in the curve indicate primary concentration trends of sepal length within the data. A unimodal curve indicates a concentration of sepal lengths for most irises in a specific region. Conversely, a bimodal or multimodal curve would suggest the presence of multiple concentration areas.
+\noindent In Figure~\ref{fig:iris-plots}, the kernel density estimation of the iris dataset is represented. In this case, we use the Gaussian kernel by default, which can be expressed as $K(u) = \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2}u^2}$. The kernel density curve illustrates the distribution of sepal lengths. Peaks in the curve indicate primary concentration trends of sepal length within the data. A unimodal curve indicates a concentration of sepal lengths for most irises in a specific region. Conversely, a bimodal or multimodal curve would suggest the presence of multiple concentration areas.
+
 
 
 \subsection{Bar Charts}
@@ -2202,7 +2203,7 @@ The unique aspect of the Q–Q boxplot comes in the second step. In order to dra
 Alongside this, the point-wise confidence bands are also determined, which provides a visual indication of how closely the data follows the expected theoretical distribution. To integrate the relative deviations and confidence bands into the Q–Q boxplot, we include both the x and y coordinates in the plot. The y-axis coordinates correspond to the quantile values from the comparison dataset, while the x-axis coordinates represent the deviations relative to the reference distribution.\\
 
 \noindent
-To calculate the x-coordinate for a Q–Q boxplot, we set a scale for the plot and determin the maximum x-coordinate, $x_{\text{max}}=(\frac{b_w}{2})$ where $b_w$ is the box width. Let $dev_{max}$ be the maximum of the absolute values of the whisker deviations and confidence band values. The value of a relative deviaition $d$ is computed by either taking the difference between the standardised values from the comparison distribution and those from the reference distribution, or by using a value from the confidence band associated with the reference distribution. We can then set:
+To calculate the x-coordinate for a Q–Q boxplot, we set a scale for the plot and determin the maximum x-coordinate, $x_{\text{max}}=(\frac{b_w}{2})$ where $b_w$ is the box width. Let $\text{dev}_{\text{max}$ be the maximum of the absolute values of the whisker deviations and confidence band values. The value of a relative deviaition $d$ is computed by either taking the difference between the standardised values from the comparison distribution and those from the reference distribution, or by using a value from the confidence band associated with the reference distribution. We can then set:
 $$x^* = \frac{d \cdot x_{\text{max}}}{\text{dev}_{\text{max}}}.$$
 The $x$ coordinate is then $x_b+x*$, where $x_b$ marks the center of the boxplot.
 
