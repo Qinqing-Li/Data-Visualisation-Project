@@ -1,7 +1,7 @@
 \begin{theindex}
 
   \item Biplot
-    \subitem singular values, \hyperpage{45}
+    \subitem singular values, \hyperpage{46}
   \item Biplots
     \subitem singular value decomposition, \hyperpage{45}
 
@@ -46,7 +46,7 @@
 
   \item Principal component analysis
     \subitem covariance matrix, \hyperpage{43}
-    \subitem loss function, \hyperpage{44}
+    \subitem loss function, \hyperpage{43, 44}
     \subitem optimal encoding, \hyperpage{44}
     \subitem reconstruction error, \hyperpage{43}
   \item Principal curves
@@ -56,7 +56,7 @@
 
   \indexspace
 
-  \item Quantile–Quantile boxplot
+  \item Quantile\IeC {\textendash }Quantile boxplot
     \subitem whiskers, \hyperpage{58}
 
   \indexspace
