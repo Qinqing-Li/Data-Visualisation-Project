@@ -1200,7 +1200,7 @@ These heatmaps can offer policymakers valuable insights for crafting effective p
 A scatter plot is a graphical representation of a set of data points in a two-dimensional coordinate system. Each data point is represented by a dot, and the position of the dot is determined by the values of two variables in the system. Some examples of this type of visualisation can be found in Figures~\ref{fig:abs-plots}, ~\ref{fig:cogload-plot}, and ~\ref{fig:bubble-plot-construction}.\\
 
 \noindent
-In general, the \(Y\)-axis denotes the response, or dependent, variable and the \(X\)-axis denotes the explanatory, or independent, variable. Each observation of a dataset is mapped to a dot in the 2-dimentional space. Let \((x_i, y_i)\) represent the coordinates of the \(i\)-th data point on the scatter plot produced by mapping a set of data. The scatter plot can be mathematically described as a set of points: \( \{(x_1, y_1), \ldots, (x_n, y_n)\}\) where \(n\) is the number of observations in the set.
+Generally, in scatter plots the \(Y\)-axis denotes the response, or dependent variable and the \(X\)-axis denotes the explanatory, or independent variable. Each observation of a dataset is mapped to a dot in the 2-dimentional space. Let \((x_i, y_i)\) represent the coordinates of the \(i\)-th data point on the scatter plot produced by mapping a set of data. The scatter plot can be mathematically described as a set of points: \( \{(x_1, y_1), \ldots, (x_n, y_n)\}\) where \(n\) is the number of observations in the set.
 
 \subsubsection{Scatter Plots in Practice}
 
@@ -1265,7 +1265,7 @@ p
 In the static scatter plot displayed in Figure~\ref{fig:gapminder_static}, there appears to be a positive correlation between GDP per capita and life expectancy: as GDP per capita increases, the life expectancy behaves in a similar manner. However, the spread of points and variability in life expectancy at similar GDP levels make it difficult to draw precise conclusions. Furthermore, the complexity and clutter in the plot demand an extremely high cognitive load, making it difficult for the viewer to understand the details of the data visualised.\\ 
 
 \noindent
-However, one can refer to the animated version of the scatter plot to solve many of these issues and discover details in the data that the static plot is unable to illustrate. While here the code chunk and screenshots are provided, the set animated plots of the gapminder dataset, produced using \textit{gganimate}, can be found in the \href{https://github.com/Qinqing-Li/Data-Visualisation-Project/tree/main/code}{GitHub code folder}. \\
+However, one can refer to the animated version of the scatter plot to solve many of these issues and discover details in the data which the static plot is unable to illustrate. Here the code chunk and three screenshots are provided, but for more detail, the set of animated scatterplots produced using \textit{gganimate}, can be found in the \href{https://github.com/Qinqing-Li/Data-Visualisation-Project/tree/main/code}{GitHub folder}. \\
 
 <<gganimate, echo=TRUE, fig.show='hide', results='hide', message=FALSE, warning=FALSE, error=TRUE>>=
 # CREATE ANIMATED GGPLOT
@@ -1303,11 +1303,11 @@ gapplot<-ggplot(gapminder, aes(gdpPercap, lifeExp, colour = country)) +
 
 \noindent The animated scatter plots provide a dynamic visualisation of the relationship between GDP per capita and life expectancy in each country over time. The animation is displayed across 5 separate animated scatter plot, each grouping the data from countries from a specific continent to reduce clutter and cognitive load. This animation helps in understanding temporal trends and patterns in the data that may not be apparent in static plots.\\
 
-\noindent The conclusions drawn from the animated plots might differ from those of the static plot. For instance, while the static plot may suggest a general positive correlation between GDP per capita and life expectancy, the animated plots reveals nuances such as the pace of improvement in life expectancy over time, variations in the relationship between different countries and continents, and the impact of historical events or economic changes on life expectancy trends. In general, the animated plots offer a richer and more dynamic exploration of the data, leading to potentially deeper insights and understanding.
+\noindent The conclusions drawn from the animated plots differ from those of the static plot. For instance, while the static plot suggests a general positive correlation between GDP per capita and life expectancy, the animated plots reveal nuances such as the pace of improvement in life expectancy over time, variations in the relationship between different countries and continents, and the impact of historical events or economic changes on life expectancy trends. In general, the animated plots offer a richer and more dynamic exploration of the data, leading to potentially deeper insights and understanding.
 
 \subsection{Bubble Charts}
 \subsubsection{Theory of Bubble Charts}
-\noindent Bubble charts are a captivating data visualisation tool that extends beyond the typical two-dimensional scatter plot by introducing an extra dimension. They represent data points as bubbles or circles on a two-dimensional plane, where the size of each bubble encodes a third variable.\\
+\noindent Bubble charts are a captivating data visualisation tool that extend beyond the typical two-dimensional scatter plot by introducing an extra dimension. They represent data points as bubbles or circles on a two-dimensional plane, where the size of each bubble encodes a third variable.\\
 
 \noindent The construction of bubble charts, is parallel to that of a scatter plot, but involves the scaling the data values to determine the size of each bubble. While it isn't always the case, the size of these is typically proportional to the variable it represents. The choice of scaling method depends on the data distribution and the message the chart aims to convey.\\
 
@@ -1320,17 +1320,16 @@ R = kV,
 \noindent Hence, bubble chart represents data points in three dimensions: x-coordinate, y-coordinate, and bubble size. Each data point is denoted by a triplet of values \((x_i, y_i, C_i)\), where \(x_i\) and \(y_i\) represent the coordinates, and \(C_i\) is the equation of the circle for the \(i\)-th observation. In the context of a bubble chart, the radius \(R_i\) of each bubble is expressed as \(k \cdot V_i\), allowing us to formulate the equation for each circle as:
 
 \[
-(x - x_i)^2 + (y - y_i)^2 = (kV_i)^2 ,
+(x - x_i)^2 + (y - y_i)^2 = (kV_i)^2, 
 \]
 
-\noindent Here, \(x_i\) and \(y_i\) denote the coordinates of the circle's center.\\
+\noindent where \(x_i\) and \(y_i\) denote the coordinates of the circle's center.\\
 
-\noindent Since each bubble \(B_i\) can be defined mathematically by the triplet \((x_i, y_i, C_i)\), akin to the scatter plot, the bubble plot can be described as a set of ``bubbles" \( \{B_1, \ldots, B_n\}\), where \(n\) represents the number of observations in the set.\\
+\noindent Since each bubble \(B_i\) can be defined mathematically by the triplet \((x_i, y_i, C_i)\), akin to the scatter plot, the bubble plot can be described as a set of ``bubbles" \( \{B_1, \ldots, B_n\}\), where \(n\) represents the number of observations in the set.
 
-\noindent
 \subsubsection{Bubble Charts in Practice}\\
 
-\noindent The bubble chart shown in Figure~\ref{fig:bubble-plot}, as the scatter plots above, visualises data from the mtcars dataset. The single graph deplics the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp) and even colour-coding the bubbles based on the number of cylinders (cyl).\\
+\noindent The bubble chart shown in Figure~\ref{fig:bubble-plot}, as the scatter plots in Figure~\ref{fig:bubble-plot-construction}, visualises data from the mtcars dataset. The single bubble charts depicts the relationship between car models and their fuel efficiency (mpg) while using the size of the bubbles to represent the car's horsepower (hp), and even colour-coding the bubbles based on the number of cylinders (cyl).\\
 
 <<bubble-plot, echo=FALSE, fig.height=5, fig.width=11, fig.pos = 'H', fig.cap='Bubble plot illustrating trends in car types and performance', message=FALSE>>=
 ggplot(mtcars, aes(x = rownames(mtcars), y = mpg, size = hp, color = cyl)) +
