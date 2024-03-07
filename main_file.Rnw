@@ -18,9 +18,6 @@
 
 \usepackage[a4paper, total={6in, 8in}]{geometry}
 
-\title{Data Visualisation: Theory and Practice}
-\author{Yujie Chu, Pia Fullaondo, Qinqing Li, Jacko Zhou}
-\date{}
 \makeindex
 
 \begin{document}
@@ -71,26 +68,26 @@ opts_chunk$set(fig.path = 'figure/beamer-',
 @
 
 \begin{center}
-\textbf{\huge Data Visualisation: Theory and Practice} \\
+\textbf{\Huge Data Visualisation: Theory and Practice} \\
 \vspace{0.5cm}
 
 \LARGE by 
 \vspace{0.25cm}
 \LARGE Yujie Chu, Pia Fullaondo, Qinqing Li, Jacko Zhou \\
-\vspace {1.5cm}
+\vspace {2cm}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.26\textwidth]{image_reference/UniversityLogo.png}
 \end{figure}
 
-\vspace {1.5cm}
+\vspace {2cm}
 
 The School of Mathematics \\
 Undergraduate Mathematics Project
 \vspace {0.25cm}
 
-\vspace{2cm}
+\vspace{2.5cm}
 
 Supervised by \\
 Dr. Miguel de Carvalho \\
@@ -174,12 +171,12 @@ Known as the ``warming stripes," this chart cleverly employs blues to indicate c
 Having observed the remarkable effectiveness of data visualisations, the significance of employing them correctly becomes apparent. The improper use of data visualisations holds the potential to significantly influence the public in misleading ways, resulting in undesired consequences.\\
 
 \noindent
-In fact, inappropriate data visualisation can conceal trends rather than reveal them. Figure~\ref{fig:misuse1} \cite{lie} illustrates an instance of this issue. On the left-hand side of the figure, an inappropriate scale is used — the y-scale ranges from 0 to 30 million dollars. In this way, the fluctuations in payroll spending are obscured. Conversely, on the right-hand side, a significant increase of over 500,000 dollars in just two months can be observed due to the use of a different scale. This revelation is substantial; considering inflation, 500,000 dollars in 1937 is worth well over 10 million dollars today \cite{worth}.\\
+In fact, inappropriate data visualisation can conceal trends rather than reveal them. Figure~\ref{fig:misuse1} \cite{lie, liestats} illustrates an instance of this issue. On the left-hand side of the figure, an inappropriate scale is used — the y-scale ranges from 0 to 30 million dollars. In this way, the fluctuations in payroll spending are obscured. Conversely, on the right-hand side, a significant increase of over 500,000 dollars in just two months can be observed due to the use of a different scale. This revelation is substantial; considering inflation, 500,000 dollars in 1937 is worth well over 10 million dollars today \cite{worth}.\\
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{image_reference/misuse1.png}
-    \caption{Incomplete Data Analysis by Miguel de Carvalho, ``How to lie with statistics" \cite{liestats}}
+    \caption{Incomplete Data Analysis by Miguel de Carvalho, ``How to lie with statistics"}
     \label{fig:misuse1}
 \end{figure}
 
@@ -275,7 +272,7 @@ This section provides an overview of the different datasets analysed and visuali
 \newpage 
 
 \section{Theoretical Foundations of Data Visualisation}
-This chapter delves into the core principles and concepts that serve as the base of the field of data visualisation. We seek to understand not only the ``how" but also the ``why" behind the creation of visualisations that captivate and inform.
+\noindent This chapter delves into the core principles and concepts that serve as the base of the field of data visualisation. We seek to understand not only the ``how" but also the ``why" behind the creation of visualisations that captivate and inform.
 
 \subsection{Introduction to Data Visualisation Theory}
 Creating effective data visualisations requires familiarity with the robust theoretical framework underlying every chart, graph, or plot. These theoretical underpinnings not only form the basis of data visualisation, but also shape the way in which we represent, perceive, understand, and interpret data.\\ 
@@ -302,7 +299,7 @@ Data can be broadly categorised into four main types \cite{wilkinson2012grammar}
 \noindent \textbf{Matching Data Types with Appropriate Visualisation Techniques}\\
 \noindent Various data types demand specific visualisation methods for optimal representation. For nominal data, bar charts and stacked bar charts are effective in displaying categorical information and relative proportions. Ordinal data benefits from ordered bar charts, dot plots, or even stacked bar charts, maintaining the ranking and order of categories. Moreover, interval data is best visualised using line charts, histograms, and box plots, showcasing trends and distributions without assuming a true zero point. Finally, ratio data is effectively represented through scatter plots, histograms, and line charts, enabling precise comparisons and measurements due to the presence of a meaningful zero point \cite{healy2018data}. An example of each of these is represented in Figure~\ref{fig:data-plots}, where artificial data from a class of 4th-year university students is visualised.
 
-<<data-plots, echo=FALSE, message=FALSE, fig.height=4, fig.width=5, fig.pos = 'H', fig.cap='Different types of visualisation techniques according to the data type'>>=
+<<data-plots, echo=FALSE, message=FALSE, fig.height=4, fig.width=6, fig.pos = 'H', fig.cap='Different types of visualisation techniques according to the data type'>>=
 common_theme <- theme(
   axis.title.x = element_text(size = 8),
   axis.title.y = element_text(size = 8),
@@ -555,11 +552,11 @@ Addressing information overload in visualisations requires the strategic applica
 
 \section{Univariate Data Visualisation Methods}
 
-This chapter initiates the discussion regarding data visualisation methods. Particularly, it introduces techniques for graphically representing for datasets of the simplest nature — that is, single-variable datasets. It focuses on histograms, bar charts, the kernel density estimate, time series analysis, and ROC Curves. 
+\noindent This chapter initiates the discussion regarding data visualisation methods. Particularly, it introduces techniques for graphically representing for datasets of the simplest nature — that is, single-variable datasets. It focuses on histograms, bar charts, the kernel density estimate, time series analysis, and ROC Curves. 
 
 \subsection{Histograms}
 
-\noindent Histograms are essential tools in univariate data visualisation. They provide a concise yet comprehensive overview of the frequency or density distribution of a single variable. This chapter delves into the construction of two types of histograms, as well as an example of their application in practice.
+\noindent Histograms are essential tools in univariate data visualisation. They provide a concise yet comprehensive overview of the frequency or density distribution of a single variable in a dataset. This chapter explores the construction of two primary types of histograms: classic frequency histograms and density histograms. Additionally, it illustrates their utility through the exploration of a practical application using the iria dataset.
 
 \subsubsection{Classic Frequency Histograms}
 
@@ -571,15 +568,15 @@ This chapter initiates the discussion regarding data visualisation methods. Part
 \noindent Then, the classical frequency histogram of the data can be represented as a set of $k$ bars, where the height of the $i$-th bar corresponds to the frequency or count of data points falling within the interval $B_i$.\\
 
 \noindent \textbf{Theory of Bin Number and Bin Width\index{Histograms!bin}}\\
-\noindent The classical frequency histogram can be fully described by two main factors: the bin width $b$, and the bin origin $t_{0}$. However, in order for the bin counts to be comparable, the bins should all have the same width. Furthermore, it is essential to correctly choose the number of bins, since these have a huge impact on how the data is displayed and interpreted. Too few bins may hide the information in a dataset, and too many bins can cause a lot of noise in a dataset.\\
+\noindent The classical frequency histogram can be fully described by two main factors: the bin width $h$, and the bin origin $t_{0}$. However, in order for the bin counts to be comparable, the bins should all have the same width. Furthermore, it is essential to correctly choose the number of bins, since these have a huge impact on how the data is displayed and interpreted. Too few bins may hide the information in a dataset, and too many bins can cause a lot of noise in a dataset.\\
 
 \noindent Sturges' Rule\index{Histograms!Sturges' Rule}, established by Herbert Sturges in 1926, offers a systematic approach to determining the optimal number of bins constructing a frequency histogram \cite{scott2015multivariate}. This rule is based on the concept of normality, with the binomial distribution, $B(n,p = 0.5)$, serving as a model for an optimally constructed histogram. It links the binomial distribution with normally distributed data, providing a basis for selecting the number of bins to achieve a histogram resembling a normal density curve.\\
 
-\noindent It suggests setting the number of bins, denoted as $k$, it can be expressed as:$$ k = 1 + \log_{2} n, $$ where $n$ represents the sample size. This formula stems from constructing a frequency histogram with $k$ bins, each of width 1 and centered on the points $i = 0,1,\dots, k - 1$. The bin count of the $i$-th bin is chosen to be the binomial coefficient $\binom{k-1}{i}$. As $k$ increases, this ideal frequency histogram assumes the shape of a normal density with mean $(k - 1)/2$ and variance $(k - 1)/4$. The total sample size is:
+\noindent The rule suggests setting the number of bins, denoted as $k$, to \[ k = 1 + \log_{2} n, \] where $n$ represents the sample size. This formula stems from constructing a frequency histogram with $k$ bins, each of width 1 and centered on the points $i = 0,1,\dots, k - 1$. The bin count of the $i$-th bin is chosen to be the binomial coefficient $\binom{k-1}{i}$. As $k$ increases, this ideal frequency histogram assumes the shape of a normal density with mean $(k - 1)/2$ and variance $(k - 1)/4$. The total sample size is:
 \[ n = \sum_{i=0}^{k-1} \binom{k-1}{i} = (1+1)^{k-1} = 2^{k-1}, \]
 by the binomial expansion. Hence, Sturges’ rule follows immediately. \cite{scott2015multivariate}.\\
 
-\noindent Note that Sturges’ rule functions as a number-of-bins rule rather than a bin-width rule. Assuming all bins are of equal width, to find the bin-width, Sturges’ rule is implemented by partitioning the sample range of the data into the recommended number bins \cite{scott2015multivariate}.
+\noindent Note that Sturges’ rule functions as a number-of-bins rule rather than a win  width rule. Assuming all bins are of equal width, to find the win  width, Sturges’ rule is implemented by partitioning the sample range of the data into the recommended number bins \cite{scott2015multivariate}.
 
 \subsubsection{Density Histograms\index{Histograms!density histograms}}
 
@@ -593,7 +590,8 @@ by the binomial expansion. Hence, Sturges’ rule follows immediately. \cite{sco
 \noindent With this definition, it is straightforward to verify that $ \hat{f}(x) \geq 0 $ and that $ \int \hat{f}(x) \, dx = 1 $, ensuring that $ \hat{f}(x) $ is a proper density function.\\
 
 \noindent
-The density histogram's bin counts ${v_{i}}$ can be considered as binomial random variables, where each bin count $v_{i}$ follows a binomial distribution $B(n,p_{i})$. The probability $p_{i}$ for each bin is the integral of the density function $f(t)$ over the bin interval $B_{i}$ \cite{scott2015multivariate}:
+The density histogram's bin counts ${v_{i}}$ can be considered as binomial random variables, where each bin count $v_{i}$ follows a binomial distribution $B(n,p_{i})$. The probability $p_{i}$ for each bin is the integral of the density function $f(t)$ over the bin interval $B_{i}$:
+
 $$p_{i} = \int_{B_i} f(t) \, dt. $$
 
 \noindent
@@ -608,9 +606,11 @@ The Mean Squared Error (MSE) of an estimator $\hat{f}(x)$ can be bounded using L
 \end{equation*}
 where $\xi_k$ is a point in the bin $B_k$, $n$ is the number of observations, and $b$ is the bin width, reflecting the combined effects of variability and estimation error.
 
-\subsubsection{Histogram in Practice}\\
+\subsubsection{Histograms in Practice}\\
 
-\noindent As the number of sample means used to plot a histogram increases, one can usually observe the shape of the histogram gradually resembling that of the normal distribution. Consider the histogram found on the left side of Figure~\ref{fig:iris-plots} 
+\noindent In R programming, \texttt{geom\_histogram()} in \textit{ggplot2} facilitates the creation of histograms. This function offers flexibility in adjusting the number and width of bins, allowing for precise control over histogram granularity. Additionally, \texttt{geom\_histogram()} supports aesthetic mappings, enabling users to distinguish data subsets using color, fill, or other graphical attributes.\\
+
+\noindent As the sample size increases, the shape of a histogram often begins to resemble that of a normal distribution. This phenomenon is demonstrated in the histogram depicted on the left side of Figure~\ref{fig:iris-plots}. This histogram was generated using the \texttt{geom\_histogram()} function and iris dataset.\\
 
 \begin{figure}[htbp]
   \centering
@@ -653,32 +653,33 @@ print(kde_diagram)
   \label{fig:iris-plots}
 \end{figure}
 
-\noindent The frequency histogram displayed in Figure~\ref{fig:iris-plots} exhibits variable bin lengths, with a constant bin width set to 0.3. The shape of the histogram is slightly shifted to the left, deviating from the symmetric bell shape of a normal distribution. This deviation may indicate some level of asymmetry or non-normality in the Sepal Length data. 
+\noindent The frequency histogram displayed in Figure~\ref{fig:iris-plots} exhibits variable bin lengths, with a constant bin width set to 0.3. The shape of the histogram is slightly shifted to the left, deviating from the symmetric bell shape of a normal distribution. This deviation may indicate some level of asymmetry or non-normality in the data's sepal length variable.
 
 \subsection{Kernel Density Estimation}
 
 Kernel Density Estimation(KDE) evolves from the concept of histogram, offering a method for estimating the the probability density function of a dataset.\\
 
 \noindent 
-Kernel Density Estimation (KDE) is an very useful tool in statistics. Instead of discrete histograms, it helps create a smooth curve from values in a dataset. KDE is used to infer the distribution of a population based on a limited sample. Thus, the result of the kernel density estimation is an estimate of the sample's probability density function. Based on this estimated probability density function, one can ascertain certain characteristics of the data distribution, such as the regions where data is concentrated.\\
+Kernel Density Estimation (KDE) is an advancement from the traditional histogram method, providing a means to estimate the probability density function of a dataset. It is an extremely valuable tool in statistics, offering a smoother representation compared to discrete histograms by generating a smooth curve from dataset values. KDE is used to infer the distribution of a population based on a limited sample. The outcome of kernel density estimation yields an estimate of the sample's probability density function, allowing for the determination of key characteristics of the data distribution, such as the regions where data is concentrated.\\
 
 \noindent
-The KDE algorithm takes a parameter called bandwidth\index{Kernel density estimation!bandwidth}, h, that affects how smooth the resulting curve is. Changing the bandwidth changes the shape of the kernel: a lower bandwidth implies only points very close to the chosen position are given any weight, which leads to the estimate looking squiggly. In contrast, a higher bandwidth means having a shallow kernel, where distant points can contribute. Thus, leading to a smoother curve.
+The KDE algorithm uses a parameter known as bandwidth\index{Kernel density estimation!bandwidth}, which influences the smoothness of the resulting curve. Adjusting the bandwidth alters the shape of the kernel: a lower bandwidth emphasises points very close to the chosen position, resulting in a "squiggly" estimate. Conversely, a higher bandwidth employs a broader kernel, allowing distant points to contribute and yielding a smoother curve.
 
 \subsubsection{Theory of Kernel Density Estimation}\\
 
 \noindent
-Let us begin with the formula for the kernel density estimator\index{Kernel density estimation!kernel density estimator}:
+The kernel density estimator\index{Kernel density estimation!kernel density estimator} can be expressed as follows:
 $$\hat{f}(x; h) = \frac{1}{nh} \sum_{i=1}^{n} K\left(\frac{x - X_i}{h}\right).$$
 
 \noindent
-In KDE, the variable $x$ represents the point of density estimation. The total number of data points, denoted as $n$, constitutes the sample size, and all these points are used for estimating the dataset's probability density function. The bandwidth $(h)$ is a crucial parameter that controls the smoothness of the estimation, with smaller bandwidths leading to closer fits to data and larger ones smoothing out details. The kernel function $(K)$, such as the Gaussian or triangular kernel, assigns mass around each data point, influencing the density estimate, while $X_i$ represents the individual sample points that collectively contribute to the estimated density function, guided by the kernel function and the bandwidth\cite{wand1994kernel}.
+In KDE, the variable $x$ represents the point of density estimation. The total number of data points, denoted as $n$, constitutes the sample size, and all these points are used for estimating the dataset's probability density function. The bandwidth $(h)$ is a crucial parameter that controls the smoothness of the estimation, with smaller bandwidths leading to closer fits to data and larger ones smoothing out details. The kernel function $(K)$, such as the Gaussian or triangular kernel, assigns mass around each data point, influencing the density estimate, while $X_i$ represents the individual sample points that collectively contribute to the estimated density function, guided by the kernel function and the bandwidth\cite{wand1994kernel}.\\
+
 \noindent
-By introducing the re-scaling notation $K_h(u) = h^{-1}K(\frac{u}{h})$, we can also write the formula in a more compact way:
+By introducing the re-scaling notation $K_h(u) = h^{-1}K(\frac{u}{h})$, we can also write the formula for the KDE in a more compact manner:
 $$\hat{f}(x; h) = n^{-1} \sum_{i=1}^{n} K_h(x - X_i).$$
 
 \noindent
-Here, the kernel function \( K(u) \) \index{Kernel density estimation!kernel function}is a normalized non-negative function that satisfies $\int K(u) du = 1.$
+Here, the kernel function \( K(u) \) \index{Kernel density estimation!kernel function}is a normalised non-negative function that satisfies $\int K(u) du = 1.$
 
 \noindent
 The mean squared error, $\text{MSE}{\hat{f}(x;h)}$, can be used to quantify the difference for a given $x$ between the "true" density function $f(x)$ and its estimator $\hat{f}(x)$, and with some simple transformation, it can be presented as follows:
@@ -695,16 +696,16 @@ Now, move our attention to the integration of MSE over all $x$, and it gives a g
 &= n^{-1} \int (K_h^2 * f)(x) - (K_h * f)^2(x) \, dx + \int ((K_h * f)(x) - f(x))^2 \, dx.
 \end{align*}
 
-\noindent In Figure~\ref{fig:iris-plots}, the kernel density estimation of the dataset is presented. The distribution of sepal lengths is depicted by the kernel density curve. The peaks observed in the curve correspond to the primary concentration trends of sepal length within the data. A unimodal curve signifies a concentration of sepal lengths for most irises in that specific region. Conversely, a bimodal or multimodal curve suggests the existence of multiple concentration areas.
+\noindent In Figure~\ref{fig:iris-plots}, the kernel density estimation of the iris dataset is represented. The kernel density curve illustrates the distribution of sepal lengths. Peaks in the curve indicate primary concentration trends of sepal length within the data. A unimodal curve indicates a concentration of sepal lengths for most irises in a specific region. Conversely, a bimodal or multimodal curve would suggest the presence of multiple concentration areas.
+
 
 \subsection{Bar Charts}
-\noindent Bar charts are a crucial tool in data presentation, arranging data into vertical or horizontal bars. The varying lengths of these bars directly correspond to the magnitude of the information they represent. Bar charts excel in comparing classified data, especially when values are closely aligned. This stems from the nature of human perception, as our visual acuity for height surpasses that of other visual elements like area or angle.\\
+\noindent Bar charts are a crucial tool in data presentation, arranging data into vertical or horizontal bars. The varying lengths of these bars directly correspond to the magnitude of the information they represent. Bar charts excel in comparing classified data, especially when values are closely aligned. This stems from the nature of human perception, as our visual acuity for height surpasses that of other visual elements like area or angles.\\
 
-\noindent Bar charts represent a versatile tool for data visualisation, frequently employed to compare distinct categories. The vertical bar chart, commonly recognised, exhibits categories along the x-axis and their frequencies or counts along the y-axis. Horizontal bar charts, rotated 90 degrees, prove beneficial for extended category names or numerous categories, displaying categories on the y-axis and frequencies on the x-axis. Multi-set or grouped bar charts facilitate side-by-side comparisons of sub- groups within categories, available in both vertical and horizontal orientations. Stacked bar charts illustrate classes of values subdivided into sub-classes, often differentiated by colour, where each segment's size signifies its frequency or count, and the total bar length reflects the cumulative total.
+\noindent Bar charts represent a versatile tool in data visualisation. The vertical bar chart, most popular and commonly recognised, exhibits categories along the x-axis and their frequencies or counts along the y-axis. Horizontal bar charts, rotated 90 degrees, prove beneficial for extended category names or numerous categories, displaying categories on the y-axis and frequencies on the x-axis. Multi-set or grouped bar charts facilitate side-by-side comparisons of sub- groups within categories, available in both vertical and horizontal orientations. Stacked bar charts illustrate classes of values subdivided into sub-classes, often differentiated by colour, where each segment's size signifies its frequency or count, and the total bar length reflects the cumulative total.
 
 \subsubsection{Bar Charts in Practice}\\
-\noident The two bar charts on in Figure~\ref{fig:barcharts} illustrate the impact of varying vitamin dosages on tooth growth, further categorised by supplement type. On the x-axis, three distinct levels of vitamin dosage are presented, while the y-axis indicates the average length of tooth for each dosage.
-
+\noident Figure~\ref{fig:barcharts} represent data for the ToothGrowth dataset. The two bar charts on in the figure illustrate the impact of varying vitamin dosages on tooth growth, further categorised by supplement type. On the x-axis of both graphs, the three distinct levels of vitamin dosage are presented, while the y-axis indicates the average length of tooth for each dosage.\\
 
 <<barcharts, echo=FALSE, warning=FALSE, message=FALSE, fig.height=4, fig.width=10, fig.pos = 'H', fig.cap='Visualising tooth growth by dosage: A comparison of grouped and stacked bar chart techniques' >>=
 # average length
@@ -727,7 +728,7 @@ barchart_plot2 <- ggplot(average_lengths, aes(x = factor(dose), y = average_len,
 ggsave("barcharts.pdf", plot = grid.arrange(barchart_plot1, barchart_plot2, ncol = 2), width = 10, height = 3)
 @
 
-\noindent From the grouped bar, chart found on the left of Figure~\ref{fig:barcharts}, due to the side-by-side positioning of the bars, it is easy to note that tooth growth varies not only with the dosage but also with the supplement type. In contrast, the stacked bar graph on the right of Figure~\ref{fig:barcharts} facilitates the understanding of the combined effects of the two supplements at each dosage level. However, compared to the latter, it becomes more challenging to differentiate the individual contribution of each supplement.
+\noindent On the grouped bar chart, found on the left of Figure~\ref{fig:barcharts}, due to the side-by-side positioning of the bars, it is easy to note that tooth growth varies not only with the dosage but also with the supplement type. In contrast, the stacked bar graph on the right of Figure~\ref{fig:barcharts} facilitates the understanding of the combined effects of the two supplements at each dosage level. However, compared to the latter, it becomes more challenging to differentiate the individual contribution of each supplement. Thus, highlighting the benefits and downfalls of the different types of bar charts.
 
 \subsection{Line Charts and Time Series}
 
@@ -749,10 +750,10 @@ This equation highlights that for any point \(x\) between \(x_i\) and \(x_{i+1}\
 
 \subsubsection{Time Series Analysis}
 
-Time series visualisation is particularly suited to line charts because they effectively display changes and trends over time, allowing for easy visualisation of relationships between time points. A time series \cite{Brockwell2016Introduction} is a collection of observations $\{x_t\}$, where $t=0,\dots,n$ denotes the time point at which the observation is recorded. An index set $T_0$ which collects all the time points when observations are available. For instance, $T_0 = \{0,\dots,n\}$ for $n \in \mathbb{N}$. By plotting these data points over time, line charts help in identifying long-term trends, seasonal patterns, and anomalies.\\
+Line charts are well-suited for visualising time series data because they effectively depict changes and trends over time. They provide a clear visualisation of relationships between different time points, making it easy to observe patterns and trends. A time series is a collection of observations $\{x_t\}$, where $t=0,\dots,n$ denotes the time point at which the observation is recorded \cite{Brockwell2016Introduction}. An index set $T_0$ which collects all the time points when observations are available. For instance, $T_0 = \{0,\dots,n\}$ for $n \in \mathbb{N}$. By plotting these data points over time, line charts help in identifying long-term trends, seasonal patterns, and anomalies.\\
 
 \noindent
-A time series can be viewed as a realisation of a stochastic process\index{Time series!stochastic process}. A stochastic process \cite{Brockwell2016Introduction} $X = (X_t)_{t \in T_0}$ is a collection of random variables $X_t$, where $t$ denotes the time index and $T_0$ the index set. For a fixed event $\omega \in \Omega$ we obtain the realisation of the stochastic process (sometimes also called a sample path) which is given by $x_t = X_t(\omega)$, $t \in T_0$.\\
+A time series can be viewed as a realisation of a stochastic process\index{Time series!stochastic process}. A stochastic process $X = (X_t)_{t \in T_0}$ is a collection of random variables $X_t$, where $t$ denotes the time index and $T_0$ the index set. For a fixed event $\omega \in \Omega$ we obtain the realisation of the stochastic process (sometimes also called a sample path) which is given by $x_t = X_t(\omega)$, $t \in T_0$ \cite{Brockwell2016Introduction}.\\
 
 \noindent
 A time series $\{X_t\}$ is a moving average process \cite{Brockwell2016Introduction} \index{Time series!moving average process}of order $q$(MA(q)) if it can be expressed as:
@@ -763,7 +764,16 @@ where $\{\omega_t\} \sim \text{N}(0, \sigma^2)$ are i.i.d. white noise events an
 
 \subsubsection{Case Example: Visualisation of Exchange Rates}
 
-Here, plot daily and 49-day moving average exchange rates of exchange rate data in one figure.
+In Figure~\ref{fig:all exchange rates} daily and 49-day moving average exchange rates of exchange rate data are plotted.\\
+
+\noindent The line graph at the top of Figure~\ref{fig:all exchange rates} presents a comparative visualisation of daily exchange rates for CAD, EUR, and USD against GBP, offering an overview of their trends and relative performance. This plot enables the identification of overall trends and periods of volatility for each currency pair, allowing for an assessment of their stability and strength relative to GBP.\\
+
+\noindent Noticeably, there was a simultaneous and significant decline in all three currencies relative to the GBP. This concurrent decline across diverse currency pairs suggests that the primary driver is a depreciation of the GBP, rather than independent appreciations of the USD, EUR, and CAN. This depreciation of the GBP occurred notably around 2016, coinciding with the onset of the BREXIT process. Typically, financial analysts are most interested in long-term trends. Therefore, filtering out fluctuations and anomalies becomes crucial.\\
+
+\noindent Moreover, a 49-day moving average (MA(49)) was used, as shown in the bottom plot of Figure~\ref{fig:all exchange rates}. This moving average highlights long-term trends while smoothing out short-term fluctuations. This method involves computing the simple average of past observations:
+\[\text{MA}_{49}(t) = \frac{1}{49} \sum_{k=t-48}^{t} x_k,\] 
+where \( x_k \) denotes the exchange rate on day $k$.\\
+
 <<echo=FALSE,message=FALSE,warning=FALSE>>=
 # Read in the data:
 MyData <- read.csv("exchangeRate.csv",
@@ -807,7 +817,7 @@ plot_data$Currency <- gsub("_MA49", "", plot_data$Currency)
 color_palette <- c("#459395", "#EB7C69", "#FDA638") # Define color palette
 @
 
-<<all exchange rates, echo=FALSE, message=FALSE,warning=FALSE,fig.dim = c(5.8, 3.5), fig.pos='H', fig.cap='Daily (top) and 49-day moving average (bottom) exchange rates of CAN, EUR, USD to GBP'>>=
+<<all exchange rates, echo=FALSE, message=FALSE,warning=FALSE,fig.dim = c(5.8, 3.6), fig.pos='H', fig.cap='Daily (top) and 49-day moving average (bottom) exchange rates of CAN, EUR, USD to GBP'>>=
 # PLOT OF DAILY AND 49-DAY MOVING AVERAGE EXCHANGE RATES OF CAN, EUR, USD TO GBP
 p1 <- ggplot(plot_dt, aes(x = Date, y = Rate, color = Currency)) + 
   geom_line() +
@@ -828,31 +838,32 @@ cowplot::plot_grid(combined_plot, p2_legend, nrow = 1, rel_widths = c(2, 0.5))
 @
 
 \noindent
-The first plot in Figure~\ref{fig:all exchange rates} presents a comparative visualisation of daily exchange rates for CAD, EUR, and USD against GBP, offering an overview of their trends and relative performance. This plot enables the identification of overall trends and periods of volatility for each currency pair, allowing for an assessment of their stability and strength relative to GBP. Notice that, there was a simultaneous and significant drop in all three currencies relative to the GBP. The concurrent nature of these declines across diverse currency pairs suggests that the driving factor is a depreciation of the GBP, rather than independent appreciations of the USD, EUR, and CAN. This notable depreciation of the GBP occurred around 2016, which coincides with the commencement of the BREXIT process. Usually, the long term trend attracts financial analyst most. Therefore, filtering fluctuations and anomalies is important. Then, a 49-day moving average MA(49) was employed, shown in the second plot of Figure~\ref{fig:all exchange rates}, to elucidate long-term trends while mitigating short-term fluctuations. This is the smoothing method of simple average of past observations, expressed as:
-\[\text{MA}_{49}(t) = \frac{1}{49} \sum_{k=t-48}^{t} x_k,\] 
-where \( x_k \) denotes the exchange rate on day $k$.\\
-
-\noindent
-This method allows a clearer view of overarching trends in currency movements against the GBP. The overlay of these moving averages on the daily exchange rates in visualisations provides both a clear comparative and a quantitative perspective.\\
+Employing this approach provides a clearer insight into overarching trends in currency movements against the GBP. Overlaying these moving averages onto the daily exchange rates in visualisations offers both a comparative and quantitative perspective.\\
 
 \noindent
 \textbf{Autocorrelation Analysis of CNY to GBP Exchange Rate}\\
 \noindent
-Autocorrelation \index{Time series!autocorrelation}describes the correlation of a time series with its own previous and proceeding values. The autocorrelation function (ACF) measures the linear predictability of the series at lag h, which is the time $t$ with its values at a previous time $t-h$. The mathematical formulation of ACF of time series will be given in the following paragraph.\\
+Autocorrelation \index{Time series!autocorrelation}describes the correlation of a time series with its own previous and proceeding values. The autocorrelation function (ACF) measures the linear predictability of the series at lag h, which is the time $t$ with its values at a previous time $t-h$. The mathematical formulation of ACF of time series will be provided in the subsequent paragraph.\\
 
 \noindent
 Suppose we have a time series with observations denoted by \( \{x_1, \ldots, x_n \}\). Then the sample mean is given by $\bar{x} = \frac{1} {n} \sum_{t=1}^{n} x_t.$
 And the sample autocovariance function \cite{Brockwell2016Introduction} at lag $h$ in days of our time series is
+
 \[\hat{\gamma}(h) := \frac{1}{n} \sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x}), \quad -n < h < n.\]
+
+\noindent 
 Hence, the sample autocorrelation function \cite{Brockwell2016Introduction} at lag $h$ in days is given by
+
 \[\hat{\rho}(h) := \frac{\hat{\gamma}(h)}{\hat{\gamma}(0)} = \frac{\sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x})}{\sum_{t=1}^{n} (x_t - \bar{x})^{2}}, \quad -n < h < n.\]
 
 \noindent
-The value of $\hat{\rho}(h)$ lies between -1 and +1. A value close to +1 indicates a strong positive correlation, while a value close to -1 indicates a strong negative correlation. A value near 0 suggests little to no linear correlation. A slow decay in the ACF \index{Time series!ACF}plot indicates a strong relationship between past and present values, while spikes at specific lags may suggest seasonality. In addition, the bounds in an ACF plot help to determine whether the observed autocorrelations are significant or merely due to random fluctuation. The theoretical bounds of the ACF plot are typically set at $\pm 1.96/\sqrt{n}$, where $n$ is the length of the time series. This 
-$\pm 1.96/\sqrt{n}$ formula derives from the assumption of a normal distribution of the autocorrelation coefficient under the null hypothesis of no autocorrelation; And 1.96 corresponds to the 95\% confidence interval of a standard normal distribution. This means that if the ACF of a certain lag falls outside these bounds, the correlation at that lag is statistically significant at the 5\% level, suggesting that the series exhibits autocorrelation at that lag.\\
+The value of $\hat{\rho}(h)$ lies between -1 and +1 serves as a measure of correlation. A value close to +1 indicates a strong positive correlation, while a value close to -1 indicates a strong negative correlation. Conversely, a value near 0 suggests little to no linear correlation. In an ACF \index{Time series!ACF}plot, a slow decay indicates a strong relationship between past and present values, while spikes at specific lags may suggest seasonality.\\
+
+\noindent 
+In addition, the bounds in an ACF plot help to determine whether the observed autocorrelations are significant or merely due to random fluctuation. The theoretical bounds of the ACF plot are typically set at $\pm 1.96/\sqrt{n}$, where $n$ is the length of the time series. This $\pm 1.96/\sqrt{n}$ formula derives from the assumption of a normal distribution of the autocorrelation coefficient under the null hypothesis of no autocorrelation; And 1.96 corresponds to the 95\% confidence interval of a standard normal distribution. This means that if the ACF of a certain lag falls outside these bounds, the correlation at that lag is statistically significant at the 5\% level, suggesting that the series exhibits autocorrelation at that lag.\\
 
 \noindent
-Next, Figure~\ref{fig:ACF} visualises the ACF for the CNY to GBP exchange rate to understand its time-dependent structure better.
+In Figure~\ref{fig:ACF} the ACF for the CNY to GBP exchange rate are visualised to gain a clearer understanding of its time-dependent structure.
 
 <<ACF, echo=TRUE, message=FALSE, warning=FALSE, fig.pos = 'H', fig.dim = c(4, 3), fig.cap= 'Autocorrelation Function at lag h in days of CNY to GBP Exchange Rate'>>=
 # PLOT OF THE AUTOCORRELATION FUNCTION
@@ -861,7 +872,10 @@ plot(acf_data, main = "", xlab = "Lag h", ylab = "ACF")
 @
 
 \noindent
-From Figure~\ref{fig:ACF}, the ACF plot for the CNY to GBP exchange rate series reveals that the ACF starts near 1 and decreases gradually. This pattern suggests a strong persistence in the time series, indicating that past values have a significant influence on future values. In time series analysis, such a slow decay in the ACF is indicative of a non-stationary series, where the mean, variance, and autocorrelation structure do not remain constant over time. Also, since the ACF for a wide range of lag falls outside these bounds, the series exhibits strong autocorrelation at those lags. This means past values of the series have a significant influence on future values.\\
+The ACF plot for the CNY to GBP exchange rate series in Figure~\ref{fig:ACF} reveals that the ACF starts near 1 and decreases gradually. This pattern suggests a strong persistence in the time series, indicating that past values have a significant influence on future values. In time series analysis, such a slow decay in the ACF is indicative of a non-stationary series, where the mean, variance, and autocorrelation structure do not remain constant over time.\\
+
+\noindent 
+Also, since the ACF for a wide range of lag falls outside these bounds, the series exhibits strong autocorrelation at those lags. This means that past values of the series have a significant influence on future values.\\
 
 \noindent
 This persistent autocorrelation suggests that short-term movements in the CNY to GBP exchange rate are heavily influenced by its recent history. Such a characteristic is crucial for forecasting models, as it implies that recent historical data can be a powerful predictor of near-future trends. Models like ARIMA (Autoregressive Integrated Moving Average), which are well-suited for data with high autocorrelation, may be particularly effective in this context.\\
@@ -869,21 +883,21 @@ This persistent autocorrelation suggests that short-term movements in the CNY to
 \noindent
 \textbf{Decomposition of Time Series}\\
 \noindent
-One of the primary advantages of time series visualisation is the ease with which it allows analysts to identify long-term upward or downward trends in data and patterns that repeat over specific intervals. By decomposing the time series, it would be easy to see those features. Non-stationary time series data, $X_t$, can often be described as a combination of several distinct components: Trend component $t_t$: The underlying progression in the series, Seasonal component $s_t$: Periodic fluctuations due to seasonal factor, Residual $r_t$: The irregular or error component. Hence, the decomposition of a time series can be described in two main models:
-\\
+\noindent Time series visualisations offer analysts a clear means of identifying long-term trends and recurring patterns within data. By decomposing the time series, these features become readily apparent. Non-stationary time series data, denoted as $X_t$, can typically be characterized by several distinct components: The trend component $t_t$ illustrates the underlying progression in the series, while the seasonal component $s_t$ describes periodic fluctuations attributed to seasonal factors. Additionally, the residual $r_t$, emphasises irregularities or error component. Consequently, time series decomposition can be encapsulated within two primary models \cite{Brockwell2016Introduction}:\\
 
-\noindent \textbf{Additive Model} \cite{Brockwell2016Introduction}: In the additive model, the components are added together:
+\noindent \textbf{Additive Model}: In the additive model, the components are added together:
 \[
 X_t = t_t + s_t + r_t.
 \]
-\textbf{Multiplicative Model} \cite{Brockwell2016Introduction}: In the multiplicative model, the components are multiplied together:
+\textbf{Multiplicative Model}: In the multiplicative model, the components are multiplied together:
 \[
 X_t = t_t \times s_t \times r_t \quad \text{or} \quad \log(X_t) = \log(t_t) + \log(s_t) + \log(r_t).
 \]
-In practice, the choice between the additive and multiplicative models often depends on the nature of the time series. If the magnitude of the seasonal fluctuations or the variation around the trend does not vary with the level of the time series, then an additive model is appropriate. If the magnitude of the seasonal fluctuations or the variation around the trend increases or decreases as the time series level changes, then a multiplicative model may be more suitable.\\
+
+\noindent In practice, the choice between the additive and multiplicative models often depends on the nature of the time series. If the magnitude of the seasonal fluctuations or the variation around the trend does not vary with the level of the time series, then an additive model is appropriate. If the magnitude of the seasonal fluctuations or the variation around the trend increases or decreases as the time series level changes, then a multiplicative model may be more suitable.\\
 
 \noindent
-R function \href{https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/decompose}{\texttt{decompose()}} is able to decompose the time series by additive model or multiplicative model. And as shown in Figure~\ref{fig:decomposition of time series} is the demonstration of decomposition.
+The R function \href{https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/decompose}{\texttt{decompose()}} is able to decompose the time series by additive model or multiplicative model. In Figure~\ref{fig:decomposition of time series} a demonstration of such a decomposition is displayed.
 
 <<message=FALSE,warning=FALSE,echo=FALSE>>=
 # Decomposition of addictive time series model
@@ -908,7 +922,7 @@ ggplot(decomposed_df, aes(x = time, y = value)) +
 @
 
 \noindent
-From Figure~\ref{fig:decomposition of time series}, the CNY to GBP exchange rate time series was decomposed into its fundamental components: trend, seasonality, and residual noise by additive model. This additive model, represented mathematically as $X_t = t_t + s_t + r_t$.\\
+Figure~\ref{fig:decomposition of time series}, displays the decomposition of the the CNY to GBP exchange rate time series into its fundamental components: trend, seasonality, and residual noise by additive model. This decomposition follows the additive model, represented mathematically as $X_t = t_t + s_t + r_t$.\\
 
 \noindent
 As illustrated in Figure~\ref{fig:decomposition of time series}, the trend component $t_t$ of CNY to GBP exchange rate exhibits a distinct pattern over time: initially, it shows a gradual decrease and reached crest in 2022, followed by a sudden increase afterwards. It coincides with the tax reduction policy issued by UK government in 2022, which leads to a depreciation of GBP. This trend is pivotal for understanding the broader economic relationship between these currencies. \\
