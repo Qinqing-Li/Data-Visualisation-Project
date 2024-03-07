@@ -836,6 +836,37 @@ where \( x_k \) denotes the exchange rate on day $k$.\\
 This method allows a clearer view of overarching trends in currency movements against the GBP. The overlay of these moving averages on the daily exchange rates in visualisations provides both a clear comparative and a quantitative perspective.\\
 
 \noindent
+\textbf{Autocorrelation Analysis of CNY to GBP Exchange Rate}\\
+\noindent
+Autocorrelation \index{Time series!autocorrelation}describes the correlation of a time series with its own previous and proceeding values. The autocorrelation function (ACF) measures the linear predictability of the series at lag h, which is the time $t$ with its values at a previous time $t-h$. The mathematical formulation of ACF of time series will be given in the following paragraph.\\
+
+\noindent
+Suppose we have a time series with observations denoted by \( \{x_1, \ldots, x_n \}\). Then the sample mean is given by $\bar{x} = \frac{1} {n} \sum_{t=1}^{n} x_t.$
+And the sample autocovariance function \cite{Brockwell2016Introduction} at lag $h$ in days of our time series is
+\[\hat{\gamma}(h) := \frac{1}{n} \sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x}), \quad -n < h < n.\]
+Hence, the sample autocorrelation function \cite{Brockwell2016Introduction} at lag $h$ in days is given by
+\[\hat{\rho}(h) := \frac{\hat{\gamma}(h)}{\hat{\gamma}(0)} = \frac{\sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x})}{\sum_{t=1}^{n} (x_t - \bar{x})^{2}}, \quad -n < h < n.\]
+
+\noindent
+The value of $\hat{\rho}(h)$ lies between -1 and +1. A value close to +1 indicates a strong positive correlation, while a value close to -1 indicates a strong negative correlation. A value near 0 suggests little to no linear correlation. A slow decay in the ACF \index{Time series!ACF}plot indicates a strong relationship between past and present values, while spikes at specific lags may suggest seasonality. In addition, the bounds in an ACF plot help to determine whether the observed autocorrelations are significant or merely due to random fluctuation. The theoretical bounds of the ACF plot are typically set at $\pm 1.96/\sqrt{n}$, where $n$ is the length of the time series. This 
+$\pm 1.96/\sqrt{n}$ formula derives from the assumption of a normal distribution of the autocorrelation coefficient under the null hypothesis of no autocorrelation; And 1.96 corresponds to the 95\% confidence interval of a standard normal distribution. This means that if the ACF of a certain lag falls outside these bounds, the correlation at that lag is statistically significant at the 5\% level, suggesting that the series exhibits autocorrelation at that lag.\\
+
+\noindent
+Next, Figure~\ref{fig:ACF} visualises the ACF for the CNY to GBP exchange rate to understand its time-dependent structure better.
+
+<<ACF, echo=TRUE, message=FALSE, warning=FALSE, fig.pos = 'H', fig.dim = c(4, 3), fig.cap= 'Autocorrelation Function at lag h in days of CNY to GBP Exchange Rate'>>=
+# PLOT OF THE AUTOCORRELATION FUNCTION
+acf_data <- acf(MyData$CNYtoGBP, plot = FALSE)
+plot(acf_data, main = "", xlab = "Lag h", ylab = "ACF")
+@
+
+\noindent
+From Figure~\ref{fig:ACF}, the ACF plot for the CNY to GBP exchange rate series reveals that the ACF starts near 1 and decreases gradually. This pattern suggests a strong persistence in the time series, indicating that past values have a significant influence on future values. In time series analysis, such a slow decay in the ACF is indicative of a non-stationary series, where the mean, variance, and autocorrelation structure do not remain constant over time. Also, since the ACF for a wide range of lag falls outside these bounds, the series exhibits strong autocorrelation at those lags. This means past values of the series have a significant influence on future values.\\
+
+\noindent
+This persistent autocorrelation suggests that short-term movements in the CNY to GBP exchange rate are heavily influenced by its recent history. Such a characteristic is crucial for forecasting models, as it implies that recent historical data can be a powerful predictor of near-future trends. Models like ARIMA (Autoregressive Integrated Moving Average), which are well-suited for data with high autocorrelation, may be particularly effective in this context.\\
+
+\noindent
 \textbf{Decomposition of Time Series}\\
 \noindent
 One of the primary advantages of time series visualisation is the ease with which it allows analysts to identify long-term upward or downward trends in data and patterns that repeat over specific intervals. By decomposing the time series, it would be easy to see those features. Non-stationary time series data, $X_t$, can often be described as a combination of several distinct components: Trend component $t_t$: The underlying progression in the series, Seasonal component $s_t$: Periodic fluctuations due to seasonal factor, Residual $r_t$: The irregular or error component. Hence, the decomposition of a time series can be described in two main models:
@@ -867,7 +898,7 @@ decomposed_df <- data.frame(
                      levels = c("Observed data", "Trend component", "Seasonal component", "Residual")))
 @
 
-<<decomposition of time series, message=FALSE,warning=FALSE, fig.pos = 'H',fig.dim = c(5, 3), fig.cap='Decomposition of addictive time series model of CNY to GBP exchange rates'>>=
+<<decomposition of time series, message=FALSE,warning=FALSE, fig.pos = 'H',fig.dim = c(5, 4), fig.cap='Decomposition of addictive time series model of CNY to GBP exchange rates'>>=
 # PLOT OF DECOMPOSITION OF ADDICTIVE TIME SERIES MODEL
 ggplot(decomposed_df, aes(x = time, y = value)) +
   geom_line() + 
@@ -886,37 +917,7 @@ As illustrated in Figure~\ref{fig:decomposition of time series}, the trend compo
 Moreover, the seasonal component $s_t$ of the decomposition highlights cyclical fluctuations, indicative of recurrent patterns within the year. These could be attributed to seasonal economic activities, policy changes, or other cyclical factors influencing the currency market. The clear demarcation of these cyclical trends in the seasonal component helps in isolating such effects from the overarching trend.\\
 
 \noindent
-Lastly, the residual component $r_t$ encompasses the random, unexplained variations after accounting for the trend and seasonal factors. Analysing these residuals is crucial for understanding the unpredictability in the exchange rate and can be pivotal in risk management and forecasting.\\
-
-\noindent
-\textbf{Autocorrelation Analysis of CNY to GBP Exchange Rate}\\
-\noindent
-Autocorrelation \index{Time series!autocorrelation}describes the correlation of a time series with its own previous and proceeding values. The autocorrelation function (ACF) measures the linear predictability of the series at lag h, which is the time $t$ with its values at a previous time $t-h$. The mathematical formulation of ACF of time series will be given in the following paragraph.\\
-
-\noindent
-Suppose we have a time series with observations denoted by \( x_1, \ldots, x_n \). Then the sample mean is given by $\bar{x} = \frac{1} {n} \sum_{t=1}^{n} x_t.$
-And the sample autocovariance function \cite{Brockwell2016Introduction} at lag $h$ in days of our time series is
-\[\hat{\gamma}(h) := \frac{1}{n} \sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x}), \quad -n < h < n.\]
-Hence, the sample autocorrelation function \cite{Brockwell2016Introduction} at lag $h$ in days is given by
-\[\hat{\rho}(h) := \frac{\hat{\gamma}(h)}{\hat{\gamma}(0)} = \frac{\sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x})}{\sum_{t=1}^{n} (x_t - \bar{x})^{2}}, \quad -n < h < n.\]
-
-\noindent
-The value of $\hat{\rho}(h)$ lies between -1 and +1. A value close to +1 indicates a strong positive correlation, while a value close to -1 indicates a strong negative correlation. A value near 0 suggests little to no linear correlation. A slow decay in the ACF \index{Time series!ACF}plot indicates a strong relationship between past and present values, while spikes at specific lags may suggest seasonality. Autocorrelations outside the 95\% confidence interval are considered statistically significant.\\
-
-\noindent
-Next, visualise the ACF for the CNY to GBP exchange rate to understand its time-dependent structure better.
-
-<<ACF, echo=TRUE, message=FALSE, warning=FALSE, fig.pos = 'H', fig.dim = c(4, 3), fig.cap= 'Autocorrelation Function at lag h in days of CNY to GBP Exchange Rate'>>=
-# PLOT OF THE AUTOCORRELATION FUNCTION
-acf_data <- acf(MyData$CNYtoGBP, plot = FALSE)
-plot(acf_data, main = "", xlab = "Lag h", ylab = "ACF")
-@
-
-\noindent
-From Figure~\ref{fig:ACF}, the ACF plot for the CNY to GBP exchange rate series reveals that the ACF starts near 1 and decreases gradually. This pattern suggests a strong persistence in the time series, indicating that past values have a significant influence on future values. In time series analysis, such a slow decay in the ACF is indicative of a non-stationary series, where the mean, variance, and autocorrelation structure do not remain constant over time.\\
-
-\noindent
-This persistent autocorrelation suggests that short-term movements in the CNY to GBP exchange rate are heavily influenced by its recent history. Such a characteristic is crucial for forecasting models, as it implies that recent historical data can be a powerful predictor of near-future trends. Models like ARIMA (Autoregressive Integrated Moving Average), which are well-suited for data with high autocorrelation, may be particularly effective in this context.
+Lastly, the residual component $r_t$ encompasses the random, unexplained variations after accounting for the trend and seasonal factors. Analysing these residuals is crucial for understanding the unpredictability in the exchange rate and can be pivotal in risk management and forecasting.
 
 \subsection{ROC Curve}
 
@@ -954,7 +955,7 @@ The Area Under the Curve (AUC) \cite{Pepe2003}  provides a single measure of mod
 \[ \text{AUC} = \int_{0}^{1} \text{ROC}(t) dt.\]
 
 \noindent
-The larger the AUC\index{Receiver operating characteristic!AUC}, the better the classifier. An ideal ROC curve will hug the top left corner and the diagonal line the origin indicates the ROC curve of a model due to random chance
+The larger the AUC\index{Receiver operating characteristic!AUC}, the better the classifier.
 
 \subsubsection{ROC analysis in COVID-19 test}
 
