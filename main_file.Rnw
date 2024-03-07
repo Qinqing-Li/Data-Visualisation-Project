@@ -64,7 +64,6 @@ opts_chunk$set(fig.path = 'figure/beamer-',
                fig.align = 'center',
                fig.show = 'hold', size = "scriptsize",
                fig.pos = 'H')
-
 @
 
 \begin{center}
@@ -772,7 +771,7 @@ In Figure~\ref{fig:all exchange rates} daily and 49-day moving average exchange 
 
 \noindent Moreover, a 49-day moving average (MA(49)) was used, as shown in the bottom plot of Figure~\ref{fig:all exchange rates}. This moving average highlights long-term trends while smoothing out short-term fluctuations. This method involves computing the simple average of past observations:
 \[\text{MA}_{49}(t) = \frac{1}{49} \sum_{k=t-48}^{t} x_k,\] 
-where \( x_k \) denotes the exchange rate on day $k$.\\F
+where \( x_k \) denotes the exchange rate on day $k$.\\
 
 <<echo=FALSE,message=FALSE,warning=FALSE>>=
 # Read in the data:
@@ -897,7 +896,16 @@ X_t = t_t \times s_t \times r_t \quad \text{or} \quad \log(X_t) = \log(t_t) + \l
 \noindent In practice, the choice between the additive and multiplicative models often depends on the nature of the time series. If the magnitude of the seasonal fluctuations or the variation around the trend does not vary with the level of the time series, then an additive model is appropriate. If the magnitude of the seasonal fluctuations or the variation around the trend increases or decreases as the time series level changes, then a multiplicative model may be more suitable.\\
 
 \noindent
-The R function \href{https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/decompose}{\texttt{decompose()}} is able to decompose the time series by additive model or multiplicative model. In Figure~\ref{fig:decomposition of time series} a demonstration of such a decomposition is displayed.
+The R function \href{https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/decompose}{\texttt{decompose()}} is able to decompose the time series by additive model or multiplicative model. In Figure~\ref{fig:decomposition of time series} a demonstration of such a decomposition is displayed.\\
+
+\noindent
+Figure~\ref{fig:decomposition of time series}, displays the decomposition of the the CNY to GBP exchange rate time series into its fundamental components: trend, seasonality, and residual noise by additive model. This decomposition follows the additive model, represented mathematically as $X_t = t_t + s_t + r_t$.\\
+
+\noindent
+As illustrated in Figure~\ref{fig:decomposition of time series}, the trend component $t_t$ of CNY to GBP exchange rate exhibits a distinct pattern over time: initially, it shows a gradual decrease and reached crest in 2022, followed by a sudden increase afterwards. It coincides with the tax reduction policy issued by UK government in 2022, which leads to a depreciation of GBP. This trend is pivotal for understanding the broader economic relationship between these currencies. \\
+
+\noindent
+Moreover, the seasonal component $s_t$ of the decomposition highlights cyclical fluctuations, indicative of recurrent patterns within the year. These could be attributed to seasonal economic activities, policy changes, or other cyclical factors influencing the currency market. The clear demarcation of these cyclical trends in the seasonal component helps in isolating such effects from the overarching trend.\\
 
 <<message=FALSE,warning=FALSE,echo=FALSE>>=
 # Decomposition of addictive time series model
@@ -920,15 +928,6 @@ ggplot(decomposed_df, aes(x = time, y = value)) +
   labs(x = "Date",y = "Exchange Rate to GBP") + 
   theme_minimal()
 @
-
-\noindent
-Figure~\ref{fig:decomposition of time series}, displays the decomposition of the the CNY to GBP exchange rate time series into its fundamental components: trend, seasonality, and residual noise by additive model. This decomposition follows the additive model, represented mathematically as $X_t = t_t + s_t + r_t$.\\
-
-\noindent
-As illustrated in Figure~\ref{fig:decomposition of time series}, the trend component $t_t$ of CNY to GBP exchange rate exhibits a distinct pattern over time: initially, it shows a gradual decrease and reached crest in 2022, followed by a sudden increase afterwards. It coincides with the tax reduction policy issued by UK government in 2022, which leads to a depreciation of GBP. This trend is pivotal for understanding the broader economic relationship between these currencies. \\
-
-\noindent
-Moreover, the seasonal component $s_t$ of the decomposition highlights cyclical fluctuations, indicative of recurrent patterns within the year. These could be attributed to seasonal economic activities, policy changes, or other cyclical factors influencing the currency market. The clear demarcation of these cyclical trends in the seasonal component helps in isolating such effects from the overarching trend.\\
 
 \noindent
 Lastly, the residual component $r_t$ encompasses the random, unexplained variations after accounting for the trend and seasonal factors. Analysing these residuals is crucial for understanding the unpredictability in the exchange rate and can be pivotal in risk management and forecasting.
@@ -1187,7 +1186,7 @@ print(heatmap_plot)
 @
 
 \noindent
-In Figure~\ref{fig:fire22}, it is evident that certain locations exhibit significantly higher fire counts than others. Notably, two distinct strips display unusually high frequencies of fires. The vertical trend aligns with the route of BR-230 (Trans-Amazonian Highway) passing through the city of Apuí, State of Amazonas. Similarly, the horizontal trend corresponds to BR-163 (Brazil Highway) traversing Três Pinheiros in Novo Progresso, State of Pará. Moreover, the western coastal area, characterised by frequent fire occurrences, is proximate to the cities of Vista Alegre do Abunã and Rio Branco. Research indicates that 95\% of active fires, particularly the most intense ones (FRP > 500 megawatts), manifest at the forest edges \cite{forest}. Thus explaining why there would be an intensification of fire occurances in these areas.\\ 
+In Figure~\ref{fig:fire22}, it is evident that certain locations exhibit significantly higher fire counts than others. Notably, two distinct strips display unusually high frequencies of fires. The vertical trend aligns with the route of BR-230 (Trans-Amazonian Highway) passing through the city of Apuí, State of Amazonas. Similarly, the horizontal trend corresponds to BR-163 (Brazil Highway) traversing Três Pinheiros in Novo Progresso, State of Pará. Moreover, the western coastal area, characterised by frequent fire occurrences, is proximate to the cities of Vista Alegre do Abunã and Rio Branco. Research indicates that 95\% of active fires, particularly the most intense ones (FRP $\geq$ 500 megawatts), manifest at the forest edges \cite{forest}. Thus explaining why there would be an intensification of fire occurances in these areas.\\ 
 
 \noindent
 Additionally, the seasonal variation in fire frequency is represented in Figure~\ref{fig:fire-by-months-fy13-22}. Notably, an increase in fire occurrences is observed during the months of August to October compared to other periods throughout the year. This temporal pattern aligns with climatological factors such as the onset of the dry season, which escalate the likelihood of fire incidents during these months.\\
@@ -2002,17 +2001,20 @@ tSNE_fit$Y %>%
   rename(tSNE1 = "V1",tSNE2 = "V2") %>% 
   mutate(Species = df$species) -> tSNE.plot
 
-ggplot()+
-  geom_point(data = tSNE.plot, aes(x = tSNE1,y = tSNE2,color = Species)) +
+# Define custom colors for species
+species_colors <- c("Adelie" = "#4B0082", "Chinstrap" = "#459395", "Gentoo" = "#EB7C69")
+
+ggplot() +
+  geom_point(data = tSNE.plot, aes(x = tSNE1, y = tSNE2, color = Species)) +
   stat_ellipse(data = tSNE.plot,
                geom = "polygon",
-               aes(x = tSNE1,y = tSNE2,
-                   group = Species,
-                   fill = Species),
+               aes(x = tSNE1, y = tSNE2, group = Species, fill = Species),
                alpha = 0.5,
                lty = "dashed",
                color = "black",
                key_glyph = "blank") +
+  scale_color_manual(values = species_colors) +  # Apply custom colors
+  scale_fill_manual(values = species_colors) +   # Apply custom colors to fill for ellipses
   theme_bw()
 @
 
