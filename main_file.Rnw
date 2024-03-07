@@ -204,7 +204,7 @@ Regrettably, the Kallikak family tree became a central element in the eugenics m
 
 \subsection{Computing and Data Visualisation}
 \noindent
-Over the years, numerous tools have been developed to facilitate the generation of data visualisation. The programme R stands out as a powerful tool for statistical analysis and graphic creation, offering a wide array of functionalities to cater to various data visualisation needs. We will first introduce the commonly used R package \textit{ggplot2}\index{R package!ggplot2}. Then, other key packages used to produce clear and compelling graphs in R will be presented. In this project, R package names such as \textit{ggplot2} are italicised, while R commands like \texttt{faceting()} are displayed in a teletype font.\\
+Over the years, numerous tools have been developed to facilitate the generation of data visualisation. The programme R stands out as a powerful tool for statistical analysis and graphic creation, offering a wide array of functionalities to cater to various data visualisation needs. We will first introduce the commonly used R package \textit{ggplot2}\index{R package!ggplot2}. Then, other key packages used to produce clear and compelling graphs in R will be presented. In this project, R package names such as \textit{ggplot2} are italicised, while R commands like \texttt{faceting} are displayed in a teletype font.\\
 
 \noindent \textbf{The \textit{ggplot2} Package}\\
 \noindent
@@ -218,11 +218,11 @@ This R package, \textit{ggplot2}, is notable for its robustness and flexibility,
 As shown in subsequent sections, it is possible to produce visualisations rather effortlessly by using internal data from R, or even external data, together with \textit{ggplot2}. When using this package, certain key tools are used repeatedly to create visual plots from datasets. Some of these integrals tools for creating sophisticated visualisations are presented subsequently \cite{ggplot2}:\\
 
 \noindent
-Firstly, the \texttt{geom()} function refers to ``geometric objects". It is pivotal took in \textit{ggplot2} used to specify the type of geometric objects or shapes to be drawn on a plot. Additionally, the \texttt{scales()} function enables the adjustment of various mapping details, including colour choices, label formatting, legend arrangement, and more.\\
+Firstly, the \texttt{geom} function refers to ``geometric objects". It is pivotal took in \textit{ggplot2} used to specify the type of geometric objects or shapes to be drawn on a plot. Additionally, the \texttt{scales} function enables the adjustment of various mapping details, including colour choices, label formatting, legend arrangement, and more.\\
 
-\noindent Furthermore, the \texttt{coord()} function provides the axes and gridlines which aid in structuring and interpreting the graph. Various coordinate systems such as cartesian, polar, and map projections are available. Moreover, \texttt{faceting()} is a robust feature enabling the partitioning of a single plot into multiple plots based on factors present in the dataset. This functionality proves particularly beneficial for exploring and presenting data with multiple groups or categories.\\
+\noindent Furthermore, the \texttt{coord} function provides the axes and gridlines which aid in structuring and interpreting the graph. Various coordinate systems such as cartesian, polar, and map projections are available. Moreover, \texttt{faceting} is a robust feature enabling the partitioning of a single plot into multiple plots based on factors present in the dataset. This functionality proves particularly beneficial for exploring and presenting data with multiple groups or categories.\\
 
-\noindent The \texttt{theme()} function holds significance in customising the non-data elements of plots. The theme system within \textit{ggplot2} allows precise adjustment of aesthetic aspects such as fonts, labels, legends, and background colours. This tool is essential for enhancing plot readability and creating visually captivating graphics tailored to specific audiences or publication requirements.\\
+\noindent The \texttt{theme} function holds significance in customising the non-data elements of plots. The theme system within \textit{ggplot2} allows precise adjustment of aesthetic aspects such as fonts, labels, legends, and background colours. This tool is essential for enhancing plot readability and creating visually captivating graphics tailored to specific audiences or publication requirements.\\
 
 \noindent \textbf{Key Additional Packages}\\
 
@@ -1568,7 +1568,7 @@ Note the process of weight adjustment using previous estimation is iterated seve
 \noindent
 The updated model estimate $\hat{g}(x)$, is computed using the local fitting method, but with the neighborhood weights $w_i{(x)$ replaced by $r_i w_i(x)$ \cite{loess}.
 
-\subsubsection{Case Example: Estate price in Taipei}\\
+\subsubsection{Case Example: Estate Price in Taipei}\\
 
 \noindent
 Property valuation can be modelled as a regression problem, in this analysis, we delve into the pricing of properties based on their age. Using the Taipei Housing dataset, we investigate the relationship between the age of houses (measured in years) and their prices (measured in New Taiwan dollars per unit area). Linear regression model and the LOESS regression model are used, as shown in Figure~\ref{fig:estate-data-plot}.\\
@@ -1799,7 +1799,7 @@ _m\tilde{x}_{ij} = \sum_{k=1}^{m} \mathbf{g}_{ik}\mathbf{h}_{jk} = \mathbf{g}_{i
 
 \noindent The manual construction, which results in the biplot shown in Figure~\ref{fig:PCAbiplot}, begins with data standardisation followed by SVD decomposition to obtain matrices representing row and column contributions to principal components. These matrices are then utilised to construct the biplot. Conversely, the in-built function approach employs R's \texttt{prcomp()} function for PCA and directly generates the biplot using \texttt{biplot()}, without the need for explicit mathematical operations. The product of this method is shown in Figure~\ref{fig:PCAbiplot}.
 
-<<PCAbiplot, fig.height=5.5, fig.width=11.5, fig.cap='PCA biplots of mtcars dataset', message=FALSE>>=
+<<PCAbiplot, fig.height=6, fig.width=12, fig.cap='PCA biplots of mtcars dataset', message=FALSE>>=
 
 #MANUAL CONSTRUCTION OF A BIPLOT IN R
 # Standardise the data
@@ -1908,13 +1908,13 @@ colnames(x) <- c("dim1", "dim2")
 par(mfrow = c(1, 2))
 
 # Plot the first dataset
-plot(x, xlab = "Dimension 1", ylab = "Dimension 2", col = "#459395")
+plot(x, main = "Artificial Dataset 1", xlab = "Dimension 1", ylab = "Dimension 2", col = "#459395")
 
 # Fit principal curve to the dataset
 fit <- principal_curve(x)
 
 # Plot the principal curve along with the data points
-plot(fit, xlab = "Dimension 1", ylab = "Dimension 2")
+plot(fit, main = "Principal Curve", xlab = "Dimension 1", ylab = "Dimension 2")
 whiskers(x, fit$s, col = "#EB7C69") 
 @
 
@@ -1984,7 +1984,7 @@ where $\eta$ is the learning rate, a positive scalar determining the step size.\
 \noindent
 The process is repeated for a number of iterations or until the change in the cost function between iterations is below a predetermined threshold, indicating convergence. The gradient descent process in t-SNE is crucial for effectively reducing the dimensionality of high-dimensional data while preserving the local structure of the data. By iteratively updating the positions of the points in the low-dimensional space, t-SNE minimizes the KL divergence, resulting in a meaningful representation of the data in lower dimensions.
 
-\subsubsection{Case Example: Classifiication of penguins}
+\subsubsection{Case Example: Classification of Penguins}
 
 In Figure~\ref{fig:t-SNE} we observe a t-SNE visualisation of the penguin dataset. In this case, using the t-SNE algorithm helps us to reduce the multidimensional numerical data of the penguin dataset to a $2$-dimensional space. We also use scatter plots and elliptical areas to visualise the distribution of different penguin species. The data points are colour-coded to distinguish between three penguin species: Adelie in red, Chinstrap in green, and Gentoo in blue. This colour coding aids in the visual differentiation of the species clusters.\\
 
@@ -2162,7 +2162,7 @@ C_{0.5} = \{(t, y(t)) : \min_{r=1, \ldots, \lceil n/2 \rceil} y[r](t) \leq y(t) 
 \noindent
 where $\lceil n/2 \rceil$ is the smallest integer not less than half of the sample size. This 50\% central region functions similarly to the inter-quartile range (IQR) in a boxplot, providing a measure of the spread of the central 50\% of the curves. This method is robust, less affected by outliers or extreme values, and offers a clearer visualisation of the distribution's central spread. Within this central region, the curve that represents the median, denoted as $y_{[1]}(t)$, signifies the most centrally located curve with the highest band depth, serving as a robust measure of central tendency.
 
-\subsubsection{Case Example: Visualisation of metabolic syndromes}
+\subsubsection{Case Example: Visualisation of Metabolic Syndromes}
 \noindent
 The functional boxplot shown in Figure \ref{fig:fbplot} illustrates the metabolism rates between healthy and diseased populations. The outer blue line highlights a wider range for the diseased group, accompanied by a broader grey band. The range indicates greater variability and the band indicates lower oxygen saturation for most patients in the blood of the diseased group.
 \begin{figure}[H]
@@ -2190,7 +2190,7 @@ $$x^* = \frac{d \cdot x_{\text{max}}}{\text{dev}_{\text{max}}}.$$
 The $x$ coordinate is then $x_b+x*$, where $x_b$ marks the center of the boxplot.
 
 \newpage
-\subsubsection{Case Example: Iris dataset using Q–Q boxplot}
+\subsubsection{Case Example: Iris Dataset Using Q–Q Boxplot}
 The resulting Q–Q boxplot shows the distribution of sepal length values within each iris species, allowing comparison whether they come from a normal distribution. Outliers are also indicated in the plot.\\
 
 <<QQboxplots, echo=FALSE, fig.height=2.8, fig.width=3.4, fig.pos='h', fig.cap='Q–Q boxplot of iris dataset', message=FALSE,warning=FALSE>>=
