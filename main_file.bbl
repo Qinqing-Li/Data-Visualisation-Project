@@ -59,6 +59,13 @@ William S.~Cleveland et. al.
 \newblock {\em Local regression models. Chapter 8 of Statistical Models in S}.
 \newblock Wadsworth & Brooks/Cole, 1992.
 
+\bibitem{galton1875iv}
+Francis Galton.
+\newblock Iv. statistics by intercomparison, with remarks on the law of
+  frequency of error.
+\newblock {\em The London, Edinburgh, and Dublin Philosophical Magazine and
+  Journal of Science}, 49(322):33--46, 1875.
+
 \bibitem{Garcia2021ROCAlly}
 JP~Garc{\'i}a, JC~Ferreira, and CM~Patino.
 \newblock Receiver operating characteristic analysis: an ally in the pandemic.
@@ -210,6 +217,11 @@ Dejan Todorovic.
 Edward~R Tufte.
 \newblock {\em The visual display of quantitative information}, volume~2.
 \newblock Graphics press Cheshire, CT, 2001.
+
+\bibitem{tukey1977exploratory}
+John~W Tukey et~al.
+\newblock {\em Exploratory data analysis}, volume~2.
+\newblock Reading, MA, 1977.
 
 \bibitem{vanderMaaten2008tsne}
 Laurens van~der Maaten and Geoffrey Hinton.

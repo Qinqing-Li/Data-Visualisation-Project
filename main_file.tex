@@ -609,7 +609,7 @@ A time series $\{X_t\}$ is a moving average process \cite{Brockwell2016Introduct
 \[x_t = \omega_t + \theta_1 \omega_{t-1}+\dots+ \theta_q \omega_{t-q},\]
 
 \noindent
-where $\{\omega_t\} \sim \text{N}(0, \sigma^2)$ are i.i.d. white noise events and $\theta_1,\dots,\theta_q$ are real valued coefficients.
+where $\{\omega_t\} \sim \text{N}(0, \sigma^2)$ are independent and identically distributed white noise events and $\theta_1,\dots,\theta_q$ are real valued coefficients.
 
 \subsubsection{Case Example: Visualisation of Exchange Rates}
 
@@ -917,7 +917,7 @@ In this illustrative example, heatmaps of different natures are used to visualis
 \end{knitrout}
 
 \noindent
-In Figure~\ref{fig:fire22}, it is evident that certain locations exhibit significantly higher fire counts than others. Notably, two distinct strips display unusually high frequencies of fires. The vertical trend aligns with the route of BR-230 (Trans-Amazonian Highway) passing through the city of Apuí, State of Amazonas. Similarly, the horizontal trend corresponds to BR-163 (Brazil Highway) traversing Três Pinheiros in Novo Progresso, State of Pará. Moreover, the western coastal area, characterised by frequent fire occurrences, is proximate to the cities of Vista Alegre do Abunã and Rio Branco. Research indicates that 95\% of active fires, particularly the most intense ones (FRP $\geq$ 500 megawatts), manifest at the forest edges \cite{forest}. Thus explaining why there would be an intensification of fire occurances in these areas.\\ 
+In Figure~\ref{fig:fire22}, it is evident that certain locations exhibit significantly higher fire counts than others. Notably, two distinct strips display unusually high frequencies of fires. The vertical trend aligns with the route of BR-230 (Trans-Amazonian Highway) passing through the city of Apuí, State of Amazonas. Similarly, the horizontal trend corresponds to BR-163 (Brazil Highway) traversing Três Pinheiros in Novo Progresso, State of Pará. Moreover, the western coastal area, characterised by frequent fire occurrences, is proximate to the cities of Vista Alegre do Abunã and Rio Branco. Research indicates that 95\% of active fires, particularly the most intense ones (FRP $<$ 500 megawatts), manifest at the forest edges \cite{forest}. Thus explaining why there would be an intensification of fire occurances in these areas.\\ 
 
 \noindent
 Additionally, the seasonal variation in fire frequency is represented in Figure~\ref{fig:fire-by-months-fy13-22}. Notably, an increase in fire occurrences is observed during the months of August to October compared to other periods throughout the year. This temporal pattern aligns with climatological factors such as the onset of the dry season, which escalate the likelihood of fire incidents during these months.\\
@@ -1713,7 +1713,10 @@ The process is repeated for a number of iterations or until the change in the co
 
 \subsubsection{Case Example: Classification of Penguins}
 
-In Figure~\ref{fig:t-SNE} we observe a t-SNE visualisation of the penguin dataset. In this case, using the t-SNE algorithm helps us to reduce the multidimensional numerical data of the penguin dataset to a $2$-dimensional space. We also use scatter plots and elliptical areas to visualise the distribution of different penguin species. The data points are colour-coded to distinguish between three penguin species: Adelie in red, Chinstrap in green, and Gentoo in blue. This colour coding aids in the visual differentiation of the species clusters.\\
+In Figure~\ref{fig:t-SNE} we observe a t-SNE visualisation of the penguin dataset. In this case, using the t-SNE algorithm helps us to reduce the multidimensional numerical data of the penguin dataset to a $2$-dimensional space. We also use scatter plots and elliptical areas to visualise the distribution of different penguin species. The data points are colour-coded to distinguish between three penguin species: Adelie in purple, Chinstrap in blue, and Gentoo in red. This colour coding aids in the visual differentiation of the species clusters.\\
+
+\noindent
+The axes are labeled $tSNE1$ and $tSNE2$, corresponding to the dimensions reduced by the t-SNE algorithm. Dashed ellipses overlaid on the scatter plot demarcate the clusters of each species, providing a visual guide to the density and separation of the species within the transformed feature space. The plot effectively uses the t-SNE technique to illustrate the grouping of species, highlighting the algorithm's utility in discerning inherent data patterns in a lower-dimensional representation.\\
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -1759,16 +1762,13 @@ In Figure~\ref{fig:t-SNE} we observe a t-SNE visualisation of the penguin datase
 \end{knitrout}
 
 \noindent
-The axes are labeled $tSNE1$ and $tSNE2$, corresponding to the dimensions reduced by the t-SNE algorithm. Dashed ellipses overlaid on the scatter plot demarcate the clusters of each species, providing a visual guide to the density and separation of the species within the transformed feature space. The plot effectively uses the t-SNE technique to illustrate the grouping of species, highlighting the algorithm's utility in discerning inherent data patterns in a lower-dimensional representation.\\
-
-\noindent
 While t-SNE is an exceptionally potent tool for data visualisation, it does come with its own set of constraints. Firstly, it has a significant memory footprint and can be time-consuming to run, which may pose challenges when dealing with large datasets.\\
 
 \noindent
 Secondly, t-SNE is tailored specifically for visualisation, which constrains the embedding space to two or three dimensions. This limitation means that t-SNE is optimised for human interpretability rather than for capturing higher-dimensional relationships.\\
 
 \noindent
-Additionally, it requires experimentation with different initialisation to mitigate the risk of local suboptimal solutions affecting the results. Therefore, it's crucial to carefully consider and select the most suitable method based on the specific requirements and nature of the data at hand.
+Additionally, it requires experimentation with different initialisation to mitigate the risk of local sub-optimal solutions affecting the results. Therefore, it's crucial to carefully consider and select the most suitable method based on the specific requirements and nature of the data at hand.
 
 \subsubsection*{Chapter Overview and Further Reading References}
 
@@ -1778,17 +1778,18 @@ Additionally, it requires experimentation with different initialisation to mitig
 
 \section{State-Of-The-Art Modern Approaches}
 
-In this chapter, we will introduce some state-of-the-art graphical statistical methods published in recent research. In Chapter 6.1, we will introduce the foundational visualisation methods box plots and Q–Q plots. Building on this, we will discuss the theory and implementation of functional boxplots and Q–Q Box plots, as published in recent articles in the \textit{Journal of Computational and Graphical Statistics}. 
+In this chapter, we introduce some state-of-the-art graphical statistical methods published in recent research papers. In Chapter 6.1, we briefly present box plots and Q–Q plots, which set the foundation for the modern visualisation techniques subsequently. Following, the theory and implementation of functional boxplots and Q–Q Box plots is illustrated, as published in recent articles in the \textit{Journal of Computational and Graphical Statistics}. 
 
 \subsection{Introduction}
 
 \subsubsection{Box Plots in Practice}\\
 
 \noindent 
-Box plots, also known as box-and-whisker plots, were introduced by John W. Tukey in 1977. Since then, they have become essential in exploratory data analysis, offering a summary of a dataset's central tendency, skewness, and outliers. These plots typically showcase the median, quartiles, and range, making them valuable for comparing and discerning patterns across different variables.\\
+Box plots, also known as box-and-whisker plots, were first introduced by John W. Tukey in 1977 \cite{tukey1977exploratory}. Since then, they have become an extremely popular tool in exploratory data analysis, offering a summary of a dataset's central tendency, skewness, and outliers. These boxplots typically showcase the median, quartiles, and range, making them valuable for comparing and discerning patterns across different variables.\\
 
 \noindent
-An example of box plots using the iris dataset is displayed in Figure~\ref{fig:box-plots}. Specifically, the right graph showcases a violin plot — which is a recent advancement in box plot techniques. The violin plot combines a box plot with a kernel density function, providing a mirrored density plot displayed in the same way as a box plot.\\
+An example of classic box plots using the iris dataset is displayed on the left of Figure~\ref{fig:box-plots}. Accompanying the box plots, the graph on the right showcases a violin plot — which is a recent advancement in box plot techniques. The violin plot combines a box plot with a kernel density function, providing a mirrored density plot displayed in the same way as a box plot.\\
+
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[h]
 
@@ -1796,16 +1797,18 @@ An example of box plots using the iris dataset is displayed in Figure~\ref{fig:b
 
 }
 
-\caption[Comparison of Violin and Box Plots of Sepal Length by Species]{Comparison of Violin and Box Plots of Sepal Length by Species}\label{fig:box-plots}
+\caption[Comparison of Box Plots and Violin Plots of Sepal Length by Species]{Comparison of Box Plots and Violin Plots of Sepal Length by Species}\label{fig:box-plots}
 \end{figure}
 
 \end{knitrout}
 
 \subsubsection{Q–Q Plots in Practice}\\
 
-\noindent Q–Q plots are constructed by plotting the quantiles of two datasets against each other. Typically, one dataset serves as the basis for theoretical quantiles, often assumed to follow a particular probability distribution, while the other dataset comprises observed values. This comparative depiction enables a direct assessment of how closely the observed data align with the theoretical distribution, facilitating the identification of deviations from expected patterns.\\
+\noindent Q-Q plots, short for quantile-quantile plots, were pioneered by the statistician Francis Galton in the late 19th century \cite{galton1875iv}. These plots are designed to assess the similarity between the empirical distribution of data and a theoretical distribution, often the normal distribution. This comparison provides insights into the degree of similarity between the two, aiding in diagnostics and model validation in statistical analysis.\\
 
-\noindent In this section, side-by-side QQ plots are displayed offering a visual comparison of the distributional properties of two variables from the mtcars and the iris datset. These plots serve as a means to assess normality assumptions and identify potential deviations from expected distributions. Through this visual exploration, we aim to gain insights into the underlying structure of the data and guide further investigation.\\
+\noindent Q–Q plots are constructed by plotting the quantiles of two datasets against each other. Typically, one dataset serves as the basis for theoretical quantiles, often assumed to follow a particular probability distribution, while the other dataset holds observed values. This comparative depiction allows a direct assessment of how closely the observed data aligns with the theoretical distribution, facilitating the identification of deviations from expected patterns.\\
+
+\noindent In this section, side-by-side Q-Q plots are displayed offering a visual comparison of the distributional properties of two variables from the mtcars and the iris datset. These plots serve as a means to assess normality assumptions and identify potential deviations from expected distributions. Through this visual exploration, we aim to gain insights into the underlying structure of the data and guide further investigation.\\
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[h]
@@ -1819,11 +1822,11 @@ An example of box plots using the iris dataset is displayed in Figure~\ref{fig:b
 
 \end{knitrout}
 
-\noindent In the first plot in Figure~\ref{fig:QQplots}, which examines the mpg variable in the mtcars dataset, deviations, particularly in the tails of the distribution, are noticeable. These deviations suggest potential departures from normality, possibly indicating the presence of outliers or non-normal behaviour in the data.\\
+\noindent In the first plot in Figure~\ref{fig:QQplots}, which examines the mpg variable in the mtcars dataset, deviations, particularly in the tails of the distribution, are noticeable. These deviations suggest potential departures from normality, and thus, indicating the presence of outliers or non-normal behaviour in the data.\\
 
-\noindent The second plot examines the distribution of the Sepal.Length variable in the iris dataset. Here, the points exhibit a slight departure from the theoretical quantiles line. The deviation is less pronounced compared to the previous plot. The distribution of sepal lengths within the iris dataset appears to be approximately normal.\\
+\noindent The second plot examines the distribution of the Sepal.Length variable in the iris dataset. Here, the points exhibit a very slight departure from the theoretical quantiles line. The deviation is far less pronounced compared to the plot on its left. Therefore, indicating that the distribution of sepal lengths within the iris dataset is approximately normal.\\
 
-\noindent In general, the Q–Q plots provide a succinct and insightful representation of the distributional properties of the variables under examination. They offer a visual means to assess normality assumptions and identify potential outliers or deviations from expected distributions. As such, Q–Q plots serve as a valuable tool in exploratory data analysis and model diagnostics, aiding researchers in understanding the underlying structure of their data and guiding subsequent analyses.
+\noindent In general, the Q–Q plots provide a neat and insightful representation of the distributional properties of the different variables. They provide an effective visual means to assess normality assumptions and to identify potential outliers or deviations from expected distributions, as is the case in the first graph of Figure~\ref{fig:QQplots}. 
 
 \subsection{Functional Boxplot}
 
@@ -1883,31 +1886,38 @@ where $\lceil n/2 \rceil$ is the smallest integer not less than half of the samp
 The functional boxplot shown in Figure \ref{fig:fbplot} illustrates the metabolism rates between healthy and diseased populations. The outer blue line highlights a wider range for the diseased group, accompanied by a broader grey band. The range indicates greater variability and the band indicates lower oxygen saturation for most patients in the blood of the diseased group.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{image_reference/fbplot.png}
-    \caption{Left graph demostrates curves of arterial oxygen saturation (\%) for 80 women without metabolic syndrome and right graph demostrates curves of arterial oxygen saturation (\%) for 35 women with metabolic syndrome. Outliers from the population are highlighted in red.}
+    \includegraphics[width=0.8\textwidth]{image_reference/fbplot.png}
+    \caption{Arterial Oxygen Saturation (\%) Curves: Women Without vs. With Metabolic Syndrome, Highlighting Outliers}
     \label{fig:fbplot}
 \end{figure}
 
+\noindent Left graph in Figure~\ref{fig:fbplot} demostrates curves of arterial oxygen saturation (\%) for 80 women without metabolic syndrome and right graph demostrates curves of arterial oxygen saturation (\%) for 35 women with metabolic syndrome. Outliers from the population are highlighted in red.
+
 \subsection{Q–Q Boxplots}
-In this section, we will introduce the Q–Q boxplot, which combines the advantages from the boxplot and the Q–Q plot. The Q–Q boxplot integrates the box plot's ability to summarize data through its quartiles and the Q–Q plot's capability to compare data distributions to a theoretical distribution (often the normal distribution).\\
+In this section, we will introduce the Q–Q boxplot, which combines the advantages from the boxplot and the Q–Q plot. The Q–Q boxplot integrates the box plot's ability to summarise data through its quartiles and the Q–Q plot's capability to compare data distributions to a theoretical distribution.\\
 
 \noindent 
-Although Q–Q plots and box plots are very effiective in data visualisation, they have there limitations as well. Q–Q plot is less effective than box plot in highlighting summary quantitles, and it also suffers the readability when we place multiple samples together. Box plot usually has unreliable tail information when $n<100$, therefor may not suitable for some research questions that need more accurate estimates of extreme quantiles.\\
+Nevertheless, although Q–Q plots and box plots are very effiective in data visualisation, they have certain limitations. Q–Q plots are less effective than box plots in highlighting summary quantitles, and their readability also suffers when multiple samples together are represented together in one plot. Furthermore, box plots usually have unreliable tail information when $n<100$, therefor they may not suitable for research questions that need accurate estimates of extreme quantiles.\\
 
 \subsubsection{Construction of Q–Q Boxplots}
-The construction of a Q–Q boxplot involves a three-step process \cite{rodu2022q}. The first setp is to construct the box, which is similar to the standard boxplot and represents the interquartile range of the data. The second step is to draw the whiskers and confidence bands. The third step is to draw the outside values. The first and third steps are as same as in box plots.\\
+The construction of a Q–Q boxplot involves a three-step process \cite{rodu2022q}. The first setp is to construct the box, similar to that of the standard boxplot, and which represents the interquartile range of the data. The second step is to draw the whiskers and confidence bands. Finally, the third step involves drawing the outside values. The first and third steps of the process mirror exactly those involved in the creation of classic box plots.\\
 
 \noindent
-The unique aspect of the Q–Q boxplot comes in the second step. In ordor to draw the whiskers \index{Quantile–Quantile boxplot!whiskers}and confidence bands, we have to standardise both the comparison distribution and the reference distribution. This standardisation process involves matching the quantiles from the reference distribution to those in the comparison distribution, either by subsampling or interpolation. Once this is done, the deviations of the comparison distribution from the reference distribution are calculated relative to each data point. Alongside this, the point-wise confidence bands are also determined, which provides a visual indication of how closely the data follows the expected theoretical distribution. To integrate the relative deviations and confidence bands into the Q–Q boxplot, we include both the x and y coordinates in the plot. The y-axis coordinates correspond to the quantile values from the comparison dataset, while the x-axis coordinates represent the deviations relative to the reference distribution.\\
+The unique aspect of the Q–Q boxplot comes in the second step. In order to draw the whiskers \index{Quantile–Quantile boxplot!whiskers}and confidence bands, both the comparison distribution and the reference distribution must be standardised. This standardisation process involves matching the quantiles from the reference distribution to those in the comparison distribution, either by subsampling or interpolation. Once this is done, the deviations of the comparison distribution from the reference distribution are calculated relative to each data point\\
+
+\noindent 
+Alongside this, the point-wise confidence bands are also determined, which provides a visual indication of how closely the data follows the expected theoretical distribution. To integrate the relative deviations and confidence bands into the Q–Q boxplot, we include both the x and y coordinates in the plot. The y-axis coordinates correspond to the quantile values from the comparison dataset, while the x-axis coordinates represent the deviations relative to the reference distribution.\\
 
 \noindent
 To calculate the x-coordinate for a Q–Q boxplot, we set a scale for the plot and determin the maximum x-coordinate, $x_{\text{max}}=(\frac{b_w}{2})$ where $b_w$ is the box width. Let $dev_{max}$ be the maximum of the absolute values of the whisker deviations and confidence band values. The value of a relative deviaition $d$ is computed by either taking the difference between the standardised values from the comparison distribution and those from the reference distribution, or by using a value from the confidence band associated with the reference distribution. We can then set:
 $$x^* = \frac{d \cdot x_{\text{max}}}{\text{dev}_{\text{max}}}.$$
 The $x$ coordinate is then $x_b+x*$, where $x_b$ marks the center of the boxplot.
 
-\newpage
+\newpage 
+
 \subsubsection{Case Example: Iris Dataset Using Q–Q Boxplot}
-The resulting Q–Q boxplot shows the distribution of sepal length values within each iris species, allowing comparison whether they come from a normal distribution. Outliers are also indicated in the plot.\\
+
+\noindent In R, the \textt{geom\_qqboxplot()} function facilitates the generation of Q-Q boxplots. The resulting Q-Q boxplots produced using this function and the iris dataset are displayed in Figure~\ref{fig:QQboxplots}. These how the distribution of sepal length values within each iris species respectively. The Q-Q boxplots make possible a comparative analysis to assess whether the distributions adhere to a normal distribution assumption. Moreover, as classic boxplots, these Q-Q boxplots also make easy the identification of outliers.\\ 
 
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[h]
@@ -1921,9 +1931,12 @@ The resulting Q–Q boxplot shows the distribution of sepal length values within
 
 \end{knitrout}
 
+
 \noindent
-From the above Figure~\ref{fig:QQboxplots}, we can find out easily that the middle of our Q–Q boxplot is same as in the boxplot as we seen in Figure~\ref{fig:box-plots}. In addition, there are more details in tails behavior simultaneously. We can see that the right-tail deviations and left-tail deviations all lie inside of the confidence bands calculated with the bootstrap method, which means the sample distribution of our dataset is consistent with the theoretical distribution being compared to, that is a normal distribution.
-\noindent
+A brief comparison between Figure~\ref{fig:QQboxplots} and the conventional boxplots depicted in Figure~\ref{fig:box-plots}, shows consistent alignment in the central tendency measures, indicating coherence between the two visualisation techniques.\\
+
+\noindent 
+Moreover, the Q-Q boxplot provides more insights into the tail behavior of the distribution, capturing detailed deviations in both right and left tails. Remarkably, all deviations are found the bands of confidence, suggesting a high degree of consistency between the observed sample distribution and the theoretical distribution under scrutiny, notably a normal distribution. 
 
 \subsubsection*{Chapter Overview and Further Reading References}
 
