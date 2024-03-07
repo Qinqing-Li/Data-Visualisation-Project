@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.13)  7 MAR 2024 12:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.13)  7 MAR 2024 12:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -369,7 +369,6 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package hyperref Info: Link coloring OFF on input line 73.
- (./main_file.out) (./main_file.out)
 \@outlinefile=\write5
 \openout5 = `main_file.out'.
 
@@ -409,7 +408,7 @@ Package hyperref Info: Link coloring OFF on input line 73.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<image_reference/UniversityLogo.png, id=289, 270.25969pt x 265.74281pt>
+<image_reference/UniversityLogo.png, id=4, 270.25969pt x 265.74281pt>
 File: image_reference/UniversityLogo.png Graphic file (type png)
 <use image_reference/UniversityLogo.png>
 Package pdftex.def Info: image_reference/UniversityLogo.png  used on input line 89.
@@ -453,7 +452,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 139--141
 
  []
 
-<image_reference/Nightingale-mortality.jpg, id=396, 7022.235pt x 3840.3475pt>
+<image_reference/Nightingale-mortality.jpg, id=181, 7022.235pt x 3840.3475pt>
 File: image_reference/Nightingale-mortality.jpg Graphic file (type jpg)
 <use image_reference/Nightingale-mortality.jpg>
 Package pdftex.def Info: image_reference/Nightingale-mortality.jpg  used on input line 144.
@@ -478,7 +477,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 159--161
 
  []
 
-<image_reference/global.png, id=408, 910.48155pt x 455.301pt>
+<image_reference/global.png, id=194, 910.48155pt x 455.301pt>
 File: image_reference/global.png Graphic file (type png)
 <use image_reference/global.png>
 Package pdftex.def Info: image_reference/global.png  used on input line 167.
@@ -503,7 +502,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 181--183
 
  []
 
-<image_reference/misuse1.png, id=421, 681.54625pt x 511.9125pt>
+<image_reference/misuse1.png, id=207, 681.54625pt x 511.9125pt>
 File: image_reference/misuse1.png Graphic file (type png)
 <use image_reference/misuse1.png>
 Package pdftex.def Info: image_reference/misuse1.png  used on input line 186.
@@ -523,7 +522,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 200--202
 
  []
 
-<image_reference/familytree.jpg, id=425, 955.57pt x 497.86pt>
+<image_reference/familytree.jpg, id=211, 955.57pt x 497.86pt>
 File: image_reference/familytree.jpg Graphic file (type jpg)
 <use image_reference/familytree.jpg>
 Package pdftex.def Info: image_reference/familytree.jpg  used on input line 205.
@@ -753,7 +752,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 303--306
  []
 
 [12]
-<figure/beamer-data-plots-1.pdf, id=484, 433.62pt x 289.08pt>
+<figure/beamer-data-plots-1.pdf, id=269, 433.62pt x 289.08pt>
 File: figure/beamer-data-plots-1.pdf Graphic file (type pdf)
 <use figure/beamer-data-plots-1.pdf>
 Package pdftex.def Info: figure/beamer-data-plots-1.pdf  used on input line 313.
@@ -764,7 +763,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) has
                                                   \__shipout_drop_firstpage_...
 l.325 \subsubsection
                     {Hierarchies and Levels of Abstraction} <./figure/beamer-data-plots-1.pdf>]
-<figure/beamer-abs-plots-1.pdf, id=503, 867.24pt x 289.08pt>
+<figure/beamer-abs-plots-1.pdf, id=288, 867.24pt x 289.08pt>
 File: figure/beamer-abs-plots-1.pdf Graphic file (type pdf)
 <use figure/beamer-abs-plots-1.pdf>
 Package pdftex.def Info: figure/beamer-abs-plots-1.pdf  used on input line 339.
@@ -842,7 +841,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 375--377
  []
 
 [15]
-<figure/beamer-colour-plot-1.pdf, id=535, 722.7pt x 216.81pt>
+<figure/beamer-colour-plot-1.pdf, id=321, 722.7pt x 216.81pt>
 File: figure/beamer-colour-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-colour-plot-1.pdf>
 Package pdftex.def Info: figure/beamer-colour-plot-1.pdf  used on input line 381.
@@ -857,7 +856,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 400--401
 
  []
 
-<figure/beamer-cogload-plot-1.pdf, id=538, 722.7pt x 216.81pt>
+<figure/beamer-cogload-plot-1.pdf, id=324, 722.7pt x 216.81pt>
 File: figure/beamer-cogload-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-cogload-plot-1.pdf>
 Package pdftex.def Info: figure/beamer-cogload-plot-1.pdf  used on input line 405.
@@ -967,12 +966,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 483--484
 
  []
 
-<figure/beamer-hist2-1.pdf, id=586, 361.35pt x 289.08pt>
+<figure/beamer-hist2-1.pdf, id=372, 361.35pt x 289.08pt>
 File: figure/beamer-hist2-1.pdf Graphic file (type pdf)
 <use figure/beamer-hist2-1.pdf>
 Package pdftex.def Info: figure/beamer-hist2-1.pdf  used on input line 491.
 (pdftex.def)             Requested size: 208.13574pt x 166.51082pt.
-<figure/beamer-kde3-1.pdf, id=587, 361.35pt x 289.08pt>
+<figure/beamer-kde3-1.pdf, id=373, 361.35pt x 289.08pt>
 File: figure/beamer-kde3-1.pdf Graphic file (type pdf)
 <use figure/beamer-kde3-1.pdf>
 Package pdftex.def Info: figure/beamer-kde3-1.pdf  used on input line 503.
@@ -1044,7 +1043,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 566--567
 
  []
 
-<figure/beamer-barcharts-1.pdf, id=615, 722.7pt x 289.08pt>
+<figure/beamer-barcharts-1.pdf, id=400, 722.7pt x 289.08pt>
 File: figure/beamer-barcharts-1.pdf Graphic file (type pdf)
 <use figure/beamer-barcharts-1.pdf>
 Package pdftex.def Info: figure/beamer-barcharts-1.pdf  used on input line 571.
@@ -1084,7 +1083,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 620--621
 
  []
 
-<figure/beamer-all_exchange_rates-1.pdf, id=638, 418.56375pt x 259.97125pt>
+<figure/beamer-all_exchange_rates-1.pdf, id=423, 418.56375pt x 259.97125pt>
 File: figure/beamer-all_exchange_rates-1.pdf Graphic file (type pdf)
 <use figure/beamer-all_exchange_rates-1.pdf>
 Package pdftex.def Info: figure/beamer-all_exchange_rates-1.pdf  used on input line 631.
@@ -1129,7 +1128,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 662--664
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <7> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 672.
-<figure/beamer-ACF-1.pdf, id=659, 289.08pt x 216.81pt>
+<figure/beamer-ACF-1.pdf, id=445, 289.08pt x 216.81pt>
 File: figure/beamer-ACF-1.pdf Graphic file (type pdf)
 <use figure/beamer-ACF-1.pdf>
 Package pdftex.def Info: figure/beamer-ACF-1.pdf  used on input line 677.
@@ -1164,7 +1163,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 709--710
 
  []
 
-<figure/beamer-decomposition_of_time_series-1.pdf, id=676, 361.35pt x 289.08pt>
+<figure/beamer-decomposition_of_time_series-1.pdf, id=462, 361.35pt x 289.08pt>
 File: figure/beamer-decomposition_of_time_series-1.pdf Graphic file (type pdf)
 <use figure/beamer-decomposition_of_time_series-1.pdf>
 Package pdftex.def Info: figure/beamer-decomposition_of_time_series-1.pdf  used on input line 728.
@@ -1204,7 +1203,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 791--793
 
  []
 
-<figure/beamer-roc-1.pdf, id=707, 252.945pt x 252.945pt>
+<figure/beamer-roc-1.pdf, id=493, 252.945pt x 252.945pt>
 File: figure/beamer-roc-1.pdf Graphic file (type pdf)
 <use figure/beamer-roc-1.pdf>
 Package pdftex.def Info: figure/beamer-roc-1.pdf  used on input line 802.
@@ -1224,17 +1223,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 844--846
 
  []
 
-<figure/beamer-spacetime-fy22-1.pdf, id=734, 505.89pt x 433.62pt>
+<figure/beamer-spacetime-fy22-1.pdf, id=519, 505.89pt x 433.62pt>
 File: figure/beamer-spacetime-fy22-1.pdf Graphic file (type pdf)
 <use figure/beamer-spacetime-fy22-1.pdf>
 Package pdftex.def Info: figure/beamer-spacetime-fy22-1.pdf  used on input line 861.
 (pdftex.def)             Requested size: 208.13574pt x 178.40068pt.
-<image_reference/mapshoot.png, id=735, 795.97375pt x 710.655pt>
+<image_reference/mapshoot.png, id=520, 795.97375pt x 710.655pt>
 File: image_reference/mapshoot.png Graphic file (type png)
 <use image_reference/mapshoot.png>
 Package pdftex.def Info: image_reference/mapshoot.png  used on input line 872.
 (pdftex.def)             Requested size: 208.13574pt x 185.81778pt.
-<figure/beamer-fire-by-months-fy13-22-1.pdf, id=736, 361.35pt x 187.70125pt>
+<figure/beamer-fire-by-months-fy13-22-1.pdf, id=521, 361.35pt x 187.70125pt>
 File: figure/beamer-fire-by-months-fy13-22-1.pdf Graphic file (type pdf)
 <use figure/beamer-fire-by-months-fy13-22-1.pdf>
 Package pdftex.def Info: figure/beamer-fire-by-months-fy13-22-1.pdf  used on input line 898.
@@ -1274,7 +1273,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 927--928
 
  []
 
-<figure/beamer-bubble-plot-construction-1.pdf, id=768, 794.97pt x 252.945pt>
+<figure/beamer-bubble-plot-construction-1.pdf, id=553, 794.97pt x 252.945pt>
 File: figure/beamer-bubble-plot-construction-1.pdf Graphic file (type pdf)
 <use figure/beamer-bubble-plot-construction-1.pdf>
 Package pdftex.def Info: figure/beamer-bubble-plot-construction-1.pdf  used on input line 932.
@@ -1294,7 +1293,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 950--951
 
  []
 
-<figure/beamer-gapminder_static-1.pdf, id=781, 289.08pt x 216.81pt>
+<figure/beamer-gapminder_static-1.pdf, id=566, 289.08pt x 216.81pt>
 File: figure/beamer-gapminder_static-1.pdf Graphic file (type pdf)
 <use figure/beamer-gapminder_static-1.pdf>
 Package pdftex.def Info: figure/beamer-gapminder_static-1.pdf  used on input line 955.
@@ -1334,7 +1333,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<image_reference/gganimate1.png, id=797, 284.86424pt x 284.86424pt>
+<image_reference/gganimate1.png, id=583, 284.86424pt x 284.86424pt>
 File: image_reference/gganimate1.png Graphic file (type png)
 <use image_reference/gganimate1.png>
 Package pdftex.def Info: image_reference/gganimate1.png  used on input line 993.
@@ -1365,7 +1364,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<image_reference/gganimate2.png, id=798, 286.06876pt x 287.27325pt>
+<image_reference/gganimate2.png, id=584, 286.06876pt x 287.27325pt>
 File: image_reference/gganimate2.png Graphic file (type png)
 <use image_reference/gganimate2.png>
 Package pdftex.def Info: image_reference/gganimate2.png  used on input line 997.
@@ -1396,7 +1395,7 @@ Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-<image_reference/gganimate3.png, id=799, 286.06876pt x 286.671pt>
+<image_reference/gganimate3.png, id=585, 286.06876pt x 286.671pt>
 File: image_reference/gganimate3.png Graphic file (type png)
 <use image_reference/gganimate3.png>
 Package pdftex.def Info: image_reference/gganimate3.png  used on input line 1001.
@@ -1467,7 +1466,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1036--1037
 
  []
 
-<figure/beamer-bubble-plot-1.pdf, id=810, 794.97pt x 361.35pt>
+<figure/beamer-bubble-plot-1.pdf, id=596, 794.97pt x 361.35pt>
 File: figure/beamer-bubble-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-bubble-plot-1.pdf>
 Package pdftex.def Info: figure/beamer-bubble-plot-1.pdf  used on input line 1041.
@@ -1559,7 +1558,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1149--1151
 
  []
 
-<figure/beamer-cor-matrix-mtcars2-1.pdf, id=845, 361.35pt x 208.78pt>
+<figure/beamer-cor-matrix-mtcars2-1.pdf, id=631, 361.35pt x 208.78pt>
 File: figure/beamer-cor-matrix-mtcars2-1.pdf Graphic file (type pdf)
 <use figure/beamer-cor-matrix-mtcars2-1.pdf>
 Package pdftex.def Info: figure/beamer-cor-matrix-mtcars2-1.pdf  used on input line 1157.
@@ -1575,7 +1574,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{figure.21}) ha
                                                   \__shipout_drop_firstpage_...
 l.1199 \end{kframe}
                     <./figure/beamer-cor-matrix-mtcars2-1.pdf>]
-<figure/beamer-scatter-plot-1.pdf, id=860, 289.08pt x 187.70125pt>
+<figure/beamer-scatter-plot-1.pdf, id=645, 289.08pt x 187.70125pt>
 File: figure/beamer-scatter-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-scatter-plot-1.pdf>
 Package pdftex.def Info: figure/beamer-scatter-plot-1.pdf  used on input line 1205.
@@ -1673,7 +1672,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1291--1293
 
  []
 
-<figure/beamer-estate-data-plot-1.pdf, id=889, 252.945pt x 180.675pt>
+<figure/beamer-estate-data-plot-1.pdf, id=674, 252.945pt x 180.675pt>
 File: figure/beamer-estate-data-plot-1.pdf Graphic file (type pdf)
 <use figure/beamer-estate-data-plot-1.pdf>
 Package pdftex.def Info: figure/beamer-estate-data-plot-1.pdf  used on input line 1314.
@@ -1808,19 +1807,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 1513--1515
 
  []
 
-
-Overfull \hbox (23.79189pt too wide) in paragraph at lines 1529--1529
-[][]\OT1/cmtt/m/n/7 preprocess[] []<-[] []scaled_data[] []-[] []matrix[][]([][]colMeans[][](scaled_data),[] []nrow[] []=[] []nrow[][](scaled_data),[] []ncol[] []=[] []ncol[][](scaled_data),[] []byrow[] []=[] []TRUE[][])[][] 
- []
-
 [49]
-<figure/beamer-PCAbiplot-1.pdf, id=957, 867.24pt x 397.485pt>
+<figure/beamer-PCAbiplot-1.pdf, id=743, 831.105pt x 397.485pt>
 File: figure/beamer-PCAbiplot-1.pdf Graphic file (type pdf)
 <use figure/beamer-PCAbiplot-1.pdf>
-Package pdftex.def Info: figure/beamer-PCAbiplot-1.pdf  used on input line 1571.
-(pdftex.def)             Requested size: 433.62pt x 198.742pt.
+Package pdftex.def Info: figure/beamer-PCAbiplot-1.pdf  used on input line 1572.
+(pdftex.def)             Requested size: 433.62pt x 207.38481pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1584--1585
+Underfull \hbox (badness 10000) in paragraph at lines 1585--1586
 
  []
 
@@ -1828,34 +1822,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 1584--1585
 pdfTeX warning (ext4): destination with the same identifier (name{figure.24}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1594 \]
+l.1593 \[
           <./figure/beamer-PCAbiplot-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 1596--1597
+Underfull \hbox (badness 10000) in paragraph at lines 1597--1598
 
  []
 
 
-Overfull \hbox (6.76053pt too wide) in paragraph at lines 1608--1609
-\OT1/cmr/m/n/10 and then pro-ject-ing the points onto that. More ex-plic-itly, the al-go-rithms Prin-ci-pal curves!algorithmhas
- []
+Package natbib Warning: Citation `pcurves' on page 51 undefined on input line 1609.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1619--1620
+Underfull \hbox (badness 10000) in paragraph at lines 1620--1621
 
  []
 
-<figure/beamer-P-curves-1.pdf, id=975, 650.43pt x 289.08pt>
+<figure/beamer-P-curves-1.pdf, id=760, 650.43pt x 289.08pt>
 File: figure/beamer-P-curves-1.pdf Graphic file (type pdf)
 <use figure/beamer-P-curves-1.pdf>
-Package pdftex.def Info: figure/beamer-P-curves-1.pdf  used on input line 1626.
+Package pdftex.def Info: figure/beamer-P-curves-1.pdf  used on input line 1627.
 (pdftex.def)             Requested size: 433.62pt x 192.7254pt.
 [51]
-Underfull \hbox (badness 10000) in paragraph at lines 1640--1641
+Underfull \hbox (badness 10000) in paragraph at lines 1641--1642
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1651--1653
+Underfull \hbox (badness 10000) in paragraph at lines 1652--1654
 
  []
 
@@ -1863,63 +1855,63 @@ Underfull \hbox (badness 10000) in paragraph at lines 1651--1653
 pdfTeX warning (ext4): destination with the same identifier (name{figure.25}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1653 
+l.1654 
         <./figure/beamer-P-curves-1.pdf>]
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.1661 ...f data points. Also, $p_{ii}=0$ and \sum
+l.1662 ...f data points. Also, $p_{ii}=0$ and \sum
                                                   _{i,j} p_{ij}=1$.\\
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1660--1662
+Underfull \hbox (badness 10000) in paragraph at lines 1661--1663
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1672--1674
+Underfull \hbox (badness 10000) in paragraph at lines 1673--1675
 
  []
 
 
-Overfull \hbox (1.0926pt too wide) in paragraph at lines 1675--1678
+Overfull \hbox (1.0926pt too wide) in paragraph at lines 1676--1679
 \OT1/cmr/m/n/10 The goal of t-SNE is to min-i-mize the dis-crep-ancy be-tween the prob-a-bil-i-ties $\OML/cmm/m/it/10 p[]$ \OT1/cmr/m/n/10 in the high-dimensional
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1682--1684
+Underfull \hbox (badness 10000) in paragraph at lines 1683--1685
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1695--1697
+Underfull \hbox (badness 10000) in paragraph at lines 1696--1698
 
  []
 
 [53]
-Underfull \hbox (badness 10000) in paragraph at lines 1703--1704
+Underfull \hbox (badness 10000) in paragraph at lines 1704--1705
 
  []
 
-<figure/beamer-t-SNE-1.pdf, id=1008, 361.35pt x 216.81pt>
+<figure/beamer-t-SNE-1.pdf, id=791, 361.35pt x 216.81pt>
 File: figure/beamer-t-SNE-1.pdf Graphic file (type pdf)
 <use figure/beamer-t-SNE-1.pdf>
-Package pdftex.def Info: figure/beamer-t-SNE-1.pdf  used on input line 1736.
+Package pdftex.def Info: figure/beamer-t-SNE-1.pdf  used on input line 1737.
 (pdftex.def)             Requested size: 361.34912pt x 216.80946pt.
 [54]
-Underfull \hbox (badness 10000) in paragraph at lines 1745--1747
+Underfull \hbox (badness 10000) in paragraph at lines 1746--1748
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1748--1750
+Underfull \hbox (badness 10000) in paragraph at lines 1749--1751
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1751--1753
+Underfull \hbox (badness 10000) in paragraph at lines 1752--1754
 
  []
 
@@ -1927,7 +1919,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1751--1753
 pdfTeX warning (ext4): destination with the same identifier (name{figure.26}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1761 \newpage
+l.1762 \newpage
                 <./figure/beamer-t-SNE-1.pdf>]
 
 ! LaTeX Error: There's no line here to end.
@@ -1936,21 +1928,21 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1770 
+l.1771 
        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1771--1773
+Underfull \hbox (badness 10000) in paragraph at lines 1772--1774
 
  []
 
-<figure/beamer-box-plots-1.pdf, id=1033, 722.7pt x 361.35pt>
+<figure/beamer-box-plots-1.pdf, id=817, 722.7pt x 361.35pt>
 File: figure/beamer-box-plots-1.pdf Graphic file (type pdf)
 <use figure/beamer-box-plots-1.pdf>
-Package pdftex.def Info: figure/beamer-box-plots-1.pdf  used on input line 1779.
+Package pdftex.def Info: figure/beamer-box-plots-1.pdf  used on input line 1780.
 (pdftex.def)             Requested size: 433.62pt x 216.81168pt.
 
 ! LaTeX Error: There's no line here to end.
@@ -1959,14 +1951,14 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1789 
+l.1790 
        
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1790--1791
+Underfull \hbox (badness 10000) in paragraph at lines 1791--1792
 
  []
 
@@ -1974,29 +1966,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 1790--1791
 pdfTeX warning (ext4): destination with the same identifier (name{figure.27}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1791 
+l.1792 
         <./figure/beamer-box-plots-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 1792--1793
+Underfull \hbox (badness 10000) in paragraph at lines 1793--1794
 
  []
 
-<figure/beamer-QQplots-1.pdf, id=1044, 578.16pt x 289.08pt>
+<figure/beamer-QQplots-1.pdf, id=828, 578.16pt x 289.08pt>
 File: figure/beamer-QQplots-1.pdf Graphic file (type pdf)
 <use figure/beamer-QQplots-1.pdf>
-Package pdftex.def Info: figure/beamer-QQplots-1.pdf  used on input line 1797.
+Package pdftex.def Info: figure/beamer-QQplots-1.pdf  used on input line 1798.
 (pdftex.def)             Requested size: 433.62pt x 216.80946pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1806--1807
+Underfull \hbox (badness 10000) in paragraph at lines 1807--1808
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1808--1809
+Underfull \hbox (badness 10000) in paragraph at lines 1809--1810
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1814--1816
+Underfull \hbox (badness 10000) in paragraph at lines 1815--1817
 
  []
 
@@ -2004,25 +1996,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 1814--1816
 pdfTeX warning (ext4): destination with the same identifier (name{figure.28}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1816 
+l.1817 
         <./figure/beamer-QQplots-1.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 1822--1823
+Underfull \hbox (badness 10000) in paragraph at lines 1823--1824
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1824--1826
+Underfull \hbox (badness 10000) in paragraph at lines 1825--1827
 
  []
 
 [58]
-<image_reference/fbplot.png, id=1070, 847.165pt x 419.5675pt>
+<image_reference/fbplot.png, id=854, 847.165pt x 419.5675pt>
 File: image_reference/fbplot.png Graphic file (type png)
 <use image_reference/fbplot.png>
-Package pdftex.def Info: image_reference/fbplot.png  used on input line 1870.
+Package pdftex.def Info: image_reference/fbplot.png  used on input line 1871.
 (pdftex.def)             Requested size: 433.62pt x 214.75124pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1876--1877
+Underfull \hbox (badness 10000) in paragraph at lines 1877--1878
 
  []
 
@@ -2030,37 +2022,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 1876--1877
 pdfTeX warning (ext4): destination with the same identifier (name{figure.29}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1877 
+l.1878 
         <./image_reference/fbplot.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1878--1880
+Underfull \hbox (badness 10000) in paragraph at lines 1879--1881
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1882--1883
+Underfull \hbox (badness 10000) in paragraph at lines 1883--1884
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1884--1886
+Underfull \hbox (badness 10000) in paragraph at lines 1885--1887
 
  []
 
 [60]
-Underfull \hbox (badness 10000) in paragraph at lines 1894--1895
+Underfull \hbox (badness 10000) in paragraph at lines 1895--1896
 
  []
 
-<figure/beamer-QQboxplots-1.pdf, id=1086, 244.915pt x 201.75375pt>
+<figure/beamer-QQboxplots-1.pdf, id=869, 244.915pt x 201.75375pt>
 File: figure/beamer-QQboxplots-1.pdf Graphic file (type pdf)
 <use figure/beamer-QQboxplots-1.pdf>
-Package pdftex.def Info: figure/beamer-QQboxplots-1.pdf  used on input line 1899.
+Package pdftex.def Info: figure/beamer-QQboxplots-1.pdf  used on input line 1900.
 (pdftex.def)             Requested size: 244.91438pt x 201.7594pt.
 [61
 pdfTeX warning (ext4): destination with the same identifier (name{figure.30}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1916 \newpage
+l.1917 \newpage
                 <./figure/beamer-QQboxplots-1.pdf>] (./main_file.ind [62
 
 ]) (./main_file.bbl
@@ -2125,27 +2117,38 @@ Underfull \hbox (badness 6284) in paragraph at lines 143--147
 \OT1/cmtt/m/n/10 where-[]science-[]meets-[]fiction-[]the-[]dark-[]history-[]of-[]eugenics$[]\OT1/cmr/m/n/10 , 2022.  Ac-cessed 9
  []
 
-) [64] (./main_file.aux)
+)
+
+Package natbib Warning: There were undefined citations.
+
+[64] (./main_file.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-10-10>
  ***********
-Package rerunfilecheck Info: File `main_file.out' has not changed.
-(rerunfilecheck)             Checksum: 0B90FBD287B34344DF6DD23407231451;14777.
+
+
+Package rerunfilecheck Warning: File `main_file.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main_file.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  3839DED296911E30F97D39CE3ACC1444;14782.
  ) 
 Here is how much of TeX's memory you used:
- 13331 strings out of 476463
- 212151 string characters out of 5799821
+ 13254 strings out of 476463
+ 210766 string characters out of 5799821
  1939043 words of memory out of 5000000
- 34627 multiletter control sequences out of 15000+600000
+ 34554 multiletter control sequences out of 15000+600000
  565885 words of font info for 65 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  75i,10n,79p,1124b,637s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb><c:/Users/pfull/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main_file.pdf (64 pages, 7929854 bytes).
+Output written on main_file.pdf (64 pages, 7925225 bytes).
 PDF statistics:
- 1339 PDF objects out of 1440 (max. 8388607)
- 1144 compressed objects within 12 object streams
+ 1121 PDF objects out of 1200 (max. 8388607)
+ 928 compressed objects within 10 object streams
  244 named destinations out of 1000 (max. 500000)
- 744 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 176 words of extra memory for PDF output out of 10000 (max. 10000000)
 

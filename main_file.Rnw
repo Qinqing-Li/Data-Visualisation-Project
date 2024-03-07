@@ -204,7 +204,7 @@ Regrettably, the Kallikak family tree became a central element in the eugenics m
 
 \subsection{Computing and Data Visualisation}
 \noindent
-Over the years, numerous tools have been developed to facilitate the generation of data visualisation. The programme R stands out as a powerful tool for statistical analysis and graphic creation, offering a wide array of functionalities to cater to various data visualisation needs. We will first introduce the commonly used R package \textit{ggplot2}\index{R package!ggplot2}. Then, other key packages used to produce clear and compelling graphs in R will be presented. In this project, R package names such as \textit{ggplot2} are italicised, while R commands like \texttt{faceting} are displayed in a teletype font.\\
+Over the years, numerous tools have been developed to facilitate the generation of data visualisation. The programme R stands out as a powerful tool for statistical analysis and graphic creation, offering a wide array of functionalities to cater to various data visualisation needs. We will first introduce the commonly used R package \textit{ggplot2}\index{R package!ggplot2}. Then, other key packages used to produce clear and compelling graphs in R will be presented. In this project, R package names such as \textit{ggplot2} are italicised, while R commands like \texttt{faceting()} are displayed in a teletype font.\\
 
 \noindent \textbf{The \textit{ggplot2} Package}\\
 \noindent
@@ -218,11 +218,11 @@ This R package, \textit{ggplot2}, is notable for its robustness and flexibility,
 As shown in subsequent sections, it is possible to produce visualisations rather effortlessly by using internal data from R, or even external data, together with \textit{ggplot2}. When using this package, certain key tools are used repeatedly to create visual plots from datasets. Some of these integrals tools for creating sophisticated visualisations are presented subsequently \cite{ggplot2}:\\
 
 \noindent
-Firstly, the \texttt{geom} function refers to ``geometric objects". It is pivotal took in \textit{ggplot2} used to specify the type of geometric objects or shapes to be drawn on a plot. Additionally, the \texttt{scales} function enables the adjustment of various mapping details, including colour choices, label formatting, legend arrangement, and more.\\
+Firstly, the \texttt{geom()} function refers to ``geometric objects". It is pivotal took in \textit{ggplot2} used to specify the type of geometric objects or shapes to be drawn on a plot. Additionally, the \texttt{scales()} function enables the adjustment of various mapping details, including colour choices, label formatting, legend arrangement, and more.\\
 
-\noindent Furthermore, the \texttt{coord} function provides the axes and gridlines which aid in structuring and interpreting the graph. Various coordinate systems such as cartesian, polar, and map projections are available. Moreover, \texttt{faceting} is a robust feature enabling the partitioning of a single plot into multiple plots based on factors present in the dataset. This functionality proves particularly beneficial for exploring and presenting data with multiple groups or categories.\\
+\noindent Furthermore, the \texttt{coord()} function provides the axes and gridlines which aid in structuring and interpreting the graph. Various coordinate systems such as cartesian, polar, and map projections are available. Moreover, \texttt{faceting()} is a robust feature enabling the partitioning of a single plot into multiple plots based on factors present in the dataset. This functionality proves particularly beneficial for exploring and presenting data with multiple groups or categories.\\
 
-\noindent The \texttt{theme} function holds significance in customising the non-data elements of plots. The theme system within \textit{ggplot2} allows precise adjustment of aesthetic aspects such as fonts, labels, legends, and background colours. This tool is essential for enhancing plot readability and creating visually captivating graphics tailored to specific audiences or publication requirements.\\
+\noindent The \texttt{theme()} function holds significance in customising the non-data elements of plots. The theme system within \textit{ggplot2} allows precise adjustment of aesthetic aspects such as fonts, labels, legends, and background colours. This tool is essential for enhancing plot readability and creating visually captivating graphics tailored to specific audiences or publication requirements.\\
 
 \noindent \textbf{Key Additional Packages}\\
 
@@ -1612,7 +1612,7 @@ ggplot(data = estate, aes(x = house_age, y = price_per_area)) +
 
 \section{Visualising Beyond Two Dimensions} 
 
-\noindent This  chapter extends beyond the realm of two dimensional data visualisations. Within this chapter, advanced techniques are explored to unravel complex relationships involving multiple variables \cite{ward2010interactive}. The Principal Component Analysis (PCA) is introduced as a powerful method for dimensionality reduction, enabling a concise representation of high-dimensional datasets. Multiple innovative approaches facilitating the visualisation of high-dimensional data in lower-dimensional biplots and t-distributed Stochastic Neighbor Embedding (t-SNE) are studied. 
+\noindent This chapter extends beyond the realm of two dimensional data visualisations. Within this chapter, advanced techniques are explored to unravel complex relationships involving multiple variables \cite{ward2010interactive}. The Principal Component Analysis (PCA) is introduced as a powerful method for dimensionality reduction, enabling a concise representation of high-dimensional datasets. Multiple innovative methods involving the visualisation of high-dimensional data in lower-dimensional space such as biplots, principal curves, and t-distributed Stochastic Neighbor Embedding (t-SNE) are studied. 
 
 \subsection{Principal Component Analysis (PCA)}
 
@@ -1716,20 +1716,20 @@ Therefore, order the eigenvectors by their corresponding eigenvalues $\{\mathbf{
 
 \subsection{Biplots}
 \noindent 
-A biplot is a graphical representation that succinctly captures the relationships between variables and observations in a reduced-dimensional space defined by the principal components. This visualisation method facilitates the exploration of complex multivariate data by providing a simultaneous display of both samples (observations) and variables in a single plot. They are commonly understood to be a generalisation of the simple two-variable scatterplot.\\
+A biplot is a graphical representation that neatly captures the relationships between variables and observations in a reduced-dimensional space defined by the principal components. Biplots facilitate the exploration of complex multivariate data by providing a simultaneous display of both samples (observations) and variables in a single plot. They are commonly understood to be a "generalisation of the simple two-variable scatterplot".\\
 
 \noindent At their core, biplots offer a graphical representation of a standardised data matrix, whose rows \(n\) are the samples, and whose columns \(p\) are the variables, by projecting these onto a two-dimensional plane. To do this, mathematical computations derived from techniques like Singular Value Decomposition (SVD) and Principal Component Analysis (PCA) are required.\\
 
-\noindent In recent years, there have been substantial developments in biplots \cite{gower1995biplots}. The technique has expanded far beyond what is now referred to as the ``classical biplots" or ``PCA biplots". The concept now finds broad application in conjunction with various other techniques of multivariate analysis. Nevertheless, this section studies the foundations of this visualisation technique, and thus, the emphasis is on biplots within the framework of PCA.
+\noindent In recent years, there have been substantial developments in biplots \cite{gower1995biplots}. The technique has expanded far beyond what is now referred to as the ``classical biplots" or ``PCA biplots". However, this section studies the foundations of this visualisation technique, and thus, the emphasis is on biplots within the framework of PCA.
 
 \subsubsection{Construction of PCA Biplots}
 
 \noindent \textbf{Singular Value Decomposition\index{Biplots!singular value decomposition}}\\
-\noindent Principal component biplots are based on singular value decomposition of the $(n \times p)$ data matrix $\mathbf{X}$ of $n$ observations on $p$ variables with rank $r$. The singular value decomposition of the standardised matrix $\mathbf{X}$ is found to be the following:
+\noindent Principal component biplots are based on singular value decomposition of the $(n \times p)$ data matrix $\mathbf{X}$ of $n$ observations on $p$ variables with rank $r$. The singular value decomposition of the standardised matrix $\mathbf{X}$ is defined to be the following:
 
 \[\mathbf{X} = \mathbf{U}\mathbf{B}\mathbf{S}^{T}, \]
 
-\noindent where $\mathbf{U}$ is an $(n \times r)$ orthogonal matrix, and $\mathbf{S}$ is an $(p \times r)$ orthogonal matrix. The columns of $\mathbf{U}$ and $\mathbf{S}$ are the left and right singular vectors. $\mathbf{B}$ is a $(r \times r)$ diagonal matrix with entries $b_1, \ldots, b_r$ such that $b_1 \geq \dots b_r \geq 0$ \cite{jolliffe2003principal}. These entries the singular values discussed later on.\\
+\noindent where $\mathbf{U}$ is an $(n \times r)$ orthogonal matrix, and $\mathbf{S}$ is an $(p \times r)$ orthogonal matrix. The columns of $\mathbf{U}$ and $\mathbf{S}$ are the left and right singular vectors. $\mathbf{B}$ is a $(r \times r)$ diagonal matrix with entries $b_1, \ldots, b_r$ such that $b_1 \geq \dots b_r \geq 0$ \cite{jolliffe2003principal}. These entries, known as the singular values play a key role in the generation of biplots which is discussed later on.\\
 
 \noindent In order to find this singular value decomposition, firstly we require the computation of the orthogonal diagonalisation  
 
@@ -1739,12 +1739,12 @@ A biplot is a graphical representation that succinctly captures the relationship
 
 \noindent where $\mathbf{D}$ is the diagonal matrix of eigenvalues of $\mathbf{X}^T\mathbf{X}$ and $\mathbf{P}$ is an orthogonal matrix composed of the normalised eigenvectors of $\mathbf{X}^T\mathbf{X}$.\\
 
-\noindent Now, $\mathbf{B}$ and $\mathbf{S}$ are computed. Matrix $\mathbf{S}$ is equivalent to the matrix $\mathbf{P}$ previously computed, and matrix $\mathbf{B}$ is a $(n \times p)$ diagonal matrix, where the diagonal entries are the ``singular values" \index{Biplot!singular values}with any additional rows and columns of zero to make the dimensions of $\mathbf{B}$ match those of $\mathbf{X}$. The singular values referenced are square root of the eigenvalues of $\mathbf{X}^T\mathbf{X}$. Hence matrix $\mathbf{B}$ is of the form
+\noindent With this, the matrices $\mathbf{B}$ and $\mathbf{S}$ are computed. Matrix $\mathbf{S}$ is equivalent to the matrix $\mathbf{P}$ previously calculated, and matrix $\mathbf{B}$ is a $(n \times p)$ diagonal matrix, where the diagonal entries are the ``singular values" \index{Biplot!singular values}with any additional rows and columns of zero to make the dimensions of $\mathbf{B}$ match those of $\mathbf{X}$. The singular values referenced are the square roots of the eigenvalues of $\mathbf{X}^T\mathbf{X}$. Hence matrix $\mathbf{B}$ is of the form
 
 \[
 \mathbf{B} = 
 \begin{bmatrix}
-    \mathbf{D} & \mathbf{0} \\
+    \mathbf{D}^{\frac{1}{2}} & \mathbf{0} \\
     \mathbf{0} & \mathbf{0} \\
 \end{bmatrix}.
 \]
@@ -1790,7 +1790,7 @@ _m\tilde{x}_{ij} = \sum_{k=1}^{m} \mathbf{g}_{ik}\mathbf{h}_{jk} = \mathbf{g}_{i
 
 \noindent Thus, $\mathbf{g}_i$ and $\mathbf{h}_j$ should provide a reasonable two-dimensional approximation of the $n$ observations and the $p$ variables \cite{jolliffe2003principal}.\\
 
-\subsubsection{Case Example: Vintage cars attributes}
+\subsubsection{Case Example: Vintage Cars' Attributes}
 
 \noindent This section presents a comparative analysis of PCA biplots generated through two distinct methodologies: manual mathematical construction and use of R's in-built functions. The focus lies on elucidating the mathematical intricacies, exploring relations, and highlighting differences between the two approaches. The mtcars dataset will serve as a benchmark.\\
 
@@ -1799,7 +1799,7 @@ _m\tilde{x}_{ij} = \sum_{k=1}^{m} \mathbf{g}_{ik}\mathbf{h}_{jk} = \mathbf{g}_{i
 
 \noindent The manual construction, which results in the biplot shown in Figure~\ref{fig:PCAbiplot}, begins with data standardisation followed by SVD decomposition to obtain matrices representing row and column contributions to principal components. These matrices are then utilised to construct the biplot. Conversely, the in-built function approach employs R's \texttt{prcomp()} function for PCA and directly generates the biplot using \texttt{biplot()}, without the need for explicit mathematical operations. The product of this method is shown in Figure~\ref{fig:PCAbiplot}.
 
-<<PCAbiplot, fig.height=5.5, fig.width=12, fig.cap='PCA biplots of mtcars dataset', message=FALSE>>=
+<<PCAbiplot, fig.height=5.5, fig.width=11.5, fig.cap='PCA biplots of mtcars dataset', message=FALSE>>=
 
 #MANUAL CONSTRUCTION OF A BIPLOT IN R
 # Standardise the data
@@ -1809,7 +1809,8 @@ scaled_data <- scale(mtcars)
 alpha <- 0
 
 # Preprocess the data using SVD
-preprocess <- scaled_data - matrix(colMeans(scaled_data), nrow = nrow(scaled_data), ncol = ncol(scaled_data), byrow = TRUE)
+preprocess <- scaled_data - matrix(colMeans(scaled_data), nrow = nrow(scaled_data), 
+                                   ncol = ncol(scaled_data), byrow = TRUE)
 svd_mtcars <- svd(preprocess)
 U <- svd_mtcars$u
 L <- diag(svd_mtcars$d)
@@ -1878,7 +1879,7 @@ y_f(\mathbf{x}) = \sup\limits_{y}\{y: ||\mathbf{x}-\mathbf{f}(y)||= \inf\limits_
 \min\limits_{\mathbf{f}}\sum_{i=1}^{n} ||\mathbf{x}_i - \mathbf{f}(y_{\mathbf{f}}(\mathbf{x}_i))||^2.
 \]
 
-\noindent To construct the principal curve, an algorithm put to work. This iterates between finding a curve $\mathbf{f}$ and then projecting the points onto that. More explicitly, the algorithms {Principal curves!algorithm}has the following form \cite{jolliffe2003principal}: 
+\noindent To construct the principal curve, an algorithm put to work. This iterates between finding a curve $\mathbf{f}$ and then projecting the points onto that. More explicitly, the algorithms \index{Principal curves!algorithm} has the following form \cite{pcurves}: 
 
 \begin{enumerate}
   \item Initialise: let iteration counter $h = 1$ and set $\mathbf{y}^{(0)} = \mathbf{Xu}$, where $\mathbf{u}$ is the first PC vector. 
@@ -1891,7 +1892,7 @@ y_f(\mathbf{x}) = \sup\limits_{y}\{y: ||\mathbf{x}-\mathbf{f}(y)||= \inf\limits_
 
 \noindent In Figure~\ref{fig:P-curves}, we see an example of how a principal curve is fitted to the observations of an artificial dataset. The points in the plots are not grouped in a linear subspace, but rather follow a similar shape to that of cubic function.\\
 
-\noindent Using the built-in \texttt{principal-curve()} function, a principal curve can be fitted to the dataset. The principal curve traverses through the densest regions of the data distribution, capturing the underlying nonlinear structure. The panel on the left of Figure~\ref{fig:P-curves} depicts the principal curve overlaid on the dataset, providing insights into the central tendency and inherent curvature of the data. Additionally, whiskers are drawn to visualise the perpendicular distances between data points and the principal curve.
+\noindent Using the built-in \texttt{principal\_curve()} function, a principal curve can be fitted to the dataset. The principal curve traverses through the densest regions of the data distribution, capturing the underlying nonlinear structure. The panel on the left of Figure~\ref{fig:P-curves} depicts the principal curve overlaid on the dataset, providing insights into the central tendency and inherent curvature of the data. Additionally, whiskers are drawn to visualise the perpendicular distances between data points and the principal curve.
 
 <<P-curves, echo=FALSE, fig.pos = 'H', fig.height=4, fig.width=9, fig.cap='Principal curve fitting illustration on artificial dataset', message=FALSE>>=
 # Generate random values for t
@@ -1907,13 +1908,13 @@ colnames(x) <- c("dim1", "dim2")
 par(mfrow = c(1, 2))
 
 # Plot the first dataset
-plot(x, main = "Artificial Dataset 1", xlab = "Dimension 1", ylab = "Dimension 2", col = "#459395")
+plot(x, xlab = "Dimension 1", ylab = "Dimension 2", col = "#459395")
 
 # Fit principal curve to the dataset
 fit <- principal_curve(x)
 
 # Plot the principal curve along with the data points
-plot(fit, main = "Principal Curve", xlab = "Dimension 1", ylab = "Dimension 2")
+plot(fit, xlab = "Dimension 1", ylab = "Dimension 2")
 whiskers(x, fit$s, col = "#EB7C69") 
 @
 
