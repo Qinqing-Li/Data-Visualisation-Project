@@ -232,7 +232,7 @@ Firstly, the \texttt{geom} function refers to ``geometric objects". It is pivota
 
 \noindent The \texttt{theme} function holds significance in customising the non-data elements of plots. The theme system within \textit{ggplot2} allows precise adjustment of aesthetic aspects such as fonts, labels, legends, and background colours. This tool is essential for enhancing plot readability and creating visually captivating graphics tailored to specific audiences or publication requirements.\\
 
-\noindent \textbf{key Additional Packages}\\
+\noindent \textbf{Key Additional Packages}\\
 
 \noindent The R language, on top of the \textit{ggplot2}, has a wide array of packages facilitating diverse functions. Throughout this project, various packages will be used, each enhancing the analysis and presentation of data.\\
 
@@ -621,7 +621,7 @@ In Figure~\ref{fig:all exchange rates} daily and 49-day moving average exchange 
 
 \noindent Moreover, a 49-day moving average (MA(49)) was used, as shown in the bottom plot of Figure~\ref{fig:all exchange rates}. This moving average highlights long-term trends while smoothing out short-term fluctuations. This method involves computing the simple average of past observations:
 \[\text{MA}_{49}(t) = \frac{1}{49} \sum_{k=t-48}^{t} x_k,\] 
-where \( x_k \) denotes the exchange rate on day $k$.\\
+where \( x_k \) denotes the exchange rate on day $k$.\\F
 
 
 
@@ -648,7 +648,6 @@ Autocorrelation \index{Time series!autocorrelation}describes the correlation of 
 \noindent
 Suppose we have a time series with observations denoted by \( \{x_1, \ldots, x_n \}\). Then the sample mean is given by $\bar{x} = \frac{1} {n} \sum_{t=1}^{n} x_t.$
 And the sample autocovariance function \cite{Brockwell2016Introduction} at lag $h$ in days of our time series is
-
 \[\hat{\gamma}(h) := \frac{1}{n} \sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x}), \quad -n < h < n.\]
 
 \noindent 
@@ -656,6 +655,7 @@ Hence, the sample autocorrelation function \cite{Brockwell2016Introduction} at l
 
 \[\hat{\rho}(h) := \frac{\hat{\gamma}(h)}{\hat{\gamma}(0)} = \frac{\sum_{t=1}^{n-|h|} (x_{t+|h|} - \bar{x})(x_t - \bar{x})}{\sum_{t=1}^{n} (x_t - \bar{x})^{2}}, \quad -n < h < n.\]
 
+\\
 \noindent
 The value of $\hat{\rho}(h)$ lies between -1 and +1 serves as a measure of correlation. A value close to +1 indicates a strong positive correlation, while a value close to -1 indicates a strong negative correlation. Conversely, a value near 0 suggests little to no linear correlation. In an ACF \index{Time series!ACF}plot, a slow decay indicates a strong relationship between past and present values, while spikes at specific lags may suggest seasonality.\\
 
@@ -819,7 +819,7 @@ From the plot~\ref{fig:roc}, the Diagnostic Test 1 has higher AUC, which is clos
 
 \section{Bivariate Data Visualisation Methods}
 
-\noindent This chapter transitions from the study of univariate data visualisations to the exploration of bivariate data. Fundamental bivariate data visualisation methods, including heatmaps, scatter plots, and bubble charts, are introduced, scrutinised, and modelled throughout this chapter. In order to facilitate a more profound analysis of bivariate data, the chapter further delves into the examination of linear regression, as well as LOESS regression. Notably, within the context of scatter plots, an intriguing deviation is observed with the incorporation of animated data visualisations.
+\noindent This chapter transitions from the study of univariate data visualisations to the exploration of bivariate data. Fundamental bivariate data visualisation methods, including heatmaps, scatter plots, and bubble charts, are introduced, studied, and modeled throughout the chapter. In order to facilitate a more profound analysis of bivariate data, the chapter further delves into the examination of linear regression, as well as LOESS regression. Furthermore, within the context of scatter plots, an intriguing deviation is observed with the incorporation of animated data visualisations.
 
 \subsection{Heatmaps}
 The heatmap is a data visualisation technique that uses colour coding to represent different intensities. It can be represented as an $m \times n$ matrix $\mathbf{M}$, with $m$ observations for variable 1 and $n$ observations for variable 2:
@@ -838,14 +838,11 @@ $$
 \noindent
 where each entry $\mathrm{M}_{mn}$ represent an observation.\\
 
-\noindent
-In this illustrative example, heatmaps are used to visualise fire occurrences in Brazil. These heatmaps provide a spatially coherent representation, highlighting regions at high risk and seasonal patterns. The data-driven insights could empower policymakers to make informed decisions regarding preventive measures and firefighting strategies.\\
+\noindent Heatmaps aid to convey patterns, trends, and distributions within datasets by visually highlighting areas of high or low density. This facilitates the identification of clusters, outliers, and correlations, aiding decision-making processes across various domains such as finance, biology, and urban planning. 
 
+\subsubsection{Heatmaps in Practice}
 \noindent
-In Figure~\ref{fig:fire22}, it can be observed that significantly higher fire counts are found in certain locations. The presence of two strips with high frequencies of fires are highly unusual. The vertical trend corresponds to the location of BR-230 (Trans-Amazonian Highway) passing through the city of Apuí, State of Amazonas. The horizontal trend corresponds to BR-163 (Brazil highway) passing through Três Pinheiros in Novo Progresso, State of Pará. The western coastal area with a high frequency of fire occurrence corresponds to regions in close proximity to the cities of Vista Alegre do Abunã and Rio Branco. Research has indicated that 95 \% of active fires and the most intense ones (FRP $>$ 500 megawatts) occurred at the edges in forests \cite{forest}.\\
-
-\noindent
-The seasonal pattern of fire frequency is shown in Figure~\ref{fig:fire-by-months-fy13-22}. Observe that more fire occur in the months of August to October compared to the rest of the year.
+In this illustrative example, heatmaps of different natures are used to visualise and study fire occurrences in Brazil. The heatmaps depicted in Figure~\ref{fig:fire22} offer a geographically coherent representation of fire occurrences across the country, highlighting regions at high risk. Complementing this spatial representation, the heatmap depicted in Figure~\ref{fig:fire-by-months-fy13-22} elucidates the presence of discernible seasonal patterns in fire occurrences.\\
 
 
 
@@ -875,7 +872,7 @@ The seasonal pattern of fire frequency is shown in Figure~\ref{fig:fire-by-month
     \includegraphics[width=1\linewidth]{image_reference/mapshoot.png}
 \end{figure}
   \end{minipage}
-  \caption{Frequency of fire in Brazil (2022), two strips of high frequencies of fires are highly unusual}
+  \caption{Geographical fire frequency in Brazil (2022) highlighting unusual high frequency strips}
   \label{fig:fire22}
 \end{figure}
 
@@ -906,6 +903,15 @@ The seasonal pattern of fire frequency is shown in Figure~\ref{fig:fire-by-month
 \end{figure}
 
 \end{knitrout}
+
+\noindent
+In Figure~\ref{fig:fire22}, it is evident that certain locations exhibit significantly higher fire counts than others. Notably, two distinct strips display unusually high frequencies of fires. The vertical trend aligns with the route of BR-230 (Trans-Amazonian Highway) passing through the city of Apuí, State of Amazonas. Similarly, the horizontal trend corresponds to BR-163 (Brazil Highway) traversing Três Pinheiros in Novo Progresso, State of Pará. Moreover, the western coastal area, characterised by frequent fire occurrences, is proximate to the cities of Vista Alegre do Abunã and Rio Branco. Research indicates that 95\% of active fires, particularly the most intense ones (FRP > 500 megawatts), manifest at the forest edges \cite{forest}. Thus explaining why there would be an intensification of fire occurances in these areas.\\ 
+
+\noindent
+Additionally, the seasonal variation in fire frequency is represented in Figure~\ref{fig:fire-by-months-fy13-22}. Notably, an increase in fire occurrences is observed during the months of August to October compared to other periods throughout the year. This temporal pattern aligns with climatological factors such as the onset of the dry season, which escalate the likelihood of fire incidents during these months.\\
+
+\noindent 
+These heatmaps can offer policymakers valuable insights for crafting effective preventive measures and firefighting strategies, thus highlighting the powerful and effective nature of this visualisations.
 
 \subsection{Scatter Plots}
 

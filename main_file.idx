@@ -18,27 +18,27 @@
 \indexentry{Time series!autocorrelation|hyperpage}{25}
 \indexentry{Time series!ACF|hyperpage}{26}
 \indexentry{Receiver operating characteristic!AUC|hyperpage}{30}
-\indexentry{Simple linear regression!expectations|hyperpage}{38}
+\indexentry{Simple linear regression!expectations|hyperpage}{39}
 \indexentry{Simple linear regression!least squares estimation|hyperpage}{39}
-\indexentry{LOESS!weight|hyperpage}{41}
+\indexentry{LOESS!weight|hyperpage}{42}
 \indexentry{LOESS!preliminary estimation|hyperpage}{42}
 \indexentry{LOESS!penalty|hyperpage}{42}
 \indexentry{LOESS!robustness weight|hyperpage}{42}
-\indexentry{Principal component analysis!loss function|hyperpage}{44}
-\indexentry{Principal component analysis!reconstruction error|hyperpage}{44}
-\indexentry{Principal component analysis!covariance matrix|hyperpage}{44}
-\indexentry{Principal component analysis!optimal encoding|hyperpage}{45}
 \indexentry{Principal component analysis!loss function|hyperpage}{45}
-\indexentry{Biplots!singular value decomposition|hyperpage}{46}
-\indexentry{Biplot!singular values|hyperpage}{47}
-\indexentry{Principal curves!curve|hyperpage}{50}
-\indexentry{Principal curves!projection index|hyperpage}{50}
-\indexentry{Principal curves!least-squares objective function|hyperpage}{50}
-\indexentry{t-SNE!conditional probabilities|hyperpage}{51}
-\indexentry{t-SNE!joint probability|hyperpage}{52}
-\indexentry{t-SNE!cost function|hyperpage}{52}
-\indexentry{t-SNE!Kullback-Leibler divergence|hyperpage}{52}
-\indexentry{t-SNE!gradient descent|hyperpage}{52}
-\indexentry{Funtional boxplot!band|hyperpage}{57}
-\indexentry{Funtional boxplot!band depth|hyperpage}{57}
-\indexentry{Quantile–Quantile boxplot!whiskers|hyperpage}{59}
+\indexentry{Principal component analysis!reconstruction error|hyperpage}{45}
+\indexentry{Principal component analysis!covariance matrix|hyperpage}{45}
+\indexentry{Principal component analysis!optimal encoding|hyperpage}{46}
+\indexentry{Principal component analysis!loss function|hyperpage}{46}
+\indexentry{Biplots!singular value decomposition|hyperpage}{47}
+\indexentry{Biplot!singular values|hyperpage}{48}
+\indexentry{Principal curves!curve|hyperpage}{51}
+\indexentry{Principal curves!projection index|hyperpage}{51}
+\indexentry{Principal curves!least-squares objective function|hyperpage}{51}
+\indexentry{t-SNE!conditional probabilities|hyperpage}{52}
+\indexentry{t-SNE!joint probability|hyperpage}{53}
+\indexentry{t-SNE!cost function|hyperpage}{53}
+\indexentry{t-SNE!Kullback-Leibler divergence|hyperpage}{53}
+\indexentry{t-SNE!gradient descent|hyperpage}{53}
+\indexentry{Funtional boxplot!band|hyperpage}{58}
+\indexentry{Funtional boxplot!band depth|hyperpage}{58}
+\indexentry{Quantile–Quantile boxplot!whiskers|hyperpage}{60}
