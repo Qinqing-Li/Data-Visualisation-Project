@@ -729,16 +729,25 @@ This persistent autocorrelation suggests that short-term movements in the CNY to
 
 \subsection{ROC Curve}
 
-The Receiver Operating Characteristic (ROC) anaysis is a technique for assessing the performance of classification models as its discrimination threshold is varied. Unlike univariate methods in previous subsections that are constructed from a single dataset representing one variable, ROC analysis divides a single dataset into two samples based on the actual condition of each observation, but focuses on evaluating the performance of a classification model on one variable, typically the predicted probability that a given observation belongs to a positive class. These two populations are defined as follows: the positive class (true condition positive), which includes observations that actually belong to the class of interest. The negative class (true condition negative), which includes observations that do not belong to the class of interest.
+Suppose we have $n$ observations $\{y_1,\dots,y_n\}$ and predictors $\{x_1,\dots,x_n\}$, the Receiver Operating Characteristic (ROC) analysis is a technique for assessing the performance of classification models as its discrimination threshold is varied. Unlike univariate methods in previous subsections that are constructed from a single dataset representing one variable, ROC analysis divides a single dataset into two samples based on the actual condition of each observation, but focuses on evaluating the performance of a model on one variable, typically the predicted probability that a given observation belongs to a positive class. The ROC curve can be used to access the model performance of binary predictions, such as diseased and non-diseased or default and non-default. For binary predictions, we define the True positive (TP) as the model prediction $\hat{y}_n$ is positive when real observation $y_n$ is positive. Similarly, we can also define false positive (FP), false negative (FN), true negative (TN) as follows:
+
+\[\text{TP} = \sum^{N}_{n=1} \mathbb{I}(y_n = 1) \mathbb{I}(\hat{y}_n = 1), \quad \text{FP} = \sum^{N}_{n=1} \mathbb{I}(y_n = 0) \mathbb{I}(\hat{y}_n = 1),\]
+
+\[\text{FN} = \sum^{N}_{n=1} \mathbb{I}(y_n = 1) \mathbb{I}(\hat{y}_n = 0), \quad \text{TN} = \sum^{N}_{n=1} \mathbb{I}(y_n = 0) \mathbb{I}(\hat{y}_n = 0).\]
 
 \subsubsection{Theory of ROC curve}
 
 Let $Y$ be a binary variable indicating the true class of an instance, with $Y = 1$ for positive instances and $Y = 0$ for negative instances. Let $X$ be a continuous variable representing the predicted score or probability of an instance being classified as positive by the classifier, with $X \geq c$ for positive and $X < c$ for negative given a threshold c.\\
 
 \noindent
-Since ROC curve plots two parameters \cite{rocAnalysis}: True Positive Rate (TPR, also known as Sensitivity, is the proportion of positive instances correctly identified) and False Positive Rate (FPR, 1 - Specificity, is the proportion of negative instances incorrectly identified as positive). Then define the TPR and the FPR using conditional probabilities as follows \cite{Pepe2003}:
+ROC curve plots True Positive Rate (TPR is the proportion of positive instances correctly identified) and False Positive Rate (FPR is the proportion of negative instances incorrectly identified as positive) \cite{rocAnalysis}, which are defined as follows:
 
-\[ \text{TPR}(c) = \mathbb{P}[X \geq c | Y = 1], \quad \text{FPR}(c) = \mathbb{P}[X \geq c | Y = 0].\]
+\[\text{TPR} = \frac{TP}{TP+FN}, \quad \text{FPR} = \frac{FP}{FP+TN}.\]
+
+\noindent
+Also, the TPR and the FPR can be defined using conditional probabilities as follows \cite{Pepe2003}:
+
+\[\text{TPR}(c) = \mathbb{P}[X \geq c | Y = 1], \quad \text{FPR}(c) = \mathbb{P}[X \geq c | Y = 0].\]
 
 \noindent
 The ROC curve is then the set of points $(\text{FPR}(c), \text{TPR}(c))$ for all possible values of threshold $c$. This curve plots the trade-off between sensitivity (or TPR) and specificity (1 - FPR) across different thresholds. Let $t=\text{FPR}(c)$, then $c = \text{FPR}^{-1}(t)$ and $\text{TPR}(c)= \text{TPR}(\text{FPR}^{-1}(t))$. Hence, let $\text{ROC}(t)= \text{TPR}(\text{FPR}^{-1}(t))$, the ROC curve can be represented as a parametric function of $t$ \cite{Pepe2003} , with $t$ varying from 0 to 1:
@@ -746,19 +755,19 @@ The ROC curve is then the set of points $(\text{FPR}(c), \text{TPR}(c))$ for all
 \[ \text{ROC} = \{ (t, \text{ROC}(t)) \,|\, t \in [0, 1] \}.\]
 
 \noindent
-Also, the Area Under the Curve (AUC) \cite{Pepe2003}  provides a single measure of overall performance of a classifier. This definition represents the integral of $\text{ROC}(t)$ over the interval from 0 to 1. It can be defined as:
+The Area Under the Curve (AUC) \cite{Pepe2003}  provides a single measure of model performance. This definition represents the integral of $\text{ROC}(t)$ over the interval from 0 to 1. It can be defined as:
 
 \[ \text{AUC} = \int_{0}^{1} \text{ROC}(t) dt.\]
 
 \noindent
-The larger the AUC\index{Receiver operating characteristic!AUC}, the better the classifier. An AUC of 0.5 suggests no discriminative ability, while an AUC of 1.0 represents perfect classification.
+The larger the AUC\index{Receiver operating characteristic!AUC}, the better the classifier. An ideal ROC curve will hug the top left corner and the diagonal line the origin indicates the ROC curve of a model due to random chance
 
 \subsubsection{ROC analysis in COVID-19 test}
 
-The COVID-19 pandemic underscores the need for accurate diagnostic tests to differentiate between positive and negative cases \cite{Garcia2021ROCAlly}. An effective mean for evaluating accuracy of various diagnostic tests is the ROC analysis. ROC analysis comprehensively examines test accuracy by integrating TPR, FPR, and AUC. These metrics are calculated by comparing test outcomes against a recognized gold standard, thereby determining the true disease status. This approach is vital for understanding the efficacy of COVID-19 diagnostic tools and guiding public health decisions.\\
+The COVID-19 pandemic underscores the need for accurate diagnostic tests to differentiate between positive and negative cases \cite{Garcia2021ROCAlly}. An effective mean for evaluating accuracy of various diagnostic tests is the ROC analysis.\\
 
 \noindent
-The TPR, or sensitivity, measures the proportion of actual positives correctly identified, reflecting the test's ability to detect COVID-19 cases. The FPR, conversely, indicates the rate of false alarms, where non-infected individuals are wrongly identified as infected. An ideal test minimises FPR, avoiding unnecessary treatments or quarantine. The ROC curve visualises the trade-off between TPR and FPR at various thresholds. A curve arching towards the upper left indicates high sensitivity and low FPR — the hallmarks of a reliable test. The AUC consolidates the ROC performance into a single value: 0.5 denotes no better accuracy than random chance, while 1.0 represents perfect accuracy. A higher AUC indicates a better overall ability of the test.\\
+An ideal test minimises FPR, avoiding unnecessary treatments or quarantine. The ROC curve visualises the trade-off between TPR and FPR at various thresholds. A curve arching towards the upper left indicates high sensitivity and low FPR — the hallmarks of a reliable test.\\
 
 \noindent
 Here, the simulated data will be used to demonstrate the ROC analysis in COVID-19 test. Score\_Test1 and Score\_Test2 are the simulated test scores from two different diagnostic tests for COVID-19. These scores are continuous variables that typically would represent the likelihood of a positive diagnosis. The scores might come from a lab test result, such as a PCR test or a rapid antigen test, where higher scores indicate a higher likelihood of infection. The Condition column indicates the true condition of the patient, with 1 representing a positive COVID-19 case and 0 representing a negative case.
