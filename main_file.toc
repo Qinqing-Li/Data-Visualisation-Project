@@ -62,7 +62,7 @@
 \contentsline {section}{\numberline {6}State-Of-The-Art Modern Approaches}{56}{section.6}%
 \contentsline {subsection}{\numberline {6.1}Introduction}{56}{subsection.6.1}%
 \contentsline {subsubsection}{\numberline {6.1.1}Box Plots in Practice}{56}{subsubsection.6.1.1}%
-\contentsline {subsubsection}{\numberline {6.1.2}Q–Q Plots in Practice}{57}{subsubsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.2}Q–Q Plots in Practice}{56}{subsubsection.6.1.2}%
 \contentsline {subsection}{\numberline {6.2}Functional Boxplot}{58}{subsection.6.2}%
 \contentsline {subsubsection}{\numberline {6.2.1}Theory of Funtional Boxplot}{58}{subsubsection.6.2.1}%
 \contentsline {subsubsection}{\numberline {6.2.2}Case Example: Visualisation of Metabolic Syndromes}{59}{subsubsection.6.2.2}%

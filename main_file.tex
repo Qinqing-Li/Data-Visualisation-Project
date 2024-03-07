@@ -1792,7 +1792,7 @@ An example of classic box plots using the iris dataset is displayed on the left 
 
 \subsubsection{Q–Q Plots in Practice}\\
 
-\noindent Q-Q plots, short for quantile-quantile plots, were pioneered by the statistician Francis Galton in the late 19th century \cite{galton1875iv}. These plots are designed to assess the similarity between the empirical distribution of data and a theoretical distribution, often the normal distribution. This comparison provides insights into the degree of similarity between the two, aiding in diagnostics and model validation in statistical analysis.
+\noindent Q-Q plots, short for quantile-quantile plots, were pioneered by the statistician Francis Galton in the late 19th century \cite{galton1875iv}. These plots are designed to assess the similarity between the empirical distribution of data and a theoretical distribution, often the normal distribution. This comparison provides insights into the degree of similarity between the two, aiding in diagnostics and model validation in statistical analysis.\\
 
 \noindent Q–Q plots are constructed by plotting the quantiles of two datasets against each other. Typically, one dataset serves as the basis for theoretical quantiles, often assumed to follow a particular probability distribution, while the other dataset holds observed values. This comparative depiction allows a direct assessment of how closely the observed data aligns with the theoretical distribution, facilitating the identification of deviations from expected patterns.\\
 
@@ -1874,10 +1874,12 @@ where $\lceil n/2 \rceil$ is the smallest integer not less than half of the samp
 The functional boxplot shown in Figure \ref{fig:fbplot} illustrates the metabolism rates between healthy and diseased populations. The outer blue line highlights a wider range for the diseased group, accompanied by a broader grey band. The range indicates greater variability and the band indicates lower oxygen saturation for most patients in the blood of the diseased group.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1\textwidth]{image_reference/fbplot.png}
-    \caption{Left graph demostrates curves of arterial oxygen saturation (\%) for 80 women without metabolic syndrome and right graph demostrates curves of arterial oxygen saturation (\%) for 35 women with metabolic syndrome. Outliers from the population are highlighted in red.}
+    \includegraphics[width=0.8\textwidth]{image_reference/fbplot.png}
+    \caption{Arterial Oxygen Saturation (\%) Curves: Women Without vs. With Metabolic Syndrome, Highlighting Outliers}
     \label{fig:fbplot}
 \end{figure}
+
+\noindent Left graph in Figure~\ref{fig:fbplot} demostrates curves of arterial oxygen saturation (\%) for 80 women without metabolic syndrome and right graph demostrates curves of arterial oxygen saturation (\%) for 35 women with metabolic syndrome. Outliers from the population are highlighted in red.
 
 \subsection{Q–Q Boxplots}
 In this section, we will introduce the Q–Q boxplot, which combines the advantages from the boxplot and the Q–Q plot. The Q–Q boxplot integrates the box plot's ability to summarise data through its quartiles and the Q–Q plot's capability to compare data distributions to a theoretical distribution.\\
@@ -1899,9 +1901,12 @@ To calculate the x-coordinate for a Q–Q boxplot, we set a scale for the plot a
 $$x^* = \frac{d \cdot x_{\text{max}}}{\text{dev}_{\text{max}}}.$$
 The $x$ coordinate is then $x_b+x*$, where $x_b$ marks the center of the boxplot.
 
+\newpage 
+
 \subsubsection{Case Example: Iris Dataset Using Q–Q Boxplot}
 
 \noindent In R, the \textt{geom\_qqboxplot()} function facilitates the generation of Q-Q boxplots. The resulting Q-Q boxplots produced using this function and the iris dataset are displayed in Figure~\ref{fig:QQboxplots}. These how the distribution of sepal length values within each iris species respectively. The Q-Q boxplots make possible a comparative analysis to assess whether the distributions adhere to a normal distribution assumption. Moreover, as classic boxplots, these Q-Q boxplots also make easy the identification of outliers.\\ 
+
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}[h]
 
@@ -1914,8 +1919,12 @@ The $x$ coordinate is then $x_b+x*$, where $x_b$ marks the center of the boxplot
 
 \end{knitrout}
 
+
 \noindent
-A brief comparison between Figure~\ref{fig:QQboxplots} and the conventional boxplots depicted in Figure~\ref{fig:box-plots}, shows consistent alignment in the central tendency measures, indicating coherence between the two visualisation techniques. Moreover, the Q-Q boxplot provides more insights into the tail behavior of the distribution, capturing detailed deviations in both right and left tails. Remarkably, all deviations are found the bands of confidence, suggesting a high degree of consistency between the observed sample distribution and the theoretical distribution under scrutiny, notably a normal distribution. 
+A brief comparison between Figure~\ref{fig:QQboxplots} and the conventional boxplots depicted in Figure~\ref{fig:box-plots}, shows consistent alignment in the central tendency measures, indicating coherence between the two visualisation techniques.\\
+
+\noindent 
+Moreover, the Q-Q boxplot provides more insights into the tail behavior of the distribution, capturing detailed deviations in both right and left tails. Remarkably, all deviations are found the bands of confidence, suggesting a high degree of consistency between the observed sample distribution and the theoretical distribution under scrutiny, notably a normal distribution. 
 
 \subsubsection*{Chapter Overview and Further Reading References}
 
