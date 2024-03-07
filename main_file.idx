@@ -24,12 +24,13 @@
 \indexentry{LOESS!preliminary estimation|hyperpage}{41}
 \indexentry{LOESS!penalty|hyperpage}{41}
 \indexentry{LOESS!robustness weight|hyperpage}{41}
+\indexentry{Principal component analysis!loss function|hyperpage}{43}
 \indexentry{Principal component analysis!reconstruction error|hyperpage}{43}
 \indexentry{Principal component analysis!covariance matrix|hyperpage}{43}
 \indexentry{Principal component analysis!optimal encoding|hyperpage}{44}
 \indexentry{Principal component analysis!loss function|hyperpage}{44}
 \indexentry{Biplots!singular value decomposition|hyperpage}{45}
-\indexentry{Biplot!singular values|hyperpage}{45}
+\indexentry{Biplot!singular values|hyperpage}{46}
 \indexentry{Principal curves!curve|hyperpage}{49}
 \indexentry{Principal curves!projection index|hyperpage}{49}
 \indexentry{Principal curves!least-squares objective function|hyperpage}{49}
@@ -40,4 +41,4 @@
 \indexentry{t-SNE!gradient descent|hyperpage}{51}
 \indexentry{Funtional boxplot!band|hyperpage}{56}
 \indexentry{Funtional boxplot!band depth|hyperpage}{56}
-\indexentry{Quantile–Quantile boxplot!whiskers|hyperpage}{58}
+\indexentry{Quantile\IeC {\textendash }Quantile boxplot!whiskers|hyperpage}{58}

@@ -20,6 +20,7 @@
 
 \title{Data Visualisation: Theory and Practice}
 \author{Yujie Chu, Pia Fullaondo, Qinqing Li, Jacko Zhou}
+\date{}
 \makeindex
 
 \begin{document}
@@ -80,7 +81,7 @@ opts_chunk$set(fig.path = 'figure/beamer-',
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.55\textwidth]{image_reference/UniversityLogo.png}
+    \includegraphics[width=0.26\textwidth]{image_reference/UniversityLogo.png}
 \end{figure}
 
 \vspace {1.5cm}
@@ -92,11 +93,11 @@ Undergraduate Mathematics Project
 \vspace{2cm}
 
 Supervised by \\
-Dr. Miguel De Carvalho \\
+Dr. Miguel de Carvalho \\
 \end{center}
 
-\newpage
 
+\newpage
 \section*{Own Work Declaration}
 
 \noindent We declare that this paper was composed by ourselves, that the work contained herein is our own except where explicitly stated otherwise, and that this work has not been submitted for any other degree or professional qualification except as specified.
@@ -106,7 +107,7 @@ Dr. Miguel De Carvalho \\
 \section*{Abstract}
 
 \noindent
-This project aims to provide the theory of graphical statistics methods and their visual implementations using R, utilising open-source datasets from different sectors. The authors recognise that graphical statistics is an active area of research, therefore textbook methods and state-of-the-art methods will be covered. Chapters 3 to 5 concentrate on standard implementations of graphical statistics methods for univariate, bivariate, and multivariate data, respectively. Chapter 6 focuses on functional boxplots and Q–Q boxplots, which were published in the \textit{Journal of Computational and Graphical Statistics} in 2011 and 2022, respectively. The R package names such as \textit{ggplot2} are italicised, while R commands like \texttt{faceting} are displayed in a teletype font.\\
+This project aims to provide the theory of graphical statistics methods and their visual implementations using R, utilising open-source datasets from different sectors. The authors recognise that graphical statistics is an active area of research, therefore textbook methods and state-of-the-art methods will be covered. Chapters 3 to 5 concentrate on standard implementations of graphical statistics methods for univariate, bivariate, and multivariate data, respectively. Chapter 6 focuses on functional boxplots and Q–Q boxplots, which were published in the \textit{Journal of Computational and Graphical Statistics} in 2011 and 2022, respectively.\\
 
 \newpage 
 
@@ -206,7 +207,7 @@ Regrettably, the Kallikak family tree became a central element in the eugenics m
 
 \subsection{Computing and Data Visualisation}
 \noindent
-Over the years, numerous tools have been developed to facilitate the generation of data visualisation. The programme R stands out as a powerful tool for statistical analysis and graphic creation, offering a wide array of functionalities to cater to various data visualisation needs. We will first introduce the commonly used R package \textit{ggplot2}\index{R package!ggplot2}. Then, other key packages used to produce clear and compelling graphs in R will be presented.\\
+Over the years, numerous tools have been developed to facilitate the generation of data visualisation. The programme R stands out as a powerful tool for statistical analysis and graphic creation, offering a wide array of functionalities to cater to various data visualisation needs. We will first introduce the commonly used R package \textit{ggplot2}\index{R package!ggplot2}. Then, other key packages used to produce clear and compelling graphs in R will be presented. In this project, R package names such as \textit{ggplot2} are italicised, while R commands like \texttt{faceting} are displayed in a teletype font.\\
 
 \noindent \textbf{The \textit{ggplot2} Package}\\
 \noindent
@@ -298,8 +299,12 @@ Data can be broadly categorised into four main types \cite{wilkinson2012grammar}
 \noindent \textbf{Matching Data Types with Appropriate Visualisation Techniques}\\
 \noindent Various data types demand specific visualisation methods for optimal representation. For nominal data, bar charts and stacked bar charts are effective in displaying categorical information and relative proportions. Ordinal data benefits from ordered bar charts, dot plots, or even stacked bar charts, maintaining the ranking and order of categories. Moreover, interval data is best visualised using line charts, histograms, and box plots, showcasing trends and distributions without assuming a true zero point. Finally, ratio data is effectively represented through scatter plots, histograms, and line charts, enabling precise comparisons and measurements due to the presence of a meaningful zero point \cite{healy2018data}. An example of each of these is represented in Figure~\ref{fig:data-plots}, where artificial data from a class of 4th-year university students is visualised.
 
-<<data-plots, echo=FALSE, message=FALSE, fig.height=8, fig.width=11, fig.pos = 'H', fig.cap='Different types of visualisation techniques according to the data type'>>=
-
+<<data-plots, echo=FALSE, message=FALSE, fig.height=4, fig.width=5, fig.pos = 'H', fig.cap='Different types of visualisation techniques according to the data type'>>=
+common_theme <- theme(
+  axis.title.x = element_text(size = 8),
+  axis.title.y = element_text(size = 8),
+  plot.title = element_text(size = 8)
+)
 my_palette <- c("#4B0082", "#459395", "#EB7C69", "#FDA638")
 
 # Generate nominal data (gender categories and tendencies)
@@ -316,7 +321,8 @@ plot1 <- ggplot(nominal_data, aes(fill = Gender, y = tendency, x = 1)) +
   theme(axis.text.x = element_blank(), 
         axis.ticks = element_blank(), # Remove axis ticks
         panel.grid.major = element_line(color = "lightgrey"),
-        panel.background = element_rect(fill = "white"))   
+        panel.background = element_rect(fill = "white"))+
+  common_theme   
 
 # Generate ordinary data (student satisfaction)
 ordinal_data <- data.frame(
@@ -328,7 +334,8 @@ ordinal_data <- data.frame(
 plot2 <- ggplot(ordinal_data, aes(x = reorder(satisfaction_level, -count), y = count)) +
   geom_bar(stat = "identity", fill = my_palette[2]) +
   labs(title = "Students Satisfaction Levels with the Course", x = NULL, y = "Count") +
-  theme_minimal()
+  theme_minimal()+
+  common_theme
 
 # Generating sample data for student attendance (replace this with your actual attendance data)
 attendance_data <- data.frame(
@@ -341,7 +348,8 @@ plot3 <-  ggplot(attendance_data, aes(x = week, y = attendance)) +
   geom_line(linewidth = 0.7, color = my_palette[3]) +
   labs(title = "Student Lecture Attendance", x = "Week of the semester", y = "Number of Students") +
   theme_minimal() +
-  scale_y_continuous(breaks = seq(20, 32, by = 2), labels = function(x) round(x))  # Adjust the breaks and labels
+  scale_y_continuous(breaks = seq(20, 32, by = 2), labels = function(x) round(x))+
+  common_theme  # Adjust the breaks and labels
 
 
 # Generate data for income distribution across a population
@@ -353,7 +361,8 @@ income_data <- data.frame(
 plot4 <-ggplot(income_data, aes(x = income)) +
   geom_histogram(binwidth = 5000, fill = my_palette[4], color = my_palette[4], alpha = 0.5) +
   labs(title = "Expected Income Distribution for Top Students", x = "Income (£/month)", y = "Frequency") +
-  theme_minimal()
+  theme_minimal()+
+  common_theme
 
 # Arrange plots in a 2x2 grid
 grid.arrange(plot1, plot2, plot3, plot4, ncol = 2)
@@ -374,7 +383,12 @@ Hierarchies of abstraction enable the representation data at varying levels of d
 These different levels of abstraction are represented in Figure~\ref{fig:abs-plots}, where the mtcars dataset is represented. The first visualisation is a scatter plot that provides detailed information about the relationship between car weight and miles per gallon, with points coloured by the number of cylinders. The second is a bar plot presenting aggregated information about the average miles per gallon for different numbers of cylinders. Finally, the third is an abstract visualisation using a box-and-whisker plot to provide a high-level summary of the distribution of miles per gallon for different numbers of cylinders.
 
 <<abs-plots, echo=FALSE, fig.height=4, fig.width=12, fig.pos = 'H', fig.cap='Mtcars dataset visualised on three different levels of abstraction'>>=
-
+# Define common theme settings
+common_theme <- theme(
+  axis.title.x = element_text(size = 12),
+  axis.title.y = element_text(size = 12),
+  plot.title = element_text(size = 14)
+)
 # Define a dark red and blue color palette
 dark_red_blue_palette <- c("4" = "#459395", "6" = "#EB7C69", "8" = "#FDA638")  # Adjust the shades of red and blue %jhgjgj
 
@@ -744,7 +758,7 @@ A time series $\{X_t\}$ is a moving average process \cite{Brockwell2016Introduct
 \noindent
 where $\{\omega_t\} \sim \text{N}(0, \sigma^2)$ are i.i.d. white noise events and $\theta_1,\dots,\theta_q$ are real valued coefficients.
 
-\subsubsection{Case Example: Time Series Visualisation of Exchange Rates}
+\subsubsection{Case Example: Visualisation of Exchange Rates}
 
 Here, plot daily and 49-day moving average exchange rates of exchange rate data in one figure.
 <<echo=FALSE,message=FALSE,warning=FALSE>>=
@@ -1508,7 +1522,7 @@ Note the process of weight adjustment using previous estimation is iterated seve
 \noindent
 The updated model estimate $\hat{g}(x)$, is computed using the local fitting method, but with the neighborhood weights $w_i{(x)$ replaced by $r_i w_i(x)$ \cite{loess}.
 
-\subsubsection{Case Example: Taiwan Housing Dataset}\\
+\subsubsection{Case Example: Estate price in Taipei}\\
 
 \noindent
 Property valuation can be modelled as a regression problem, in this analysis, we delve into the pricing of properties based on their age. Using the Taipei Housing dataset, we investigate the relationship between the age of houses (measured in years) and their prices (measured in New Taiwan dollars per unit area). Linear regression model and the LOESS regression model are used, as shown in Figure~\ref{fig:estate-data-plot}.\\
@@ -1558,10 +1572,10 @@ ggplot(data = estate, aes(x = house_age, y = price_per_area)) +
 
 \subsubsection{Theory of PCA}
 \noindent
-Principal Component Analysis (PCA) is one of the most widely-used dimensionality reduction techniques. The basic idea behind PCA is to project high-dimensional data into a low-dimensional subspace, aiming to create a visual representation that captures most of the variability present in the data.\\
+Principal Component Analysis (PCA) is one of the most widely-used dimensionality reduction techniques. The basic idea is to use the dependencies between the variables to project the data into a low-dimensional subspace, without losing too much information.\\
 
 \noindent
-The feature matrix $\mathbf{X}$ is an $N \times D$ real-valued matrix collecting the observed data:
+The feature matrix $\mathbf{X}$ is an $N \times D$ real-valued matrix:
 $$\mathbf{X} = \left( \begin{array}{ccc}
     \mathbf{x}^{T}_{1}\\
     \vdots\\
@@ -1575,26 +1589,28 @@ x_{N,1} & x_{N,2} & \cdots & x_{N,D}
 with $N$ observations and $D$ variables (also known as features).\\
 
 \noindent
-Define a linear and orthogonal mapping, denoted as $\mathbf{W}: \mathbf{x} \to \mathbf{z}$ which acts as a `transformer' between high-dimensional data point $\mathbf{x}$ and its low-dimensional projection $\mathbf{z}$. Matrix $\mathbf{W}$ is defined as a $D \times L$ orthogonal and normalised matrix. Therefore, it can be expressed as column vectors $\mathbf{W} = [\mathbf{w}_1, \dots, \mathbf{w}_L]$, where $\mathbf{w}_i \mathbf{w}_j = 0$ for all $i \ne j$ and $\mathbf{w}_i^T \mathbf{w}_i = 1$. This matrix allows us to project the data from its original high-dimensional space to the low-dimensional subspace using $\mathbf{z} = \mathbf{W}^T\mathbf{x}$; this process is called encoding. To unproject $\mathbf{z}$ and obtain a high-dimensional approximation, denoted as $\hat{\mathbf{x}} = \mathbf{W}\mathbf{z}$, this process is called decoding.\\
+Define a linear and orthogonal mapping $\mathbf{W}: \mathbf{x} \to \mathbf{z}$, acting as a 'transformer' between observation $\mathbf{x}$ and its low-dimensional projection $\mathbf{z}$. The matrix $\mathbf{W}$ is a $D \times L$ orthogonal and normalised matrix, where its column vectors are represented as $\mathbf{W} = [\mathbf{w}_1, \dots, \mathbf{w}_L]$. Then, for all $i \neq j$, $\mathbf{w}_i \mathbf{w}_j = 0$ and $\mathbf{w}_i^T \mathbf{w}_i = 1$. This matrix allows for the projection of data from its original high-dimensional space to the low-dimensional subspace using $\mathbf{z} = \mathbf{W}^T\mathbf{x}$, known as encoding. To reconstruct $\mathbf{x}$ from $\mathbf{z}$, $\hat{\mathbf{x}} = \mathbf{W}\mathbf{z}$ will give the high-dimensional approximation of the observation, this process is known as decoding.\\
 
 \noindent
-The optimal solution of PCA is obtained by minimising the reconstruction error \index{Principal component analysis!reconstruction error}subject to constraint $\mathbf{W}$, which is defined below:
-$$\mathcal{L}(\mathbf{W}) = \frac{1}{N}\sum_{n=1}^{N}||\mathbf{x}_n - \hat{\mathbf{x}}||^2_2.
-$$
+The optimal solution of PCA is obtained by minimising the loss function\index{Principal component analysis!loss function}, which represents the reconstruction error \index{Principal component analysis!reconstruction error}subject to constraint $\mathbf{W}$. The loss function is defined as follows:
+
+\begin{equation}
+\mathcal{L}(\mathbf{W}) = \frac{1}{N}\sum_{n=1}^{N}||\mathbf{x}_n - \hat{\mathbf{x}}||^2_2.
+\end{equation}
 
 \subsubsection{Derivation of PCA}
 
 In general, the vector $\mathbf{w}_i$ is given by the equation $\mathbf{\Sigma} \mathbf{w}_i = \lambda \mathbf{w}_i$, where $\mathbf{\Sigma}$ is the covariance matrix and $\lambda$ is the $i^{th}$ largest eigenvalue of $\mathbf{\Sigma}$, for $i = 1, \dots, L$.\\
 
 \noindent
-Define the covariance matrix \index{Principal component analysis!covariance matrix}$\mathbf{\Sigma}$ as $\mathbf{\Sigma} = \frac{1}{N} \sum_{n=1}^N(\mathbf{x}_n-\bar{\mathbf{x}})(\mathbf{x}_n-\bar{\mathbf{x}})^T$. Without loss of generality, let's assume that the data matrix $\mathbf{X}$ is centred around $0$ mean denoted as $\bar{x} = 0$. Then, the covariance matrix can be written as:
+Define the covariance matrix \index{Principal component analysis!covariance matrix}$\mathbf{\Sigma} = \frac{1}{N} \sum_{n=1}^N(\mathbf{x}_n-\bar{\mathbf{x}})(\mathbf{x}_n-\bar{\mathbf{x}})^T$. Without loss of generality, let's assume that all observations in matrix $\mathbf{X}$ are centred around $0$ mean, then $\bar{\mathbf{x}} = 0$. The covariance matrix can be written in a simple form:
 
 \begin{equation}
 \mathbf{\Sigma} = \frac{1}{N} \sum_{n=1}^N\mathbf{x}_n\mathbf{x}_n^T = \frac{1}{N} \mathbf{X}\mathbf{X}^T. \label{eq:cov}
 \end{equation}
 
 \noindent
-The optimal encoding \index{Principal component analysis!optimal encoding}$\mathbf{Z}$ ensures the least amount of information loss when data is projected from a high-dimensional space to a lower-dimensional one. To determine this optimal encoding, we minimise the reconstruction error with respect to $\mathbf{w}$ and $\mathbf{z}$.
+The optimal encoding \index{Principal component analysis!optimal encoding}$\mathbf{Z}$ ensures minimum information loss when data is projected to a lower-dimensional subspace. To determine this optimal encoding, we minimise the reconstruction error with respect to $\mathbf{w}$ and $\mathbf{z}$.
 
 \begin{equation}
 \begin{aligned}
@@ -1634,7 +1650,7 @@ Since $\mathbf{W}$ is a normalised matrix, it has the property $\mathbf{W}_i^T\m
 \end{equation}
 
 \noindent 
-Equating $\frac{\partial \hat{\mathcal{L}}(\mathbf{w}_1))}{\partial \mathbf{w}_1} = \mathbf{0}$, the weight vector $\mathbf{w}_1$ which minimise the loss function can be expressed as:
+Equating $\frac{\partial \hat{\mathcal{L}}(\mathbf{w}_1))}{\partial \mathbf{w}_1} = \mathbf{0}$, the weight vector $\mathbf{w}_1$ which minimise the loss function can be expressed as \cite{pcaformula}:
 
 \begin{equation}
 \frac{\partial \hat{\mathcal{L}}(\mathbf{w}_1))}{\partial \mathbf{w}_1} = 2\mathbf{\Sigma}\mathbf{w}_1+2\lambda \mathbf{w}_1 = \mathbf{0}.
@@ -1728,7 +1744,7 @@ _m\tilde{x}_{ij} = \sum_{k=1}^{m} \mathbf{g}_{ik}\mathbf{h}_{jk} = \mathbf{g}_{i
 
 \noindent Thus, $\mathbf{g}_i$ and $\mathbf{h}_j$ should provide a reasonable two-dimensional approximation of the $n$ observations and the $p$ variables \cite{jolliffe2003principal}.\\
 
-\subsubsection{Biplots in Practice: The mtcars Dataset}
+\subsubsection{Case Example: Vintage cars attributes}
 
 \noindent This section presents a comparative analysis of PCA biplots generated through two distinct methodologies: manual mathematical construction and use of R's in-built functions. The focus lies on elucidating the mathematical intricacies, exploring relations, and highlighting differences between the two approaches. The mtcars dataset will serve as a benchmark.\\
 
@@ -1921,7 +1937,7 @@ where $\eta$ is the learning rate, a positive scalar determining the step size.\
 \noindent
 The process is repeated for a number of iterations or until the change in the cost function between iterations is below a predetermined threshold, indicating convergence. The gradient descent process in t-SNE is crucial for effectively reducing the dimensionality of high-dimensional data while preserving the local structure of the data. By iteratively updating the positions of the points in the low-dimensional space, t-SNE minimizes the KL divergence, resulting in a meaningful representation of the data in lower dimensions.
 
-\subsubsection{Case Example: t-SNE in Practice}
+\subsubsection{Case Example: Classifiication of penguins}
 
 In Figure~\ref{fig:t-SNE} we observe a t-SNE visualisation of the penguin dataset. In this case, using the t-SNE algorithm helps us to reduce the multidimensional numerical data of the penguin dataset to a $2$-dimensional space. We also use scatter plots and elliptical areas to visualise the distribution of different penguin species. The data points are colour-coded to distinguish between three penguin species: Adelie in red, Chinstrap in green, and Gentoo in blue. This colour coding aids in the visual differentiation of the species clusters.\\
 
@@ -2099,7 +2115,7 @@ C_{0.5} = \{(t, y(t)) : \min_{r=1, \ldots, \lceil n/2 \rceil} y[r](t) \leq y(t) 
 \noindent
 where $\lceil n/2 \rceil$ is the smallest integer not less than half of the sample size. This 50\% central region functions similarly to the inter-quartile range (IQR) in a boxplot, providing a measure of the spread of the central 50\% of the curves. This method is robust, less affected by outliers or extreme values, and offers a clearer visualisation of the distribution's central spread. Within this central region, the curve that represents the median, denoted as $y_{[1]}(t)$, signifies the most centrally located curve with the highest band depth, serving as a robust measure of central tendency.
 
-\subsubsection{Functional Box Plot Example}
+\subsubsection{Case Example: Visualisation of metabolic syndromes}
 \noindent
 The functional boxplot shown in Figure \ref{fig:fbplot} illustrates the metabolism rates between healthy and diseased populations. The outer blue line highlights a wider range for the diseased group, accompanied by a broader grey band. The range indicates greater variability and the band indicates lower oxygen saturation for most patients in the blood of the diseased group.
 \begin{figure}[H]
@@ -2126,11 +2142,11 @@ To calculate the x-coordinate for a Q–Q boxplot, we set a scale for the plot a
 $$x^* = \frac{d \cdot x_{\text{max}}}{\text{dev}_{\text{max}}}.$$
 The $x$ coordinate is then $x_b+x*$, where $x_b$ marks the center of the boxplot.
 
-
-\subsubsection{Q–Q Boxplots in Practice}
+\newpage
+\subsubsection{Case Example: Iris dataset using Q–Q boxplot}
 The resulting Q–Q boxplot shows the distribution of sepal length values within each iris species, allowing comparison whether they come from a normal distribution. Outliers are also indicated in the plot.\\
 
-<<QQboxplots, echo=FALSE, fig.height=4, fig.width=8, fig.pos='h', fig.cap='Q–Q boxplot of iris dataset', message=FALSE,warning=FALSE>>=
+<<QQboxplots, echo=FALSE, fig.height=2.8, fig.width=3.4, fig.pos='h', fig.cap='Q–Q boxplot of iris dataset', message=FALSE,warning=FALSE>>=
 my_palette <- c("#459395", "#EB7C69", "#FDA638")
 qqplot <- iris %>%  
   ggplot(aes(Species, Sepal.Length, fill = Species)) + 
@@ -2139,9 +2155,9 @@ qqplot <- iris %>%
   ylab("Sepal Length") + 
   ggtitle("Sepal Length Q-Q Boxplot") +
   theme(
-    plot.title = element_text(size=14, face="plain", hjust=0.5),
-    axis.title.x = element_text(size=12),
-    axis.title.y = element_text(size=12),
+    plot.title = element_text(size=8, face="plain", hjust=0.5),
+    axis.title.x = element_text(size=8),
+    axis.title.y = element_text(size=8),
     legend.position = "none"  # This line removes the legend, if desired
   ) 
 
